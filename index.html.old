@@ -7,29 +7,24 @@
         
         <div class="topnav">
             <a class="active" href="../../">Site Home Page</a>
-            <a href="./MyJupyterNotebooks/">Notebook Collection</a>
-            <a href="http://54.243.252.9:8000/"> JupterHub@AmazonWebServices </a>
-            <a href="http://atomickitty.ddns.net:8000/"> JupterHub@atomickitty (this server) </a>          
-            <a href="http://atomickitty.net:6087/vnc.html
-                     host=atomickitty.net&port=6087">RemoteDesktop@atomickitty.net</a>
+            <a href="../MyJupyterNotebooks/"> Notebook Collection </a>
+            <a href="./0-Syllabus/ENGR-1330-PsuedoSyllabus.html">Syllabus Fall 2020</a>
+            <a href="http://54.243.252.9:8000/"> JupyterHub (@atomickitty.aws)
+            <a href="http://atomickitty.net:6087/vnc.html?host=atomickitty.net&port=6087">JupyterHub (@atomickitty.net)</a>
+            <a href="#">Placeholder </a>
 
         </div>
         
 	<div style="padding-left:16px">
-            <h2>ENGR-1330 Computational Thinking and Data Science (Development)</h2>
-        <p>Welcome to the ENGR-1330 course support site.
-        This site is created to develop materials for students in EGR-1330 Computational Thinking, as well as
-        other students  who may have a need to do some programming in their other courses.  
-            At the present this site supports python 3.8 in the JupyterLab Notebook environment.  </p>
-        
+            <h2>CECE-1330 Psuedo Course</h2>
+        Welcome to the CECE ENGR-1330 Psuedo course support site.
+        This site is created to provide supplimental materials for CECE students in EGR-1330 Computational Thinking, as well as
+        other students in CECE who may have a need to do some programming in their other courses.  At the present this site supports 
+        python 3.8 in the JupyterLab Notebook environment.  
         </div>
         
         <button class="accordion">Description</button>
                 <div class="panel">
-                    <p><strong>Development Notes:</strong>Development is done on this live server to test "over-the-wire" behavior. 
-            The hardware is a Raspberry Pi 4 4GB Computer running Ubuntu Server 20.04.01 LTS 
-            The jupyterhub is the most current that will build on a Raspberry Pi, 
-            Anaconda builds are not yet available for the aarch64 chipset, so the Python subsystem is manually installed.  Students should use Anaconda with their computers (x86-64 chipsets), or an Amazon Web Services Lightsail instance (the $12/month instance should be more than adequate) </p>
 <p>     This psuedo-course website is a library of course content organized to parallel the actual ENGR-1330 course and is intdented as a suppliment to that course; this site is currently not running within a Learning Manegement System (LMS), although the host server has one installed.  
     The lesson collection is a place where I put prototype lessons for eventual migration to the actual course.  
     Each lesson (below) may contain worked python/ipython solutions to specific, narrow-scope, problems.
@@ -47,42 +42,41 @@
 <p><a href="./1-Lessons/Lesson02"> Lesson  2 </a> Programming Principles: Variable types; operators (*,/,+,- .....)</p>
 <p><a href="./1-Lessons/Lesson03"> Lesson  3 </a> Programming Principles: Data types; integer; real; string ; lists</p>
 <p><a href="./1-Lessons/Lesson04"> Lesson  4 </a> Programming Principles: Conditionals; IF ... THEN, program flow control; for loops; while loops. </p>
-<p><a href="./1-Lessons/Lesson05"> Lesson  5 </a> Programming Principles: Functions (Built-in); User built prototype functions </p>
-<p><a href="./1-Lessons/Lesson06"> Lesson  6 </a> Programming Principles: Objects, classes; File manipulation </p>               
-<h2> Python Data Science External Modules</h2>
-<p><a href="./1-Lessons/Lesson07"> Lesson  7 </a> Data Science: Data models and operations; NumPy Package </p>
-<p><a href="./1-Lessons/Lesson08"> Lesson  8 </a> Data Science: Dataframes; Query and Manipulation; Pandas Package </p>   
-<p><a href="./1-Lessons/Lesson09"> Lesson  9 </a> Data Science: Exploratory Data Analysis; ECharts and Graphs; MatPlotLib Package  </p> 
-<h2> Data Modeling: The Statistical Approach </h2>
-<p><a href="./1-Lessons/Lesson10"> Lesson 10 </a> Data Modeling: Causality and Randomness </p>
-<p><a href="./1-Lessons/Lesson11"> Lesson 11 </a> Data Modeling: Probability; Relative frequency and uninformed Bayesian concepts</p>
-<p><a href="./1-Lessons/Lesson12"> Lesson 12 </a> Data Modeling: Descriptive Statistics</p>
-<p><a href="./1-Lessons/Lesson13"> Lesson 13 </a> Data Modeling: Distributions </p>
-<p><a href="./1-Lessons/Lesson14"> Lesson 14 </a> Data Modeling: Probability Estimation Modeling </p>
-<p><a href="./1-Lessons/Lesson15"> Lesson 15 </a> Data Modeling: Hypothesis testing: General concept and examples of assessing models. </p>
-<p><a href="./1-Lessons/Lesson16"> Lesson 16 </a> Data Modeling: Hypothesis testing: Comparing proportions, Type 1 & 2 Errors, p-value. </p>
-<p><a href="./1-Lessons/Lesson17"> Lesson 17 </a> Data Modeling: Comparing two samples: A/B Testing  </p>
-<p><a href="./1-Lessons/Lesson18"> Lesson 18 </a> Data Modeling: Interval estimation (aka: confidence intervals)  </p>
-<h2> Data Modeling: The Regression Approach </h2>
-<p><a href="./1-Lessons/Lesson19"> Lesson 19 </a> Data Modeling: Linear Algebra of Equation Fitting </p>
-<p><a href="./1-Lessons/Lesson20"> Lesson 20 </a> Data Modeling: Estimation Modeling by Regression </p>
-<p><a href="./1-Lessons/Lesson21"> Lesson 21 </a> Data Modeling: Regression Performance Metrics  </p>
-<p><a href="./1-Lessons/Lesson22"> Lesson 22 </a> Data Modeling: Logistic Regression (a type of classification)  </p>
-<h2> Data Modeling: Machine Learning Approach </h2> 
-<p><a href="./1-Lessons/Lesson23"> Lesson 23 </a> Machine Learning: Correlation </p>
-<p><a href="./1-Lessons/Lesson24"> Lesson 24 </a> Machine Learning: Classification;Supervised learning; Nearest neighbor  </p>
-<p><a href="./1-Lessons/Lesson25"> Lesson 25 </a> Machine Learning: Decision Making: Confusion matrix, precision, recall, accuracy, F-score.</p>
-<p><a href="./1-Lessons/Lesson26"> Lesson 26 </a> placeholder </p>  
-<p><a href="./1-Lessons/Lesson27"> Lesson 27 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson28"> Lesson 28 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson29"> Lesson 29 </a> placeholder   </p>
-<p><a href="./1-Lessons/Lesson30"> Lesson 30 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson31"> Lesson 31 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson32"> Lesson 32 </a> placeholder   </p>
-<p><a href="./1-Lessons/Lesson33"> Lesson 33 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson34"> Lesson 34 </a> placeholder </p>
-<p><a href="./1-Lessons/Lesson35"> Lesson 35 </a> placeholder </p>
-<p><a href="./1-Lessons/Lesson36"> Lesson 36 </a> placeholder  </p>
+<p><a href="./1-Lessons/Lesson05"> Lesson  5 </a> Programming Principles: Functions (Built-in); User built prototype functions for program clarity and memory leak reduction </p>
+<p><a href="./1-Lessons/Lesson06"> Lesson  6 </a> Programming Principles: Objects, classes; File manipulation </p>            
+<p><a href="./1-Lessons/Lesson07"> Lesson  7 </a> Programming Principles: Modules, Libraries and Packages </p>    
+<h2> Data Science </h2>
+<p><a href="./1-Lessons/Lesson08"> Lesson  8 </a> Data Science: Data models and operations; NumPy Package </p>   
+<p><a href="./1-Lessons/Lesson09"> Lesson  9 </a> Data Science: Dataframes; Query and Manipulation; Pandas Package </p> 
+<p><a href="./1-Lessons/Lesson10"> Lesson 10 </a> Data Science: Results presentation; EDA by Charts and Graphs; MatPlotLib Package </p>
+<p><a href="./1-Lessons/Lesson11"> Lesson 11 </a> placeholder (review)</p>
+<p><a href="./1-Lessons/Lesson12"> Lesson 12 </a> placeholder (exam 1)</p>
+<h2> Data Modeling and Statistics </h2>
+<p><a href="./1-Lessons/Lesson13"> Lesson 13 </a> Data Modeling: Causality and Randomness </p>
+<p><a href="./1-Lessons/Lesson14"> Lesson 14 </a> Data Modeling: Probability; Relative frequency and uninformed Bayesian concepts</p>
+<p><a href="./1-Lessons/Lesson15"> Lesson 15 </a> Data Modeling: Sampling; Empirical distributions </p>
+<p><a href="./1-Lessons/Lesson16"> Lesson 16 </a> Data Modeling: Hypothesis testing: General concept and examples of assessing models. </p>
+<p><a href="./1-Lessons/Lesson17"> Lesson 17 </a> Data Modeling: Hypothesis testing: Comparing proportions, Type 1 & 2 Errors, p-value.  </p>
+<p><a href="./1-Lessons/Lesson18"> Lesson 18 </a> Data Modeling: Comparing two samples: A/B Testing  </p>
+<p><a href="./1-Lessons/Lesson19"> Lesson 19 </a> Data Modeling: Comparing two samples: A/B Testing </p>
+<p><a href="./1-Lessons/Lesson20"> Lesson 20 </a> Data Modeling: Interval estimation (aka: confidence intervals)  </p>
+<p><a href="./1-Lessons/Lesson21"> Lesson 21 </a> Data Modeling: Interpreting confidence intervals  </p>
+<p><a href="./1-Lessons/Lesson22"> Lesson 22 </a> Data Modeling: Center and spread  </p>
+<p><a href="./1-Lessons/Lesson23"> Lesson 23 </a> Data Modeling: Normal distribution; Gamma distribution  </p>
+<p><a href="./1-Lessons/Lesson24"> Lesson 24 </a> Data Modeling: Sample means   </p>
+<p><a href="./1-Lessons/Lesson25"> Lesson 25 </a> placeholder  (review)</p>
+<p><a href="./1-Lessons/Lesson26"> Lesson 26 </a> placeholder  (exam 2)</p>
+<h2> Data Modeling and Machine Learning </h2>   
+<p><a href="./1-Lessons/Lesson27"> Lesson 27 </a> Machine Learning: Correlation  </p>
+<p><a href="./1-Lessons/Lesson28"> Lesson 28 </a> Machine Learning: Linear regression  </p>
+<p><a href="./1-Lessons/Lesson29"> Lesson 29 </a> Machine Learning: Least squares   </p>
+<p><a href="./1-Lessons/Lesson30"> Lesson 30 </a> Machine Learning: Residuals  </p>
+<p><a href="./1-Lessons/Lesson31"> Lesson 31 </a> Machine Learning: Regression inference  </p>
+<p><a href="./1-Lessons/Lesson32"> Lesson 32 </a> Machine Learning: Regression; Evaluation metrics: Accuracy, error   </p>
+<p><a href="./1-Lessons/Lesson33"> Lesson 33 </a> Machine Learning: Classification;Supervised learning; Nearest neighbor   </p>
+<p><a href="./1-Lessons/Lesson34"> Lesson 34 </a> Machine Learning: Decision Making: Confusion matrix, precision, recall, accuracy, F-score. </p>
+<p><a href="./1-Lessons/Lesson35"> Lesson 35 </a> placeholder  (review)</p>
+<p><a href="./1-Lessons/Lesson36"> Lesson 36 </a> placeholder  (exam 3)</p>
         </div>
             
         <button class="accordion"> Notebook Collection </button>
@@ -182,4 +176,3 @@ Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Founda
 
     </body>
 </html>
-
