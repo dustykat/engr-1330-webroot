@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Site Home Page</a>
+            <a href="../MyJupyterNotebooks/"> Notebook Collection </a>
+            <a href="./0-Syllabus/ENGR-1330-PsuedoSyllabus.html">Syllabus Fall 2020</a>
+            <a href="http://54.243.252.9:8000/"> JupyterHub (@atomickitty.aws)
+            <a href="http://atomickitty.net:6087/vnc.html?host=atomickitty.net&port=6087">JupyterHub (@atomickitty.net)</a>
+            <a href="#">Placeholder </a>
+        </div>
+
+	<div style="padding-left:16px">
+        <h2>Probability Estimation Modeling </h2>
+
+        </div>
+        
+        <button class="accordion">Description</button>
+                <div class="panel">
+<p>    Probability estimation modeling; building data models from sample sets </p>
+
+        </div>
+        <button class="accordion"> Lesson Notes </button>
+        <div class="panel">
+            <p><a href="./PsuedoLesson/"> Lesson 13 </a> Lesson 13 as a JupyterLab source(and .html) file. 
+                Examples and graphics are embedded. Uses image sources as URLs so graphics will not render on CoCalc free</p>
+            <p><a href="./OriginalPowerpoint/"> Lesson 13  </a> Original PowerPoint source files developed by ENGR-1330 team for Lesson 10 (archive) </p>
+            <p><a href="./Lab13/"> Laboratory 13 </a> Laboratory and support files. </p>
+
+        </div>
+            
+<!--<button class="accordion"> Lesson Notebooks </button>
+<div class="panel">
+<p>This section is a link to notebooks specific to this lesson. 
+<p><a href="../MyJupyterNotebooks/1-HelloWorld/"> Hello World </a> Classic first program </p>
+</div>-->
+            
+<button class="accordion"> Video Collection </button>
+<div class="panel">
+<p><a href="#"> Lesson 13 Sec 003/004 </a> Fall 2020  </p>
+<p><a href="#"> Laboratory 13 Sec D52/D54 </a> Fall 2020 </p>
+    
+</div>
+            
+            
+<button class="accordion"> Readings </button>
+<div class="panel">
+
+<p><a href="./3-Readings/"> Reading Collection </a> Local to this erver </p>
+            
+<p><a href="https://www.inferentialthinking.com/chapters/intro"> Computational and Inferential Thinking </a> 
+Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) </p>
+</div>
+            
+            
+            
+<button class="accordion"> Recent Updates/Maintenance Diary </button>
+        <div class="panel">
+            <li> Hide/Unhide Script in webroot </li>
+            <li> Migrate all content to notebooks instead of powerpuke </li>
+            <li> Uninstalled tightvnc on AWS server </li>
+            <li> Need GitHub repository for long term storage </li>
+    
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>
