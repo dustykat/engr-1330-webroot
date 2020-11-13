@@ -1,12 +1,11 @@
-# ENGR-1330-Psuedo-Course
+# ENGR-1330 Computational Thinking and Data Science
 This is a repository for a course at Texas Tech University, specificially the sections taught by Dr. Theodore G. Cleveland.
 
 ## Purpose
 The purpose of the repository is to maintain a convienent back-up of course content for rapid migration across servers.  
 
 ## Special Notes
-The structure is written to work on a web host, with hostname == `atomickitty.ddns.net`, if you clone to another server you will have the lovely task of changing the links.  
+1. The structure is written to work on a web host, with hostname == `atomickitty.ddns.net`, if you clone to another server you will have the lovely task of changing the links.  The string editor `sed` will become your friend!
 
-The string editor `sed` will become your friend!
+2. Materials herein come from many sources, in particular the Data8 repository from UC Berkeley.  Sources in notebooks are at least cited by a URL.  As the content is matured, proper citations are to be inserted.
 
-## How to clone
