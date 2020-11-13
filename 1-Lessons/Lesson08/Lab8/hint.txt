@@ -1,0 +1,8 @@
+req_col_names = ["Cement", "BlastFurnaceSlag", "FlyAsh", "Water", "Superplasticizer",
+                 "CoarseAggregate", "FineAggregate", "Age", "CC_Strength"]
+curr_col_names = list(concreteData.columns)
+mapper = {}
+for i, name in enumerate(curr_col_names):
+    mapper[name] = req_col_names[i]
+concreteData = concreteData.rename(columns=mapper)
+concreteData.head()
