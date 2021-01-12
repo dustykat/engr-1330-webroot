@@ -1,0 +1,6 @@
+AuthUserFile /usr/local/etc/.htpasswd
+AuthName "Name of Secure Area"
+AuthType Basic
+<Limit GET POST>
+require user engr1330guest
+</Limit>
