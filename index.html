@@ -25,74 +25,143 @@
         
         <button class="accordion">Description</button>
                 <div class="panel">
-                    <p><strong>Development Notes:</strong>Development is done on a live server to test "over-the-wire" behavior. 
-            The hardware is a Raspberry Pi 4 4GB Computer running Ubuntu Server 20.04.01 LTS 
-            The JupyterHub is the most current that will build on a Raspberry Pi, 
-            Anaconda builds are not yet available for the aarch64 chipset, so the Python subsystem is manually installed.  Students should use Anaconda with their computers (x86-64 chipsets), or an Amazon Web Services Lightsail instance (the $12/month instance should be more than adequate) </p>
 <p>     This website is a library of course content organized to parallel the actual ENGR-1330 course and is intended as a component of that course; this site is currently not running within a Learning Manegement System (LMS), although the host server has one installed.  
     The lesson collection is a place where I put prototype lessons for eventual migration to the actual course.  
     Each lesson (below) may contain worked python/ipython solutions to specific, narrow-scope, problems.
     The notebook collection contains worked python/ipython solutions to specific, narrow-scope, problems.
     The intent is that one can construct meaningful programs by scaffolding the needed examples here, binding them, and running their own unique problems. </p>
+                    
+                    <p><strong>Development Notes:</strong>Development is done on a live server to test "over-the-wire" behavior. 
+            The hardware is a Raspberry Pi 4 4GB Computer running Ubuntu Server 20.04.01 LTS 
+            The JupyterHub is the most current that will build on a Raspberry Pi, 
+            Anaconda builds are not yet available for the aarch64 chipset, so the Python subsystem is manually installed.  Students should use Anaconda with their computers (x86-64 chipsets), or an Amazon Web Services Lightsail instance (the $12/month instance should be more than adequate).  Working notebooks are ported to the AWS website via a GitHub push-pull activity.  The developmental section notebooks (bottom of this page) may not yet be working, but the Lesson, Lab, and Homework notebooks are tested on "over-the-wire", Anaconda on MacOS, and Anaconda on Windows</p>
         
 
 	</p>
 
         </div>
-        <button class="accordion"> Lesson Collection </button>
+        <button class="accordion"> Lessons </button>
         <div class="panel">
 <h2> JupyterLab (Python kernel) and Programming </h2>
-<p><a href="./1-Lessons/Lesson01"> Lesson  1 </a> Introduction to Computational Thinking </p>
-<p><a href="./1-Lessons/Lesson02"> Lesson  2 </a> Programming Principles: Variable types; operators (*,/,+,- .....)</p>
-<p><a href="./1-Lessons/Lesson03"> Lesson  3 </a> Programming Principles: Data types; integer; real; string ; lists</p>
-<p><a href="./1-Lessons/Lesson04"> Lesson  4 </a> Programming Principles: Conditionals; IF ... THEN, program flow control; for loops; while loops. </p>
-<p><a href="./1-Lessons/Lesson05"> Lesson  5 </a> Programming Principles: Functions (Built-in); User built prototype functions </p>
-<p><a href="./1-Lessons/Lesson06"> Lesson  6 </a> Programming Principles: Objects, classes; File manipulation </p>               
+<p><a href="./1-Lessons/Lesson01"> Lesson  0 (21 Jan 2021) </a> Introduction to Computational Thinking </p>
+<p><a href="./1-Lessons/Lesson02"> Lesson  1 (26 Jan 2021) </a> Programming Principles: Variable types; operators (*,/,+,- .....)</p>
+<p><a href="./1-Lessons/Lesson03"> Lesson  2 (28 Jan 2021) </a> Programming Principles: Data types; integer; real; string ; lists</p>
+<p><a href="./1-Lessons/Lesson04"> Lesson  3 (2 Feb 2021) </a> Programming Principles: Conditionals; IF ... THEN, program flow control; for loops; while loops. </p>
+<p><a href="./1-Lessons/Lesson05"> Lesson  4 (4 Feb 2021) </a> Programming Principles: Functions (Built-in); User built prototype functions </p>
+<p><a href="./1-Lessons/Lesson06"> Lesson  5 (9 Feb 2021) </a> Programming Principles: Objects, Classes, and File manipulation </p>               
 <h2> Python Data Science External Modules</h2>
-<p><a href="./1-Lessons/Lesson07"> Lesson  7 </a> Data Science: Data models and operations; NumPy Package </p>
-<p><a href="./1-Lessons/Lesson08"> Lesson  8 </a> Data Science: Dataframes; Query and Manipulation; Pandas Package </p>   
-<p><a href="./1-Lessons/Lesson09"> Lesson  9 </a> Data Science: Exploratory Data Analysis; ECharts and Graphs; MatPlotLib Package  </p> 
+<p><a href="./1-Lessons/Lesson07"> Lesson  6 (11 Feb 2021) </a> Data Science: Data models and operations; NumPy Package </p>
+<p><a href="./1-Lessons/Lesson08"> Lesson  7 (16 Feb 2021) </a> Data Science: Dataframes; Query and Manipulation; Pandas Package </p>   
+<p><a href="./1-Lessons/Lesson09"> Lesson  8 (18 Feb 2021) </a> Data Science: Exploratory Data Analysis; Charts and Graphs; MatPlotLib Package  </p> 
 <h2> Data Modeling: The Statistical Approach </h2>
-<p><a href="./1-Lessons/Lesson10"> Lesson 10 </a> Data Modeling: Causality and Randomness </p>
-<p><a href="./1-Lessons/Lesson11"> Lesson 11 </a> Data Modeling: Probability; Relative frequency and uninformed Bayesian concepts</p>
-<p><a href="./1-Lessons/Lesson12"> Lesson 12 </a> Data Modeling: Descriptive Statistics</p>
-<p><a href="./1-Lessons/Lesson13"> Lesson 13 </a> Data Modeling: Distributions </p>
-<p><a href="./1-Lessons/Lesson14"> Lesson 14 </a> Data Modeling: Probability Estimation Modeling </p>
-<p><a href="./1-Lessons/Lesson15"> Lesson 15 </a> Data Modeling: Hypothesis testing: General concept and examples of assessing models. </p>
-<p><a href="./1-Lessons/Lesson16"> Lesson 16 </a> Data Modeling: Hypothesis testing: Comparing proportions, Type 1 & 2 Errors, p-value. </p>
-<p><a href="./1-Lessons/Lesson17"> Lesson 17 </a> Data Modeling: Comparing two samples: A/B Testing  </p>
-<p><a href="./1-Lessons/Lesson18"> Lesson 18 </a> Data Modeling: Interval estimation (aka: confidence intervals)  </p>
+<p><a href="./1-Lessons/Lesson10"> Lesson 9 (23 Feb 2021) </a> Data Modeling: Causality and Randomness </p>
+            
+<p><a href="./1-Lessons/Lesson11"> Lesson 10 (2 Mar 2021) </a> Data Modeling: Probability; Relative frequency and uninformed Bayesian concepts</p>
+<p><a href="./1-Lessons/Lesson12"> Lesson 11 (4 Mar 2021) </a> Data Modeling: Descriptive Statistics</p>
+<p><a href="./1-Lessons/Lesson13"> Lesson 12 (9 Mar 2021) </a> Data Modeling: Distributions </p>
+<p><a href="./1-Lessons/Lesson14"> Lesson 13 (11 Mar 2021) </a> Data Modeling: Probability Estimation Modeling </p>
+<p><a href="./1-Lessons/Lesson15"> Lesson 14 (16 Mar 2021) </a> Data Modeling: Hypothesis testing: General concept and examples of assessing models. </p>
+<p><a href="./1-Lessons/Lesson16"> Lesson 15 (18 Mar 2021) </a> Data Modeling: Hypothesis testing: Comparing proportions, Type 1 & 2 Errors, p-value. </p>
+<p><a href="./1-Lessons/Lesson17"> Lesson 16 (23 Mar 2021) </a> Data Modeling: Comparing two samples: A/B Testing  </p>
+            
+<p><a href="./1-Lessons/Lesson18"> Lesson 17 (30 Mar 2021) </a> Data Modeling: Interval estimation (aka: confidence intervals)  </p>
 <h2> Data Modeling: The Regression Approach </h2>
-<p><a href="./1-Lessons/Lesson19"> Lesson 19 </a> Data Modeling: Linear Algebra of Equation Fitting </p>
-<p><a href="./1-Lessons/Lesson20"> Lesson 20 </a> Data Modeling: Estimation Modeling by Regression </p>
-<p><a href="./1-Lessons/Lesson21"> Lesson 21 </a> Data Modeling: Regression Performance Metrics  </p>
-<p><a href="./1-Lessons/Lesson22"> Lesson 22 </a> Data Modeling: Logistic Regression (a type of classification)  </p>
+<p><a href="./1-Lessons/Lesson19"> Lesson 18 (1 Apr 2021) </a> Data Modeling: Linear Algebra of Equation Fitting </p>
+<p><a href="./1-Lessons/Lesson20"> Lesson 19 (6 Apr 2021) </a> Data Modeling: Estimation Modeling by Regression </p>
+<p><a href="./1-Lessons/Lesson21"> Lesson 20 (8 Apr 2021) </a> Data Modeling: Regression Performance Metrics  </p>
+<p><a href="./1-Lessons/Lesson22"> Lesson 21 (13 Apr 2021) </a> Data Modeling: Logistic Regression (a type of classification)  </p>
 <h2> Data Modeling: Machine Learning Approach </h2> 
-<p><a href="./1-Lessons/Lesson23"> Lesson 23 </a> Machine Learning: Correlation </p>
-<p><a href="./1-Lessons/Lesson24"> Lesson 24 </a> Machine Learning: Classification;Supervised learning; Nearest neighbor  </p>
-<p><a href="./1-Lessons/Lesson25"> Lesson 25 </a> Machine Learning: Decision Making: Confusion matrix, precision, recall, accuracy, F-score.</p>
-<p><a href="./1-Lessons/Lesson26"> Lesson 26 </a> placeholder </p>  
-<p><a href="./1-Lessons/Lesson27"> Lesson 27 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson28"> Lesson 28 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson29"> Lesson 29 </a> placeholder   </p>
-<p><a href="./1-Lessons/Lesson30"> Lesson 30 </a> placeholder  </p>
-<p><a href="./1-Lessons/Lesson31"> Lesson 31 </a> placeholder  </p>
+<p><a href="./1-Lessons/Lesson23"> Lesson 22 (15 Apr 2021) </a> Machine Learning, Correlation, Training </p>
+<p><a href="./1-Lessons/Lesson24"> Lesson 23 (20 Apr 2021) </a> Classification and Decision Making </p>
+<p><a href="./1-Lessons/Lesson25"> Lesson 24 (22 Apr 2021) </a> K- Nearest Neighbor Classification </p>
+            
+<p><a href="./1-Lessons/Lesson26"> Lesson 25 (29 Apr 2021) </a> Support Vector Machine Clasification </p>  
+<p><a href="./1-Lessons/Lesson27"> Lesson 26 (4 May 2021) </a> Artificial Neural Network Classification </p>
+
+<p><a href="./1-Lessons/"> Lesson Directory </a> FTP-type listing of lessons directory</p>
+            <!--
+<p><a href="./1-Lessons/Lesson28"> Lesson 28 (15 Apr 2021) </a> placeholder  </p>
+<p><a href="./1-Lessons/Lesson29"> Lesson 29 (15 Apr 2021) </a> placeholder   </p>
+<p><a href="./1-Lessons/Lesson30"> Lesson 30 (15 Apr 2021) </a> placeholder  </p>
+<p><a href="./1-Lessons/Lesson31"> Lesson 31 (15 Apr 2021) </a> placeholder  </p>
 <p><a href="./1-Lessons/Lesson32"> Lesson 32 </a> placeholder   </p>
 <p><a href="./1-Lessons/Lesson33"> Lesson 33 </a> placeholder  </p>
 <p><a href="./1-Lessons/Lesson34"> Lesson 34 </a> placeholder </p>
 <p><a href="./1-Lessons/Lesson35"> Lesson 35 </a> placeholder </p>
-<p><a href="./1-Lessons/Lesson36"> Lesson 36 </a> placeholder  </p>
+<p><a href="./1-Lessons/Lesson36"> Lesson 36 </a> placeholder  </p> 
+-->
         </div>
-            
-        <button class="accordion"> Notebook Collection </button>
+
+        <button class="accordion"> Laboratory Notebooks </button>
         <div class="panel">
-<p>This section is a collection of notebooks, categorized by topic.  
+            <p><a href="./8-Labs/Lab0/"> Laboratory 0: Yes, That's how we count in python! </a> </p>
+            <p><a href="./8-Labs/Lab1/"> Laboratory 1: First Steps... </a>  </p>
+            <p><a href="./8-Labs/Lab2/"> Laboratory 2: Structures and Conditions. </a>  </p> 
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p> 
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p> 
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p> 
+            <p><a href="./8-Labs/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./8-Labs/"> Laboratory Directory </a> FTP-type listing of laboratory notebooks </p>
+        </div>
+
+        <button class="accordion"> Homework Notebooks</button>
+        <div class="panel">
+            <p><a href="./2-Homework/ES-1/"> Week 1 Assignment </a> </p>
+            <p><a href="./2-Homework/ES-2/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-3/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-4/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-5/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-6/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-7/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-8/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-9/"> PLACEHOLDER </a> describe   </p>     
+            <p><a href="./2-Homework/ES-10/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-11/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-12/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-13/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-14/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/ES-15/"> PLACEHOLDER </a> describe   </p>
+            <p><a href="./2-Homework/"> Homework Directory </a> FTP-type listing of homeworks   </p>
+            
+        </div>
+
+        <button class="accordion"> Readings </button>
+        <div class="panel">
+
+<p><a href="./3-Readings/"> Reading Collection </a> Local to thi s erver </p>
+            
+<p><a href="https://www.inferentialthinking.com/chapters/intro"> Computational and Inferential Thinking </a> 
+Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) </p>
+</div>    
+    
+        <button class="accordion"> Video Collection </button>
+        <div class="panel">
+<p><a href="#"> Site Tour </a> A tour of this website </p>
+<!-- <p><a href="#"> SharePYTHON Tour </a> A tour of the SharePYTHON site where you can run the notebooks yourself! </p> -->
+<p><a href="https://youtu.be/y26RCKWlv7M"> Install Anaconda macOS </a> 
+    Video showing install onto a bare-iron Catalina implementation. (Recorded 19 June 2020)  </p>
+<p><a href="#"> Install Anaconda win10  </a> Video showing install onto a Windows 10 Build XXXX implementation  </p>
+<!-- <p><a href="http://atomickitty.net:6087/vnc.html?host=atomickitty.net&port=6087"> SharePYTHON Environment </a> The vnc#007 shared python environment; remember to disconnect before closing the browser!   </p> -->
+<p><a href="#"> PLACEHOLDER </a> describe   </p>
+</div>
+    
+        <button class="accordion"> Development Notebook Collection (Instructor Only) </button>
+        <div class="panel">
+<p>This section is a collection of notebooks under development, categorized by topic.  
     <p>    The directories are organized into single topics.
         
         Within each directory there will be an HTML file, which is the notebook run once through a rendering program to make a static content file -- i.e. what the notebook should look like without errors (syntax errors are suppressed).
         
         The notebook itself is the <em>filename.ipynb</em> file.  There is a <em>.tar</em> file which can be downloaded, extracted, and run on your own instance of JupyterLab on your own machine.The link will take you to the directory where the notebook is housed, somethng like the image below. </p>
-            <img src="./NotebookDirectory.png" style="width:90%">
+            <img src="./NotebookDirectory.png" style="width:40%">
 <p>If you simply want to look at the notebook, rendered as a web page, select the .html file.  Otherwise select and download the .ipynb file.  If there are other files, they are usually needed too.  In complete examples with multiple files required there will be a .zip file which will contain all the depnedencies, download that file, extract and you can run the notebook.</p>
 <h2> Python Programming </h2>
 <p><a href="./9-MyJupyterNotebooks/1-HelloWorld/"> Hello World </a> Classic first program </p>
@@ -136,28 +205,11 @@
 <p><a href="./9-MyJupyterNotebooks/"> Notebook Collection </a> FTP-type directory listing for the Notebook -- For development, and maintenance</p>
 <p><a href="./SpreadsheetsInLecture/"> Excel Spreadsheets </a> Source files for spreadsheets </p>
 </div>
-        <button class="accordion"> Video Collection </button>
-        <div class="panel">
-<p><a href="#"> Site Tour </a> A tour of this website </p>
-<!-- <p><a href="#"> SharePYTHON Tour </a> A tour of the SharePYTHON site where you can run the notebooks yourself! </p> -->
-<p><a href="https://youtu.be/y26RCKWlv7M"> Install Anaconda macOS </a> 
-    Video showing install onto a bare-iron Catalina implementation. (Recorded 19 June 2020)  </p>
-<p><a href="#"> Install Anaconda win10  </a> Video showing install onto a Windows 10 Build XXXX implementation  </p>
-<!-- <p><a href="http://atomickitty.net:6087/vnc.html?host=atomickitty.net&port=6087"> SharePYTHON Environment </a> The vnc#007 shared python environment; remember to disconnect before closing the browser!   </p> -->
-<p><a href="#"> PLACEHOLDER </a> describe   </p>
-</div>
-        <button class="accordion"> Readings </button>
-        <div class="panel">
 
-<p><a href="./3-Readings/"> Reading Collection </a> Local to thi s erver </p>
-            
-<p><a href="https://www.inferentialthinking.com/chapters/intro"> Computational and Inferential Thinking </a> 
-Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) </p>
-</div>
+
 <button class="accordion"> Recent Updates/Maintenance Diary </button>
         <div class="panel">
-            <li> youtube video how to install anaconda macOS uploaded 19 June 2020 </li>
-            <li> youtube video how to install anaconda win10 uploaded 20 June 2020 </li>
+            <li> Migrate to AWS 3.137.182/engr-1330-webroot 12 Jan 2021 </li>
             <li> website public 4 June 2020 (via symlink from www.rtfmps.com) </li>
             <li> website create 23 May 2020 (hosted on atomickitty.ddns.net) </li>
     
