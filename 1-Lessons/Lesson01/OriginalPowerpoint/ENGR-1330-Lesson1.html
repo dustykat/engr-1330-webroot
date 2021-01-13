@@ -14256,16 +14256,36 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Last GitHub Commit Date: 13 January 2021</p>
+<h2 id="Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">Lesson 1 Introduction to Computational Thinking with Data Science:<a class="anchor-link" href="#Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">&#182;</a></h2><ul>
+<li>Computational thinking concepts </li>
+<li>Data science and practices </li>
+<li>JupyterLab (iPython) as a programming environment </li>
+<li>Programming as a problem solving process</li>
+<li>CCMR Approach</li>
+</ul>
+<h3 id="Special-Script-Blocks">Special Script Blocks<a class="anchor-link" href="#Special-Script-Blocks">&#182;</a></h3><p>In the lesson notebooks there will usually be two script blocks, identical to the ones below.</p>
+<ul>
+<li>The first block identifies the particular computer, the user, and the python kernel in use.</li>
+<li>The second block sets markdown tables to left edge when rendering.</li>
+</ul>
+<p>I usually put both blocks at the top of the notebook, just after some kind of title block, as done here.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">!</span> hostname
 <span class="o">!</span> whoami
+<span class="o">!</span> pwd
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
@@ -14288,8 +14308,9 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>atomickitty
+<pre>ip-172-26-4-2
 compthink
+/home/compthink/engr-1330-webroot/1-Lessons/Lesson01/OriginalPowerpoint
 /opt/jupyterhub/bin/python3
 3.8.5 (default, Jul 28 2020, 12:59:40) 
 [GCC 9.3.0]
@@ -14305,10 +14326,11 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
+<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
 <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
   <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -14332,6 +14354,7 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<!-- Script Block to set tables to left alignment -->
 <style>
   table {margin-left: 0 !important;}
 </style>
@@ -14344,32 +14367,6 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><h2 id="Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">Lesson 1 Introduction to Computational Thinking with Data Science:<a class="anchor-link" href="#Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">&#182;</a></h2><ul>
-<li>Computational thinking concepts </li>
-<li>Data science and practices </li>
-<li>JupyterLab (iPython) as a programming environment </li>
-<li>Programming as a problem solving process</li>
-<li>CCMR Approach</li>
-</ul>
-
-</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14439,6 +14436,20 @@ In computing, we abstract notions beyond the physical dimensions of time and spa
 </table>
 <h4 id="Algorithms">Algorithms<a class="anchor-link" href="#Algorithms">&#182;</a></h4><p>Step-by-step instructions of how to solve a problem (<a href="https://en.wikipedia.org/wiki/Algorithm">https://en.wikipedia.org/wiki/Algorithm</a>). 
 Identifies what is to be done, and the order in which they should be done.</p>
+<p><img src="algorithm.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Image from <a href="https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab">https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab</a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>An algorithm is a <strong>finite</strong> sequence of defined, instructions, typically to solve a class of problems or to perform a computation. Algorithms are unambiguous and are used as specifications for performing calculations, data processing, automated reasoning, and other tasks. Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, proceeds through a finite number of defined successive states, eventually producing "output" and terminating at a final ending state. The transition from one state to the next is not necessarily deterministic; some algorithms, known as randomized algorithms, can incorporate random input.</p>
 <h4 id="System-Integration-(implementation)">System Integration (implementation)<a class="anchor-link" href="#System-Integration-(implementation)">&#182;</a></h4><p>System integration is the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a program which is the realization of an algorithm using a syntax that the computer can understand.</p>
 
@@ -14507,7 +14518,7 @@ Identifies what is to be done, and the order in which they should be done.</p>
 <table>
 <thead><tr>
 <th></th>
-<th>Interpreted Program (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th>Interpreted Program. Image from (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
 <th></th>
 </tr>
 </thead>
@@ -14522,7 +14533,7 @@ Identifies what is to be done, and the order in which they should be done.</p>
 <table>
 <thead><tr>
 <th></th>
-<th>Compiled Prorgam (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th>Compiled Prorgam. Image from: (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
 <th></th>
 </tr>
 </thead>
@@ -14644,7 +14655,7 @@ $$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
@@ -14691,7 +14702,7 @@ $$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
@@ -14738,7 +14749,7 @@ $$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
@@ -14791,7 +14802,7 @@ $$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">inputlist</span><span class="p">):</span>
@@ -14818,7 +14829,7 @@ $$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
