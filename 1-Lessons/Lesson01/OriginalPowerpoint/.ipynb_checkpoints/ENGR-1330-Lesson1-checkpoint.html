@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-2021-1-Syllabus</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>ENGR-1330-Lesson1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14256,7 +14256,26 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Last GitHub Commit Date: 13 January 2021</p>
+<h2 id="Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">Lesson 1 Introduction to Computational Thinking with Data Science:<a class="anchor-link" href="#Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">&#182;</a></h2><ul>
+<li>Computational thinking concepts </li>
+<li>Data science and practices </li>
+<li>JupyterLab (iPython) as a programming environment </li>
+<li>Programming as a problem solving process</li>
+<li>CCMR Approach</li>
+</ul>
+<h3 id="Special-Script-Blocks">Special Script Blocks<a class="anchor-link" href="#Special-Script-Blocks">&#182;</a></h3><p>In the lesson notebooks there will usually be two script blocks, identical to the ones below.</p>
+<ul>
+<li>The first block identifies the particular computer, the user, and the python kernel in use.</li>
+<li>The second block sets markdown tables to left edge when rendering.</li>
+</ul>
+<p>I usually put both blocks at the top of the notebook, just after some kind of title block, as done here.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
@@ -14266,10 +14285,10 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">!</span> hostname
 <span class="o">!</span> whoami
+<span class="o">!</span> pwd
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
-<span class="c1"># Script block to left align Markdown Tables</span>
 </pre></div>
 
      </div>
@@ -14289,8 +14308,9 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>atomickitty
+<pre>ip-172-26-4-2
 compthink
+/home/compthink/engr-1330-webroot/1-Lessons/Lesson01/OriginalPowerpoint
 /opt/jupyterhub/bin/python3
 3.8.5 (default, Jul 28 2020, 12:59:40) 
 [GCC 9.3.0]
@@ -14310,6 +14330,7 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
+<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
 <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
   <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -14333,6 +14354,7 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<!-- Script Block to set tables to left alignment -->
 <style>
   table {margin-left: 0 !important;}
 </style>
@@ -14348,492 +14370,301 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Description:">Course Description:<a class="anchor-link" href="#Course-Description:">&#182;</a></h2><p>Introducion to Python programming, its relevant modules and libraries, and computational thinking for solving problems in Data Science. Data science approaches for importing, manipulating, and analyzing data.  Modeling and visualizing real-world data sets in various science and engineering disciplines.</p>
-<p>3 credit hours comprising of lectures and hands-on lab sessions.</p>
-<p>This course provides a hands-on learning experience in programming and data science using iPython and JupyterLab. iPython is the interactive python kernel implemented in JupyterLab.</p>
-<h2 id="Prerequisites:">Prerequisites:<a class="anchor-link" href="#Prerequisites:">&#182;</a></h2><p>Prior programming background is NOT required.  The course is intended for first-year WCOE students (aka engineering foundational)</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="COVID-19-Important-Guidelines:">COVID-19 Important Guidelines:<a class="anchor-link" href="#COVID-19-Important-Guidelines:">&#182;</a></h2><ul>
-<li><p>If Texas Tech University campus operations are required to change because of health concerns related to the COVID-19 pandemic, it is possible that this course will move to a fully online delivery format.  Should that be necessary, students will be advised of technical and/or equipment requirements, including remote proctoring software.</p>
-</li>
-<li><p>Policy on absences resulting from illness: We anticipate that some students may have extended absences.  To avoid students feeling compelled to attend in-person class periods when having symptoms or feeling unwell, a standard policy is provided that holds students harmless for illness-related absences (see Section A below).</p>
-</li>
-</ul>
-<h3 id="A.-Illness-Based-Absence-Policy-(Face-to-Face-CLasses)">A. Illness-Based Absence Policy (Face-to-Face CLasses)<a class="anchor-link" href="#A.-Illness-Based-Absence-Policy-(Face-to-Face-CLasses)">&#182;</a></h3><p>If at any time during the semester you are ill, in the interest of your own health and safety as well as the health and safety of your instructors and classmates, you are encouraged not to attend face-to-face class meetings or events.  Please review the steps outlined below that you should follow to ensure your absence for illness will be excused.  These steps also apply to not participating in synchronous online class meetings if you feel too ill to do so and missing specified assignment due dates in asynchronous online classes because of illness.</p>
-<ol>
-<li><p>If you are ill and think the symptoms might be COVID-19-related:</p>
-<ol>
-<li>Call Student Health Services at 806.743.2848 or your health care provider.  During after-hours and on weekends, contact TTU COVID-19 Helpline at TBD.</li>
-<li>Self-report as soon as possible using the Dean of Students COVID-19 webpage. This website has specific directions about how to upload documentation from a medical provider and what will happen if your illness renders you unable to participate in classes for more than one week.</li>
-<li>If your illness is determined to be COVID-19-related, all remaining documentation and communication will be handled through the Office of the Dean of Students, including notification of your instructors of the time you may be absent from and may return to classes.</li>
-<li>If your illness is determined not to be COVID-19-related, please follow steps 2.a-d below.</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>If you are ill and can attribute your symptoms to something other than COVID-19:</p>
-<ol>
-<li>If your illness renders you unable to attend face-to-face classes, participate in synchronous online classes, or miss specified assignment due dates in asynchronous online classes, you are encouraged to contact either Student Health Services at 806.743.2848 or your health care provider.  Note that Student Health Services and your own and other health care providers may arrange virtual visits.</li>
-<li>During the health provider visit, request a “return to school” note.</li>
-<li>E-mail the instructor a picture of that note.</li>
-<li>Return to class by the next class period after the date indicated on your note.</li>
-</ol>
-</li>
-</ol>
-<p>Following the steps outlined above helps to keep your instructors informed about your absences and ensures your absence or missing an assignment due date because of illness will be marked excused.  You will still be responsible to complete within a week of returning to class any assignments, quizzes, or exams you miss because of illness.</p>
-<h3 id="B.-Illness-Based-Absence-Policy-(Telepresence-CLasses)">B. Illness-Based Absence Policy (Telepresence CLasses)<a class="anchor-link" href="#B.-Illness-Based-Absence-Policy-(Telepresence-CLasses)">&#182;</a></h3><p>Same as above with respect potential to infect others; go to a health care provider if you are ill.  Telepresence courses are recorded and will be available on TTU MediaSite and/or YouTube (unlisted).  Exercises, Quizzes, and Examinations are all administered by a Learning Management System (Blackboard) and users need to allow enough time to complete and upload their work&gt;</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Sections">Course Sections<a class="anchor-link" href="#Course-Sections">&#182;</a></h2><p>Lesson time, days, and location:</p>
-<ol>
-<li>Section 003; CRN 42882; 0800-0920 T, TH ; Telepresence<ol>
-<li>Lab Section D52; CRN 43065; 0930-1050 T, TH</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li>Section 004; CRN 42884; 0800-0920 T, TH ; Telepresence<ol>
-<li>Lab Section D54; CRN 43067; 0930-1050 T, TH</li>
-</ol>
-</li>
-</ol>
-<h2 id="Course-Instructor:">Course Instructor:<a class="anchor-link" href="#Course-Instructor:">&#182;</a></h2><p>Instructor: Theodore G. Cleveland, Ph.D., P.E., M. ASCE, F. EWRI</p>
-<p>Email: theodore.cleveland@ttu.edu  (put ENGR 1330 in subject line for email related to this class)</p>
-<p>Office location: Telepresence (Zoom; GoToMeeting; etc.)</p>
-<p>Office hours: TBD</p>
-<h2 id="Teaching-assistants:">Teaching assistants:<a class="anchor-link" href="#Teaching-assistants:">&#182;</a></h2><p>Email : TBD</p>
-<p>Office location: Telepresence</p>
-<p>Office hours: TBD</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Textbook:">Textbook:<a class="anchor-link" href="#Textbook:">&#182;</a></h2><p>Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).  Link: <a href="https://www.inferentialthinking.com/chapters/intro">https://www.inferentialthinking.com/chapters/intro</a>.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Contents:">Course Contents:<a class="anchor-link" href="#Course-Contents:">&#182;</a></h2><ul>
-<li>Computational thinking for problem-solving: Logical problem solving, decomposition, pattern recognition, abstraction, representation, algorithm design, and generalization.</li>
-<li>Python Programming: <ol>
-<li>Variables, constants, data types, data structures, strings, math operators</li>
-<li>boolean operators, expressions, program constructs, functions, </li>
-<li>looping, I/O files, modules, and database.</li>
-</ol>
-</li>
-<li>Data science fundamentals:<ol>
-<li>Experimental setup: <ol>
-<li>Importing and formatting data sets, </li>
-<li>Displaying data, </li>
-<li>Data pre-processing.</li>
-</ol>
-</li>
-<li>Introductory statistical analysis with Python: <ol>
-<li>Elementary statistics, randomness, sampling, probability distributions,</li>
-<li>Confidence intervals, hypothesis testing, and A/B testing.</li>
-</ol>
-</li>
-<li>Basic data analysis, visualization, and machine learning: <ol>
-<li>Data pre-processing, </li>
-<li>Supervised/unsupervised learning, </li>
-<li>Performance evaluation metrics.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Learning-Outcomes:">Learning Outcomes:<a class="anchor-link" href="#Learning-Outcomes:">&#182;</a></h2><p>On completion of the course, students will have</p>
+<h2 id="Computational-Thinking-Concepts">Computational Thinking Concepts<a class="anchor-link" href="#Computational-Thinking-Concepts">&#182;</a></h2><p>Computational thinking (CT) refers to the thought processes involved in expressing solutions as computational steps or algorithms that can be carried out by a computer.</p>
+<p>Much of what follows is borrowed from (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/</a>).</p>
+<p>Computational thinking is taking an approach to solving problems, designing systems and understanding human behaviour that draws on concepts fundamental to computing (<a href="http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf</a>).</p>
+<p>Computational thinking is a kind of analytical thinking:</p>
 <ul>
-<li>Created Python programs employing computational thinking concepts to</li>
-<li>Employed Python libraries relevant to data science.</li>
-<li>Downloaded data files from selected public sources and analyzed content.</li>
-<li>Created scripts to perform fundamental data analytics and basic visualization.</li>
+<li>It shares with mathematical thinking in the general ways in which we might approach solving a problem. </li>
+<li>It shares with engineering thinking in the general ways in which we might approach designing and evaluating a large, complex system that operates within the constraints of the real world. - It shares with scientific thinking in the general ways in which we might approach understanding computability, intelligence, the mind and human behaviour.</li>
 </ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ABET-Student-Outcomes">ABET Student Outcomes<a class="anchor-link" href="#ABET-Student-Outcomes">&#182;</a></h2><ul>
-<li>Engineering:<ol>
-<li>An ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.</li>
-<li>An ability to acquire and apply new knowledge as needed, using appropriate learning strategies. </li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>Computer Science:</p>
+<p>The essence of computational thinking is <strong>abstraction</strong> and <strong>automation</strong>. 
+In computing, we abstract notions beyond the physical dimensions of time and space. Our abstractions are extremely general because they are symbolic, where numeric abstractions are just a special case.</p>
+<h3 id="CT-Foundations">CT Foundations<a class="anchor-link" href="#CT-Foundations">&#182;</a></h3><p>CT is literally a process for breaking down a problem into smaller parts, looking for patterns in the problems, identifying what kind of information is needed, developing a step-by-step solution, and implementing that solution.</p>
 <ol>
-<li>Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions.  </li>
-<li>Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline.  </li>
+<li>Decomposition</li>
+<li>Pattern Recognition</li>
+<li>Abstraction</li>
+<li>Algorithms</li>
+<li>System Integration (implementation)</li>
 </ol>
-</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Resources/Tools">Resources/Tools<a class="anchor-link" href="#Resources/Tools">&#182;</a></h2><h3 id="Platforms-for-Python-Programming-(for-your-own-computers)">Platforms for Python Programming (for your own computers)<a class="anchor-link" href="#Platforms-for-Python-Programming-(for-your-own-computers)">&#182;</a></h3><ol>
-<li><p>Anaconda platform (<a href="https://www.anaconda.com/">https://www.anaconda.com/</a>): Anaconda distribution is an open-source Data Science Distribution Development Platform.  It includes Python 3 with over 1,500 data science packages making it easy to manage libraries and dependencies.  Available in Linux, Windows, and Mac OS X.</p>
-</li>
-<li><p>Jupyter (<a href="https://jupyter.org/">https://jupyter.org/</a>): JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: Configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. <code>note</code> Anaconda for MacOS includes a JupyterLab instance, so a separate install is not required.</p>
-</li>
-</ol>
-<h3 id="Additional-Modules-for-Python-Programming">Additional Modules for Python Programming<a class="anchor-link" href="#Additional-Modules-for-Python-Programming">&#182;</a></h3><ol>
-<li>Math module (<a href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a>): Gives access to the mathematical functions defined by the C standard e.g. factorial, gcd, exponential, logarithm. </li>
-<li>Operator module (<a href="https://docs.python.org/3/library/operator.html">https://docs.python.org/3/library/operator.html</a>): Helps in exporting a set of efficient functions corresponding to the intrinsic operators of Python.  For example, the operator add(x,y) is equivalent to the expression x+y.</li>
-</ol>
-<h3 id="Python-Modules-for-Data-Science">Python Modules for Data Science<a class="anchor-link" href="#Python-Modules-for-Data-Science">&#182;</a></h3><ol>
-<li>Scipy module (<a href="https://www.scipy.org/">https://www.scipy.org/</a>): A Python-based ecosystem of open-source software for mathematics, science, and engineering. Some of the core packages are:<ul>
-<li>Numpy: Provides n-dimensional array package</li>
-<li>Scipy: Fundamental for scientific computing (e.g. linear algorithm, optimization)</li>
-<li>Matplotlib: Visualizations/2D plotting</li>
-<li>IPython: Enhanced interactive console &lt;&lt;= this is the kernel used in JupyterLab</li>
-<li>Pandas: Data structures and data analysis</li>
+<h4 id="Decomposition">Decomposition<a class="anchor-link" href="#Decomposition">&#182;</a></h4><p>Decomposition is the process of taking a complex problem and breaking it into more manageable sub-problems. Examples include:</p>
+<ul>
+<li><p>Writing a paper:</p>
+<ul>
+<li>Introduction </li>
+<li>Body </li>
+<li>Conclusion </li>
 </ul>
 </li>
-<li>Scikit-learn module (<a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>): A library for machine learning in Python. It is a simple and efficient tool for predictive data analysis.  It is built on NumPy, SciPy, and matplotlib modules.</li>
-</ol>
-<h3 id="On-Line-Options">On-Line Options<a class="anchor-link" href="#On-Line-Options">&#182;</a></h3><ul>
-<li>AWS Lightsail Instance (use Windows Server 2000 template; lowest resource provision tier; AWS RDP client, or download and install own RDP client) <ol>
-<li>Then install Anaconda onto the AWS Instance</li>
-</ol>
+<li><p>Wide-viewed (Panorama) image:</p>
+<ul>
+<li>Taking multiple overlapped photos </li>
+<li>Stitch them</li>
+</ul>
 </li>
 </ul>
-<h3 id="Hardware-Requirements">Hardware Requirements<a class="anchor-link" href="#Hardware-Requirements">&#182;</a></h3><ul>
-<li>Minimal, this this syllabus was created using a JupyterLab notebook (as a markdown processor) on a Raspberry Pi 4B, which technically cannot support a JupyterHub, but does.  </li>
-<li>Your current laptop should be fine, or if you only have a chromebook, build an AWS instance.</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Schedule">Course Schedule<a class="anchor-link" href="#Course-Schedule">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Lesson</th>
-<th style="text-align:left">Lab</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><strong>JupyterLab(Python Kernel) and Programming</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">21 Jan 2021</td>
-<td style="text-align:left">Lesson 1 Introduction to Computational Thinking with Data Science: <br> - Computational thinking concepts <br> - Python as a programming environment <br> - Data science and practices <br> - CCMR Approach</td>
-<td style="text-align:left">Computing Environment set up: <br> - Installing Anaconda (Win/MacOS/AWS) <br> – Jupyter notebooks <br> - Simple Examples</td>
-</tr>
-<tr>
-<td style="text-align:left">26Jan2021</td>
-<td style="text-align:left">Lesson 2 Programming Fundamentals:<br> - Data types (int, float, string, bool)<br> - Variables, operators, expressions, basic I/O<br> - String functions and operations</td>
-<td style="text-align:left">Introduction to Python<br> - Data types (e.g. int, float, string, bool)<br> - Expressions</td>
-</tr>
-<tr>
-<td style="text-align:left">28 Jan 2021</td>
-<td style="text-align:left">Lesson 3 Programming Fundamentals:<br> - Data structures: Array, list, tuple, set, dictionary<br> - Conditional statements</td>
-<td style="text-align:left">Introduction to Python<br> - Data structures<br> - Conditional statements</td>
-</tr>
-<tr>
-<td style="text-align:left">2 Feb 2021</td>
-<td style="text-align:left">Lesson 4 Programming Fundamentals:<br> - Loops</td>
-<td style="text-align:left">Introduction to Python<br> - Loops</td>
-</tr>
-<tr>
-<td style="text-align:left">4 Feb 2021</td>
-<td style="text-align:left">Lesson 5 Programming Fundamentals:<br> - Functions<br> - Variable scope</td>
-<td style="text-align:left">Introduction to Python<br> - Functions<br> - Variable scope</td>
-</tr>
-<tr>
-<td style="text-align:left">9 Feb 2021</td>
-<td style="text-align:left">Lesson 6 Programming Fundamentals:<br> - Class and objects <br> - File handling</td>
-<td style="text-align:left">Introduction to Python<br> - Class and objects<br> - File handling</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><strong> Data Science External Modules</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">11 Feb 2021</td>
-<td style="text-align:left">Lesson 7 Data Representation and Operations:<br> Python library: <strong>NumPy</strong><br> - Data representation: Arrays, vectors, matrices <br> - Data operations: Indexing, math functions</td>
-<td style="text-align:left">Exercises on NumPy</td>
-</tr>
-<tr>
-<td style="text-align:left">16 Feb 2021</td>
-<td style="text-align:left">Lesson 8 Data Query and Manipulation: <br> Python Library: <strong>Pandas</strong> <br> - Data frames: <br> - Create, index, summarize statistics <br> - fill and drop values <br> - read/write to file</td>
-<td style="text-align:left">Exercises on Pandas</td>
-</tr>
-<tr>
-<td style="text-align:left">18 Feb 2021</td>
-<td style="text-align:left">Lesson 9 Data Display:<br> Python Libraries: <strong>Matplotlib</strong><br> - Data Display for line charts, bar charts,<br> box plot, scatter plot, and histograms</td>
-<td style="text-align:left">Exercises on data display</td>
-</tr>
-<tr>
-<td style="text-align:left">23 Feb 2021</td>
-<td style="text-align:left">Lesson 10 Data Modeling: <br> -   Establishing causality <br> -  Randomness <br> - Models as Preciction Machines</td>
-<td style="text-align:left">Exercises on causality and simulation</td>
-</tr>
-<tr>
-<td style="text-align:left">25 Feb 2021</td>
-<td style="text-align:left"><strong>Review for Exam-1 </strong>(Lessons 1-9)</td>
-<td style="text-align:left"><strong>Exam-1</strong><br> - LMS administered</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><strong> Data Modeling: Statistical Approaches</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">2 Mar 2021</td>
-<td style="text-align:left">Lesson 11 Randomness and Probabilities: <br> - Sampling <br> - Empirical distributions</td>
-<td style="text-align:left">Exercises on probabilities</td>
-</tr>
-<tr>
-<td style="text-align:left">4 Mar 2021</td>
-<td style="text-align:left">Lesson 12 Descriptive Statistics <br> - Location/Center (mean, median,mode) <br> - Dispersion/Spread (variance, standard deviation) <br> - Asymmetry/Skew (Coefficient of Skewness)</td>
-<td style="text-align:left">Descriptive Statistics</td>
-</tr>
-<tr>
-<td style="text-align:left">9 Mar 2021</td>
-<td style="text-align:left">Lesson 13 Distributions: <br> - Normal, LogNormal <br> - Gamma, Weibull <br> - Extreme Value (Gumbell)</td>
-<td style="text-align:left">Exercises on sampling</td>
-</tr>
-<tr>
-<td style="text-align:left">11 Mar 2021</td>
-<td style="text-align:left">Lesson 14 Probability Estimation Modeling <br> - Ranking, order, plotting position <br> - Distribution Fitting ; Method Of Moments; Maximum Likelihood Estimation</td>
-<td style="text-align:left">Exercises</td>
-</tr>
-<tr>
-<td style="text-align:left">16 Mar 2021</td>
-<td style="text-align:left">Lesson 15 Hypothesis testing: <br> - General concept <br> - Assessing data models.</td>
-<td style="text-align:left">Exercises on hypothesis testing</td>
-</tr>
-<tr>
-<td style="text-align:left">18 Mar 2021</td>
-<td style="text-align:left">Lesson 16 Hypothesis testing: <br> -Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)</td>
-<td style="text-align:left">Exercises on hypothesis testing</td>
-</tr>
-<tr>
-<td style="text-align:left">23 Mar 2021</td>
-<td style="text-align:left">Lesson 17 Comparing two samples: A/B Testing</td>
-<td style="text-align:left">Exercises on A/B testing</td>
-</tr>
-<tr>
-<td style="text-align:left">25 Mar 2021</td>
-<td style="text-align:left"><strong>Review for Exam-2 </strong>(Lessons 10-16)</td>
-<td style="text-align:left"><strong>Exam-2</strong> <br> - LMS administered</td>
-</tr>
-<tr>
-<td style="text-align:left">30 Mar 2021</td>
-<td style="text-align:left">18. Confidence intervals</td>
-<td style="text-align:left">Exercises</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><strong> Data Modeling: Regression (Model Fitting) Approaches</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">1 Apr 2021</td>
-<td style="text-align:left">19. Data Modeling: Regression Approach <br>- Linear algebra of equation fitting</td>
-<td style="text-align:left">Exercises</td>
-</tr>
-<tr>
-<td style="text-align:left">6 Apr 2021</td>
-<td style="text-align:left">20. Estimation Modeling by Regression: <br> - Ordinary least squares (OLS) regression <br>- Weighted least squares <br>- Explanitory variables (features) <br>- Response variable(s)</td>
-<td style="text-align:left">exre</td>
-</tr>
-<tr>
-<td style="text-align:left">8 Apr 2021</td>
-<td style="text-align:left">21. Estimation Modeling by Regression: <br>- Residuals <br>- Performance metrics: Accuracy, error <br>- Inference</td>
-<td style="text-align:left">exercises</td>
-</tr>
-<tr>
-<td style="text-align:left">13 Apr 2021</td>
-<td style="text-align:left">22. Estimation Modeling by Regression: <br> - Logistic Regression (a type of classification)</td>
-<td style="text-align:left">Exercises on sample means</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><strong> Data Modeling: Machine Learning Approaches</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">15 Apr 2021</td>
-<td style="text-align:left">23. Data Modeling : The Machine Learning Approach:<br> - Correlation <br> - Training (a model fitting analog) <br> - Confusion matrix, precision, recall, accuracy, F-score.<br> - Making decisions</td>
-<td style="text-align:left">Final projects selection <br> - Project choices <br> - Delivery schedule</td>
-</tr>
-<tr>
-<td style="text-align:left">20 Apr 2021</td>
-<td style="text-align:left">Lesson 24 Evaluation and Making Decisions: <br> - Confusion matrix, precision, recall, accuracy, F-score.<br> - Making decisions</td>
-<td style="text-align:left">KNN with evaluation</td>
-</tr>
-<tr>
-<td style="text-align:left">22 Apr 2021</td>
-<td style="text-align:left">Lesson 25 Classification: <br> - K Nearest Neighbor (KNN)</td>
-<td style="text-align:left">More KNN Demonstration/Examples</td>
-</tr>
-<tr>
-<td style="text-align:left">27 Apr 2021</td>
-<td style="text-align:left"><strong>Review for Exam-3 </strong>(Lessons 10-25)</td>
-<td style="text-align:left"><strong>Exam 3</strong><br> - LMS administered</td>
-</tr>
-<tr>
-<td style="text-align:left">29 Apr 2021</td>
-<td style="text-align:left">Lesson 26 Classification: <br> - Support Vector Machines (SVM)</td>
-<td style="text-align:left">SVM Demonstration/Examples</td>
-</tr>
-<tr>
-<td style="text-align:left">4 May 2021</td>
-<td style="text-align:left">Lesson 27 Classification: <br> - Artifical Neural Networks (ANN)</td>
-<td style="text-align:left">ANN Demonstration</td>
-</tr>
-<tr>
-<td style="text-align:left">11 May 2021</td>
-<td style="text-align:left"><strong>Final Project Report and Link to Video</strong></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Assessment-and-Grading-Criteria:">Course Assessment and Grading Criteria:<a class="anchor-link" href="#Course-Assessment-and-Grading-Criteria:">&#182;</a></h2><p>There will be three exams and one comprehensive final project for the course.<br>
-In addition, lab notebooks, quizzes, and homework assignments also contribute to the final grade.<br>
-<strong>Late</strong> assignments will not be scored.</p>
-<p>Grades will be based on the following components; weighting is approximate:</p>
+<p>Decomposition often leaves a <strong>framework</strong> of sub-problems that later have to be <strong>assembled (system integration)</strong> to produce a desired solution.</p>
+<h4 id="Pattern-Recognition">Pattern Recognition<a class="anchor-link" href="#Pattern-Recognition">&#182;</a></h4><p>Refers to finding similarities, or shared characteristics of problems.  Allows a complex problem to become easier to solve. Allows use of same solution method for each occurrence of the pattern.</p>
+<p>Pattern recognition allows use of <strong>automation</strong> to process things - its a fundamental drilled shaft of CT.  It also provides a way to use analogs from old problems to address new situations; it also will require <strong>assembly (system integration)</strong> to produce a desired solution.</p>
+<h4 id="Abstraction">Abstraction<a class="anchor-link" href="#Abstraction">&#182;</a></h4><p>Determine important characteristics of the problem and ignore characteristics that are not important. Use these characteristics to create a representation of what we are trying to solve.</p>
+<p>Books in an online bookstore</p>
 <table>
 <thead><tr>
-<th>Assessment Instrument</th>
-<th style="text-align:right">Total points</th>
-<th style="text-align:right">Weight(%)</th>
+<th style="text-align:left">Important</th>
+<th style="text-align:left">NOT important</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Exam-1</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">10</td>
+<td style="text-align:left">title</td>
+<td style="text-align:left">Cover color</td>
 </tr>
 <tr>
-<td>Exam-2</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">10</td>
+<td style="text-align:left">ISBN</td>
+<td style="text-align:left">Author’s hometown</td>
 </tr>
 <tr>
-<td>Exam-3</td>
-<td style="text-align:right">100</td>
-<td style="text-align:right">14</td>
+<td style="text-align:left">Authors</td>
+<td style="text-align:left">...</td>
 </tr>
 <tr>
-<td>Lab Notebooks</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">10</td>
-</tr>
-<tr>
-<td>Quizzes</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">10</td>
-</tr>
-<tr>
-<td>Homework</td>
-<td style="text-align:right">240</td>
-<td style="text-align:right">32</td>
-</tr>
-<tr>
-<td>Final project</td>
-<td style="text-align:right">100</td>
-<td style="text-align:right">14</td>
-</tr>
-<tr>
-<td>Overall total</td>
-<td style="text-align:right">740</td>
-<td style="text-align:right">100</td>
+<td style="text-align:left">...</td>
+<td style="text-align:left">...</td>
 </tr>
 </tbody>
 </table>
-<p>Letter grades will be assigned using the following proportions:</p>
+<h4 id="Algorithms">Algorithms<a class="anchor-link" href="#Algorithms">&#182;</a></h4><p>Step-by-step instructions of how to solve a problem (<a href="https://en.wikipedia.org/wiki/Algorithm">https://en.wikipedia.org/wiki/Algorithm</a>). 
+Identifies what is to be done, and the order in which they should be done.</p>
+<p><img src="algorithm.png" alt=""></p>
 <table>
 <thead><tr>
-<th style="text-align:left">Normalized Score Range</th>
-<th style="text-align:right">Letter Grade</th>
+<th></th>
+<th>Image from <a href="https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab">https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab</a></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">≥ 90</td>
-<td style="text-align:right">A</td>
-</tr>
-<tr>
-<td style="text-align:left">80-89</td>
-<td style="text-align:right">B</td>
-</tr>
-<tr>
-<td style="text-align:left">70-79</td>
-<td style="text-align:right">C</td>
-</tr>
-<tr>
-<td style="text-align:left">55-69</td>
-<td style="text-align:right">D</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt; 55</td>
-<td style="text-align:right">F</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p>An algorithm is a <strong>finite</strong> sequence of defined, instructions, typically to solve a class of problems or to perform a computation. Algorithms are unambiguous and are used as specifications for performing calculations, data processing, automated reasoning, and other tasks. Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, proceeds through a finite number of defined successive states, eventually producing "output" and terminating at a final ending state. The transition from one state to the next is not necessarily deterministic; some algorithms, known as randomized algorithms, can incorporate random input.</p>
+<h4 id="System-Integration-(implementation)">System Integration (implementation)<a class="anchor-link" href="#System-Integration-(implementation)">&#182;</a></h4><p>System integration is the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a program which is the realization of an algorithm using a syntax that the computer can understand.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Classroom-Policy:">Classroom Policy:<a class="anchor-link" href="#Classroom-Policy:">&#182;</a></h2><p>The following activities are not allowed in the classroom: Texting or talking on the cellphone or other electronic devices, and reading non-course related materials.</p>
-<h3 id="Telepresence-(On-line)-Courses">Telepresence (On-line) Courses<a class="anchor-link" href="#Telepresence-(On-line)-Courses">&#182;</a></h3><p>Obviously electronic devices are vital; disrupting the webinar is prohibited, please mute your microphone unless you have a question - consider typing your question into the chat window as well.</p>
+<h2 id="Data-Science-and-Practice">Data Science and Practice<a class="anchor-link" href="#Data-Science-and-Practice">&#182;</a></h2><p>Data science is leveraging existing data sources, to create new ones as needed in order to extract meaningful information and actionable insights through business domain expertise, effective communication and results interpretation. Data science uses relevant statistical techniques, programming languages, software packages and libraries, and data infrastructure; The insights are used to drive business decisions and take actions intended to achieve business goals.</p>
+<p>Why is this important for engineers? Because engineering is a business!</p>
+<p>A list of typical skills (<a href="https://elitedatascience.com/data-science-resources">https://elitedatascience.com/data-science-resources</a>):</p>
+<ul>
+<li>Foundational Skills<ul>
+<li><strong>Programming and Data Manipulation</strong> </li>
+<li><strong>Statistics and Probability</strong></li>
+</ul>
+</li>
+<li>Technical Skills<ul>
+<li>Data Collection</li>
+<li>SQL</li>
+<li><strong>Data Visualization</strong></li>
+<li><strong>Applied Machine Learning</strong></li>
+</ul>
+</li>
+<li>Business Skills<ul>
+<li><strong>Communication</strong></li>
+<li>Creativity and Innovation</li>
+<li>Operations and Strategy</li>
+<li>Business Analytics</li>
+</ul>
+</li>
+<li>Supplementary Skills<ul>
+<li>Natural Language Processing</li>
+<li>Recommendation Systems</li>
+<li><strong>Time Series Analysis</strong></li>
+</ul>
+</li>
+<li>Practice<ul>
+<li><strong>Projects</strong></li>
+<li>Competitions</li>
+<li>Problem Solving Challenges</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ADA-Statement:">ADA Statement:<a class="anchor-link" href="#ADA-Statement:">&#182;</a></h2><p>Any student who, because of a disability, may require special arrangements in order to meet the course requirements should contact the instructor as soon as possible to make necessary arrangements.  Students must present appropriate verification from Student Disability Services during the instructor's office hours.  Please note that instructors are not allowed to provide classroom accommodation to a student until appropriate verification from Student Disability Services has been provided.  For additional information, please contact Student Disability Services 
-office in 335 West Hall or call 806.742.2405.</p>
-<h2 id="Academic-Integrity-Statement:">Academic Integrity Statement:<a class="anchor-link" href="#Academic-Integrity-Statement:">&#182;</a></h2><p>Academic integrity is taking responsibility for one’s own class and/or course work, being individually accountable, and demonstrating intellectual honesty and ethical behavior.  Academic integrity is a personal choice to abide by the standards of intellectual honesty and responsibility.  Because education is a shared effort to achieve learning through the exchange of ideas, students, faculty, and staff have the collective responsibility to build mutual trust and respect.  Ethical behavior and independent thought are essential for the highest level of academic achievement, which then must be measured.  Academic achievement includes scholarship, teaching, and learning, all of which are shared endeavors.  Grades are a device used to quantify the successful accumulation of knowledge through learning.  Adhering to the standards of academic integrity ensures grades are earned honestly.  Academic integrity is the foundation upon which students, faculty, and staff build their educational and professional careers.  [Texas Tech University (“University”) Quality Enhancement Plan, Academic Integrity Task Force, 2010].</p>
-<h2 id="Religious-Holy-Day-Statement:">Religious Holy Day Statement:<a class="anchor-link" href="#Religious-Holy-Day-Statement:">&#182;</a></h2><p>“Religious holy day” means a holy day observed by a religion whose places of worship are exempt from property taxation under Texas Tax Code §11.20.  A student who intends to observe a religious holy day should make that intention known to the instructor prior to the absence.  A student who is absent from classes for the observance of a religious holy day shall be allowed to take an examination or complete an assignment scheduled for that day within a reasonable time after the absence.  A student who is excused may not be penalized for the absence; however, the instructor may respond appropriately if the student fails to complete the assignment satisfactorily.</p>
-<h2 id="Ethical-Conduct-Policy:">Ethical Conduct Policy:<a class="anchor-link" href="#Ethical-Conduct-Policy:">&#182;</a></h2><p>Cheating is prohibited, and the representation of the work of another person as your own will be grounds for receiving a failing grade in the course.</p>
+<h2 id="JupyterLab-(iPython)-Environment">JupyterLab (iPython) Environment<a class="anchor-link" href="#JupyterLab-(iPython)-Environment">&#182;</a></h2><h3 id="The-tools:">The tools:<a class="anchor-link" href="#The-tools:">&#182;</a></h3><p><strong>JupyterLab</strong> (<a href="https://jupyter.org/">https://jupyter.org/</a>) is a web-based interactive development environment for Jupyter notebooks, code, and data.</p>
+<p><strong>Jupyter Notebook</strong> is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data organizing and transformation, numerical simulation, statistical modeling, visualization, machine learning, and other similar types of uses.</p>
+<p><strong>JupyterHub</strong> (<a href="https://github.com/jupyterhub/jupyterhub">https://github.com/jupyterhub/jupyterhub</a>) is a multi-user Hub that spawns, manages, and proxies multiple instances of the single-user Jupyter notebook server.</p>
+<p>All these tools allow use of various coding languages; Python is the choice for ENGR 1330.  Installing JupyterLab on your own computer is relatively straightforward if it is an Intel-based Linux, Macintosh, or Windows machine - simply use Anaconda (<a href="https://www.anaconda.com/">https://www.anaconda.com/</a>) as the installer.</p>
+<p>Installing onto an ARM-based machine is more difficult, but possible (this notebook was created on a Raspberry Pi). With both Apple and Microsoft abandoning Intel you can expect Anaconda builds for aarch64 (ARM) in the future.</p>
+<h3 id="This-course:">This course:<a class="anchor-link" href="#This-course:">&#182;</a></h3><p>You will create and use Jupyter Notebooks that use the <strong>ipython</strong> kernel, the notebook files will look like <code>filename.ipynb</code>; these are ASCII files that the JupyterLab interprets and runs.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h2><p>The programming language we will use is Python (actually iPython). Python is an example of a high-level language; other high-level languages include C, C++, PHP, FORTRAN, ADA, Pascal, Go, Java, etc (there are a lot).</p>
+<p>As you might infer from the name high-level language, there are also low-level languages, sometimes referred to as machine languages or assembly languages. Machine language is the encoding of instructions in binary so that they can be directly executed by the computer. Assembly language uses a slightly easier format to refer to the low level instructions. Loosely speaking, computers can only execute programs written in low-level languages. To be exact, computers can actually only execute programs written in machine language. Thus, programs written in a high-level language (and even those in assembly language) have to be processed before they can run. This extra processing takes some time, which is a small disadvantage of high-level languages. However, the advantages to high-level languages are enormous.</p>
+<p>First, it is much easier to program in a high-level language. Programs written in a high-level language take less time to write, they are shorter and easier to read, and they are more likely to be correct. Second, high-level languages are portable, meaning that they can run on different kinds of computers with few or no modifications. Low-level programs can run on only one kind of computer and have to be rewritten to run on another.</p>
+<p>Due to these advantages, almost all programs are written in high-level languages. Low-level languages are used only for a few specialized applications, and for device drivers.</p>
+<p>Two kinds of programs process high-level languages into low-level languages: interpreters and compilers. An interpreter reads a high-level program and executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.</p>
+<p><img src="interpreter.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Interpreted Program. Image from (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>A compiler reads the program and translates it completely before the program starts running. In this case, the high-level program is called the source code, and the translated program is called the object code or the executable. Once a program is compiled, you can execute it repeatedly without further translation.</p>
+<p><img src="compiler.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Compiled Prorgam. Image from: (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Many modern languages use both processes. They are first compiled into a lower level language, called byte code, and then interpreted by a program called a virtual machine. Python uses both processes, but because of the way programmers interact with it, it is usually considered an interpreted language.</p>
+<p>As a language, python is a formal language that has certain requirements and structure called "syntax."</p>
+<p>Formal languages are languages that are designed by people for specific applications. For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols. Chemists use a formal language to represent the chemical structure of molecules. Programming languages are formal languages that have been designed to express computations.</p>
+<p>Formal languages have strict rules about syntax. For example, 3+3=6 is a syntactically correct mathematical statement, but 3=+6&amp; is not.</p>
+<p>Syntax rules come in two flavors, pertaining to <strong>tokens</strong> and <strong>structure</strong>. <strong>Tokens</strong> are the basic elements of the language, such as words, numbers, and chemical elements. One of the problems with 3=+6&amp; is that &amp; is not a legal token in mathematics (at least as far as we know).</p>
+<p>The second type of syntax rule pertains to the structure of a statement— that is, the way the tokens are arranged. The statement 3=+6&amp; is structurally illegal (in mathematics) because you don’t place a plus sign immediately after an equal sign (of course we will in python!).</p>
+<p>When you read a sentence in English or a statement in a formal language, you have to figure out what the structure of the sentence is; This process is called <strong>parsing</strong>.</p>
+<p>For example, when you hear the sentence, “The other shoe fell”, you understand that the other shoe is the subject and fell is the verb. Once you have parsed a sentence, you can figure out what it means, or the semantics of the sentence. Assuming that you know what a shoe is and what it means to fall, you will understand the general implication of this sentence.</p>
+<h3 id="Good-Resources:">Good Resources:<a class="anchor-link" href="#Good-Resources:">&#182;</a></h3><ul>
+<li>Learn Python the Hard Way (Online Book) (<a href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</li>
+<li>LearnPython.org (Interactive Tutorial) (<a href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</li>
+<li>How to Think Like a Computer Scientist (Interactive Book) (<a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html">https://runestone.academy/runestone/books/published/thinkcspy/index.html</a>) Interactive "CS 101" course taught in Python that really focuses on the art of problem solving. </li>
+<li>How to Learn Python for Data Science, The Self-Starter Way (<a href="https://elitedatascience.com/learn-python-for-data-science">https://elitedatascience.com/learn-python-for-data-science</a>) </li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Programming-as-a-problem-solving-process">Programming as a problem solving process<a class="anchor-link" href="#Programming-as-a-problem-solving-process">&#182;</a></h2><p>The entire point of this course is to develop problem solving skills and begin using some tools (Statistics, Numerical Methods, Data Science, implemented as JupyterLab/Python programs).</p>
+<p>The scientific method (<a href="https://en.wikipedia.org/wiki/Scientific_method">https://en.wikipedia.org/wiki/Scientific_method</a>) is one example of an effective problem solving strategy. Stated as a protocol it goes something like:</p>
+<ol>
+<li>Observation: Formulation of a question</li>
+<li>Hypothesis: A  conjecture that may explain observed behavior. Falsifiable by an experiment whose outcome conflicts with predictions deduced from the hypothesis</li>
+<li>Prediction: How the experiment should conclude if hypothesis is correct </li>
+<li>Testing: Experimental design, and conduct of the experiment.</li>
+<li>Analysis: Interpretation of experimental results</li>
+</ol>
+<p>This protocol can be directly adapted to CT/DS problems as:</p>
+<ol>
+<li>Define the problem (problem statement)</li>
+<li>Gather information (identify known and unknown values, and governing equations)</li>
+<li>Generate and evaluate potential solutions</li>
+<li>Refine and implement a solution</li>
+<li>Verify and test the solution.</li>
+</ol>
+<p>For actual computational methods the protocol becomes:</p>
+<ol>
+<li>Explicitly state the problem</li>
+<li>State:<ul>
+<li>Input information</li>
+<li>Governing equations or principles, and </li>
+<li>The required output information.</li>
+</ul>
+</li>
+<li>Work a sample problem by-hand for testing the general solution.</li>
+<li>Develop a general solution method (coding).</li>
+<li>Test the general solution against the by-hand example, then apply to the real problem.</li>
+</ol>
+<p>Oddly enough the first step is the most important and sometimes the most difficult. In a practical problem, step 2 is sometimes difficult because a skilled programmer is needed to translate the governing principles into an algorithm for the general solution (step 4).</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Example-1-Problem-Solving-Process">Example 1 Problem Solving Process<a class="anchor-link" href="#Example-1-Problem-Solving-Process">&#182;</a></h3><p>Consider a need to compute an arithmetic mean, what would the process look like?</p>
+<p><strong>Step 1.</strong> Develop script to compute the arithmetic mean of a stream of data of unknown length.</p>
+<p><strong>Step 2.</strong></p>
+<ul>
+<li>Inputs: The data stream </li>
+<li>Governing equation: $ \bar x = \frac{1}{N} \sum_{i=1}^{N} x_i $ where $N$ is the number of items in the data stream, and $x_i$ is the value of the i-th element.</li>
+<li>Outputs: The arithmetic mean $\bar x$</li>
+</ul>
+<p><strong>Step 3.</strong> Work a sample problem by-hand for testing the general solution.</p>
+<table>
+<thead><tr>
+<th style="text-align:right">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">23.43</td>
+</tr>
+<tr>
+<td style="text-align:right">37.43</td>
+</tr>
+<tr>
+<td style="text-align:right">34.91</td>
+</tr>
+<tr>
+<td style="text-align:right">28.37</td>
+</tr>
+<tr>
+<td style="text-align:right">30.62</td>
+</tr>
+</tbody>
+</table>
+<p>The arithmetic mean requires us to count how many elements are in the data stream (in this case there are 5) and compute their sum (in this case 154.76), and finally divide the sum by the count and report this result as the arithmetic mean.</p>
+$$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$<p><strong>Step 4.</strong> Develop a general solution (code)</p>
+<p>The by-hand exercise helps identify the required steps in an “algorithm” or recipe to compute mean values. First we essentially capture or read the values then count how many there are (either as we go or as a separate step), then sum the values, then divide the values by the count, and finally report the result.</p>
+<p>In a flow-chart it would look like:</p>
+<p><img src="Lesson1-flowchart.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Flowchart for Artihmetic Mean Algorithm</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 5.</strong> This step we would code the algorithm expressed in the figure and test it with the by-hand data and other small datasets until we are convinced it works correctly.</p>
+<p>In a simple JupyterLab script</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
+<span class="n">xlist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.43</span><span class="p">,</span><span class="mf">37.43</span><span class="p">,</span><span class="mf">34.91</span><span class="p">,</span><span class="mf">28.37</span><span class="p">,</span><span class="mf">30.62</span><span class="p">]</span> <span class="c1"># list is a type of data structure</span>
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,(</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14841,6 +14672,227 @@ office in 335 West Hall or call 806.742.2405.</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.951999999999998
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Step 6.</strong> This step we would refine the code to generalize the algorithm.  In the example we want a way to supply the <code>xlist</code> from a file perhaps, and tidy the output by rounding to only two decimal places - rounding is relatively simple:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
+<span class="n">xlist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.43</span><span class="p">,</span><span class="mf">37.43</span><span class="p">,</span><span class="mf">34.91</span><span class="p">,</span><span class="mf">28.37</span><span class="p">,</span><span class="mf">30.62</span><span class="p">]</span> <span class="c1"># list is a type of data structure</span>
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Reading from a file, is a bit more complicated.  We need to create a connection to the file, then read the contents into our script, then put the contents into the <code>xlist</code></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
+<span class="n">externalfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># create connection to file, set to read (r), file must exist</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">externalfile</span><span class="p">:</span> <span class="c1"># parse each line, append to xlist</span>
+    <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the file connection</span>
+
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Finally, if we want to reuse the code a lot, it is convienent to make it into a function</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">inputlist</span><span class="p">):</span>
+<span class="c1"># inputlist should be a list of values</span>
+    <span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">inputlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Put our file reading and compute mean code here</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
+<span class="n">externalfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># create connection to file, set to read (r), file must exist</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">externalfile</span><span class="p">:</span> <span class="c1"># parse each line, append to xlist</span>
+    <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the file connection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="n">xlist</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So the simple task of computing the mean of a collection of values, is a bit more complex when decomposed that it first appears, but illustrates a five step process (with a refinement step).  Throughout the course this process is always in the background.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="CCMR-Approach">CCMR Approach<a class="anchor-link" href="#CCMR-Approach">&#182;</a></h2><p>A lot of the problems we will encounter from a CT/DS perspective have already been solved, or at least analogs have been solved.  It is perfectly acceptable to use prior work for a new set of conditions as long as proper attribution is made.  We call this process CCMR:</p>
+<ol>
+<li><strong>Copy:</strong> Find a solution to your problem from some online example:  SourceForge, StackOverflow, GeeksForGeeks, DigitalOcean, etc.</li>
+<li><strong>Cite:</strong> Cite the original source.  In general a citation will look like one of the references below, but a URL to the source is sufficient at first.</li>
+<li><strong>Modify:</strong> Modify the original cited work for your specific needs.  Note the changes in the code using comment statements.</li>
+<li><strong>Run:</strong> Apply the modified code to the problem of interest. </li>
+</ol>
+<p>In cases where we use CCMR we are not so much programming and developing our own work as scaffolding parts (<a href="https://en.wikipedia.org/wiki/Scaffold_(programming">https://en.wikipedia.org/wiki/Scaffold_(programming</a>)) - a legitimate and valuable engineering activity.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 1 <a href="https://www.inferentialthinking.com/chapters/01/what-is-data-science.html">https://www.inferentialthinking.com/chapters/01/what-is-data-science.html</a></p>
+
+</div>
 </div>
 </body>
 
