@@ -14259,53 +14259,6 @@ a.anchor-link {
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!</span> hostname
-<span class="o">!</span> whoami
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
-<span class="c1"># Script block to left align Markdown Tables</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>ip-172-26-4-2
-compthink
-/opt/jupyterhub/bin/python3
-3.8.5 (default, Jul 28 2020, 12:59:40) 
-[GCC 9.3.0]
-sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial=0)
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
@@ -14349,7 +14302,6 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<p><strong>Draft 2021-1</strong></p>
 <h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1>
 </div>
 </div>
@@ -14413,11 +14365,11 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </ol>
 <h2 id="Course-Instructor:">Course Instructor:<a class="anchor-link" href="#Course-Instructor:">&#182;</a></h2><p>Instructor: Theodore G. Cleveland, Ph.D., P.E., M. ASCE, F. EWRI</p>
 <p>Email: theodore.cleveland@ttu.edu  (put ENGR 1330 in subject line for email related to this class)</p>
-<p>Office location: Telepresence (<strong>Zoom</strong>; GoToMeeting; etc.)</p>
+<p>Office location: Telepresence (<strong>Zoom</strong>)</p>
 <p>Office hours: 1000-1100 M, 1600-1700 W or by appointment (meetings will be by Zoom call)</p>
 <h2 id="Teaching-Assistant:">Teaching Assistant:<a class="anchor-link" href="#Teaching-Assistant:">&#182;</a></h2><p>Teaching Assistant: Farhang Forghanparast, MSCE</p>
 <p>Email : Farhang.Forghanparast@ttu.edu</p>
-<p>Office location: Telepresence (<strong>Zoom</strong>; GoToMeeting; etc.)</p>
+<p>Office location: Telepresence (<strong>Zoom</strong>)</p>
 <p>Office hours: 0900-1000 M; 1700-1800 W</p>
 
 </div>
@@ -14524,9 +14476,10 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </li>
 </ul>
 <h3 id="Hardware-Requirements">Hardware Requirements<a class="anchor-link" href="#Hardware-Requirements">&#182;</a></h3><ul>
-<li>Minimal, this this syllabus was created using a JupyterLab notebook (as a markdown processor) on a Raspberry Pi 4B, which technically cannot support a JupyterHub, but does.  </li>
+<li>Minimal, in fact this syllabus was created using a JupyterLab notebook (as a markdown processor) on a Raspberry Pi 4B, which technically cannot support a JupyterHub, but does.  </li>
 <li>Your current laptop should be fine, or if you only have a chromebook, build an AWS instance.</li>
 </ul>
+<h3 id="Content-Server">Content Server<a class="anchor-link" href="#Content-Server">&#182;</a></h3><p>Blackboard is used as the learning management system (LMS) for this class, and it uses web links to a content server at <a href="https://3.137.111.182/engr-1330-webroot/">https://3.137.111.182/engr-1330-webroot/</a>  The Blackboard links will generally go directly to a section in the webroot, but feel free to explore by going in the front door!</p>
 
 </div>
 </div>
@@ -14727,8 +14680,10 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Assessment-and-Grading-Criteria:">Course Assessment and Grading Criteria:<a class="anchor-link" href="#Course-Assessment-and-Grading-Criteria:">&#182;</a></h2><p>There will be three exams and one comprehensive final project for the course.</p>
+<hr>
+<h2 id="Course-Assessment-and-Grading-Criteria:">Course Assessment and Grading Criteria:<a class="anchor-link" href="#Course-Assessment-and-Grading-Criteria:">&#182;</a></h2><p>There will be three exams and one comprehensive final project for this course.</p>
 <p>An AI-supervised online community using the Packback Questions (<a href="https://www.packback.co">https://www.packback.co</a>) platform will be used for online discussion about class topics.  The platform is the place to pose questions and answers and share codes and problems.</p>
+<p><strong>Face-to-face sections do not use packback, and use a different scoring distribution</strong></p>
 <p>In addition, lab notebooks, quizzes, and homework assignments also contribute to the final grade.<br>
 <strong>Late</strong> assignments will not be scored.</p>
 <p>Grades will be based on the following components; weighting is approximate:</p>
@@ -14752,16 +14707,12 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 <td style="text-align:right">15</td>
 </tr>
 <tr>
-<td>Lab Notebooks</td>
-<td style="text-align:right">15</td>
+<td>Lab Notebooks &amp; Homework</td>
+<td style="text-align:right">30</td>
 </tr>
 <tr>
 <td>Quizzes</td>
 <td style="text-align:right">10</td>
-</tr>
-<tr>
-<td>Homework</td>
-<td style="text-align:right">15</td>
 </tr>
 <tr>
 <td>Packback</td>
@@ -14812,6 +14763,7 @@ sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
 <h2 id="Packback-Questions-Environment">Packback Questions Environment<a class="anchor-link" href="#Packback-Questions-Environment">&#182;</a></h2><p>Participation is a requirement for this course, and the Packback Questions platform will be used for online discussion about class topics. Packback Questions is an online community where you can be fearlessly curious and ask open-ended questions to build on top of what we are covering in class and relate topics to real-world applications.</p>
 <h3 id="Packback-Requirements:">Packback Requirements:<a class="anchor-link" href="#Packback-Requirements:">&#182;</a></h3><p>Your participation on Packback will count toward 15% of your overall course grade.</p>
 <p>There will be a Weekly Sunday at 10:00PM CST deadline for submissions. In order to receive your points per week, you should submit the following per each deadline period:</p>
@@ -14845,7 +14797,7 @@ If you have any questions or concerns about Packback throughout the semester, pl
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Classroom-Policy:">Classroom Policy:<a class="anchor-link" href="#Classroom-Policy:">&#182;</a></h2><p>The following activities are not allowed in the classroom: Texting or talking on the cellphone or other electronic devices, and reading non-course related materials.</p>
-<h3 id="Telepresence-(On-line)-Courses">Telepresence (On-line) Courses<a class="anchor-link" href="#Telepresence-(On-line)-Courses">&#182;</a></h3><p>Obviously electronic devices are vital; disrupting the conference is prohibited, please mute your microphone unless you have a question - consider typing your question into the chat window as well. Be aware of bandwidth issues and remember most lessons and laboratory sessions are recorded and posted on youtube.  Recording and rendering takes awhile, so expect 24-36 hour delay before video is available.</p>
+<h3 id="Telepresence-(On-line)-Courses">Telepresence (On-line) Courses<a class="anchor-link" href="#Telepresence-(On-line)-Courses">&#182;</a></h3><p>Obviously electronic devices are vital; disrupting the conference is prohibited, please mute your microphone unless you have a question - consider typing your question into the chat window as well. Be aware of bandwidth issues and remember most lessons and laboratory sessions are recorded and posted on youtube.  Recording, editing, and rendering takes awhile, so expect 24-36 hour delay before video is available.</p>
 
 </div>
 </div>
@@ -14857,9 +14809,9 @@ office in 335 West Hall or call 806.742.2405.</p>
 <h2 id="Academic-Integrity-Statement:">Academic Integrity Statement:<a class="anchor-link" href="#Academic-Integrity-Statement:">&#182;</a></h2><p>Academic integrity is taking responsibility for one’s own class and/or course work, being individually accountable, and demonstrating intellectual honesty and ethical behavior.  Academic integrity is a personal choice to abide by the standards of intellectual honesty and responsibility.  Because education is a shared effort to achieve learning through the exchange of ideas, students, faculty, and staff have the collective responsibility to build mutual trust and respect.  Ethical behavior and independent thought are essential for the highest level of academic achievement, which then must be measured.  Academic achievement includes scholarship, teaching, and learning, all of which are shared endeavors.  Grades are a device used to quantify the successful accumulation of knowledge through learning.  Adhering to the standards of academic integrity ensures grades are earned honestly.  Academic integrity is the foundation upon which students, faculty, and staff build their educational and professional careers.  [Texas Tech University (“University”) Quality Enhancement Plan, Academic Integrity Task Force, 2010].</p>
 <h2 id="Religious-Holy-Day-Statement:">Religious Holy Day Statement:<a class="anchor-link" href="#Religious-Holy-Day-Statement:">&#182;</a></h2><p>“Religious holy day” means a holy day observed by a religion whose places of worship are exempt from property taxation under Texas Tax Code §11.20.  A student who intends to observe a religious holy day should make that intention known to the instructor prior to the absence.  A student who is absent from classes for the observance of a religious holy day shall be allowed to take an examination or complete an assignment scheduled for that day within a reasonable time after the absence.  A student who is excused may not be penalized for the absence; however, the instructor may respond appropriately if the student fails to complete the assignment satisfactorily.</p>
 <h2 id="Ethical-Conduct-Policy:">Ethical Conduct Policy:<a class="anchor-link" href="#Ethical-Conduct-Policy:">&#182;</a></h2><p>Cheating is prohibited, and the representation of the work of another person as your own will be grounds for receiving a failing grade in the course.</p>
-<p>DISCRIMINATION, HARASSMENT, AND SEXUAL VIOLENCE STATEMENT:
+<p><strong>DISCRIMINATION, HARASSMENT, AND SEXUAL VIOLENCE STATEMENT:</strong>
 Texas Tech University is committed to providing and strengthening an educational, working, and living environment where students, faculty, staff, and visitors are free from gender and/or sex discrimination of any kind. Sexual assault, discrimination, harassment, and other Title IX violations are not tolerated by the University. Report any incidents to the Office for Student Rights &amp; Resolution, (806)-742-SAFE (7233) or file a report online at titleix.ttu.edu/students. Faculty and staff members at TTU are committed to connecting you to resources on campus. Some of these available resources are: TTU Student Counseling Center, 806- 742-3674, <a href="https://www.depts.ttu.edu/scc/(Provides">https://www.depts.ttu.edu/scc/(Provides</a> confidential support on campus.) TTU 24-hour Crisis Helpline, 806-742-5555, (Assists students who are experiencing a mental health or interpersonal violence crisis. If you call the helpline, you will speak with a mental health counselor.) Voice of Hope Lubbock Rape Crisis Center, 806-763-7273, voiceofhopelubbock.org (24-hour hotline that provides support for survivors of sexual violence.) The Risk, Intervention, Safety and Education (RISE) Office, 806-742-2110,  <a href="https://www.depts.ttu.edu/rise/">https://www.depts.ttu.edu/rise/</a> (Provides a range of resources and support options focused on prevention education and student wellness.) Texas Tech Police Department, 806-742- 3931,<a href="http://www.depts.ttu.edu/ttpd/">http://www.depts.ttu.edu/ttpd/</a> (To report criminal activity that occurs on or near Texas Tech campus.)</p>
-<p>CIVILITY IN THE CLASSROOM STATEMENT:
+<p><strong>CIVILITY IN THE CLASSROOM STATEMENT:</strong>
 Texas Tech University is a community of faculty, students, and staff that enjoys an expectation of cooperation, professionalism, and civility during the conduct of all forms of university business, including the conduct of student–student and student–faculty interactions in and out of the classroom. Further, the classroom is a setting in which an exchange of ideas and creative thinking should be encouraged and where intellectual growth and development are fostered. Students who disrupt this classroom mission by rude, sarcastic, threatening, abusive or obscene language and/or behavior will be subject to appropriate sanctions according to university policy. Likewise, faculty members are expected to maintain the highest standards of professionalism in all interactions with all constituents of the university.
 To ensure that you are fully engaged in class discussions and account team meetings during class time, you are expected to do the following:</p>
 <ul>
@@ -14879,27 +14831,12 @@ Repeated failure to meet expectations (e.g., attendance, participation in class,
 <li>Academic penalty, ranging from a warning to failure of the course.
 (www.depts.ttu.edu/ethics/matadorchallenge/ethicalprinciples.php).</li>
 </ol>
-<p>LGBTQIA SUPPORT STATEMENT*:
+<p><strong>LGBTQIA SUPPORT STATEMENT:</strong>
 I identify as an ally to the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community, and I am available to listen and support you in an affirming manner. I can assist in connecting you with resources on campus to address problems you may face pertaining to sexual orientation and/or gender identity that could interfere with your success at Texas Tech. Please note that additional resources are available through the Office of LGBTQIA within the Center for Campus Life, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433.”</p>
-<p>*If you prefer to list campus resources rather than a statement about ally status, you might include the following among other campus resources you wish to share:</p>
 <p>Office of LGBTQIA, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433
 Within the Center for Campus Life, the Office serves the Texas Tech community through facilitation and leadership of programming and advocacy efforts. This work is aimed at strengthening the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community and sustaining an inclusive campus that welcomes people of all sexual orientations, gender identities, and gender expressions.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
