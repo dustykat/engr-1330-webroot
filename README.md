@@ -14,3 +14,5 @@ The purpose of the repository is to maintain a convienent back-up of course cont
 ## How to Use
 1. Clone the entire repository to /var/www/html/engr-1330-webroot.  Have your main index point to this directory i.e. `http://your-fqdn-server.org/engr-1330-webroot/`
 You can see working example at http://atomickitty.ddns.net/compthink/ (I use a symlink to the engr-1330-webroot)
+
+## Testing push for the samurai!
