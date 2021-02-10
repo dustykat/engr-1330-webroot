@@ -1,4 +1,6 @@
 # LinearSolverPivot.py
+# linearsolver with pivoting adapted from 
+# https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226
 def linearsolver(A,b):
     n = len(A)
     M = A
