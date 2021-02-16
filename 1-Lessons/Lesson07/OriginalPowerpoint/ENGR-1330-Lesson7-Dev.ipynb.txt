@@ -25,7 +25,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+<<<<<<< HEAD
+   "execution_count": 15,
+=======
+   "execution_count": 1,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
@@ -121,7 +125,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+<<<<<<< HEAD
+   "execution_count": 16,
+=======
+   "execution_count": 2,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [],
    "source": [
@@ -193,7 +201,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+<<<<<<< HEAD
+   "execution_count": 17,
+=======
+   "execution_count": 3,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -202,7 +214,11 @@
        "list"
       ]
      },
-     "execution_count": 7,
+<<<<<<< HEAD
+     "execution_count": 17,
+=======
+     "execution_count": 3,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -215,7 +231,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+<<<<<<< HEAD
+   "execution_count": 18,
+=======
+   "execution_count": 4,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -232,7 +252,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+<<<<<<< HEAD
+   "execution_count": 19,
+=======
+   "execution_count": 5,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -241,7 +265,11 @@
        "numpy.ndarray"
       ]
      },
-     "execution_count": 9,
+<<<<<<< HEAD
+     "execution_count": 19,
+=======
+     "execution_count": 5,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -253,7 +281,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+<<<<<<< HEAD
+   "execution_count": 20,
+=======
+   "execution_count": 6,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -270,7 +302,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+<<<<<<< HEAD
+   "execution_count": 21,
+=======
+   "execution_count": 7,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -279,7 +315,11 @@
        "list"
       ]
      },
-     "execution_count": 11,
+<<<<<<< HEAD
+     "execution_count": 21,
+=======
+     "execution_count": 7,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -291,7 +331,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+<<<<<<< HEAD
+   "execution_count": 22,
+=======
+   "execution_count": 8,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -308,7 +352,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+<<<<<<< HEAD
+   "execution_count": 23,
+=======
+   "execution_count": 9,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -317,7 +365,11 @@
        "numpy.ndarray"
       ]
      },
-     "execution_count": 13,
+<<<<<<< HEAD
+     "execution_count": 23,
+=======
+     "execution_count": 9,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -329,7 +381,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+<<<<<<< HEAD
+   "execution_count": 24,
+=======
+   "execution_count": 10,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -348,7 +404,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+<<<<<<< HEAD
+   "execution_count": 25,
+=======
+   "execution_count": 11,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -357,7 +417,11 @@
        "3"
       ]
      },
-     "execution_count": 15,
+<<<<<<< HEAD
+     "execution_count": 25,
+=======
+     "execution_count": 11,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -377,7 +441,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+<<<<<<< HEAD
+   "execution_count": 26,
+=======
+   "execution_count": 12,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -397,7 +465,11 @@
        "       [2008, 2009]])"
       ]
      },
-     "execution_count": 16,
+<<<<<<< HEAD
+     "execution_count": 26,
+=======
+     "execution_count": 12,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -426,7 +498,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+<<<<<<< HEAD
+   "execution_count": 27,
+=======
+   "execution_count": 13,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -452,7 +528,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+<<<<<<< HEAD
+   "execution_count": 28,
+=======
+   "execution_count": 14,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -476,7 +556,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+<<<<<<< HEAD
+   "execution_count": 29,
+=======
+   "execution_count": 15,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -493,7 +577,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+<<<<<<< HEAD
+   "execution_count": 30,
+=======
+   "execution_count": 16,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -517,7 +605,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+<<<<<<< HEAD
+   "execution_count": 31,
+=======
+   "execution_count": 17,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -534,7 +626,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+<<<<<<< HEAD
+   "execution_count": 32,
+=======
+   "execution_count": 18,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -558,7 +654,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+<<<<<<< HEAD
+   "execution_count": 33,
+=======
+   "execution_count": 19,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -575,7 +675,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+<<<<<<< HEAD
+   "execution_count": 34,
+=======
+   "execution_count": 20,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -599,7 +703,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+<<<<<<< HEAD
+   "execution_count": 35,
+=======
+   "execution_count": 21,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
@@ -629,7 +737,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+<<<<<<< HEAD
+   "execution_count": 36,
+=======
+   "execution_count": 22,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -655,7 +767,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+<<<<<<< HEAD
+   "execution_count": 37,
+=======
+   "execution_count": 23,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -680,7 +796,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+<<<<<<< HEAD
+   "execution_count": 38,
+=======
+   "execution_count": 24,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -707,7 +827,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+<<<<<<< HEAD
+   "execution_count": 39,
+=======
+   "execution_count": 25,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -733,7 +857,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+<<<<<<< HEAD
+   "execution_count": 40,
+=======
+   "execution_count": 26,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -761,7 +889,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+<<<<<<< HEAD
+   "execution_count": 41,
+=======
+   "execution_count": 27,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
    "outputs": [
     {
@@ -785,28 +917,29 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 32,
+   "cell_type": "markdown",
    "metadata": {},
-   "outputs": [
-    {
-     "ename": "SyntaxError",
-     "evalue": "invalid syntax (<ipython-input-32-c0553dfdcfd2>, line 1)",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-32-c0553dfdcfd2>\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    - Find the position of the maximum in the multiplication of these two arrays\u001b[0m\n\u001b[0m           ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
-     ]
-    }
-   ],
    "source": [
     "- Find the position of the maximum in the multiplication of these two arrays"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 42,
+=======
+   "execution_count": 28,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n"
+     ]
+    }
+   ],
    "source": [
     "print(np.argmax(MultArray))     ##Step5: Find the postition of the maximum value "
    ]
@@ -821,14 +954,27 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 43,
+=======
+   "execution_count": 29,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "202.5\n",
+      "127.5\n"
+     ]
+    }
+   ],
    "source": [
     "print(np.mean(MultArray))     ##Step6: Find the mean of the multiplication of these two arrays \n",
     "print(np.mean(MultArray[0,:]))     ##Step7: Find the mean of the first row of the multiplication of these two arrays "
@@ -893,14 +1039,30 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 44,
+=======
+   "execution_count": 30,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1.  2.5 3.4 7.  7. ]\n",
+      "[1.  2.5 3.4 7.  7. ]\n",
+      "[ True  True  True  True  True]\n",
+      "[6.  1.4 2.2 7.5 7. ]\n",
+      "[False  True  True False  True]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "Array1 = np.array([1.0,2.5,3.4,7,7])     #Step1: Define Array1\n",
@@ -929,14 +1091,31 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 45,
+=======
+   "execution_count": 31,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 4 40]\n",
+      " [68 72]]\n",
+      "[[ 9 23]\n",
+      " [39 55]]\n",
+      "[[ True False]\n",
+      " [False False]]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "Array1 = np.array([[4,40],[68,72]])     #Step1: Define Array1\n",
@@ -954,9 +1133,7 @@
     "\n",
     "numpy.copy() allows us to create a copy of an array. This method is particularly useful when we need to manipulate an array while keeping an original copy in memory.\n",
     "\n",
-    "The numpy.delete() function returns a new array with sub-arrays along an axis deleted. Let's have a look at the examples.\n",
-    "\n",
-    "![](numpy-manipulation-delete-function-image-a.png)"
+    "The numpy.delete() function returns a new array with sub-arrays along an axis deleted. Let's have a look at the examples."
    ]
   },
   {
@@ -972,9 +1149,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 46,
+=======
+   "execution_count": 32,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "x = np.array([1,2,3])     #Step1: Define x\n",
@@ -990,9 +1179,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 47,
+=======
+   "execution_count": 33,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "y = x                     #Step2: Assign y as y=x\n",
     "print(y)"
@@ -1007,9 +1208,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 48,
+=======
+   "execution_count": 34,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "z = np.copy(x)    #Step3: Define z as a copy of x\n",
     "print(z)"
@@ -1024,9 +1237,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 49,
+=======
+   "execution_count": 35,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x =  [1 2 3]\n",
+      "y =  [1 2 3]\n",
+      "z =  [1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "print('x = ',x)  # They look similar but ...\n",
     "print('y = ',y)\n",
@@ -1042,9 +1269,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 50,
+=======
+   "execution_count": 36,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x =  [100   2   3]\n",
+      "y =  [100   2   3]\n",
+      "z =  [1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "x[0] = 100\n",
     "print('x = ',x)  # For Step4: They look similar but ...\n",
@@ -1061,9 +1302,29 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 51,
+=======
+   "execution_count": 37,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+<<<<<<< HEAD
+      " x object at hex address  0xffff9709f8f0\n",
+      " y object at hex address  0xffff9709f8f0\n",
+      " z object at hex address  0xffff9709f0d0\n"
+=======
+      " x object at hex address  0x7f6be1e66800\n",
+      " y object at hex address  0x7f6be1e66800\n",
+      " z object at hex address  0x7f6be1e6b440\n"
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
+     ]
+    }
+   ],
    "source": [
     "print(' x object at hex address ',hex(id(x)))\n",
     "print(' y object at hex address ',hex(id(y)))\n",
@@ -1079,14 +1340,28 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 52,
+=======
+   "execution_count": 38,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x =  [100   3]\n",
+      "y =  [100   2   3]\n",
+      "z =  [1 2 3]\n"
+     ]
+    }
+   ],
    "source": [
     "x = np.delete(x, 1)      #Step5: Delete the second element of x, remember counting starts at zero\n",
     "print('x = ',x)  # For Step4: They look similar but ...\n",
@@ -1096,9 +1371,29 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 53,
+=======
+   "execution_count": 39,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+<<<<<<< HEAD
+      " x object at hex address  0xffff97041710\n",
+      " y object at hex address  0xffff9709f8f0\n",
+      " z object at hex address  0xffff9709f0d0\n"
+=======
+      " x object at hex address  0x7f6be1e0d9e0\n",
+      " y object at hex address  0x7f6be1e66800\n",
+      " z object at hex address  0x7f6be1e6b440\n"
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
+     ]
+    }
+   ],
    "source": [
     "print(' x object at hex address ',hex(id(x))) # lets check the objects - now they are all different\n",
     "print(' y object at hex address ',hex(id(y)))\n",
@@ -1127,35 +1422,35 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 54,
+=======
+   "execution_count": 40,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['FIFA 2020' 'Red Dead Redemption' 'Fallout' 'GTA' 'NBA 2018'\n",
+      " 'Need For Speed']\n",
+      "['FIFA 2020' 'Fallout' 'GTA' 'NBA 2018' 'Need For Speed'\n",
+      " 'Red Dead Redemption']\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "games = np.array(['FIFA 2020','Red Dead Redemption','Fallout','GTA','NBA 2018','Need For Speed'])\n",
     "print(games)\n",
     "print(np.sort(games))"
    ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
   },
   {
    "cell_type": "markdown",
@@ -1168,14 +1463,42 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 55,
+=======
+   "execution_count": 41,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 17  -6   2]\n",
+      " [ 86 -12   0]\n",
+      " [  0  23  12]]\n",
+      "Along columns : \n",
+      " [[  0 -12   0]\n",
+      " [ 17  -6   2]\n",
+      " [ 86  23  12]]\n",
+      "Along rows : \n",
+      " [[ -6   2  17]\n",
+      " [-12   0  86]\n",
+      " [  0  12  23]]\n",
+      "Sorting by default : \n",
+      " [[ -6   2  17]\n",
+      " [-12   0  86]\n",
+      " [  0  12  23]]\n",
+      "Along None Axis : \n",
+      " [-12  -6   0   0   2  12  17  23  86]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "a = np.array([[17,-6,2],[86,-12,0],[0,23,12]])\n",
@@ -1211,14 +1534,27 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 56,
+=======
+   "execution_count": 42,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 3 5 7 9]\n",
+      "[3 5 7]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "a = np.array([1,3,5,7,9])     #Define the array\n",
@@ -1241,14 +1577,36 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 57,
+=======
+   "execution_count": 43,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {
     "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[['Superman' 'Batman' 'Jim Hammond' 'Captain America' 'Green Arrow']\n",
+      " ['Aquaman' 'Wonder Woman' 'Martian Manhunter' 'Barry Allen' 'Hal Jordan']\n",
+      " ['Hawkman' 'Ray Palmer' 'Spider Man' 'Thor' 'Hank Pym']\n",
+      " ['Solar' 'Iron Man' 'Dr. Strange' 'Daredevil' 'Ted Kord']\n",
+      " ['Captian Marvel' 'Black Panther' 'Wolverine' 'Booster Gold' 'Spawn']]\n",
+      "['Superman' 'Aquaman' 'Hawkman' 'Solar' 'Captian Marvel']\n",
+      "['Hawkman' 'Ray Palmer' 'Spider Man' 'Thor' 'Hank Pym']\n",
+      "Wolverine\n",
+      "[['Wonder Woman' 'Martian Manhunter' 'Barry Allen']\n",
+      " ['Ray Palmer' 'Spider Man' 'Thor']\n",
+      " ['Iron Man' 'Dr. Strange' 'Daredevil']]\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np         #import numpy\n",
     "Superheroes = np.array([['Superman', 'Batman', 'Jim Hammond', 'Captain America', 'Green Arrow'],\n",
@@ -1523,9 +1881,32 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 63,
+=======
+   "execution_count": 44,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.707106781\t1\t0\t0\t0\t0\t0\t0\t0\t1\t0\t0\n",
+      "0.707106781\t0\t0\t0\t0\t0\t0\t0\t0\t0\t1\t0\n",
+      "0\t-1\t0\t0\t0\t1\t0\t0\t0\t0\t0\t0\n",
+      "0\t0\t1\t0\t0\t0\t0\t0\t0\t0\t0\t0\n",
+      "0\t0\t0\t0\t-0.866\t-1\t0\t1\t0\t0\t0\t0\n",
+      "0\t0\t0\t0\t0.5\t0\t1\t0\t0\t0\t0\t0\n",
+      "0\t0\t0\t0\t0\t0\t0\t-1\t-0.707106781\t0\t0\t0\n",
+      "0\t0\t0\t0\t0\t0\t0\t0\t0.707106781\t0\t0\t1\n",
+      "-0.707106781\t0\t0\t1\t0.866\t0\t0\t0\t0\t0\t0\t0\n",
+      "-0.707106781\t0\t-1\t0\t-0.5\t0\t0\t0\t0\t0\t0\t0\n",
+      "0\t0\t0\t-1\t0\t0\t0\t0\t0.707106781\t0\t0\t0\n",
+      "0\t0\t0\t0\t0\t0\t-1\t0\t-0.707106781\t0\t0\t0\n"
+     ]
+    }
+   ],
    "source": [
     "# list contents of the A matrix, uses call to OS host\n",
     "!(cat A.txt)"
@@ -1533,9 +1914,32 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 64,
+=======
+   "execution_count": 45,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.0\n",
+      "0.0\n",
+      "0.0\n",
+      "0.0\n",
+      "0.0\n",
+      "500.0\n",
+      "0.0\n",
+      "0.0\n",
+      "0.0\n",
+      "1000.0\n",
+      "0.0\n",
+      "-500.0\n"
+     ]
+    }
+   ],
    "source": [
     "# list contents of RHS or b vector\n",
     "!(cat B.txt)"
@@ -1550,47 +1954,49 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 68,
+=======
+   "execution_count": 46,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "row ranks same -- continuing operation\n",
+      "[0.707106781, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0] 0.0\n",
+      "[0.707106781, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0] 0.0\n",
+      "[0.0, -1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0\n",
+      "[0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0\n",
+      "[0.0, 0.0, 0.0, 0.0, -0.866, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0] 0.0\n",
+      "[0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0] 500.0\n",
+      "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -0.707106781, 0.0, 0.0, 0.0] 0.0\n",
+      "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.707106781, 0.0, 0.0, 1.0] 0.0\n",
+      "[-0.707106781, 0.0, 0.0, 1.0, 0.866, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0\n",
+      "[-0.707106781, 0.0, -1.0, 0.0, -0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 1000.0\n",
+      "[0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.707106781, 0.0, 0.0, 0.0] 0.0\n",
+      "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, -0.707106781, 0.0, 0.0, 0.0] -500.0\n",
+      "-----------------------------\n",
+      "-1035.2710218174145\n",
+      "732.0471596998927\n",
+      "0.0\n",
+      "-267.9528403001072\n",
+      "-535.9056806002143\n",
+      "732.0471596998927\n",
+      "767.9528403001071\n",
+      "267.95284030010714\n",
+      "-378.94254092877543\n",
+      "0.0\n",
+      "732.0471596998927\n",
+      "267.9528403001072\n",
+      "-----------------------------\n"
+     ]
+    }
+   ],
    "source": [
-    "# LinearSolverPivot.py\n",
-    "# linearsolver with pivoting adapted from \n",
-    "# https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226\n",
-    "\n",
-    "def linearsolver(A,b):\n",
-    "    n = len(A)\n",
-    "    M = A\n",
-    "\n",
-    "    i = 0\n",
-    "    for x in M:\n",
-    "     x.append(b[i])\n",
-    "     i += 1\n",
-    "\n",
-    "    for k in range(n):\n",
-    "     for i in range(k,n):\n",
-    "       if abs(M[i][k]) > abs(M[k][k]):\n",
-    "          M[k], M[i] = M[i],M[k]\n",
-    "       else:\n",
-    "          pass\n",
-    "\n",
-    "     for j in range(k+1,n):\n",
-    "         q = float(M[j][k]) / M[k][k]\n",
-    "         for m in range(k, n+1):\n",
-    "            M[j][m] -=  q * M[k][m]\n",
-    "\n",
-    "    x = [0 for i in range(n)]\n",
-    "\n",
-    "    x[n-1] =float(M[n-1][n])/M[n-1][n-1]\n",
-    "    for i in range (n-1,-1,-1):\n",
-    "      z = 0\n",
-    "      for j in range(i+1,n):\n",
-    "          z = z  + float(M[i][j])*x[j]\n",
-    "      x[i] = float(M[i][n] - z)/M[i][i]\n",
-    "#    print (x)\n",
-    "    return(x)\n",
-    "\n",
-    "#from LinearSolverPivot import linearsolver\n",
+    "from LinearSolverPivot import linearsolver\n",
     "\n",
     "amatrix = [] # null list to store matrix reads\n",
     "bvector = []\n",
@@ -1641,9 +2047,32 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 66,
+=======
+   "execution_count": 47,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-1035.2710218174145\n",
+      "732.0471596998927\n",
+      "0.0\n",
+      "-267.9528403001072\n",
+      "-535.9056806002143\n",
+      "732.0471596998927\n",
+      "767.9528403001071\n",
+      "267.95284030010714\n",
+      "-378.94254092877543\n",
+      "-3.9202487786118276e-14\n",
+      "732.0471596998927\n",
+      "267.95284030010714\n"
+     ]
+    }
+   ],
    "source": [
     "import numpy as np\n",
     "\n",
@@ -1706,9 +2135,30 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+<<<<<<< HEAD
+   "execution_count": 62,
+=======
+   "execution_count": 48,
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+<<<<<<< HEAD
+      "atomickitty\n",
+=======
+      "ip-172-26-4-2\n",
+>>>>>>> 6fdd7ffce84a4dfeadafe491fbbf308228a0241a
+      "compthink\n",
+      "/opt/jupyterhub/bin/python3\n",
+      "3.8.5 (default, Jul 28 2020, 12:59:40) \n",
+      "[GCC 9.3.0]\n",
+      "sys.version_info(major=3, minor=8, micro=5, releaselevel='final', serial=0)\n"
+     ]
+    }
+   ],
    "source": [
     "# Preamble script block to identify host, user, and kernel\n",
     "import sys\n",
@@ -1743,7 +2193,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.5"
+   "version": "3.6.9"
   }
  },
  "nbformat": 4,
