@@ -1,0 +1,42 @@
+City,SO2,Enterprises,Population,Wind speed,Rain days
+Phoenix,10,213,582,60,36
+Little Rock,13,91,132,82,100
+San Francisco,12,453,716,87,67
+Denver,17,454,515,90,86
+Hartford,56,412,158,90,127
+Wilmington,36,80,80,90,114
+Washington,29,434,757,93,111
+Jacksonville,14,136,529,88,116
+Miami,10,207,335,90,128
+Atlanta,24,368,497,91,115
+Chicago,110,3344,3369,104,122
+Indianapolis,28,361,746,97,121
+Des Moines,17,104,201,112,103
+Wichita,8,125,277,127,82
+Louisville,30,291,593,83,123
+New Orleans,9,204,361,84,113
+Baltimore,47,625,905,96,111
+Detroit,35,1064,1513,101,129
+Minn-St. Paul,29,699,744,106,137
+Kansas City,14,381,507,100,99
+St. Louis,56,775,622,95,105
+Omaha,14,181,347,109,98
+Albuquerque,11,46,244,89,58
+Albany,46,44,116,88,135
+Buffalo,11,391,463,124,166
+Cincinnati,23,462,453,71,132
+Cleveland,65,1007,751,109,155
+Columbus,26,266,540,86,134
+Philadelphia,69,1692,1950,96,115
+Pittsburgh,61,347,520,94,147
+Providence,94,343,179,106,125
+Memphis,10,337,624,92,105
+Nashville,18,275,448,79,119
+Dallas,9,641,844,109,78
+Houston,10,721,1233,108,103
+Salt Lake City,28,137,176,87,89
+Norfolk,31,96,308,106,116
+Richmond,26,197,299,76,115
+Seattle,29,379,531,94,164
+Charleston,31,35,71,65,148
+Milwaukee,16,569,717,118,123
