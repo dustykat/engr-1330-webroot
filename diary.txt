@@ -1,0 +1,6 @@
+2021-0312  make 3 remotes, engr-1330-webroot all same contents
+          - 192.168.1.75 (raspberry pi at home)
+          - 54.243.252.9 (AWS http)
+          - 3.137.111.182 (AWS https)
+          
+          
