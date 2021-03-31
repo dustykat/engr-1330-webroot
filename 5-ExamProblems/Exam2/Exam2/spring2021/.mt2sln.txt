@@ -1,0 +1,1018 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<!--Script block to left align Markdown Tables-->\n",
+       "<style>\n",
+       "  table {margin-left: 0 !important;}\n",
+       "</style>\n"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "%%html\n",
+    "<!--Script block to left align Markdown Tables-->\n",
+    "<style>\n",
+    "  table {margin-left: 0 !important;}\n",
+    "</style>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Full name: \n",
+    "## R#: \n",
+    "## HEX: \n",
+    "## Exam 2 Take-Home_{your name}\n",
+    "## Date: "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Problem 1 (1 pts.)\n",
+    "Run the cell below as-is!  If it produces an error, ignore and continue; dont try to fix the error"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "atomickitty\n",
+      "sensei\n",
+      "/opt/jupyterhub/bin/python3\n",
+      "/home/sensei/engr-1330-webroot/5-ExamProblems/Exam2/Exam2/fall2020\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Preamble script block to identify host, user, and kernel\n",
+    "import sys\n",
+    "! hostname\n",
+    "! whoami\n",
+    "print(sys.executable)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Problem 2 (9 pts)\n",
+    "The table below contains some experimental observations.\n",
+    "\n",
+    "|Elapsed Time (s)|Speed (m/s)|\n",
+    "|---:|---:|\n",
+    "|0 |0|\n",
+    "|1.0 |3|\n",
+    "|2.0 |7|\n",
+    "|3.0 |12|\n",
+    "|4.0 |20|\n",
+    "|5.0 |30|\n",
+    "|6.0 | 45.6| \n",
+    "|7.0 | 60.3 |\n",
+    "|8.0 | 77.7 |\n",
+    "|9.0 | 97.3 |\n",
+    "|10.0| 121.1|\n",
+    "\n",
+    "\n",
+    "\n",
+    "1. Plot the speed vs time (speed on y-axis, time on x-axis) using a scatter plot.  Use blue markers. \n",
+    "2. Plot a red line on the scatterplot based on the linear model $f(x) = mx + b$ \n",
+    "3. By trial-and-error find values of $m$ and $b$ that provide a good visual fit (i.e. makes the red line explain the blue markers).\n",
+    "4. Using this data model estimate the speed at $t = 15~\\texttt{sec.}$\n",
+    "\n",
+    "## Deliverables:\n",
+    "\n",
+    "- Working scripts that produce requesite plots\n",
+    "- Narrative (or print blocks) that supply answer questions\n",
+    "- CCMR citations for sources (Lab 14, Lesson 9, ... is OK for using internal sources, URL for outside sources)\n",
+    "\n",
+    "## Hints:\n",
+    "\n",
+    "- A suggested set of code cells is listed below\n",
+    "- Add/remove cells as needed for your solution\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create two observation lists; time  and speed"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create a data model function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create a model speed list - using observation time list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create a point plot of observed time and speed, overlay a line plot of model time and speed"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Report best values m and b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Estimate speed@ t = 15 sec. using fitted model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Problem 2 (15 pts)\n",
+    "Consider the script below, which crudely implements a simulation of Russian Roulette.\n",
+    "How many times can you spin the cylinder and pull the trigger, before you fail?\n",
+    "Play the game 25 times, record the pull count until failure.\n",
+    "\n",
+    "1. Create a list of pulls until failure for each of your 25 attempts\n",
+    "2. Make a histogram of the list.\n",
+    "3. From your list, estimate the mean number of pulls until failure.\n",
+    "4. Plot the estimate as a red dot on the histogram \n",
+    "\n",
+    "In the movie `The Deer Hunter` https://en.wikipedia.org/wiki/The_Deer_Hunter the captured soldiers modify the Russian Roulette Game by using more than a single cartridge.  \n",
+    "\n",
+    "3. Modify the program to the number of cartridges in the movie (3) and play again 25 times, record your pulls to failure\n",
+    "4. Make a second histogram of the `Deer Hunter` version of the game.\n",
+    "5. From your list, estimate the mean number of pulls until failure under the `Deer Hunter` conditions.\n",
+    "4. Plot the estimate as a red dot on the histogram \n",
+    "6. Using the two lists as samples from two populations, determine if the two samples are aproximately normal using appropriate hypothesis tests.\n",
+    "7. Using the two lists as samples from two populations, determine if the two samples appear to be from the same population or not using appropriate hypothesis tests.\n",
+    "\n",
+    "## Deliverables:\n",
+    "\n",
+    "- Working scripts that produce plots\n",
+    "- Narrative (or print blocks) that supply answer questions\n",
+    "- CCMR citations for sources (Lab 14, Lesson 9, ... is OK for using internal sources, URL for outside sources)\n",
+    "\n",
+    "## Hints:\n",
+    "\n",
+    "- A suggested set of code cells is listed below, the first cell is the roulette game, don't break it!\n",
+    "- Add/remove cells as needed for your solution\n",
+    "- You may find it useful to write a wrapper script to have the computer play with itself, but it is not required; it is ok if you play the 25 games manually, write down results, then hand enter them into a list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "THIS IS A RUSSIAN ROULETTE PROGRAM. BEST PLAYED WHILE DRINKING VODKA.\n",
+      "Press Enter to Spin the Cylinder & Test Your Courage\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      " \n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ CLICK! ]\n",
+      "Pulls =  1 Type 'q' to quit\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      " \n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Press Enter to Spin the Cylinder & Test Your Courage\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      " \n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ BANG!!!! ]\n",
+      "[ So long ]\n",
+      "[ Comrade. ]\n",
+      "Pulls =  2\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "#RUSSIAN ROULETTE PROGRAM IN PYTHON:\n",
+    "\n",
+    "import random\n",
+    "print('THIS IS A RUSSIAN ROULETTE PROGRAM. BEST PLAYED WHILE DRINKING VODKA.')\n",
+    "leaveprogram=0\n",
+    "triggerpulls = 0\n",
+    "while leaveprogram != \"q\":\n",
+    "    print(\"Press Enter to Spin the Cylinder & Test Your Courage\")\n",
+    "    input()\n",
+    "    number=random.randint (1, 6)\n",
+    "    if number==1:\n",
+    "        print(\"[ CLICK! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"Pulls = \",triggerpulls, \"Type 'q' to quit\")\n",
+    "        leaveprogram=input()\n",
+    "    if number==2:\n",
+    "        print(\"[ CLICK! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"Pulls = \",triggerpulls, \"Type 'q' to quit\")\n",
+    "        leaveprogram=input()\n",
+    "    if number==3:\n",
+    "        print(\"[ CLICK! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"Pulls = \",triggerpulls, \"Type 'q' to quit\")\n",
+    "        leaveprogram=input()\n",
+    "    if number==4:\n",
+    "        print(\"[ CLICK! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"Pulls = \",triggerpulls, \"Type 'q' to quit\")\n",
+    "        leaveprogram=input()\n",
+    "    if number==5:\n",
+    "        print(\"[ BANG!!!! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"[ So long ]\")\n",
+    "        print(\"[ Comrade. ]\")\n",
+    "        print(\"Pulls = \",triggerpulls)\n",
+    "        leaveprogram='q'\n",
+    "    if number==6:\n",
+    "        print(\"[ CLICK! ]\")\n",
+    "        triggerpulls += 1\n",
+    "        print(\"Pulls = \",triggerpulls, \"Type 'q' to quit\")\n",
+    "        leaveprogram=input()\n",
+    "        \n",
+    "#"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# List of results"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Histogram"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Mean Pulls to Failure"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Put Deer Hunter Version Here"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# List of results"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Histogram"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Mean Pulls to Failure"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Problem 3 (10 points)\n",
+    "The data below are the impact impact strength of packaging materials in foot-pounds of two branded boxes. Produce a histogram of the two series, and determine if there is evidence of a difference in mean strength between the two brands.  Use an appropriate hypothesis test to support your assertion at a level of significance of $\\alpha = 0.10$. \n",
+    "\n",
+    "| Amazon Branded Boxes | Walmart Branded Boxes |\n",
+    "|:---|:---|\n",
+    "| 1.25| 0.89|\n",
+    "| 1.16| 1.01|\n",
+    "| 1.33| 0.97|\n",
+    "| 1.15| 0.95|\n",
+    "| 1.23| 0.94|\n",
+    "| 1.20| 1.02|\n",
+    "| 1.32| 0.98|\n",
+    "| 1.28| 1.06|\n",
+    "| 1.21| 0.98|\n",
+    "| 1.14| 0.94|\n",
+    "| 1.17| 1.02|\n",
+    "| 1.34| 0.98|\n",
+    "\n",
+    "## Deliverables:\n",
+    "\n",
+    "- Working scripts that produce perform the necessary tests\n",
+    "- Narrative (or print blocks) that supply answer questions\n",
+    "- CCMR citations for sources (Lab 14, Lesson 9, ... is OK for using internal sources, URL for outside sources)\n",
+    "\n",
+    "## Hints:\n",
+    "\n",
+    "- A suggested set of code cells is listed below\n",
+    "- Add/remove cells as needed for your solution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# define lists and make into dataframe "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# describe lists/dataframe "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# histograms"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# hypothesis tests are means same? (test for nomrality then t-test if normal; mann-whitney if non-normal)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# interpret findings (could be a markdown cell, or embed into code)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Problem 4 (30 points)\n",
+    "Precipitation records for Lubbock from 1895 to 2019 for the month of October is located at [http://54.243.252.9/engr1330content/engr-1330-webroot/5-ExamProblems/Exam2/Exam2/spring2021/](http://54.243.252.9/engr1330content/engr-1330-webroot/5-ExamProblems/Exam2/Exam2/spring2021/) the filename is `Lubbockdata.csv`\n",
+    "\n",
+    "1. Produce a plot of year vs precipitation.  *[Script + Plot 1: data==blue]*\n",
+    "2. Describe the entire data set. *[Script]*\n",
+    "3. Split the data into two parts at the year 1960.  *[Script]*\n",
+    "4. Describe the two data series you have created. *[Script]*\n",
+    "5. Plot the two series on the same plot. *[Script + Plot 2: data1==blue, data2==green]*\n",
+    "6. Is there evidence of different mean precipitation in the pre-1990 and post-1990 data sets?  Use a hypothesis test to support your assertion. *[Markdown + Script]*\n",
+    "7. Using the entire data set (before the 1960 split) prepare an empirical cumulative distribution plot using the weibull plotting position formula.  *[Script + Plot 3: data==blue]*\n",
+    "8. What is the 50% precipitation exceedence depth? *[Markdown]*\n",
+    "9. What is the 90% precipitation exceedence depth? *[Markdown]*\n",
+    "10. Fit the empirical distribution using a normal distribution data model, plot the model using a red curve.  Assess the fit. *[Script + Plot 4: data==blue, model==red]*\n",
+    "11. Fit the empirical distribution using a gammal distribution data model, plot the model using a red curve.  Assess the fit. *[Script + Plot 5: data==blue, model==red]*\n",
+    "12. Using your preferred model (normal vs. gamma) estimate the 99% precipitation exceedence depth. *[Script + Markdown]*\n",
+    "\n",
+    "## Deliverables:\n",
+    "\n",
+    "- Working scripts that perform the necessary steps listed in the 12 steps above\n",
+    "- Narrative (or print blocks) that supply answer questions\n",
+    "- CCMR citations for sources (Lab 14, Lesson 9, ... is OK for using internal sources, URL for outside sources)\n",
+    "\n",
+    "## Hints:\n",
+    "\n",
+    "- The 12 steps above suggest content and cell type; script cells are for code, Markdown for narrative\n",
+    "- If you wish to use print statements instead of markdown that's fine!\n",
+    "- A suggested set of code cells is listed below\n",
+    "- Add/remove cells as needed for your solution\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# read the file"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# display a few lines"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# plot data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# describe data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# split into two series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# describe each of the split series"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# plot the split series (blue == old) (green == new)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# compare sample means"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# plotting position function OK to copy from lab"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Make a data list for plotting position function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Generate quantile values from pp function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Make a quantile plot OK to copy from lab and modify for this problem"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Visual interpretation (in a Markdown cell )\n",
+    "# 50% is at about ??? inch depth\n",
+    "# 90% is at about ??? inch depth"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# normal distribution data model copy from lesson/lab "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Fitted Model copy from lesson/lab "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Now plot the sample values and plotting position \n",
+    "# Built the plot"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# gamma distribution data model "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Fitted Model copy from lesson/lab "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Now plot the sample values and plotting position \n",
+    "# Built the plot"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Choose best model\n",
+    "# Capture parameters\n",
+    "# Estimate value at quantile = 0.99"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Bonus Problem (5 pts)\n",
+    "Consider the script below, which implements a simulation of Russian Roulette (using an object oriented approach). Run the script to familarize yourself with the output.\n",
+    "\n",
+    "Then to prevent `Farhang` from dying, determine a way to change his outcome, and explain how you save him.  \n",
+    "\n",
+    "Like with the robot speeding ticket you are channeling Kirk's approach to the Kobayashi-Maru exercise https://en.wikipedia.org/wiki/Kobayashi_Maru You can also find the necessary trick from https://en.wikipedia.org/wiki/WarGames "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Dima lives to see another round!\n",
+      "Sergey lives to see another round!\n",
+      "Andrey lives to see another round!\n",
+      "Neko lives to see another round!\n",
+      "Nikita lives to see another round!\n",
+      "Farhang lives to see another round!\n",
+      "Dima died. :(\n",
+      "7 completed.\n"
+     ]
+    }
+   ],
+   "source": [
+    "import random\n",
+    "import itertools\n",
+    "\n",
+    "class RussianRoulette:\n",
+    "\n",
+    "    def __init__(self, players, chambers=6):\n",
+    "        random.shuffle(players)\n",
+    "        self.players = itertools.cycle(players)\n",
+    "        self.chambers = [False for _ in range(chambers)]\n",
+    "        self.current = None\n",
+    "        self.rounds = 0\n",
+    "\n",
+    "    def load(self):\n",
+    "        \"\"\"\n",
+    "        Randomly load a chamber with a bullet.\n",
+    "        \"\"\"\n",
+    "        chamber_to_load = random.randint(0, len(self.chambers)-1)\n",
+    "\n",
+    "        for i, chamber in enumerate(self.chambers):\n",
+    "            if i == chamber_to_load:\n",
+    "              self.chambers[i] = True\n",
+    "\n",
+    "    def next_round(self):\n",
+    "        \"\"\"\n",
+    "        Advance to the next round.\n",
+    "\n",
+    "        Returns:\n",
+    "            the `player` whose turn it is next\n",
+    "        \"\"\"\n",
+    "        self.rounds += 1\n",
+    "        return next(self.players)\n",
+    "\n",
+    "    def spin(self):\n",
+    "        \"\"\"\n",
+    "        Randomly assign a new chamber.\n",
+    "        \"\"\"\n",
+    "        self.current = random.randrange(0, len(self.chambers))\n",
+    "      \n",
+    "    def fire(self, player):\n",
+    "        \"\"\"\n",
+    "        Fires the gun, then advances to the next chamber.\n",
+    "\n",
+    "        The gun will loop back to the first chamber if we were at the \n",
+    "        final chamber in the cyclinder.\n",
+    "\n",
+    "        Returns:\n",
+    "            `None` if no one has died\n",
+    "            `player` if the bullet was in the next chamber\n",
+    "        \"\"\"\n",
+    "        if self.chambers[self.current]:\n",
+    "            return player\n",
+    "        \n",
+    "        self.current = (self.current + 1) % len(self.chambers)\n",
+    "\n",
+    "if __name__ == '__main__':\n",
+    "    players = ['Nikita', 'Dima', 'Sergey', 'Farhang', 'Andrey',  'Neko'] \n",
+    "    game = RussianRoulette(players)\n",
+    "    \n",
+    "    game.load()\n",
+    "    game.spin()\n",
+    "    \n",
+    "    while True:\n",
+    "        player = game.next_round()\n",
+    "        \n",
+    "        choice = random.choice(['spin', 'fire'])\n",
+    "        \n",
+    "        if choice == 'spin':\n",
+    "            game.spin()\n",
+    "            #pass\n",
+    "        \n",
+    "        if game.fire(player):\n",
+    "            print(f'{player} died. :(')\n",
+    "            print(f'{game.rounds} completed.')\n",
+    "            break\n",
+    "        \n",
+    "        print(f'{player} lives to see another round!')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Bonus Problem (10 points): \n",
+    "1. Write a function to find the probability of an event in percentage form based on given outcomes and sample space\n",
+    "     1. Use the function and compute the probability of rolling a number between 12 and 18 (inclusive) with a D20\n",
+    "     2. Use the function and compute the probability of drawing a King of hearts after drawing a card of diamonds from a standard deck of cards (without replacement)\n",
+    "     3. Use the function and compute the probability of drawing a Queen or a King or a 5 of spades."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Bonus Problem (30 points)\n",
+    "Write a script for the Treasure Hunt problem (repeated below). \n",
+    "\n",
+    "\n",
+    "\n",
+    "#### Tresure Hunt Problem\n",
+    "                  +-------------------------+\n",
+    "                  ¦ 34 ¦ 21 ¦ 32 ¦ 41 ¦ 25  ¦\n",
+    "                  +----+----+----+----+-----¦\n",
+    "                  ¦ 14 ¦ 42 ¦ 43 ¦ 14 ¦ 31  ¦\n",
+    "                  +----+----+----+----+-----¦\n",
+    "                  ¦ 54 ¦ 45 ¦ 52 ¦ 42 ¦ 23  ¦\n",
+    "                  +----+----+----+----+-----¦\n",
+    "                  ¦ 33 ¦ 15 ¦ 51 ¦ 31 ¦ 35  ¦\n",
+    "                  +----+----+----+----+-----¦\n",
+    "                  ¦ 21 ¦ 52 ¦ 33 ¦ 13 ¦ 23  ¦\n",
+    "                  +-------------------------+\n",
+    "\n",
+    "Do you like treasure hunts? In this problem you are to write a program to explore the above array for a treasure. The values in the array are clues. Each cell contains an integer between 11 and 55; for each value the ten's digit represents the row number and the unit's digit represents the column number of the cell containing the next clue. Starting in the upper left corner (at 1,1), use the clues to guide your search of the array. (The first three clues are  34, 42, 15). The treasure is a cell whose value is the same as its coordinates. Your program must first read in the treasure map data into a 5 by 5 array. Your program should output the cells it visits during its search, and a message indicating where you found the treasure.\n",
+    "\n",
+    "*The \"Treasure Hunt Problem\" is from the HackerRank.com avaiable at https://www.hackerrank.com/contests/startatastartup/challenges/treasure-hunt*\n",
+    "\n",
+    "Two treasure maps are located at [http://54.243.252.9/engr1330content/engr-1330-webroot/5-ExamProblems/Exam2/Exam2/spring2021/](http://54.243.252.9/engr1330content/engr-1330-webroot/5-ExamProblems/Exam2/Exam2/spring2021/) the filenames are `treasure1.txt` and `treasure2.txt`  Test your program using both maps and capture the output."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 116,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current Position : [ 1 , 1 ] Cell Value : 34\n",
+      "No Treasure Found @ [ 1 , 1 ] move to [ 3 , 4 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 3 , 4 ] Cell Value : 42\n",
+      "No Treasure Found @ [ 3 , 4 ] move to [ 4 , 2 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 4 , 2 ] Cell Value : 15\n",
+      "No Treasure Found @ [ 4 , 2 ] move to [ 1 , 5 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 1 , 5 ] Cell Value : 25\n",
+      "No Treasure Found @ [ 1 , 5 ] move to [ 2 , 5 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 2 , 5 ] Cell Value : 31\n",
+      "No Treasure Found @ [ 2 , 5 ] move to [ 3 , 1 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 3 , 1 ] Cell Value : 54\n",
+      "No Treasure Found @ [ 3 , 1 ] move to [ 5 , 4 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 5 , 4 ] Cell Value : 13\n",
+      "No Treasure Found @ [ 5 , 4 ] move to [ 1 , 3 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 1 , 3 ] Cell Value : 32\n",
+      "No Treasure Found @ [ 1 , 3 ] move to [ 3 , 2 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 3 , 2 ] Cell Value : 45\n",
+      "No Treasure Found @ [ 3 , 2 ] move to [ 4 , 5 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 4 , 5 ] Cell Value : 35\n",
+      "No Treasure Found @ [ 4 , 5 ] move to [ 3 , 5 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 3 , 5 ] Cell Value : 23\n",
+      "No Treasure Found @ [ 3 , 5 ] move to [ 2 , 3 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 2 , 3 ] Cell Value : 43\n",
+      "No Treasure Found @ [ 2 , 3 ] move to [ 4 , 3 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 4 , 3 ] Cell Value : 51\n",
+      "No Treasure Found @ [ 4 , 3 ] move to [ 5 , 1 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 5 , 1 ] Cell Value : 21\n",
+      "No Treasure Found @ [ 5 , 1 ] move to [ 2 , 1 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 2 , 1 ] Cell Value : 14\n",
+      "No Treasure Found @ [ 2 , 1 ] move to [ 1 , 4 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 1 , 4 ] Cell Value : 41\n",
+      "No Treasure Found @ [ 1 , 4 ] move to [ 4 , 1 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 4 , 1 ] Cell Value : 33\n",
+      "No Treasure Found @ [ 4 , 1 ] move to [ 3 , 3 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 3 , 3 ] Cell Value : 52\n",
+      "No Treasure Found @ [ 3 , 3 ] move to [ 5 , 2 ]\n",
+      "+++++++++++++++++++++++++++++++++++++++++\n",
+      "Current Position : [ 5 , 2 ] Cell Value : 52\n",
+      "Treasure Found, Yay! @ 5  2  search over\n"
+     ]
+    }
+   ],
+   "source": [
+    "#%reset\n",
+    "import numpy\n",
+    "import pandas\n",
+    "#treasuremap = numpy.fromfile('treasure2.txt',dtype=int,sep=\"\\t\",count=-1)\n",
+    "treasuremap = pandas.read_csv('treasure1.txt',index_col=0) #read the map\n",
+    "treasuremap.head() # check the read\n",
+    "treasuremap = pandas.DataFrame(treasuremap) # convert to a dataframe\n",
+    "#test ability to access by double subscript\n",
+    "treasuremap.iloc[1,1]\n",
+    "row = 0\n",
+    "col = 1\n",
+    "treasuremap.iloc[row,col]\n",
+    "\n",
+    "def cell_parse(int2):\n",
+    "    cell = str(int2)\n",
+    "    rowval = int(cell[0])\n",
+    "    colval = int(cell[1])\n",
+    "#    print(rowval,colval)\n",
+    "    return rowval,colval\n",
+    "\n",
+    "\n",
+    "# starting conditions\n",
+    "rowval = 0\n",
+    "colval = 0\n",
+    "found = -1 #set found flag\n",
+    "while found <= 0:\n",
+    "#for i in range(11):\n",
+    "    print('Current Position : [',rowval+1,',',colval+1,'] Cell Value :',treasuremap.iloc[rowval,colval])\n",
+    "    newpos = cell_parse(treasuremap.iloc[rowval,colval])\n",
+    "    newrow = newpos[0]\n",
+    "    newcol = newpos[1]\n",
+    "#    print(newrow,rowval)\n",
+    "#    print(newcol,colval)\n",
+    "    if (newrow == rowval+1 and newcol == colval+1):\n",
+    "        print('Treasure Found, Yay! @',rowval+1,'',colval+1,' search over')\n",
+    "        found = 1\n",
+    "    else :\n",
+    "        print('No Treasure Found @ [',rowval+1,',',colval+1,'] move to [',newrow,',',newcol,']')\n",
+    "        print('+++++++++++++++++++++++++++++++++++++++++')\n",
+    "        rowval = int(newrow)-1\n",
+    "        colval = int(newcol)-1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 4\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "('1', '4')"
+      ]
+     },
+     "execution_count": 68,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "cell_parse(treasuremap.iloc[0,1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5"
+      ]
+     },
+     "execution_count": 74,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "newpos[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
