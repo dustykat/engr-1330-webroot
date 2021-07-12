@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>CT-ProgrammingPrinciples-LectureSession</title>
+<title>Lab20_Dev</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13089,7 +13050,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13116,14 +13077,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lecture-session-for-variables,-operators,-expressions,-basic-I/O,-and-string-manipulation">Lecture session for variables, operators, expressions, basic I/O, and string manipulation<a class="anchor-link" href="#Lecture-session-for-variables,-operators,-expressions,-basic-I/O,-and-string-manipulation">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Introduction-to-Python">Introduction to Python<a class="anchor-link" href="#Introduction-to-Python">&#182;</a></h4>
+<h1><font color=darkred>Laboratory 20: "Confidence in Linear Regression" or "The Exclusive Guide to Trial by Combat in Westeros" </font></h1>
+
 </div>
 </div>
 </div>
@@ -13132,10 +13087,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#### Classic first program of Python and many other programming languages</span>
-<span class="c1">#### The text string within the quotes is printed to the output screen</span>
-
-<span class="s2">&quot;Hello World&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13148,120 +13106,17 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt"></div>
 
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello World&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DESKTOP-EH6HD63
+desktop-eh6hd63\farha
+C:\Users\Farha\Anaconda3\python.exe
+3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)]
+sys.version_info(major=3, minor=7, micro=4, releaselevel=&#39;final&#39;, serial=0)
+</pre>
 </div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#The number 2 is printed to the output screen</span>
-
-<span class="mi">2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Adds the numbers 2 and 3</span>
-
-<span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>5</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The &#39;2+3&#39; is treated as a string (i.e. a character) and is printed as such to the output screen</span>
-
-<span class="s1">&#39;2+3&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;2+3&#39;</pre>
-</div>
-
 </div>
 
 </div>
@@ -13271,295 +13126,144 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Defining-variables">Defining variables<a class="anchor-link" href="#Defining-variables">&#182;</a></h4>
+<h2 id="Full-name:">Full name:<a class="anchor-link" href="#Full-name:">&#182;</a></h2><h2 id="R#:">R#:<a class="anchor-link" href="#R#:">&#182;</a></h2><h2 id="Title-of-the-notebook">Title of the notebook<a class="anchor-link" href="#Title-of-the-notebook">&#182;</a></h2><h2 id="Date:">Date:<a class="anchor-link" href="#Date:">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Examples of variable initialization</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">z</span> <span class="o">=</span> <span class="mf">54.3</span>
-<span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;computational thinking&#39;</span>
-<span class="n">bool1</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">bool2</span> <span class="o">=</span> <span class="kc">False</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Looking at the type of the variables initialized</span>
-
-<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>int</pre>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://live.staticflickr.com/4028/4636032975_df7f27eac9_b.jpg" alt=""> <br></p>
 
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Reserved keywords cannot be used as variable names</span>
-
-<span class="k">if</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-7-06cba59a1125&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">3</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    if = 2</span>
-<span class="ansi-white-intense-fg ansi-bold">       ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
-</pre>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Last week, we talked about linear regression ... <br></h2>
+<p><img src="https://miro.medium.com/max/888/1*guak1sQTh5sAf46NMzbQig.jpeg" alt=""> <br></p>
 
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Reserved keywords cannot be used as variable names</span>
-
-<span class="k">break</span> <span class="o">=</span> <span class="mi">25</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-8-2864d5403f4a&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">3</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    break = 25</span>
-<span class="ansi-white-intense-fg ansi-bold">          ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
-</pre>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>What is linear regression?</strong><br>
+  a basic predictive analytics technique that uses historical data to predict an output variable.<br></li>
+<li><strong>Why do we need linear regression?</strong>
+  To explore the relationship between predictor and output variables and predict the output variable based on known values of predictors.  <br>    </li>
+<li><strong>How does linear regression work?</strong>
+  To estimate Y using linear regression, we assume the equation:  𝑌𝑒=β𝑋+α <br>
+  Our goal is to find statistically significant values of the parameters α and β that minimise the difference between Y and Yₑ. If we are able to determine the optimum values of these two parameters, then we will have the line of best fit that we can use to predict the values of Y, given the value of X. <br></li>
+<li><strong>How to estimate the coefficients?</strong>
+  We have used "Ordinary Least Squares (OLS)" and "Maximum Likelihood Estimation (MLE)" methods. We can get formulas for the slope and intercept of the line of best fit from each method. Once we have the equation of the line of best fit, we can use it to fit a line and assess the quality of fit as well as predicting.</li>
+<li><strong>How to assess the fit?</strong>
+  We have used graphs and visual assessments to describe the fits, identify regions with more and less errors, and decide whether the fit is trustworthy or not. </li>
+</ul>
+<p><br> <img src="https://miro.medium.com/max/683/1*h6PuI6-PdPE8d4dTnhcg3w.png" alt=""> <br></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We also use "Goodness-of-Fit (GOF)" metrics to describe the errors and performance of the linear models.</p>
+<ul>
+<li><strong>How confident are we with a prediction?</strong>
+  By definition, the prediction of a linear regression model is an estimate or an approximation and contains some uncertainty. The uncertainty comes from the errors in the model itself and noise in the input data. The model is an approximation of the relationship between the input variables and the output variables. The model error can be decomposed into three sources of error: the variance of the model, the bias of the model, and the variance of the irreducible error (the noise) in the data.</li>
+</ul>
+
+<pre><code>    Error(Model) = Variance(Model) + Bias(Model) + Variance(Irreducible Error)
+
+
+
+</code></pre>
+<h2 id="That-time-in-Westeros...">That time in Westeros...<a class="anchor-link" href="#That-time-in-Westeros...">&#182;</a></h2><p>Before going any further, let's assume that you were arrested by the king's guard as you were minding your business in the streets of King's Landing for the crime of planning for the murder of King Joffrey Baratheon. As much as you hate King Joffrey you had no plans for killing him but no one believes you. In the absence of witnesses or a confession, you demand trial by combat.</p>
+<p><br> <img src="https://www.reactiongifs.com/r/trial-by-combat.gif" alt=""> <br></p>
+<p>But they inform you that the Germanic law to settle accusations is no longer used and it has been replaced with a new method. You get to choose a bowman. That bowman will make 3 shots for you. And if he hits the bullseye you will walk a free man. Otherwise, you will be hanged.</p>
+<p><br> <img src="https://i.imgur.com/kqsurCZ.gif" alt=""> <br></p>
+
+<pre><code>You have two options. The first bowman is Horace. He is known as one of the greatest target archers of all time. He is old though and due to lack of an efficient social security system in Westeros, he has to work as a hired bowman for the high court to earn a living. You ask around and you hear that he still can shoot a bullseye but as his hands shake, he sometimes misses by a lot. The second archer is Daryl. He is also a wellknown archer but unfortunately he has a drinking problem. You have understood that there has been cases that he has shot the bullseye in all of his three shots and there has been cases that he has completely missed the bullseye. The thing about him is that his three shots are always very close together. Now, you get to pick. Between Horace and Daryl, who would you choose to shoot for your freedom?   
+
+</code></pre>
+<ul>
+<li><strong>Bias, Variance, and the bowman dilemma!</strong>
+  We used the example above to give you an initial understanding of bias and variance and their impact on a model's performance. Given this is a complicated and yet important aspect of data modeling and machine learning, without getting into too much detail, we will discuss these concepts. Bias reflects how close the functional form of the model can get to the true relationship between the predictors and the outcome. Variance refers to the amount by which [the model] would change if we estimated it using a different training data set.<br>
+<br> <img src="https://miro.medium.com/max/1670/1*On4Uk9Favg50ylBOak-ECQ@2x.png" alt=""> <br></li>
+</ul>
+<p>Looking at the picture above, Horace was an archer with high variance and low bias, while Daryl had high bias and low variability. In an ideal world, we want low bias and low variance which we cannot have. When there is a high bias error, it results in a very simplistic model that does not consider the variations very well. Since it does not learn the training data very well, it is called Underfitting. When the model has a high variance, it will still consider the noise as something to learn from. That is, the model learns the noise from the training data, hence when confronted with new (testing) data, it is unable to predict accurately based on it. Since in the case of high variance, the model learns too much from the training data, it is called overfitting. To summarise:</p>
+
+<pre><code>- A model with a high bias error underfits data and makes very simplistic assumptions on it
+- A model with a high variance error overfits the data and learns too much from it
+- A good model is where both Bias and Variance errors are balanced. The balance between the Bias error and the Variance error is the Bias-Variance Tradeoff.
+
+The irreducible error is the error that we can not remove with our model, or with any model. The error is caused by elements outside our control, such as statistical noise in the observations. A model with low bias and high variance predicts points that are around the center generally, but pretty far away from each other (Horace). A model with high bias and low variance is pretty far away from the bull’s eye, but since the variance is low, the predicted points are closer to each other (Daryl). Bias and Variance play an important role in deciding which predictive model to use: Something that you will definitly learn more about if you go further in the field of machine learning and predicitve models.
+
+</code></pre>
+<ul>
+<li><p><strong>How can we measure bias and variance?</strong></p>
+<p>There are GOF metrics that can measure the bias and variance of a model: For example the Nash–Sutcliffe model efficiency coefficient and the Kling-Gupta Efficiency (KGE). The Nash–Sutcliffe efficiency is calculated as one minus the ratio of the error variance of the modeled time-series divided by the variance of the observed time-series. In the situation of a perfect model with an estimation error variance equal to zero, the resulting Nash-Sutcliffe Efficiency equals 1 (NSE = 1). KGE provides a diagnostically interesting decomposition of the Nash-Sutcliffe efficiency (and hence MSE), which facilitates the analysis of the relative importance of its different components (correlation, bias and variability).</p>
+</li>
+</ul>
+<p><br></p>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variable names cannot start with a number</span>
-
-<span class="mi">12</span><span class="n">myvariable</span> <span class="o">=</span> <span class="mi">542</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-9-13a174f1f7ad&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">3</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    12myvariable = 542</span>
-<span class="ansi-white-intense-fg ansi-bold">               ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
-</pre>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Example 1: Let's have a look at our old good example of TV, Radio, and Newspaper advertisements and number of sales for a specific product.! <br></h3>
+<h4 id="Let's-say-that-we-are-interested-to-compare-the-performance-of-the-linear-models-that-use-TV-spendings-and-Radio-spendings-as-their-predictor-variables-in-terms-of-accuracy,-bias,-and-variability.">Let's say that we are interested to compare the performance of the linear models that use TV spendings and Radio spendings as their predictor variables in terms of accuracy, bias, and variability.<a class="anchor-link" href="#Let's-say-that-we-are-interested-to-compare-the-performance-of-the-linear-models-that-use-TV-spendings-and-Radio-spendings-as-their-predictor-variables-in-terms-of-accuracy,-bias,-and-variability.">&#182;</a></h4>
 </div>
 </div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Good choice of variables - example-1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
 
-<span class="n">my_variable</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
-<span class="n">my_variable</span>
+<span class="c1"># Import and display first rows of the advertising dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;advertising.csv&#39;</span><span class="p">)</span>
+<span class="n">tv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">])</span>
+<span class="n">radio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Radio&#39;</span><span class="p">])</span>
+<span class="n">newspaper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Newspaper&#39;</span><span class="p">])</span>
+<span class="n">sales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">])</span>
+<span class="c1"># Initialise and fit linear regression model using `statsmodels`</span>
+<span class="c1"># TV Spending as predictor</span>
+<span class="n">model_tv</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Sales ~ TV&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">model_tv</span> <span class="o">=</span> <span class="n">model_tv</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">TV_pred</span> <span class="o">=</span> <span class="n">model_tv</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+<span class="c1"># Radio Spending as predictor</span>
+<span class="n">model_rd</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Sales ~ Radio&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">model_rd</span> <span class="o">=</span> <span class="n">model_rd</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">RD_pred</span> <span class="o">=</span> <span class="n">model_rd</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello World&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Good choice of variables - example-2</span>
-
-<span class="n">salary</span> <span class="o">=</span> <span class="mi">50000</span>
-<span class="n">salary</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>50000</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_variable</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="n">my_variable</span>
-<span class="n">salary</span> <span class="o">=</span> <span class="mi">50000</span>
-<span class="n">salary</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>50000</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use of print() function to output more than one variable in the same cell to the output screen</span>
-
-<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">)</span>
-<span class="n">salary</span> <span class="o">=</span> <span class="mi">50000</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -13576,8 +13280,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>23
-50000
+<pre>RMSE for TV ad spendings as predictor is  3.2423221486546887
+RMSE for Radio ad spendings as predictor is  4.2535159274564185
 </pre>
 </div>
 </div>
@@ -13588,14 +13292,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Efficient use of print() function</span>
-
-<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="n">salary</span> <span class="o">=</span> <span class="mi">50000</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13612,7 +13313,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>23 50000
+<pre>R2 for TV ad spendings as predictor is  0.611875050850071
+R2 for Radio ad spendings as predictor is  0.33203245544529525
 </pre>
 </div>
 </div>
@@ -13621,436 +13323,17 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Arithmetic-operators">Arithmetic operators<a class="anchor-link" href="#Arithmetic-operators">&#182;</a></h4>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Adding two numbers</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">add</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="n">add</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>21</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Subtracting two numbers</span>
-
-<span class="n">subtract</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
-<span class="n">subtract</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Multiplying two numbers</span>
-
-<span class="n">multiply</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-<span class="n">multiply</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>108</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dividing two numbers</span>
-
-<span class="n">divide</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
-<span class="n">divide</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.3333333333333333</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Comparison-operators">Comparison operators<a class="anchor-link" href="#Comparison-operators">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;Equal to&#39; operator </span>
-
-<span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;Not equal to&#39; operator </span>
-
-<span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;Greater than&#39; operator </span>
-
-<span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;Less than&#39; operator </span>
-
-<span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;Greater than or equal to&#39; operator </span>
-
-<span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Logical-operators">Logical operators<a class="anchor-link" href="#Logical-operators">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;and&#39; operator</span>
-
-<span class="n">x</span> <span class="o">&lt;</span> <span class="mi">15</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;or&#39; operator</span>
-
-<span class="n">x</span> <span class="o">&lt;</span> <span class="mi">15</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Basic-I/O-in-Python">Basic I/O in Python<a class="anchor-link" href="#Basic-I/O-in-Python">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># input() function to get the user-defined inputs</span>
-<span class="c1"># The entered number is always interpreted as a string.  You need to convert it to other data types that you might want it to be</span>
-
-<span class="n">my_number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
-<span class="n">my_number</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">pearsonr</span> 
+<span class="n">tv_r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pearson&#39;s r for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pearson&#39;s for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -14067,70 +13350,27 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Please enter a number: 25
+<pre>Pearson&#39;s r for TV ad spendings as predictor is  0.7822244248616065
+Pearson&#39;s for Radio ad spendings as predictor is  0.5762225745710552
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;25&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_number</span><span class="p">)</span>
-<span class="n">my_number</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">hydroeval</span> <span class="k">import</span> <span class="o">*</span>          <span class="c1">#Notice this importing method</span>
+<span class="n">tv_nse</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">nse</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_nse</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">nse</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>25</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic operation within a print() function</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 times my number:&quot;</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">my_number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NSE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_nse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NSE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_nse</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14147,7 +13387,55 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>10 times my number: 250
+<pre>NSE for TV ad spendings as predictor is  [0.61187505]
+NSE for Radio ad spendings as predictor is  [0.33203246]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tv_kge</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">kgeprime</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_kge</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">kgeprime</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KGE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_kge</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KGE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_kge</span><span class="p">)</span>
+<span class="c1">#KGE: Kling-Gupta efficiencies range from -Inf to 1. Essentially, the closer to 1, the more accurate the model is.</span>
+<span class="c1">#r: the Pearson product-moment correlation coefficient. Ideal value is r=1</span>
+<span class="c1">#Gamma: the ratio between the coefficient of variation (CV) of the simulated values to </span>
+       <span class="c1">#the coefficient of variation of the observed ones. Ideal value is Gamma=1</span>
+<span class="c1">#Beta: the ratio between the mean of the simulated values and the mean of the observed ones. Ideal value is Beta=1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>KGE for TV ad spendings as predictor is  [[0.69201883]
+ [0.78222442]
+ [0.78222442]
+ [1.        ]]
+KGE for Radio ad spendings as predictor is  [[0.40068822]
+ [0.57622257]
+ [0.57622257]
+ [1.        ]]
 </pre>
 </div>
 </div>
@@ -14159,19 +13447,110 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Precedence-of-operators">Precedence of operators<a class="anchor-link" href="#Precedence-of-operators">&#182;</a></h4>
+<ul>
+<li><p><strong>How confident are we with our linear regression model?</strong></p>
+<p>The 95% confidence interval for the forecasted values ŷ of x is</p>
+<p><img src="https://i0.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/confidence-interval-regression.png?resize=92%2C20&amp;ssl=1" alt=""></p>
+<p>where</p>
+<p><img src="https://i2.wp.com/www.real-statistics.com/wp-content/uploads/2013/02/image1773.png?w=154&amp;ssl=1" alt=""></p>
+<p>This means that there is a 95% probability that the true linear regression line of the population will lie within the confidence interval of the regression line calculated from the sample data.</p>
+<p><img src="https://i1.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/confidence-prediction-interval.png?w=860&amp;ssl=1" alt=""></p>
+<p>In the graph on the left of Figure 1, a linear regression line is calculated to fit the sample data points. The confidence interval consists of the space between the two curves (dotted lines). Thus there is a 95% probability that the true best-fit line for the population lies within the confidence interval (e.g. any of the lines in the figure on the right above).</p>
+<p>There is also a concept called a prediction interval. Here we look at any specific value of x, x0, and find an interval around the predicted value ŷ0 for x0 such that there is a 95% probability that the real value of y (in the population) corresponding to x0 is within this interval (see the graph on the right side). The 95% prediction interval of the forecasted value ŷ0 for x0 is</p>
+<p><img src="https://i1.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/prediction-interval-regression.png?resize=98%2C20&amp;ssl=1" alt=""></p>
+<p>where the standard error of the prediction is</p>
+<p><img src="https://i0.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/standard-error-prediction.png?resize=186%2C55&amp;ssl=1" alt=""></p>
+<p>For any specific value x0 the prediction interval is more meaningful than the confidence interval.</p>
+<p><img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/Relationship-between-prediction-actual-value-and-prediction-interval.png" alt=""></p>
+<p><br></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Example 2: Let's work on another familier example.  <br></h3>
+<h4 id="We-had-a-table-of-recoded-times-and-speeds-from-some-experimental-observations:">We had a table of recoded times and speeds from some experimental observations:<a class="anchor-link" href="#We-had-a-table-of-recoded-times-and-speeds-from-some-experimental-observations:">&#182;</a></h4><table>
+<thead><tr>
+<th style="text-align:right">Elapsed Time (s)</th>
+<th style="text-align:right">Speed (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">1.0</td>
+<td style="text-align:right">3</td>
+</tr>
+<tr>
+<td style="text-align:right">2.0</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td style="text-align:right">3.0</td>
+<td style="text-align:right">12</td>
+</tr>
+<tr>
+<td style="text-align:right">4.0</td>
+<td style="text-align:right">20</td>
+</tr>
+<tr>
+<td style="text-align:right">5.0</td>
+<td style="text-align:right">30</td>
+</tr>
+<tr>
+<td style="text-align:right">6.0</td>
+<td style="text-align:right">45.6</td>
+</tr>
+<tr>
+<td style="text-align:right">7.0</td>
+<td style="text-align:right">60.3</td>
+</tr>
+<tr>
+<td style="text-align:right">8.0</td>
+<td style="text-align:right">77.7</td>
+</tr>
+<tr>
+<td style="text-align:right">9.0</td>
+<td style="text-align:right">97.3</td>
+</tr>
+<tr>
+<td style="text-align:right">10.0</td>
+<td style="text-align:right">121.1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="This-time-we-want-to-explore-the-confidence-and-prediciton-intervals-for-our-linear-regression-model:">This time we want to explore the confidence and prediciton intervals for our linear regression model:<a class="anchor-link" href="#This-time-we-want-to-explore-the-confidence-and-prediciton-intervals-for-our-linear-regression-model:">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Operator precedence: Example-1 </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">45.6</span><span class="p">,</span> <span class="mf">60.3</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">97.3</span><span class="p">,</span> <span class="mf">121.2</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
 
-<span class="n">expression1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;expression1:&#39;</span><span class="p">,</span> <span class="n">expression1</span><span class="p">)</span>
+<span class="c1">#We already know these parameters from last week but let&#39;s assume that we don&#39;t!</span>
+<span class="c1"># alpha = -16.78636363636364</span>
+<span class="c1"># beta = 11.977272727272727</span>
+<span class="c1">#Our linear model: ypred = alpha + beta * x</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>     <span class="c1">#needed for linear regression</span>
+<span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="k">import</span> <span class="n">wls_prediction_std</span>   <span class="c1">#needed to get prediction interval</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14188,7 +13567,44 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>expression1: 22
+<pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.929
+Model:                            OLS   Adj. R-squared:                  0.922
+Method:                 Least Squares   F-statistic:                     118.6
+Date:                Mon, 05 Apr 2021   Prob (F-statistic):           1.75e-06
+Time:                        16:53:53   Log-Likelihood:                -41.405
+No. Observations:                  11   AIC:                             86.81
+Df Residuals:                       9   BIC:                             87.61
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        -16.7864      6.507     -2.580      0.030     -31.507      -2.066
+x1            11.9773      1.100     10.889      0.000       9.489      14.465
+==============================================================================
+Omnibus:                        1.397   Durbin-Watson:                   0.386
+Prob(Omnibus):                  0.497   Jarque-Bera (JB):                0.993
+Skew:                           0.508   Prob(JB):                        0.609
+Kurtosis:                       1.934   Cond. No.                         11.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[-16.78636364  11.97727273]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\Farha\Anaconda3\lib\site-packages\scipy\stats\stats.py:1450: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=11
+  &#34;anyway, n=%i&#34; % int(n))
 </pre>
 </div>
 </div>
@@ -14199,13 +13615,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Operator precedence: Example-2</span>
-
-<span class="n">expression2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;expression2:&#39;</span><span class="p">,</span> <span class="n">expression2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="c1">#iv_l and iv_u give you the limits of the prediction interval for each point.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iv_l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iv_u</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14222,11 +13637,80 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>expression2: 50
+<pre>[-46.74787932 -33.82587196 -21.09197931  -8.56161668   3.75287435
+  15.84348029  27.70741981  39.34747423  50.77165706  61.99230986
+  73.02484795]
+[ 13.17515205  24.20769014  35.42834294  46.85252577  58.49258019
+  70.35651971  82.44712565  94.76161668 107.29197931 120.02587196
+ 132.94787932]
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="k">import</span> <span class="n">summary_table</span>
+
+<span class="n">st</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ss2</span> <span class="o">=</span> <span class="n">summary_table</span><span class="p">(</span><span class="n">re</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">fittedvalues</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">predict_mean_se</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">predict_mean_ci_low</span><span class="p">,</span> <span class="n">predict_mean_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">predict_ci_low</span><span class="p">,</span> <span class="n">predict_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#plt.plot(x, predict_ci_low, &#39;--&#39;, color=&#39;green&#39;,lw=2) #Lower prediction band</span>
+<span class="c1">#plt.plot(x, predict_ci_upp, &#39;--&#39;, color=&#39;green&#39;,lw=2) #Upper prediction band</span>
+<span class="c1">#plt.plot(x, predict_mean_ci_low,&#39;--&#39;, color=&#39;orange&#39;,  lw=2) #Lower confidence band</span>
+<span class="c1">#plt.plot(x, predict_mean_ci_upp,&#39;--&#39;, color=&#39;orange&#39;, lw=2) #Upper confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -14234,102 +13718,85 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Strings">Strings<a class="anchor-link" href="#Strings">&#182;</a></h4>
+<p><img src="https://media2.giphy.com/media/5nj4ZZWl6QwneEaBX4/source.gif" alt=""> <br></p>
+<p><em>This notebook was inspired by several blogposts including:</em></p>
+<ul>
+<li><strong>"How to Calculate the Bias-Variance Trade-off with Python"</strong> by <strong>Jason Brownlee</strong> available at* <a href="https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/">https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/</a> <br></li>
+<li><strong>"Bias and Variance in Machine Learning – A Fantastic Guide for Beginners!"</strong> by <strong>PURVA HUILGOL</strong> available at* <a href="https://www.analyticsvidhya.com/blog/2020/08/bias-and-variance-tradeoff-machine-learning/">https://www.analyticsvidhya.com/blog/2020/08/bias-and-variance-tradeoff-machine-learning/</a> <br></li>
+<li><strong>"Prediction Intervals for Machine Learning"</strong> by <strong>Jason Brownlee</strong> available at* <a href="https://machinelearningmastery.com/prediction-intervals-for-machine-learning/">https://machinelearningmastery.com/prediction-intervals-for-machine-learning/</a> <br></li>
+<li><strong>"Confidence and prediction intervals for forecasted values"</strong> by <strong>Charles Zaiontz</strong>  available at* <a href="https://www.real-statistics.com/regression/confidence-and-prediction-intervals/">https://www.real-statistics.com/regression/confidence-and-prediction-intervals/</a> <br></li>
+<li><strong>"3.7 OLS Prediction and Prediction Intervals"</strong> available at* <a href="http://web.vu.lt/mif/a.buteikis/wp-content/uploads/PE_Book/3-7-UnivarPredict.html">http://web.vu.lt/mif/a.buteikis/wp-content/uploads/PE_Book/3-7-UnivarPredict.html</a> <br></li>
+<li><strong>"Using python statsmodels for OLS linear regression"</strong> available at* <a href="https://markthegraph.blogspot.com/2015/05/using-python-statsmodels-for-ols-linear.html">https://markthegraph.blogspot.com/2015/05/using-python-statsmodels-for-ols-linear.html</a> <br></li>
+</ul>
+<p><em>Here are some great reads on these topics:</em></p>
+<ul>
+<li><strong>"How to Calculate the Bias-Variance Trade-off with Python"</strong> available at* <a href="https://aidevelopmenthub.com/how-to-calculate-the-bias-variance-trade-off-with-python/">https://aidevelopmenthub.com/how-to-calculate-the-bias-variance-trade-off-with-python/</a> <br></li>
+<li><strong>"Understanding the Bias-Variance Tradeoff"</strong> available at* <a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">http://scott.fortmann-roe.com/docs/BiasVariance.html</a> <br></li>
+<li><strong>"SCIKIT-LEARN : BIAS-VARIANCE TRADEOFF"</strong> available at* <a href="https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Bias-variance-Tradeoff.php">https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Bias-variance-Tradeoff.php</a> <br></li>
+<li><strong>"Linear Regression Confidence Intervals"</strong> available at* <a href="https://rstudio-pubs-static.s3.amazonaws.com/195401_20b3272a8bb04615ae7ee4c81d18ffb5.html">https://rstudio-pubs-static.s3.amazonaws.com/195401_20b3272a8bb04615ae7ee4c81d18ffb5.html</a> <br></li>
+<li><strong>"Prediction Interval: Simple Definition, Examples"</strong> available at* <a href="https://www.statisticshowto.com/prediction-interval/">https://www.statisticshowto.com/prediction-interval/</a> <br></li>
+</ul>
+<p><em>Here are some great videos on these topics:</em></p>
+<ul>
+<li><strong>"Machine Learning Fundamentals: Bias and Variance"</strong> by <strong>StatQuest with Josh Starmer</strong> available at* <a href="https://www.youtube.com/watch?v=EuBBz3bI-aA">https://www.youtube.com/watch?v=EuBBz3bI-aA</a> <br></li>
+<li><strong>"Bias Variance Trade off"</strong> by <strong>The Semicolon</strong> available at* <a href="https://www.youtube.com/watch?v=lpkSGTT8uMg">https://www.youtube.com/watch?v=lpkSGTT8uMg</a> <br></li>
+<li><strong>"Intervals (for the Mean Response and a Single Response) in Simple Linear Regression"</strong> by <strong>jbstatistics</strong> available at* <a href="https://www.youtube.com/watch?v=V-sReSM887I">https://www.youtube.com/watch?v=V-sReSM887I</a> <br></li>
+<li><strong>"Calculate Confidence and prediction intervals for a response in SLR by hand"</strong> by <strong>Katie Ann Jager</strong> available at* <a href="https://www.youtube.com/watch?v=JqObYVX1UP0">https://www.youtube.com/watch?v=JqObYVX1UP0</a> <br></li>
+</ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Adding (i.e. concatenating) two strings</span>
-
-<span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
-<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span>
-
-<span class="n">str3</span> <span class="o">=</span> <span class="n">str1</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">str2</span>
-<span class="n">str3</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello World&#39;</pre>
 </div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p><img src="https://media2.giphy.com/media/dNgK7Ws7y176U/200.gif" alt=""> <br></p>
 
 </div>
 </div>
-
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Exercise: An Ideal Model; Why not? <br></h2>
+<h3 id="Why-do-you-think-we-cannot-achieve-low-bias-and-low-variability-at-the-same-time?">Why do you think we cannot achieve low bias and low variability at the same time?<a class="anchor-link" href="#Why-do-you-think-we-cannot-achieve-low-bias-and-low-variability-at-the-same-time?">&#182;</a></h3><h4 id="Make-sure-to-cite-any-resources-that-you-may-use."><em>Make sure to cite any resources that you may use.</em><a class="anchor-link" href="#Make-sure-to-cite-any-resources-that-you-may-use.">&#182;</a></h4>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># String indexing</span>
-
-<span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Light ray&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-
-
-<span class="c1"># The second index after the colon is not included in slicing: </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[:])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>i
-h
-ght
-Light ray
-Light ray
-Lig
-ht ray
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://www.brainyquote.com/photos_tr/en/r/robindiangelo/931804/robindiangelo1-2x.jpg" alt=""></p>
 
 </div>
 </div>
-
 </div>
     </div>
   </div>
