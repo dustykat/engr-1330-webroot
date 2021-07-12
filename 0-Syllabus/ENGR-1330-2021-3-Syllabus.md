@@ -201,8 +201,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|14Sep21|Functions <br> - Pump Types <br> - Pump Performance Curves <br> - Net Positive Suction Head |ppXX-XX| none|
-|16Sep21|Data Structures using NUMPY <br> - Reservoir Types <br> - Flow Equalization <br> - Pressure Zones |ppXX-XX|ES-4 Application of Head Loss Models|
+|14Sep21|Functions <br> - 1 <br> - 2 <br> - 3 <br> - 4 |[Lesson 6](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson06/lesson6/) <br> <br> [Laboratory 6](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab06/Lab6_Dev)|- 1 <br> -2 <br>|
+|16Sep21|Data Structures using NUMPY <br> - 1 <br> - 2 <br> - 3 <br> - 4 |[Lesson 7](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/lesson7/) <br> <br> [Laboratory 7](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab07/Lab7_Dev)|- 1 <br> -2 <br>|
 
 ### Week 5 Programming Fundamentals
 ---
@@ -210,8 +210,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|21Sep21|Data Frames using PANDAS <br> - Network Topology (Types) <br> - Network Models <br> - Solution Arithmetic|ppXX-XX|ES-5 Pump Selection|
-|23Sep21|Data Display using MATPLOTLIB <br> - Interface Tour <br> - Examples |ppXX-XX|none; *Future ES-6 Tank Sizing*|
+|21Sep21|Data Frames using PANDAS <br> - 1 <br> - 2 <br> - 3 <br> - 4 |[Lesson 8](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson08/lesson8/) <br> <br> [Laboratory 8](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab08/Lab8_Dev)|- 1 <br> -2 <br>|
+|23Sep21|Data Display using MATPLOTLIB <br> - 1 <br> - 2 <br> - 3 <br> - 4 |[Lesson 9](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson09/lesson9/) <br> <br> [Laboratory 9](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab09/Lab9_Dev)|- 1 <br> -2 <br>|
 
 <font color=red>**Test 1 on Blackboard available 48 hour access window**</font>
 
@@ -221,8 +221,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|28Sep21|Solving Implicit Equations <br> - Graphical <br> - Grid Search <br> - Newton's Method (Analytical) <br> - Newton's Method (Finite Difference) <br> - Newtons Method using NUMPY |ppXX-XX||
-|30Sep21|Interpolation and Integration<br> - Lagrange Polynomial Interpolation <br> – Integration of Functions <br> - Integration of Tabular Results |ppXX-XX|ES-8 Network Hydraulics by EPANET|
+|28Sep21|Solving Implicit Equations <br> - Graphical <br> - Grid Search <br> - Newton's Method (Analytical) <br> - Newton's Method (Finite Difference) <br> - Newtons Method using NUMPY |[Lesson 10](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson10/lesson10/) <br> <br> [Laboratory 10](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab10/Lab10_Dev)|- 1 <br> -2 <br>|
+|30Sep21|Interpolation and Integration<br> - Lagrange Polynomial Interpolation <br> – Integration of Functions <br> - Integration of Tabular Results |[Lesson 11](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson11/lesson11/) <br> <br> [Laboratory 11](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab11/Lab11_Dev)|- 1 <br> -2 <br>|
 
 ### Week 7 Engineering Computation
 ---
@@ -230,8 +230,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|5Oct21|Matrix Arithmetic <br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations <br> - Gaussian Reduction without Pivoting <br> - Reduction with Pivoting <br> - Using NUMPY |ppXX-XX|none; *future ES-8NX*|
-|7Oct21|Non-Linear Equation Systems <br> - Multi-variable extension of Newton's method <br> - Constructing the Jabobian (analytical) <br> - Constructing the Jabobian (finite difference)|ppXX-XX|none|
+|5Oct21|Matrix Arithmetic <br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations <br> - Gaussian Reduction without Pivoting <br> - Reduction with Pivoting <br> - Using NUMPY |[Lesson 12](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson12/lesson12/) <br> <br> [Laboratory 12](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab12/Lab12_Dev)|- 1 <br> -2 <br>|
+|7Oct21|Non-Linear Equation Systems <br> - Multi-variable extension of Newton's method <br> - Constructing the Jabobian (analytical) <br> - Constructing the Jabobian (finite difference)|[Lesson 13](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson13/lesson13/) <br> <br> [Laboratory 13](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab13/Lab13_Dev)|- 1 <br> -2 <br>|
 
 ### Week 8 Data Models and Decisions
 ---
@@ -239,8 +239,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|12Oct21|Correlation,Causality, Randomness, and Probability <br> - topic <br> - topic <br> - topic |ppXX-XX|ES-9 Design Storm|
-|14Oct21|Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...) |ppXX-XX|ES-10 Open Channel Steady Flow|
+|12Oct21|Correlation,Causality, Randomness, and Probability <br> - topic <br> - topic <br> - topic |[Lesson 14](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson14/lesson14/) <br> <br> [Laboratory 14](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab14/Lab14_Dev)|- 1 <br> -2 <br>|
+|14Oct21|Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...) |[Lesson 15](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson15/lesson15/) <br> <br> [Laboratory 15](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab15/Lab15_Dev)|- 1 <br> -2 <br>|
 
 <font color=red>**Test 2 on Blackboard available 48 hour access window**</font>
 
@@ -250,8 +250,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|19Oct21|Functions as Data Models <br> - A line <br> - Normal Distribution Function <br> - Gamma Distribution Function <br> - Extreme Value Distribution Function |ppXX-XX|bb quiz1|
-|21Oct21|Probability Estimation Modeling <br> – Order statistics (plotting positions)  <br> - Histograms <br> - Visual assessment of Fit |ppXX-XX|ES-11 Inlet Sizing|
+|19Oct21|Functions as Data Models <br> - A line <br> - Normal Distribution Function <br> - Gamma Distribution Function <br> - Extreme Value Distribution Function |[Lesson 16](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson16/lesson16/) <br> <br> [Laboratory 16](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab16/Lab16_Dev)|- 1 <br> -2 <br>|
+|21Oct21|Probability Estimation Modeling <br> – Order statistics (plotting positions)  <br> - Histograms <br> - Visual assessment of Fit |[Lesson 17](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson17/lesson17/) <br> <br> [Laboratory 17](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab17/Lab17_Dev)|- 1 <br> -2 <br>|
 
 ### Week 10 Data Models and Decisions
 ---
@@ -259,8 +259,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|26Oct21|Hypothesis Testing <br> - Comparing two (or more) collections of observations <br> - A/B Testing <br> - Parametric and Non-Parametric Tests|ppXX-XX||
-|28Oct21|Interval Estimates <br> - Surface network <br> - Storm Sewer network |ppXX-XX|ES-12 Rational Method Conduit Sizing|
+|26Oct21|Hypothesis Testing <br> - Comparing two (or more) collections of observations <br> - A/B Testing <br> - Parametric and Non-Parametric Tests|[Lesson 18](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson18/lesson18/) <br> <br> [Laboratory 18](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab18/Lab18_Dev)|- 1 <br> -2 <br>|
+|28Oct21|Interval Estimates <br> - 1 <br> - 2 |[Lesson 19](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson19/lesson19/) <br> <br> [Laboratory 19](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab19/Lab19_Dev)|- 1 <br> -2 <br>|
 
 ### Week 11 Prediction Engines
 ---
@@ -268,8 +268,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|2Nov21|Data Models as Prediction Engines <br> - Data model as a prediction engine <br> - Assessing model quality by plotting <br> - Extrapolation |ppXX-XX|ES-13 SWMM Design/Sizing Somewhere USA|
-|2Nov21|Regression Models <br> - Linear regression <br> - Ordinary Least Squares  <br> - Multiple linear regression <br> - |ppXX-XX|Prediction Interval Estimates <br> - topic <br> -topic |
+|2Nov21|Data Models as Prediction Engines <br> - Data model as a prediction engine <br> - Assessing model quality by plotting <br> - Extrapolation |[Lesson 20](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson20/lesson20/) <br> <br> [Laboratory 20](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab20/Lab20_Dev)|- 1 <br> -2 <br>|
+|2Nov21|Regression Models <br> - Linear regression <br> - Ordinary Least Squares  <br> - Prediction interval estimates <br> - |[Lesson 21](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson21/lesson21/) <br> <br> [Laboratory 21](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab21/Lab21_Dev)|- 1 <br> -2 <br>|
 
 ### Week 12 Classification Engines
 ---
@@ -277,8 +277,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|9Nov21|Classification <br> - Classification vs Prediction <br> - Logistic Regression |ppXX-XX||
-|11Nov21|Search-Type Engines <br> - K-Nearest Neighbor Method <br> - Random Forests |ppXX-XX||
+|9Nov21|Classification <br> - Classification vs Prediction <br> - Logistic Regression |[Lesson 22](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson22/lesson22/) <br> <br> [Laboratory 22](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab22/Lab22_Dev)|- 1 <br> -2 <br>|
+|11Nov21|Search-Type Engines <br> - K-Nearest Neighbor Method <br> - Random Forests |[Lesson 23](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson23/lesson23/) <br> <br> [Laboratory 23](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab23/Lab23_Dev)|- 1 <br> -2 <br>|
 
 ### Week 13 Classification Engines
 ---
@@ -286,8 +286,8 @@ Blackboard is used as the learning management system (LMS) for this class, and i
 
 |date|lesson|links|laboratory|
 |:---|:---|:---|:---|
-|16Nov21|Boundary-Type Engines <br> - Support Vector Machines <br>  |ppXX-XX||
-|18Nov21|Pattern-Type Engines <br> - Artifical Neural Network (Demonstration) <br>  |ppXX-XX||
+|16Nov21|Boundary-Type Engines <br> - Support Vector Machines <br>  |[Lesson 24](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson13/lesson13/) <br> <br> [Laboratory 24](https://3.137.111.182/engr-1330-webroot/8-Labs/Lab13/Lab13_Dev)|- 1 <br> -2 <br>|
+|18Nov21|Pattern-Type Engines <br> - Artifical Neural Network (Demonstration) <br>  |[Lesson 25](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson25/lesson25/) | none |
 
 <font color=red>**Test 3 on Blackboard available 48 hour access window**</font>
 
@@ -383,3 +383,8 @@ I identify as an ally to the lesbian, gay, bisexual, transgender, queer, interse
 Office of LGBTQIA, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433
 Within the Center for Campus Life, the Office serves the Texas Tech community through facilitation and leadership of programming and advocacy efforts. This work is aimed at strengthening the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community and sustaining an inclusive campus that welcomes people of all sexual orientations, gender identities, and gender expressions.
 
+
+
+```python
+
+```
