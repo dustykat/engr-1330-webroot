@@ -1,2 +1,5 @@
 # ignore large databases 
 4-Databases/2Big4GitHub/
+
+# ignore the webbook directory (it is saved in a seperate repository
+engr-1330-webbook/
