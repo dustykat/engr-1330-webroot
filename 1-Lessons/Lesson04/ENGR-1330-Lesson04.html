@@ -14407,13 +14407,15 @@ Written as a sequence we can have</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
 <span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
 <span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14442,7 +14444,9 @@ Written as a sequence we can have</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>System Relability is :  44.2 %
+<pre>Component Reliability:  96.0
+Number of Components :  20
+System Relability is :  44.2 %
 </pre>
 </div>
 </div>
@@ -14461,13 +14465,15 @@ We have tested the script with the by-hand example, no refinement really needed 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
 <span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
 <span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14496,7 +14502,9 @@ We have tested the script with the by-hand example, no refinement really needed 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>System Relability is :  81.791 %
+<pre>Component Reliability:  99.0
+Number of Components :  20
+System Relability is :  81.8 %
 </pre>
 </div>
 </div>
