@@ -14262,10 +14262,65 @@ a.anchor-link {
 <p>Download this page as a jupyter notebook at <a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson02/ENGR-1330-Lesson02.ipynb">Lesson 2</a></p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date: 13 July 2021</p>
+<h2 id="Lesson-2-Programming-Fundamentals:">Lesson 2 Programming Fundamentals:<a class="anchor-link" href="#Lesson-2-Programming-Fundamentals:">&#182;</a></h2><ul>
+<li>iPython, tokens, and structure</li>
+<li>Data types (int, float, string, bool)</li>
+<li>Variables, operators, expressions, basic I/O</li>
+<li>String functions and operations</li>
+<li>How to Build a Notebook (Another look at problem solving)</li>
+</ul>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname<span class="p">;</span> ! whoami<span class="p">;</span> ! pwd<span class="p">;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>atomickitty
+sensei
+/home/sensei/engr-1330-webroot/1-Lessons/Lesson02
+/opt/jupyterhub/bin/python3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
@@ -14320,20 +14375,6 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 12 August 2021</p>
-<h2 id="Lesson-2-Programming-Fundamentals:">Lesson 2 Programming Fundamentals:<a class="anchor-link" href="#Lesson-2-Programming-Fundamentals:">&#182;</a></h2><ul>
-<li>iPython, tokens, and structure</li>
-<li>Data types (int, float, string, bool)</li>
-<li>Variables, operators, expressions, basic I/O</li>
-<li>String functions and operations</li>
-<li>How to Build a Notebook (Another look at problem solving)</li>
-</ul>
-
-</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14488,7 +14529,7 @@ $$ e = m \cdot c^2 $$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2><p>Variables are names given to data that we want to store, manipulate, <strong>and change</strong> in programs. A variable has a name and a value. The value representation depends on what type of object the variable represents. The utility of variables comes in when we have a structure that is universal, but values of variables within the structure will change - otherwise it would be simple enough to just hardwire the arithmetic.</p>
+<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2><p>Variables are names given to data that we want to store and manipulate in programs. A variable has a name and a value. The value representation depends on what type of object the variable represents. The utility of variables comes in when we have a structure that is universal, but values of variables within the structure will change - otherwise it would be simple enough to just hardwire the arithmetic.</p>
 <p>Suppose we want to store the time of concentration for some hydrologic calculation. 
 To do so, we can name a variable <code>TimeOfConcentration</code>, and then <code>assign</code> a value to the variable,
 for instance:</p>
@@ -14827,11 +14868,12 @@ Consider</p>
 
 </code></pre>
 <p>The expression is evaluated from the left to right and in words is</p>
-<ul>
-<li><p>Into the object named x1 place the result of:</p>
-<p>integer 7 + (integer 6 divide by integer 2 = float 3 * integer 3 = float 9 - integer 1 = float 8) = float 15</p>
-</li>
-</ul>
+
+<pre><code>Into the object named x1 place the result of:
+
+integer 7 + (integer 6 divide by integer 2 = float 3 * integer 3 = float 9 - integer 1 = float 8) = float 15
+
+</code></pre>
 <p>The division operation by default produces a float result unless forced otherwise.  The result is the variable <code>x1</code> is a float with a value of <code>15.0</code></p>
 
 </div>
@@ -14884,7 +14926,7 @@ Consider</p>
 <ul>
 <li>Solve the problem manually, the way you would do it as a human. Pay careful to attention what operations you perform and write down each step.</li>
 <li>Look for a pattern in the steps you performed. </li>
-<li>Determine how this pattern could be automated using the 3 algorithm building blocks (which we learn about a few lectures from now) (Sequence, Selection, Iteration).</li>
+<li>Determine how this pattern could be automated using the 3 algorithm building blocks (Sequence, Selection, Iteration).</li>
 </ul>
 <h3 id="Design-(Formalize-your-solution)">Design (Formalize your solution)<a class="anchor-link" href="#Design-(Formalize-your-solution)">&#182;</a></h3><p>Arrange your solution into components; this is called the architecture.
 Write the algorithm for each component.  Refine your algorithm in a step-wise manner if necessary.
@@ -15029,7 +15071,7 @@ $$ \sigma = \frac{P}{A} $$$$ \text{If}~ \sigma &gt;= \text{Yield Stress then rep
 </li>
 <li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan <a href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p>
 </li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<!--[https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/](https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/)--></p>
+<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<a href="https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/">https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/</a></p>
 </li>
 </ol>
 
