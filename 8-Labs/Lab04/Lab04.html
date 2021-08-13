@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-Lesson04</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Lab04</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,35 +14259,32 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Download this page as a jupyter notebook at <a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson04/ENGR-1330-Lesson04.ipynb">Lesson 4</a></p>
+<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="https://atomickitty.ddns.net/engr-1330-webroot/8-Labs/Lab04/Lab04.ipynb">Lab4</a></p>
+<hr>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 13 July 2021</p>
-<h2 id="Lesson-4-Program-Flow-Control:">Lesson 4 Program Flow Control:<a class="anchor-link" href="#Lesson-4-Program-Flow-Control:">&#182;</a></h2><ul>
-<li>Three structures: sequence, selection , repetition (loops)</li>
-<li>Sequence structures</li>
-<li>Selection structures</li>
-<li>Structured FOR loops</li>
-<li>Structured WHILE loops</li>
-<li>Representing computational processes with flowcharts, a graphical abstraction</li>
-</ul>
-<hr>
+<h1><font color=darkred>Laboratory 4: Sequence, Selection, and Repetition - Oh My! </font></h1>
+<p><strong>LAST NAME, FIRST NAME</strong></p>
+<p><strong>R00000000</strong></p>
+<p>ENGR 1330 Laboratory 4 - In-Lab</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!</span> hostname<span class="p">;</span> ! whoami<span class="p">;</span> ! pwd<span class="p">;</span> 
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14309,144 +14306,10 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>atomickitty
 sensei
-/home/sensei/engr-1330-webroot/1-Lessons/Lesson04
 /opt/jupyterhub/bin/python3
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<!-- Script Block to set tables to left alignment -->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><p>1) Develop awareness of loops, and their utility in automation.</p>
-<ul>
-<li>To understand loop types available in Python.</li>
-<li>To understand and implement loops in various examples and configurations.</li>
-</ul>
-<p>2) Develop awareness of flowcharts as a tool for:</p>
-<ul>
-<li>Post-development documentation</li>
-<li>Pre-development program design</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Sequence">Sequence<a class="anchor-link" href="#Sequence">&#182;</a></h2><p>Sequential processing are steps performed in sequence, one after another.  A default spreadsheet computation from top-to-bottom is a sequential process.</p>
-<p><strong>Reliability Example</strong>
-Suppose we wish to estimate the reliability of a system comprised of many indetical parts iused in multiple places in a design, for instance rivets on an airplane wing. Using a Bernoulli model (which you will see in your statistics class) we can estimate the collective reliability of the system (all the parts work as desired).  The reliability is expressed as the fraction of time that no parts have failed, if the fraction is small we would want to either improve part reliability, or ensure redundancy so the system can function with broken parts.</p>
-<p>Let $p$ be the probability a single component is good and $N$ be the total number of components in the system that work together in a "series" context.  The reliability, or the percentage of time that none of the components have failed is given by the Bernoulli equation:</p>
-$$\% = (\frac{p}{100.0})^N \cdot 100.0 $$<p>Suppose we want a script to read in a component probability and count, and estimate system reliability -- we can apply our problem solving protocol and JupyterLab to do so, and the task will be mostly sequential</p>
-<p><strong>Step 1 Problem Statement</strong> Estimate the reliability of a component in an instrument relative to a group of components using a Bernoulli approximation.</p>
-<p><strong>Step 2 Input/Output Decomposition</strong> Inputs are the reliability of a single component and the number of components working together in a system, output is estimate of system reliability, governing principle is the Bernoulli equation above.</p>
-<p><strong>Step 3 By-Hand Example</strong>
-SUppose the system is a small FPGA with 20 transistors, each with reliability of 96-percent. The entire array reliability is</p>
-$$\text{percentage} = (\frac{96.0}{100.0})^{20} \cdot 100.0 = 44.2\%$$<p><strong>Step 4 Algorithm Development</strong>
-Decompose the computation problem as:</p>
-<ol>
-<li>Read reliability of a single component</li>
-<li>Read how many components</li>
-<li>Compute reliability  by bernoulli model</li>
-<li>Report result</li>
-</ol>
-<p><strong>Step 5 Scripting</strong>
-Written as a sequence we can have</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Component Reliability:  96.0
-Number of Components :  20
-System Relability is :  44.2 %
+3.8.10 (default, Jun  2 2021, 10:49:15) 
+[GCC 9.4.0]
+sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, serial=0)
 </pre>
 </div>
 </div>
@@ -14458,190 +14321,150 @@ System Relability is :  44.2 %
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Step 6 Refinement</strong>
-We have tested the script with the by-hand example, no refinement really needed here, but lets apply to new conditions</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Component Reliability:  99.0
-Number of Components :  20
-System Relability is :  81.8 %
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Selection-Structures">Selection Structures<a class="anchor-link" href="#Selection-Structures">&#182;</a></h2><p>Selection via conditional statements is an important step in algorithm design; its one way to control the flow of execution of a program.</p>
-<p>Conditional statements in Python include:</p>
-<ul>
-<li><code>if</code> statement is true, then do ...</li>
-<li><code>if....else</code> statement is true, then do ..., otherwise do something else</li>
-<li><code>if....elif....else</code> statement is true, then do ..., if something else is true then do ..., otherwise do ... </li>
-</ul>
-<p>Conditional statements are logical expressions that evaluate as TRUE or FALSE and using
-these results to perform further operations based on these conditions.
-All flow control in a program depends on evaluating conditions. The program will proceed
-diferently based on the outcome of one or more conditions - really sophisticated AI programs are a collection of conditions and correlations.</p>
-<p>Expressed in a flowchart a block <code>if</code> statement looks like:</p>
-<p><img src="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson04/conditional.png" alt=""></p>
-<p>As <a href="https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7">psuedo code</a>:</p>
-
-<pre><code>if(condition is true): 
-    do stuff
-
-</code></pre>
-<p>Amazon knowing what you kind of want is based on correlations of your past behavior compared to other peoples similar, but more recent behavior, and then it uses conditional statements to decide what item to offer you in your recommendation items. 
-It's spooky, but ultimately just a program running in the background trying to make your money theirs.</p>
-<h3 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">&#182;</a></h3><p>The most common conditional operation is comparison. If we wish to compare whether two
-variables are the same we use the == (double equal sign).</p>
-<p>For example x == y means the program will ask whether x and y have the same value. 
-If they do, the result is TRUE if not then the result is FALSE.</p>
-<p>Other comparison signs are <code>!=</code> does NOT equal, <code>&lt;</code> smaller than, <code>&gt;</code>larger than, <code>&lt;=</code>less than or equal, and <code>&gt;=</code> greater than or equal.</p>
-<p>There are also three logical operators when we want to build multiple compares
-(multiple conditioning); these are <code>and</code>, <code>or</code>, and <code>not</code>.</p>
-<p>The <code>and</code> operator returns TRUE if (and only if) <strong>all</strong> conditions are TRUE.
-For instance <code>5 == 5 and 5 &lt; 6</code> will return a TRUE because both conditions are true.</p>
-<p>The <code>or</code> operator returns <code>TRUE</code> if at least one condition is true. 
-If <strong>all</strong> conditions are FALSE, then it will return a FALSE. For instance <code>4 &gt; 3 or 17 &gt; 20 or 3 == 2</code> will return <code>TRUE</code>because the first condition is true.
-The <code>not</code> operator returns <code>TRUE</code> if the condition after the <code>not</code> keyword is false. Think of it
-as a way to do a logic reversal.</p>
-<h3 id="Block-if-statement">Block <code>if</code> statement<a class="anchor-link" href="#Block-if-statement">&#182;</a></h3><p>The <code>if</code> statement is a common flow control statement. 
-It allows the program to evaluate if a certain condition is satisfied and to perform a designed action based on the result of the evaluation. The structure of an <code>if</code> statement is</p>
-
-<pre><code>if condition1 is met:
-    do A
-elif condition 2 is met:
-    do b
-elif condition 3 is met:
-    do c
-else:
-    do e
-
-</code></pre>
-<p>The <code>elif</code> means "else if". The <code>:</code> colon is an important part of the structure it tells where the action begins. Also there are no scope delimiters like (), or {} . 
-Instead Python uses indentation to isolate blocks of code.</p>
-<p>This convention is hugely important - many other coding environments use delimiters (called scoping delimiters), but Python does not. The indentation itself is the scoping delimiter.</p>
-<h3 id="Inline-if-statement">Inline <code>if</code> statement<a class="anchor-link" href="#Inline-if-statement">&#182;</a></h3><p>An inline <code>if</code> statement is a simpler form of an <code>if</code> statement and is more convenient if you
-only need to perform a simple conditional task. 
-The syntax is:</p>
-
-<pre><code>do TaskA `if` condition is true `else` do TaskB
-
-</code></pre>
-<p>An example would be</p>
-
-<pre><code>myInt = 3
-num1 = 12 if myInt == 0 else 13
-num1
-
-</code></pre>
-<p>An alternative way is to enclose the condition in brackets for some clarity like</p>
-
-<pre><code>myInt = 3
-num1 = 12 if (myInt == 0) else 13
-num1
-
-</code></pre>
-<p>In either case the result is that <code>num1</code> will have the value <code>13</code> (unless you set myInt to 0).</p>
-<p>One can also use <code>if</code> to construct extremely inefficient loops.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Repetition-and-Loops">Repetition and Loops<a class="anchor-link" href="#Repetition-and-Loops">&#182;</a></h2><p><strong>Computational thinking (CT)</strong> concepts involved are:</p>
-<ul>
-<li><code>Decomposition</code> : Break a problem down into smaller pieces; the body of tasks in one repetition of a loop represent decomposition of the entire sets of repeated activities</li>
-<li><code>Pattern Recognition</code> : Finding similarities between things; the body of tasks in one repetition of a loop is the pattern, the indices and components that change are how we leverage reuse</li>
-<li><code>Abstraction</code> : Pulling out specific differences to make one solution work for multiple problems</li>
-<li><code>Algorithms</code> : A list of steps that you can follow to finish a task</li>
-</ul>
-<p>The action of doing something over and over again (repetition) is called a loop.  Basically, Loops repeats a portion of code a finite number of times until a process is complete. Repetitive tasks are very common and essential in programming. They save time in coding, minimize coding errors, and leverage the speed of electronic computation.</p>
-<h3 id="Loop-Analogs">Loop Analogs<a class="anchor-link" href="#Loop-Analogs">&#182;</a></h3><p>If you think any mass manufacturing process, we apply the same process again and again. Even for something very simple such as preparing a peanut butter sandwich:</p>
-<p>Consider the <strong><em>flowchart</em></strong> in Figure 1, it represents a decomposition of sandwich assembly, but at a high level -- for instance, <code>Gather Ingredients</code> contains a lot of substeps that would need to be decomposed if fully automated assembly were to be accomplished; nevertheless lets stipulate that this flowchart will indeed construct a single sandwich.</p>
-<p><img src="sandwichchart.png" alt=""></p>
-<table>
-<thead><tr>
-<th style="text-align:left">Figure 1</th>
-<th style="text-align:left">Supervisory Flowchart Sandwich Assembly (adapted from <a href="http://www.str-tn.org/subway_restaurant_training_manual.pdf">http://www.str-tn.org/subway_restaurant_training_manual.pdf</a>)</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>If we need to make 1000 peanut butter sandwichs we would then issue a directive to:</p>
-<p>1) Implement sandwich assembly, repeat 999 times (repeat is the loop structure) (A serial structure, 1 sandwich artist, doing same job over and over again)</p>
-<p><strong>OR</strong></p>
-<p>2) Implement 1000 sandwich assembly threads (A parallel structure, 1000 sandwich artists doing same job once)</p>
-<p>In general because we dont want to idle 999 sandwich artists, we would choose the serial structure, which frees 999 people to ask the existential question "would you like fries with that?"</p>
-<p>All cynicism aside, an automated process such as a loop, is typical in computational processing.</p>
-<p><strong><em>Aside</em></strong> NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel -- the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This parallelization is called unrolling the loop, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.</p>
-<p>Main attractiveness of loops is:</p>
-<ul>
-<li>Leveraging  <code>pattern matching</code> and <code>automation</code></li>
-<li>Code is more organized and shorter,because a loop is a sequence of instructions that is continually repeated until a certain condition is reached. </li>
-</ul>
-<p>There are 2 main types loops based on the repetition control condition; <code>for</code> loops and <code>while</code>loops.</p>
+<h2 id="Sequence">Sequence<a class="anchor-link" href="#Sequence">&#182;</a></h2><p>Our first structure is sequential.  To belabor the concept we will compute a short list of cubes, by cubing each element in a list and placing it into another list. The example below is dumb, but useful to introduce repetition later in the lab.</p>
+<p>First an unusual cell, used to reset a notebook - it will clear the workspace.  Here we use it so the notebook will work the same for everyone (at least at first).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># reset this notebook</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="c1"># do a manual kernel restart to get the execution count to restart at one</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># AList = [0.0,1.0,2.0,3.0,4.0] # Create a list of floats</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># BList = [] #empty list to accept values</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = -1 # set position pointer to -1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1 # increment position </span>
+<span class="c1"># BList.append(pow(AList[position],3)) # append to BList to build list of cubes</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print(BList)</span>
 </pre></div>
 
      </div>
@@ -14652,7 +14475,114 @@ num1
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="For-Loop-(Count-controlled-repetition-structure)">For Loop (Count controlled repetition structure)<a class="anchor-link" href="#For-Loop-(Count-controlled-repetition-structure)">&#182;</a></h2><p>Count-controlled repetition is also called definite repetition because the number of repetitions is known before the loop begins executing. 
+<h3 id="Selection">Selection<a class="anchor-link" href="#Selection">&#182;</a></h3><p>Our next structure is selection, illustrated by a simple example</p>
+<p>A council member will not be allowed to vote on an ordinance if his/her attendence at council meetings is less than 75%. 
+Take the following inputs from the user:</p>
+
+<pre><code>1. Number of council meetings held.
+2. Number of council meetings attended. 
+
+</code></pre>
+<p>Compute the percentage of meetings attended</p>
+$$\%_{attended} = \frac{Meetings_{attended}}{Meetings_{total}}*100$$<p>Use the result to decide whether the council member will be allowed to vote or not.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain council persons name</span>
+<span class="c1"># council_name = str(input(&#39;enter council person name&#39;))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain meeting count</span>
+<span class="c1"># meetings_total = int(input(&#39;How many meetings since last vote?&#39;))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain meetings attended</span>
+<span class="c1"># prompt_string = &#39;How many meetings did &#39; + council_name + &#39; attend? &#39;</span>
+<span class="c1"># meetings_attended = int(input(prompt_string))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># compute percent_attendence</span>
+<span class="c1"># percent_attend = 100.0*(meetings_attended/meetings_total) #the 100.0 forces float</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select and make eligibility report</span>
+<span class="c1"># if percent_attend &lt; 75:</span>
+<span class="c1">#     print(&#39;Council person &#39;,council_name,&#39; attended &#39;,percent_attend,&#39; percent of meetings and is NOT eligible to vote&#39;)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     print(&#39;Council person &#39;,council_name,&#39; attended &#39;,percent_attend,&#39; percent of meetings and is eligible to vote&#39;)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2><font color=purple>Repetition (Loops)</font></h2>
+<ul>
+<li>Controlled repetition</li>
+<li>Structured FOR Loop</li>
+<li>Structured WHILE Loop</li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3><font color=purple>Count controlled repetition</font></h3>
+<p><img src="https://chortle.ccsu.edu/assemblytutorial/Chapter-18/countingLoop.gif" alt=""> <br></p>
+<p>Count-controlled repetition is also called definite repetition because the number of repetitions is known before the loop begins executing. 
 When we do not know in advance the number of times we want to execute a statement, we cannot use count-controlled repetition. 
 In such an instance, we would use sentinel-controlled repetition.</p>
 <p>A count-controlled repetition will exit after running a certain number of times. 
@@ -14666,196 +14596,114 @@ When the index reaches a certain value (the loop bound) the loop will end.</p>
 <li>condition that tests for the final value of the control variable </li>
 </ul>
 <p>We can use both <code>for</code> and <code>while</code> loops, for count controlled repetition, but the <code>for</code> loop in combination with the <code>range()</code> function is more common.</p>
-<h3 id="Structured-FOR-loop">Structured <code>FOR</code> loop<a class="anchor-link" href="#Structured-FOR-loop">&#182;</a></h3><p>We have seen the for loop already, but we will formally introduce it here. The <code>for</code> loop executes a block of code repeatedly until the condition in the <code>for</code> statement is no longer true.</p>
-<h3 id="Looping-through-an-iterable">Looping through an iterable<a class="anchor-link" href="#Looping-through-an-iterable">&#182;</a></h3><p>An iterable is anything that can be looped over - typically a list, string, or tuple. 
+<h4 id="Structured-FOR-loop">Structured <code>FOR</code> loop<a class="anchor-link" href="#Structured-FOR-loop">&#182;</a></h4><p>We have seen the for loop already, but we will formally introduce it here. The <code>for</code> loop executes a block of code repeatedly until the condition in the <code>for</code> statement is no longer true.</p>
+<h4 id="Looping-through-an-iterable">Looping through an iterable<a class="anchor-link" href="#Looping-through-an-iterable">&#182;</a></h4><p>An iterable is anything that can be looped over - typically a list, string, or tuple. 
 The syntax for looping through an iterable is illustrated by an example.</p>
 <p>First a generic syntax</p>
 
 <pre><code>for a in iterable:
-print(a)
+   print(a)
 
 </code></pre>
-<p>Notice our friends the colon <code>:</code> and the indentation.</p>
+<p>Notice the colon <code>:</code> and the indentation.
+Now a specific example:</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3 id="Example:-A-Loop-to-Begin-With!">Example: A Loop to Begin With!<a class="anchor-link" href="#Example:-A-Loop-to-Begin-With!">&#182;</a></h3><p>Make a list with "Walter", "Jesse", "Gus, "Hank". Then, write a loop that prints all the elements of your lisk.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a list</span>
+<span class="c1"># BB = [&quot;Walter&quot;,&quot;Jesse&quot;,&quot;Gus&quot;,&quot;Hank&quot;]</span>
+<span class="c1"># # loop thru the list</span>
+<span class="c1"># for AllStrings in BB:</span>
+<span class="c1">#     print(AllStrings)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
 <h4 id="The-range()-function-to-create-an-iterable">The <code>range()</code> function to create an iterable<a class="anchor-link" href="#The-range()-function-to-create-an-iterable">&#182;</a></h4><p>The <code>range(begin,end,increment)</code> function will create an iterable starting at a value of begin, in steps defined by increment (<code>begin += increment</code>), ending at <code>end</code>.</p>
 <p>So a generic syntax becomes</p>
 
 <pre><code>for a in range(begin,end,increment):
-print(a)
+   print(a)
 
 </code></pre>
-<p>The examples that follow are count-controlled repetition (increment skip if greater)</p>
+<p>The example that follows is count-controlled repetition (increment skip if greater)</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-for-loops">Example <code>for</code> loops<a class="anchor-link" href="#Example-for-loops">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a list</span>
+<span class="c1"># BB = [&quot;Walter&quot;,&quot;Jesse&quot;,&quot;Gus&quot;,&quot;Hank&quot;]</span>
+<span class="c1"># # loop thru the list</span>
+<span class="c1"># for i in range(0,4,1): # Change the numbers, what happens?</span>
+<span class="c1">#     print(BB[i])</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum from 1 to  9 is 45.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum of Evens from 1 to  9 is 20.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>*
-**
-***
-****
-*****
-******
-*******
-********
-*********
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Sentinel-controlled-repetition.">Sentinel-controlled repetition.<a class="anchor-link" href="#Sentinel-controlled-repetition.">&#182;</a></h2><p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used. 
-Sentinel-controlled repetition is also called indefinite repetition because it is not known in advance how many times the loop will be executed. 
-It is a repetition procedure for solving a problem by using a sentinel value (also called a signal value, a dummy value or a flag value) to indicate "end of process". 
+<hr>
+<h3 id="Example:-That's-odd!">Example: That's odd!<a class="anchor-link" href="#Example:-That's-odd!">&#182;</a></h3><p>Write a loop to print all the odd numbers between 0 and 10.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # For loop with range</span>
+<span class="c1"># for x in range(1,10,2): # a sequence from 2 to 5 with steps of 1</span>
+<span class="c1">#   print(x)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3><font color=purple>Sentinel-controlled repetition</font></h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20191119172228/Flow-Diagram-do-while-loop.jpg" alt=""> <br></p>
+<p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used. 
+Sentinel-controlled repetition is also called indefinite repetition because it is not known in advance how many times the loop will be executed.</p>
+<!--![](https://media0.giphy.com/media/3Xw8jY3zbFRtFd6eK8/giphy.gif) <br>-->
+
+<p>It is a repetition procedure for solving a problem by using a sentinel value (also called a signal value, a dummy value or a flag value) to indicate "end of process". 
 The sentinel value itself need not be a part of the processed data.</p>
 <p>One common example of using sentinel-controlled repetition is when we are processing data from a file and we do not know in advance when we would reach the end of the file.</p>
 <p>We can use both <code>for</code> and <code>while</code> loops, for <strong>Sentinel</strong> controlled repetition, but the <code>while</code> loop is more common.</p>
-<h3 id="Structured-WHILE-loop">Structured <code>WHILE</code> loop<a class="anchor-link" href="#Structured-WHILE-loop">&#182;</a></h3><p>The <code>while</code> loop repeats a block of instructions inside the loop while a condition remainsvtrue.</p>
+<h4 id="Structured-WHILE-loop">Structured <code>WHILE</code> loop<a class="anchor-link" href="#Structured-WHILE-loop">&#182;</a></h4><p>The <code>while</code> loop repeats a block of instructions inside the loop while a condition remainsvtrue.</p>
 <p>First a generic syntax</p>
 
 <pre><code>while condition is true:
@@ -14864,28 +14712,21 @@ The sentinel value itself need not be a part of the processed data.</p>
 ....
 
 </code></pre>
-<p>Notice our friends the colon <code>:</code> and the indentation again.</p>
+<p>Notice our friend, the colon <code>:</code> and the indentation again.</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example-while-loops">Example <code>while</code> loops<a class="anchor-link" href="#Example-while-loops">&#182;</a></h1>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a counter</span>
+<span class="c1"># counter = 5</span>
+<span class="c1"># # while loop</span>
+<span class="c1"># while counter &gt; 0:</span>
+<span class="c1">#     print(&quot;Counter = &quot;,counter)</span>
+<span class="c1">#     counter = counter -1</span>
 </pre></div>
 
      </div>
@@ -14893,51 +14734,25 @@ The sentinel value itself need not be a part of the processed data.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>The while loop structure just depicted is a "decrement, skip if equal" in lower level languages. The next structure, also a while loop is an "increment, skip if greater" structure.</p>
+</blockquote>
 
 </div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum from 1 to  9 is 45.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">counter</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a counter</span>
+<span class="c1"># counter = 0</span>
+<span class="c1"># # while loop</span>
+<span class="c1"># while counter &lt;= 5:  # change this line to: while counter &lt;= 5: what happens?</span>
+<span class="c1">#     print (&quot;Counter = &quot;,counter)</span>
+<span class="c1">#     counter = counter +1  # change this line to: counter +=1  what happens?</span>
 </pre></div>
 
      </div>
@@ -14945,123 +14760,60 @@ The sentinel value itself need not be a part of the processed data.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum of Evens 1 to  9 is 20.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>*
-**
-***
-****
-*****
-******
-*******
-********
-*********
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Nested-Repetition">Nested Repetition<a class="anchor-link" href="#Nested-Repetition">&#182;</a></h2><p>Nested repetition is when a control structure is placed inside of the body or main part of another control structure.</p>
+<p>Beware, its easy to create an infinite loop with this structure.  The lab instructor will do so, and illustrate how to regain control of your computer when you do.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3><font color=purple>Nested Repetition | Loops within Loops</font></h3>
+<!-- ![](https://i.gifer.com/7kmF.gif) <br> -->
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>Round like a circle in a spiral, like a wheel within a wheel <br>
+Never ending or beginning on an ever spinning reel <br>
+Like a snowball down a mountain, or a carnival balloon <br>
+Like a carousel that's turning running rings around the moon <br>
+Like a clock whose hands are sweeping past the minutes of its face <br>
+And the world is like an apple whirling silently in space <br>
+Like the circles that you find in the windmills of your mind! <br>
+<br>
+<strong><em>Windmills of Your Mind lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management</em></strong> <br>
+<strong><em>Songwriters: Marilyn Bergman / Michel Legrand / Alan Bergman</em></strong> <br>
+<strong><em>Recommended versions: Neil Diamond | Dusty Springfield | Farhad Mehrad</em></strong>  <br></p>
+</blockquote>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>"Like the circles that you find in the windmills of your mind", Nested repetition is when a control structure is placed inside of the body or main part of another control structure.</p>
 <h4 id="break-to-exit-out-of-a-loop"><code>break</code> to exit out of a loop<a class="anchor-link" href="#break-to-exit-out-of-a-loop">&#182;</a></h4><p>Sometimes you may want to exit the loop when a certain condition different from the counting
 condition is met. Perhaps you are looping through a list and want to exit when you find the
 first element in the list that matches some criterion. The break keyword is useful for such
-an operation.</p>
-<p>For example run the following program:</p>
+an operation.
+For example run the following program:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#</span>
-<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">break</span>   
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># #</span>
+<span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print (&quot;i = &quot;,i,&quot;j = &quot;,j)</span>
+<span class="c1">#     if j == 6:</span>
+<span class="c1">#         break</span>
 </pre></div>
 
      </div>
@@ -15069,71 +14821,24 @@ an operation.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>i =  0 j =  2
-i =  1 j =  4
-i =  2 j =  6
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="k">break</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # One Small Change</span>
+<span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print( &quot;i = &quot;,i,&quot;j = &quot;,j)</span>
+<span class="c1">#     if j == 7:</span>
+<span class="c1">#         break</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>i =  0 j =  2
-i =  1 j =  4
-i =  2 j =  6
-i =  3 j =  8
-i =  4 j =  10
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15147,27 +14852,29 @@ A <code>while</code> loop contained within a <code>for</code> loop, with several
 There is typically an upper limit to nesting but the limit is pretty large - easily in the
 hundreds. It depends on the language and the system architecture ; suffice to say it is not
 a practical limit except possibly for general-domain AI applications.</p>
-<hr>
+<p><hr>
+We can also do mundane activities and leverage loops, arithmetic, and format codes to make useful tables like</p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can also do mundane activities and leverage loops, arithmetic, and format codes to make useful tables like</p>
+<h3 id="Example:-Cosines-in-the-loop!">Example: Cosines in the loop!<a class="anchor-link" href="#Example:-Cosines-in-the-loop!">&#182;</a></h3><p>Write a loop to print a table of the cosines of numbers between 0 and 0.01 with steps of 0.001.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># package that contains cosine</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Cosines     &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   x   &quot;</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="s2">&quot; cos(x) &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------|--------&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;  |&quot;</span><span class="p">,</span> <span class="s2">&quot; </span><span class="si">%.4f</span><span class="s2"> &quot;</span>  <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># note the format code and the placeholder % and syntax </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import math # package that contains cosine</span>
+<span class="c1"># print(&quot;     Cosines     &quot;)</span>
+<span class="c1"># print(&quot;   x   &quot;,&quot;|&quot;,&quot; cos(x) &quot;)</span>
+<span class="c1"># print(&quot;--------|--------&quot;)</span>
+<span class="c1"># for i in range(0,100,1):</span>
+<span class="c1">#     x = float(i)*0.001</span>
+<span class="c1">#     print(&quot;%.3f&quot; % x, &quot;  |&quot;, &quot; %.4f &quot;  % math.cos(x)) # note the format code and the placeholder % and syntax of using package</span>
 </pre></div>
 
      </div>
@@ -15175,207 +14882,167 @@ a practical limit except possibly for general-domain AI applications.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3 id="Example:-Getting-the-hang-of-it!">Example: Getting the hang of it!<a class="anchor-link" href="#Example:-Getting-the-hang-of-it!">&#182;</a></h3><p>Write a Python script that takes a real input value (a float) for x and returns the y
+value according to the rules below</p>
+\begin{gather}
+y = x~for~0 &lt;= x &lt; 1 \\
+y = x^2~for~1 &lt;= x &lt; 2 \\
+y = x + 2~for~2 &lt;= x &lt; 3 \\
+\end{gather}<p>Test the script with x values of 0.0, 1.0, 1.1, and 2.1. <br>
+add functionality to <strong>automaticaly</strong> populate the table below:</p>
+<table>
+<thead><tr>
+<th style="text-align:right">x</th>
+<th style="text-align:right">y(x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">1.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">2.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">3.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">4.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">5.0</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
 
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># userInput = input(&#39;Enter enter a float&#39;) #ask for user&#39;s input</span>
+<span class="c1"># x = float(userInput)</span>
+<span class="c1"># print(&quot;x:&quot;, x)</span>
 
-<div class="jp-OutputArea jp-Cell-outputArea">
+<span class="c1"># if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#     y = x</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+<span class="c1"># elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#     y = x*x</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     y = x+2</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+</pre></div>
 
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>     Cosines     
-   x    |  cos(x) 
---------|--------
-0.000   |  1.0000 
-0.100   |  0.9950 
-0.200   |  0.9801 
-0.300   |  0.9553 
-0.400   |  0.9211 
-0.500   |  0.8776 
-0.600   |  0.8253 
-0.700   |  0.7648 
-0.800   |  0.6967 
-0.900   |  0.6216 
-1.000   |  0.5403 
-1.100   |  0.4536 
-1.200   |  0.3624 
-1.300   |  0.2675 
-1.400   |  0.1700 
-1.500   |  0.0707 
-1.600   |  -0.0292 
-1.700   |  -0.1288 
-1.800   |  -0.2272 
-1.900   |  -0.3233 
-2.000   |  -0.4161 
-2.100   |  -0.5048 
-2.200   |  -0.5885 
-2.300   |  -0.6663 
-2.400   |  -0.7374 
-2.500   |  -0.8011 
-2.600   |  -0.8569 
-2.700   |  -0.9041 
-2.800   |  -0.9422 
-2.900   |  -0.9710 
-3.000   |  -0.9900 
-3.100   |  -0.9991 
-3.200   |  -0.9983 
-3.300   |  -0.9875 
-3.400   |  -0.9668 
-3.500   |  -0.9365 
-3.600   |  -0.8968 
-3.700   |  -0.8481 
-3.800   |  -0.7910 
-3.900   |  -0.7259 
-4.000   |  -0.6536 
-4.100   |  -0.5748 
-4.200   |  -0.4903 
-4.300   |  -0.4008 
-4.400   |  -0.3073 
-4.500   |  -0.2108 
-4.600   |  -0.1122 
-4.700   |  -0.0124 
-4.800   |  0.0875 
-4.900   |  0.1865 
-5.000   |  0.2837 
-5.100   |  0.3780 
-5.200   |  0.4685 
-5.300   |  0.5544 
-5.400   |  0.6347 
-5.500   |  0.7087 
-5.600   |  0.7756 
-5.700   |  0.8347 
-5.800   |  0.8855 
-5.900   |  0.9275 
-6.000   |  0.9602 
-6.100   |  0.9833 
-6.200   |  0.9965 
-6.300   |  0.9999 
-6.400   |  0.9932 
-6.500   |  0.9766 
-6.600   |  0.9502 
-6.700   |  0.9144 
-6.800   |  0.8694 
-6.900   |  0.8157 
-7.000   |  0.7539 
-7.100   |  0.6845 
-7.200   |  0.6084 
-7.300   |  0.5261 
-7.400   |  0.4385 
-7.500   |  0.3466 
-7.600   |  0.2513 
-7.700   |  0.1534 
-7.800   |  0.0540 
-7.900   |  -0.0460 
-8.000   |  -0.1455 
-8.100   |  -0.2435 
-8.200   |  -0.3392 
-8.300   |  -0.4314 
-8.400   |  -0.5193 
-8.500   |  -0.6020 
-8.600   |  -0.6787 
-8.700   |  -0.7486 
-8.800   |  -0.8111 
-8.900   |  -0.8654 
-9.000   |  -0.9111 
-9.100   |  -0.9477 
-9.200   |  -0.9748 
-9.300   |  -0.9922 
-9.400   |  -0.9997 
-9.500   |  -0.9972 
-9.600   |  -0.9847 
-9.700   |  -0.9624 
-9.800   |  -0.9304 
-9.900   |  -0.8892 
-10.000   |  -0.8391 
-10.100   |  -0.7806 
-10.200   |  -0.7143 
-10.300   |  -0.6408 
-10.400   |  -0.5610 
-10.500   |  -0.4755 
-10.600   |  -0.3853 
-10.700   |  -0.2913 
-10.800   |  -0.1943 
-10.900   |  -0.0954 
-11.000   |  0.0044 
-11.100   |  0.1042 
-11.200   |  0.2030 
-11.300   |  0.2997 
-11.400   |  0.3935 
-11.500   |  0.4833 
-11.600   |  0.5683 
-11.700   |  0.6476 
-11.800   |  0.7204 
-11.900   |  0.7861 
-12.000   |  0.8439 
-12.100   |  0.8932 
-12.200   |  0.9336 
-12.300   |  0.9647 
-12.400   |  0.9862 
-12.500   |  0.9978 
-12.600   |  0.9994 
-12.700   |  0.9911 
-12.800   |  0.9728 
-12.900   |  0.9449 
-13.000   |  0.9074 
-13.100   |  0.8610 
-13.200   |  0.8059 
-13.300   |  0.7427 
-13.400   |  0.6722 
-13.500   |  0.5949 
-13.600   |  0.5117 
-13.700   |  0.4234 
-13.800   |  0.3308 
-13.900   |  0.2349 
-14.000   |  0.1367 
-14.100   |  0.0372 
-14.200   |  -0.0628 
-14.300   |  -0.1621 
-14.400   |  -0.2598 
-14.500   |  -0.3549 
-14.600   |  -0.4465 
-14.700   |  -0.5336 
-14.800   |  -0.6154 
-14.900   |  -0.6910 
-15.000   |  -0.7597 
-15.100   |  -0.8208 
-15.200   |  -0.8737 
-15.300   |  -0.9179 
-15.400   |  -0.9530 
-15.500   |  -0.9785 
-15.600   |  -0.9942 
-</pre>
+     </div>
+</div>
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># without pretty table</span>
+
+<span class="c1"># print(&quot;---x---&quot;,&quot;|&quot;,&quot;---y---&quot;)</span>
+<span class="c1"># print(&quot;--------|--------&quot;)</span>
+<span class="c1"># for x in range(0,6,1):</span>
+<span class="c1">#     if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#         y = x</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+<span class="c1">#     elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#         y = x*x</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         y = x+2</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # with pretty table</span>
+
+<span class="c1"># from prettytable import PrettyTable #Required to create tables</span>
+
+<span class="c1"># t = PrettyTable([&#39;x&#39;, &#39;y&#39;]) #Define an empty table</span>
+
+
+<span class="c1"># for x in range(0,6,1):</span>
+<span class="c1">#     if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#         y = x</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y]) #will add a row to the table &quot;t&quot;</span>
+<span class="c1">#     elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#         y = x*x</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         y = x+2</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y])</span>
+
+<span class="c1"># print(t)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-continue-statement">The <code>continue</code> statement<a class="anchor-link" href="#The-continue-statement">&#182;</a></h4><p>The continue instruction skips the block of code after it is executed for that iteration. 
+<hr>
+<h4 id="The-continue-statement">The <code>continue</code> statement<a class="anchor-link" href="#The-continue-statement">&#182;</a></h4><p>The continue instruction skips the block of code after it is executed for that iteration, and continues with the loop traverse
 It is
 best illustrated by an example.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> i = &quot;</span><span class="p">,</span> <span class="n">i</span> <span class="p">,</span> <span class="s2">&quot;, j = &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="c1">#here the \n is a newline command</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; this message will be skipped over if j = 6 &quot;</span><span class="p">)</span> <span class="c1"># still within the loop, so the skip is implemented</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print (&quot;\n i = &quot;, i , &quot;, j = &quot;, j) #here the \n is a newline command</span>
+<span class="c1">#     if j == 6:</span>
+<span class="c1">#         continue</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         print(&quot; this message will be skipped over if j = 6 &quot;) # still within the loop, so the skip is implemented</span>
+    
+<span class="c1"># #When j ==6 the line after the continue keyword is not printed. </span>
+<span class="c1"># #Other than that one difference the rest of the script runs normally.</span>
 </pre></div>
 
      </div>
@@ -15383,43 +15050,10 @@ best illustrated by an example.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
- i =  0 , j =  2
- this message will be skipped over if j = 6 
-
- i =  1 , j =  4
- this message will be skipped over if j = 6 
-
- i =  2 , j =  6
-
- i =  3 , j =  8
- this message will be skipped over if j = 6 
-
- i =  4 , j =  10
- this message will be skipped over if j = 6 
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
 <h4 id="The-try,-except-structure">The <code>try</code>, <code>except</code> structure<a class="anchor-link" href="#The-try,-except-structure">&#182;</a></h4><p>An important control structure (and a pretty cool one for error trapping) is the <code>try</code>, <code>except</code>
 statement.</p>
 <p>The statement controls how the program proceeds when an error occurs in an instruction.
@@ -15436,71 +15070,26 @@ do something else if ``do something'' returns an error
 <p>Here is a really simple, but hugely important example:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#MyErrorTrap.py</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
-    <span class="k">try</span><span class="p">:</span>         
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error divide by zero&quot;</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c1"># x = 12.</span>
+<span class="c1"># y = 12.</span>
+<span class="c1"># while y &gt;= -12.: # sentinel controlled repetition</span>
+<span class="c1">#     try:         </span>
+<span class="c1">#         print (&quot;x = &quot;, x, &quot;y = &quot;, y, &quot;x/y = &quot;, x/y)</span>
+<span class="c1">#     except:</span>
+<span class="c1">#         print (&quot;error divide by zero&quot;)</span>
+<span class="c1">#     y -= 1</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  12.0 y =  12.0 x/y =  1.0
-x =  12.0 y =  11.0 x/y =  1.0909090909090908
-x =  12.0 y =  10.0 x/y =  1.2
-x =  12.0 y =  9.0 x/y =  1.3333333333333333
-x =  12.0 y =  8.0 x/y =  1.5
-x =  12.0 y =  7.0 x/y =  1.7142857142857142
-x =  12.0 y =  6.0 x/y =  2.0
-x =  12.0 y =  5.0 x/y =  2.4
-x =  12.0 y =  4.0 x/y =  3.0
-x =  12.0 y =  3.0 x/y =  4.0
-x =  12.0 y =  2.0 x/y =  6.0
-x =  12.0 y =  1.0 x/y =  12.0
-error divide by zero
-x =  12.0 y =  -1.0 x/y =  -12.0
-x =  12.0 y =  -2.0 x/y =  -6.0
-x =  12.0 y =  -3.0 x/y =  -4.0
-x =  12.0 y =  -4.0 x/y =  -3.0
-x =  12.0 y =  -5.0 x/y =  -2.4
-x =  12.0 y =  -6.0 x/y =  -2.0
-x =  12.0 y =  -7.0 x/y =  -1.7142857142857142
-x =  12.0 y =  -8.0 x/y =  -1.5
-x =  12.0 y =  -9.0 x/y =  -1.3333333333333333
-x =  12.0 y =  -10.0 x/y =  -1.2
-x =  12.0 y =  -11.0 x/y =  -1.0909090909090908
-x =  12.0 y =  -12.0 x/y =  -1.0
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15513,18 +15102,18 @@ and keep running.</p>
 <p>Modify the script as shown below,Run, and see what happens</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NoErrorTrap.py</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c1"># x = 12.</span>
+<span class="c1"># y = 12.</span>
+<span class="c1"># while y &gt;= -12.: # sentinel controlled repetition</span>
+<span class="c1">#     print (&quot;x = &quot;, x, &quot;y = &quot;, y, &quot;x/y = &quot;, x/y)</span>
+<span class="c1">#     y -= 1</span>
 </pre></div>
 
      </div>
@@ -15532,207 +15121,23 @@ and keep running.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  12.0 y =  12.0 x/y =  1.0
-x =  12.0 y =  11.0 x/y =  1.0909090909090908
-x =  12.0 y =  10.0 x/y =  1.2
-x =  12.0 y =  9.0 x/y =  1.3333333333333333
-x =  12.0 y =  8.0 x/y =  1.5
-x =  12.0 y =  7.0 x/y =  1.7142857142857142
-x =  12.0 y =  6.0 x/y =  2.0
-x =  12.0 y =  5.0 x/y =  2.4
-x =  12.0 y =  4.0 x/y =  3.0
-x =  12.0 y =  3.0 x/y =  4.0
-x =  12.0 y =  2.0 x/y =  6.0
-x =  12.0 y =  1.0 x/y =  12.0
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-82eeaceb9a12&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> y <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">12.</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">while</span> y <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">12.</span><span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># sentinel controlled repetition</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>print <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;x = &#34;</span><span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;y = &#34;</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;x/y = &#34;</span><span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">/</span>y<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     y <span class="ansi-blue-fg">-=</span> <span class="ansi-cyan-fg">1</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: float division by zero</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Flowcharts">Flowcharts<a class="anchor-link" href="#Flowcharts">&#182;</a></h2><h3 id="What-is-a-Flowchart?">What is a Flowchart?<a class="anchor-link" href="#What-is-a-Flowchart?">&#182;</a></h3><p>A flowchart is a type of diagram that represents a workflow or process. A flowchart can also be defined as a diagrammatic representation of an algorithm, a step-by-step approach to solving a task.</p>
-<p><img src="flowchart.png" alt=""></p>
-<table>
-<thead><tr>
-<th style="text-align:left">Figure 2</th>
-<th style="text-align:left">Repair Flowchart for a Lamp</th>
-<th style="text-align:left"><a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>The flowchart shows the steps as boxes of various kinds, and their order by connecting the boxes with arrows. This diagrammatic representation illustrates a solution model to a given problem. Flowcharts are used in analyzing, designing, documenting or managing a process or program in various fields.</p>
-<p>There is a symbol convention (a language) as depicted in Figure 2 below (from: <a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a>)</p>
-<p><img src="flowchartsymbols.png" alt=""></p>
-<table>
-<thead><tr>
-<th style="text-align:left">Figure 1</th>
-<th style="text-align:left">Flowchart Symbols</th>
-<th style="text-align:left"><a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>IBM engineers implemented programming flowcharts based upon Goldstine and von Neumann's unpublished report, "Planning and coding of problems for an electronic computing instrument, Part II, Volume 1" (1947), which is reproduced in von Neumann's collected works.</p>
-<p>The flowchart became a popular tool for describing computer algorithms, but its popularity decreased in the 1970s, when interactive computer terminals and third-generation programming languages became common tools for computer programming, since algorithms can be expressed more concisely as source code in such languages. Often pseudo-code is used, which uses the common idioms of such languages without strictly adhering to the details of a particular one.</p>
-<p>Nowadays flowcharts are still used for describing computer algorithms.[9] Modern techniques such as UML activity diagrams and Drakon-charts can be considered to be extensions of the flowchart.</p>
-<p>Nearly all flowcharts focus on on some kind of control, rather than on the particular flow itself!  While quaint today, they are an effective way to document processes in a program and visualize structures.  We recomend you get in the habit of making rudimentary flowcharts, at least at the supervisory level (the sandwich chart above)</p>
-<h3 id="How-are-they-useful?">How are they useful?<a class="anchor-link" href="#How-are-they-useful?">&#182;</a></h3><p>(paraphrased from <a href="https://www.breezetree.com/articles/top-reasons-to-flowchart">https://www.breezetree.com/articles/top-reasons-to-flowchart</a>)</p>
-<p>Sometimes it's more effective to visualize something graphically that it is to describe it with words. That is the essence of what flowcharts do for you. Flowcharts explain a process clearly through symbols and text. Moreover, flowcharts give you the gist of the process flow in a single glance. The following are some of the more salient reasons to use flowcharts.</p>
-<p><strong>Process Documentation / Training Materials</strong>
-Another common use for flowcharts is to create process documentation. Although this reason overlaps with regulatory and quality management requirements (below), many non-regulated businesses use flowcharts for their documentation as well. These can range in form from high-level procedures to low-level, detailed work instructions.</p>
-<p>You may think that this applies mainly to large organizations, but small companies can greatly benefit from flowcharting their processes as well. Small enterprises need to be nimble and organized. Standardizing their processes is a great way to achieve this. In fact, the popular entrepreneurial book The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It by Michael Gerber is based on the fact that small businesses are more likely to succeed if they treat their operations like a franchise. in a nutshell, this means standardizing and documenting their business processes. There's no better way to do that than with flowcharts, right?</p>
-<p>Training materials are often created using flowcharts because they're visually stimulating and easy to understand. A nicely laid out flowchart will gain and hold the reader's attention when a block of text will often fail.</p>
-<p><strong>Workflow Management and Continuous Improvement</strong>
-Workflows don't manage themselves. To ensure that you are meeting your customers' needs, you need to take control of your business processes. The first step to workflow management is to define the current state of your processes by creating an "As-Is Flowchart". That allows you to analyze your processes for waste and inefficiency. After you have identified areas for process improvement, you can then craft new flowcharts to document the leaner processes.</p>
-<p><strong>Programming</strong>
-Information technology played a big influence on the use and spread of flowcharts in the 20th century. While Dr. W. Edwards Deming was advocating their use in quality management, professionals in the data processing world were using them to flesh out their programming logic. Flowcharts were a mainstay of procedural programming, however, and with the advent of object oriented programming and various modeling tools, the use of flowcharts for programming is no longer as commonplace as it once was.</p>
-<p>That said, even with in the scope of object oriented programming, complex program logic can be modeled effectively using a flowchart. Moreover, diagramming the user's experience as they navigate through a program is a valuable prerequisite prior to designing the user interface. So flowcharts still have their place in the world of programming.</p>
-<p><strong>Troubleshooting Guides</strong>
-Most of us have come across a troubleshooting flowchart at one time or another. These are usually in the form of Decision Trees that progressively narrow the range of possible solutions based on a series of criteria. The effectiveness of these types of flowcharts depends on how neatly the range of problems and solutions can fit into a simple True/False diagnosis model. A well done troubleshooting flowcharts can cut the problem solving time greatly.</p>
-<p><strong>Regulatory and Quality Management Requirements</strong>
-Your business processes may be subject to regulatory requirements such as Sarbanes-Oxley (SOX), which requires that your accounting procedures be clearly defined and documented. An easy way to do this is to create accounting flowcharts for all your accounting processes.</p>
-<p>Similarly, many organizations fall under certification requirements for quality management systems - such as ISO 9000, TS 16949, or one of the many others. In such environments, flowcharts are not only useful but in certain clauses they are actually mandated.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Sorting-a-Flow-Control-Example-(Optional-Topic)">Sorting a Flow Control Example (Optional Topic)<a class="anchor-link" href="#Sorting-a-Flow-Control-Example-(Optional-Topic)">&#182;</a></h1><p>A frequent task in data science, engineering, etc. is the seemingly mundane task of
-sorting or ordering things. Here we explore a couple of simple sorting algorithms,
-just to show some of the thoughts that go into such a task, then will ultimately resort
-to the internal sorting routines built into Python.</p>
-<p>Sorting is frequently necessary when data are being handled; for example in integration
-and differentiation the data are usually presented to the various algorithms in ascending or
-descending order (at least on the x-axis).
-One may have tables of numbers, representing one or more explanatory variables, and one or
-more responses. At times we may need to arrange these tables in an order dictated by one
-or another of these various variables. Alternatively we may want to nd the median value
-or upper quartile of such a list { this task requires sorting.
-When sorting, one can also carry along operations to maintain correspondence with other
-lists (for lack of better name lets call this sort-and-carry).
-Tasks that fall under the broad category of sorting are:</p>
+<hr>
+<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p><em>Here are some great reads on this topic:</em></p>
 <ul>
-<li>Sort ; rearrange an array of numbers into numerical order (ascending or descending).</li>
-<li>Sort and carry along ; rearrange an array of numbers into numerical order while per-
-forming the same rearrangement of one or more additional arrays so that the correspon-
-dence between elements in all arrays is maintained (the sets of arrays are essentially
-a relational database { so that each record (row) maintains the cross-record (elds;
-columns) relationship).</li>
-<li>Index ; given an array, prepare an index table that is a table of pointers that indicates
-which number array element comes rst in numerical order, which is second, and so
-on.</li>
-<li><p>Rank ; given an array, prepare a rank table that tells the numerical rank of an array
-element.
-The task of sorting <code>N</code> elements requires on the order of $K \cdot Nlog2N$ operations. The
-algorithm inventor tries to make $K$ as small as possible (understanding that $K = 0$ is
-practically impossible). Three useful sorting algorithms are:</p>
-<ol>
-<li>Straight insertion sort;</li>
-<li>Heapsort sort; and</li>
-<li>Quicksort sort.</li>
-</ol>
-</li>
+<li>"Python for Loop" available at <a href="https://www.programiz.com/python-programming/for-loop/">https://www.programiz.com/python-programming/for-loop/</a><br></li>
+<li>"Python "for" Loops (Definite Iteration)" by John Sturtz available at <a href="https://realpython.com/python-for-loop/">https://realpython.com/python-for-loop/</a> <br></li>
+<li>"Python "while" Loops (Indefinite Iteration)" by John Sturtz available at <a href="https://realpython.com/python-while-loop/">https://realpython.com/python-while-loop/</a> <br></li>
+<li>"loops in python" available at <a href="https://www.geeksforgeeks.org/loops-in-python/">https://www.geeksforgeeks.org/loops-in-python/ </a> <br></li>
+<li>"Python Exceptions: An Introduction" by Said van de Klundert available at <a href="https://realpython.com/python-exceptions/">https://realpython.com/python-exceptions/</a> <br></li>
 </ul>
-<p>The choice of method depends on the size of the list that needs to be sorted. If the list is
-short (perhaps $N &lt; 50$ elements) then straight insertion is fast enough, concise, and simple
-to program. For a long list ($N &gt; 1000$ elements) Quicksort is faster, but achieves the speed
-by use of extra memory. Heapsort is also good for large lists, and is an in-place routine.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Python lists have a built-in <code>sort()</code> method that modifies the list in-place and a <code>sorted()</code>
-built-in function that builds a new sorted list from an iterable. So when sorting needs to
-be done, you should use the built-in tools. However, because it is a useful programming
-construct, the three sorting algorithms are presented as Python primitive codes.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Bubble-Sort">Bubble Sort<a class="anchor-link" href="#Bubble-Sort">&#182;</a></h3><p>The bubble sort is a place to start despite it's relative slowness. It is a pretty reviled
-algorithm (read the Wikipedia entry), but it is the algorithm that a naive programmer
-might cobble together in a hurry, and despite its shortcomings (it's really slow and
-inefficient), it is robust.</p>
-<p>Here is a description of the sorting task as described by Christian and Griffths (2016)
-(pg. 65):</p>
-<p>"Imagine you want to alphabetize your unsorted collection of books. A
-    natural approach would be just to scan across the shelf looking for out-
-    of-order pairs - Wallace followed by Pynchon, for instance - and 
-    flipping them around. Put Pynchon ahead of Wallace, then continue your scan,
-    looping around to the beginning of the shelf each time you reach the end.
-    When you make a complete pass without finding any more out-of-order
-    pairs on the entire shelf, then you know the job is done.
-    This process is a Bubble Sort, and it lands us in quadratic time. There
-    are n books out of order, and each scan through the shelf can move each
-    one at most one position. (We spot a tiny problem, make a tiny fix.) So
-    in the worst case, where the shelf is perfectly backward, at least one book
-    will need to be moved n positions. Thus a maximum of n passes through
-    n books, which gives us O(n2) in the worst case. For instance, it
-    means that sorting five shelves of books will take not five times as long as
-    sorting a single shelf, but twenty-five times as long."</p>
-<p>Converting the word description into Python is fairly simple. We will have a vector of n
-numbers (we use a vector because its easy to step through the different positions),
-and we will scan through the vector once (and essentially find the smallest thing),
-and put it into the first position. Then we scan again from the second position and
-find the smallest thing remaining, and put it into the second position, and so on until
-the last scan which should have the remaining largest thing. If we desire a decreasing
-order, simply change the sense of the comparison.</p>
-<p>The algorithm defines an array and then sorts by repeated passes through the array.
-The program (outside of the sorting algorithm) is really quite simple.</p>
+<p><em>Here are some great videos on these topics:</em></p>
 <ul>
-<li>Load contents into an array to be sorted.</li>
-<li>Echo (print) the array (so we can verify the data are loaded as anticipated).</li>
-<li>Loads the sorting function (the two loops)</li>
-<li>Sort the array, put the results back into the array (an in-place sort).</li>
-<li>Report the results.</li>
+<li>"Python For Loops - Python Tutorial for Absolute Beginners" by Programming with Mosh available at <a href="https://www.youtube.com/watch?v=94UHCEmprCY">https://www.youtube.com/watch?v=94UHCEmprCY</a> <br></li>
+<li>"Python Tutorial for Beginners 7: Loops and Iterations - For/While Loops" by Corey Schafer available at <a href="https://www.youtube.com/watch?v=6iF8Xb7Z3wQ">https://www.youtube.com/watch?v=6iF8Xb7Z3wQ</a> <br></li>
+<li>"Python 3 Programming Tutorial - For loop" by sentdex available at <a href="https://www.youtube.com/watch?v=xtXexPSfcZg">https://www.youtube.com/watch?v=xtXexPSfcZg </a> <br><br></li>
 </ul>
 
 </div>
@@ -15742,23 +15147,7 @@ The program (outside of the sorting algorithm) is really quite simple.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#array = [7,11,5,8,9,13,66,99,223]</span>
-<span class="c1">#array = [7,11,5]</span>
-<span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="mi">1003</span> <span class="p">,</span><span class="mf">3.2</span> <span class="p">,</span><span class="mf">55.5</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.0001</span> <span class="p">,</span> <span class="o">-</span><span class="mi">6</span> <span class="p">,</span><span class="mf">666.6</span> <span class="p">,</span><span class="mi">102</span><span class="p">]</span>
-<span class="n">howMany</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item Count = : &quot;</span><span class="p">,</span><span class="n">howMany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unsorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
-<span class="c1"># insertion sort</span>
-<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">howMany</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span> 
-    <span class="k">for</span> <span class="n">jrow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,(</span><span class="n">howMany</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">irow</span><span class="p">))</span> <span class="p">:</span>
-        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>
-            <span class="n">swap</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="p">]</span>
-            <span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="p">]</span><span class="o">=</span><span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">array</span><span class="p">[</span><span class="n">jrow</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">swap</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">continue</span>
-<span class="c1">#results  </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -15766,434 +15155,6 @@ The program (outside of the sorting algorithm) is really quite simple.</p>
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In the script we see that the program (near the bottom of the file) assigns the values to the vector named array and
-the initial order of the array is ${1003, 3.2, 55.5,-0.0001,-6, 666.6, 102}$. The smallest
-value in the example is -6 and it appears in the 5-th position, not the 1-st as it
-should.</p>
-<p>The first pass through the array will move the largest value, 1003, in sequence to the
-right until it occupies the last position. Repeated passes through the array move the
-remaining largest values to the right until the array is ordered. One can consider the
-values of the array at each scan of the array as a series of transformations (irow-th
-scan) -- in practical cases we don't necessarily care about the intermediate values,
-but here because the size is manageable and we are trying to get our feet wet with
-algorithms, we can look at the values.
-The sequence of results (transformations) after each pass through the array is shown
-in the following list:</p>
-<ol>
-<li>Initial value: [1003; 3,2; 55,5;-0,0001;-6; 666,6; 102].</li>
-<li>First pass: [3,2; 55,5;-0,0001;-6; 666,6; 102; 1003].</li>
-<li>Second pass: [3,2;-0,0001;-6; 55,5; 102; 666,6; 1003].</li>
-<li>Third pass: [-0,0001;-6; 3,2; 55,5; 102; 666,6; 1003].</li>
-<li>Fourth pass: [-6;-0,0001; 3,2; 55,5; 102; 666,6; 1003].</li>
-<li>Fifth pass: [-6;-0,0001; 3,2; 55,5; 102; 666,6; 1003]. Sorted, fast scan.</li>
-<li>Sixth pass: [-6;-0,0001; 3,2; 55,5; 102; 666,6; 1003]. Sorted, fast scan.
-We could probably add additional code to break from the scans when we have a single
-pass with no exchanges (like the last two scans) -- while meaningless in this example, for larger collections of
-things, being able to break out when the sorting is complete is a nice feature.</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Insertion-Sort">Insertion Sort<a class="anchor-link" href="#Insertion-Sort">&#182;</a></h3><p>The next type of sorting would be to select one item and locate it either left or right
-of an adjacent item based on its size -- like sorting a deck of cards, or perhaps a better
-description -- again using the bookshelf analog from Christian and Griffths (2016)
-(pg. 65)</p>
-<p>You might take a different tack -- pulling all the books off the shelf
-and putting them back in place one by one. You'd put the ffrst book in
-the middle of the shelf, then take the second and compare it to the first,
-inserting it either to the right or to the left. Picking up the third book,
-you'd run through the books on the shelf from left to right until you found
-the right spot to tuck it in. Repeating this process, gradually all of the
-books would end up sorted on the shelf and you'd be done. Computer
-scientists call this, appropriately enough, Insertion Sort. The good news
-is that it's arguably even more intuitive than Bubble Sort and doesn't
-have quite the bad reputation. The bad news is that it's not actually that
-much faster. You still have to do one insertion for each book. And each
-insertion still involves moving past about half the books on the shelf, on
-average, to find the correct place.
-Although in practice Insertion Sort does run a bit faster than Bubble Sort,
-again we land squarely, if you will, in quadratic time. Sorting anything
-more than a single bookshelf is still an unwieldy prospect."
-Listing 8 is an R implementation of a straight insertion sort. The script is quite
-compact, and I used indentation and extra line spacing to keep track of the scoping
-delimiters. The sort works as follows, take the an element of the array (start with
-2 and work to the right) and put it into a temporary location (called swap in my
-script). Then compare locations to the left of swap. If smaller, then break from the
-loop, exchange values, otherwise the values are currently ordered. Repeat (starting
-at the next element) , when all elements have been traversed the resulting vector is
-sorted. Here are the transformations for each pass through the outer loop:</p>
-<h4 id="Straight-Insertion">Straight Insertion<a class="anchor-link" href="#Straight-Insertion">&#182;</a></h4><p>The straight insertion sort is the algorithm a card player would use to sort cards. Pick out
-the second card and put it into order with respect to the first; then pick the third card
-and insert it into sequence with the first two; continue until the last card is picked out and
-inserted. Once the last card is sequenced, the result is a sorted deck (list).
-Python implementation of such an algorithm is:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#array = [7,11,5,8,9,13,66,99,223]</span>
-<span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">howMany</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item Count = : &quot;</span><span class="p">,</span><span class="n">howMany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unsorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># insertion sort</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span> <span class="c1"># Traverse through 1 to len(arr) </span>
-    <span class="n">key</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-        <span class="c1"># Move elements of arr[0..i-1], that are </span>
-        <span class="c1"># greater than key, to one position ahead </span>
-        <span class="c1"># of their current position </span>
-    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
-    <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">:</span> 
-            <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span> 
-<span class="c1">#results  </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Probably useful to put into a functional structure:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function to do insertion sort </span>
-<span class="k">def</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span> 
-    <span class="c1"># Traverse through 1 to len(arr) </span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span> 
-        <span class="n">key</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-        <span class="c1"># Move elements of arr[0..i-1], that are </span>
-        <span class="c1"># greater than key, to one position ahead </span>
-        <span class="c1"># of their current position </span>
-        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
-        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">:</span> 
-                <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-                <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span> 
-    <span class="k">return</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">223</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unsorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
-<span class="n">insertionSort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted List : &quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Merge-Sort">Merge Sort<a class="anchor-link" href="#Merge-Sort">&#182;</a></h3><p>A practical extension of these slow sorts is called the Merge Sort. It is an incredibly
-useful method. One simply breaks up the items into smaller arrays, sorts those arrays -
-then merges the sub-arrays into larger arrays (now already sorted), and nally merges
-the last two arrays into the nal, single, sorted array.
-Here is a better description, again from Christian and Griffths (2016):</p>
-<p>" ... information processing began in the US censuses of the nineteenth
-century, with the development, by Herman Hollerith and later by IBM, of
-physical punch-card sorting devices. In 1936, IBM began producing a line
-of machines called \collators" that could merge two separately ordered
-stacks of cards into one. As long as the two stacks were themselves sorted,
-the procedure of merging them into a single sorted stack was incredibly
-straightforward and took linear time: simply compare the two top cards
-to each other, move the smaller of them to the new stack you're creating,
-and repeat until finished.</p>
-<p>The program that John von Neumann wrote in 1945 to demonstrate the
-power of the stored-program computer took the idea of collating to its
-beautiful and ultimate conclusion. Sorting two cards is simple: just put
-the smaller one on top. And given a pair of two-card stacks, both of them
-sorted, you can easily collate them into an ordered stack of four. Repeating
-this trick a few times, you'd build bigger and bigger stacks, each one of
-them already sorted. Soon enough, you could collate yourself a perfectly
-sorted full deck - with a final climactic merge, like a riffe shuffle's order-
-creating twin, producing the desired result. This approach is known today
-as Merge Sort, one of the legendary algorithms in computer science."</p>
-<p>There are several other variants related to Merge Sort; Quicksort and Heapsort being
-close relatives;</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Python program for implementation of MergeSort </span>
-<span class="c1"># https://www.geeksforgeeks.org/merge-sort/</span>
-<span class="c1"># This code is contributed by Mayank Khanna </span>
-<span class="k">def</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span> 
-        <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="c1"># Finding the mid of the array </span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span> <span class="c1"># Dividing the array elements  </span>
-        <span class="n">R</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span> <span class="c1"># into 2 halves </span>
-  
-        <span class="n">mergeSort</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># Sorting the first half </span>
-        <span class="n">mergeSort</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="c1"># Sorting the second half </span>
-  
-        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-          
-        <span class="c1"># Copy data to temp arrays L[] and R[] </span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">):</span> 
-            <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span> 
-                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-                <span class="n">i</span><span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">else</span><span class="p">:</span> 
-                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-                <span class="n">j</span><span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">k</span><span class="o">+=</span> <span class="mi">1</span>
-          
-        <span class="c1"># Checking if any element was left </span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span> 
-            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-            <span class="n">i</span><span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">k</span><span class="o">+=</span> <span class="mi">1</span>
-          
-        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">):</span> 
-            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-            <span class="n">j</span><span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">k</span><span class="o">+=</span> <span class="mi">1</span>
-  
-<span class="c1"># Code to print the list </span>
-<span class="k">def</span> <span class="nf">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>         
-        <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span> 
-    <span class="nb">print</span><span class="p">()</span> 
-  
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># driver code to test the above code </span>
-<span class="c1">#if __name__ == &#39;__main__&#39;: </span>
-<span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">1003</span> <span class="p">,</span><span class="mf">3.2</span> <span class="p">,</span><span class="mf">55.5</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.0001</span> <span class="p">,</span> <span class="o">-</span><span class="mi">6</span> <span class="p">,</span><span class="mf">666.6</span> <span class="p">,</span><span class="mi">102</span><span class="p">]</span>
-<span class="c1">#arr = [12, 11, 13, 5, 6, 7]  </span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Given array is&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  
-<span class="n">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-<span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted array is: &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> 
-<span class="n">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Heapsort">Heapsort<a class="anchor-link" href="#Heapsort">&#182;</a></h4><p>Need narrative here</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Python program for implementation of heap Sort </span>
-  
-<span class="c1"># To heapify subtree rooted at index i. </span>
-<span class="c1"># n is size of heap </span>
-<span class="k">def</span> <span class="nf">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span> 
-    <span class="n">largest</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># Initialize largest as root </span>
-    <span class="n">l</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>     <span class="c1"># left = 2*i + 1 </span>
-    <span class="n">r</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>     <span class="c1"># right = 2*i + 2 </span>
-  
-    <span class="c1"># See if left child of root exists and is </span>
-    <span class="c1"># greater than root </span>
-    <span class="k">if</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span> 
-        <span class="n">largest</span> <span class="o">=</span> <span class="n">l</span> 
-  
-    <span class="c1"># See if right child of root exists and is </span>
-    <span class="c1"># greater than root </span>
-    <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span> 
-        <span class="n">largest</span> <span class="o">=</span> <span class="n">r</span> 
-  
-    <span class="c1"># Change root, if needed </span>
-    <span class="k">if</span> <span class="n">largest</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span> 
-        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">],</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># swap </span>
-  
-        <span class="c1"># Heapify the root. </span>
-        <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">largest</span><span class="p">)</span> 
-  
-<span class="c1"># The main function to sort an array of given size </span>
-<span class="k">def</span> <span class="nf">heapSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> 
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-  
-    <span class="c1"># Build a maxheap. </span>
-    <span class="c1"># Since last parent will be at ((n//2)-1) we can start at that location. </span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> 
-        <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
-  
-    <span class="c1"># One by one extract elements </span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> 
-        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>   <span class="c1"># swap </span>
-        <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
-  
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Driver code to test above </span>
-<span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">1003</span> <span class="p">,</span><span class="mf">3.2</span> <span class="p">,</span><span class="mf">55.5</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.0001</span> <span class="p">,</span> <span class="o">-</span><span class="mi">6</span> <span class="p">,</span><span class="mf">666.6</span> <span class="p">,</span><span class="mi">102</span><span class="p">]</span>
-<span class="c1">#arr = [ 12, 11, 13, 5, 6, 7] </span>
-<span class="n">heapSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sorted array is&quot;</span><span class="p">)</span> 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">arr</span>[i]), 
-<span class="c1"># This code is contributed by Mohit Kumra </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Lexicographical-Sorting">Lexicographical Sorting<a class="anchor-link" href="#Lexicographical-Sorting">&#182;</a></h4><p>Need narrative here</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Python program to sort the words in lexicographical </span>
-<span class="c1"># order </span>
-  
-<span class="k">def</span> <span class="nf">sortLexo</span><span class="p">(</span><span class="n">my_string</span><span class="p">):</span> 
-  
-    <span class="c1"># Split the my_string till where space is found. </span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
-      
-    <span class="c1"># sort() will sort the strings. </span>
-    <span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> 
-  
-    <span class="c1"># Iterate i through &#39;words&#39; to print the words </span>
-    <span class="c1"># in alphabetical manner. </span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span>  
-  
-<span class="c1"># Driver code  </span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span> 
-      
-    <span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;hello this is example how to sort &quot;</span> \
-              <span class="s2">&quot;the word in alphabetical manner&quot;</span>
-    <span class="c1"># Calling function </span>
-    <span class="n">sortLexo</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>I conclude the section on sorting with one more quoted section from Christian and
-Griffiths (2016) about the value for sorting - which is already relevant to a lot of
-data science:</p>
-<p>"The poster child for the advantages of sorting would be an Internet search
-engine like Google. It seems staggering to think that Google can take the
-search phrase you typed in and scour the entire Internet for it in less than
-half a second. Well, it can't - but it doesn't need to.</p>
-<p>If you're Google, you are almost certain that (a) your data will be searched, (b) it will be
-searched not just once but repeatedly, and (c) the time needed to sort is
-somehow less valuable" than the time needed to search. (Here, sorting
-is done by machines ahead of time, before the results are needed, and
-searching is done by users for whom time is of the essence.) 
-All of these factors point in favor of tremendous up-front sorting, which is indeed what
-Google and its fellow search engines do."</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><ol>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapters 3-6 <a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">https://www.inferentialthinking.com/chapters/03/programming-in-python.html</a></p>
-</li>
-<li><p>Learn Python the Hard Way (Online Book) (<a href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</p>
-</li>
-<li><p>LearnPython.org (Interactive Tutorial) (<a href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</p>
-</li>
-<li><p>Brian Christian and Tom Griffiths (2016) ALGORITHMS TO LIVE BY: The Computer Science of Human Decisions Henry Holt and Co. (<a href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365</a>)</p>
-</li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<a href="https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/">https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/</a></p>
-</li>
-</ol>
-
-</div>
 </div>
 </body>
 

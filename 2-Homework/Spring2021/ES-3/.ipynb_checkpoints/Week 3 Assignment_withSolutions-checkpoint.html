@@ -3,13 +3,13 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-Lesson04</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Week 3 Assignment_withSolutions</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
+    pre { line-height: 125%; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -14259,392 +14259,68 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Download this page as a jupyter notebook at <a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson04/ENGR-1330-Lesson04.ipynb">Lesson 4</a></p>
+<h1><font color=darkblue>Week 3 Assignment </font></h1>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 13 July 2021</p>
-<h2 id="Lesson-4-Algorithm-Building-Blocks:">Lesson 4 Algorithm Building Blocks:<a class="anchor-link" href="#Lesson-4-Algorithm-Building-Blocks:">&#182;</a></h2><ul>
-<li>Three structures: sequence, selection , repetition (loops)</li>
-<li>Sequence structures</li>
-<li>Selection structures</li>
-<li>Structured FOR loops</li>
-<li>Structured WHILE loops</li>
-<li>Representing computational processes with flowcharts, a graphical abstraction</li>
-</ul>
-<hr>
-
+<h2 id="Full-name:">Full name:<a class="anchor-link" href="#Full-name:">&#182;</a></h2><h2 id="R#:">R#:<a class="anchor-link" href="#R#:">&#182;</a></h2><h2 id="Title-of-the-notebook:">Title of the notebook:<a class="anchor-link" href="#Title-of-the-notebook:">&#182;</a></h2><h2 id="Date:">Date:<a class="anchor-link" href="#Date:">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!</span> hostname<span class="p">;</span> ! whoami<span class="p">;</span> ! pwd<span class="p">;</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>atomickitty
-sensei
-/home/sensei/engr-1330-webroot/1-Lessons/Lesson04
-/opt/jupyterhub/bin/python3
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<!-- Script Block to set tables to left alignment -->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><p>1) Develop awareness of fundamental structures in algorithms:</p>
-<ul>
-<li>sequence</li>
-<li>selection</li>
-<li>repetition</li>
-</ul>
-<p>2) Develop awareness of loops, and their utility in automation.</p>
-<ul>
-<li>To understand loop types available in Python.</li>
-<li>To understand and implement loops in various examples and configurations.</li>
-</ul>
-<p>3) Develop awareness of flowcharts as a tool for:</p>
-<ul>
-<li>Post-development documentation</li>
-<li>Pre-development program design</li>
-</ul>
+<p><img src="https://campaignjr.com/v1/wp-content/uploads/2016/12/12_funny-and-inspiring-graphic-design-related-gifs.gif" alt=""> <br></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Algorithm-Structures">Algorithm Structures<a class="anchor-link" href="#Algorithm-Structures">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Sequence">Sequence<a class="anchor-link" href="#Sequence">&#182;</a></h2><p>Sequential processing are steps performed in sequence, one after another.  A default spreadsheet computation from top-to-bottom is a sequential process.</p>
-<p><strong>Reliability Example</strong>
-Suppose we wish to estimate the reliability of a system comprised of many indetical parts iused in multiple places in a design, for instance rivets on an airplane wing. Using a Bernoulli model (which you will see in your statistics class) we can estimate the collective reliability of the system (all the parts work as desired).  The reliability is expressed as the fraction of time that no parts have failed, if the fraction is small we would want to either improve part reliability, or ensure redundancy so the system can function with broken parts.</p>
-<p>Let $p$ be the probability a single component is good and $N$ be the total number of components in the system that work together in a "series" context.  The reliability, or the percentage of time that none of the components have failed is given by the Bernoulli equation:</p>
-$$\% = (\frac{p}{100.0})^N \cdot 100.0 $$<p>Suppose we want a script to read in a component probability and count, and estimate system reliability -- we can apply our problem solving protocol and JupyterLab to do so, and the task will be mostly sequential</p>
-<p><strong>Step 1 Problem Statement</strong> Estimate the reliability of a component in an instrument relative to a group of components using a Bernoulli approximation.</p>
-<p><strong>Step 2 Input/Output Decomposition</strong> Inputs are the reliability of a single component and the number of components working together in a system, output is estimate of system reliability, governing principle is the Bernoulli equation above.</p>
-<p><strong>Step 3 By-Hand Example</strong>
-SUppose the system is a small FPGA with 20 transistors, each with reliability of 96-percent. The entire array reliability is</p>
-$$\text{percentage} = (\frac{96.0}{100.0})^{20} \cdot 100.0 = 44.2\%$$<p><strong>Step 4 Algorithm Development</strong>
-Decompose the computation problem as:</p>
-<ol>
-<li>Read reliability of a single component</li>
-<li>Read how many components</li>
-<li>Compute reliability  by bernoulli model</li>
-<li>Report result</li>
-</ol>
-<p><strong>Step 5 Scripting</strong>
-Written as a sequence we can have</p>
+<h3 id="Question1:-User-Defined-Function">Question1: User-Defined Function<a class="anchor-link" href="#Question1:-User-Defined-Function">&#182;</a></h3><p>Create the function $$f(x) = e^x - 10 cos(x) - 100$$ as a function (i.e. use the <code>def</code> keyword)</p>
 
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Component Reliability:  96.0
-Number of Components :  20
-System Relability is :  44.2 %
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Step 6 Refinement</strong>
-We have tested the script with the by-hand example, no refinement really needed here, but lets apply to new conditions</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
-<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Relability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Component Reliability:  99.0
-Number of Components :  20
-System Relability is :  81.8 %
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Selection-Structures">Selection Structures<a class="anchor-link" href="#Selection-Structures">&#182;</a></h2><p>Selection via conditional statements is an important step in algorithm design; its one way to control the flow of execution of a program.</p>
-<p>Conditional statements in Python include:</p>
-<ul>
-<li><code>if</code> statement is true, then do ...</li>
-<li><code>if....else</code> statement is true, then do ..., otherwise do something else</li>
-<li><code>if....elif....else</code> statement is true, then do ..., if something else is true then do ..., otherwise do ... </li>
-</ul>
-<p>Conditional statements are logical expressions that evaluate as TRUE or FALSE and using
-these results to perform further operations based on these conditions.
-All flow control in a program depends on evaluating conditions. The program will proceed
-diferently based on the outcome of one or more conditions - really sophisticated AI programs are a collection of conditions and correlations.</p>
-<p>Expressed in a flowchart a block <code>if</code> statement looks like:</p>
-<p><img src="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson04/conditional.png" alt=""></p>
-<p>As <a href="https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7">psuedo code</a>:</p>
-
-<pre><code>if(condition is true): 
-    do stuff
+<pre><code>def name(parameters) :
+    operations on parameters
+    ...
+    ...
+    return (value, or null)
 
 </code></pre>
-<p>Amazon knowing what you kind of want is based on correlations of your past behavior compared to other peoples similar, but more recent behavior, and then it uses conditional statements to decide what item to offer you in your recommendation items. 
-It's spooky, but ultimately just a program running in the background trying to make your money theirs.</p>
-<h3 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">&#182;</a></h3><p>The most common conditional operation is comparison. If we wish to compare whether two
-variables are the same we use the == (double equal sign).</p>
-<p>For example x == y means the program will ask whether x and y have the same value. 
-If they do, the result is TRUE if not then the result is FALSE.</p>
-<p>Other comparison signs are <code>!=</code> does NOT equal, <code>&lt;</code> smaller than, <code>&gt;</code>larger than, <code>&lt;=</code>less than or equal, and <code>&gt;=</code> greater than or equal.</p>
-<p>There are also three logical operators when we want to build multiple compares
-(multiple conditioning); these are <code>and</code>, <code>or</code>, and <code>not</code>.</p>
-<p>The <code>and</code> operator returns TRUE if (and only if) <strong>all</strong> conditions are TRUE.
-For instance <code>5 == 5 and 5 &lt; 6</code> will return a TRUE because both conditions are true.</p>
-<p>The <code>or</code> operator returns <code>TRUE</code> if at least one condition is true. 
-If <strong>all</strong> conditions are FALSE, then it will return a FALSE. For instance <code>4 &gt; 3 or 17 &gt; 20 or 3 == 2</code> will return <code>TRUE</code>because the first condition is true.
-The <code>not</code> operator returns <code>TRUE</code> if the condition after the <code>not</code> keyword is false. Think of it
-as a way to do a logic reversal.</p>
-<h3 id="Block-if-statement">Block <code>if</code> statement<a class="anchor-link" href="#Block-if-statement">&#182;</a></h3><p>The <code>if</code> statement is a common flow control statement. 
-It allows the program to evaluate if a certain condition is satisfied and to perform a designed action based on the result of the evaluation. The structure of an <code>if</code> statement is</p>
-
-<pre><code>if condition1 is met:
-    do A
-elif condition 2 is met:
-    do b
-elif condition 3 is met:
-    do c
-else:
-    do e
-
-</code></pre>
-<p>The <code>elif</code> means "else if". The <code>:</code> colon is an important part of the structure it tells where the action begins. Also there are no scope delimiters like (), or {} . 
-Instead Python uses indentation to isolate blocks of code.</p>
-<p>This convention is hugely important - many other coding environments use delimiters (called scoping delimiters), but Python does not. The indentation itself is the scoping delimiter.</p>
-<h3 id="Inline-if-statement">Inline <code>if</code> statement<a class="anchor-link" href="#Inline-if-statement">&#182;</a></h3><p>An inline <code>if</code> statement is a simpler form of an <code>if</code> statement and is more convenient if you
-only need to perform a simple conditional task. 
-The syntax is:</p>
-
-<pre><code>do TaskA `if` condition is true `else` do TaskB
-
-</code></pre>
-<p>An example would be</p>
-
-<pre><code>myInt = 3
-num1 = 12 if myInt == 0 else 13
-num1
-
-</code></pre>
-<p>An alternative way is to enclose the condition in brackets for some clarity like</p>
-
-<pre><code>myInt = 3
-num1 = 12 if (myInt == 0) else 13
-num1
-
-</code></pre>
-<p>In either case the result is that <code>num1</code> will have the value <code>13</code> (unless you set myInt to 0).</p>
-<p>One can also use <code>if</code> to construct extremely inefficient loops.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Repetition-and-Loops">Repetition and Loops<a class="anchor-link" href="#Repetition-and-Loops">&#182;</a></h2><p><strong>Computational thinking (CT)</strong> concepts involved are:</p>
-<ul>
-<li><code>Decomposition</code> : Break a problem down into smaller pieces; the body of tasks in one repetition of a loop represent decomposition of the entire sets of repeated activities</li>
-<li><code>Pattern Recognition</code> : Finding similarities between things; the body of tasks in one repetition of a loop is the pattern, the indices and components that change are how we leverage reuse</li>
-<li><code>Abstraction</code> : Pulling out specific differences to make one solution work for multiple problems</li>
-<li><code>Algorithms</code> : A list of steps that you can follow to finish a task</li>
-</ul>
-<p>The action of doing something over and over again (repetition) is called a loop.  Basically, Loops repeats a portion of code a finite number of times until a process is complete. Repetitive tasks are very common and essential in programming. They save time in coding, minimize coding errors, and leverage the speed of electronic computation.</p>
-<h3 id="Loop-Analogs">Loop Analogs<a class="anchor-link" href="#Loop-Analogs">&#182;</a></h3><p>If you think any mass manufacturing process, we apply the same process again and again. Even for something very simple such as preparing a peanut butter sandwich:</p>
-<p>Consider the <strong><em>flowchart</em></strong> in Figure 1, it represents a decomposition of sandwich assembly, but at a high level -- for instance, <code>Gather Ingredients</code> contains a lot of substeps that would need to be decomposed if fully automated assembly were to be accomplished; nevertheless lets stipulate that this flowchart will indeed construct a single sandwich.</p>
-<p><img src="sandwichchart.png" alt=""></p>
+<p>Then apply your function to the value.</p>
+<p>Use your function to complete the table below:</p>
 <table>
 <thead><tr>
-<th style="text-align:left">Figure 1</th>
-<th style="text-align:left">Supervisory Flowchart Sandwich Assembly (adapted from <a href="http://www.str-tn.org/subway_restaurant_training_manual.pdf">http://www.str-tn.org/subway_restaurant_training_manual.pdf</a>)</th>
-<th style="text-align:left"></th>
+<th style="text-align:right">x</th>
+<th style="text-align:right">f(x)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">1.50</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">2.00</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">2.25</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">3.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">4.25</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-<p>If we need to make 1000 peanut butter sandwichs we would then issue a directive to:</p>
-<p>1) Implement sandwich assembly, repeat 999 times (repeat is the loop structure) (A serial structure, 1 sandwich artist, doing same job over and over again)</p>
-<p><strong>OR</strong></p>
-<p>2) Implement 1000 sandwich assembly threads (A parallel structure, 1000 sandwich artists doing same job once)</p>
-<p>In general because we dont want to idle 999 sandwich artists, we would choose the serial structure, which frees 999 people to ask the existential question "would you like fries with that?"</p>
-<p>All cynicism aside, an automated process such as a loop, is typical in computational processing.</p>
-<p><strong><em>Aside</em></strong> NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel -- the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This parallelization is called unrolling the loop, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.</p>
-<p>Main attractiveness of loops is:</p>
-<ul>
-<li>Leveraging  <code>pattern matching</code> and <code>automation</code></li>
-<li>Code is more organized and shorter,because a loop is a sequence of instructions that is continually repeated until a certain condition is reached. </li>
-</ul>
-<p>There are 2 main types loops based on the repetition control condition; <code>for</code> loops and <code>while</code>loops.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14653,7 +14329,32 @@ num1
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span> <span class="c1"># package that contains exp function</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span> <span class="c1"># package that contains cosine function</span>
+<span class="k">def</span> <span class="nf">gollum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span> <span class="c1">#define the function &quot;gollum&quot;</span>
+    <span class="n">precious</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="mi">100</span>  <span class="c1">#as stated by the question</span>
+    <span class="k">return</span> <span class="n">precious</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">prettytable</span> <span class="kn">import</span> <span class="n">PrettyTable</span> <span class="c1">#package that contains the PrettyTable function </span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="c1">#Define an empty table</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.25</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span> <span class="c1">#the list of x values according to the table</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#a counter to go through the list x</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">gollum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span> <span class="c1">#for each x value, fill one row in table t with the value of x and the value of gollum function of that x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14664,57 +14365,48 @@ num1
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="For-Loop-(Count-controlled-repetition-structure)">For Loop (Count controlled repetition structure)<a class="anchor-link" href="#For-Loop-(Count-controlled-repetition-structure)">&#182;</a></h2><p>Count-controlled repetition is also called definite repetition because the number of repetitions is known before the loop begins executing. 
-When we do not know in advance the number of times we want to execute a statement, we cannot use count-controlled repetition. 
-In such an instance, we would use sentinel-controlled repetition.</p>
-<p>A count-controlled repetition will exit after running a certain number of times. 
-The count is kept in a variable called an index or counter. 
-When the index reaches a certain value (the loop bound) the loop will end.</p>
-<p>Count-controlled repetition requires</p>
-<ul>
-<li>control variable (or loop counter)</li>
-<li>initial value of the control variable</li>
-<li>increment (or decrement) by which the control variable is modified each iteration through the loop</li>
-<li>condition that tests for the final value of the control variable </li>
-</ul>
-<p>We can use both <code>for</code> and <code>while</code> loops, for count controlled repetition, but the <code>for</code> loop in combination with the <code>range()</code> function is more common.</p>
-<h3 id="Structured-FOR-loop">Structured <code>FOR</code> loop<a class="anchor-link" href="#Structured-FOR-loop">&#182;</a></h3><p>We have seen the for loop already, but we will formally introduce it here. The <code>for</code> loop executes a block of code repeatedly until the condition in the <code>for</code> statement is no longer true.</p>
-<h3 id="Looping-through-an-iterable">Looping through an iterable<a class="anchor-link" href="#Looping-through-an-iterable">&#182;</a></h3><p>An iterable is anything that can be looped over - typically a list, string, or tuple. 
-The syntax for looping through an iterable is illustrated by an example.</p>
-<p>First a generic syntax</p>
-
-<pre><code>for a in iterable:
-print(a)
-
-</code></pre>
-<p>Notice our friends the colon <code>:</code> and the indentation.</p>
-<h4 id="The-range()-function-to-create-an-iterable">The <code>range()</code> function to create an iterable<a class="anchor-link" href="#The-range()-function-to-create-an-iterable">&#182;</a></h4><p>The <code>range(begin,end,increment)</code> function will create an iterable starting at a value of begin, in steps defined by increment (<code>begin += increment</code>), ending at <code>end</code>.</p>
-<p>So a generic syntax becomes</p>
-
-<pre><code>for a in range(begin,end,increment):
-print(a)
-
-</code></pre>
-<p>The examples that follow are count-controlled repetition (increment skip if greater)</p>
+<hr>
+<h3>Question2: Power Plot <br></h3>
+<p>Copy the wrapper script for the <code>plotAline()</code> function (from the Lab4_dev notebook), and modify the copy to create a plot of
+$$ y = x^2 $$
+for x raging from 0 to 9 (inclusive) in steps of 1.</p>
+<p>Label the plot and the plot axes.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plotAline</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">,</span><span class="n">strx</span><span class="p">,</span><span class="n">stry</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span> <span class="c1"># plot list1 on x, list2 on y, xlabel, ylabel, title</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> <span class="c1"># import the plotting library from matplotlibplt.show()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> <span class="c1"># create a line chart, years on x-axis, gdp on y-axis</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span><span class="c1"># add a title</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">stry</span><span class="p">)</span><span class="c1"># add a label to the x and y-axes</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+    <span class="k">return</span> <span class="c1">#null return</span>
+</pre></div>
+
+     </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-for-loops">Example <code>for</code> loops<a class="anchor-link" href="#Example-for-loops">&#182;</a></h2>
 </div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xxx</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list</span>
+<span class="n">yyy</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">xxx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="c1">#float i and append to the list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">yyy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xxx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plotAline</span><span class="p">(</span><span class="n">xxx</span><span class="p">,</span><span class="n">yyy</span><span class="p">,</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span><span class="s2">&quot;Plot of Y = X^2 &quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14734,22 +14426,119 @@ print(a)
 
 
 
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
-<div class="jp-OutputArea-child">
+</div>
 
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3>Question3: Cars! <br></h3>
+<p>Write a class named '<strong>CarSpeed</strong>' to calculate the speed (in miles/hour) of different brands of cars based on the information given in the table below.<br>
+The formula to calculate speed is also given below.<br>
+Based on your output, which brand of car has the highest speed?</p>
+$$Speed = \frac{Distance}{Time}$$<table>
+<thead><tr>
+<th>Car brand</th>
+<th>Distance (miles)</th>
+<th>Time (hours)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ford</td>
+<td>120</td>
+<td>1.75</td>
+</tr>
+<tr>
+<td>Ferrari</td>
+<td>100</td>
+<td>1.20</td>
+</tr>
+<tr>
+<td>BMW</td>
+<td>205</td>
+<td>2.35</td>
+</tr>
+<tr>
+<td>Porsche</td>
+<td>155</td>
+<td>1.85</td>
+</tr>
+<tr>
+<td>Audi</td>
+<td>190</td>
+<td>2.10</td>
+</tr>
+<tr>
+<td>Jaguar</td>
+<td>255</td>
+<td>2.45</td>
+</tr>
+</tbody>
+</table>
+<h5 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">&#182;</a></h5><ol>
+<li>Use docstrings to describe the purpose of the class.</li>
+<li>Create an object for each car brand and display the output as shown below.</li>
+</ol>
+<p>Ford_Speed (miles/hour): <strong>SPEED</strong><br>
+Ferrari_Speed (miles/hour): <strong>SPEED</strong><br>
+BMW_Speed (miles/hour): <strong>SPEED</strong><br>
+Porsche_Speed (miles/hour): <strong>SPEED</strong><br>
+Audi_Speed (miles/hour): <strong>SPEED</strong><br>
+Jaguar_Speed (miles/hour): <strong>SPEED</strong><br>
+The car with the highest speed is: <strong>CAR BRAND</strong></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">CarSpeed</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class calculates the speed of the car based on the given distance and time&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="o">=</span> <span class="n">time</span>
+        
+    <span class="k">def</span> <span class="nf">speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span>
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+</pre></div>
 
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum from 1 to  9 is 45.000
-</pre>
+     </div>
+</div>
 </div>
 </div>
 
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ford</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ferrari</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">)</span>
+<span class="n">bmw</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">205</span><span class="p">,</span> <span class="mf">2.35</span><span class="p">)</span>
+<span class="n">porsche</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">155</span><span class="p">,</span> <span class="mf">1.85</span><span class="p">)</span>
+<span class="n">audi</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="mf">2.10</span><span class="p">)</span>
+<span class="n">jaguar</span> <span class="o">=</span> <span class="n">CarSpeed</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mf">2.45</span><span class="p">)</span>
+</pre></div>
 
+     </div>
+</div>
+</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14758,13 +14547,12 @@ print(a)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ford_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">ford</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ferrari_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">ferrari</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BMW_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">bmw</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porsche_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">porsche</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Audi_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">audi</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jaguar_Speed (miles/hour):&quot;</span><span class="p">,</span> <span class="n">jaguar</span><span class="o">.</span><span class="n">speed</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -14783,17 +14571,13 @@ print(a)
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum of Evens from 1 to  9 is 20.000
+<pre>Ford_Speed (miles/hour): 68.57142857142857
+Ferrari_Speed (miles/hour): 83.33333333333334
+BMW_Speed (miles/hour): 87.23404255319149
+Porsche_Speed (miles/hour): 83.78378378378378
+Audi_Speed (miles/hour): 90.47619047619047
+Jaguar_Speed (miles/hour): 104.08163265306122
 </pre>
 </div>
 </div>
@@ -14808,11 +14592,11 @@ print(a)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># which brand of car has the highest speed?</span>
+<span class="n">BrSp</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Ford&quot;</span><span class="p">:</span><span class="n">ford</span><span class="o">.</span><span class="n">speed</span><span class="p">(),</span><span class="s2">&quot;Ferrari&quot;</span><span class="p">:</span><span class="n">ferrari</span><span class="o">.</span><span class="n">speed</span><span class="p">(),</span><span class="s2">&quot;BMW&quot;</span><span class="p">:</span><span class="n">bmw</span><span class="o">.</span><span class="n">speed</span><span class="p">(),</span><span class="s2">&quot;Porsche&quot;</span><span class="p">:</span><span class="n">porsche</span><span class="o">.</span><span class="n">speed</span><span class="p">(),</span><span class="s2">&quot;Audi&quot;</span><span class="p">:</span><span class="n">audi</span><span class="o">.</span><span class="n">speed</span><span class="p">(),</span><span class="s2">&quot;Jaguar&quot;</span><span class="p">:</span><span class="n">jaguar</span><span class="o">.</span><span class="n">speed</span><span class="p">()}</span> <span class="c1">#Create a dictionary with brands and speeds</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BrSp</span><span class="p">)</span>
+<span class="n">max_key</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">BrSp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">BrSp</span><span class="o">.</span><span class="n">get</span><span class="p">)</span> <span class="c1">#Find the key(brand) associated with maximum speed</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The brand of car with the highest speed is&quot;</span><span class="p">,</span><span class="n">max_key</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14831,25 +14615,9 @@ print(a)
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>*
-**
-***
-****
-*****
-******
-*******
-********
-*********
+<pre>{&#39;Ford&#39;: 68.57142857142857, &#39;Ferrari&#39;: 83.33333333333334, &#39;BMW&#39;: 87.23404255319149, &#39;Porsche&#39;: 83.78378378378378, &#39;Audi&#39;: 90.47619047619047, &#39;Jaguar&#39;: 104.08163265306122}
+The brand of car with the highest speed is Jaguar
 </pre>
 </div>
 </div>
@@ -14861,28 +14629,45 @@ print(a)
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Sentinel-controlled-repetition.">Sentinel-controlled repetition.<a class="anchor-link" href="#Sentinel-controlled-repetition.">&#182;</a></h2><p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used. 
-Sentinel-controlled repetition is also called indefinite repetition because it is not known in advance how many times the loop will be executed. 
-It is a repetition procedure for solving a problem by using a sentinel value (also called a signal value, a dummy value or a flag value) to indicate "end of process". 
-The sentinel value itself need not be a part of the processed data.</p>
-<p>One common example of using sentinel-controlled repetition is when we are processing data from a file and we do not know in advance when we would reach the end of the file.</p>
-<p>We can use both <code>for</code> and <code>while</code> loops, for <strong>Sentinel</strong> controlled repetition, but the <code>while</code> loop is more common.</p>
-<h3 id="Structured-WHILE-loop">Structured <code>WHILE</code> loop<a class="anchor-link" href="#Structured-WHILE-loop">&#182;</a></h3><p>The <code>while</code> loop repeats a block of instructions inside the loop while a condition remainsvtrue.</p>
-<p>First a generic syntax</p>
+<hr>
+<h3>Question4: RoboCop Modification  <br></h3>
+<p>Write a class named '<strong>Tax</strong>' to calculate the state tax (in dollars) of Employees at Texas Tech University based on their annual salary.<br>
+The state tax is 16% if the annual salary is below 80,000 dollars and 22% if the salary is more than 80,000 dollars.</p>
+$$Tax = Annual salary \times State\, tax\, \%$$<table>
+<thead><tr>
+<th>Employee</th>
+<th>Annual salary (dollars)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>1,50,000</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>78,000</td>
+</tr>
+<tr>
+<td>John</td>
+<td>55,000</td>
+</tr>
+<tr>
+<td>Danny</td>
+<td>1,75,000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">&#182;</a></h4><ol>
+<li>Use docstrings to describe the purpose of the class.</li>
+<li>Use if....else conditional statements within the method of the class to choose the relevant tax % based on the annual salary.</li>
+<li>Create an object for employee and display the output as shown below.</li>
+</ol>
+<p>Bob's tax amount (in dollars): <strong>AMOUNT</strong><br>
+Mary's tax amount (in dollars): <strong>AMOUNT</strong><br>
+John's tax amount (in dollars): <strong>AMOUNT</strong><br>
+Danny's tax amount (in dollars): <strong>AMOUNT</strong></p>
 
-<pre><code>while condition is true:
-    execute a
-    execute b
-....
-
-</code></pre>
-<p>Notice our friends the colon <code>:</code> and the indentation again.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example-while-loops">Example <code>while</code> loops<a class="anchor-link" href="#Example-while-loops">&#182;</a></h1>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -14890,190 +14675,26 @@ The sentinel value itself need not be a part of the processed data.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Tax</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class calculates the tax amount based on the annual salary and the state tax %&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">salary</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">salary</span> <span class="o">=</span> <span class="n">salary</span>
+        
+    <span class="k">def</span> <span class="nf">taxamount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">salary</span> <span class="o">&lt;</span> <span class="mi">80000</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">salary</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">salary</span><span class="o">*</span><span class="p">(</span><span class="mi">22</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">Tax</span><span class="p">(</span><span class="mi">150000</span><span class="p">)</span>
+<span class="n">mary</span> <span class="o">=</span> <span class="n">Tax</span><span class="p">(</span><span class="mi">78000</span><span class="p">)</span>
+<span class="n">john</span> <span class="o">=</span> <span class="n">Tax</span><span class="p">(</span><span class="mi">55000</span><span class="p">)</span>
+<span class="n">danny</span> <span class="o">=</span> <span class="n">Tax</span><span class="p">(</span><span class="mi">175000</span><span class="p">)</span>
 
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum from 1 to  9 is 45.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
-<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">counter</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum of Evens 1 to  9 is 20.000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
-<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
-    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>*
-**
-***
-****
-*****
-******
-*******
-********
-*********
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Nested-Repetition">Nested Repetition<a class="anchor-link" href="#Nested-Repetition">&#182;</a></h2><p>Nested repetition is when a control structure is placed inside of the body or main part of another control structure.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="break-to-exit-out-of-a-loop"><code>break</code> to exit out of a loop<a class="anchor-link" href="#break-to-exit-out-of-a-loop">&#182;</a></h4><p>Sometimes you may want to exit the loop when a certain condition different from the counting
-condition is met. Perhaps you are looping through a list and want to exit when you find the
-first element in the list that matches some criterion. The break keyword is useful for such
-an operation.</p>
-<p>For example run the following program:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#</span>
-<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">break</span>   
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bob&#39;s tax amount (in dollars):&quot;</span><span class="p">,</span> <span class="n">bob</span><span class="o">.</span><span class="n">taxamount</span><span class="p">())</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mary&#39;s tax amount (in dollars):&quot;</span><span class="p">,</span> <span class="n">mary</span><span class="o">.</span><span class="n">taxamount</span><span class="p">())</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;John&#39;s tax amount (in dollars):&quot;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">taxamount</span><span class="p">())</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Danny&#39;s tax amount (in dollars):&quot;</span><span class="p">,</span> <span class="n">danny</span><span class="o">.</span><span class="n">taxamount</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -15093,53 +14714,10 @@ an operation.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>i =  0 j =  2
-i =  1 j =  4
-i =  2 j =  6
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="k">break</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>i =  0 j =  2
-i =  1 j =  4
-i =  2 j =  6
-i =  3 j =  8
-i =  4 j =  10
+<pre>Bob&#39;s tax amount (in dollars): 33000.0
+Mary&#39;s tax amount (in dollars): 12480.0
+John&#39;s tax amount (in dollars): 8800.0
+Danny&#39;s tax amount (in dollars): 38500.0
 </pre>
 </div>
 </div>
@@ -15151,522 +14729,7 @@ i =  4 j =  10
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In the first case, the for loop only executes 3 times before the condition j == 6 is TRUE and the loop is exited. 
-In the second case, j == 7 never happens so the loop completes all its anticipated traverses.</p>
-<p>In both cases an <code>if</code> statement was used within a for loop. Such "mixed" control structures
-are quite common (and pretty necessary). 
-A <code>while</code> loop contained within a <code>for</code> loop, with several <code>if</code> statements would be very common and such a structure is called <strong>nested control.</strong>
-There is typically an upper limit to nesting but the limit is pretty large - easily in the
-hundreds. It depends on the language and the system architecture ; suffice to say it is not
-a practical limit except possibly for general-domain AI applications.</p>
-<hr>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can also do mundane activities and leverage loops, arithmetic, and format codes to make useful tables like</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># package that contains cosine</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Cosines     &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   x   &quot;</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="s2">&quot; cos(x) &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------|--------&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;  |&quot;</span><span class="p">,</span> <span class="s2">&quot; </span><span class="si">%.4f</span><span class="s2"> &quot;</span>  <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># note the format code and the placeholder % and syntax </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>     Cosines     
-   x    |  cos(x) 
---------|--------
-0.000   |  1.0000 
-0.100   |  0.9950 
-0.200   |  0.9801 
-0.300   |  0.9553 
-0.400   |  0.9211 
-0.500   |  0.8776 
-0.600   |  0.8253 
-0.700   |  0.7648 
-0.800   |  0.6967 
-0.900   |  0.6216 
-1.000   |  0.5403 
-1.100   |  0.4536 
-1.200   |  0.3624 
-1.300   |  0.2675 
-1.400   |  0.1700 
-1.500   |  0.0707 
-1.600   |  -0.0292 
-1.700   |  -0.1288 
-1.800   |  -0.2272 
-1.900   |  -0.3233 
-2.000   |  -0.4161 
-2.100   |  -0.5048 
-2.200   |  -0.5885 
-2.300   |  -0.6663 
-2.400   |  -0.7374 
-2.500   |  -0.8011 
-2.600   |  -0.8569 
-2.700   |  -0.9041 
-2.800   |  -0.9422 
-2.900   |  -0.9710 
-3.000   |  -0.9900 
-3.100   |  -0.9991 
-3.200   |  -0.9983 
-3.300   |  -0.9875 
-3.400   |  -0.9668 
-3.500   |  -0.9365 
-3.600   |  -0.8968 
-3.700   |  -0.8481 
-3.800   |  -0.7910 
-3.900   |  -0.7259 
-4.000   |  -0.6536 
-4.100   |  -0.5748 
-4.200   |  -0.4903 
-4.300   |  -0.4008 
-4.400   |  -0.3073 
-4.500   |  -0.2108 
-4.600   |  -0.1122 
-4.700   |  -0.0124 
-4.800   |  0.0875 
-4.900   |  0.1865 
-5.000   |  0.2837 
-5.100   |  0.3780 
-5.200   |  0.4685 
-5.300   |  0.5544 
-5.400   |  0.6347 
-5.500   |  0.7087 
-5.600   |  0.7756 
-5.700   |  0.8347 
-5.800   |  0.8855 
-5.900   |  0.9275 
-6.000   |  0.9602 
-6.100   |  0.9833 
-6.200   |  0.9965 
-6.300   |  0.9999 
-6.400   |  0.9932 
-6.500   |  0.9766 
-6.600   |  0.9502 
-6.700   |  0.9144 
-6.800   |  0.8694 
-6.900   |  0.8157 
-7.000   |  0.7539 
-7.100   |  0.6845 
-7.200   |  0.6084 
-7.300   |  0.5261 
-7.400   |  0.4385 
-7.500   |  0.3466 
-7.600   |  0.2513 
-7.700   |  0.1534 
-7.800   |  0.0540 
-7.900   |  -0.0460 
-8.000   |  -0.1455 
-8.100   |  -0.2435 
-8.200   |  -0.3392 
-8.300   |  -0.4314 
-8.400   |  -0.5193 
-8.500   |  -0.6020 
-8.600   |  -0.6787 
-8.700   |  -0.7486 
-8.800   |  -0.8111 
-8.900   |  -0.8654 
-9.000   |  -0.9111 
-9.100   |  -0.9477 
-9.200   |  -0.9748 
-9.300   |  -0.9922 
-9.400   |  -0.9997 
-9.500   |  -0.9972 
-9.600   |  -0.9847 
-9.700   |  -0.9624 
-9.800   |  -0.9304 
-9.900   |  -0.8892 
-10.000   |  -0.8391 
-10.100   |  -0.7806 
-10.200   |  -0.7143 
-10.300   |  -0.6408 
-10.400   |  -0.5610 
-10.500   |  -0.4755 
-10.600   |  -0.3853 
-10.700   |  -0.2913 
-10.800   |  -0.1943 
-10.900   |  -0.0954 
-11.000   |  0.0044 
-11.100   |  0.1042 
-11.200   |  0.2030 
-11.300   |  0.2997 
-11.400   |  0.3935 
-11.500   |  0.4833 
-11.600   |  0.5683 
-11.700   |  0.6476 
-11.800   |  0.7204 
-11.900   |  0.7861 
-12.000   |  0.8439 
-12.100   |  0.8932 
-12.200   |  0.9336 
-12.300   |  0.9647 
-12.400   |  0.9862 
-12.500   |  0.9978 
-12.600   |  0.9994 
-12.700   |  0.9911 
-12.800   |  0.9728 
-12.900   |  0.9449 
-13.000   |  0.9074 
-13.100   |  0.8610 
-13.200   |  0.8059 
-13.300   |  0.7427 
-13.400   |  0.6722 
-13.500   |  0.5949 
-13.600   |  0.5117 
-13.700   |  0.4234 
-13.800   |  0.3308 
-13.900   |  0.2349 
-14.000   |  0.1367 
-14.100   |  0.0372 
-14.200   |  -0.0628 
-14.300   |  -0.1621 
-14.400   |  -0.2598 
-14.500   |  -0.3549 
-14.600   |  -0.4465 
-14.700   |  -0.5336 
-14.800   |  -0.6154 
-14.900   |  -0.6910 
-15.000   |  -0.7597 
-15.100   |  -0.8208 
-15.200   |  -0.8737 
-15.300   |  -0.9179 
-15.400   |  -0.9530 
-15.500   |  -0.9785 
-15.600   |  -0.9942 
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-continue-statement">The <code>continue</code> statement<a class="anchor-link" href="#The-continue-statement">&#182;</a></h4><p>The continue instruction skips the block of code after it is executed for that iteration. 
-It is
-best illustrated by an example.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> i = &quot;</span><span class="p">,</span> <span class="n">i</span> <span class="p">,</span> <span class="s2">&quot;, j = &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="c1">#here the \n is a newline command</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; this message will be skipped over if j = 6 &quot;</span><span class="p">)</span> <span class="c1"># still within the loop, so the skip is implemented</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
- i =  0 , j =  2
- this message will be skipped over if j = 6 
-
- i =  1 , j =  4
- this message will be skipped over if j = 6 
-
- i =  2 , j =  6
-
- i =  3 , j =  8
- this message will be skipped over if j = 6 
-
- i =  4 , j =  10
- this message will be skipped over if j = 6 
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-try,-except-structure">The <code>try</code>, <code>except</code> structure<a class="anchor-link" href="#The-try,-except-structure">&#182;</a></h4><p>An important control structure (and a pretty cool one for error trapping) is the <code>try</code>, <code>except</code>
-statement.</p>
-<p>The statement controls how the program proceeds when an error occurs in an instruction.
-The structure is really useful to trap likely errors (divide by zero, wrong kind of input) 
-yet let the program keep running or at least issue a meaningful message to the user.</p>
-<p>The syntax is:</p>
-
-<pre><code>try:
-do something
-except:
-do something else if ``do something'' returns an error
-
-</code></pre>
-<p>Here is a really simple, but hugely important example:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#MyErrorTrap.py</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
-    <span class="k">try</span><span class="p">:</span>         
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error divide by zero&quot;</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  12.0 y =  12.0 x/y =  1.0
-x =  12.0 y =  11.0 x/y =  1.0909090909090908
-x =  12.0 y =  10.0 x/y =  1.2
-x =  12.0 y =  9.0 x/y =  1.3333333333333333
-x =  12.0 y =  8.0 x/y =  1.5
-x =  12.0 y =  7.0 x/y =  1.7142857142857142
-x =  12.0 y =  6.0 x/y =  2.0
-x =  12.0 y =  5.0 x/y =  2.4
-x =  12.0 y =  4.0 x/y =  3.0
-x =  12.0 y =  3.0 x/y =  4.0
-x =  12.0 y =  2.0 x/y =  6.0
-x =  12.0 y =  1.0 x/y =  12.0
-error divide by zero
-x =  12.0 y =  -1.0 x/y =  -12.0
-x =  12.0 y =  -2.0 x/y =  -6.0
-x =  12.0 y =  -3.0 x/y =  -4.0
-x =  12.0 y =  -4.0 x/y =  -3.0
-x =  12.0 y =  -5.0 x/y =  -2.4
-x =  12.0 y =  -6.0 x/y =  -2.0
-x =  12.0 y =  -7.0 x/y =  -1.7142857142857142
-x =  12.0 y =  -8.0 x/y =  -1.5
-x =  12.0 y =  -9.0 x/y =  -1.3333333333333333
-x =  12.0 y =  -10.0 x/y =  -1.2
-x =  12.0 y =  -11.0 x/y =  -1.0909090909090908
-x =  12.0 y =  -12.0 x/y =  -1.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So this silly code starts with x fixed at a value of 12, and y starting at 12 and decreasing by
-1 until y equals -1. The code returns the ratio of x to y and at one point y is equal to zero
-and the division would be undefined. By trapping the error the code can issue us a measure
-and keep running.</p>
-<p>Modify the script as shown below,Run, and see what happens</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NoErrorTrap.py</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  12.0 y =  12.0 x/y =  1.0
-x =  12.0 y =  11.0 x/y =  1.0909090909090908
-x =  12.0 y =  10.0 x/y =  1.2
-x =  12.0 y =  9.0 x/y =  1.3333333333333333
-x =  12.0 y =  8.0 x/y =  1.5
-x =  12.0 y =  7.0 x/y =  1.7142857142857142
-x =  12.0 y =  6.0 x/y =  2.0
-x =  12.0 y =  5.0 x/y =  2.4
-x =  12.0 y =  4.0 x/y =  3.0
-x =  12.0 y =  3.0 x/y =  4.0
-x =  12.0 y =  2.0 x/y =  6.0
-x =  12.0 y =  1.0 x/y =  12.0
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-82eeaceb9a12&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> y <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">12.</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">while</span> y <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">12.</span><span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># sentinel controlled repetition</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>print <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;x = &#34;</span><span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;y = &#34;</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;x/y = &#34;</span><span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">/</span>y<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     y <span class="ansi-blue-fg">-=</span> <span class="ansi-cyan-fg">1</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: float division by zero</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Flowcharts">Flowcharts<a class="anchor-link" href="#Flowcharts">&#182;</a></h2><h3 id="What-is-a-Flowchart?">What is a Flowchart?<a class="anchor-link" href="#What-is-a-Flowchart?">&#182;</a></h3><p>A flowchart is a type of diagram that represents a workflow or process. A flowchart can also be defined as a diagrammatic representation of an algorithm, a step-by-step approach to solving a task.</p>
-<p><img src="flowchart.png" alt=""></p>
-<table>
-<thead><tr>
-<th style="text-align:left">Figure 2</th>
-<th style="text-align:left">Repair Flowchart for a Lamp</th>
-<th style="text-align:left"><a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>The flowchart shows the steps as boxes of various kinds, and their order by connecting the boxes with arrows. This diagrammatic representation illustrates a solution model to a given problem. Flowcharts are used in analyzing, designing, documenting or managing a process or program in various fields.</p>
-<p>There is a symbol convention (a language) as depicted in Figure 2 below (from: <a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a>)</p>
-<p><img src="flowchartsymbols.png" alt=""></p>
-<table>
-<thead><tr>
-<th style="text-align:left">Figure 1</th>
-<th style="text-align:left">Flowchart Symbols</th>
-<th style="text-align:left"><a href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>IBM engineers implemented programming flowcharts based upon Goldstine and von Neumann's unpublished report, "Planning and coding of problems for an electronic computing instrument, Part II, Volume 1" (1947), which is reproduced in von Neumann's collected works.</p>
-<p>The flowchart became a popular tool for describing computer algorithms, but its popularity decreased in the 1970s, when interactive computer terminals and third-generation programming languages became common tools for computer programming, since algorithms can be expressed more concisely as source code in such languages. Often pseudo-code is used, which uses the common idioms of such languages without strictly adhering to the details of a particular one.</p>
-<p>Nowadays flowcharts are still used for describing computer algorithms.[9] Modern techniques such as UML activity diagrams and Drakon-charts can be considered to be extensions of the flowchart.</p>
-<p>Nearly all flowcharts focus on on some kind of control, rather than on the particular flow itself!  While quaint today, they are an effective way to document processes in a program and visualize structures.  We recomend you get in the habit of making rudimentary flowcharts, at least at the supervisory level (the sandwich chart above)</p>
-<h3 id="How-are-they-useful?">How are they useful?<a class="anchor-link" href="#How-are-they-useful?">&#182;</a></h3><p>(paraphrased from <a href="https://www.breezetree.com/articles/top-reasons-to-flowchart">https://www.breezetree.com/articles/top-reasons-to-flowchart</a>)</p>
-<p>Sometimes it's more effective to visualize something graphically that it is to describe it with words. That is the essence of what flowcharts do for you. Flowcharts explain a process clearly through symbols and text. Moreover, flowcharts give you the gist of the process flow in a single glance. The following are some of the more salient reasons to use flowcharts.</p>
-<p><strong>Process Documentation / Training Materials</strong>
-Another common use for flowcharts is to create process documentation. Although this reason overlaps with regulatory and quality management requirements (below), many non-regulated businesses use flowcharts for their documentation as well. These can range in form from high-level procedures to low-level, detailed work instructions.</p>
-<p>You may think that this applies mainly to large organizations, but small companies can greatly benefit from flowcharting their processes as well. Small enterprises need to be nimble and organized. Standardizing their processes is a great way to achieve this. In fact, the popular entrepreneurial book The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It by Michael Gerber is based on the fact that small businesses are more likely to succeed if they treat their operations like a franchise. in a nutshell, this means standardizing and documenting their business processes. There's no better way to do that than with flowcharts, right?</p>
-<p>Training materials are often created using flowcharts because they're visually stimulating and easy to understand. A nicely laid out flowchart will gain and hold the reader's attention when a block of text will often fail.</p>
-<p><strong>Workflow Management and Continuous Improvement</strong>
-Workflows don't manage themselves. To ensure that you are meeting your customers' needs, you need to take control of your business processes. The first step to workflow management is to define the current state of your processes by creating an "As-Is Flowchart". That allows you to analyze your processes for waste and inefficiency. After you have identified areas for process improvement, you can then craft new flowcharts to document the leaner processes.</p>
-<p><strong>Programming</strong>
-Information technology played a big influence on the use and spread of flowcharts in the 20th century. While Dr. W. Edwards Deming was advocating their use in quality management, professionals in the data processing world were using them to flesh out their programming logic. Flowcharts were a mainstay of procedural programming, however, and with the advent of object oriented programming and various modeling tools, the use of flowcharts for programming is no longer as commonplace as it once was.</p>
-<p>That said, even with in the scope of object oriented programming, complex program logic can be modeled effectively using a flowchart. Moreover, diagramming the user's experience as they navigate through a program is a valuable prerequisite prior to designing the user interface. So flowcharts still have their place in the world of programming.</p>
-<p><strong>Troubleshooting Guides</strong>
-Most of us have come across a troubleshooting flowchart at one time or another. These are usually in the form of Decision Trees that progressively narrow the range of possible solutions based on a series of criteria. The effectiveness of these types of flowcharts depends on how neatly the range of problems and solutions can fit into a simple True/False diagnosis model. A well done troubleshooting flowcharts can cut the problem solving time greatly.</p>
-<p><strong>Regulatory and Quality Management Requirements</strong>
-Your business processes may be subject to regulatory requirements such as Sarbanes-Oxley (SOX), which requires that your accounting procedures be clearly defined and documented. An easy way to do this is to create accounting flowcharts for all your accounting processes.</p>
-<p>Similarly, many organizations fall under certification requirements for quality management systems - such as ISO 9000, TS 16949, or one of the many others. In such environments, flowcharts are not only useful but in certain clauses they are actually mandated.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><ol>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapters 3-6 <a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">https://www.inferentialthinking.com/chapters/03/programming-in-python.html</a></p>
-</li>
-<li><p>Learn Python the Hard Way (Online Book) (<a href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</p>
-</li>
-<li><p>LearnPython.org (Interactive Tutorial) (<a href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</p>
-</li>
-<li><p>Brian Christian and Tom Griffiths (2016) ALGORITHMS TO LIVE BY: The Computer Science of Human Decisions Henry Holt and Co. (<a href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365</a>)</p>
-</li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<!--[https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/](https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/)--></p>
-</li>
-</ol>
+<p><img src="https://freight.cargo.site/w/1200/i/c96b2ce17b2aee95c6e837552e3e38d058ac4ad2a6759448ed78128963790744/Happy_Coding_BC_6-03-05.png" alt=""></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
