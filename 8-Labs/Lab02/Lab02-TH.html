@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lab02</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Lab02-TH</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14260,7 +14260,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from:</p>
-<p><a href="https://atomickitty.ddns.net/engr-1330-webroot/8-Labs/Lab02/Lab02.ipynb">Laboratory 2</a></p>
+<p><a href="https://atomickitty.ddns.net/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.ipynb">Laboratory 2 - HW</a></p>
 <hr>
 
 </div>
@@ -14270,30 +14270,19 @@ a.anchor-link {
 <h1><font color=darkblue>Laboratory 2: First Steps ... </font></h1>
 <p><strong>LAST NAME, FIRST NAME</strong></p>
 <p><strong>R00000000</strong></p>
-<p>ENGR 1330 Laboratory 2 - In-Lab</p>
+<p>ENGR 1330 Laboratory 2 - Homework</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Welcome to your first (or second) <span style='background:yellow'>Jupyter Notebook</span>. This is the medium that we will be using throughout the semester.</p>
-<hr>
-<p><strong>Why is this called a notebook?</strong>
-Because you can write stuff in it!</p>
-<p><strong>Is that it?</strong>
-Nope! you can <strong>write</strong> and <strong>run</strong> <span style='background:yellow'>CODE</span> in this notebook! Plus a bunch of other cool stuff such as making graphs, running tests and simulations, adding images, and building documents (such as this one!).</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice the code cell below!  From this notebook forward please include and run the script in the cell, it will help in debugging a notebook. Its ok if the code makes no sense right now - mostly the cell executes system commands If you change machines, and rerun the cell the output will change (its supposed to!)</p>
+<p>Notice the code cell below!  From this notebook forward please include and run the script in the cell, it will help in debugging a notebook. Its ok if the code makes no sense right now - mostly the cell executes system commands. As you change machines, and rerun the cell the output will change (its supposed to!)</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
@@ -14339,26 +14328,27 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Now,-let's-get-to-work!">Now, let's get to work!<a class="anchor-link" href="#Now,-let's-get-to-work!">&#182;</a></h2><p>First lets re-hash (huge pun here!) the preceeding lesson, but this time with feeling! ( Kentucky Fried Movie?)</p>
-<h2><font color=purple>Variables</font></h2>
-<p>Variables are names given to data that we want to store and manipulate in programs. A
-variable has a name and a value. The value representation depends on what type of object
-the variable represents.
-The utility of variables comes in when we have a structure that is universal, but values of
-variables within the structure will change - otherwise it would be simple enough to just
-hardwire the arithmetic.</p>
-<p>Suppose we want to store the time of concentration for some hydrologic calculation. 
-To do so, we can name a variable <code>TimeOfConcentration</code>, and then <code>assign</code> a value to the variable,
-for instance:</p>
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>The cell below is type RAW, change it into a code cell and activate (suppress the comments) and run the script.</p>
+<p>What is the value of area?</p>
+
+</div>
+</div># Demonstrate some assignment operations
+width = 4
+#length := width
+#length += 2
+# area = length * width
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Copy your working script below and add necessary code to output the value of area.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TimeOfConcentration</span> <span class="o">=</span> <span class="mf">0.0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># copy here</span>
 </pre></div>
 
      </div>
@@ -14369,603 +14359,32 @@ for instance:</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>After this assignment statement the variable is created in the program and has a value of 0.0. 
-The use of a decimal point in the initial assignment establishes the variable as a float (a real variable is called a floating point representation -- or just a float).</p>
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Change the RAW cell below into a Code cell, and run the script (fix any syntax errors)</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TimeOfConcentration</span> <span class="o">+</span> <span class="mi">5</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>5.0</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div># data types
+print ('integers and reals')
+x1 = 1.0
+y1 = 1.
+z1 = 1
+x2 = 5.0
+y2 = 5.
+z2 = 5
+print ('x1 = ', x1, ' y1 = ', y1, ' z1 = ', z1)
+print ('x2 = ', x2, ' y2 = ', y2, ' z2 = ', z2)
+print ('x1/x2 = ',x1/x2,' y1/y2 = ',y1/y2,' z1/z2 = ',z1//z2)
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3><font color=purple>Naming Rules</font></h3>
-<p>Variable names in Python can only contain letters (a - z, A - Z), numerals (0 - 9), or underscores. 
-The first character cannot be a number, otherwise there is considerable freedom in naming. 
-The names can be reasonably long. 
-<code>runTime</code>, <code>run_Time</code>, <code>_run_Time2</code>, <code>_2runTime</code> are all valid names, but <code>2runTime</code> is not valid, and will create an error when you try to use it.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script to illustrate variable names</span>
-<span class="n">runTime</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">_2runTime</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># change to 2runTime = 2 and rerun script</span>
-<span class="n">runTime2</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">runTime</span><span class="p">,</span><span class="n">_2runTime</span><span class="p">,</span><span class="n">runTime2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1 2 2
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There are some reserved words that cannot be used as variable names because they have preassigned meaning in Parseltongue. These words include print, input, if, while, and for. There are several more; the interpreter won't allow you to use these names as variables and will issue an error message when you attempt to run a program with such words used as variables.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2><font color=purple>Operators</font></h2>
-<p>The <code>=</code> sign used in the variable definition is called an assignment operator (or assignment sign). 
-The symbol means that the expression to the right of the symbol is to be evaluated and the result placed into the variable on the left side of the symbol.  The "operation" is assignment, the "=" symbol is the operator name.</p>
-<p>Consider the script below:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assignment Operator</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">x</span><span class="o">=</span><span class="n">y</span> <span class="c1"># reverse order y=x and re-run, what happens?</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5 10
-10 10
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So look at what happened. When we assigned values to the variables named <code>x</code> and <code>y</code>, they started life as 5 and 10. 
-We then wrote those values to the console, and the program returned 5 and 10. 
-Then we assigned <code>y</code> to <code>x</code> which took the value in y and replaced the value that was in x with this value. 
-We then wrote the contents again, and both variables have the value 10.</p>
-<h2 id="What's-it-with-the-hash-symbol-#-?">What's it with the hash symbol # ?<a class="anchor-link" href="#What's-it-with-the-hash-symbol-#-?">&#182;</a></h2><blockquote><p>Comments are added by writing a hashtag symbol (#) followed by any text of your choice. Any text that follows the hashtag symbol on the same line is ignored by the Python interpreter.</p>
-</blockquote>
-<p>Its a pretty common comment symbol, some languages use any letter in the first column (FORTRAN) which allows something called conditional compilation, other symbols are:</p>
-<ul>
-<li>% Tex/LaTex</li>
-<li>**  Javascript </li>
-<li>&lt;!-- --!&gt; in HTML and Javascript</li>
-<li>= =  PERL</li>
-<li>/<em> </em>/ in C</li>
-</ul>
-<h2 id="About-Commenting">About Commenting<a class="anchor-link" href="#About-Commenting">&#182;</a></h2><p>When you are writing a program/notebook, your intent is always clear and self-evident to you. Odd thing, a month later, when you return to the program, it is quite confusing and unclear. No one is certain how the confusion creeps into a program, but it nearly always does.</p>
-<p>To fight the bafflement, and to help yourself others understand your code, you need to use comments. Comments are text that is ignored by the interpreter, but that can inform the reader of what you are doing at any particular point in your program.</p>
-<p>Some recommend writing comments at the top of each function, explaining what the function does and what values it returns. Functions should be named so that little ambiguity exists about what they do, and confusing and obscure bits of code should be redesigned and rewritten so as to be self-evident. Comments should not be used to clarify obscure code; instead, fix the code. In short, you should write your code well, and use comments to supplement understanding.</p>
-<p>Comments that state the obvious are counterproductive because the code might change and the programmer might neglect to update the comment. What is obvious to one person might be obscure to another, however, so judgment is required when adding comments. The bottom line is that <strong>comments</strong> should not say what is happening, they <strong>should say why it is happening</strong>.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2><font color=purple>Arithmetic Operators</font></h2>
-<p>In addition to assignment we can also perform arithmetic operations on variables. The
-fundamental arithmetic operators are:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Symbol</th>
-<th style="text-align:left">Meaning</th>
-<th style="text-align:left">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">=</td>
-<td style="text-align:left">Assignment</td>
-<td style="text-align:left">x=3 Assigns value of 3 to x.</td>
-</tr>
-<tr>
-<td style="text-align:left">+</td>
-<td style="text-align:left">Addition</td>
-<td style="text-align:left">x+y Adds values in x and y.</td>
-</tr>
-<tr>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Subtraction</td>
-<td style="text-align:left">x-y Subtracts values in y from x.</td>
-</tr>
-<tr>
-<td style="text-align:left">$*$</td>
-<td style="text-align:left">Multiplication</td>
-<td style="text-align:left">x*y Multiplies values in x and y.</td>
-</tr>
-<tr>
-<td style="text-align:left">/</td>
-<td style="text-align:left">Division</td>
-<td style="text-align:left">x/y Divides value in x by value in y.</td>
-</tr>
-<tr>
-<td style="text-align:left">//</td>
-<td style="text-align:left">Floor division</td>
-<td style="text-align:left">x//y Divide x by y, truncate result to whole number.</td>
-</tr>
-<tr>
-<td style="text-align:left">%</td>
-<td style="text-align:left">Modulus</td>
-<td style="text-align:left">x%y Returns remainder when x is divided by y.</td>
-</tr>
-<tr>
-<td style="text-align:left">$**$</td>
-<td style="text-align:left">Exponentation</td>
-<td style="text-align:left">x$**$y Raises value in x by value in y. ( e.g. xy)</td>
-</tr>
-<tr>
-<td style="text-align:left">+=</td>
-<td style="text-align:left">Additive assignment</td>
-<td style="text-align:left">x+=2 Equivalent to x = x+2.</td>
-</tr>
-<tr>
-<td style="text-align:left">-=</td>
-<td style="text-align:left">Subtractive assignment</td>
-<td style="text-align:left">x-=2 Equivalent to x = x-2.</td>
-</tr>
-<tr>
-<td style="text-align:left">*=</td>
-<td style="text-align:left">Multiplicative assignment</td>
-<td style="text-align:left">x*=3 Equivalent to x = x*3.</td>
-</tr>
-<tr>
-<td style="text-align:left">/=</td>
-<td style="text-align:left">Divide assignment</td>
-<td style="text-align:left">x/3 Equivalent to x = x/3.</td>
-</tr>
-</tbody>
-</table>
-<p>Run the script in the next cell for some illustrative results</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Uniary Arithmetic Operators</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">y</span>)
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>10 5
-15
-5
-50
-2.0
-2
-1
-100000
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic assignment operators</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">*=</span><span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Interesting what division does to variable type</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;int&#39;&gt; 3
-&lt;class &#39;int&#39;&gt; -1
-&lt;class &#39;int&#39;&gt; 3
-&lt;class &#39;float&#39;&gt; 5.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2><font color=purple>Data Type</font></h2>
-<p>In the computer data are all binary digits (actually 0 and +5 volts). 
-At a higher level of abstraction data are typed into integers, real, or alphanumeric representation. 
-The type affects the kind of arithmetic operations that are allowed (as well as the kind of arithmetic - integer versus real arithmetic; lexicographical ordering of alphanumeric , etc.)
-In scientific programming, a common (and really difficult to detect) source of slight inaccuracies (that tend to snowball as the program runs) is mixed mode arithmetic required because two numeric values are of different types (integer and real).</p>
-<p>Learn more from the textbook</p>
-<p><a href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p>
-<p>Here we present a quick summary</p>
-<h3><font color=purple>Integer</font></h3>
-<p>Integers are numbers without any fractional portion (nothing after the decimal point { which
-is not used in integers). Numbers like -3, -2, -1, 0, 1, 2, 200 are integers. A number like 1.1
-is not an integer, and 1.0 is also not an integer (the presence of the decimal point makes the
-number a real).</p>
-<p>To declare an integer in Python, just assign the variable name to an integer for example</p>
-
-<pre><code>MyPhoneNumber = 14158576309
-
-</code></pre>
-<h3><font color=purple>Real (Float)</font></h3>
-<p>A real or float is a number that has (or can have) a fractional portion - the number has
-decimal parts. The numbers 3.14159, -0.001, 11.11, 1., are all floats. 
-The last one is especially tricky, if you don't notice the decimal point you might think it is an integer but the
-inclusion of the decimal point in Python tells the program that the value is to be treated as a 
-float.
-To declare a 
-float in Python, just assign the variable name to a 
-float for example</p>
-
-<pre><code>MyMassInKilos = 74.8427
-
-</code></pre>
-<h3><font color=purple>String(Alphanumeric)</font></h3>
-<p>A string is a data type that is treated as text elements. The usual letters are strings, but
-numbers can be included. The numbers in a string are simply characters and cannot be
-directly used in arithmetic. 
-There are some kinds of arithmetic that can be performed on strings but generally we process string variables to capture the text nature of their contents. 
-To declare a string in Python, just assign the variable name to a string value - the trick is the value is enclosed in quotes. 
-The quotes are delimiters that tell the program that the characters between the quotes are characters and are to be treated as literal representation.</p>
-<p>For example</p>
-
-<pre><code>MyName = 'Theodore'
-MyCatName = "Dusty"
-DustyMassInKilos = "7.48427"
-
-</code></pre>
-<p>are all string variables. 
-The last assignment is made a string on purpose. 
-String variables can be combined using an operation called concatenation. 
-The symbol for concatenation is the plus symbol <code>+</code>.</p>
-<p>Strings can also be converted to all upper case using the <code>upper()</code> function. The syntax for
-the <code>upper()</code> function is <code>'string to be upper case'.upper()</code>. 
-Notice the "dot" in the syntax. 
-The operation passes everything to the left of the dot to the function which then
-operates on that content and returns the result all upper case (or an error if the input stream
-is not a string).</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variable Types Example</span>
-<span class="n">MyPhoneNumber</span> <span class="o">=</span> <span class="mi">14158576309</span>
-<span class="n">MyMassInKilos</span> <span class="o">=</span> <span class="mf">74.8427</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="s1">&#39;Theodore&#39;</span>
-<span class="n">MyCatName</span> <span class="o">=</span> <span class="s2">&quot;Dusty&quot;</span>
-<span class="n">DustyMassInKilos</span> <span class="o">=</span> <span class="s2">&quot;7.48427&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about me&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">,</span><span class="n">MyName</span><span class="p">,</span> <span class="s2">&quot; Mass :&quot;</span><span class="p">,</span><span class="n">MyMassInKilos</span><span class="p">,</span><span class="s2">&quot;Kg&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Phone : &#39;</span><span class="p">,</span><span class="n">MyPhoneNumber</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My cat</span><span class="se">\&#39;</span><span class="s1">s name :&#39;</span><span class="p">,</span> <span class="n">MyCatName</span><span class="p">)</span>  <span class="c1"># the \ escape character is used to get the &#39; into the literal</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about concatenation!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A Silly String : &quot;</span><span class="p">,</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A SILLY STRING :  &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MyName</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>    <span class="c1"># Notice how the string is sliced- This is Python: ALWAYS start counting from zero!</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>All about me
-Name:  Theodore  Mass : 74.8427 Kg
-Phone :  14158576309
-My cat&#39;s name : Dusty
-All about concatenation!
-A Silly String :  DustyTheodore7.48427
-A SILLY STRING :   DUSTYTHEODORE7.48427
-Theo
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Strings can be formatted using the <code>%</code> operator or the <code>format()</code> function. The concepts will
-be introduced later on as needed in the workbook, you can Google search for examples of
-how to do such formatting.</p>
-<h3><font color=purple>Changing Types</font></h3>
-<p>A variable type can be changed. 
-This activity is called type casting. 
-Three functions allow
-type casting: <code>int()</code>, <code>float()</code>, and <code>str()</code>. 
-The function names indicate the result of using
-the function, hence <code>int()</code> returns an integer, <code>float()</code> returns a 
-oat, and <code>str()</code> returns a
-string.</p>
-<p>There is also the useful function <code>type()</code> which returns the type of variable.</p>
-<p>The easiest way to understand is to see an example.</p>
+<p>a. Of the six variables, which are integers?</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Type Casting Examples</span>
-<span class="n">MyInteger</span> <span class="o">=</span> <span class="mi">234</span>
-<span class="n">MyFloat</span> <span class="o">=</span> <span class="mf">876.543</span>
-<span class="n">MyString</span> <span class="o">=</span> <span class="s1">&#39;What is your name?&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">,</span><span class="n">MyFloat</span><span class="p">,</span><span class="n">MyString</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as float&#39;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Float as integer&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">MyFloat</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as string&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as hexadecimal&#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer Type&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">((</span><span class="n">MyInteger</span><span class="p">)))</span>  <span class="c1"># insert the hex conversion and see what happens!</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2><font color=purple>Expressions</font></h2>
-<p>Expressions are the "algebraic" constructions that are evaluated and then placed into a variable.</p>
-<p>Consider</p>
-
-<pre><code>x1 = 7 + 3 * 6 / 2 - 1
-
-</code></pre>
-<p>The expression is evaluated from the left to right and in words is</p>
-
-<pre><code>Into the object named x1 place the result of:
-
-integer 7 + (integer 6 divide by integer 2 = float 3 * integer 3 = float 9 - integer 1 = float 8) = float 15
-
-</code></pre>
-<p>The division operation by default produces a float result unless forced otherwise.  The result is the variable <code>x1</code> is a float with a value of <code>15.0</code></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Expressions Example</span>
-<span class="n">x1</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Change / into // and see what happens!</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span><span class="n">x1</span><span class="p">)</span>
-<span class="c1">## Simple I/O (Input/Output)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;int&#39;&gt; 15
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Example:-Simple-Input/Output">Example: Simple Input/Output<a class="anchor-link" href="#Example:-Simple-Input/Output">&#182;</a></h3><p>Here we introduce some I/O we will spend more time in later lessons on more elaborate constructs, but this gets us away from explicit assignment and lest us have some script interactions</p>
-<p>Get two floating point numbers via the <code>input()</code> function and store them under the variable names <code>float1</code> and <code>float2</code>. Then, compare them, and try a few operations on them!</p>
-
-<pre><code>float1 = input("Please enter float1: ")
-float1 = float(float1) 
-...
-
-</code></pre>
-<p>Print <code>float1</code> and <code>float2</code> to the output screen.</p>
-
-<pre><code>print("float1:", float1)
-...
-
-</code></pre>
-<p>Then check whether <code>float1</code> is greater than or equal to <code>float2</code>.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter float1: &quot;</span><span class="p">)</span>
-<span class="n">float2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter float2: &quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
 </pre></div>
 
      </div>
@@ -14973,36 +14392,19 @@ float1 = float(float1)
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Please enter float1: 2.5
-Please enter float2: 5
-</pre>
 </div>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>b. What is the difference (in effect) between x1=1.0 and y1=1.?</p>
 
 </div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float1:&quot;</span><span class="p">,</span> <span class="n">float1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float2:&quot;</span><span class="p">,</span> <span class="n">float2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
 </pre></div>
 
      </div>
@@ -15010,209 +14412,134 @@ Please enter float2: 5
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>float1: 2.5
-float2: 5
-</pre>
 </div>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>c. Examine the division results; Why does z1//z2 return a value of 0?</p>
 
 </div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">float1</span><span class="p">)</span>
-<span class="n">float2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">float2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float1:&quot;</span><span class="p">,</span> <span class="n">float1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float2:&quot;</span><span class="p">,</span> <span class="n">float2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>float1: 2.5
-float2: 5.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float1</span><span class="o">&gt;</span><span class="n">float2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float1</span><span class="o">+</span><span class="n">float2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>7.5</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">float1</span><span class="o">/</span><span class="n">float2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.5</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p><em>Here are some great reads on this topic:</em></p>
-<ul>
-<li>"Variables in Python" by John Sturtz available at <a href="https://realpython.com/python-variables/">https://realpython.com/python-variables/</a> <br></li>
-<li><strong>"A Beginner’s Guide To Python Variables"</strong> by <strong>Avijeet Biswal</strong> available at <a href="https://www.simplilearn.com/tutorials/python-tutorial/python-variables">https://www.simplilearn.com/tutorials/python-tutorial/python-variables</a> <br></li>
-<li><strong>"A Very Basic Introduction to Variables in Python"</strong> by <strong>Dr. Python</strong> available at <a href="https://medium.com/@doctorsmonsters/a-very-basic-introduction-to-variables-in-python-4231e36dac5">https://medium.com/@doctorsmonsters/a-very-basic-introduction-to-variables-in-python-4231e36dac52</a> <br></li>
-</ul>
-<p><em>Here are some great videos on these topics:</em></p>
-<ul>
-<li><strong>"Python Tutorial for Absolute Beginners #1 - What Are Variables?"</strong> by <strong>CS Dojo</strong> available at <a href="https://www.youtube.com/watch?v=Z1Yd7upQsXY">https://www.youtube.com/watch?v=Z1Yd7upQsXY</a><br></li>
-<li><strong>"#4 Python Tutorial for Beginners | Variables in Python"</strong> by <strong>Telusko</strong> available at *<a href="https://www.youtube.com/watch?v=TqPzwenhMj0">https://www.youtube.com/watch?v=TqPzwenhMj0</a> <br></li>
-<li><strong>"Variables and Types in Python"</strong> by <strong>DataCamp</strong> available at *<a href="https://www.youtube.com/watch?v=OH86oLzVzzw">https://www.youtube.com/watch?v=OH86oLzVzzw</a> <br></li>
-</ul>
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Exploring arithmetic. First define three variables a,b, and c.</p>
 
 </div>
+</div># change this cell to CODE to run
+a = 21
+b = 10
+c = 0
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Then change the cell below to code and run it.</p>
+
+</div>
+</div># change this cell to CODE to run
+c = a + b
+print ("Value of c is ", c)
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now using the example in the cell above,  exaluate the following expressions in the indicated cells below:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#c = a - b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#c = a * b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#c = a / b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#c = a % b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#a = 2, b = 3, c = a** b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#a = 10, b = 5, c = a//b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
