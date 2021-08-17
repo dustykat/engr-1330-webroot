@@ -15208,12 +15208,30 @@ For instance, if you do not want <code>\t</code> to be interpreted as a tab in t
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="String-slicing">String slicing<a class="anchor-link" href="#String-slicing">&#182;</a></h3><ul>
 <li>expanded indexing</li>
-<li>a slice of a string is a new string, composed of characters from the initial string
-|Syntax|Result|
-|------|------|
-|<code>s[start]</code>|a single character|
-|<code>s[start:end]</code>|a substring|
-|<code>s[start:end:step]</code>|a selection of characters|</li>
+<li>a slice of a string is a new string, composed of characters from the initial string</li>
+</ul>
+<table>
+<thead><tr>
+<th>Syntax</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s[start]</code></td>
+<td>a single character</td>
+</tr>
+<tr>
+<td><code>s[start:end]</code></td>
+<td>a substring</td>
+</tr>
+<tr>
+<td><code>s[start:end:step]</code></td>
+<td>a selection of characters</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>the end position is not inclusive (up to but not including <em>end</em>)</li>
 <li>the step can be positive or negative <ul>
 <li>a negative step proceeds backwards through the string</li>
