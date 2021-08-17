@@ -14933,14 +14933,33 @@ True
 <li>preceded by backslash <code>\</code></li>
 </ul>
 </li>
-<li>Common special characters
-|Character|Escape Sequence|
-|---------|---------------|
-|newline|<code>\n</code>|
-|tab|<code>\t</code>|
-|backslash|<code>\\</code>|
-|quotes|<code>\'</code> <code>\"</code>|</li>
+<li>Common special characters</li>
 </ul>
+<table>
+<thead><tr>
+<th>Character</th>
+<th>Escape Sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>newline</td>
+<td><code>\n</code></td>
+</tr>
+<tr>
+<td>tab</td>
+<td><code>\t</code></td>
+</tr>
+<tr>
+<td>backslash</td>
+<td><code>\\</code></td>
+</tr>
+<tr>
+<td>quotes</td>
+<td><code>\'</code> <code>\"</code></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15144,8 +15163,9 @@ In this case, you need to use the <code>\</code> (backslash) character to escape
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you do not want characters preceded by the <code>\</code> character to be interpreted as special characters, you can use raw strings by adding an <code>r</code> before the first quote. 
+<blockquote><p>If you do not want characters preceded by the <code>\</code> character to be interpreted as special characters, you can use raw strings by adding an <code>r</code> before the first quote. 
 For instance, if you do not want <code>\t</code> to be interpreted as a tab in the string literal "Hello\tWorld", you would type</p>
+</blockquote>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15460,7 +15480,9 @@ FSB
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The change to <code>%f</code> turns the rendered tuple value into a float.  Using these structures gives us a lot of output flexibility. The <code>%f</code> formatter can also be used to place the decimal by preceeding the f with the decimal point and the number of digits after the decimal you want to render as in:</p>
+<p>The change to <code>%f</code> turns the rendered tuple value into a float.  Using these structures gives us a lot of output flexibility.</p>
+<blockquote><p>The <code>%f</code> formatter can also be used to place the decimal by preceeding the f with the decimal point and the number of digits after the decimal you want to render as in:</p>
+</blockquote>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15589,10 +15611,8 @@ lipids in a variety of shapes
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2><ul>
-<li>format codes </li>
-<li>placeholder <code>%</code> syntax</li>
-<li>repr and map structures (may not go here)</li>
+<h2 id="Future-Versions">Future Versions<a class="anchor-link" href="#Future-Versions">&#182;</a></h2><ul>
+<li>repr and map methods </li>
 <li>color codes</li>
 </ul>
 
