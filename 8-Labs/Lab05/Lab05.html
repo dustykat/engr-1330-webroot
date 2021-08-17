@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-2021-3-Syllabus</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Lab05</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14256,16 +14256,35 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="https://atomickitty.ddns.net/engr-1330-webroot/8-Labs/Lab05/Lab05.ipynb">Lab5</a></p>
+<hr>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1><font color=darkred>Laboratory 5: Sequence, Selection, and Repetition - Oh My! </font></h1>
+<p><strong>LAST NAME, FIRST NAME</strong></p>
+<p><strong>R00000000</strong></p>
+<p>ENGR 1330 Laboratory 5 - In-Lab</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14284,14 +14303,15 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>atomickitty
+sensei
+/opt/jupyterhub/bin/python3
+3.8.10 (default, Jun  2 2021, 10:49:15) 
+[GCC 9.4.0]
+sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, serial=0)
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -14301,735 +14321,824 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Description:">Course Description:<a class="anchor-link" href="#Course-Description:">&#182;</a></h2><p>Introducion to Python programming, its relevant modules and libraries, and computational thinking for solving problems in Data Science. Data science approaches for importing, manipulating, and analyzing data.  Modeling and visualizing real-world data sets in various science and engineering disciplines.</p>
-<p>3 credit hours comprising of lectures and hands-on lab sessions.</p>
-<p>This course provides a hands-on learning experience in programming and data science using iPython and JupyterLab. iPython is the interactive python kernel implemented in JupyterLab.</p>
-<h2 id="Prerequisites:">Prerequisites:<a class="anchor-link" href="#Prerequisites:">&#182;</a></h2><p>Prior programming background is NOT required.  The course is intended for first-year WCOE students (aka engineering foundational)</p>
+<h2 id="Sequence">Sequence<a class="anchor-link" href="#Sequence">&#182;</a></h2><p>Our first structure is sequential.  To belabor the concept we will compute a short list of cubes, by cubing each element in a list and placing it into another list. The example below is dumb, but useful to introduce repetition later in the lab.</p>
+<p>First an unusual cell, used to reset a notebook - it will clear the workspace.  Here we use it so the notebook will work the same for everyone (at least at first).</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># reset this notebook</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="c1"># do a manual kernel restart to get the execution count to restart at one</span>
+</pre></div>
+
+     </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="COVID-19-Important-Guidelines:">COVID-19 Important Guidelines:<a class="anchor-link" href="#COVID-19-Important-Guidelines:">&#182;</a></h2><ul>
-<li><p>If Texas Tech University campus operations are required to change because of health concerns related to the COVID-19 pandemic, it is possible that this course will move to a fully online delivery format.  Should that be necessary, students will be advised of technical and/or equipment requirements, including remote proctoring software.</p>
-</li>
-<li><p>Policy on absences resulting from illness: We anticipate that some students may have extended absences.  To avoid students feeling compelled to attend in-person class periods when having symptoms or feeling unwell, a standard policy is provided that holds students harmless for illness-related absences (see Section A below).</p>
-</li>
-</ul>
-<h3 id="A.-Illness-Based-Absence-Policy-(Face-to-Face-Classes)">A. Illness-Based Absence Policy (Face-to-Face Classes)<a class="anchor-link" href="#A.-Illness-Based-Absence-Policy-(Face-to-Face-Classes)">&#182;</a></h3><p>If at any time during the semester you are ill, in the interest of your own health and safety as well as the health and safety of your instructors and classmates, you are encouraged not to attend face-to-face class meetings or events.  Please review the steps outlined below that you should follow to ensure your absence for illness will be excused.  These steps also apply to not participating in synchronous online class meetings if you feel too ill to do so and missing specified assignment due dates in asynchronous online classes because of illness.</p>
-<ol>
-<li><p>If you are ill and think the symptoms might be COVID-19-related:</p>
-<ol>
-<li>Call Student Health Services at 806.743.2848 or your health care provider.  During after-hours and on weekends, contact TTU COVID-19 Helpline at TBD.</li>
-<li>Self-report as soon as possible using the Dean of Students COVID-19 webpage. This website has specific directions about how to upload documentation from a medical provider and what will happen if your illness renders you unable to participate in classes for more than one week.</li>
-<li>If your illness is determined to be COVID-19-related, all remaining documentation and communication will be handled through the Office of the Dean of Students, including notification of your instructors of the time you may be absent from and may return to classes.</li>
-<li>If your illness is determined not to be COVID-19-related, please follow steps 2.a-d below.</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>If you are ill and can attribute your symptoms to something other than COVID-19:</p>
-<ol>
-<li>If your illness renders you unable to attend face-to-face classes, participate in synchronous online classes, or miss specified assignment due dates in asynchronous online classes, you are encouraged to contact either Student Health Services at 806.743.2848 or your health care provider.  Note that Student Health Services and your own and other health care providers may arrange virtual visits.</li>
-<li>During the health provider visit, request a “return to school” note.</li>
-<li>E-mail the instructor a picture of that note.</li>
-<li>Return to class by the next class period after the date indicated on your note.</li>
-</ol>
-</li>
-</ol>
-<p>Following the steps outlined above helps to keep your instructors informed about your absences and ensures your absence or missing an assignment due date because of illness will be marked excused.  You will still be responsible to complete within a week of returning to class any assignments, quizzes, or exams you miss because of illness.</p>
-<h3 id="B.-Illness-Based-Absence-Policy-(Telepresence/On-Line-Classes)">B. Illness-Based Absence Policy (Telepresence/On-Line Classes)<a class="anchor-link" href="#B.-Illness-Based-Absence-Policy-(Telepresence/On-Line-Classes)">&#182;</a></h3><p>Same as above with respect potential to infect others; go to a health care provider if you are ill.  Telepresence courses are recorded and will be available on TTU MediaSite and/or YouTube (unlisted).  Exercises, Quizzes, and Examinations are all administered by a Learning Management System (Blackboard) and students need to allow enough time to complete and upload their work.  Due date adjustments/late submits on case-by-case basis; documentation required as in subsection <strong>A</strong> above.</p>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># AList = [0.0,1.0,2.0,3.0,4.0] # Create a list of floats</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># BList = [] #empty list to accept values</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = -1 # set position pointer to -1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1 # increment position </span>
+<span class="c1"># BList.append(pow(AList[position],3)) # append to BList to build list of cubes</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># position = position + 1</span>
+<span class="c1"># BList.append(pow(AList[position],3))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print(BList)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Selection">Selection<a class="anchor-link" href="#Selection">&#182;</a></h3><p>Our next structure is selection, illustrated by a simple example</p>
+<p>A council member will not be allowed to vote on an ordinance if his/her attendence at council meetings is less than 75%. 
+Take the following inputs from the user:</p>
+
+<pre><code>1. Number of council meetings held.
+2. Number of council meetings attended. 
+
+</code></pre>
+<p>Compute the percentage of meetings attended</p>
+$$\%_{attended} = \frac{Meetings_{attended}}{Meetings_{total}}*100$$<p>Use the result to decide whether the council member will be allowed to vote or not.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain council persons name</span>
+<span class="c1"># council_name = str(input(&#39;enter council person name&#39;))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain meeting count</span>
+<span class="c1"># meetings_total = int(input(&#39;How many meetings since last vote?&#39;))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use our simple I/O methods to obtain meetings attended</span>
+<span class="c1"># prompt_string = &#39;How many meetings did &#39; + council_name + &#39; attend? &#39;</span>
+<span class="c1"># meetings_attended = int(input(prompt_string))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># compute percent_attendence</span>
+<span class="c1"># percent_attend = 100.0*(meetings_attended/meetings_total) #the 100.0 forces float</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select and make eligibility report</span>
+<span class="c1"># if percent_attend &lt; 75:</span>
+<span class="c1">#     print(&#39;Council person &#39;,council_name,&#39; attended &#39;,percent_attend,&#39; percent of meetings and is NOT eligible to vote&#39;)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     print(&#39;Council person &#39;,council_name,&#39; attended &#39;,percent_attend,&#39; percent of meetings and is eligible to vote&#39;)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Sections">Course Sections<a class="anchor-link" href="#Course-Sections">&#182;</a></h2><p>Lesson time, days, and location:</p>
+<h2><font color=purple>Repetition (Loops)</font></h2>
 <ul>
-<li><p>Lecture Section 001; CRN 42881; 0800-0920 T, TH ; Modality: Face-to-Face ; Location: Holden Hall 76</p>
-</li>
-<li><p>Laboratory Section D51; CRN 64441; 0930-1050 T, TH;  Modality: Telepresence (on-Line) Location: Internet</p>
-</li>
-</ul>
-<!--2. Section D01; CRN 63306; 1000-1120 T, TH ; Telepresence
-    2. Lab Section D61; CRN 63744; 1130-1250 T, TH-->
-
-<h2 id="Course-Instructor:">Course Instructor:<a class="anchor-link" href="#Course-Instructor:">&#182;</a></h2><p>Instructor: Theodore G. Cleveland, Ph.D., P.E., M. ASCE, F. EWRI</p>
-<p>Email: theodore.cleveland@ttu.edu  (put ENGR 1330 in subject line for email related to this class)</p>
-<p>Office location: CE 203F</p>
-<p>Office hours: 1000-1100 M, 1600-1700 W or by <strong>Zoom</strong> appointment</p>
-<h2 id="Teaching-Assistant:">Teaching Assistant:<a class="anchor-link" href="#Teaching-Assistant:">&#182;</a></h2><p>Teaching Assistant: TBD</p>
-<p>Email : TBD</p>
-<p>Office location: TBD (<strong>Zoom</strong>)</p>
-<p>Office hours: TBD</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Textbook:">Textbook:<a class="anchor-link" href="#Textbook:">&#182;</a></h2><p>Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).  Link: <a href="https://www.inferentialthinking.com/chapters/intro">https://www.inferentialthinking.com/chapters/intro</a></p>
-<p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) <em>Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU</em>, Whitacre College of Engineering, DOI (pending) <!--[https://3.137.111.182/engr-1330-webbook/](https://3.137.111.182/engr-1330-webbook/)--></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Course-Contents:">Course Contents:<a class="anchor-link" href="#Course-Contents:">&#182;</a></h2><ul>
-<li>Computational thinking for problem-solving: Logical problem solving, decomposition, pattern recognition, abstraction, representation, algorithm design, and generalization.</li>
-<li>Python Programming: <ol>
-<li>Variables, constants, data types, data structures, strings, math operators</li>
-<li>boolean operators, expressions, program constructs, functions, </li>
-<li>looping, I/O files, modules, and database.</li>
-</ol>
-</li>
-<li>Data science fundamentals:<ol>
-<li>Experimental setup: <ol>
-<li>Importing and formatting data sets, </li>
-<li>Displaying data, </li>
-<li>Data pre-processing.</li>
-</ol>
-</li>
-<li>Introductory statistical analysis with Python: <ol>
-<li>Elementary statistics, randomness, sampling, probability distributions,</li>
-<li>Confidence intervals, hypothesis testing, and A/B testing.</li>
-</ol>
-</li>
-<li>Basic data analysis, visualization, and machine learning: <ol>
-<li>Data pre-processing, </li>
-<li>Supervised/unsupervised learning, </li>
-<li>Performance evaluation metrics.</li>
-</ol>
-</li>
-</ol>
-</li>
+<li>Controlled repetition</li>
+<li>Structured FOR Loop</li>
+<li>Structured WHILE Loop</li>
 </ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Learning-Outcomes:">Learning Outcomes:<a class="anchor-link" href="#Learning-Outcomes:">&#182;</a></h2><p>On completion of the course, students will have</p>
+<h3><font color=purple>Count controlled repetition</font></h3>
+<p><img src="https://chortle.ccsu.edu/assemblytutorial/Chapter-18/countingLoop.gif" alt=""> <br></p>
+<p>Count-controlled repetition is also called definite repetition because the number of repetitions is known before the loop begins executing. 
+When we do not know in advance the number of times we want to execute a statement, we cannot use count-controlled repetition. 
+In such an instance, we would use sentinel-controlled repetition.</p>
+<p>A count-controlled repetition will exit after running a certain number of times. 
+The count is kept in a variable called an index or counter. 
+When the index reaches a certain value (the loop bound) the loop will end.</p>
+<p>Count-controlled repetition requires</p>
 <ul>
-<li>Created Python programs employing computational thinking concepts to</li>
-<li>Employed Python libraries relevant to data science.</li>
-<li>Downloaded data files from selected public sources and analyzed content.</li>
-<li>Created scripts to perform fundamental data analytics and basic visualization.</li>
+<li>control variable (or loop counter)</li>
+<li>initial value of the control variable</li>
+<li>increment (or decrement) by which the control variable is modified each iteration through the loop</li>
+<li>condition that tests for the final value of the control variable </li>
 </ul>
+<p>We can use both <code>for</code> and <code>while</code> loops, for count controlled repetition, but the <code>for</code> loop in combination with the <code>range()</code> function is more common.</p>
+<h4 id="Structured-FOR-loop">Structured <code>FOR</code> loop<a class="anchor-link" href="#Structured-FOR-loop">&#182;</a></h4><p>We have seen the for loop already, but we will formally introduce it here. The <code>for</code> loop executes a block of code repeatedly until the condition in the <code>for</code> statement is no longer true.</p>
+<h4 id="Looping-through-an-iterable">Looping through an iterable<a class="anchor-link" href="#Looping-through-an-iterable">&#182;</a></h4><p>An iterable is anything that can be looped over - typically a list, string, or tuple. 
+The syntax for looping through an iterable is illustrated by an example.</p>
+<p>First a generic syntax</p>
 
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ABET-Student-Outcomes">ABET Student Outcomes<a class="anchor-link" href="#ABET-Student-Outcomes">&#182;</a></h2><ul>
-<li>Engineering:<ol>
-<li>An ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.</li>
-<li>An ability to acquire and apply new knowledge as needed, using appropriate learning strategies. </li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>Computer Science:</p>
-<ol>
-<li>Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions.  </li>
-<li>Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline.  </li>
-</ol>
-</li>
-</ul>
+<pre><code>for a in iterable:
+   print(a)
 
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Resources/Tools">Resources/Tools<a class="anchor-link" href="#Resources/Tools">&#182;</a></h2><h3 id="Platforms-for-Python-Programming-(for-your-own-computers)">Platforms for Python Programming (for your own computers)<a class="anchor-link" href="#Platforms-for-Python-Programming-(for-your-own-computers)">&#182;</a></h3><ol>
-<li><p>Anaconda platform <a href="https://www.anaconda.com/">https://www.anaconda.com/</a>: Anaconda distribution is an open-source Data Science Distribution Development Platform.  It includes Python 3 with over 1,500 data science packages making it easy to manage libraries and dependencies.  Available in Linux, Windows, and Mac OS X.</p>
-</li>
-<li><p>Jupyter <a href="https://jupyter.org/">https://jupyter.org/</a>: JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: Configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. <code>note</code> Anaconda for MacOS includes a JupyterLab instance, so a separate install is not required.</p>
-</li>
-</ol>
-<h3 id="Additional-Modules-for-Python-Programming">Additional Modules for Python Programming<a class="anchor-link" href="#Additional-Modules-for-Python-Programming">&#182;</a></h3><ol>
-<li>Math module <a href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a>: Gives access to the mathematical functions defined by the C standard e.g. factorial, gcd, exponential, logarithm. </li>
-<li>Operator module <a href="https://docs.python.org/3/library/operator.html">https://docs.python.org/3/library/operator.html</a>: Helps in exporting a set of efficient functions corresponding to the intrinsic operators of Python.  For example, the operator add(x,y) is equivalent to the expression x+y.</li>
-</ol>
-<h3 id="Python-Modules-for-Data-Science">Python Modules for Data Science<a class="anchor-link" href="#Python-Modules-for-Data-Science">&#182;</a></h3><ol>
-<li>Scipy module <a href="https://www.scipy.org/">https://www.scipy.org/</a>: A Python-based ecosystem of open-source software for mathematics, science, and engineering. Some of the core packages are:<ul>
-<li>Numpy: Provides n-dimensional array package</li>
-<li>Scipy: Fundamental for scientific computing (e.g. linear algorithm, optimization)</li>
-<li>Matplotlib: Visualizations/2D plotting</li>
-<li>IPython: Enhanced interactive console &lt;&lt;= this is the kernel used in JupyterLab</li>
-<li>Pandas: Data structures and data analysis</li>
-</ul>
-</li>
-<li>Scikit-learn module <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>: A library for machine learning in Python. It is a simple and efficient tool for predictive data analysis.  It is built on NumPy, SciPy, and matplotlib modules.</li>
-</ol>
-<h3 id="On-Line-Options">On-Line Options<a class="anchor-link" href="#On-Line-Options">&#182;</a></h3><ul>
-<li>AWS Lightsail Instance (use Windows Server 2000 template; lowest resource provision tier; AWS RDP client, or download and install own RDP client) <ol>
-<li>Then install Anaconda onto the AWS Instance</li>
-</ol>
-</li>
-</ul>
-<h3 id="Hardware-Requirements">Hardware Requirements<a class="anchor-link" href="#Hardware-Requirements">&#182;</a></h3><ul>
-<li>Minimal, in fact this syllabus was created using a JupyterLab notebook (as a markdown processor) on a Raspberry Pi 4B, which technically cannot support a JupyterHub, but does.  </li>
-<li>Your current laptop should be fine, or if you only have a chromebook, build an AWS instance.</li>
-</ul>
-<p>The college of engineering has specific laptop requirements for your other courses that are listed at <a href="https://www.depts.ttu.edu/coe/dean/engineeringitservices/buyingtherightcomputer.php">https://www.depts.ttu.edu/coe/dean/engineeringitservices/buyingtherightcomputer.php</a></p>
-<h3 id="Content-Server">Content Server<a class="anchor-link" href="#Content-Server">&#182;</a></h3><p>Blackboard is used as the learning management system (LMS) for this class, and it uses web links to a content server at <a href="https://3.137.111.182/engr-1330-webroot/">https://3.137.111.182/engr-1330-webroot/</a>  The Blackboard links will generally go directly to a section in the webbook, but feel free to explore by going in the front door!</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Course-Schedule">Course Schedule<a class="anchor-link" href="#Course-Schedule">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-1-Introduction">Week 1 Introduction<a class="anchor-link" href="#Week-1-Introduction">&#182;</a></h3><hr>
-<p>(480 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson topics</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory topics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">24Aug21</td>
-<td style="text-align:left">Computational Thinking and Data Science <br> - Syllabus  <br> - Computational Thinking Principles <br> - Data Science Principles</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson00/ENGR-1330-Lesson00.html">Lesson 0</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab00/Lab00.html">Lab 0</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.html">Lab 0-HW</a></td>
-<td style="text-align:left">Setting up computational environment <br> - Setting a browser exception  <br> - Anaconda (PC/Mac) <br> - Anaconda on AWS</td>
-</tr>
-<tr>
-<td style="text-align:left">26Aug21</td>
-<td style="text-align:left">Problem Solving with Computational Thinking <br> - CT and programming as a problem solving process <br> - Attribution via CCMR</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson01/ENGR-1330-Lesson01.html">Lesson 1</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab01/Lab01.html">Lab 1</a><br>  <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.html">Lab 1-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab fundamentals <br> - Code cells <br> - Markdown cells <br> - Exporting to a pdf <br> - Resetting a notebook <br> - Troubleshoot hung kernel</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-2-Programming-Fundamentals">Week 2 Programming Fundamentals<a class="anchor-link" href="#Week-2-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(960 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">31Aug21</td>
-<td style="text-align:left">Fundamental Arithmetic <br> - Data Types <br> - Variables and Constants <br> - Simple Arithmetic</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson02/ENGR-1330-Lesson02.html">Lesson 2</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab02/Lab02.html">Lab 2</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.html">Lab 2-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab arithmetic <br> - Variables, Naming <br> - Data Types <br> - Expressions <br> - Simple Input/Output</td>
-</tr>
-<tr>
-<td style="text-align:left">2Sep21</td>
-<td style="text-align:left">Data Structures <br> - lists, arrays, tuples, sets, dictionaries           <br> - Names, position, index, contents <br> - position keys</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson03/ENGR-1330-Lesson03.html">Lesson 3</a>  <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab03/Lab03.html">Lab 3</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.html">Lab 3-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab lists <br> - Lists <br> - dictionaries <br> - using keys <br> - position indices</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-3-Programming-Fundamentals">Week 3 Programming Fundamentals<a class="anchor-link" href="#Week-3-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(1440 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">7Sep21</td>
-<td style="text-align:left">User interaction <br> - input() <br> - triple quotes <br> - string manipulation <br> - special characters</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson04/ENGR-1330-Lesson04.html">Lesson 4</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab04/Lab04.html">Lab 4</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.html">Lab 4-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab I/O exercises <br> - input() <br> - type casting <br> - output formats <br> - concatenation to build output strings</td>
-</tr>
-<tr>
-<td style="text-align:left">9Sep21</td>
-<td style="text-align:left">Flow Control Structures <br> - Sequence <br> - Selection <br> - Repetition <br> - Loop structures <br> - Flowcharts; Psuedocode</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson05/ENGR-1330-Lesson05.html/">Lesson 5</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab05/Lab05.html">Lab 5</a><br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.html">Lab 5-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab Sequence, Selection, and Loops <br> - FOR loops <br> - <strong>range()</strong> function <br> - WHILE loops <br> - Error trapping <strong>try ... except</strong> structure</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-4-Programming-Fundamentals">Week 4 Programming Fundamentals<a class="anchor-link" href="#Week-4-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(1920 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">14Sep21</td>
-<td style="text-align:left">Functions <br> - Intrinsic (core) <br> - Common external  <br> - User written <br> - Saving user written as a module</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson06/ENGR-1330-Lesson06.html">Lesson 6</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab06/Lab06.html">Lab 6</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab06/Lab06-TH.html">Lab 6-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab Functions <br> - import packages <br> - aliasing <br> - user defined <br> - save as a file for later import</td>
-</tr>
-<tr>
-<td style="text-align:left">16Sep21</td>
-<td style="text-align:left">Data Files <br> - open/read/close  <br> - open/write/close <br> - create/append/delete</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/ENGR-1330-Lesson07.html">Lesson 7</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab07/Lab07.html">Lab 7</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html">Lab 7-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-5-Matrices-using-NUMPY">Week 5 Matrices using NUMPY<a class="anchor-link" href="#Week-5-Matrices-using-NUMPY">&#182;</a></h3><hr>
-<p>(2400 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">21Sep21</td>
-<td style="text-align:left">Vectors and Matrices (as lists) <br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations <br> - Gaussian Reduction without Pivoting</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webbook/1-Lessons/Lesson08/ENGR-1330-Lesson08.html">Lesson 8</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab08/Lab08.html">Lab 8</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.html">Lab 8-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-<tr>
-<td style="text-align:left">23Sep21</td>
-<td style="text-align:left">Matrices using NUMPY<br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webbook/1-Lessons/Lesson05/ENGR-1330-Lesson09.html">Lesson 9</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Lab 9-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-</tbody>
-</table>
-<p><font color=red>**Test 1 on Blackboard available 48 hour access window**</font></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-6-Databases-using-PANDAS">Week 6 Databases using PANDAS<a class="anchor-link" href="#Week-6-Databases-using-PANDAS">&#182;</a></h3><hr>
-<p>(2880 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">28Sep21</td>
-<td style="text-align:left">Database Concepts</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson10.html">Lesson 10</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab10/Lab01.html">Lab 10</a><br>  <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab10/Lab10-TH.html">Lab 10-HW</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">30Sep21</td>
-<td style="text-align:left">Databases using PANDAS <br> - Lagrange Polynomial Interpolation <br> – Integration of Functions <br> - Integration of Tabular Results</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson11.html">Lesson 11</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab11/Lab11.html">Lab 11</a><br>  <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab11/Lab11-TH.html">Lab 11-HW</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-<td></td>
-<td>- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-7-Visual-Display-of-Data-using-MATPLOTLIB">Week 7 Visual Display of Data using MATPLOTLIB<a class="anchor-link" href="#Week-7-Visual-Display-of-Data-using-MATPLOTLIB">&#182;</a></h3><hr>
-<p>(3660 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">5Oct21</td>
-<td style="text-align:left">Plotting <br> - Plot types <br> - Plot uses <br> - Graphing conventions</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 12</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 12</a><br>  <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 12-HW</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">7Oct21</td>
-<td style="text-align:left">MATPLOTLIB package <br> - line plots <br> - scattergrams <br> - decorators</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson10.html">Lesson 13</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab10/Lab13.html">Lab 13</a><br>  <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab10/Lab13-TH.html">Lab 13-HW</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-8-Data-Models-and-Decisions">Week 8 Data Models and Decisions<a class="anchor-link" href="#Week-8-Data-Models-and-Decisions">&#182;</a></h3><hr>
-<p>(3840 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">12Oct21</td>
-<td style="text-align:left">Correlation,Causality, Randomness, and Probability <br> - topic <br> - topic <br> - topic</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson14/lesson14/">Lesson 14</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab14/Lab14_Dev">Laboratory 14</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">14Oct21</td>
-<td style="text-align:left">Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...)</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson15/lesson15/">Lesson 15</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab15/Lab15_Dev">Laboratory 15</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-9-Data-Models-and-Decisions">Week 9 Data Models and Decisions<a class="anchor-link" href="#Week-9-Data-Models-and-Decisions">&#182;</a></h3><hr>
-<p>(4320 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">19Oct21</td>
-<td style="text-align:left">Functions as Data Models <br> - A line <br> - Normal Distribution Function <br> - Gamma Distribution Function <br> - Extreme Value Distribution Function</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson16/lesson16/">Lesson 16</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab16/Lab16_Dev">Laboratory 16</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">21Oct21</td>
-<td style="text-align:left">Probability Estimation Modeling <br> – Order statistics (plotting positions)  <br> - Histograms <br> - Visual assessment of Fit</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson17/lesson17/">Lesson 17</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab17/Lab17_Dev">Laboratory 17</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-<p><font color=red>**Test 2 on Blackboard available 48 hour access window**</font></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-10-Data-Models-and-Decisions">Week 10 Data Models and Decisions<a class="anchor-link" href="#Week-10-Data-Models-and-Decisions">&#182;</a></h3><hr>
-<p>(4800 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">26Oct21</td>
-<td style="text-align:left">Hypothesis Testing <br> - Comparing two (or more) collections of observations <br> - A/B Testing <br> - Parametric and Non-Parametric Tests</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson18/lesson18/">Lesson 18</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab18/Lab18_Dev">Laboratory 18</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">28Oct21</td>
-<td style="text-align:left">Interval Estimates <br> - 1 <br> - 2</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson19/lesson19/">Lesson 19</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab19/Lab19_Dev">Laboratory 19</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-11-Prediction-Engines">Week 11 Prediction Engines<a class="anchor-link" href="#Week-11-Prediction-Engines">&#182;</a></h3><hr>
-<p>(5280 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2Nov21</td>
-<td style="text-align:left">Data Models as Prediction Engines <br> - Data model as a prediction engine <br> - Assessing model quality by plotting <br> - Extrapolation</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson20/lesson20/">Lesson 20</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab20/Lab20_Dev">Laboratory 20</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">2Nov21</td>
-<td style="text-align:left">Regression Models <br> - Linear regression <br> - Ordinary Least Squares  <br> - Prediction interval estimates <br> -</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson21/lesson21/">Lesson 21</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab21/Lab21_Dev">Laboratory 21</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-12-Classification-Engines">Week 12 Classification Engines<a class="anchor-link" href="#Week-12-Classification-Engines">&#182;</a></h3><hr>
-<p>(5760 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">9Nov21</td>
-<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson22/lesson22/">Lesson 22</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab22/Lab22_Dev">Laboratory 22</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">11Nov21</td>
-<td style="text-align:left">Search-Type Engines <br> - K-Nearest Neighbor Method <br> - Random Forests</td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson23/lesson23/">Lesson 23</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab23/Lab23_Dev">Laboratory 23</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-13-Classification-Engines">Week 13 Classification Engines<a class="anchor-link" href="#Week-13-Classification-Engines">&#182;</a></h3><hr>
-<p>(6240 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">16Nov21</td>
-<td style="text-align:left">Boundary-Type Engines <br> - Support Vector Machines <br></td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson13/lesson13/">Lesson 24</a> <br> <br> <a href="https://3.137.111.182/engr-1330-webroot/8-Labs/Lab13/Lab13_Dev">Laboratory 24</a></td>
-<td style="text-align:left">- 1 <br> -2 <br></td>
-</tr>
-<tr>
-<td style="text-align:left">18Nov21</td>
-<td style="text-align:left">Pattern-Type Engines <br> - Artifical Neural Network (Demonstration) <br></td>
-<td style="text-align:left"><a href="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson25/lesson25/">Lesson 25</a></td>
-<td style="text-align:left">none</td>
-</tr>
-</tbody>
-</table>
-<p><font color=red>**Test 3 on Blackboard available 48 hour access window**</font></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Week-14-Wrap-Up">Week 14 Wrap-Up<a class="anchor-link" href="#Week-14-Wrap-Up">&#182;</a></h3><hr>
-<p>(6720 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">23Nov21</td>
-<td style="text-align:left">Project Presentations</td>
-<td style="text-align:left">ppXX-XX</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">30Nov21</td>
-<td style="text-align:left">Project Presentations</td>
-<td style="text-align:left">ppXX-XX</td>
-</tr>
-</tbody>
-</table>
-<p><font color=red>**Project Report Due 6 Dec 2021**</font></p>
+</code></pre>
+<p>Notice the colon <code>:</code> and the indentation.
+Now a specific example:</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Course-Assessment-and-Grading-Criteria:">Course Assessment and Grading Criteria:<a class="anchor-link" href="#Course-Assessment-and-Grading-Criteria:">&#182;</a></h2><p>There will be three exams and one comprehensive final project for this course.</p>
-<p>In addition, lab notebooks, quizzes, and homework assignments also contribute to the final grade.<br>
-<strong>Late</strong> assignments will not be scored.</p>
-<p>Grades will be based on the following components; weighting is approximate:</p>
-<table>
-<thead><tr>
-<th>Assessment Instrument</th>
-<th style="text-align:right">Weight(%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Exam-1</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Exam-2</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Exam-3</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Lab Notebooks &amp; Homework</td>
-<td style="text-align:right">30</td>
-</tr>
-<tr>
-<td>Quizzes</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Final project</td>
-<td style="text-align:right">10</td>
-</tr>
-<tr>
-<td>Overall total</td>
-<td style="text-align:right">100</td>
-</tr>
-</tbody>
-</table>
-<p>Letter grades will be assigned using the following proportions:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Normalized Score Range</th>
-<th style="text-align:right">Letter Grade</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">≥ 90</td>
-<td style="text-align:right">A</td>
-</tr>
-<tr>
-<td style="text-align:left">80-89</td>
-<td style="text-align:right">B</td>
-</tr>
-<tr>
-<td style="text-align:left">70-79</td>
-<td style="text-align:right">C</td>
-</tr>
-<tr>
-<td style="text-align:left">55-69</td>
-<td style="text-align:right">D</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt; 55</td>
-<td style="text-align:right">F</td>
-</tr>
-</tbody>
-</table>
+<h3 id="Example:-A-Loop-to-Begin-With!">Example: A Loop to Begin With!<a class="anchor-link" href="#Example:-A-Loop-to-Begin-With!">&#182;</a></h3><p>Make a list with "Walter", "Jesse", "Gus, "Hank". Then, write a loop that prints all the elements of your lisk.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a list</span>
+<span class="c1"># BB = [&quot;Walter&quot;,&quot;Jesse&quot;,&quot;Gus&quot;,&quot;Hank&quot;]</span>
+<span class="c1"># # loop thru the list</span>
+<span class="c1"># for AllStrings in BB:</span>
+<span class="c1">#     print(AllStrings)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Classroom-Policy:">Classroom Policy:<a class="anchor-link" href="#Classroom-Policy:">&#182;</a></h2><p>The following activities are not allowed in the classroom: Texting or talking on the cellphone or other electronic devices, and reading non-course related materials.</p>
-<h3 id="Telepresence-(On-line)-Laboratory/Courses">Telepresence (On-line) Laboratory/Courses<a class="anchor-link" href="#Telepresence-(On-line)-Laboratory/Courses">&#182;</a></h3><p>Obviously electronic devices are vital; disrupting the conference is prohibited, please mute your microphone unless you have a question - consider typing your question into the chat window as well. Be aware of bandwidth issues and remember most lessons and laboratory sessions are recorded and posted on youtube.  Recording, editing, and rendering takes awhile, so expect 24-36 hour delay before video is available. Sometimes video capture fails and there will be missing audio and/or missing video.</p>
+<hr>
+<h4 id="The-range()-function-to-create-an-iterable">The <code>range()</code> function to create an iterable<a class="anchor-link" href="#The-range()-function-to-create-an-iterable">&#182;</a></h4><p>The <code>range(begin,end,increment)</code> function will create an iterable starting at a value of begin, in steps defined by increment (<code>begin += increment</code>), ending at <code>end</code>.</p>
+<p>So a generic syntax becomes</p>
+
+<pre><code>for a in range(begin,end,increment):
+   print(a)
+
+</code></pre>
+<p>The example that follows is count-controlled repetition (increment skip if greater)</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a list</span>
+<span class="c1"># BB = [&quot;Walter&quot;,&quot;Jesse&quot;,&quot;Gus&quot;,&quot;Hank&quot;]</span>
+<span class="c1"># # loop thru the list</span>
+<span class="c1"># for i in range(0,4,1): # Change the numbers, what happens?</span>
+<span class="c1">#     print(BB[i])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3 id="Example:-That's-odd!">Example: That's odd!<a class="anchor-link" href="#Example:-That's-odd!">&#182;</a></h3><p>Write a loop to print all the odd numbers between 0 and 10.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # For loop with range</span>
+<span class="c1"># for x in range(1,10,2): # a sequence from 2 to 5 with steps of 1</span>
+<span class="c1">#   print(x)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3><font color=purple>Sentinel-controlled repetition</font></h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20191119172228/Flow-Diagram-do-while-loop.jpg" alt=""> <br></p>
+<p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used. 
+Sentinel-controlled repetition is also called indefinite repetition because it is not known in advance how many times the loop will be executed.</p>
+<!--![](https://media0.giphy.com/media/3Xw8jY3zbFRtFd6eK8/giphy.gif) <br>-->
+
+<p>It is a repetition procedure for solving a problem by using a sentinel value (also called a signal value, a dummy value or a flag value) to indicate "end of process". 
+The sentinel value itself need not be a part of the processed data.</p>
+<p>One common example of using sentinel-controlled repetition is when we are processing data from a file and we do not know in advance when we would reach the end of the file.</p>
+<p>We can use both <code>for</code> and <code>while</code> loops, for <strong>Sentinel</strong> controlled repetition, but the <code>while</code> loop is more common.</p>
+<h4 id="Structured-WHILE-loop">Structured <code>WHILE</code> loop<a class="anchor-link" href="#Structured-WHILE-loop">&#182;</a></h4><p>The <code>while</code> loop repeats a block of instructions inside the loop while a condition remainsvtrue.</p>
+<p>First a generic syntax</p>
+
+<pre><code>while condition is true:
+    execute a
+    execute b
+....
+
+</code></pre>
+<p>Notice our friend, the colon <code>:</code> and the indentation again.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a counter</span>
+<span class="c1"># counter = 5</span>
+<span class="c1"># # while loop</span>
+<span class="c1"># while counter &gt; 0:</span>
+<span class="c1">#     print(&quot;Counter = &quot;,counter)</span>
+<span class="c1">#     counter = counter -1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>The while loop structure just depicted is a "decrement, skip if equal" in lower level languages. The next structure, also a while loop is an "increment, skip if greater" structure.</p>
+</blockquote>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # set a counter</span>
+<span class="c1"># counter = 0</span>
+<span class="c1"># # while loop</span>
+<span class="c1"># while counter &lt;= 5:  # change this line to: while counter &lt;= 5: what happens?</span>
+<span class="c1">#     print (&quot;Counter = &quot;,counter)</span>
+<span class="c1">#     counter = counter +1  # change this line to: counter +=1  what happens?</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Beware, its easy to create an infinite loop with this structure.  The lab instructor will do so, and illustrate how to regain control of your computer when you do.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="ADA-Statement:">ADA Statement:<a class="anchor-link" href="#ADA-Statement:">&#182;</a></h2><p>Any student who, because of a disability, may require special arrangements in order to meet the course requirements should contact the instructor as soon as possible to make necessary arrangements.  Students must present appropriate verification from Student Disability Services during the instructor's office hours.  Please note that instructors are not allowed to provide classroom accommodation to a student until appropriate verification from Student Disability Services has been provided.  For additional information, please contact Student Disability Services 
-office in 335 West Hall or call 806.742.2405.</p>
-<h2 id="Academic-Integrity-Statement:">Academic Integrity Statement:<a class="anchor-link" href="#Academic-Integrity-Statement:">&#182;</a></h2><p>Academic integrity is taking responsibility for one’s own class and/or course work, being individually accountable, and demonstrating intellectual honesty and ethical behavior.  Academic integrity is a personal choice to abide by the standards of intellectual honesty and responsibility.  Because education is a shared effort to achieve learning through the exchange of ideas, students, faculty, and staff have the collective responsibility to build mutual trust and respect.  Ethical behavior and independent thought are essential for the highest level of academic achievement, which then must be measured.  Academic achievement includes scholarship, teaching, and learning, all of which are shared endeavors.  Grades are a device used to quantify the successful accumulation of knowledge through learning.  Adhering to the standards of academic integrity ensures grades are earned honestly.  Academic integrity is the foundation upon which students, faculty, and staff build their educational and professional careers.  [Texas Tech University (“University”) Quality Enhancement Plan, Academic Integrity Task Force, 2010].</p>
-<h2 id="Religious-Holy-Day-Statement:">Religious Holy Day Statement:<a class="anchor-link" href="#Religious-Holy-Day-Statement:">&#182;</a></h2><p>“Religious holy day” means a holy day observed by a religion whose places of worship are exempt from property taxation under Texas Tax Code §11.20.  A student who intends to observe a religious holy day should make that intention known to the instructor prior to the absence.  A student who is absent from classes for the observance of a religious holy day shall be allowed to take an examination or complete an assignment scheduled for that day within a reasonable time after the absence.  A student who is excused may not be penalized for the absence; however, the instructor may respond appropriately if the student fails to complete the assignment satisfactorily.</p>
-<h2 id="Ethical-Conduct-Policy:">Ethical Conduct Policy:<a class="anchor-link" href="#Ethical-Conduct-Policy:">&#182;</a></h2><p>Cheating is prohibited, and the representation of the work of another person as your own will be grounds for receiving a failing grade in the course.</p>
-<p><strong>DISCRIMINATION, HARASSMENT, AND SEXUAL VIOLENCE STATEMENT:</strong>
-Texas Tech University is committed to providing and strengthening an educational, working, and living environment where students, faculty, staff, and visitors are free from gender and/or sex discrimination of any kind. Sexual assault, discrimination, harassment, and other Title IX violations are not tolerated by the University. Report any incidents to the Office for Student Rights &amp; Resolution, (806)-742-SAFE (7233) or file a report online at titleix.ttu.edu/students. Faculty and staff members at TTU are committed to connecting you to resources on campus. Some of these available resources are: TTU Student Counseling Center, 806- 742-3674, <a href="https://www.depts.ttu.edu/scc/(Provides">https://www.depts.ttu.edu/scc/(Provides</a> confidential support on campus.) TTU 24-hour Crisis Helpline, 806-742-5555, (Assists students who are experiencing a mental health or interpersonal violence crisis. If you call the helpline, you will speak with a mental health counselor.) Voice of Hope Lubbock Rape Crisis Center, 806-763-7273, voiceofhopelubbock.org (24-hour hotline that provides support for survivors of sexual violence.) The Risk, Intervention, Safety and Education (RISE) Office, 806-742-2110,  <a href="https://www.depts.ttu.edu/rise/">https://www.depts.ttu.edu/rise/</a> (Provides a range of resources and support options focused on prevention education and student wellness.) Texas Tech Police Department, 806-742- 3931,<a href="http://www.depts.ttu.edu/ttpd/">http://www.depts.ttu.edu/ttpd/</a> (To report criminal activity that occurs on or near Texas Tech campus.)</p>
-<p><strong>CIVILITY IN THE CLASSROOM STATEMENT:</strong>
-Texas Tech University is a community of faculty, students, and staff that enjoys an expectation of cooperation, professionalism, and civility during the conduct of all forms of university business, including the conduct of student–student and student–faculty interactions in and out of the classroom. Further, the classroom is a setting in which an exchange of ideas and creative thinking should be encouraged and where intellectual growth and development are fostered. Students who disrupt this classroom mission by rude, sarcastic, threatening, abusive or obscene language and/or behavior will be subject to appropriate sanctions according to university policy. Likewise, faculty members are expected to maintain the highest standards of professionalism in all interactions with all constituents of the university.
-To ensure that you are fully engaged in class discussions and account team meetings during class time, you are expected to do the following:</p>
+<h3><font color=purple>Nested Repetition | Loops within Loops</font></h3>
+<!-- ![](https://i.gifer.com/7kmF.gif) <br> -->
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>Round like a circle in a spiral, like a wheel within a wheel <br>
+Never ending or beginning on an ever spinning reel <br>
+Like a snowball down a mountain, or a carnival balloon <br>
+Like a carousel that's turning running rings around the moon <br>
+Like a clock whose hands are sweeping past the minutes of its face <br>
+And the world is like an apple whirling silently in space <br>
+Like the circles that you find in the windmills of your mind! <br>
+<br>
+<strong><em>Windmills of Your Mind lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management</em></strong> <br>
+<strong><em>Songwriters: Marilyn Bergman / Michel Legrand / Alan Bergman</em></strong> <br>
+<strong><em>Recommended versions: Neil Diamond | Dusty Springfield | Farhad Mehrad</em></strong>  <br></p>
+</blockquote>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>"Like the circles that you find in the windmills of your mind", Nested repetition is when a control structure is placed inside of the body or main part of another control structure.</p>
+<h4 id="break-to-exit-out-of-a-loop"><code>break</code> to exit out of a loop<a class="anchor-link" href="#break-to-exit-out-of-a-loop">&#182;</a></h4><p>Sometimes you may want to exit the loop when a certain condition different from the counting
+condition is met. Perhaps you are looping through a list and want to exit when you find the
+first element in the list that matches some criterion. The break keyword is useful for such
+an operation.
+For example run the following program:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># #</span>
+<span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print (&quot;i = &quot;,i,&quot;j = &quot;,j)</span>
+<span class="c1">#     if j == 6:</span>
+<span class="c1">#         break</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # One Small Change</span>
+<span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print( &quot;i = &quot;,i,&quot;j = &quot;,j)</span>
+<span class="c1">#     if j == 7:</span>
+<span class="c1">#         break</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In the first case, the for loop only executes 3 times before the condition j == 6 is TRUE and the loop is exited. 
+In the second case, j == 7 never happens so the loop completes all its anticipated traverses.</p>
+<p>In both cases an <code>if</code> statement was used within a for loop. Such "mixed" control structures
+are quite common (and pretty necessary). 
+A <code>while</code> loop contained within a <code>for</code> loop, with several <code>if</code> statements would be very common and such a structure is called <strong>nested control.</strong>
+There is typically an upper limit to nesting but the limit is pretty large - easily in the
+hundreds. It depends on the language and the system architecture ; suffice to say it is not
+a practical limit except possibly for general-domain AI applications.</p>
+<p><hr>
+We can also do mundane activities and leverage loops, arithmetic, and format codes to make useful tables like</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Example:-Cosines-in-the-loop!">Example: Cosines in the loop!<a class="anchor-link" href="#Example:-Cosines-in-the-loop!">&#182;</a></h3><p>Write a loop to print a table of the cosines of numbers between 0 and 0.01 with steps of 0.001.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import math # package that contains cosine</span>
+<span class="c1"># print(&quot;     Cosines     &quot;)</span>
+<span class="c1"># print(&quot;   x   &quot;,&quot;|&quot;,&quot; cos(x) &quot;)</span>
+<span class="c1"># print(&quot;--------|--------&quot;)</span>
+<span class="c1"># for i in range(0,100,1):</span>
+<span class="c1">#     x = float(i)*0.001</span>
+<span class="c1">#     print(&quot;%.3f&quot; % x, &quot;  |&quot;, &quot; %.4f &quot;  % math.cos(x)) # note the format code and the placeholder % and syntax of using package</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h3 id="Example:-Getting-the-hang-of-it!">Example: Getting the hang of it!<a class="anchor-link" href="#Example:-Getting-the-hang-of-it!">&#182;</a></h3><p>Write a Python script that takes a real input value (a float) for x and returns the y
+value according to the rules below</p>
+\begin{gather}
+y = x~for~0 &lt;= x &lt; 1 \\
+y = x^2~for~1 &lt;= x &lt; 2 \\
+y = x + 2~for~2 &lt;= x &lt; 3 \\
+\end{gather}<p>Test the script with x values of 0.0, 1.0, 1.1, and 2.1. <br>
+add functionality to <strong>automaticaly</strong> populate the table below:</p>
+<table>
+<thead><tr>
+<th style="text-align:right">x</th>
+<th style="text-align:right">y(x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">1.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">2.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">3.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">4.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:right">5.0</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># userInput = input(&#39;Enter enter a float&#39;) #ask for user&#39;s input</span>
+<span class="c1"># x = float(userInput)</span>
+<span class="c1"># print(&quot;x:&quot;, x)</span>
+
+<span class="c1"># if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#     y = x</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+<span class="c1"># elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#     y = x*x</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     y = x+2</span>
+<span class="c1">#     print(&quot;y is equal to&quot;,y)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># without pretty table</span>
+
+<span class="c1"># print(&quot;---x---&quot;,&quot;|&quot;,&quot;---y---&quot;)</span>
+<span class="c1"># print(&quot;--------|--------&quot;)</span>
+<span class="c1"># for x in range(0,6,1):</span>
+<span class="c1">#     if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#         y = x</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+<span class="c1">#     elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#         y = x*x</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         y = x+2</span>
+<span class="c1">#         print(&quot;%4.f&quot; % x, &quot;   |&quot;, &quot; %4.f &quot; % y)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # with pretty table</span>
+
+<span class="c1"># from prettytable import PrettyTable #Required to create tables</span>
+
+<span class="c1"># t = PrettyTable([&#39;x&#39;, &#39;y&#39;]) #Define an empty table</span>
+
+
+<span class="c1"># for x in range(0,6,1):</span>
+<span class="c1">#     if x &gt;= 0 and x &lt; 1:</span>
+<span class="c1">#         y = x</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y]) #will add a row to the table &quot;t&quot;</span>
+<span class="c1">#     elif x &gt;= 1 and x &lt; 2:</span>
+<span class="c1">#         y = x*x</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         y = x+2</span>
+<span class="c1">#         print(&quot;for x equal to&quot;, x, &quot;, y is equal to&quot;,y)</span>
+<span class="c1">#         t.add_row([x, y])</span>
+
+<span class="c1"># print(t)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h4 id="The-continue-statement">The <code>continue</code> statement<a class="anchor-link" href="#The-continue-statement">&#182;</a></h4><p>The continue instruction skips the block of code after it is executed for that iteration, and continues with the loop traverse
+It is
+best illustrated by an example.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># j = 0</span>
+<span class="c1"># for i in range(0,5,1):</span>
+<span class="c1">#     j += 2</span>
+<span class="c1">#     print (&quot;\n i = &quot;, i , &quot;, j = &quot;, j) #here the \n is a newline command</span>
+<span class="c1">#     if j == 6:</span>
+<span class="c1">#         continue</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         print(&quot; this message will be skipped over if j = 6 &quot;) # still within the loop, so the skip is implemented</span>
+    
+<span class="c1"># #When j ==6 the line after the continue keyword is not printed. </span>
+<span class="c1"># #Other than that one difference the rest of the script runs normally.</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h4 id="The-try,-except-structure">The <code>try</code>, <code>except</code> structure<a class="anchor-link" href="#The-try,-except-structure">&#182;</a></h4><p>An important control structure (and a pretty cool one for error trapping) is the <code>try</code>, <code>except</code>
+statement.</p>
+<p>The statement controls how the program proceeds when an error occurs in an instruction.
+The structure is really useful to trap likely errors (divide by zero, wrong kind of input) 
+yet let the program keep running or at least issue a meaningful message to the user.</p>
+<p>The syntax is:</p>
+
+<pre><code>try:
+do something
+except:
+do something else if ``do something'' returns an error
+
+</code></pre>
+<p>Here is a really simple, but hugely important example:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#MyErrorTrap.py</span>
+<span class="c1"># x = 12.</span>
+<span class="c1"># y = 12.</span>
+<span class="c1"># while y &gt;= -12.: # sentinel controlled repetition</span>
+<span class="c1">#     try:         </span>
+<span class="c1">#         print (&quot;x = &quot;, x, &quot;y = &quot;, y, &quot;x/y = &quot;, x/y)</span>
+<span class="c1">#     except:</span>
+<span class="c1">#         print (&quot;error divide by zero&quot;)</span>
+<span class="c1">#     y -= 1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So this silly code starts with x fixed at a value of 12, and y starting at 12 and decreasing by
+1 until y equals -1. The code returns the ratio of x to y and at one point y is equal to zero
+and the division would be undefined. By trapping the error the code can issue us a measure
+and keep running.</p>
+<p>Modify the script as shown below,Run, and see what happens</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NoErrorTrap.py</span>
+<span class="c1"># x = 12.</span>
+<span class="c1"># y = 12.</span>
+<span class="c1"># while y &gt;= -12.: # sentinel controlled repetition</span>
+<span class="c1">#     print (&quot;x = &quot;, x, &quot;y = &quot;, y, &quot;x/y = &quot;, x/y)</span>
+<span class="c1">#     y -= 1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p><em>Here are some great reads on this topic:</em></p>
 <ul>
-<li>Maintain the same level of civility and professionalism that would be expected in a face-to-face classroom setting.</li>
-<li>Attend all classes regularly.</li>
-<li>Log into the video conference on time and remain logged in for the duration of the class period.</li>
-<li>Activate your camera so that you are visible to the instructor and other students in the class. If you have concerns about leaving your camera on (such as childcare obligations, privacy issues, or a particular circumstance during a class period), please talk to the instructor.</li>
-<li>Refrain from engaging in non-class related activities during class time that create a distraction for other students in the class and/or limit your ability to engage in the course.
-Failure to meet these expectations may result in the following consequences:</li>
+<li>"Python for Loop" available at <a href="https://www.programiz.com/python-programming/for-loop/">https://www.programiz.com/python-programming/for-loop/</a><br></li>
+<li>"Python "for" Loops (Definite Iteration)" by John Sturtz available at <a href="https://realpython.com/python-for-loop/">https://realpython.com/python-for-loop/</a> <br></li>
+<li>"Python "while" Loops (Indefinite Iteration)" by John Sturtz available at <a href="https://realpython.com/python-while-loop/">https://realpython.com/python-while-loop/</a> <br></li>
+<li>"loops in python" available at <a href="https://www.geeksforgeeks.org/loops-in-python/">https://www.geeksforgeeks.org/loops-in-python/ </a> <br></li>
+<li>"Python Exceptions: An Introduction" by Said van de Klundert available at <a href="https://realpython.com/python-exceptions/">https://realpython.com/python-exceptions/</a> <br></li>
 </ul>
-<ol>
-<li>Being counted as absent for the class meeting.</li>
-<li>Not receiving credit for class participation for that class period.</li>
-<li>Other consequences as stipulated in the syllabus, Texas Tech Code of Student Conduct, or other university policy.
-Repeated failure to meet expectations (e.g., attendance, participation in class, etc.), in addition to the above consequences, may result in the one or more of the following consequences:</li>
-<li>Referral to the appropriate Associate Dean.</li>
-<li>Academic penalty, ranging from a warning to failure of the course.
-(www.depts.ttu.edu/ethics/matadorchallenge/ethicalprinciples.php).</li>
-</ol>
-<p><strong>LGBTQIA SUPPORT STATEMENT:</strong>
-I identify as an ally to the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community, and I am available to listen and support you in an affirming manner. I can assist in connecting you with resources on campus to address problems you may face pertaining to sexual orientation and/or gender identity that could interfere with your success at Texas Tech. Please note that additional resources are available through the Office of LGBTQIA within the Center for Campus Life, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433.”</p>
-<p>Office of LGBTQIA, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433
-Within the Center for Campus Life, the Office serves the Texas Tech community through facilitation and leadership of programming and advocacy efforts. This work is aimed at strengthening the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community and sustaining an inclusive campus that welcomes people of all sexual orientations, gender identities, and gender expressions.</p>
+<p><em>Here are some great videos on these topics:</em></p>
+<ul>
+<li>"Python For Loops - Python Tutorial for Absolute Beginners" by Programming with Mosh available at <a href="https://www.youtube.com/watch?v=94UHCEmprCY">https://www.youtube.com/watch?v=94UHCEmprCY</a> <br></li>
+<li>"Python Tutorial for Beginners 7: Loops and Iterations - For/While Loops" by Corey Schafer available at <a href="https://www.youtube.com/watch?v=6iF8Xb7Z3wQ">https://www.youtube.com/watch?v=6iF8Xb7Z3wQ</a> <br></li>
+<li>"Python 3 Programming Tutorial - For loop" by sentdex available at <a href="https://www.youtube.com/watch?v=xtXexPSfcZg">https://www.youtube.com/watch?v=xtXexPSfcZg </a> <br><br></li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
