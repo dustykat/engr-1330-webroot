@@ -14267,10 +14267,9 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
 <p>Last GitHub Commit Date: 13 July 2021</p>
-<h2 id="Lesson-3-Data-Structures-and-Conditional-Statements:">Lesson 3 Data Structures and Conditional Statements:<a class="anchor-link" href="#Lesson-3-Data-Structures-and-Conditional-Statements:">&#182;</a></h2><ul>
+<h2 id="Lesson-3-Data-Structures:">Lesson 3 Data Structures:<a class="anchor-link" href="#Lesson-3-Data-Structures:">&#182;</a></h2><ul>
 <li>Data structures; lists, arrays, tuples, sets, dictionaries</li>
 <li>Name, index, contents; keys</li>
-<li>Conditional sturctures; logical compares, block and in-line if</li>
 </ul>
 <hr>
 
@@ -14278,7 +14277,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
@@ -14319,7 +14318,7 @@ sensei
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
@@ -14368,8 +14367,6 @@ sensei
 <li>Awareness of data structures available in Python to store and manipulate data </li>
 <li>Implement arrays (lists), dictionaries, and tuples</li>
 <li>Address contents of lists , dictionaries, and tuples</li>
-<li>Develop awareness of decision making in Python</li>
-<li>Implement decision making in Python using using if-then ... conditional statements</li>
 </ol>
 
 </div>
@@ -14437,7 +14434,8 @@ For example</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Arrays">Arrays<a class="anchor-link" href="#Arrays">&#182;</a></h3><p>Arrays are lists that are used to store only elements of a specific data type</p>
+<h3 id="Arrays">Arrays<a class="anchor-link" href="#Arrays">&#182;</a></h3><p>Arrays are special lists that are used to store only elements of a specific data type, and require use of an external dependency (package) named <strong>array</strong>.  The package is installed with core python, so other than importing it into a script nothing else special is needed.</p>
+<p>Arrays are:</p>
 <ul>
 <li>Ordered: Elements in an array can be indexed</li>
 <li>Mutable: Elements in an array can be altered</li>
@@ -14733,95 +14731,6 @@ database in Python.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Conditional-Statements">Conditional Statements<a class="anchor-link" href="#Conditional-Statements">&#182;</a></h2><p>Decision making via conditional statements is an important step in algorithm design; they control the flow of execution of a program.</p>
-<p>Conditional statements in Python include:</p>
-<ul>
-<li><code>if</code> statement</li>
-<li><code>if....else</code> statements</li>
-<li><code>if....elif....else</code> statements</li>
-</ul>
-<p>Conditional statements are logical expressions that evaluate as TRUE or FALSE and using
-these results to perform further operations based on these conditions.
-All flow control in a program depends on evaluating conditions. The program will proceed
-diferently based on the outcome of one or more conditions - really sophisticated AI programs are a collection of conditions and correlations.</p>
-<p>Expressed in a flowchart a block <code>if</code> statement looks like:</p>
-<p><img src="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson03/conditional.png" alt=""></p>
-<p>As psuedo code:</p>
-
-<pre><code>if(condition is true): 
-    do stuff
-
-</code></pre>
-<p>Amazon knowing what you kind of want is based on correlations of your past behavior compared to other peoples similar, but more recent behavior, and then it uses conditional statements to decide what item to offer you in your recommendation items. 
-It's spooky, but ultimately just a program running in the background trying to make your money theirs.</p>
-<h3 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">&#182;</a></h3><p>The most common conditional operation is comparison. If we wish to compare whether two
-variables are the same we use the == (double equal sign).</p>
-<p>For example x == y means the program will ask whether x and y have the same value. 
-If they do, the result is TRUE if not then the result is FALSE.</p>
-<p>Other comparison signs are <code>!=</code> does NOT equal, <code>&lt;</code> smaller than, <code>&gt;</code>larger than, <code>&lt;=</code>less than or equal, and <code>&gt;=</code> greater than or equal.</p>
-<p>There are also three logical operators when we want to build multiple compares
-(multiple conditioning); these are <code>and</code>, <code>or</code>, and <code>not</code>.</p>
-<p>The <code>and</code> operator returns TRUE if (and only if) <strong>all</strong> conditions are TRUE.
-For instance <code>5 == 5 and 5 &lt; 6</code> will return a TRUE because both conditions are true.</p>
-<p>The <code>or</code> operator returns <code>TRUE</code> if at least one condition is true. 
-If <strong>all</strong> conditions are FALSE, then it will return a FALSE. For instance <code>4 &gt; 3 or 17 &gt; 20 or 3 == 2</code> will return <code>TRUE</code>because the first condition is true.
-The <code>not</code> operator returns <code>TRUE</code> if the condition after the <code>not</code> keyword is false. Think of it
-as a way to do a logic reversal.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Block-if-statement">Block <code>if</code> statement<a class="anchor-link" href="#Block-if-statement">&#182;</a></h3><p>The <code>if</code> statement is a common flow control statement. 
-It allows the program to evaluate if a certain condition is satisfied and to perform a designed action based on the result of the evaluation. The structure of an <code>if</code> statement is</p>
-
-<pre><code>if condition1 is met:
-    do A
-elif condition 2 is met:
-    do b
-elif condition 3 is met:
-    do c
-else:
-    do e
-
-</code></pre>
-<p>The <code>elif</code> means "else if". The <code>:</code> colon is an important part of the structure it tells where the action begins. Also there are no scope delimiters like (), or {} . 
-Instead Python uses indentation to isolate blocks of code.</p>
-<p>This convention is hugely important - many other coding environments use delimiters (called scoping delimiters), but Python does not. The indentation itself is the scoping delimiter.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Inline-if-statement">Inline <code>if</code> statement<a class="anchor-link" href="#Inline-if-statement">&#182;</a></h3><p>An inline <code>if</code> statement is a simpler form of an <code>if</code> statement and is more convenient if you
-only need to perform a simple conditional task. 
-The syntax is:</p>
-
-<pre><code>do TaskA `if` condition is true `else` do TaskB
-
-</code></pre>
-<p>An example would be</p>
-
-<pre><code>myInt = 3
-num1 = 12 if myInt == 0 else 13
-num1
-
-</code></pre>
-<p>An alternative way is to enclose the condition in brackets for some clarity like</p>
-
-<pre><code>myInt = 3
-num1 = 12 if (myInt == 0) else 13
-num1
-
-</code></pre>
-<p>In either case the result is that <code>num1</code> will have the value <code>13</code> (unless you set myInt to 0).</p>
-<p>One can also use <code>if</code> to construct extremely inefficient loops.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><ol>
 <li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 Subpart 3 <a href="https://www.inferentialthinking.com/chapters/04/3/Comparison.html">https://www.inferentialthinking.com/chapters/04/3/Comparison.html</a></p>
 </li>
@@ -14830,11 +14739,25 @@ num1
 </li>
 <li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan <a href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p>
 </li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<a href="https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/">https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/</a></p>
+<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<!--[https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/](https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/)--></p>
 </li>
 </ol>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
