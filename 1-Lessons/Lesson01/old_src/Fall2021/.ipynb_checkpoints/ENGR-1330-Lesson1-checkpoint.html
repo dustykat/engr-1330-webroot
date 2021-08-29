@@ -3,13 +3,13 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-Lesson02</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>ENGR-1330-Lesson1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
+    pre { line-height: 125%; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -14259,13 +14259,74 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Download this page as a jupyter notebook at <a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson02/ENGR-1330-Lesson02.ipynb">Lesson 2</a></p>
+<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Last GitHub Commit Date: 13 January 2021</p>
+<h2 id="Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">Lesson 1 Introduction to Computational Thinking with Data Science:<a class="anchor-link" href="#Lesson-1-Introduction-to-Computational-Thinking-with-Data-Science:">&#182;</a></h2><ul>
+<li>Computational thinking concepts </li>
+<li>Data science and practices </li>
+<li>JupyterLab (iPython) as a programming environment </li>
+<li>Programming as a problem solving process</li>
+<li>CCMR Approach</li>
+</ul>
+<h3 id="Special-Script-Blocks">Special Script Blocks<a class="anchor-link" href="#Special-Script-Blocks">&#182;</a></h3><p>In the lesson notebooks there will usually be two script blocks, identical to the ones below.</p>
+<ul>
+<li>The first block identifies the particular computer, the user, and the python kernel in use.</li>
+<li>The second block sets markdown tables to left edge when rendering.</li>
+</ul>
+<p>I usually put both blocks at the top of the notebook, just after some kind of title block, as done here.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
+<span class="o">!</span> pwd
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>ip-172-26-4-2
+compthink
+/home/compthink/engr-1330-webroot/1-Lessons/Lesson01/OriginalPowerpoint
+/opt/jupyterhub/bin/python3
+3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0]
+sys.version_info(major=3, minor=8, micro=5, releaselevel=&#39;final&#39;, serial=0)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
@@ -14306,76 +14367,304 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 12 August 2021</p>
-<h2 id="Lesson-2-Programming-Fundamentals:">Lesson 2 Programming Fundamentals:<a class="anchor-link" href="#Lesson-2-Programming-Fundamentals:">&#182;</a></h2><ul>
-<li>iPython, tokens, and structure</li>
-<li>Data types (int, float, string, bool)</li>
-<li>Variables, operators, expressions, basic I/O</li>
-<li>String functions and operations</li>
-<li>How to Build a Notebook (Another look at problem solving)</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Programming-Fundamentals">Programming Fundamentals<a class="anchor-link" href="#Programming-Fundamentals">&#182;</a></h2><p>Recall the 5 fundamental CT concepts are:</p>
-<ol>
-<li><strong>Decomposition</strong>: the process of taking a complex problem and breaking it into more manageable sub-problems. </li>
-<li><strong>Pattern Recognition</strong>: finding similarities, or shared characteristics of problems to reuse of solution methods ( <strong>automation</strong> ) for each occurrence of the pattern. </li>
-<li><strong>Abstraction</strong> : Determine important characteristics of the problem and use these characteristics to create a representation of the problem. </li>
-<li><strong>Algorithms</strong> : Step-by-step instructions of how to solve a problem.</li>
-<li><strong>System Integration</strong>: the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a <strong>program</strong> which is the realization of an algorithm using a syntax that the computer can understand. </li>
-</ol>
-<p><strong>Programming</strong> is (generally) writing code in a specific programming language to address a certain problem. In the above list it is largely addressed by the algorithms and system integration concepts.</p>
-<h3 id="iPython">iPython<a class="anchor-link" href="#iPython">&#182;</a></h3><p>The programming language we will use is Python (actually iPython). Python is an example of a high-level language; there are also low-level languages, sometimes referred to as machine languages or assembly languages. Machine language is the encoding of instructions in binary so that they can be directly executed by the computer. Assembly language uses a slightly easier format to refer to the low level instructions. Loosely speaking, computers can only execute programs written in low-level languages. To be exact, computers can actually only execute programs written in machine language. Thus, programs written in a high-level language (and even those in assembly language) have to be processed before they can run. This extra processing takes some time, which is a small disadvantage of high-level languages. However, the advantages to high-level languages are enormous:</p>
+<h2 id="Computational-Thinking-Concepts">Computational Thinking Concepts<a class="anchor-link" href="#Computational-Thinking-Concepts">&#182;</a></h2><p>Computational thinking (CT) refers to the thought processes involved in expressing solutions as computational steps or algorithms that can be carried out by a computer.</p>
+<p>Much of what follows is borrowed from (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/</a>).</p>
+<p>Computational thinking is taking an approach to solving problems, designing systems and understanding human behaviour that draws on concepts fundamental to computing (<a href="http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf</a>).</p>
+<p>Computational thinking is a kind of analytical thinking:</p>
 <ul>
-<li>First, it is much easier to program in a high-level language. Programs written in a high-level language take less time to write, they are shorter and easier to read, and they are more likely to be correct. </li>
-<li>Second, high-level languages are portable, meaning that they can run on different kinds of computers with just a  few modifications. </li>
-<li>Low-level programs can run on only one kind of computer (chipset-specific for sure, in some cases hardware specific) and have to be rewritten to run on other processors. (e.g. x86-64 vs. arm7 vs. aarch64 vs. PowerPC ...)</li>
+<li>It shares with mathematical thinking in the general ways in which we might approach solving a problem. </li>
+<li>It shares with engineering thinking in the general ways in which we might approach designing and evaluating a large, complex system that operates within the constraints of the real world. - It shares with scientific thinking in the general ways in which we might approach understanding computability, intelligence, the mind and human behaviour.</li>
 </ul>
-<p>Due to these advantages, almost all programs are written in high-level languages. Low-level languages are used only for a few specialized applications.</p>
-<p>Two kinds of programs process high-level languages into low-level languages: interpreters and compilers. An interpreter reads a high-level program and executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.  Recall how an Excel spreadsheet computes from top to bottom, left to right - an interpreted program is much the same, each line is like a cell in a spreadsheet.</p>
-<p>As a language, python is a formal language that has certain requirements and structure called "syntax." Syntax rules come in two flavors, pertaining to <strong>tokens</strong> and <strong>structure</strong>. <strong>Tokens</strong> are the basic elements of the language, such as words, numbers, and chemical elements. The second type of syntax rule pertains to the <strong>structure of a statement</strong> specifically in the way the tokens are arranged.</p>
+<p>The essence of computational thinking is <strong>abstraction</strong> and <strong>automation</strong>. 
+In computing, we abstract notions beyond the physical dimensions of time and space. Our abstractions are extremely general because they are symbolic, where numeric abstractions are just a special case.</p>
+<h3 id="CT-Foundations">CT Foundations<a class="anchor-link" href="#CT-Foundations">&#182;</a></h3><p>CT is literally a process for breaking down a problem into smaller parts, looking for patterns in the problems, identifying what kind of information is needed, developing a step-by-step solution, and implementing that solution.</p>
+<ol>
+<li>Decomposition</li>
+<li>Pattern Recognition</li>
+<li>Abstraction</li>
+<li>Algorithms</li>
+<li>System Integration (implementation)</li>
+</ol>
+<h4 id="Decomposition">Decomposition<a class="anchor-link" href="#Decomposition">&#182;</a></h4><p>Decomposition is the process of taking a complex problem and breaking it into more manageable sub-problems. Examples include:</p>
+<ul>
+<li><p>Writing a paper:</p>
+<ul>
+<li>Introduction </li>
+<li>Body </li>
+<li>Conclusion </li>
+</ul>
+</li>
+<li><p>Wide-viewed (Panorama) image:</p>
+<ul>
+<li>Taking multiple overlapped photos </li>
+<li>Stitch them</li>
+</ul>
+</li>
+</ul>
+<p>Decomposition often leaves a <strong>framework</strong> of sub-problems that later have to be <strong>assembled (system integration)</strong> to produce a desired solution.</p>
+<h4 id="Pattern-Recognition">Pattern Recognition<a class="anchor-link" href="#Pattern-Recognition">&#182;</a></h4><p>Refers to finding similarities, or shared characteristics of problems.  Allows a complex problem to become easier to solve. Allows use of same solution method for each occurrence of the pattern.</p>
+<p>Pattern recognition allows use of <strong>automation</strong> to process things - its a fundamental drilled shaft of CT.  It also provides a way to use analogs from old problems to address new situations; it also will require <strong>assembly (system integration)</strong> to produce a desired solution.</p>
+<h4 id="Abstraction">Abstraction<a class="anchor-link" href="#Abstraction">&#182;</a></h4><p>Determine important characteristics of the problem and ignore characteristics that are not important. Use these characteristics to create a representation of what we are trying to solve.</p>
+<p>Books in an online bookstore</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Important</th>
+<th style="text-align:left">NOT important</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">Cover color</td>
+</tr>
+<tr>
+<td style="text-align:left">ISBN</td>
+<td style="text-align:left">Author’s hometown</td>
+</tr>
+<tr>
+<td style="text-align:left">Authors</td>
+<td style="text-align:left">...</td>
+</tr>
+<tr>
+<td style="text-align:left">...</td>
+<td style="text-align:left">...</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Algorithms">Algorithms<a class="anchor-link" href="#Algorithms">&#182;</a></h4><p>Step-by-step instructions of how to solve a problem (<a href="https://en.wikipedia.org/wiki/Algorithm">https://en.wikipedia.org/wiki/Algorithm</a>). 
+Identifies what is to be done, and the order in which they should be done.</p>
+<p><img src="algorithm.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Image from <a href="https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab">https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab</a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>An algorithm is a <strong>finite</strong> sequence of defined, instructions, typically to solve a class of problems or to perform a computation. Algorithms are unambiguous and are used as specifications for performing calculations, data processing, automated reasoning, and other tasks. Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, proceeds through a finite number of defined successive states, eventually producing "output" and terminating at a final ending state. The transition from one state to the next is not necessarily deterministic; some algorithms, known as randomized algorithms, can incorporate random input.</p>
+<h4 id="System-Integration-(implementation)">System Integration (implementation)<a class="anchor-link" href="#System-Integration-(implementation)">&#182;</a></h4><p>System integration is the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a program which is the realization of an algorithm using a syntax that the computer can understand.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Tokens-and-Structure">Tokens and Structure<a class="anchor-link" href="#Tokens-and-Structure">&#182;</a></h2><p>Consider the relativistic equation relating energy, mass, and the speed of light 
-$$ e = m \cdot c^2 $$</p>
-<p>In this equation the tokens are $e$,$m$,$c$,$=$,$\cdot$, and the structure is parsed from left to right as into the token named $e$ place the result of the product of the contents of the tokens $m$ and $c^2$. Given that the speed of light is some universal constant, the only things that can change are the contents of $m$ and the resulting change in $e$.</p>
-<p>In the above discourse, the tokens $e$,$m$,$c$ are names for things that can have values -- we will call these variables (or constants as appropriate).  The tokens $=$,$\cdot$, and $~^2$ are symbols for various arithmetic operations -- we will call these operators.  The structure of the equation is specific -- we will call it a statement.</p>
-<p>When we attempt to write and execute python scripts - we will make various mistakes; these will generate warnings and errors, which we will repair to make a working program.</p>
-<p>Consider our equation:</p>
+<h2 id="Data-Science-and-Practice">Data Science and Practice<a class="anchor-link" href="#Data-Science-and-Practice">&#182;</a></h2><p>Data science is leveraging existing data sources, to create new ones as needed in order to extract meaningful information and actionable insights through business domain expertise, effective communication and results interpretation. Data science uses relevant statistical techniques, programming languages, software packages and libraries, and data infrastructure; The insights are used to drive business decisions and take actions intended to achieve business goals.</p>
+<p>Why is this important for engineers? Because engineering is a business!</p>
+<p>A list of typical skills (<a href="https://elitedatascience.com/data-science-resources">https://elitedatascience.com/data-science-resources</a>):</p>
+<ul>
+<li>Foundational Skills<ul>
+<li><strong>Programming and Data Manipulation</strong> </li>
+<li><strong>Statistics and Probability</strong></li>
+</ul>
+</li>
+<li>Technical Skills<ul>
+<li>Data Collection</li>
+<li>SQL</li>
+<li><strong>Data Visualization</strong></li>
+<li><strong>Applied Machine Learning</strong></li>
+</ul>
+</li>
+<li>Business Skills<ul>
+<li><strong>Communication</strong></li>
+<li>Creativity and Innovation</li>
+<li>Operations and Strategy</li>
+<li>Business Analytics</li>
+</ul>
+</li>
+<li>Supplementary Skills<ul>
+<li>Natural Language Processing</li>
+<li>Recommendation Systems</li>
+<li><strong>Time Series Analysis</strong></li>
+</ul>
+</li>
+<li>Practice<ul>
+<li><strong>Projects</strong></li>
+<li>Competitions</li>
+<li>Problem Solving Challenges</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="JupyterLab-(iPython)-Environment">JupyterLab (iPython) Environment<a class="anchor-link" href="#JupyterLab-(iPython)-Environment">&#182;</a></h2><h3 id="The-tools:">The tools:<a class="anchor-link" href="#The-tools:">&#182;</a></h3><p><strong>JupyterLab</strong> (<a href="https://jupyter.org/">https://jupyter.org/</a>) is a web-based interactive development environment for Jupyter notebooks, code, and data.</p>
+<p><strong>Jupyter Notebook</strong> is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data organizing and transformation, numerical simulation, statistical modeling, visualization, machine learning, and other similar types of uses.</p>
+<p><strong>JupyterHub</strong> (<a href="https://github.com/jupyterhub/jupyterhub">https://github.com/jupyterhub/jupyterhub</a>) is a multi-user Hub that spawns, manages, and proxies multiple instances of the single-user Jupyter notebook server.</p>
+<p>All these tools allow use of various coding languages; Python is the choice for ENGR 1330.  Installing JupyterLab on your own computer is relatively straightforward if it is an Intel-based Linux, Macintosh, or Windows machine - simply use Anaconda (<a href="https://www.anaconda.com/">https://www.anaconda.com/</a>) as the installer.</p>
+<p>Installing onto an ARM-based machine is more difficult, but possible (this notebook was created on a Raspberry Pi). With both Apple and Microsoft abandoning Intel you can expect Anaconda builds for aarch64 (ARM) in the future.</p>
+<h3 id="This-course:">This course:<a class="anchor-link" href="#This-course:">&#182;</a></h3><p>You will create and use Jupyter Notebooks that use the <strong>ipython</strong> kernel, the notebook files will look like <code>filename.ipynb</code>; these are ASCII files that the JupyterLab interprets and runs.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h2><p>The programming language we will use is Python (actually iPython). Python is an example of a high-level language; other high-level languages include C, C++, PHP, FORTRAN, ADA, Pascal, Go, Java, etc (there are a lot).</p>
+<p>As you might infer from the name high-level language, there are also low-level languages, sometimes referred to as machine languages or assembly languages. Machine language is the encoding of instructions in binary so that they can be directly executed by the computer. Assembly language uses a slightly easier format to refer to the low level instructions. Loosely speaking, computers can only execute programs written in low-level languages. To be exact, computers can actually only execute programs written in machine language. Thus, programs written in a high-level language (and even those in assembly language) have to be processed before they can run. This extra processing takes some time, which is a small disadvantage of high-level languages. However, the advantages to high-level languages are enormous.</p>
+<p>First, it is much easier to program in a high-level language. Programs written in a high-level language take less time to write, they are shorter and easier to read, and they are more likely to be correct. Second, high-level languages are portable, meaning that they can run on different kinds of computers with few or no modifications. Low-level programs can run on only one kind of computer and have to be rewritten to run on another.</p>
+<p>Due to these advantages, almost all programs are written in high-level languages. Low-level languages are used only for a few specialized applications, and for device drivers.</p>
+<p>Two kinds of programs process high-level languages into low-level languages: interpreters and compilers. An interpreter reads a high-level program and executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.</p>
+<p><img src="interpreter.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Interpreted Program. Image from (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>A compiler reads the program and translates it completely before the program starts running. In this case, the high-level program is called the source code, and the translated program is called the object code or the executable. Once a program is compiled, you can execute it repeatedly without further translation.</p>
+<p><img src="compiler.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Compiled Prorgam. Image from: (<a href="https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html">https://runestone.academy/runestone/books/published/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html</a>)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Many modern languages use both processes. They are first compiled into a lower level language, called byte code, and then interpreted by a program called a virtual machine. Python uses both processes, but because of the way programmers interact with it, it is usually considered an interpreted language.</p>
+<p>As a language, python is a formal language that has certain requirements and structure called "syntax."</p>
+<p>Formal languages are languages that are designed by people for specific applications. For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols. Chemists use a formal language to represent the chemical structure of molecules. Programming languages are formal languages that have been designed to express computations.</p>
+<p>Formal languages have strict rules about syntax. For example, 3+3=6 is a syntactically correct mathematical statement, but 3=+6&amp; is not.</p>
+<p>Syntax rules come in two flavors, pertaining to <strong>tokens</strong> and <strong>structure</strong>. <strong>Tokens</strong> are the basic elements of the language, such as words, numbers, and chemical elements. One of the problems with 3=+6&amp; is that &amp; is not a legal token in mathematics (at least as far as we know).</p>
+<p>The second type of syntax rule pertains to the structure of a statement— that is, the way the tokens are arranged. The statement 3=+6&amp; is structurally illegal (in mathematics) because you don’t place a plus sign immediately after an equal sign (of course we will in python!).</p>
+<p>When you read a sentence in English or a statement in a formal language, you have to figure out what the structure of the sentence is; This process is called <strong>parsing</strong>.</p>
+<p>For example, when you hear the sentence, “The other shoe fell”, you understand that the other shoe is the subject and fell is the verb. Once you have parsed a sentence, you can figure out what it means, or the semantics of the sentence. Assuming that you know what a shoe is and what it means to fall, you will understand the general implication of this sentence.</p>
+<h3 id="Good-Resources:">Good Resources:<a class="anchor-link" href="#Good-Resources:">&#182;</a></h3><ul>
+<li>Learn Python the Hard Way (Online Book) (<a href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</li>
+<li>LearnPython.org (Interactive Tutorial) (<a href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</li>
+<li>How to Think Like a Computer Scientist (Interactive Book) (<a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html">https://runestone.academy/runestone/books/published/thinkcspy/index.html</a>) Interactive "CS 101" course taught in Python that really focuses on the art of problem solving. </li>
+<li>How to Learn Python for Data Science, The Self-Starter Way (<a href="https://elitedatascience.com/learn-python-for-data-science">https://elitedatascience.com/learn-python-for-data-science</a>) </li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Programming-as-a-problem-solving-process">Programming as a problem solving process<a class="anchor-link" href="#Programming-as-a-problem-solving-process">&#182;</a></h2><p>The entire point of this course is to develop problem solving skills and begin using some tools (Statistics, Numerical Methods, Data Science, implemented as JupyterLab/Python programs).</p>
+<p>The scientific method (<a href="https://en.wikipedia.org/wiki/Scientific_method">https://en.wikipedia.org/wiki/Scientific_method</a>) is one example of an effective problem solving strategy. Stated as a protocol it goes something like:</p>
+<ol>
+<li>Observation: Formulation of a question</li>
+<li>Hypothesis: A  conjecture that may explain observed behavior. Falsifiable by an experiment whose outcome conflicts with predictions deduced from the hypothesis</li>
+<li>Prediction: How the experiment should conclude if hypothesis is correct </li>
+<li>Testing: Experimental design, and conduct of the experiment.</li>
+<li>Analysis: Interpretation of experimental results</li>
+</ol>
+<p>This protocol can be directly adapted to CT/DS problems as:</p>
+<ol>
+<li>Define the problem (problem statement)</li>
+<li>Gather information (identify known and unknown values, and governing equations)</li>
+<li>Generate and evaluate potential solutions</li>
+<li>Refine and implement a solution</li>
+<li>Verify and test the solution.</li>
+</ol>
+<p>For actual computational methods the protocol becomes:</p>
+<ol>
+<li>Explicitly state the problem</li>
+<li>State:<ul>
+<li>Input information</li>
+<li>Governing equations or principles, and </li>
+<li>The required output information.</li>
+</ul>
+</li>
+<li>Work a sample problem by-hand for testing the general solution.</li>
+<li>Develop a general solution method (coding).</li>
+<li>Test the general solution against the by-hand example, then apply to the real problem.</li>
+</ol>
+<p>Oddly enough the first step is the most important and sometimes the most difficult. In a practical problem, step 2 is sometimes difficult because a skilled programmer is needed to translate the governing principles into an algorithm for the general solution (step 4).</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Example-1-Problem-Solving-Process">Example 1 Problem Solving Process<a class="anchor-link" href="#Example-1-Problem-Solving-Process">&#182;</a></h3><p>Consider a need to compute an arithmetic mean, what would the process look like?</p>
+<p><strong>Step 1.</strong> Develop script to compute the arithmetic mean of a stream of data of unknown length.</p>
+<p><strong>Step 2.</strong></p>
+<ul>
+<li>Inputs: The data stream </li>
+<li>Governing equation: $ \bar x = \frac{1}{N} \sum_{i=1}^{N} x_i $ where $N$ is the number of items in the data stream, and $x_i$ is the value of the i-th element.</li>
+<li>Outputs: The arithmetic mean $\bar x$</li>
+</ul>
+<p><strong>Step 3.</strong> Work a sample problem by-hand for testing the general solution.</p>
+<table>
+<thead><tr>
+<th style="text-align:right">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">23.43</td>
+</tr>
+<tr>
+<td style="text-align:right">37.43</td>
+</tr>
+<tr>
+<td style="text-align:right">34.91</td>
+</tr>
+<tr>
+<td style="text-align:right">28.37</td>
+</tr>
+<tr>
+<td style="text-align:right">30.62</td>
+</tr>
+</tbody>
+</table>
+<p>The arithmetic mean requires us to count how many elements are in the data stream (in this case there are 5) and compute their sum (in this case 154.76), and finally divide the sum by the count and report this result as the arithmetic mean.</p>
+$$ \bar x = \frac{1}{5}(23.43+37.43+34.91+28.37+30.62)=\frac{154.76}{5}=30.95 $$<p><strong>Step 4.</strong> Develop a general solution (code)</p>
+<p>The by-hand exercise helps identify the required steps in an “algorithm” or recipe to compute mean values. First we essentially capture or read the values then count how many there are (either as we go or as a separate step), then sum the values, then divide the values by the count, and finally report the result.</p>
+<p>In a flow-chart it would look like:</p>
+<p><img src="Lesson1-flowchart.png" alt=""></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Flowchart for Artihmetic Mean Algorithm</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 5.</strong> This step we would code the algorithm expressed in the figure and test it with the by-hand data and other small datasets until we are convinced it works correctly.</p>
+<p>In a simple JupyterLab script</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#clear all variables# Example </span>
-<span class="n">Energy</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">SpeedOfLight</span><span class="o">**</span><span class="mi">2</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
+<span class="n">xlist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.43</span><span class="p">,</span><span class="mf">37.43</span><span class="p">,</span><span class="mf">34.91</span><span class="p">,</span><span class="mf">28.37</span><span class="p">,</span><span class="mf">30.62</span><span class="p">]</span> <span class="c1"># list is a type of data structure</span>
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,(</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14394,15 +14683,9 @@ $$ e = m \cdot c^2 $$</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-1c1f1fa5363a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#clear all variables# Example</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>Energy <span class="ansi-blue-fg">=</span> Mass <span class="ansi-blue-fg">*</span> SpeedOfLight<span class="ansi-blue-fg">**</span><span class="ansi-cyan-fg">2</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;Mass&#39; is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.951999999999998
+</pre>
 </div>
 </div>
 
@@ -14413,18 +14696,123 @@ $$ e = m \cdot c^2 $$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how the interpreter tells us that Mass is undefined - so a simple fix is to define it and try again</p>
+<p><strong>Step 6.</strong> This step we would refine the code to generalize the algorithm.  In the example we want a way to supply the <code>xlist</code> from a file perhaps, and tidy the output by rounding to only two decimal places - rounding is relatively simple:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic Mean in Very Elementary and Primative Python</span>
+<span class="n">xlist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.43</span><span class="p">,</span><span class="mf">37.43</span><span class="p">,</span><span class="mf">34.91</span><span class="p">,</span><span class="mf">28.37</span><span class="p">,</span><span class="mf">30.62</span><span class="p">]</span> <span class="c1"># list is a type of data structure</span>
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Reading from a file, is a bit more complicated.  We need to create a connection to the file, then read the contents into our script, then put the contents into the <code>xlist</code></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
+<span class="n">externalfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># create connection to file, set to read (r), file must exist</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">externalfile</span><span class="p">:</span> <span class="c1"># parse each line, append to xlist</span>
+    <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the file connection</span>
+
+<span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">xlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Finally, if we want to reuse the code a lot, it is convienent to make it into a function</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example </span>
-<span class="n">Mass</span> <span class="o">=</span> <span class="mi">1000000</span>
-<span class="n">Energy</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">SpeedOfLight</span><span class="o">**</span><span class="mi">2</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">inputlist</span><span class="p">):</span>
+<span class="c1"># inputlist should be a list of values</span>
+    <span class="n">howlong</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputlist</span><span class="p">)</span> <span class="c1"># len is a built-in function that returns how many items in a list</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># a variable to accumulate the sum</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howlong</span><span class="p">):</span>
+        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">inputlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">accumulator</span><span class="o">/</span><span class="n">howlong</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14435,19 +14823,23 @@ $$ e = m \cdot c^2 $$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how the interpreter now tells us that SpeedOfLight is undefined - so a simple fix is to define it and try again</p>
+<p>Put our file reading and compute mean code here</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example </span>
-<span class="n">Mass</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1">#kilograms</span>
-<span class="n">SpeedOfLight</span> <span class="o">=</span> <span class="mi">299792458</span>  <span class="c1">#meters per second</span>
-<span class="n">Energy</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">SpeedOfLight</span><span class="o">**</span><span class="mi">2</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xlist</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list (null) is a type of data structure</span>
+<span class="n">externalfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># create connection to file, set to read (r), file must exist</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">externalfile</span><span class="p">:</span> <span class="c1"># parse each line, append to xlist</span>
+    <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">externalfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the file connection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic mean = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="n">xlist</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14455,599 +14847,52 @@ $$ e = m \cdot c^2 $$</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>arithmetic mean =  30.95
+</pre>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now the script ran without any reported errors, but we have not instructed the program on how to produce output.  To keep the example simple we will just add a generic print statement.</p>
+</div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example </span>
-<span class="n">Mass</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1">#kilograms</span>
-<span class="n">SpeedOfLight</span> <span class="o">=</span> <span class="mi">299792458</span>  <span class="c1">#meters per second</span>
-<span class="n">Energy</span> <span class="o">=</span> <span class="n">Mass</span> <span class="o">*</span> <span class="n">SpeedOfLight</span><span class="o">**</span><span class="mi">2</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy is:&quot;</span><span class="p">,</span> <span class="n">Energy</span><span class="p">,</span> <span class="s2">&quot;Newton meters&quot;</span><span class="p">)</span>
-</pre></div>
 
-     </div>
-</div>
-</div>
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now lets examine our program.  Identify the tokens that have values, Identify the tokens that are symbols of operations, identify the structure.</p>
+<p>So the simple task of computing the mean of a collection of values, is a bit more complex when decomposed that it first appears, but illustrates a five step process (with a refinement step).  Throughout the course this process is always in the background.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2><p>Variables are names given to data that we want to store, manipulate, <strong>and change</strong> in programs. A variable has a name and a value. The value representation depends on what type of object the variable represents. The utility of variables comes in when we have a structure that is universal, but values of variables within the structure will change - otherwise it would be simple enough to just hardwire the arithmetic.</p>
-<p>Suppose we want to store the time of concentration for some hydrologic calculation. 
-To do so, we can name a variable <code>TimeOfConcentration</code>, and then <code>assign</code> a value to the variable,
-for instance:</p>
-
-<pre><code>TimeOfConcentration = 0.0
-
-</code></pre>
-<p>After this assignment statement the variable is created in the program and has a value of 0.0. 
-The use of a decimal point in the initial assignment establishes the variable as a float (a real variable is called a floating point representation -- or just a float).</p>
-<h3 id="Naming-Rules">Naming Rules<a class="anchor-link" href="#Naming-Rules">&#182;</a></h3><p>Variable names in Python can only contain letters (a - z, A - Z), numerals (0 - 9), or underscores. 
-The first character cannot be a number, otherwise there is considerable freedom in naming. 
-The names can be reasonably long. 
-<code>runTime</code>, <code>run_Time</code>, <code>_run_Time2</code>, <code>_2runTime</code> are all valid names, but <code>2runTime</code> is not valid, and will create an error when you try to use it.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script to illustrate variable names</span>
-<span class="n">runTime</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">_2runTime</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># change to 2runTime = 2 and rerun script</span>
-<span class="n">runTime2</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">runTime</span><span class="p">,</span><span class="n">_2runTime</span><span class="p">,</span><span class="n">runTime2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There are some reserved words that cannot be used as variable names because they have preassigned meaning in Parseltongue. 
-These words include <code>print</code>, <code>input</code>, <code>if</code>, <code>while</code>, and <code>for</code>. 
-There are several more; the interpreter won't allow you to use these names as variables and will issue an error message when you attempt to run a program with such words used as variables.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Operators">Operators<a class="anchor-link" href="#Operators">&#182;</a></h2><p>The <code>=</code> sign used in the variable definition is called an assignment operator (or assignment sign). 
-The symbol means that the expression to the right of the symbol is to be evaluated and the result placed into the variable on the left side of the symbol.  The "operation" is assignment, the "=" symbol is the operator name.</p>
-<p>Consider the script below</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assignment Operator</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">x</span><span class="o">=</span><span class="n">y</span> <span class="c1"># reverse order y=x and re-run, what happens?</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So look at what happened. When we assigned values to the variables named <code>x</code> and <code>y</code>, they started life as 5 and 10. 
-We then wrote those values to the console, and the program returned 5 and 10. 
-Then we assigned <code>y</code> to <code>x</code> which took the value in y and replaced the value that was in x with this value. 
-We then wrote the contents again, and both variables have the value 10.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Arithmetic-Operators">Arithmetic Operators<a class="anchor-link" href="#Arithmetic-Operators">&#182;</a></h2><p>In addition to assignment we can also perform arithmetic operations on variables. The
-fundamental arithmetic operators are:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Symbol</th>
-<th style="text-align:left">Meaning</th>
-<th style="text-align:left">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">=</td>
-<td style="text-align:left">Assignment</td>
-<td style="text-align:left">x=3 Assigns value of 3 to x.</td>
-</tr>
-<tr>
-<td style="text-align:left">+</td>
-<td style="text-align:left">Addition</td>
-<td style="text-align:left">x+y Adds values in x and y.</td>
-</tr>
-<tr>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Subtraction</td>
-<td style="text-align:left">x-y Subtracts values in y from x.</td>
-</tr>
-<tr>
-<td style="text-align:left">*</td>
-<td style="text-align:left">Multiplication</td>
-<td style="text-align:left">x*y Multiplies values in x and y.</td>
-</tr>
-<tr>
-<td style="text-align:left">/</td>
-<td style="text-align:left">Division</td>
-<td style="text-align:left">x/y Divides value in x by value in y.</td>
-</tr>
-<tr>
-<td style="text-align:left">//</td>
-<td style="text-align:left">Floor division</td>
-<td style="text-align:left">x//y Divide x by y, truncate result to whole number.</td>
-</tr>
-<tr>
-<td style="text-align:left">%</td>
-<td style="text-align:left">Modulus</td>
-<td style="text-align:left">x%y Returns remainder when x is divided by y.</td>
-</tr>
-<tr>
-<td style="text-align:left">**</td>
-<td style="text-align:left">Exponentation</td>
-<td style="text-align:left">x <strong> y Raises value in x by value in y. ( e.g. x </strong> y)</td>
-</tr>
-<tr>
-<td style="text-align:left">+=</td>
-<td style="text-align:left">Additive assignment</td>
-<td style="text-align:left">x+=2 Equivalent to x = x+2.</td>
-</tr>
-<tr>
-<td style="text-align:left">-=</td>
-<td style="text-align:left">Subtractive assignment</td>
-<td style="text-align:left">x-=2 Equivalent to x = x-2.</td>
-</tr>
-<tr>
-<td style="text-align:left">*=</td>
-<td style="text-align:left">Multiplicative assignment</td>
-<td style="text-align:left">x*=3 Equivalent to x = x*3.</td>
-</tr>
-<tr>
-<td style="text-align:left">/=</td>
-<td style="text-align:left">Divide assignment</td>
-<td style="text-align:left">x/3 Equivalent to x = x/3.</td>
-</tr>
-</tbody>
-</table>
-<p>Run the script in the next cell for some illustrative results</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Uniary Arithmetic Operators</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">y</span>)
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arithmetic assignment operators</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">*=</span><span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Interesting what division does to variable type</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Type">Data Type<a class="anchor-link" href="#Data-Type">&#182;</a></h2><p>In the computer data are all binary digits (actually 0 and +5 volts). 
-At a higher level of <strong>abstraction</strong> data are typed into integers, real, or alphanumeric representation. 
-The type affects the kind of arithmetic operations that are allowed (as well as the kind of arithmetic - integer versus real arithmetic; lexicographical ordering of alphanumeric , etc.)
-In scientific programming, a common (and really difficult to detect) source of slight inaccuracies (that tend to snowball as the program runs) is mixed mode arithmetic required because two numeric values are of different types (integer and real).</p>
-<p>Learn more from the textbook</p>
-<p><a href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p>
-<p>Here we present a quick summary</p>
-<h3 id="Integer">Integer<a class="anchor-link" href="#Integer">&#182;</a></h3><p>Integers are numbers without any fractional portion (nothing after the decimal point { which
-is not used in integers). Numbers like -3, -2, -1, 0, 1, 2, 200 are integers. A number like 1.1
-is not an integer, and 1.0 is also not an integer (the presence of the decimal point makes the
-number a real).</p>
-<p>To declare an integer in Python, just assign the variable name to an integer for example</p>
-
-<pre><code>MyPhoneNumber = 14158576309
-
-</code></pre>
-<h3 id="Real-(Float)">Real (Float)<a class="anchor-link" href="#Real-(Float)">&#182;</a></h3><p>A real or float is a number that has (or can have) a fractional portion - the number has
-decimal parts. The numbers 3.14159, -0.001, 11.11, 1., are all floats. 
-The last one is especially tricky, if you don't notice the decimal point you might think it is an integer but the
-inclusion of the decimal point in Python tells the program that the value is to be treated as a 
-float.
-To declare a 
-float in Python, just assign the variable name to a 
-float for example</p>
-
-<pre><code>MyMassInKilos = 74.8427
-
-</code></pre>
-<h3 id="String(Alphanumeric)">String(Alphanumeric)<a class="anchor-link" href="#String(Alphanumeric)">&#182;</a></h3><p>A string is a data type that is treated as text elements. The usual letters are strings, but
-numbers can be included. The numbers in a string are simply characters and cannot be
-directly used in arithmetic. 
-There are some kinds of arithmetic that can be performed on strings but generally we process string variables to capture the text nature of their contents. 
-To declare a string in Python, just assign the variable name to a string value - the trick is the value is enclosed in quotes. 
-The quotes are delimiters that tell the program that the characters between the quotes are characters and are to be treated as literal representation.</p>
-<p>For example</p>
-
-<pre><code>MyName = 'Theodore'
-MyCatName = "Dusty"
-DustyMassInKilos = "7.48427"
-
-</code></pre>
-<p>are all string variables. 
-The last assignment is made a string on purpose. 
-String variables can be combined using an operation called concatenation. 
-The symbol for concatenation is the plus symbol <code>+</code>.</p>
-<p>Strings can also be converted to all upper case using the <code>upper()</code> function. The syntax for
-the <code>upper()</code> function is <code>'string to be upper case'.upper()</code>. 
-Notice the "dot" in the syntax. 
-The operation passes everything to the left of the dot to the function which then
-operates on that content and returns the result all upper case (or an error if the input stream
-is not a string).</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variable Types Example</span>
-<span class="n">MyPhoneNumber</span> <span class="o">=</span> <span class="mi">14158576309</span>
-<span class="n">MyMassInKilos</span> <span class="o">=</span> <span class="mf">74.8427</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="s1">&#39;Theodore&#39;</span>
-<span class="n">MyCatName</span> <span class="o">=</span> <span class="s2">&quot;Dusty&quot;</span>
-<span class="n">DustyMassInKilos</span> <span class="o">=</span> <span class="s2">&quot;7.48427&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about me&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">,</span><span class="n">MyName</span><span class="p">,</span> <span class="s2">&quot; Mass :&quot;</span><span class="p">,</span><span class="n">MyMassInKilos</span><span class="p">,</span><span class="s2">&quot;Kg&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Phone : &#39;</span><span class="p">,</span><span class="n">MyPhoneNumber</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My cat</span><span class="se">\&#39;</span><span class="s1">s name :&#39;</span><span class="p">,</span> <span class="n">MyCatName</span><span class="p">)</span>  <span class="c1"># the \ escape character is used to get the &#39; into the literal</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about concatenation!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A Silly String : &quot;</span><span class="p">,</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A SILLY STRING :  &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Strings can be formatted using the <code>%</code> operator or the <code>format()</code> function. The concepts will
-be introduced later on as needed in the workbook, you can Google search for examples of
-how to do such formatting.</p>
-<h3 id="Changing-Types">Changing Types<a class="anchor-link" href="#Changing-Types">&#182;</a></h3><p>A variable type can be changed. 
-This activity is called type casting. 
-Three functions allow
-type casting: <code>int()</code>, <code>float()</code>, and <code>str()</code>. 
-The function names indicate the result of using
-the function, hence <code>int()</code> returns an integer, <code>float()</code> returns a 
-oat, and <code>str()</code> returns a
-string.</p>
-<p>There is also the useful function <code>type()</code> which returns the type of variable.</p>
-<p>The easiest way to understand is to see an example.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Type Casting Examples</span>
-<span class="n">MyInteger</span> <span class="o">=</span> <span class="mi">234</span>
-<span class="n">MyFloat</span> <span class="o">=</span> <span class="mf">876.543</span>
-<span class="n">MyString</span> <span class="o">=</span> <span class="s1">&#39;What is your name?&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">,</span><span class="n">MyFloat</span><span class="p">,</span><span class="n">MyString</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as float&#39;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Float as integer&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">MyFloat</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as string&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as hexadecimal&#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer Type&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">((</span><span class="n">MyInteger</span><span class="p">)))</span>  <span class="c1"># insert the hex conversion and see what happens!</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Expressions">Expressions<a class="anchor-link" href="#Expressions">&#182;</a></h2><p>Expressions are the "algebraic" constructions that are evaluated and then placed into a variable.
-Consider</p>
-
-<pre><code>x1 = 7 + 3 * 6 / 2 - 1
-
-</code></pre>
-<p>The expression is evaluated from the left to right and in words is</p>
-<ul>
-<li><p>Into the object named x1 place the result of:</p>
-<p>integer 7 + (integer 6 divide by integer 2 = float 3 * integer 3 = float 9 - integer 1 = float 8) = float 15</p>
-</li>
-</ul>
-<p>The division operation by default produces a float result unless forced otherwise.  The result is the variable <code>x1</code> is a float with a value of <code>15.0</code></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Expressions Example</span>
-<span class="n">x1</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Change / into // and see what happens!</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span><span class="n">x1</span><span class="p">)</span>
-<span class="c1">## Simple I/O (Input/Output)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>So far consider our story - a tool to help with problem solving is CT leading to an algorithm.  The tool to implement the algorithm is the program and in our case JupyterLab running iPython interpreter for us.</p>
-<p>As a formal language we introduced:</p>
-<ul>
-<li>tokens</li>
-<li>structure</li>
-</ul>
-<p>From these two constructs we further introduced <strong>variables</strong> (a kind of token), <strong>data types</strong> (an abstraction, and arguably a decomposition), and <strong>expressions</strong> (a structure).  We created simple scripts (with errors), examined the errors, corrected our script, and eventually got an answer.  So we are well on our way in CT as it applies in Engineering.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="How-to-Build-a-Program/Notebook">How to Build a Program/Notebook<a class="anchor-link" href="#How-to-Build-a-Program/Notebook">&#182;</a></h2><p>Recall our suggested problem solving protocol:</p>
+<h2 id="CCMR-Approach">CCMR Approach<a class="anchor-link" href="#CCMR-Approach">&#182;</a></h2><p>A lot of the problems we will encounter from a CT/DS perspective have already been solved, or at least analogs have been solved.  It is perfectly acceptable to use prior work for a new set of conditions as long as proper attribution is made.  We call this process CCMR:</p>
 <ol>
-<li>Explicitly state the problem</li>
-<li>State the input information, governing equations or principles, and the required output information.</li>
-<li>Work a sample problem by-hand for testing the general solution.</li>
-<li>Develop a general solution method (coding).</li>
-<li>Test the general solution against the by-hand example, then apply to the real problem.</li>
-<li>Refine general solution for deployment (frequent use)</li>
+<li><strong>Copy:</strong> Find a solution to your problem from some online example:  SourceForge, StackOverflow, GeeksForGeeks, DigitalOcean, etc.</li>
+<li><strong>Cite:</strong> Cite the original source.  In general a citation will look like one of the references below, but a URL to the source is sufficient at first.</li>
+<li><strong>Modify:</strong> Modify the original cited work for your specific needs.  Note the changes in the code using comment statements.</li>
+<li><strong>Run:</strong> Apply the modified code to the problem of interest. </li>
 </ol>
-<p>The protocol below is shamelessly lifted from <a href="http://users.csc.calpoly.edu/~jdalbey/101/Lectures/HowToBuildAProgram.html">http://users.csc.calpoly.edu/~jdalbey/101/Lectures/HowToBuildAProgram.html</a> here we are using the concept of program and notebook as the same thing.</p>
-<p>Building a program is not an art, it is an engineering process.  As such there is a process to follow with clearly defined steps.</p>
-<h3 id="Analysis-(Understand-the-Requirements)">Analysis (Understand the Requirements)<a class="anchor-link" href="#Analysis-(Understand-the-Requirements)">&#182;</a></h3><p>In this class you will usually be given the problem requirements, unlike the real-world where you have to elicit the requirements from a customer.  For you the first step will be to read the problem and be sure you understand what the program must do.  Summarize your understanding by writing the Input data, Output data, and Functions (operations or transformation on the data). In the context of our (WCOE) protocol this step comprises Steps 1 and 2.</p>
-<h3 id="Create-a-Test-Plan">Create a Test Plan<a class="anchor-link" href="#Create-a-Test-Plan">&#182;</a></h3><p>You must be able to verify that your program works correctly once it is written.  Invent some actual input data values and manually compute the expected result.  In the context of our (WCOE) protocol this step comprises Steps 3.</p>
-<h3 id="Invent-a-Solution">Invent a Solution<a class="anchor-link" href="#Invent-a-Solution">&#182;</a></h3><p>This is the creative, exploratory part of design where you figure out how to solve the problem.  Here is one strategy:</p>
-<ul>
-<li>Solve the problem manually, the way you would do it as a human. Pay careful to attention what operations you perform and write down each step.</li>
-<li>Look for a pattern in the steps you performed. </li>
-<li>Determine how this pattern could be automated using the 3 algorithm building blocks (which we learn about a few lectures from now) (Sequence, Selection, Iteration).</li>
-</ul>
-<h3 id="Design-(Formalize-your-solution)">Design (Formalize your solution)<a class="anchor-link" href="#Design-(Formalize-your-solution)">&#182;</a></h3><p>Arrange your solution into components; this is called the architecture.
-Write the algorithm for each component.  Refine your algorithm in a step-wise manner if necessary.
-Determine the data types and constraints for each data item.
-Review</p>
-<p>Perform a hand trace of your solution and simulate how the computer will carry out your algorithm.  Make sure your algorithm works correctly before you put it into the computer.</p>
-<h3 id="Implementation-(coding)">Implementation (coding)<a class="anchor-link" href="#Implementation-(coding)">&#182;</a></h3><p>Translate your algorithm into a programming language and enter it into the computer.<br>
-Compile your source code to produce an executable program.
-You may want to compile and test each subprogram individually before combining them into a complete program.</p>
-<h3 id="Testing">Testing<a class="anchor-link" href="#Testing">&#182;</a></h3><p>Execute the program using the Test Plans you created above.
-Correct any errors as necessary.</p>
+<p>In cases where we use CCMR we are not so much programming and developing our own work as scaffolding parts (<a href="https://en.wikipedia.org/wiki/Scaffold_(programming">https://en.wikipedia.org/wiki/Scaffold_(programming</a>)) - a legitimate and valuable engineering activity.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Example-of-Problem-Solving-Process">Example of Problem Solving Process<a class="anchor-link" href="#Example-of-Problem-Solving-Process">&#182;</a></h3><p>Consider an engineering material problem where we wish to <strong>classify</strong> whether a material is loaded in the elastic or inelastic region as determined the stress (solid pressure) in a rod for some applied load.  The yield stress is the <strong>classifier</strong>, and once the material yields (begins to fail) it will not carry any additional load (until ultimate failure, when it carries no load).</p>
-<p><img src="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson02/StressStrain.png" alt=""></p>
-<p><strong>Step 1.</strong> Compute the material stress under an applied load; determine if value exceedes yield stress, and report the loading condition</p>
-<p><strong>Step 2.</strong></p>
-<ul>
-<li>Inputs: applied load, cross sectional area, yield stress</li>
-<li>Governing equation: $ \sigma = \frac{P}{A} $ when $\frac{P}{A} $ is less than the yield stress, and is equal to the yield stress otherwise.</li>
-<li>Outputs: The material stress $\sigma $, and the classification elastic or inelastic.</li>
-</ul>
-<p><strong>Step 3.</strong> Work a sample problem by-hand for testing the general solution.</p>
-<p>Assuming the yield stress is 1 million psi (units matter in an actual problem - kind of glossed over here)</p>
-<table>
-<thead><tr>
-<th style="text-align:right">Applied Load (lbf)</th>
-<th style="text-align:right">Cross Section Area (sq.in.)</th>
-<th style="text-align:right">Stress (psi)</th>
-<th style="text-align:right">Classification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">10,000</td>
-<td style="text-align:right">1.0</td>
-<td style="text-align:right">10,000</td>
-<td style="text-align:right">Elastic</td>
-</tr>
-<tr>
-<td style="text-align:right">10,000</td>
-<td style="text-align:right">0.1</td>
-<td style="text-align:right">100,000</td>
-<td style="text-align:right">Elastic</td>
-</tr>
-<tr>
-<td style="text-align:right">100,000</td>
-<td style="text-align:right">0.1</td>
-<td style="text-align:right">1,000,000</td>
-<td style="text-align:right">Inelastic</td>
-</tr>
-</tbody>
-</table>
-<p>The stress requires us to read in the load value, read in the cross sectional area, divide the load by the area, and compare the result to the yield stress.  If it exceeds the yield stress, then the actual stress is the yield stress, and the loading is inelastic, otherwise elastic</p>
-$$ \sigma = \frac{P}{A} $$$$ \text{If}~ \sigma &gt;= \text{Yield Stress then report Inelastic} $$<p><strong>Step 4.</strong> Develop a general solution (code)</p>
-<p>In a flow-chart it would look like:</p>
-<p><img src="https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson02/Flowchart.png" alt=""></p>
-<table>
-<thead><tr>
-<th></th>
-<th>Flowchart for Artihmetic Mean Algorithm</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step 5.</strong> This step we would code the algorithm expressed in the figure and test it with the by-hand data and other small datasets until we are convinced it works correctly. We have not yet learned prompts to get input we simply direct assign values as below (and the conditional execution is the subject of a later lesson)</p>
-<p>In a simple JupyterLab script</p>
+<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 1 <a href="https://www.inferentialthinking.com/chapters/01/what-is-data-science.html">https://www.inferentialthinking.com/chapters/01/what-is-data-science.html</a></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example 2 Problem Solving Process</span>
-<span class="n">yield_stress</span> <span class="o">=</span> <span class="mf">1e6</span>
-<span class="n">applied_load</span> <span class="o">=</span> <span class="mf">1e5</span>
-<span class="n">cross_section</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">computed_stress</span> <span class="o">=</span> <span class="n">applied_load</span><span class="o">/</span><span class="n">cross_section</span>
-<span class="k">if</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&lt;</span> <span class="n">yield_stress</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elastic Region: Stress = &quot;</span><span class="p">,</span><span class="n">computed_stress</span><span class="p">)</span>
-<span class="k">elif</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&gt;=</span> <span class="n">yield_stress</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inelastic Region: Stress = &quot;</span><span class="p">,</span><span class="n">yield_stress</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Step 6.</strong> This step we would refine the code to generalize the algorithm.  In the example we want a way to supply the inputs by user entry,and tidy the output by rounding to only two decimal places.  A little CCMR from <a href="https://www.geeksforgeeks.org/taking-input-in-python/">https://www.geeksforgeeks.org/taking-input-in-python/</a> gives us a way to deal with the inputs and typecasting.  Some more CCMR from <a href="https://www.programiz.com/python-programming/methods/built-in/round">https://www.programiz.com/python-programming/methods/built-in/round</a> gets us rounded out!</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example 2 Problem Solving Process</span>
-<span class="n">yield_stress</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Yield Stress (psi)&#39;</span><span class="p">))</span>
-<span class="n">applied_load</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Applied Load (lbf)&#39;</span><span class="p">))</span>
-<span class="n">cross_section</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Cross Section Area (sq.in.)&#39;</span><span class="p">))</span>
-<span class="n">computed_stress</span> <span class="o">=</span> <span class="n">applied_load</span><span class="o">/</span><span class="n">cross_section</span>
-<span class="k">if</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&lt;</span> <span class="n">yield_stress</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elastic Region: Stress = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">computed_stress</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="k">elif</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&gt;=</span> <span class="n">yield_stress</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inelastic Region: Stress = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yield_stress</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So the simple task of computing the stress, is a bit more complex when decomposed, that it first appears, but illustrates a five step process (with a refinement step), and we have done our first <strong>classification</strong> problem, albeit a very simple case!</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><ol>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 3 <a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">https://www.inferentialthinking.com/chapters/03/programming-in-python.html</a></p>
-</li>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 
-<a href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p>
-</li>
-<li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan <a href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p>
-</li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<!--[https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/](https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/)--></p>
-</li>
-</ol>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 

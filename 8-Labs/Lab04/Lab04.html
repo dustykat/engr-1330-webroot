@@ -14801,6 +14801,52 @@ The point of the example is that the prompt in the <code>input()</code> function
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Run the script below a few times.  It should output a randomly selected integer from 0 to 6.  Then copy the Cyberdyne prompt list above to the location shown, replace the last two placeholder strings with the responses from the movie (in the image above).  Then run the script 6 times; how many times does the terminator respond with your replacements for the placeholders?</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[87]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">low</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">myprompt</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span> <span class="c1">#generate random number in range low to high</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myprompt</span><span class="p">)</span>
+<span class="c1"># copy cyberdyne prompt=[...] here</span>
+<span class="c1"># print prompt element as determined by myprompt chosen at random</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Example.--Suggestive-Sell!">Example.  Suggestive Sell!<a class="anchor-link" href="#Example.--Suggestive-Sell!">&#182;</a></h2><p>Suppose we are building an automated food service program.  If you recall from real life, that when you complete your order the cashier always asks "would you like fries with that?"</p>
 <p>Well lets script the interaction, and get either a yes or no answer from the customer.</p>
 
@@ -14808,7 +14854,7 @@ The point of the example is that the prompt in the <code>input()</code> function
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[88]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">statements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Thank you for your order&#39;</span><span class="p">,</span><span class="s1">&#39;Would you like fries with that too? (Y or N)&#39;</span><span class="p">,</span>
@@ -14883,13 +14929,13 @@ The point of the example is that the prompt in the <code>input()</code> function
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In these examples we dont operate on the input much, however lets conclude the beautiful number example, and do domething with it</p>
+<p>In these examples we don't operate on the input much, however lets conclude the beautiful number example, and do something with it</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example</span>
@@ -14924,7 +14970,7 @@ The point of the example is that the prompt in the <code>input()</code> function
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The beautiful number 9.000 squared is 81.000
+<pre>The beautiful number 14.290 squared is 204.204
 </pre>
 </div>
 </div>
@@ -14939,9 +14985,10 @@ The point of the example is that the prompt in the <code>input()</code> function
 <h2 id="Exercise/Discussion">Exercise/Discussion<a class="anchor-link" href="#Exercise/Discussion">&#182;</a></h2><p>How could you approximate the square root using just the tool (script) above?</p>
 <p>Try it for:</p>
 <ul>
+<li>100</li>
+<li>4</li>
+<li>2</li>
 <li>204.490</li>
-<li>222.222</li>
-<li>1024.4201</li>
 </ul>
 
 </div>
@@ -14951,7 +14998,7 @@ The point of the example is that the prompt in the <code>input()</code> function
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Discuss ideas, the implement a brute force approach</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Discuss ideas, then implement a brute force approach</span>
 </pre></div>
 
      </div>
@@ -15508,6 +15555,12 @@ Have you seen any living humans around here? death to all humans!
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Explore the %.3f format code above, what happens if you change the numeric part of the format code?</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
