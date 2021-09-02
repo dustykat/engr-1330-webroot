@@ -14904,7 +14904,7 @@ database in Python.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">77</span><span class="p">}</span>
@@ -14924,7 +14924,7 @@ database in Python.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -14948,7 +14948,7 @@ database in Python.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">urset</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;rock&#39;</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="s1">&#39;sunset strip&#39;</span><span class="p">}</span>
@@ -14968,7 +14968,7 @@ database in Python.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14995,7 +14995,7 @@ database in Python.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># union (join) sets</span>
@@ -15021,7 +15021,7 @@ database in Python.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>union is :  {1, 2, &#39;cat&#39;, &#39;rock&#39;, 77, &#39;apple&#39;, &#39;sunset strip&#39;}
+<pre>union is :  {1, 2, &#39;rock&#39;, 77, &#39;apple&#39;, &#39;cat&#39;, &#39;sunset strip&#39;}
 intersection is :  {77}
 </pre>
 </div>
@@ -15076,12 +15076,16 @@ intersection is :  {77}
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="What's-the-difference-between-a-set-and-dictionary?">What's the difference between a set and dictionary?<a class="anchor-link" href="#What's-the-difference-between-a-set-and-dictionary?">&#182;</a></h4>
+<h4 id="What's-the-difference-between-a-set-and-dictionary?">What's the difference between a set and dictionary?<a class="anchor-link" href="#What's-the-difference-between-a-set-and-dictionary?">&#182;</a></h4><p>A set is like a dictionary where the keys themselves are the values; the keys are unique (duplicates are not allowed).  You can construct sets with duplicates and the constructor will drop duplicates - try it with the first set above.</p>
+<p>Another comparison from <a href="https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python">https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python</a> is
+"Well, a set is like a dict with keys but no values, and they're both implemented using a hash table. But yes, it's a little annoying that the {} notation denotes an empty dict rather than an empty set, but that's a historical artifact."</p>
+<p>In the example below, we look at empty versions of each.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Empty dictionary</span>
@@ -15122,13 +15126,6 @@ intersection is :  {77}
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From <a href="https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python">https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python</a></p>
-<p>"Well, a set is like a dict with keys but no values, and they're both implemented using a hash table. But yes, it's a little annoying that the <code>{}</code> notation denotes an empty <code>dict</code> rather than an empty <code>set</code>, but that's a historical artifact."</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><ol>
 <li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 Subpart 3 <a href="https://www.inferentialthinking.com/chapters/04/3/Comparison.html">https://www.inferentialthinking.com/chapters/04/3/Comparison.html</a></p>
 </li>
@@ -15148,34 +15145,6 @@ intersection is :  {77}
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
