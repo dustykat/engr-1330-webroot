@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-Lesson03</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>google_search</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,291 +14259,20 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Download this page as a jupyter notebook at <a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson03/ENGR-1330-Lesson03.ipynb">Lesson 3</a></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 13 July 2021</p>
-<h2 id="Lesson-3-Data-Structures:">Lesson 3 Data Structures:<a class="anchor-link" href="#Lesson-3-Data-Structures:">&#182;</a></h2><ul>
-<li>Data structures; lists, arrays, tuples, sets, dictionaries</li>
-<li>Name, index, contents; keys</li>
+<h2 id="Install-googlesearch">Install googlesearch<a class="anchor-link" href="#Install-googlesearch">&#182;</a></h2><ul>
+<li><strong>Windows</strong> and <strong>Mac</strong> users can install using <strong>anaconda power shell</strong> type:<code>conda install -c conda-forge googlesearch</code>, wait for the installer to complete.</li>
+<li><strong>Linux</strong> users can install using <strong>pip</strong> type: <code>sudo -H /opt/jupyterhub/bin/python3 -m pip install google</code>, wait for the installer to complete; if your python kernel is in a different location, then change the install path (the part between -H and -m).  If you have a Linux anaconda install, use conda first, if that fails then try pip.</li>
 </ul>
-<hr>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!</span> hostname<span class="p">;</span> ! whoami<span class="p">;</span> ! pwd<span class="p">;</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>atomickitty
-sensei
-/home/sensei/engr-1330-webroot/1-Lessons/Lesson03
-/opt/jupyterhub/bin/python3
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<!-- Script Block to set tables to left alignment -->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ol>
-<li>Awareness of data structures available in Python to store and manipulate data </li>
-<li>Implement arrays (lists), dictionaries, and tuples</li>
-<li>Address contents of lists , dictionaries, and tuples</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Data-Structures-and-Conditional-Statements">Data Structures and Conditional Statements<a class="anchor-link" href="#Data-Structures-and-Conditional-Statements">&#182;</a></h2><p><strong>Computational thinking (CT)</strong> concepts involved are:</p>
-<ul>
-<li><code>Decomposition</code> : Data interpretation, manipulation, and analysis of NumPy arrays</li>
-<li><code>Abstraction</code> : Data structures; Arrays, lists, tuples, sets, and dictionaries</li>
-<li><code>Algorithms</code> : Conditional statements</li>
-</ul>
-<h2 id="What-is-a-data-structure?">What is a data structure?<a class="anchor-link" href="#What-is-a-data-structure?">&#182;</a></h2><p>Data Structures are a specialized means of organizing and storing data in computers in such a way that we can perform operations on the stored data more efficiently.</p>
-<p>In our iPython world the structures are illustrated in the figure below</p>
-<p><img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson03/data-structures.png" alt=""></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h3><p>A list is a collection of data that are somehow related. It is a convenient way to refer to a
-collection of similar things by a single name, and using an index (like a subscript in math)
-to identify a particular item.</p>
-<p>Consider the "math-like" variable $x$ below:</p>
-\begin{gather}
-x_0= 7 \\
-x_1= 11 \\
-x_2= 5 \\
-x_3= 9 \\
-x_4= 13 \\
-\dots \\
-x_N= 223 \\
-\end{gather}<p>The variable name is $x$ and the subscripts correspond to different values. 
-Thus the <code>value</code> of the variable named $x$ associated with subscript $3$ is the number $9$.</p>
-<p>The figure below is a visual representation of a the concept that treats a variable as a collection of cells.</p>
-<p><img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson03/array-image.jpg" alt=""></p>
-<p>In the figure, the variable name is <code>MyList</code>, the subscripts are replaced by an index
-which identifies which cell is being referenced. 
-The value is the cell content at the particular index.</p>
-<p>So in the figure the value of <code>MyList</code> at Index = 3 is the number 9.'</p>
-<p>In engineering and data science we use lists a lot - we often call then vectors, arrays, matrices and such, but they are ultimately just lists.</p>
-<p>To declare a list you can write the list name and assign it values. 
-The square brackets are used to identify that the variable is a list. 
-Like:</p>
-
-<pre><code>MyList = [7,11,5,9,13,66,99,223]
-
-</code></pre>
-<p>One can also declare a null list and use the <code>append()</code> method to fill it as needed.</p>
-
-<pre><code>MyOtherList = [ ]
-
-</code></pre>
-<p>Python indices start at <strong>ZERO</strong>. 
-A lot of other languages start at ONE. 
-It's just the convention.</p>
-<p>The first element in a list has an index of 0, the second an index of 1, and so on.
-We access the contents of a list by referring to its name and index. 
-For example</p>
-
-<pre><code>MyList[3] has a value of the number 9.</code></pre>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Arrays">Arrays<a class="anchor-link" href="#Arrays">&#182;</a></h3><p>Arrays are special lists that are used to store only elements of a specific data type, and require use of an external dependency (package) named <strong>array</strong>.  The package is installed with core python, so other than importing it into a script nothing else special is needed.</p>
-<p>Arrays are:</p>
-<ul>
-<li>Ordered: Elements in an array can be indexed</li>
-<li>Mutable: Elements in an array can be altered</li>
-</ul>
-<!--![](https://pi.lbbcdn.com/wp-content/uploads/2020/01/Python-Arrays-Index-example-diagram.png)-->
-
-<p><img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson03/python-arrays-index-local.png" alt=""></p>
-<p>Data type that an array must hold is specified using the type code when it is created</p>
-<ul>
-<li>‘f’ for float</li>
-<li>‘d’ for double</li>
-<li>‘i’ for signed int</li>
-<li>‘I’ for unsigned int</li>
-</ul>
-<p>More types are listed below</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Type Code</th>
-<th>C Data Type</th>
-<th>Python Data Type</th>
-<th style="text-align:right">Minimum Size in Bytes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">'b'</td>
-<td>signed char</td>
-<td>int</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td style="text-align:left">'B'</td>
-<td>unsigned char</td>
-<td>int</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td style="text-align:left">'h'</td>
-<td>signed short</td>
-<td>int</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">'H'</td>
-<td>unsigned short</td>
-<td>int</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">'i'</td>
-<td>signed int</td>
-<td>int</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">'I'</td>
-<td>unsigned int</td>
-<td>int</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">'l'</td>
-<td>signed long</td>
-<td>int</td>
-<td style="text-align:right">4</td>
-</tr>
-<tr>
-<td style="text-align:left">'L'</td>
-<td>unsigned long</td>
-<td>int</td>
-<td style="text-align:right">4</td>
-</tr>
-<tr>
-<td style="text-align:left">'q'</td>
-<td>signed long long</td>
-<td>int</td>
-<td style="text-align:right">8</td>
-</tr>
-<tr>
-<td style="text-align:left">'Q'</td>
-<td>unsigned long long</td>
-<td>int</td>
-<td style="text-align:right">8</td>
-</tr>
-<tr>
-<td style="text-align:left">'f'</td>
-<td>float</td>
-<td>float</td>
-<td style="text-align:right">4</td>
-</tr>
-<tr>
-<td style="text-align:left">'d'</td>
-<td>double</td>
-<td>float</td>
-<td style="text-align:right">8</td>
-</tr>
-</tbody>
-</table>
-<p>To use arrays, a library named ‘array’ must be imported</p>
+<p>Once installed, then you can import the package in the cell below, then run it to test the install:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">array</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">googlesearch</span> 
 </pre></div>
 
      </div>
@@ -14554,67 +14283,44 @@ For example</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Creating an array that contains signed integer numbers</p>
+<p>if you get an error message from the cell above, it usually means you did not install the package, read the error to debug the install.</p>
+<p>If successful then here is the rest of the script</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myarray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;python for data science&quot;</span>
+<span class="n">top_level_domain</span> <span class="o">=</span> <span class="s1">&#39;co.in&#39;</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+<span class="n">howmany_hits</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># This is used to specify the number of results we desire per search block. </span>
+<span class="n">search_start</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Begin URL list at this non-404 result</span>
+<span class="n">search_end</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># End URL list at this non-404 result</span>
+<span class="n">how_long_between_http_requests</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Wait time (in seconds) between consecutive HTTP requests. </span>
+<span class="c1"># If the wait time is too small Google will assume the process is a DoS attack and block your IP address.</span>
+<span class="c1">#</span>
+<span class="c1"># syntax:</span>
+<span class="c1"># search(query, tld=top_level_domain, lang=language, num=howmany_hits, start=search_start, stop=search_end, pause=how_long_between_http_requests)</span>
+<span class="c1"># produces an iterable (list) of valid URLs containing the search string</span>
+<span class="c1">#</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myarray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#1-st element, 0-th position</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">array</span> <span class="k">as</span> <span class="nn">arr</span> <span class="c1">#import using an alias so the calls don&#39;t look so funny</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Add code to prompt user for a search string, and place that string into `query`</span>
+<span class="c1"># Add code to prompt user for how many results to return, put that value into `search_end` limit the value to less than 20</span>
 </pre></div>
 
      </div>
@@ -14622,14 +14328,15 @@ For example</p>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myarray</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">])</span>
-<span class="n">myarray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#1-st element, 0-th position</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">googlesearch</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tld</span><span class="o">=</span><span class="n">top_level_domain</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">howmany_hits</span><span class="p">,</span> 
+                             <span class="n">start</span><span class="o">=</span><span class="n">search_start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">search_end</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="n">how_long_between_http_requests</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14637,113 +14344,6 @@ For example</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Lists: Can store elements of different data types; like arrays they are (arrays are lists, but lists are not quite arrays!)</p>
-<ul>
-<li>Ordered: Elements in a list can be indexed</li>
-<li>Mutable: Elements in a list can be altered</li>
-<li>Mathematical  operations  must    be  applied to  each element    of  the list    </li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Tuple---A-special-list">Tuple - A special list<a class="anchor-link" href="#Tuple---A-special-list">&#182;</a></h3><p>A tuple is a special kind of list where the <strong>values cannot be changed</strong> after the list is created.
-Such a property is called <code>immutable</code>
-It is useful for list-like things that are static - like days in a week, or months of a year.
-You declare a tuple like a list, except use round brackets instead of square brackets.</p>
-
-<pre><code>MyTupleName = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
-
-</code></pre>
-<p>Tuples are often created as output from packages and functions.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Dictionary---A-special-list">Dictionary - A special list<a class="anchor-link" href="#Dictionary---A-special-list">&#182;</a></h3><p>A dictionary is a special kind of list where the items are related data <code>PAIRS</code>. 
-It is a lot like a relational database (it probably is one in fact) where the first item in the pair is called the key, and must be unique in a dictionary, and the second item in the pair is the data.
-The second item could itself be a list, so a dictionary would be a meaningful way to build a
-database in Python.</p>
-<p>To declare a dictionary using <code>curly</code> brackets</p>
-
-<pre><code>MyPetsNamesAndMass = { "Dusty":7.8 , "Aspen":6.3, "Merrimee":0.03}
-
-</code></pre>
-<p>To declare a dictionary using the <code>dict()</code> method</p>
-
-<pre><code>MyPetsNamesAndMassToo = dict(Dusty = 7.8 , Aspen = 6.3, Merrimee = 0.03)
-
-</code></pre>
-<p>Dictionary properties</p>
-<ul>
-<li>Unordered: Elements in a dictionary cannot be</li>
-<li>Mutable elements: Elements in a dictionary can be altered</li>
-<li>Immutable keys: Keys in a dictionary cannot be altered</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Sets---A-special-list">Sets - A special list<a class="anchor-link" href="#Sets---A-special-list">&#182;</a></h3><p>Sets: Are used to store elements of different data types</p>
-<ul>
-<li>Unordered: Elements in a set cannot be indexed</li>
-<li>Mutable: Elements in a set can be altered</li>
-<li>Non-repetition: Elements in a set are unique</li>
-</ul>
-<p>Elements of a set are enclosed in curly brackets { }</p>
-<ul>
-<li>Creating sets that contains different data types</li>
-<li>Sets cannot be nested</li>
-</ul>
-<h4 id="What's-the-difference-between-a-set-and-dictionary?">What's the difference between a set and dictionary?<a class="anchor-link" href="#What's-the-difference-between-a-set-and-dictionary?">&#182;</a></h4><p>From <a href="https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python">https://stackoverflow.com/questions/34370599/difference-between-dict-and-set-python</a></p>
-<p>"Well, a set is like a dict with keys but no values, and they're both implemented using a hash table. But yes, it's a little annoying that the <code>{}</code> notation denotes an empty <code>dict</code> rather than an empty <code>set</code>, but that's a historical artifact."</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><ol>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 Subpart 3 <a href="https://www.inferentialthinking.com/chapters/04/3/Comparison.html">https://www.inferentialthinking.com/chapters/04/3/Comparison.html</a></p>
-</li>
-<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 
-<a href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p>
-</li>
-<li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan <a href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p>
-</li>
-<li><p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU, Whitacre College of Engineering, DOI (pending)<!--[https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/](https://3.137.111.182/engr-1330-webroot/engr-1330-webbook/ctds-psuedocourse/site/)--></p>
-</li>
-</ol>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
