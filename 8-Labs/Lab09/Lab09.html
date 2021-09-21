@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ENGR-1330-Lesson09</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Lab09</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,41 +14259,31 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Download this page as a jupyter notebook at <a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/ENGR-1330-Lesson09.ipynb">Lesson 9</a></p>
+<p>Download this page as a jupyter notebook at <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.ipynb">Lab 9</a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date: 10 September 2021</p>
-<h2 id="Lesson-9-Matrix-Arithmetic-using-NumPy:">Lesson 9 Matrix Arithmetic using NumPy:<a class="anchor-link" href="#Lesson-9-Matrix-Arithmetic-using-NumPy:">&#182;</a></h2><ul>
-<li>How to install<ul>
-<li>Anaconda</li>
-<li>JupyterHub/Lab (on Linux)</li>
-<li>JupyterHub/Lab (on MacOS)</li>
-<li>JupyterHub/Lab (on Windoze)</li>
-</ul>
-</li>
-<li>About NumPy<ul>
-<li>Arrays</li>
-<li>Array Methods</li>
-<li>Lesson 8 examples using NumPy to illustrate abstraction to maintainable scripts</li>
-</ul>
-</li>
-</ul>
+<h1><font color=darkred>Laboratory 9: Matrices a Blue Pill Approach </font></h1>
+<p><strong>LAST NAME, FIRST NAME</strong></p>
+<p><strong>R00000000</strong></p>
+<p>ENGR 1330 Laboratory 9 - In-Lab</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[144]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Script block to identify host, user, and kernel</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!</span> hostname<span class="p">;</span> ! whoami<span class="p">;</span> ! pwd<span class="p">;</span> 
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14315,8 +14305,10 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>atomickitty
 sensei
-/home/sensei/engr-1330-webroot/1-Lessons/Lesson09
 /opt/jupyterhub/bin/python3
+3.8.10 (default, Jun  2 2021, 10:49:15) 
+[GCC 9.4.0]
+sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, serial=0)
 </pre>
 </div>
 </div>
@@ -14325,181 +14317,20 @@ sensei
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[145]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!-- Script Block to set tables to left alignment --&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<!-- Script Block to set tables to left alignment -->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>To understand the representation of data in different structure using the NumPy library(module).<ul>
-<li>Access data within a NumPy array</li>
-<li>Perform arithmetic/mathematical operations on the contents of NumPy arrays</li>
-</ul>
-</li>
-</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1280px-NumPy_logo_2020.svg.png" width="500" ></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h3 id="Numpy">Numpy<a class="anchor-link" href="#Numpy">&#182;</a></h3><p>Numpy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays. The library’s name is short for “Numeric Python” or “Numerical Python”. If you are curious about NumPy, this cheat sheet is recommended:
+<h2><font color=purple>Numpy</font></h2>
+<p>Numpy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays. The library’s name is short for “Numeric Python” or “Numerical Python”. If you are curious about NumPy, this cheat sheet is recommended:
 <a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf">https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf</a></p>
-<p>NumPy library has two fundamental conceptualizations:</p>
-<ul>
-<li>Data representation: Arrays <ul>
-<li>vectors</li>
-<li>matrices</li>
-</ul>
-</li>
-<li>Data operations: <ul>
-<li>Element-by-element arithmetic, and mathematical operations;</li>
-<li>Matrix/vector arithmetic</li>
-<li>Indexing</li>
-<li>Selection</li>
-<li>Copying</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Computational-Thinking-Concepts">Computational Thinking Concepts<a class="anchor-link" href="#Computational-Thinking-Concepts">&#182;</a></h2><p>The CT concepts expressed within NumPy include:</p>
-<ul>
-<li><code>Decomposition</code> : Break a problem down into smaller pieces; Data interpretation, manipulation, and analysis of NumPy arrays is an act of decomposition.</li>
-<li><code>Abstraction</code> : Pulling out specific differences to make one solution work for multiple problems; The array is a data representation abstraction that allows for placeholder operations, later substituted with specific contents for a problem; enhances reuse and readability.  Generally we leverage the principle of algebraic replacement using these abstractions.</li>
-<li><code>Algorithms</code> : A list of steps that you can follow to finish a task; Data interpretation, manipulation, and analysis of NumPy arrays is generally implemented as part of a supervisory algorithm.</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Module-Set-Up">Module Set-Up<a class="anchor-link" href="#Module-Set-Up">&#182;</a></h2><p>In principle, NumPy should be available in a default Anaconda install</p>
-<ul>
-<li>You should not have to do any extra installation steps to install the library in Python</li>
-<li>You do have to <strong>import</strong> the library in your scripts</li>
-</ul>
-<p>How to check</p>
-<ul>
-<li>Simply open a code cell and run <code>import numpy</code> if the notebook does not protest (i.e. pink block of error), the youis good to go.</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[146]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you do get an error, that means that you will have to install using <code>conda</code> or <code>pip</code>; you are on-your-own here!  On the <strong>content server</strong> the process is:</p>
-<ol>
-<li>Open a new terminal from the launcher</li>
-<li>Change to root user <code>su</code> then enter the root password</li>
-<li><code>sudo -H /opt/jupyterhib/bin/python3 -m pip install numpy</code></li>
-<li>Wait until the install is complete; for security, user <code>compthink</code> is not in the <code>sudo</code> group</li>
-<li>Verify the install by trying to execute <code>import numpy</code> as above.</li>
-</ol>
-<p>The process will be similar on a Macintosh, or Windows.   Best is to hope you have a sucessful anaconda install.</p>
-<p>If you have to do this kind of install, you will have to do some reading, some references I find useful are:</p>
-<ol>
-<li><a href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">https://jupyterlab.readthedocs.io/en/stable/user/extensions.html</a></li>
-<li><a href="https://www.pugetsystems.com/labs/hpc/Note-How-To-Install-JupyterHub-on-a-Local-Server-1673/#InstallJupyterHub">https://www.pugetsystems.com/labs/hpc/Note-How-To-Install-JupyterHub-on-a-Local-Server-1673/#InstallJupyterHub</a></li>
-<li><a href="https://jupyterhub.readthedocs.io/en/stable/installation-guide-hard.html">https://jupyterhub.readthedocs.io/en/stable/installation-guide-hard.html</a> (This is the approach on the content server which has a functioning JupyterHub)</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="NumPy:-AKA-Numerical-Python">NumPy: AKA Numerical Python<a class="anchor-link" href="#NumPy:-AKA-Numerical-Python">&#182;</a></h2><p>NumPy is a foundational library (module) for scientific computing.  Most if not all all data science libraries (modules) rely on NumPy as one of their building blocks to reduce the need to build certain operations in primative python.</p>
-<p>NumPy provides a multi-dimensional array object called ‘ndarray’ (n-dimensional array) and methods for:</p>
-<ul>
-<li>Computations with arrays and mathematical operations between arrays (array-by-array and element-by-element)</li>
-<li>Linear algebra operations </li>
-<li>Psuedo random number generation</li>
-</ul>
-<p>As compared to the prior lesson, multi-dimensional arrays (lists) are far easier to manipulate using numpy.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h3 id="Arrays">Arrays<a class="anchor-link" href="#Arrays">&#182;</a></h3><p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.</p>
-<p>Figure 1 is a visual depiction of numpy arrays of rank 1 and rank2.</p>
-<p><img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/numpyarray.png" width="500"></p>
-<table>
-<thead><tr>
-<th>Figure 1: NumPy array visual representation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>In other words, an array contains information about the raw data, how to locate an element and how to interpret an element.To make a numpy array, you can just use the <code>np.array()</code> function. All you need to do is pass a list to it. Don’t forget that, in order to work with the <code>np.array()</code> function, you need to make sure that the <code>numpy</code> library is present in your environment.
+<h3><font color=purple>Arrays</font></h3>
+<p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension. In other words, an array contains information about the raw data, how to locate an element and how to interpret an element.To make a numpy array, you can just use the np.array() function. All you need to do is pass a list to it. Don’t forget that, in order to work with the np.array() function, you need to make sure that the numpy library is present in your environment.
 If you want to read more about the differences between a Python list and NumPy array, this link is recommended:
 <a href="https://webcourses.ucf.edu/courses/1249560/pages/python-lists-vs-numpy-arrays-what-is-the-difference">https://webcourses.ucf.edu/courses/1249560/pages/python-lists-vs-numpy-arrays-what-is-the-difference</a></p>
 
@@ -14508,55 +14339,19 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example--1D-Arrays-(Vectors)">Example- 1D Arrays (Vectors)<a class="anchor-link" href="#Example--1D-Arrays-(Vectors)">&#182;</a></h3><p>Let's create a 1D array from the 2000s (2000-2009):</p>
+<h3 id="Example--1D-Arrays">Example- 1D Arrays<a class="anchor-link" href="#Example--1D-Arrays">&#182;</a></h3><p><strong>Let's create a 1D array from the 2000s (2000-2009):</strong></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[147]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>             <span class="c1">#First, we need to impoty &quot;numpy&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>             <span class="c1">#First, we need to impoty &quot;numpy&quot;</span>
 <span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2003</span><span class="p">,</span><span class="mi">2004</span><span class="p">,</span><span class="mi">2005</span><span class="p">,</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2007</span><span class="p">,</span><span class="mi">2008</span><span class="p">,</span><span class="mi">2009</span><span class="p">]</span>         <span class="c1">#Create a list of the years</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[147]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>list</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[148]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>                 <span class="c1">#Check how it looks</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>                 <span class="c1">#Check how it looks</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>              <span class="c1">#Define it as a numpy array</span>
 </pre></div>
 
      </div>
@@ -14581,334 +14376,16 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 </div>
 
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[149]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>              <span class="c1">#Type cast it as a numpy array</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[149]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>numpy.ndarray</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[150]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2000 2001 2002 2003 2004 2005 2006 2007 2008 2009]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[151]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my2dlist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[151]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>list</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[152]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[153]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my2dlist</span><span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span>   <span class="c1">#Type cast it as a numpy array</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[153]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>numpy.ndarray</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[154]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[1 2 3]
- [4 5 6]
- [7 8 9]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[155]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span>  <span class="c1">#how many rows</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[155]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[156]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1">#how many columns</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[156]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[157]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">my2dlist</span><span class="p">)</span> <span class="c1"># using the shape method</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[157]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(3, 3)</pre>
+<pre>array([2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009])</pre>
 </div>
 
 </div>
@@ -14921,19 +14398,18 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example:-n-Dimensional-Arrays">Example: n-Dimensional Arrays<a class="anchor-link" href="#Example:-n-Dimensional-Arrays">&#182;</a></h3><p>We already made a 3X3 array, but let's create a 5x2 array from the 2000s (2000-2009):</p>
+<h3 id="Example--n-Dimensional-Arrays">Example- n-Dimensional Arrays<a class="anchor-link" href="#Example--n-Dimensional-Arrays">&#182;</a></h3><p><strong>Let's create a 5x2 array from the 2000s (2000-2009):</strong></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[158]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myotherlist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2001</span><span class="p">],[</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2003</span><span class="p">],[</span><span class="mi">2004</span><span class="p">,</span><span class="mi">2005</span><span class="p">],[</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2007</span><span class="p">],[</span><span class="mi">2008</span><span class="p">,</span><span class="mi">2009</span><span class="p">]]</span>     <span class="c1">#Since I want a 5x2 array, I should group the years two by two</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">myotherlist</span><span class="p">)</span>             <span class="c1">#See how it looks as a list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">myotherlist</span><span class="p">))</span> <span class="c1">#check the shape</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">myotherlist</span><span class="p">)</span>   <span class="p">)</span>       <span class="c1">#See how it looks as a numpy array</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">myotherlist</span><span class="p">)</span>          <span class="c1">#See how it looks as a numpy array</span>
 </pre></div>
 
      </div>
@@ -14954,14 +14430,26 @@ If you want to read more about the differences between a Python list and NumPy a
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>[[2000, 2001], [2002, 2003], [2004, 2005], [2006, 2007], [2008, 2009]]
-(5, 2)
-[[2000 2001]
- [2002 2003]
- [2004 2005]
- [2006 2007]
- [2008 2009]]
 </pre>
 </div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[2000, 2001],
+       [2002, 2003],
+       [2004, 2005],
+       [2006, 2007],
+       [2008, 2009]])</pre>
+</div>
+
 </div>
 
 </div>
@@ -14971,8 +14459,8 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h4 id="Array-Arithmetic">Array Arithmetic<a class="anchor-link" href="#Array-Arithmetic">&#182;</a></h4><p>Once you have created the arrays, you can do basic Numpy operations. Numpy offers a variety of operations applicable on arrays. From basic operations such as summation, subtraction, multiplication and division to more advanced and essential operations such as matrix multiplication and other elementwise operations. In the examples below, we will go over some of these:</p>
+<h3><font color=purple>Arrays Arithmetic</font></h3>
+<p>Once you have created the arrays, you can do basic Numpy operations. Numpy offers a variety of operations applicable on arrays. From basic operations such as summation, subtraction, multiplication and division to more advanced and essential operations such as matrix multiplication and other elementwise operations. In the examples below, we will go over some of these:</p>
 
 </div>
 </div>
@@ -14981,75 +14469,37 @@ If you want to read more about the differences between a Python list and NumPy a
 <hr>
 <h3 id="Example--1D-Array-Arithmetic">Example- 1D Array Arithmetic<a class="anchor-link" href="#Example--1D-Array-Arithmetic">&#182;</a></h3><ul>
 <li>Define a 1D array with [0,12,24,36,48,60,72,84,96]</li>
+<li>Multiple all elements by 2</li>
+<li>Take all elements to the power of 2</li>
+<li>Find the maximum value of the array and its position</li>
+<li>Find the minimum value of the array and its position</li>
+<li>Define another 1D array with [-12,0,12,24,36,48,60,72,84]</li>
+<li>Find the summation and subtraction of these two arrays</li>
+<li>Find the multiplication of these two arrays</li>
 </ul>
-<p>Lets do scalar multiplication, first as just a list!</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[159]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">victorVector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">96</span><span class="p">]</span>
-<span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter scalar value </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">MyScalar</span><span class="p">)</span>  <span class="c1"># force a float</span>
-<span class="c1"># now perform element-by-element multiplication</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">victorVector</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">victorVector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">MyScalar</span> <span class="o">*</span> <span class="n">victorVector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># this will change contents of amatrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">victorVector</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[0.0, 24.0, 48.0, 72.0, 96.0, 120.0, 144.0, 168.0, 192.0]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now using numpy</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[160]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>         <span class="c1">#import numpy</span>
-<span class="n">Array1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">96</span><span class="p">])</span>     <span class="c1">#Step1: Define Array1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">Array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">96</span><span class="p">])</span>     <span class="c1">#Step1: Define Array1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">#Step2: Multiple all elements by 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">#Step3: Take all elements to the power of 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#Another way to do the same thing, by using a function in numpy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">#Step4: Find the maximum value of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">##Step4: Find the postition of the maximum value </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">#Step5: Find the minimum value of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">##Step5: Find the postition of the minimum value </span>
+<span class="n">Array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>     <span class="c1">#Step6: Define Array2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">+</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step7: Find the summation of these two arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">-</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step7: Find the subtraction of these two arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">*</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step8: Find the multiplication of these two arrays</span>
 </pre></div>
 
      </div>
@@ -15070,384 +14520,17 @@ If you want to read more about the differences between a Python list and NumPy a
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>[ 0 12 24 36 48 60 72 84 96]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Multiply all elements by scalar value (scalar multiplication), print result, leave array unchanged</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[161]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter scalar value </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">MyScalar</span><span class="p">)</span>  <span class="c1"># force a float</span>
-<span class="c1"># now perform element-by-element multiplication</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">*</span><span class="n">MyScalar</span><span class="p">)</span>     <span class="c1">#Step2: Multiple all elements by 2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[  0.  24.  48.  72.  96. 120. 144. 168. 192.]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Take all elements to the power of 2</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[162]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">#Step3: Take all elements to the power of 2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[   0  144  576 1296 2304 3600 5184 7056 9216]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[163]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#Another way to do the same thing, by using a function in numpy</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[   0  144  576 1296 2304 3600 5184 7056 9216]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the maximum value of the array and its position</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[164]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">#Step4: Find the maximum value of the array</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>96
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[165]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">##Step4: Find the postition of the maximum value </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>8
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the minimum value of the array and its position</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[166]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">#Step5: Find the minimum value of the array</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[167]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">Array1</span><span class="p">))</span>     <span class="c1">##Step5: Find the postition of the minimum value </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Define another 1D array with [-12,0,12,24,36,48,60,72,84]</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[168]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Array2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>     <span class="c1">#Step6: Define Array2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[-12   0  12  24  36  48  60  72  84]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the element-by-element sum and difference of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[169]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">+</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step7: Sum of two arrays</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">-</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step7: Difference of two arrays</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[-12  12  36  60  84 108 132 156 180]
+[  0  24  48  72  96 120 144 168 192]
+[   0  144  576 1296 2304 3600 5184 7056 9216]
+[   0  144  576 1296 2304 3600 5184 7056 9216]
+96
+8
+0
+0
+[-12   0  12  24  36  48  60  72  84]
+[-12  12  36  60  84 108 132 156 180]
 [12 12 12 12 12 12 12 12 12]
+[   0    0  288  864 1728 2880 4320 6048 8064]
 </pre>
 </div>
 </div>
@@ -15459,64 +14542,40 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Element-by-element multiplication of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[170]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">*</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step8: Find the multiplication of these two arrays</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[   0    0  288  864 1728 2880 4320 6048 8064]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can see it is considerably easier than manipulating as a list - be aware that the multiply above is element-by-element and not the inner product of two matrices (as was shown in Lesson 08)</p>
 <hr>
 <h3 id="Example--n-Dimensional-Array-Arithmetic">Example- n-Dimensional Array Arithmetic<a class="anchor-link" href="#Example--n-Dimensional-Array-Arithmetic">&#182;</a></h3><ul>
 <li>Define a 2x2 array with [5,10,15,20]</li>
+<li>Define another 2x2 array with [3,6,9,12]</li>
+<li>Find the summation and subtraction of these two arrays</li>
+<li>Find the minimum number in the multiplication of these two arrays</li>
+<li>Find the position of the maximum in the multiplication of these two arrays</li>
+<li>Find the mean of the multiplication of these two arrays</li>
+<li>Find the mean of the first row of the multiplication of these two arrays</li>
 </ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[171]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>         <span class="c1">#import numpy</span>
-<span class="n">Array1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]])</span>     <span class="c1">#Step1: Define Array1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">Array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]])</span>     <span class="c1">#Step1: Define Array1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="p">)</span>
+<span class="n">Array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>     <span class="c1">#Step2: Define Array2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">+</span><span class="n">Array2</span><span class="p">)</span>     <span class="c1">#Step3: Find the summation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">-</span><span class="n">Array2</span><span class="p">)</span>     <span class="c1">#Step3: Find the subtraction</span>
+<span class="n">MultArray</span> <span class="o">=</span> <span class="n">Array1</span><span class="nd">@Array2</span>         <span class="c1">#Step4: To perform a typical matrix multiplication (or matrix product)</span>
+<span class="n">MultArray1</span> <span class="o">=</span> <span class="n">Array1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step4: Another way To perform a  matrix multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MultArray</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MultArray1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">#Step4: Find the minimum value of the multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">##Step5: Find the postition of the maximum value </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">##Step6: Find the mean of the multiplication of these two arrays </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MultArray</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]))</span>     <span class="c1">##Step7: Find the mean of the first row of the multiplication of these two arrays </span>
 </pre></div>
 
      </div>
@@ -15538,289 +14597,19 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>[[ 5 10]
  [15 20]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Define another 2x2 array with [3,6,9,12]</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[172]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Array2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>     <span class="c1">#Step2: Define Array2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 3  6]
+[[ 3  6]
  [ 9 12]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the sum and difference of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[173]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">+</span><span class="n">Array2</span><span class="p">)</span>     <span class="c1">#Step3: Find the summation</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="o">-</span><span class="n">Array2</span><span class="p">)</span>     <span class="c1">#Step3: Find the subtraction</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 8 16]
+[[ 8 16]
  [24 32]]
 [[2 4]
  [6 8]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the minimum number in the multiplication of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[174]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MultArray</span> <span class="o">=</span> <span class="n">Array1</span><span class="nd">@Array2</span>         <span class="c1">#Step4: To perform a typical matrix multiplication (or matrix product)</span>
-<span class="n">MultArray1</span> <span class="o">=</span> <span class="n">Array1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>         <span class="c1">#Step4: Another way To perform a  matrix multiplication</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MultArray</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MultArray1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">#Step4: Find the minimum value of the multiplication</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[105 150]
+[[105 150]
  [225 330]]
 [[105 150]
  [225 330]]
 105
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Recall how we have to do the same if using ordinary lists, just for the first line in the block above:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[175]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]]</span>
-<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]]</span>
-<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
-<span class="c1"># now for the multiplication</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-            <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[105, 150]
-[225, 330]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is considerable savings in code crafting using numpy; hence its popularity and utility.</p>
-<ul>
-<li>Find the position of the maximum in the multiplication of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[176]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">##Step5: Find the postition of the maximum value </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>3
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Find the mean of the multiplication of these two arrays</li>
-<li>Find the mean of the first row of the multiplication of these two arrays</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[177]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MultArray</span><span class="p">))</span>     <span class="c1">##Step6: Find the mean of the multiplication of these two arrays </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MultArray</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]))</span>     <span class="c1">##Step7: Find the mean of the first row of the multiplication of these two arrays </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>202.5
+3
+202.5
 127.5
 </pre>
 </div>
@@ -15833,105 +14622,10 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Other functions to create NumPy arrays easily</p>
-<ul>
-<li>arange( ): Returns evenly spaced array elements </li>
-<li>linspace( ): Returns evenly spaced array elements </li>
-<li>zeros( ): Returns an array of zeros</li>
-<li>ones( ): Returns an array of ones</li>
-<li>random.randint(.): Returns random integers</li>
-</ul>
-<p>Functions to do basic operations on NumPy arrays</p>
-<ul>
-<li>min( ): Returns minimum value in an array</li>
-<li>max( ): Returns maximum value in an array</li>
-<li>argmin( ): Returns minimum value position in an array</li>
-<li>argmax( ): Returns maximum value position in an array </li>
-<li>reshape( ): Reshaping an array to a specific shape</li>
-<li>sort( ): Sorting an array in ascending order</li>
-<li>sum( ): Summing the array elements (Demo)</li>
-</ul>
-<p>Functions to do mathematical operations on NumPy arrays</p>
-<ul>
-<li>sqrt( ): Returns square root of array elements</li>
-<li>exp( ): Returns exponential of array elements</li>
-<li>sin( ): Returns trigonometric sine of array elements</li>
-<li>cos( ): Returns trigonometric cosine of array elements </li>
-<li>log( ): Returns natural logarithm of array elements</li>
-<li>log10( ): Returns base 10 logarithm of array elements</li>
-</ul>
-<p>Indexing: An important step in manipulating and analyzing arrays</p>
-<ul>
-<li>Conditional selection: Selecting array elements based on specific conditions typed using conditional operators</li>
-<li>Copying: Use the copy( ) function to copy arrays and to preserve the original array</li>
-</ul>
-<p>There are linear algebra functions too, recall our matrices</p>
-\begin{gather}
-\mathbf{A}=
-\begin{pmatrix}
-2 &amp; 3 \\
-4 &amp; -3 \\
-\end{pmatrix}
-\end{gather}\begin{gather}
-\mathbf{A}^{-1}=
-\begin{pmatrix}
-\frac{1}{6} &amp; \frac{1}{6} \\
-~\\
-\frac{2}{9} &amp; -\frac{1}{9} \\
-\end{pmatrix}
-\end{gather}<p>We can get the inverse in numpy from:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[178]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span> <span class="p">,</span>  <span class="mi">3</span> <span class="p">],</span>  <span class="c1"># a and b are inverses of each other.</span>
-           <span class="p">[</span><span class="mi">4</span> <span class="p">,</span> <span class="o">-</span><span class="mi">3</span> <span class="p">]]</span>
-<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="p">],</span>
-           <span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">9</span> <span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">9</span><span class="p">]]</span>  <span class="c1"># if we invert b should get a back.</span>
-<span class="n">amatrix</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)</span> <span class="c1"># type cast to numpy arrays</span>
-<span class="n">bmatrix</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="nd">@bmatrix</span><span class="p">)</span> <span class="c1"># proof of inverse - should get identity</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">))</span> <span class="c1"># invert b, see if we get a  - sho &#39;nuff</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[1. 0.]
- [0. 1.]]
-[[ 2.  3.]
- [ 4. -3.]]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Arrays-Comparison">Arrays Comparison<a class="anchor-link" href="#Arrays-Comparison">&#182;</a></h2><p>Comparing two NumPy arrays determines whether they are equivalent by checking if every element at each corresponding index are the same.</p>
+<h3><font color=purple>Arrays Comparison</font></h3>
+<p>Comparing two NumPy arrays determines whether they are equivalent by checking if every element at each corresponding index are the same.</p>
+<p><img src="https://www.w3resource.com/w3r_images/python-numpy-image-exercise-28.png" alt=""></p>
 
 </div>
 </div>
@@ -15950,18 +14644,18 @@ If you want to read more about the differences between a Python list and NumPy a
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[179]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">Array1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>     <span class="c1">#Step1: Define Array1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">Array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>     <span class="c1">#Step1: Define Array1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="p">)</span>
-<span class="n">Array2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">5.0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">6.8</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">21</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#Step2: Define Array1</span>
+<span class="n">Array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">5.0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">6.8</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">21</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>     <span class="c1">#Step2: Define Array1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span> <span class="n">Array2</span><span class="p">))</span>             <span class="c1">#Step3: Compare and see if the two arrays are equal</span>
-<span class="n">Array3</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">7.5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>     <span class="c1">#Step4: Define Array3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span> <span class="n">Array2</span><span class="p">))</span>             <span class="c1">#Step3: Compare and see if the two arrays are equal</span>
+<span class="n">Array3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">7.5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>     <span class="c1">#Step4: Define Array3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Array3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">greater_equal</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span> <span class="n">Array3</span><span class="p">))</span>             <span class="c1">#Step3: Compare and see if the two arrays are equal</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">greater_equal</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span> <span class="n">Array3</span><span class="p">))</span>             <span class="c1">#Step3: Compare and see if the two arrays are equal</span>
 </pre></div>
 
      </div>
@@ -15998,81 +14692,48 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example-n-Dimensional-Array-Comparison">Example n-Dimensional Array Comparison<a class="anchor-link" href="#Example-n-Dimensional-Array-Comparison">&#182;</a></h3><p>Using the numbers below:</p>
-<h4 id="4,9,23,39,40,55,68,72">4,9,23,39,40,55,68,72<a class="anchor-link" href="#4,9,23,39,40,55,68,72">&#182;</a></h4><p>A) Create a 2x2 array with all the even numbers and print it out<br>
-B) Create a 2x2 array with all the odd numbers and print it out<br></p>
-<h2 id="C)-Compare-the-two-arrays-using-the-&quot;less_equal&quot;-function-from-numpy-package">C) Compare the two arrays using the "less_equal" function from numpy package<a class="anchor-link" href="#C)-Compare-the-two-arrays-using-the-&quot;less_equal&quot;-function-from-numpy-package">&#182;</a></h2>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[180]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">Array1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">40</span><span class="p">],[</span><span class="mi">68</span><span class="p">,</span><span class="mi">72</span><span class="p">]])</span>     <span class="c1">#Step1: Define Array1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array1</span><span class="p">)</span>
-<span class="n">Array2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">23</span><span class="p">],[</span><span class="mi">39</span><span class="p">,</span><span class="mi">55</span><span class="p">]])</span>     <span class="c1">#Step2: Define Array2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Array2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">less_equal</span><span class="p">(</span><span class="n">Array1</span><span class="p">,</span><span class="n">Array2</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 4 40]
- [68 72]]
-[[ 9 23]
- [39 55]]
-[[ True False]
- [False False]]
-</pre>
-</div>
-</div>
+<h3><font color=purple>Arrays Manipulation</font></h3>
+<p>numpy.copy() allows us to create a copy of an array. This is particularly useful when we need to manipulate an array while keeping an original copy in memory.
+The numpy.delete() function returns a new array with sub-arrays along an axis deleted. Here is a poctoral representation:</p>
+<p><img src="https://codetorial.net/numpy/_images/numpy_delete_01.png" width="600" ></p>
+<p>Here is another pictorial representation:</p>
+<p><img src="https://www.w3resource.com/w3r_images/numpy-manipulation-delete-function-image-1.png" width="400" ></p>
+<p>Let's have a look at the examples.</p>
 
 </div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Arrays-Manipulation">Arrays Manipulation<a class="anchor-link" href="#Arrays-Manipulation">&#182;</a></h2><p>numpy.copy() allows us to create a copy of an array. This method is particularly useful when we need to manipulate an array while keeping an original copy in memory.</p>
-<p>The numpy.delete() function returns a new array with sub-arrays along an axis deleted. Let's have a look at the examples.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Examples:--Copying-and-Deleting-Arrays-and-Elements">Examples:  Copying and Deleting Arrays and Elements<a class="anchor-link" href="#Examples:--Copying-and-Deleting-Arrays-and-Elements">&#182;</a></h3><p>Below we will work a few examples.</p>
-<ul>
+<h3 id="Example--Copying-and-Deleting-Arrays-and-Elements">Example- Copying and Deleting Arrays and Elements<a class="anchor-link" href="#Example--Copying-and-Deleting-Arrays-and-Elements">&#182;</a></h3><ul>
 <li>Define a 1D array, named "x" with [1,2,3]</li>
+<li>Define "y" so that "y=x"</li>
+<li>Define "z" as a copy of "x"</li>
+<li>Discuss the difference between y and z</li>
+<li>Delete the second element of x</li>
 </ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[181]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>     <span class="c1">#Step1: Define x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>     <span class="c1">#Step1: Define x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>                     <span class="c1">#Step2: Define y as y=x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>            <span class="c1">#Step3: Define z as a copy of x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="c1"># For Step4: They look similar but check this out:</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>                  <span class="c1"># If we change x ...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="c1"># By modifying x, y changes but z remains as a copy of the initial version of x.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">#Step5: Delete the second element of x</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
@@ -16094,319 +14755,12 @@ B) Create a 2x2 array with all the odd numbers and print it out<br></p>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>[1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Assign "y" so that "y=x"</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[182]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>                     <span class="c1">#Step2: Assign y as y=x</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Define "z" as a copy of "x"</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[183]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    <span class="c1">#Step3: Define z as a copy of x</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Discuss the difference between y and z</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[184]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># They look similar but ...</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z = &#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  [1 2 3]
-y =  [1 2 3]
-z =  [1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>now lets change a value in x, then print the contents again</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[185]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># For Step4: They look similar but ...</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z = &#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  [100   2   3]
-y =  [100   2   3]
-z =  [1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how x and y reflect the change, whats going on?  The assignment statement <code>y = x</code> creates equivalence in numpy; that is x and y are different names for the same object.  We can verify using the id() function which will return the address in memory of the head of the object.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[186]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; x object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; y object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; z object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre> x object at hex address  0xffff981cde40
- y object at hex address  0xffff981cde40
- z object at hex address  0xffff981cd9e0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Delete the second element of x</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[187]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">#Step5: Delete the second element of x, remember counting starts at zero</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># For Step4: They look similar but ...</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z = &#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x =  [100   3]
-y =  [100   2   3]
-z =  [1 2 3]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[188]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; x object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span> <span class="c1"># lets check the objects - now they are all different</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; y object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; z object at hex address &#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre> x object at hex address  0xffff9817f0d0
- y object at hex address  0xffff981cde40
- z object at hex address  0xffff981cd9e0
+[1 2 3]
+[1 2 3]
+[1 8 3]
+[1 8 3]
+[1 2 3]
+[1 3]
 </pre>
 </div>
 </div>
@@ -16419,26 +14773,28 @@ z =  [1 2 3]
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Sorting-Arrays">Sorting Arrays<a class="anchor-link" href="#Sorting-Arrays">&#182;</a></h2><p>Sorting means putting elements in an ordered sequence. Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending. If you use the sort() method on a 2-D array, both arrays will be sorted.</p>
-<!-- Recall the end of lesson on loops, showed some sorthing algorithms; some of which are implemented as part of numpy - as stated in that lesson, use the built-in methods unless you have a need to write the sorts in python primatives. -->
+<h3><font color=purple>Sorting Arrays</font></h3>
+<p>Sorting means putting elements in an ordered sequence. Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending. If you use the sort() method on a 2-D array, both arrays will be sorted.</p>
+<p><img src="https://www.w3resource.com/w3r_images/numpy-sorting-and-searching-image-exercise-1.svg" width="800" ></p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example:--Sorting-1D-Arrays">Example:  Sorting 1D Arrays<a class="anchor-link" href="#Example:--Sorting-1D-Arrays">&#182;</a></h3><p>Define a 1D array as ['FIFA 2020','Red Dead Redemption','Fallout','GTA','NBA 2018','Need For Speed'] and print it out. Then, sort the array alphabetically._</p>
+<h3 id="Example--Sorting-1D-Arrays">Example- Sorting 1D Arrays<a class="anchor-link" href="#Example--Sorting-1D-Arrays">&#182;</a></h3><p><strong>Define a 1D array as ['FIFA 2020','Red Dead Redemption','Fallout','GTA','NBA 2018','Need For Speed'] and print it out. Then, sort the array alphabetically.</strong></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[189]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">games</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;FIFA 2020&#39;</span><span class="p">,</span><span class="s1">&#39;Red Dead Redemption&#39;</span><span class="p">,</span><span class="s1">&#39;Fallout&#39;</span><span class="p">,</span><span class="s1">&#39;GTA&#39;</span><span class="p">,</span><span class="s1">&#39;NBA 2018&#39;</span><span class="p">,</span><span class="s1">&#39;Need For Speed&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">games</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;FIFA 2020&#39;</span><span class="p">,</span><span class="s1">&#39;Red Dead Redemption&#39;</span><span class="p">,</span><span class="s1">&#39;Fallout&#39;</span><span class="p">,</span><span class="s1">&#39;GTA&#39;</span><span class="p">,</span><span class="s1">&#39;NBA 2018&#39;</span><span class="p">,</span><span class="s1">&#39;Need For Speed&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">games</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">games</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">games</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -16474,22 +14830,22 @@ z =  [1 2 3]
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example--Sorting-n-Dimensional-Arrays">Example- Sorting n-Dimensional Arrays<a class="anchor-link" href="#Example--Sorting-n-Dimensional-Arrays">&#182;</a></h3><p>Define a 3x3 array with 17,-6,2,86,-12,0,0,23,12 and print it out. Then, sort the array.</p>
+<h3 id="Example--Sorting-n-Dimensional-Arrays">Example- Sorting n-Dimensional Arrays<a class="anchor-link" href="#Example--Sorting-n-Dimensional-Arrays">&#182;</a></h3><p><strong>Define a 3x3 array with 17,-6,2,86,-12,0,0,23,12 and print it out. Then, sort the array.</strong></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[190]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">17</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">86</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">17</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">86</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along columns : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorting in each column</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along rows : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorting in each row</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sorting by default : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>          <span class="c1">#Same as above</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along None Axis : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorted like a 1D array</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along columns : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorting in each column</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along rows : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorting in each row</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sorting by default : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>          <span class="c1">#Same as above</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Along None Axis : </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="p">)</span> <span class="c1">#This will be sorted like a 1D array</span>
 </pre></div>
 
      </div>
@@ -16538,33 +14894,31 @@ Along None Axis :
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Partitioning-(Slice)-Arrays">Partitioning (Slice) Arrays<a class="anchor-link" href="#Partitioning-(Slice)-Arrays">&#182;</a></h2><p>Slicing in python means taking elements from one given index to another given index.</p>
-<ul>
-<li>Slicing indices syntax: [start:end].<ul>
-<li>We can also define the step, like this: [start:end:step].</li>
-<li>If we don't pass start, default is 0</li>
-<li>If we don't pass end, default is the length of array in that dimension</li>
-<li>If we don't pass step, default is 1</li>
-</ul>
-</li>
-</ul>
+<h3><font color=purple>Partitioning (Slice) Arrays</font></h3>
+<p>Slicing in python means taking elements from one given index to another given index.</p>
+<p>We can do slicing like this: [start:end].</p>
+<p>We can also define the step, like this: [start:end:step].</p>
+<p>If we don't pass start its considered 0</p>
+<p>If we don't pass end its considered length of array in that dimension</p>
+<p>If we don't pass step its considered 1</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Numpy1.jpg" width="600" ></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example--Slicing-1D-Arrays">Example- Slicing 1D Arrays<a class="anchor-link" href="#Example--Slicing-1D-Arrays">&#182;</a></h3><p>Define a 1D array as [1,3,5,7,9], slice out the [3,5,7] and print it out.</p>
+<h3 id="Example--Slicing-1D-Arrays">Example- Slicing 1D Arrays<a class="anchor-link" href="#Example--Slicing-1D-Arrays">&#182;</a></h3><p><strong>Define a 1D array as [1,3,5,7,9], slice out the [3,5,7] and print it out.</strong></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[191]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>     <span class="c1">#Define the array</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>     <span class="c1">#Define the array</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">aslice</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>             <span class="c1">#slice the [3,5,7]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">aslice</span><span class="p">)</span>               <span class="c1">#print it out</span>
@@ -16601,7 +14955,7 @@ Along None Axis :
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h3 id="Example--Slicing-n-Dimensional-Arrays">Example- Slicing n-Dimensional Arrays<a class="anchor-link" href="#Example--Slicing-n-Dimensional-Arrays">&#182;</a></h3><p>Define a 5x5 array with "Superman, Batman, Jim Hammond, Captain America, Green Arrow, Aquaman, Wonder Woman, Martian Manhunter, Barry Allen, Hal Jordan, Hawkman, Ray Palmer, Spider Man, Thor, Hank Pym, Solar, Iron Man, Dr. Strange, Daredevil, Ted Kord, Captian Marvel, Black Panther, Wolverine, Booster Gold, Spawn " and print it out. Then:</p>
+<h3 id="Example--Slicing-n-Dimensional-Arrays">Example- Slicing n-Dimensional Arrays<a class="anchor-link" href="#Example--Slicing-n-Dimensional-Arrays">&#182;</a></h3><p><strong>Define a 5x5 array with "Superman, Batman, Jim Hammond, Captain America, Green Arrow, Aquaman, Wonder Woman, Martian Manhunter, Barry Allen, Hal Jordan, Hawkman, Ray Palmer, Spider Man, Thor, Hank Pym, Solar, Iron Man, Dr. Strange, Daredevil, Ted Kord, Captian Marvel, Black Panther, Wolverine, Booster Gold, Spawn " and print it out. Then:</strong></p>
 <ul>
 <li>Slice the first column and print it out</li>
 <li>Slice the third row and print it out</li>
@@ -16613,11 +14967,11 @@ Along None Axis :
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[192]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>          <span class="c1">#import numpy</span>
-<span class="n">Superheroes</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Superman&#39;</span><span class="p">,</span> <span class="s1">&#39;Batman&#39;</span><span class="p">,</span> <span class="s1">&#39;Jim Hammond&#39;</span><span class="p">,</span> <span class="s1">&#39;Captain America&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Arrow&#39;</span><span class="p">],</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>         <span class="c1">#import numpy</span>
+<span class="n">Superheroes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Superman&#39;</span><span class="p">,</span> <span class="s1">&#39;Batman&#39;</span><span class="p">,</span> <span class="s1">&#39;Jim Hammond&#39;</span><span class="p">,</span> <span class="s1">&#39;Captain America&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Arrow&#39;</span><span class="p">],</span>
                <span class="p">[</span><span class="s1">&#39;Aquaman&#39;</span><span class="p">,</span> <span class="s1">&#39;Wonder Woman&#39;</span><span class="p">,</span> <span class="s1">&#39;Martian Manhunter&#39;</span><span class="p">,</span> <span class="s1">&#39;Barry Allen&#39;</span><span class="p">,</span> <span class="s1">&#39;Hal Jordan&#39;</span><span class="p">],</span>
                <span class="p">[</span><span class="s1">&#39;Hawkman&#39;</span><span class="p">,</span> <span class="s1">&#39;Ray Palmer&#39;</span><span class="p">,</span> <span class="s1">&#39;Spider Man&#39;</span><span class="p">,</span> <span class="s1">&#39;Thor&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank Pym&#39;</span><span class="p">],</span>
                <span class="p">[</span><span class="s1">&#39;Solar&#39;</span><span class="p">,</span> <span class="s1">&#39;Iron Man&#39;</span><span class="p">,</span> <span class="s1">&#39;Dr. Strange&#39;</span><span class="p">,</span> <span class="s1">&#39;Daredevil&#39;</span><span class="p">,</span> <span class="s1">&#39;Ted Kord&#39;</span><span class="p">],</span>
@@ -16669,627 +15023,53 @@ Wolverine
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="Illustration-of-NumPy-on-a-mechanics-problem">Illustration of NumPy on a mechanics problem<a class="anchor-link" href="#Illustration-of-NumPy-on-a-mechanics-problem">&#182;</a></h2>
+<h2><font color=orange>This is a Numpy Cheat Sheet- similar to the one you had on top of this notebook!</font></h2>
+<p><img src="https://blog.finxter.com/wp-content/uploads/2019/10/grafik-1-1024x725.png" alt=""></p>
+<h3>Check out this link for more: <br></h3>
+<p><a href="https://blog.finxter.com/collection-10-best-numpy-cheat-sheets-every-python-coder-must-own/">https://blog.finxter.com/collection-10-best-numpy-cheat-sheets-every-python-coder-must-own/</a></p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Problem-Statement">Problem Statement<a class="anchor-link" href="#Problem-Statement">&#182;</a></h3><p>The figure below is a simply supported, statically determinate truss with pin connections (zero moment transfer connections).   Find the forces in each member for the loading shown.</p>
-<p><img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/StaticTrussSketch.jpg" width="500" ></p>
-<p>This notebook will illustrate how to leverage a linear systems solver(s) to analyze the truss.  The approach uses concepts from statics and computational thinking.</p>
-<p>From statics</p>
+<h2>Exercise: Python List vs. Numpy Arrays? <br></h2>
 <ul>
-<li><p>method of joints (for reactions and internal forcez)</p>
-</li>
-<li><p>direction cosines</p>
-</li>
+<li>What are some differences between Python lists and Numpy arrays? </li>
 </ul>
-<p>From computational thinking</p>
-<ul>
-<li><p>read input file</p>
-</li>
-<li><p>construct linear system $\textbf{Ax=b}$; solve for $\textbf{x}$</p>
-</li>
-<li><p>report results</p>
-</li>
-</ul>
+<p>Put your answer in the empty markdown cell below; Make sure to cite any resources that you may use.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Before even contemplating writing/using a program we need to build a mathematical model of the truss and assemble the system of linear equations that result from the model.</p>
-<p>So the first step is to sketch a free-body-diagram as below and build a node naming convention and force names.</p>
-<p><!--![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/StaticTrussFBD.jpg)-->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/StaticTrussFBD.jpg" width="500" ></p>
-<p>Next we will write the force balance for each of the six nodes ($N1$-$N6$), which will produce a total of 12 equations in the 12 unknowns (the 9 member forces, and 3 reactions).</p>
+<p><em>Use this markdown cell for your answer</em></p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The figure below is the force balance for node $N1$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!--![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node1.jpg)-->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node1.jpg" width="200" ></p>
-$$\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp; +F_1cos(45) &amp; + F_2 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; + A_x &amp;  &amp;  &amp; &amp; &amp; \\
-\sum F_y = 0 = &amp; +F_1sin(45) &amp;  &amp; &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; + A_y &amp;  &amp;  &amp; \\
-\end{matrix}
-\end{gather}$$<p>The equation above is the force balance equation pair for the node.  The $x$ component equation will later be named $N1_x$ to indicate it arises from Node 1, $x$ component equation.   A similar notation convention will also be adopted for the $y$ component equation.  There will be an equation pair for each node.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is a sketch of the force balance for node $N2$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!--![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node2.jpg)-->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node2.jpg" width="200" ></p>
-\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp;  &amp; -F_2 &amp;  &amp;  &amp;  &amp; +F_6 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; &amp; \\
-\sum F_y = 0 =  &amp;  &amp;  &amp; +F_3 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; &amp; \\
-\end{matrix}
-\end{gather}
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is a sketch of the force balance for node $N3$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!-- ![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node3.jpg) -->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node3.jpg" width="200" ></p>
-\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp;  &amp;  &amp;  &amp;  &amp; -F_5cos(30) &amp; -F_6 &amp; &amp; +F_8 &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\
-\sum F_y = 0 =  &amp;  &amp;  &amp;  &amp;  &amp; F_5sin(30) &amp;  &amp; +F_7 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; -P_3\\
-\end{matrix}
-\end{gather}<p>Above is the force balance equation pair for node $N3$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is a sketch of the force balance for node $N4$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!-- ![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node4.jpg) -->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node4.jpg" width="200" ></p>
-\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; -F_8 &amp; -F_9cos(45) &amp;  &amp;  &amp;  &amp;  &amp; \\
-\sum F_y = 0 =  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; F_9sin(45) &amp;  &amp;  &amp; +B_y  &amp;  &amp; \\
-\end{matrix}
-\end{gather}<p>Above is the force balance equation pair for node $N4$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is a sketch of the force balance for node $N5$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!-- ![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node5.jpg) -->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node5.jpg" width="200" ></p>
-\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp; -F_1cos(45) &amp;  &amp;   &amp; +F_4 &amp; +F_5cos(30) &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; \\
-\sum F_y = 0 =  &amp; -F_1sin(45) &amp;  &amp; -F_3 &amp;   &amp; -F_5sin(30) &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; -P_1\\
-\end{matrix}
-\end{gather}<p>Above is the force balance equation pair for node $N5$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is a sketch of the force balance for node $N6$, the two force equations (for the horizontal, $x$, direction and the vertical, $y$, direction) are listed below the figure.</p>
-<p><!-- ![](https://3.137.111.182/engr-1330-webroot/1-Lessons/Lesson07/OriginalPowerpoint/Node6.jpg) -->
-<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/Node6.jpg" width="200" ></p>
-\begin{gather}
-\begin{matrix}
-\sum F_x = 0 = &amp;  &amp;  &amp;  &amp; -F_4 &amp;  &amp;  &amp;  &amp;  &amp; F_9sin(45) &amp;  &amp;  &amp;  &amp;  &amp; \\
-\sum F_y = 0 =  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp; -F_7 &amp;  &amp; -F_9cos(45) &amp;  &amp;  &amp;  &amp;  &amp; P_2\\
-\end{matrix}
-\end{gather}<p>Above is the force balance equation pair for node $N6$.</p>
-<p>The next step is to gather the equation pairs into a system of linear equations.<br>
-We will move the known loads to the right hand side and essentially construct the matrix equation $\mathbf{A}\mathbf{x} = \mathbf{b}$.</p>
-<p>The system below is a matrix representation of the equation pairs with the forces moved to the right hand side $\mathbf{b} = RHS$.</p>
-\begin{gather}
-\begin{pmatrix}
-~ &amp; F_1 &amp; F_2 &amp; F_3 &amp; F_4 &amp; F_5 &amp; F_6 &amp; F_7 &amp; F_8 &amp; F_9 &amp; A_x &amp; A_y &amp; B_y &amp; | &amp; RHS\\
-\hline
-N1_x &amp; 0.707 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N1_y &amp; 0.707 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; | &amp; 0\\
-N2_x &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N2_y &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N3_x &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -0.866 &amp; -1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N3_y &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.5 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; P_3\\
-N4_x &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -0.707 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N4_y &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.707 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N5_x &amp; -0.707 &amp; 0 &amp; 0 &amp; 1 &amp; 0.866 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N5_y &amp; -0.707 &amp; 0 &amp; -1 &amp; 0 &amp; -0.5 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; P_1\\
-N6_x &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.707 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; 0\\
-N6_y &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; -0.707 &amp; 0 &amp; 0 &amp;  0 &amp; | &amp; -P_2\\
-\end{pmatrix}
-\end{gather}<p>In the system, the rows are labeled on the left-most column with their node-related equation name.<br>
-Thus each row of the matrix corresponds to an equation derived from a node.<br>
-The columns are labeled with their respective unknown force (except the last column, which represents the right-hand-side of the system of linear equations).<br>
-Thus the coefficient in each column corresponds to a force in each node equation.<br>
-The sign of the coefficient refers to the assumed direction the force acts.</p>
-<p>In the analysis all the members were assumed to be in tension (except for the reaction forces).<br>
-If a coefficient has a value of zero in a particular row, then that force does no act at the node to which the row corresponds.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From this representation the transition to the formal vector-matrix representation is straightforward.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-\begin{gather}
-\mathbf{A} =
-\begin{pmatrix}
-0.707 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
-0.707 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; -0.866 &amp; -1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.5 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -0.707 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.707 &amp; 0 &amp; 0 &amp; 0 \\
--0.707 &amp; 0 &amp; 0 &amp; 1 &amp; 0.866 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
--0.707 &amp; 0 &amp; -1 &amp; 0 &amp; -0.5 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.707 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; -0.707 &amp; 0 &amp; 0 &amp;  0 \\
-\end{pmatrix}
-\end{gather}\begin{gather}
-\mathbf{x} =
-\begin{pmatrix}
-F_1\\
-F_2\\
-F_3\\
-F_4\\
-F_5\\
-F_6\\
-F_7\\
-F_8\\
-F_9\\
-A_x\\
-A_y\\
-B_y\\
-\end{pmatrix}
-\end{gather}\begin{gather}
-\mathbf{b} =
-\begin{pmatrix}
-0\\
-0\\
-0\\
-0\\
-0\\
-P_3\\
-0\\
-0\\
-0\\
-P_1\\
-0\\
--P_2\\
-\end{pmatrix}
-\end{gather}<p>The various matrices above are entere into text files named <a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/A.txt">A.txt</a> and <a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/B.txt">B.txt</a></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[193]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># list contents of the A matrix, uses call to OS host</span>
-<span class="c1">#!(type A.txt) # windoze method</span>
-<span class="o">!(</span>cat A.txt<span class="o">)</span> # linux, macOS
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.707106781	1	0	0	0	0	0	0	0	1	0	0
-0.707106781	0	0	0	0	0	0	0	0	0	1	0
-0	-1	0	0	0	1	0	0	0	0	0	0
-0	0	1	0	0	0	0	0	0	0	0	0
-0	0	0	0	-0.866	-1	0	1	0	0	0	0
-0	0	0	0	0.5	0	1	0	0	0	0	0
-0	0	0	0	0	0	0	-1	-0.707106781	0	0	0
-0	0	0	0	0	0	0	0	0.707106781	0	0	1
--0.707106781	0	0	1	0.866	0	0	0	0	0	0	0
--0.707106781	0	-1	0	-0.5	0	0	0	0	0	0	0
-0	0	0	-1	0	0	0	0	0.707106781	0	0	0
-0	0	0	0	0	0	-1	0	-0.707106781	0	0	0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[194]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># list contents of RHS or b vector</span>
-<span class="c1">#!(type B.txt) # winders method</span>
-<span class="o">!(</span>cat B.txt<span class="o">)</span> # linux, macOS
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.0
-0.0
-0.0
-0.0
-0.0
-500.0
-0.0
-0.0
-0.0
-1000.0
-0.0
--500.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we use our solver tools, here I have not done much on tidy output, thats left for the reader.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[200]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># LinearSolverPivot.py</span>
-<span class="c1"># linearsolver with pivoting adapted from </span>
-<span class="c1"># https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226</span>
-
-<span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">A</span> <span class="c1"># this is equivalence, A is destroyed by algorithm</span>
-
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
-     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
-          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-       <span class="k">else</span><span class="p">:</span>
-          <span class="k">pass</span>
-
-     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
-         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-
-    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
-      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-<span class="c1">#    print (x)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">amatrix</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store matrix reads</span>
-<span class="n">bvector</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">colNumA</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">rowNumB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;A.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>  <span class="c1"># connect and read file for MATRIX A </span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">afile</span><span class="p">:</span>
-    <span class="n">amatrix</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
-    <span class="n">rowNumA</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
-<span class="n">colNumA</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;B.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>  <span class="c1"># connect and read file for MATRIX B </span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">afile</span><span class="p">:</span>
-    <span class="n">bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>  <span class="c1"># vector read different -- just float the line</span>
-    <span class="n">rowNumB</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
-<span class="c1">#print (bvector)</span>
-<span class="k">if</span> <span class="n">rowNumA</span> <span class="o">!=</span> <span class="n">rowNumB</span><span class="p">:</span>   <span class="c1"># check the arrays</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;row ranks not same -- aborting now&quot;</span><span class="p">)</span>
-    <span class="n">quit</span><span class="p">()</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;row ranks same -- continuing operation&quot;</span><span class="p">)</span>
-<span class="c1"># print all columns each row</span>
-<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">xvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">dvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">],</span> <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
-<span class="c1"># copy amatrix into cmatrix</span>
-<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">dvector</span> <span class="o">=</span> <span class="p">[</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
-<span class="n">xvector</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">,</span><span class="n">bvector</span><span class="p">)</span> <span class="c1"># send cmatrix the copy of amatrix; the solver destroys the inputs, hence the copies</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">xvector</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>row ranks same -- continuing operation
-[0.707106781, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0] 0.0
-[0.707106781, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0] 0.0
-[0.0, -1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0
-[0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0
-[0.0, 0.0, 0.0, 0.0, -0.866, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0] 0.0
-[0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0] 500.0
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -0.707106781, 0.0, 0.0, 0.0] 0.0
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.707106781, 0.0, 0.0, 1.0] 0.0
-[-0.707106781, 0.0, 0.0, 1.0, 0.866, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 0.0
-[-0.707106781, 0.0, -1.0, 0.0, -0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 1000.0
-[0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.707106781, 0.0, 0.0, 0.0] 0.0
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, -0.707106781, 0.0, 0.0, 0.0] -500.0
------------------------------
--1035.2710218174145
-732.0471596998927
-0.0
--267.9528403001072
--535.9056806002143
-732.0471596998927
-767.9528403001071
-267.95284030010714
--378.94254092877543
-0.0
-732.0471596998927
-267.9528403001072
------------------------------
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now lets do the same tasks using numpy</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[196]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> 
-<span class="c1"># already read in the arrays</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)</span>
-<span class="n">Ainv</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bvector</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">Ainv</span><span class="nd">@b</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-1035.2710218174143
-732.0471596998927
-0.0
--267.95284030010714
--535.9056806002143
-732.0471596998927
-767.9528403001071
-267.9528403001071
--378.9425409287754
--3.9202487786118276e-14
-732.0471596998927
-267.95284030010714
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[197]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> 
-<span class="c1"># need to read in the arrays</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;A.txt&quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;B.txt&quot;</span><span class="p">)</span>
-<span class="n">Ainv</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">Ainv</span><span class="nd">@b</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-1035.2710218174143
-732.0471596998927
-0.0
--267.95284030010714
--535.9056806002143
-732.0471596998927
-767.9528403001071
-267.9528403001071
--378.9425409287754
--3.9202487786118276e-14
-732.0471596998927
-267.95284030010714
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[198]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> 
-<span class="c1"># need to read in the arrays</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;A.txt&quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;B.txt&quot;</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1"># avoid inversion and just solve the linear system </span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-1035.2710218174145
-732.0471596998927
-0.0
--267.9528403001072
--535.9056806002143
-732.0471596998927
-767.9528403001071
-267.95284030010714
--378.94254092877543
--3.9202487786118276e-14
-732.0471596998927
-267.95284030010714
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p>Johnson, J. (2020). Python Numpy Tutorial (with Jupyter and Colab). Retrieved September 15, 2020, from <a href="https://cs231n.github.io/python-numpy-tutorial/">https://cs231n.github.io/python-numpy-tutorial/</a></p>
-<p>Willems, K. (2019). (Tutorial) Python NUMPY Array TUTORIAL. Retrieved September 15, 2020, from <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial?utm_source=adwords_ppc">https://www.datacamp.com/community/tutorials/python-numpy-tutorial?utm_source=adwords_ppc</a></p>
-<p>Willems, K. (2017). NumPy Cheat Sheet: Data Analysis in Python. Retrieved September 15, 2020, from <a href="https://www.datacamp.com/community/blog/python-numpy-cheat-sheet">https://www.datacamp.com/community/blog/python-numpy-cheat-sheet</a></p>
-<p>W3resource. (2020). NumPy: Compare two given arrays. Retrieved September 15, 2020, from <a href="https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-28.php">https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-28.php</a></p>
-<p>Sorting <a href="https://www.programiz.com/python-programming/methods/list/sort">https://www.programiz.com/python-programming/methods/list/sort</a></p>
-<p>Overland, B. (2018). Python Without Fear. Addison-Wesley 
-ISBN 978-0-13-468747-6.</p>
-<p>Grus, Joel (2015). Data Science from Scratch: First Principles with Python O’Reilly
-Media. Kindle Edition.</p>
-<p>Precord, C. (2010) wxPython 2.8 Application Development Cookbook Packt Publishing Ltd. Birmingham , B27 6PA, UK 
-ISBN 978-1-849511-78-0.</p>
+<p><em>Here are some of the resources used for creating this notebook:</em></p>
+<ul>
+<li>Johnson, J. (2020). Python Numpy Tutorial (with Jupyter and Colab). Retrieved September 15, 2020, from <a href="https://cs231n.github.io/python-numpy-tutorial/">https://cs231n.github.io/python-numpy-tutorial/</a> <br></li>
+<li>Willems, K. (2019). (Tutorial) Python NUMPY Array TUTORIAL. Retrieved September 15, 2020, from <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial?utm_source=adwords_ppc">https://www.datacamp.com/community/tutorials/python-numpy-tutorial?utm_source=adwords_ppc</a> <br></li>
+<li>Willems, K. (2017). NumPy Cheat Sheet: Data Analysis in Python. Retrieved September 15, 2020, from <a href="https://www.datacamp.com/community/blog/python-numpy-cheat-sheet">https://www.datacamp.com/community/blog/python-numpy-cheat-sheet</a> <br></li>
+<li>W3resource. (2020). NumPy: Compare two given arrays. Retrieved September 15, 2020, from <a href="https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-28.php">https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-28.php</a> <br></li>
+</ul>
+<p><em>Here are some great reads on this topic:</em></p>
+<ul>
+<li><strong>"Python NumPy Tutorial"</strong> available at *<a href="https://www.geeksforgeeks.org/python-numpy-tutorial/">https://www.geeksforgeeks.org/python-numpy-tutorial/</a><br></li>
+<li><strong>"What Is NumPy?"</strong> a collection of blogs, available at *<a href="https://realpython.com/tutorials/numpy/">https://realpython.com/tutorials/numpy/</a> <br></li>
+<li><strong>"Look Ma, No For-Loops: Array Programming With NumPy"</strong> by <strong>Brad Solomon</strong> available at *<a href="https://realpython.com/numpy-array-programming/">https://realpython.com/numpy-array-programming/</a> <br></li>
+<li><strong>"The Ultimate Beginner’s Guide to NumPy"</strong> by <strong>Anne Bonner</strong> available at *<a href="https://towardsdatascience.com/the-ultimate-beginners-guide-to-numpy-f5a2f99aef54">https://towardsdatascience.com/the-ultimate-beginners-guide-to-numpy-f5a2f99aef54</a> <br></li>
+</ul>
+<p><em>Here are some great videos on these topics:</em></p>
+<ul>
+<li><strong>"Learn NUMPY in 5 minutes - BEST Python Library!"</strong> by <strong>Python Programmer</strong> available at *<a href="https://www.youtube.com/watch?v=xECXZ3tyONo">https://www.youtube.com/watch?v=xECXZ3tyONo</a> <br></li>
+<li><strong>"Python NumPy Tutorial for Beginners"</strong> by <strong>freeCodeCamp.org</strong> available at *<a href="https://www.youtube.com/watch?v=QUT1VHiLmmI">https://www.youtube.com/watch?v=QUT1VHiLmmI</a> <br></li>
+<li><strong>"Complete Python NumPy Tutorial (Creating Arrays, Indexing, Math, Statistics, Reshaping)"</strong> by <strong>Keith Galli</strong> available at *<a href="https://www.youtube.com/watch?v=GB9ByFAIAH4">https://www.youtube.com/watch?v=GB9ByFAIAH4</a> <br></li>
+<li><strong>"Python NumPy Tutorial | NumPy Array | Python Tutorial For Beginners | Python Training | Edureka"</strong> by <strong>edureka!</strong> available at *<a href="https://www.youtube.com/watch?v=8JfDAm9y_7s">https://www.youtube.com/watch?v=8JfDAm9y_7s</a> <br></li>
+</ul>
 
 </div>
 </div>
