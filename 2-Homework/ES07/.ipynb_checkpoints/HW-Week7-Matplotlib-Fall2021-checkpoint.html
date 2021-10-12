@@ -14298,7 +14298,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Exercise-2: The file <a href="http://54.243.252.9/engr-1330-webroot/2-Homework/ES06/Electric_Vehicle_Population_Data.csv">http://54.243.252.9/engr-1330-webroot/2-Homework/ES06/Electric_Vehicle_Population_Data.csv</a> contains the database of electric vehicles registered and operated in different cities and states (primarily Washington State) of the United States. It also contains the vehicle details like make, model, model year, vehicle type, electric range, base retail price and fields that are mostly self explanatory.</strong></p>
+<p><strong>Exercise-2: The file <a href="http://54.243.252.9/engr-1330-webroot/2-Homework/ES07/Electric_Vehicle_Population_Data.csv">http://54.243.252.9/engr-1330-webroot/2-Homework/ES07/Electric_Vehicle_Population_Data.csv</a> contains the database of electric vehicles registered and operated in different cities and states (primarily Washington State) of the United States. It also contains the vehicle details like make, model, model year, vehicle type, electric range, base retail price and fields that are mostly self explanatory.</strong></p>
 <blockquote><p><em>Get the file by either download from link above, or use the script below to automatically get the file; you may need to install the requests module <code>! pip install requests</code> will sometimes work when run from the notebook, but not always</em></p>
 </blockquote>
 <p><strong>(POINTS: 54 - each task in this exercise carries 9 points)</strong></p>
@@ -14328,7 +14328,7 @@ a.anchor-link {
 <span class="c1"># import needed modules to interact with the internet</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="c1"># make the connection to the remote file (actually its implementing &quot;bash curl -O http://fqdn/path ...&quot;)</span>
-<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/2-Homework/ES06/Electric_Vehicle_Population_Data.csv&#39;</span> <span class="c1"># an Excel file</span>
+<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/2-Homework/ES07/Electric_Vehicle_Population_Data.csv&#39;</span> <span class="c1"># an Excel file</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">)</span> <span class="c1"># Gets the file contents puts into an object</span>
 <span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Electric_Vehicle_Population_Data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># Prepare a destination, local</span>
 <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># write contents of object to named local file</span>
