@@ -1,1 +1,1 @@
-
+Functions as Data Models <br> - A line <br> - Polynomials <br> - Normal Distribution Function <br> - Gamma Distribution Function <br> - Extreme Value Distribution Function |[Lesson 17](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html) <br> <br> [Lab 17](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html)<br>  [Lab 17-HW](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html)|Functions and Observations on same plots <br> - Visual interpretation of results <br> - Judging the model | 
