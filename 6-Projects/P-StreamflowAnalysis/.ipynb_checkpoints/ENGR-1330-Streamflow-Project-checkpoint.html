@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>InstrumentCalibration-Project</title>
+<title>ENGR-1330-Streamflow-Project</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -12947,8 +12947,13 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13076,180 +13081,6 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!--Script block to left align Markdown Tables--&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<!--Script block to left align Markdown Tables-->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2020">ENGR 1330 &#8211; Computational Thinking and Data Science Fall 2020<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2020">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pressure-Transducer-Calibration-Final-Project">Pressure Transducer Calibration Final Project<a class="anchor-link" href="#Pressure-Transducer-Calibration-Final-Project">&#182;</a></h2><p>Measurement is a process of comparison: the measured quantity is compared to a known standard. Before we measure, we must establish the relationship between the readout val-ues of our instrument and known input values of the measurand. This process is called as calibration.</p>
-<p>The purpose of calibrating a system is to:</p>
-<ul>
-<li>Relate the actual sensor output (i.e. a voltage) to the quantity we are attempting to measure ($\frac{F}{A}$ a normal stress, we usually call pressure)</li>
-<li>Identify and correct bias error</li>
-<li>Quantify random error associated with using each system. </li>
-</ul>
-<p>This project will develop scripts to calibrate two independent pressure measurement systems:</p>
-<ol>
-<li>an analog gauge and </li>
-<li>an electronic pressure transducer </li>
-</ol>
-<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>The pressures produced by the tester as shown by the values stamped on the weights as the exact true pressures. The true pressure, the pressure indicated on the analog gauge, and the voltage output by the pressure transducer are given to you, respectively.</p>
-<p>The figure below shows a picture of a typical deadweight tester instrument.
-<img src="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/pressure-testbed.png" alt=""></p>
-<p>An operational schematic is shown in the following figure</p>
-<p><img src="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Setup-of-Deadweight-Tester-19.png" alt=""></p>
-<p><strong>Learn More at</strong> <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Calibrationho.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Calibrationho.pdf</a></p>
-<h2 id="Objective(s):">Objective(s):<a class="anchor-link" href="#Objective(s):">&#182;</a></h2><ul>
-<li>Literature scan on instrument calibration and pressure measurement techniques</li>
-<li>Analyse an existing measurement database and build a data model to calibrate a pressure transducer, and an analog gage.   The measurements database is comprised of 4 columns: </li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A test ID (in practice replicate tests are conducted. Why?)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The true applied pressures from 5 psig to 105 psig. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The analog pressures read from the gauge.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The voltages read from the transducer.</p>
-<ul>
-<li>Build an interface to allow users to enter voltages and return an estimated pressure and an assessment of the uncertainty in the estimate, and return the anticipated analog reading.</li>
-<li>Build an interface to allow users to add observations to the underlying database, and automatically update the calibration model to incorporate the new observations</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tasks:">Tasks:<a class="anchor-link" href="#Tasks:">&#182;</a></h2><p><strong>Literature Research:</strong></p>
-<ul>
-<li>Describe the proces of pressure transducer calibration using a deadweight testbed (i.e. provide a description for the schematic figure above)</li>
-<li>Summarize the value of a calibration (data) model in the context of converting voltage readings to applied pressure.</li>
-</ul>
-<p>Some places to start</p>
-<ul>
-<li><p>Beckwith, Marangoni, and Lienhard, Mechanical Measurements, Fifth Edition, Addison-Wesley PublishingCo., Reading, Massachusetts, 1993.</p>
-</li>
-<li><p>Bevington and Robinson, Data Reduction and Error Analysis for the Physical Sciences, Second Edition,WCB/McGraw Hill, Boston, Massachusetts, 1992.</p>
-</li>
-<li><p>Meyer, Paul L., Introductory Probability and Statistical Applications, 2nd Edition, Addison-WesleyPublishing Co., Reading, Massachusetts, 1970</p>
-</li>
-<li><p>Kline, S. J. and F. A. McClintock (1953). Describing uncertainties in single-sample experiments. Mechanical Engineering (No. 75), 3-9. <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Kline_McClintock1953.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Kline_McClintock1953.pdf</a></p>
-</li>
-<li><p>Holman, J. P. (1989). Experimental Methods for Engineers, 5th Edition. New York, NY: McGraw-Hill. <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/holman1989.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/holman1989.pdf</a></p>
-</li>
-<li><p>Doebelin, E. O. (1990). Measurement Systems (4th ed.). New York, NY: McGraw-Hill.</p>
-</li>
-<li><p><a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.1_error_analysis.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.1_error_analysis.pdf</a></p>
-</li>
-<li><p><a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.2_error_analysis.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.2_error_analysis.pdf</a></p>
-</li>
-</ul>
-<p><strong>Database Acquisition</strong></p>
-<ul>
-<li>Get the database from the repository: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/PressureSensorData.csv">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/PressureSensorData.csv</a> </li>
-</ul>
-<p><strong>Exploratory Data Analysis</strong></p>
-<ul>
-<li>Describe the database. Include visualization of the database.</li>
-<li>Reformat as needed (column headings perhaps) the database for subsequent analysis.</li>
-<li>For each measurement system (analog readout, sensor voltage): Plot the data (as symbols) e.g. true pressure versus analog pressure; analog pressure versus volts; true pressure versus volts. Describe the plots. </li>
-<li>Select possible data model structures (linear model, power-law, ...)</li>
-<li>Select possible data model "fitting" tools (ordinary least squares,lasso regression, decision trees, random forests, ...)</li>
-</ul>
-<p><strong>Model Building</strong></p>
-<ul>
-<li>Build data models</li>
-<li>Assess data model quality (decide which model is best) including visualization tools (red line through blue dots ...)</li>
-<li>Build the input data interface for using the "best" model(s)</li>
-<li>Assume that you are now using your calibrated analog pressure gauge to make a reading in the field. You read a value of 64 psi on the gauge. Estimate the true pressure at 95 percent confidence. Be sure to report your result with a value with an appropriate number of digits, an uncertainty bracket, units, and a confidence level.</li>
-<li>Assume that you are now using your calibrated pressure transducer to make a reading in the field. You read a value of 1.4320 Volts . Estimate the true pressure at 95 percent confidence. Be sure to report your result with a value with an appropriate number of digits, an uncertainty bracket, units, and a confidence level.</li>
-<li>Using your best model determine projected pressure readings and an assessment of uncertainty for 5 sensor voltages in the table below.<br>
-|Test|Sensor Voltage|
-|:---|:---|
-|U1|3.0|
-|U2|0.2|
-|U3|0.03|
-|U4|5.0|<br>
-|U5|0.07|                </li>
-</ul>
-<p><strong>Documentation</strong></p>
-<ul>
-<li>Training video on how to use your tool, and demonstrate the tool(s) as they are run</li>
-<li>Project management video </li>
-<li>Interim report (see deliverables below); this document must be rendered as a .pdf, but you are free to use your favorite writing software (Word,LibreOffice, ...).</li>
-<li>Final Report (see deliverables below)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Part-1-(due-November-24):">Part 1 (due November 24):<a class="anchor-link" href="#Part-1-(due-November-24):">&#182;</a></h4><p>A report that briefly describes the concrete strength database and how you plan to solve the tasks of creating a suitable data model.</p>
-<ul>
-<li>Break down each task into manageable subtasks and describe how you intend to solve the subtasks and how you will test each task. (Perhaps make a simple Gantt Chart)</li>
-<li>Address the responsibilities of each team member for tasks completed and tasks to be completed until the end of the semester. (Perhaps make explicit subtask assignments)</li>
-</ul>
-<p>Your report should be limited to 4 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used.</p>
-<h4 id="Part-2-(due-on-Final-Exam-day):">Part 2 (due on Final Exam day):<a class="anchor-link" href="#Part-2-(due-on-Final-Exam-day):">&#182;</a></h4><ul>
-<li>A well-documented JupyterLab (using a python kernel) analysis and implementation for the data model.</li>
-<li>A well-documented JupyterLab (using a python kernel) implementation for the data model user interface.</li>
-<li>A well-documented JupyterLab (using a python kernel) implementation for the database update interface.</li>
-</ul>
-<p><strong>Above items can reside in a single notebook; but clearly identify sections that perform different tasks.</strong></p>
-<ul>
-<li>A how-to video demonstrating performance and description of problems that you were not able to solve.</li>
-<li>A project management video (up to 5 minutes) in which you explain how you completed the project and how you worked as a team.</li>
-</ul>
-<p><strong>Above items can reside in a single video; but structure the video into the two parts; use an obvious transition when moving from "how to ..." into the project management portion.</strong>  Keep the total video length to less than 10 minutes; submit as an <em>unlisted</em> YouTube video, and just supply the link (someone on each team is likely to have a YouTube creator account).  Keep in mind a 10 minute video can approach 100MB file size before compression, so it won't upload to Blackboard and cannot be emailed.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -13260,6 +13091,388 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">ENGR 1330 &#8211; Computational Thinking and Data Science Fall 2021<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">&#182;</a></h1><h2><font color=navy>Project: Streamflow Forecasting Final Project</font></h2>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://c.tenor.com/9nEacavIPZsAAAAC/flowing-water.gif" width="50%"> <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>Why is Streamflow Analysis Important?</p>
+<p>Information gained from streamflow data is used for many different purposes:</p>
+<ul>
+<li><strong><em>Water supply plans</em></strong><ul>
+<li>Municipalities</li>
+<li>Agriculture</li>
+<li>Industries</li>
+</ul>
+</li>
+<li><strong><em>Engineering design</em></strong><ul>
+<li>Reservoirs</li>
+<li>Bridges, Roads, Culverts</li>
+<li>Treatment Plans</li>
+</ul>
+</li>
+<li><strong><em>Operations</em></strong><ul>
+<li>Reservoirs</li>
+<li>Power plants</li>
+<li>Navigation</li>
+</ul>
+</li>
+<li><strong><em>Identifying changes in streamflows</em></strong><ul>
+<li>Climate change</li>
+<li>Water use</li>
+<li>Land use</li>
+</ul>
+</li>
+<li><strong><em>Flood planning and warning</em></strong><ul>
+<li>Floodplain mapping</li>
+<li>Flood forecasts</li>
+</ul>
+</li>
+<li><strong><em>Streamflow forecasting</em></strong></li>
+<li><strong><em>Characterizing and evaluating in-stream conditions</em></strong><ul>
+<li>Habitat assessment</li>
+<li>Environmental flow requirements</li>
+<li>Recreation</li>
+</ul>
+</li>
+<li><strong><em>Support of water quality sampling</em></strong><ul>
+<li>Water quality conditions</li>
+<li>Contaminant transport</li>
+</ul>
+</li>
+</ul>
+<p><br>
+<br></p>
+<p><img src="https://www.lrp.usace.army.mil/portals/72/siteimages/Recreation/conemauglake.jpg" width="50%"> <br></p>
+<p>In this project, you will analyse a streamflow dataset and build a Machine Learning Model to predict the flow status and flowrate in a river.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-Streamflow-is-Measured?">How Streamflow is Measured?<a class="anchor-link" href="#How-Streamflow-is-Measured?">&#182;</a></h3><p>USGS describes the process at <a href="https://www.usgs.gov/special-topic/water-science-school/science/how-streamflow-measured?qt-science_center_objects=0#qt-science_center_objects">https://www.usgs.gov/special-topic/water-science-school/science/how-streamflow-measured?qt-science_center_objects=0#qt-science_center_objects</a></p>
+<p><img src="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/wss-banner-staff-gage.jpg" alt=""> <br></p>
+<p>Streamgaging generally involves 3 steps:</p>
+<ol>
+<li><strong><em>Measuring stream stage</em></strong>—obtaining a continuous record of stage—the height of the water surface at a location along a stream or river</li>
+<li><strong><em>The discharge measurement</em></strong>—obtaining periodic measurements of discharge (the quantity of water passing a location along a stream)</li>
+<li><strong><em>The stage-discharge relation</em></strong>—defining the natural but often changing relation between the stage and discharge; using the stage-discharge relation to convert the continuously measured stage into estimates of streamflow or discharge</li>
+</ol>
+<p><img src="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/streamgage-graphics%20-%20Copy.jpg" width="50%"> <br></p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Case-Study:-The-Colorado-River-in-Texas">Case Study: The Colorado River in Texas<a class="anchor-link" href="#Case-Study:-The-Colorado-River-in-Texas">&#182;</a></h2><p>The Colorado River is an approximately 862-mile (1,387 km) long river in the U.S. state of Texas. It is the 18th longest river in the United States and the longest river with both its source and its mouth within Texas.</p>
+<p>The Colorado River originates south of Lubbock, on the Llano Estacado near Lamesa. It flows generally southeast out of the Llano Estacado and through the Texas Hill Country, then through several reservoirs including Lake J.B. Thomas, E.V. Spence Reservoir, and O.H. Ivie Lake. The river flows through several more reservoirs before reaching Austin, including Lake Buchanan, Inks Lake, Lake Lyndon B. Johnson (commonly referred to as Lake LBJ), and Lake Travis. The Llano River joins the Colorado at Lake LBJ near Kingsland, and the Pedernales River joins at Lake Travis near Briarcliff. After passing through Austin, the Colorado River continues flowing southeast until emptying into Matagorda Bay on the Gulf of Mexico, near Matagorda. The Colorado is the largest river lying entirely within Texas; it drains an area of about 39,900 square miles (103,350 square km) and receives several forks of the Concho River, the Pecan Bayou, and the San Saba, Llano, and Pedernales rivers.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/ColoradoTexas_Watershed.png/450px-ColoradoTexas_Watershed.png" alt=""> <br></p>
+<p>The river is an important source of water for farming, cities, and electrical power production. In addition to power plants operating on each of the major lakes, waters of the Colorado are used for cooling the South Texas Nuclear Project near Bay City. Altogether, there are over 7,500 miles of creeks, streams, and rivers in our basin, and well over 2 million people live and work here. The Colorado’s watershed includes several major metropolitan areas, including Midland-Odessa, San Angelo, and Austin, and there are hundreds of smaller towns and communities as well. Many communities, like Austin, rely on the Colorado River for 100% of their municipal water. Because of its importance to the state’s economy, environment, industry, and agriculture it is recognized as the lifeblood of Texas.</p>
+<hr>
+<p><img src="https://cdn.vox-cdn.com/thumbor/z67Uw_p2JYudnXeeouxgil4XtoQ=/0x0:5999x3685/1200x800/filters:focal(2521x1364:3479x2322)/cdn.vox-cdn.com/uploads/chorus_image/image/64045588/Mount_Bonnell_shutterstock.0.jpg" width="70%"> <br></p>
+<h3 id="The-Dataset-|-Streamflow-Data">The Dataset | Streamflow Data<a class="anchor-link" href="#The-Dataset-|-Streamflow-Data">&#182;</a></h3><p>Streamflow data is downloaded for the most upstream streamflow monitoring station from "waterdata.usgs.gov". USGS Streamflow Monitoring Station 08117995 located in Borden County, Texas (Latitude  32°37'43", Longitude 101°17'06" NAD27) provided monthly streamflow records from March 1988 until May 2021.</p>
+<p><img src="https://deeply-assets.thenewhumanitarian.org/20170616094245/Idaho-gauge.jpg?w=640&fit=max&q=60" width="70%"> <br></p>
+<h3 id="The-Dataset-|-Meteorological-Data">The Dataset | Meteorological Data<a class="anchor-link" href="#The-Dataset-|-Meteorological-Data">&#182;</a></h3><p>Meteorological data is downloaded for the same period of time and the same time scale from "prism.oregonstate.edu". This data includes monthly precipitation and temperature (max, mean, and min) records.</p>
+<p><img src="https://stjohn23pburg.files.wordpress.com/2013/06/river-rain.jpg" width="70%"> <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h3 id="The-Dataset-|-Overview">The Dataset | Overview<a class="anchor-link" href="#The-Dataset-|-Overview">&#182;</a></h3><p>The dataset <a href="http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv">http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv</a> is contains the following information:</p>
+<table>
+<thead><tr>
+<th style="text-align:right">Columns</th>
+<th style="text-align:right">Info.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Date</td>
+<td style="text-align:right">The date of a measurement in YYYY-MM format</td>
+</tr>
+<tr>
+<td style="text-align:right">ppt (inches)</td>
+<td style="text-align:right">The total recorded precipitation in inches for each month</td>
+</tr>
+<tr>
+<td style="text-align:right">tmin (degrees F)</td>
+<td style="text-align:right">The minimum recorded temperature in degrees Fahrenheit for each month</td>
+</tr>
+<tr>
+<td style="text-align:right">tmean (degrees F)</td>
+<td style="text-align:right">The average recorded temperature in degrees Fahrenheit for each month</td>
+</tr>
+<tr>
+<td style="text-align:right">tmax (degrees F)</td>
+<td style="text-align:right">The maximum recorded temperature in degrees Fahrenheit for each month</td>
+</tr>
+<tr>
+<td style="text-align:right">Flowrate (cfs)</td>
+<td style="text-align:right">The average recorded streamflow in cubic feet per second for each month</td>
+</tr>
+</tbody>
+</table>
+<p>A script to get and download the database is provided below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ColoradoRiverData.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">);</span> <span class="c1"># extract from the remote the contents, assign</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Problem-Statement:">Problem Statement:<a class="anchor-link" href="#Problem-Statement:">&#182;</a></h2><ul>
+<li>Literature scan on the importance and approaches to streamflow forecasting. </li>
+<li>Analyse an existing hydro-meteorological database and build a data model to predict the streamflow based on various features.</li>
+<li>Build an interface to allow users to enter relative input features (e.g., precipitation) and return an estimated flowrate and an assessment of the uncertainty in the estimate</li>
+<li>Build an interface to allow users to enter relative input features (e.g., precipitation) and return an estimated flow state.</li>
+<li>Document the project in an interim and final report; prepare videos of use cases and project mangagement issues.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h3 id="Literature-Research:"><strong>Literature Research:</strong><a class="anchor-link" href="#Literature-Research:">&#182;</a></h3><p>In a short essay (1-2 pages):</p>
+<ul>
+<li>Describe the importance and challenges of streamflow forecasting.</li>
+<li>Summarize the value of a data model in the context of the conventional approach to streamflow forecasting</li>
+</ul>
+<p>Some places to start are:</p>
+<ul>
+<li><p>Cuo, L., Pagano, T. C., &amp; Wang, Q. J. (2011). A Review of Quantitative Precipitation Forecasts and Their Use in Short- to Medium-Range Streamflow Forecasting, Journal of Hydrometeorology, 12(5), 713-728. Retrieved Oct 21, 2021, from <a href="https://journals.ametsoc.org/view/journals/hydr/12/5/2011jhm1347_">https://journals.ametsoc.org/view/journals/hydr/12/5/2011jhm1347_</a></p>
+</li>
+<li><p>Yaseen, Z. M., El-Shafie, A., Jaafar, O., Afan, H. A., &amp; Sayl, K. N. (2015). Artificial intelligence based models for stream-flow forecasting: 2000–2015. Journal of Hydrology, 530, 829-844. available at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022169415008069">https://www.sciencedirect.com/science/article/abs/pii/S0022169415008069</a></p>
+</li>
+</ul>
+<ul>
+<li>Zhenghao Zhang, Qiang Zhang &amp; Vijay P. Singh (2018) Univariate streamflow forecasting using commonly used data-driven models: literature review and case study, Hydrological Sciences Journal, 63:7, 1091-1111, DOI: 10.1080/02626667.2018.1469756 available at <a href="https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1469756">https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1469756</a></li>
+</ul>
+<ul>
+<li>Mosavi A, Ozturk P, Chau K-w. Flood Prediction Using Machine Learning Models: Literature Review. Water. 2018; 10(11):1536. <a href="https://doi.org/10.3390/w10111536">https://doi.org/10.3390/w10111536</a> available at <a href="https://www.mdpi.com/2073-4441/10/11/1536">https://www.mdpi.com/2073-4441/10/11/1536</a></li>
+</ul>
+<ul>
+<li>Cheng, M., Fang, F., Kinouchi, T., Navon, I. M., &amp; Pain, C. C. (2020). Long lead-time daily and monthly streamflow forecasting using machine learning methods. Journal of Hydrology, 590, 125376. available at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022169420308362">https://www.sciencedirect.com/science/article/abs/pii/S0022169420308362</a></li>
+</ul>
+<h3 id="Exploratory-Data-Analysis-(EDA):"><strong>Exploratory Data Analysis (EDA):</strong><a class="anchor-link" href="#Exploratory-Data-Analysis-(EDA):">&#182;</a></h3><p>Provide a summary (description) of the dataset in 2-3 pages. This summery should appropriately present the essential infromation about the dataset in a concise, well-written and clear manner. Things you may want to include ...</p>
+<ul>
+<li>An overall description of the dataset</li>
+<li>A summery of the information extracted from the important statistics of different parameters in the dataset</li>
+<li>A summery of the distributional charactristics of different parameters in the dataset </li>
+<li>A summary of the relationship status within the different parameters in the dataset</li>
+</ul>
+<p>Your EDA section must include your answers for the following questions:</p>
+<ul>
+<li>Which parameter (between precipitation and temperature values) can be a better predictor for streamflow at the station of study? why?</li>
+<li>What can you infer from comparing the maximum recorded floods in the 90s, 2000s, and 2010s? Based on the records available in the dataset, would you expect to see more or less extreme floods in the future?</li>
+<li>Periods with the flowrate of 0 (No-flow periods) can be viewed as indicators of drought. What can you understand from comparing the number of no-flow days in the 90s, 2000s, and 2010s? Is the upstream of the Colorado River becoming more or less prone to drought?</li>
+</ul>
+<h3 id="Model-Building:-Part-1-|-Forecasting-flowrates"><strong>Model Building: Part 1 | Forecasting flowrates</strong><a class="anchor-link" href="#Model-Building:-Part-1-|-Forecasting-flowrates">&#182;</a></h3><p>In this part, the goal is to make models to predict flowrates in the Colorado River, and then evaluate their performance using appropriate goodness-of-fit measures, and analyze the outcomes. Use the first 75% of the dataset for training your models and the remaining 25% for testing.</p>
+<ul>
+<li>Build 3 data models that you see appropriate for this task. (<em>Please note that these models should be unique and this uniqueness can be defined based on using different algorithms, inputs, or both.</em>)</li>
+<li>Assess data model quality (decide which model is best) </li>
+<li>Build the input data interface for using the "best" model</li>
+<li>Using your best model determine the estimated flowrate for the hydro-meteorological conditions in the table below:</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:left">ppt</th>
+<th style="text-align:left">tmax</th>
+<th style="text-align:left">tmean</th>
+<th style="text-align:left">tmin</th>
+<th style="text-align:left">last month flowrate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">113.0</td>
+<td style="text-align:left">99.0</td>
+<td style="text-align:left">85.0</td>
+<td style="text-align:left">0.0</td>
+</tr>
+<tr>
+<td style="text-align:left">4.5</td>
+<td style="text-align:left">95.0</td>
+<td style="text-align:left">85.0</td>
+<td style="text-align:left">75.0</td>
+<td style="text-align:left">74.5</td>
+</tr>
+<tr>
+<td style="text-align:left">2.2</td>
+<td style="text-align:left">20.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">55.0</td>
+</tr>
+<tr>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">80.0</td>
+<td style="text-align:left">60.0</td>
+<td style="text-align:left">40.0</td>
+<td style="text-align:left">36.3</td>
+</tr>
+<tr>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">80.0</td>
+<td style="text-align:left">60.0</td>
+<td style="text-align:left">40.0</td>
+<td style="text-align:left">12.0</td>
+</tr>
+</tbody>
+</table>
+<p><em>note that you may not all the values for each case, depending on your best model.</em></p>
+<p>Your "Model Building: Part 1" section must include your answers for the following questions:</p>
+<ul>
+<li>What are the most important assumptions in your modeling?</li>
+<li>Is it benefitial to use the streamflow recorded in the previous step (a lagged streamflow value) as an input feature? why?</li>
+<li>Which parameter (between precipitation and temperature values) was be a better predictor for streamflow at the station of study? why?</li>
+<li>Is there a specific range of streamflow values that are harder to capture accurately for your data models? If yes, what range and why?</li>
+</ul>
+<h3 id="Model-Building:-Part-2-|-Forecasting-flow-states"><strong>Model Building: Part 2 | Forecasting flow states</strong><a class="anchor-link" href="#Model-Building:-Part-2-|-Forecasting-flow-states">&#182;</a></h3><p>In this part, the goal is to make models to predict whether the Colorado River's flowstate is in the "Flow" or the "No-Flow" state. Then, evaluate their performance using appropriate goodness-of-fit measures, and analyze the outcomes. Use the first 75% of the dataset for training your models and the remaining 25% for testing.</p>
+<ul>
+<li>Add a column to the dataframe for the flow state: It should be 0 when the flowrate is equal to 0 and 1 when the flowrate is non-zero. </li>
+<li>Build 3 data models that you see appropriate for predicting the flow state. (<em>Please note that these models should be unique and this uniqueness can be defined based on using different algorithms, inputs, or both.</em>)</li>
+<li>Assess data model quality (decide which model is best) </li>
+<li>Build the input data interface for using the "best" model</li>
+<li>Using your best model determine the estimated flow state for the hydro-meteorological conditions in the table below:</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:left">ppt</th>
+<th style="text-align:left">tmax</th>
+<th style="text-align:left">tmean</th>
+<th style="text-align:left">tmin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">113.0</td>
+<td style="text-align:left">99.0</td>
+<td style="text-align:left">85.0</td>
+</tr>
+<tr>
+<td style="text-align:left">4.5</td>
+<td style="text-align:left">95.0</td>
+<td style="text-align:left">85.0</td>
+<td style="text-align:left">75.0</td>
+</tr>
+<tr>
+<td style="text-align:left">2.2</td>
+<td style="text-align:left">20.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">0.0</td>
+</tr>
+<tr>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">80.0</td>
+<td style="text-align:left">60.0</td>
+<td style="text-align:left">40.0</td>
+</tr>
+<tr>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">80.0</td>
+<td style="text-align:left">60.0</td>
+<td style="text-align:left">40.0</td>
+</tr>
+</tbody>
+</table>
+<p><em>note that you may not all the values for each case, depending on your best model.</em></p>
+<p>Your "Model Building: Part 2" section must include your answers for the following questions:</p>
+<ul>
+<li>What are the most important assumptions in your modeling?</li>
+<li>Is it more difficult for the model to capture one flow state more than the other? If yes, which one? why?</li>
+<li>Which parameter (between precipitation and temperature values) was be a better predictor for flow state at the station of study? why?</li>
+<li>What can be some applications of this kind of streamflow state modeling?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Deliverables:"><strong>Deliverables:</strong><a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Effort-Sheets-(due-every-week-on-Friday):">Effort Sheets (due every week on Friday):<a class="anchor-link" href="#Effort-Sheets-(due-every-week-on-Friday):">&#182;</a></h4><p>Each team must submit an effort sheet which is a table with a clear discription of the tasks undertaken by each member and has the signiture of all team members. The effort sheets should be submitted digitally via email.</p>
+<h4 id="Interim-report-(due-November-24):">Interim report (due November 24):<a class="anchor-link" href="#Interim-report-(due-November-24):">&#182;</a></h4><p>This report must include:</p>
+<ul>
+<li>The "Literature Research" section</li>
+<li>A description of the Colorado River database </li>
+<li>A plan of work for how you want to handle the project and solve the modeling tasks.  </li>
+<li>Break down each task into manageable subtasks and describe how you intend to solve the subtasks and how you will test each task. (Perhaps make a simple Gantt Chart)</li>
+<li>Address the responsibilities of each team member for tasks completed and tasks to be completed until the end of the semester. (Perhaps make explicit subtask assignments)</li>
+</ul>
+<p>Your report should be limited to 7 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used. This report must be submitted by Midnight November 24th in PDF format.</p>
+<h4 id="Final-report-(due-December-7):">Final report (due December 7):<a class="anchor-link" href="#Final-report-(due-December-7):">&#182;</a></h4><p>This report must include:</p>
+<ul>
+<li>All the required parts, including the ones from the Interim report as well as the sections on EDA and Model Building parts.</li>
+<li>All the filled effort sheets with the signitures of the team members with a clear description of all the tasks performed by each member.</li>
+<li><p>All the references used in the entire length of the project. <br>
+This report must be submitted by Midnight December 7th in PDF format, along with the following documents:</p>
+<ul>
+<li>A well-documented Jupyter Notebook (.ipynb file) for the analysis and implementation of the data models.</li>
+<li><p>A well-documented Jupyter Notebook (.ipynb file) for the implementation of the data model user interface.</p>
+<p><strong>Above items can reside in a single notebook; but clearly identify sections that perform different tasks.</strong></p>
+</li>
+<li><p>A how-to video demonstrating the application, performance and description of what you did for the project, including the problems that you solved as well as those that you were not able to solve.</p>
+</li>
+<li><p>A project management video (up to 5 minutes) in which you explain how you completed the project and how you worked as a team.</p>
+<p><strong>Above items can reside in a single video; but structure the video into the two parts; use an obvious transition when moving from "how to ..." into the project management portion.</strong><br>
+<strong>Keep the total video length to less than 10 minutes; submit as an "unlisted" YouTube video, and just supply the link (someone on each team is likely to have a YouTube creator account).  Keep in mind a 10 minute video can approach 100MB file size before compression, so it won't upload to Blackboard and cannot be emailed.</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
 </div>
     </div>
   </div>

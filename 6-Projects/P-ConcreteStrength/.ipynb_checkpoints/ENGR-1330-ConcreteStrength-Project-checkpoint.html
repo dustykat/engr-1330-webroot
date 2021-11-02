@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>InstrumentCalibration-Project</title>
+<title>ENGR-1330-ConcreteStrength-Project</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -12947,8 +12947,13 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13076,7 +13081,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
@@ -13117,42 +13122,27 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2020">ENGR 1330 &#8211; Computational Thinking and Data Science Fall 2020<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2020">&#182;</a></h1>
+<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">ENGR 1330 &#8211; Computational Thinking and Data Science Fall 2021<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pressure-Transducer-Calibration-Final-Project">Pressure Transducer Calibration Final Project<a class="anchor-link" href="#Pressure-Transducer-Calibration-Final-Project">&#182;</a></h2><p>Measurement is a process of comparison: the measured quantity is compared to a known standard. Before we measure, we must establish the relationship between the readout val-ues of our instrument and known input values of the measurand. This process is called as calibration.</p>
-<p>The purpose of calibrating a system is to:</p>
-<ul>
-<li>Relate the actual sensor output (i.e. a voltage) to the quantity we are attempting to measure ($\frac{F}{A}$ a normal stress, we usually call pressure)</li>
-<li>Identify and correct bias error</li>
-<li>Quantify random error associated with using each system. </li>
-</ul>
-<p>This project will develop scripts to calibrate two independent pressure measurement systems:</p>
-<ol>
-<li>an analog gauge and </li>
-<li>an electronic pressure transducer </li>
-</ol>
-<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>The pressures produced by the tester as shown by the values stamped on the weights as the exact true pressures. The true pressure, the pressure indicated on the analog gauge, and the voltage output by the pressure transducer are given to you, respectively.</p>
-<p>The figure below shows a picture of a typical deadweight tester instrument.
-<img src="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/pressure-testbed.png" alt=""></p>
-<p>An operational schematic is shown in the following figure</p>
-<p><img src="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Setup-of-Deadweight-Tester-19.png" alt=""></p>
-<p><strong>Learn More at</strong> <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Calibrationho.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Calibrationho.pdf</a></p>
+<h2 id="Concrete-Strength-Predictor-Final-Project---Background">Concrete Strength Predictor Final Project - Background<a class="anchor-link" href="#Concrete-Strength-Predictor-Final-Project---Background">&#182;</a></h2><p>The Compressive Strength of Concrete determines the quality of Concrete. 
+The strength is determined by a standard crushing test on a concrete cylinder, that requires engineers to build small concrete cylinders with different combinations of raw materials and test these cylinders for strength variations with a change in each raw material. 
+The recommended wait time for testing the cylinder is 28 days to ensure correct results, although there are formulas for making estimates from shorter cure times.
+The formal 28-day approach consumes a lot of time and labor to prepare different prototypes and test them; the method itself is error prone and mistakes can cause the wait time to drastically increase.</p>
+<p>One way of reducing the wait time and reducing the number of combinations to try is to make use of digital simulations, where we can provide information to the computer about what we know and the computer tries different combinations to predict the compressive strength.
+This approach can reduce the number of combinations we can try physically and reduce the total amount of time for experimentation. 
+But, to design such software we have to know the relations between all the raw materials and how one material affects the strength. 
+It is possible to derive mathematical equations and run simulations based on these equations, but we cannot expect the relations to be same in real-world. 
+Also, these tests have been performed for many numbers of times now and we have enough real-world data that can be used for predictive modelling.</p>
 <h2 id="Objective(s):">Objective(s):<a class="anchor-link" href="#Objective(s):">&#182;</a></h2><ul>
-<li>Literature scan on instrument calibration and pressure measurement techniques</li>
-<li>Analyse an existing measurement database and build a data model to calibrate a pressure transducer, and an analog gage.   The measurements database is comprised of 4 columns: </li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A test ID (in practice replicate tests are conducted. Why?)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The true applied pressures from 5 psig to 105 psig. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The analog pressures read from the gauge.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The voltages read from the transducer.</p>
-<ul>
-<li>Build an interface to allow users to enter voltages and return an estimated pressure and an assessment of the uncertainty in the estimate, and return the anticipated analog reading.</li>
-<li>Build an interface to allow users to add observations to the underlying database, and automatically update the calibration model to incorporate the new observations</li>
+<li>Literature scan on concrete design, and utility of a predictive approach</li>
+<li>Analyse an existing concrete compressive strength database and build a data model to predict the compressive strength of a concrete mixture.</li>
+<li>Build an interface to allow users to enter concrete mixtures and return an estimated strength and an assessment of the uncertainty in the estimate</li>
+<li>Build an interface to allow users to add observations to the underlying database, and automatically update the Data Model to incorporate the new observations</li>
 </ul>
 
 </div>
@@ -13163,56 +13153,109 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Tasks:">Tasks:<a class="anchor-link" href="#Tasks:">&#182;</a></h2><p><strong>Literature Research:</strong></p>
 <ul>
-<li>Describe the proces of pressure transducer calibration using a deadweight testbed (i.e. provide a description for the schematic figure above)</li>
-<li>Summarize the value of a calibration (data) model in the context of converting voltage readings to applied pressure.</li>
+<li>Describe the challenge of concrete mixture design and the importance of compressive strength.</li>
+<li>Summarize the value of a data model in the context of the conventional approach to strength prediction</li>
 </ul>
-<p>Some places to start</p>
+<p>Some places to start are:</p>
 <ul>
-<li><p>Beckwith, Marangoni, and Lienhard, Mechanical Measurements, Fifth Edition, Addison-Wesley PublishingCo., Reading, Massachusetts, 1993.</p>
+<li><p>I-Cheng Yeh, “ Modeling of strength of high performance concrete using artificial neural networks,” Cement and Concrete Research, Vol. 28, №12, pp. 1797–1808 (1998). <a href="https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength">https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength</a></p>
 </li>
-<li><p>Bevington and Robinson, Data Reduction and Error Analysis for the Physical Sciences, Second Edition,WCB/McGraw Hill, Boston, Massachusetts, 1992.</p>
+<li><p>Laskar, Aminul Islam. (2011). Mix design of high-performance concrete. Materials Research, 14(4), 429-433. Epub November 21, 2011.<a href="https://doi.org/10.1590/S1516-14392011005000088">https://doi.org/10.1590/S1516-14392011005000088</a> or <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mix_Design_of_High-performance_Concrete.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mix_Design_of_High-performance_Concrete.pdf</a></p>
 </li>
-<li><p>Meyer, Paul L., Introductory Probability and Statistical Applications, 2nd Edition, Addison-WesleyPublishing Co., Reading, Massachusetts, 1970</p>
+<li><p>Ahsanul Kabir, Md Monjurul Hasan, Khasro Miah, “ Strength Prediction Model for Concrete”, ACEE Int. J. on Civil and Environmental Engineering, Vol. 2, №1, Aug 2013.</p>
 </li>
-<li><p>Kline, S. J. and F. A. McClintock (1953). Describing uncertainties in single-sample experiments. Mechanical Engineering (No. 75), 3-9. <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Kline_McClintock1953.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/Kline_McClintock1953.pdf</a></p>
+<li><p><a href="https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3">https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3</a></p>
 </li>
-<li><p>Holman, J. P. (1989). Experimental Methods for Engineers, 5th Edition. New York, NY: McGraw-Hill. <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/holman1989.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/holman1989.pdf</a></p>
+<li><p>Castro, A.L. &amp; Liborio, J.B.L. &amp; Valenzuela, Federico &amp; Pandolfelli, Victor. (2008). The application of rheological concepts on the evaluation of high-performance concrete workability. American Concrete Institute, ACI Special Publication. 119-131.  copy at: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/ArtigoHPC026_CASTROetalfinal.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/ArtigoHPC026_CASTROetalfinal.pdf</a></p>
 </li>
-<li><p>Doebelin, E. O. (1990). Measurement Systems (4th ed.). New York, NY: McGraw-Hill.</p>
-</li>
-<li><p><a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.1_error_analysis.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.1_error_analysis.pdf</a></p>
-</li>
-<li><p><a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.2_error_analysis.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/ce_5333_1.2_error_analysis.pdf</a></p>
+<li><p>de Larrard, François &amp; Sedran, Thierry. (2002). Mixture-proportioning of high-performance concrete. Cement and Concrete Research. 32. 1699-1704. 10.1016/S0008-8846(02)00861-X. copy at: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mixture-ProportioningCCR-deLarrardSedran-full.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mixture-ProportioningCCR-deLarrardSedran-full.pdf</a></p>
 </li>
 </ul>
 <p><strong>Database Acquisition</strong></p>
 <ul>
-<li>Get the database from the repository: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/PressureSensorData.csv">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-InstrumentCalibration/PressureSensorData.csv</a> </li>
+<li>Get the database from the repository: <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls">https://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls</a></li>
+<li>Supply links to any additional databases discovered during the literature research</li>
+<li>A copy of the database is located at: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/concreteData.xls">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/concreteData.xls</a> If you cannot access the original database you can use this copy</li>
 </ul>
 <p><strong>Exploratory Data Analysis</strong></p>
 <ul>
-<li>Describe the database. Include visualization of the database.</li>
+<li>Describe (in words) the database.</li>
 <li>Reformat as needed (column headings perhaps) the database for subsequent analysis.</li>
-<li>For each measurement system (analog readout, sensor voltage): Plot the data (as symbols) e.g. true pressure versus analog pressure; analog pressure versus volts; true pressure versus volts. Describe the plots. </li>
-<li>Select possible data model structures (linear model, power-law, ...)</li>
+<li>Select possible data model structures (multi-feature linear model, power-law, ...)</li>
 <li>Select possible data model "fitting" tools (ordinary least squares,lasso regression, decision trees, random forests, ...)</li>
 </ul>
 <p><strong>Model Building</strong></p>
 <ul>
 <li>Build data models</li>
-<li>Assess data model quality (decide which model is best) including visualization tools (red line through blue dots ...)</li>
-<li>Build the input data interface for using the "best" model(s)</li>
-<li>Assume that you are now using your calibrated analog pressure gauge to make a reading in the field. You read a value of 64 psi on the gauge. Estimate the true pressure at 95 percent confidence. Be sure to report your result with a value with an appropriate number of digits, an uncertainty bracket, units, and a confidence level.</li>
-<li>Assume that you are now using your calibrated pressure transducer to make a reading in the field. You read a value of 1.4320 Volts . Estimate the true pressure at 95 percent confidence. Be sure to report your result with a value with an appropriate number of digits, an uncertainty bracket, units, and a confidence level.</li>
-<li>Using your best model determine projected pressure readings and an assessment of uncertainty for 5 sensor voltages in the table below.<br>
-|Test|Sensor Voltage|
-|:---|:---|
-|U1|3.0|
-|U2|0.2|
-|U3|0.03|
-|U4|5.0|<br>
-|U5|0.07|                </li>
+<li>Assess data model quality (decide which model is best) </li>
+<li>Build the input data interface for using the "best" model</li>
+<li>Using your best model determine projected concrete strength for 5 possible mixtures in the table below:</li>
 </ul>
+<table>
+<thead><tr>
+<th style="text-align:left">Cement</th>
+<th style="text-align:left">BlastFurnaceSlag</th>
+<th style="text-align:left">FlyAsh</th>
+<th style="text-align:left">CoarseAggregate</th>
+<th style="text-align:left">FineAggregate</th>
+<th style="text-align:left">Water</th>
+<th style="text-align:left">Superplasticizer</th>
+<th style="text-align:left">Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">175.0</td>
+<td style="text-align:left">13.0</td>
+<td style="text-align:left">172.0</td>
+<td style="text-align:left">1000.0</td>
+<td style="text-align:left">856.0</td>
+<td style="text-align:left">156.0</td>
+<td style="text-align:left">4.0</td>
+<td style="text-align:left">3.0</td>
+</tr>
+<tr>
+<td style="text-align:left">320.0</td>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">970.0</td>
+<td style="text-align:left">850.0</td>
+<td style="text-align:left">192.0</td>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">7.0</td>
+</tr>
+<tr>
+<td style="text-align:left">320.0</td>
+<td style="text-align:left">0.0</td>
+<td style="text-align:left">126.0</td>
+<td style="text-align:left">860.0</td>
+<td style="text-align:left">856.0</td>
+<td style="text-align:left">209.0</td>
+<td style="text-align:left">5.70</td>
+<td style="text-align:left">28.0</td>
+</tr>
+<tr>
+<td style="text-align:left">320.0</td>
+<td style="text-align:left">73.0</td>
+<td style="text-align:left">54.0</td>
+<td style="text-align:left">972.0</td>
+<td style="text-align:left">773.0</td>
+<td style="text-align:left">181.0</td>
+<td style="text-align:left">6.0</td>
+<td style="text-align:left">45.0</td>
+</tr>
+<tr>
+<td style="text-align:left">530.0</td>
+<td style="text-align:left">359.0</td>
+<td style="text-align:left">200.0</td>
+<td style="text-align:left">1145.0</td>
+<td style="text-align:left">992.0</td>
+<td style="text-align:left">247.0</td>
+<td style="text-align:left">32.0</td>
+<td style="text-align:left">365.0</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Documentation</strong></p>
 <ul>
 <li>Training video on how to use your tool, and demonstrate the tool(s) as they are run</li>
@@ -13224,16 +13267,32 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strength</span> <span class="o">=</span> <span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">BlastSlag</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">FlyAsh</span><span class="o">+</span><span class="n">b3</span><span class="o">*</span><span class="n">Coarse</span><span class="o">+</span> <span class="o">....</span>
+<span class="n">log</span><span class="p">(</span><span class="n">strength</span><span class="p">)</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">BlastSlag</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">FlyAsh</span><span class="o">+</span><span class="n">b3</span><span class="o">*</span><span class="n">Coarse</span><span class="o">+</span> <span class="o">....</span><span class="p">)</span>
+<span class="n">strength</span> <span class="o">=</span> <span class="n">b0</span><span class="o">*</span><span class="p">(</span><span class="n">Blast</span><span class="o">**</span><span class="n">e1</span><span class="o">*</span> <span class="n">Fly</span><span class="o">**</span><span class="n">e2</span><span class="o">*</span> <span class="n">Doarse</span><span class="o">**</span><span class="n">e3</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Part-1-(due-November-24):">Part 1 (due November 24):<a class="anchor-link" href="#Part-1-(due-November-24):">&#182;</a></h4><p>A report that briefly describes the concrete strength database and how you plan to solve the tasks of creating a suitable data model.</p>
+<h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Effort-Sheets-(due-every-week-on-Friday):">Effort Sheets (due every week on Friday):<a class="anchor-link" href="#Effort-Sheets-(due-every-week-on-Friday):">&#182;</a></h4><p>Each team must submit an effort sheet which is a table with a clear discription of the tasks undertaken by each member and has the signiture of all team members. The effort sheets should be submitted digitally via email.</p>
+<h4 id="Interim-Report-(due-November-24):">Interim Report (due November 24):<a class="anchor-link" href="#Interim-Report-(due-November-24):">&#182;</a></h4><p>A report that briefly describes the concrete strength database and how you plan to solve the tasks of creating a suitable data model.</p>
 <ul>
 <li>Break down each task into manageable subtasks and describe how you intend to solve the subtasks and how you will test each task. (Perhaps make a simple Gantt Chart)</li>
 <li>Address the responsibilities of each team member for tasks completed and tasks to be completed until the end of the semester. (Perhaps make explicit subtask assignments)</li>
 </ul>
 <p>Your report should be limited to 4 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used.</p>
-<h4 id="Part-2-(due-on-Final-Exam-day):">Part 2 (due on Final Exam day):<a class="anchor-link" href="#Part-2-(due-on-Final-Exam-day):">&#182;</a></h4><ul>
+<h4 id="Final-Report-(due-on-December-7):">Final Report (due on December 7):<a class="anchor-link" href="#Final-Report-(due-on-December-7):">&#182;</a></h4><ul>
 <li>A well-documented JupyterLab (using a python kernel) analysis and implementation for the data model.</li>
 <li>A well-documented JupyterLab (using a python kernel) implementation for the data model user interface.</li>
 <li>A well-documented JupyterLab (using a python kernel) implementation for the database update interface.</li>
