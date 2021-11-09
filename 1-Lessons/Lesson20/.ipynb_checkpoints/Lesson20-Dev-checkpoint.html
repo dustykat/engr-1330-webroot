@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ENGR-1330-2021-3-Syllabus</title>
+<title>Lesson20-Dev</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -12947,13 +12947,8 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-.highlight .hll { background-color: #ffffcc }
-.highlight { background: #f8f8f8; }
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13079,20 +13074,13 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Download this page as a jupyter notebook at <a href="http://54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2021-3-Syllabus.ipynb">ENGR-1330-2021-3-Syllabus</a> <strong>The syllabus changes from time-to-time</strong> The webpage may become obsolete; the jupyter notebook is always current.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
+<span class="c">&lt;!--Script block to left align Markdown Tables--&gt;</span>
 <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
   <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -13113,6 +13101,7 @@ div#notebook {
 
 
 <div class="output_html rendered_html output_subarea ">
+<!--Script block to left align Markdown Tables-->
 <style>
   table {margin-left: 0 !important;}
 </style>
@@ -13125,795 +13114,582 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>atomickitty.aws
+engr1330content
+/opt/conda/envs/python/bin/python
+3.8.3 (default, Jul  2 2020, 16:21:59) 
+[GCC 7.3.0]
+sys.version_info(major=3, minor=8, micro=3, releaselevel=&#39;final&#39;, serial=0)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1><p>Last GitHub Commit Date: 16 Mar 2021</p>
+<h2 id="Lesson-20-:-Multiple-Linear-Regression">Lesson 20 : Multiple Linear Regression<a class="anchor-link" href="#Lesson-20-:-Multiple-Linear-Regression">&#182;</a></h2><p>A procedure to use additional variables to make predictions.  OLS is not confined to a single explainatory variable; we can consider a collection of explainatory variables.</p>
+<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
+<li>To apply fundamental concepts involved in data modeling and regression;<h2 id="--Is-a-single-variable-a-good-estimator-of-the-target-process?">- Is a single variable a good estimator of the target process?<a class="anchor-link" href="#--Is-a-single-variable-a-good-estimator-of-the-target-process?">&#182;</a></h2></li>
+</ul>
 <hr>
-<h1 id="ENGR-1330-Computational-Thinking-with-Data-Science">ENGR 1330 Computational Thinking with Data Science<a class="anchor-link" href="#ENGR-1330-Computational-Thinking-with-Data-Science">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-Description:">Course Description:<a class="anchor-link" href="#Course-Description:">&#182;</a></h2><p>Introducion to Python programming, its relevant modules and libraries, and computational thinking for solving problems in Data Science. Data science approaches for importing, manipulating, and analyzing data.  Modeling and visualizing real-world data sets in various science and engineering disciplines.</p>
-<p>3 credit hours comprising of lectures and hands-on lab sessions.</p>
-<p>This course provides a hands-on learning experience in programming and data science using iPython and JupyterLab. iPython is the interactive python kernel implemented in JupyterLab.</p>
-<h2 id="Prerequisites:">Prerequisites:<a class="anchor-link" href="#Prerequisites:">&#182;</a></h2><p>Prior programming background is NOT required.  The course is intended for first-year WCOE students (aka engineering foundational)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="COVID-19-Important-Guidelines:">COVID-19 Important Guidelines:<a class="anchor-link" href="#COVID-19-Important-Guidelines:">&#182;</a></h2><ul>
-<li><p>If Texas Tech University campus operations are required to change because of health concerns related to the COVID-19 pandemic, it is possible that this course will move to a fully online delivery format.  Should that be necessary, students will be advised of technical and/or equipment requirements, including remote proctoring software.</p>
-</li>
-<li><p>Policy on absences resulting from illness: We anticipate that some students may have extended absences.  To avoid students feeling compelled to attend in-person class periods when having symptoms or feeling unwell, a standard policy is provided that holds students harmless for illness-related absences (see Section A below).</p>
-</li>
-</ul>
-<h3 id="A.-Illness-Based-Absence-Policy-(Face-to-Face-Classes)">A. Illness-Based Absence Policy (Face-to-Face Classes)<a class="anchor-link" href="#A.-Illness-Based-Absence-Policy-(Face-to-Face-Classes)">&#182;</a></h3><p>If at any time during the semester you are ill, in the interest of your own health and safety as well as the health and safety of your instructors and classmates, you are encouraged not to attend face-to-face class meetings or events.  Please review the steps outlined below that you should follow to ensure your absence for illness will be excused.  These steps also apply to not participating in synchronous online class meetings if you feel too ill to do so and missing specified assignment due dates in asynchronous online classes because of illness.</p>
-<ol>
-<li><p>If you are ill and think the symptoms might be COVID-19-related:</p>
-<ol>
-<li>Call Student Health Services at 806.743.2848 or your health care provider.  During after-hours and on weekends, contact TTU COVID-19 Helpline at TBD.</li>
-<li>Self-report as soon as possible using the Dean of Students COVID-19 webpage. This website has specific directions about how to upload documentation from a medical provider and what will happen if your illness renders you unable to participate in classes for more than one week.</li>
-<li>If your illness is determined to be COVID-19-related, all remaining documentation and communication will be handled through the Office of the Dean of Students, including notification of your instructors of the time you may be absent from and may return to classes.</li>
-<li>If your illness is determined not to be COVID-19-related, please follow steps 2.a-d below.</li>
-</ol>
-</li>
-</ol>
-<ol>
-<li><p>If you are ill and can attribute your symptoms to something other than COVID-19:</p>
-<ol>
-<li>If your illness renders you unable to attend face-to-face classes, participate in synchronous online classes, or miss specified assignment due dates in asynchronous online classes, you are encouraged to contact either Student Health Services at 806.743.2848 or your health care provider.  Note that Student Health Services and your own and other health care providers may arrange virtual visits.</li>
-<li>During the health provider visit, request a “return to school” note.</li>
-<li>E-mail the instructor a picture of that note.</li>
-<li>Return to class by the next class period after the date indicated on your note.</li>
-</ol>
-</li>
-</ol>
-<p>Following the steps outlined above helps to keep your instructors informed about your absences and ensures your absence or missing an assignment due date because of illness will be marked excused.  You will still be responsible to complete within a week of returning to class any assignments, quizzes, or exams you miss because of illness.</p>
-<h3 id="B.-Illness-Based-Absence-Policy-(Telepresence/On-Line-Classes)">B. Illness-Based Absence Policy (Telepresence/On-Line Classes)<a class="anchor-link" href="#B.-Illness-Based-Absence-Policy-(Telepresence/On-Line-Classes)">&#182;</a></h3><p>Same as above with respect potential to infect others; go to a health care provider if you are ill.  Telepresence courses are recorded and will be available on TTU MediaSite and/or YouTube (unlisted).  Exercises, Quizzes, and Examinations are all administered by a Learning Management System (Blackboard) and students need to allow enough time to complete and upload their work.  Due date adjustments/late submits on case-by-case basis; documentation required as in subsection <strong>A</strong> above.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Update #1: <a href="https://54.243.252.9/engr-1330-webroot/0-Syllabus/August-2021-Update-Academic-Affairs-COVID-19-Guidance.pdf">Provost 13 Aug 2021 Pandemic Guidance</a></p>
-<p>Update #2: <a href="https://54.243.252.9/engr-1330-webroot/0-Syllabus/Guidance-instructors-academic-affairs.pdf">Provost 27 Aug 2021 Pandemic Guidance</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-Sections">Course Sections<a class="anchor-link" href="#Course-Sections">&#182;</a></h2><p>Lesson time, days, and location:</p>
+<h2 id="Computational-Thinking-Concepts">Computational Thinking Concepts<a class="anchor-link" href="#Computational-Thinking-Concepts">&#182;</a></h2><p>The CT concepts include:</p>
 <ul>
-<li><p>Lecture Section 001; CRN 42881; 0800-0920 T, TH ; Modality: Face-to-Face ; Location: Holden Hall 76</p>
-</li>
-<li><p>Laboratory Section D51; CRN 64441; 0930-1050 T, TH;  Modality: Telepresence (on-Line) Location: Internet</p>
-</li>
+<li>Abstraction =&gt; Represent data behavior with a model</li>
+<li>Pattern Recognition =&gt; Compare patterns in (our) data models to make a decision</li>
 </ul>
-<!--2. Section D01; CRN 63306; 1000-1120 T, TH ; Telepresence
-    2. Lab Section D61; CRN 63744; 1130-1250 T, TH-->
-
-<h2 id="Course-Instructor:">Course Instructor:<a class="anchor-link" href="#Course-Instructor:">&#182;</a></h2><p>Instructor: Theodore G. Cleveland, Ph.D., P.E., M. ASCE, F. EWRI</p>
-<p>Email: theodore.cleveland@ttu.edu  (put ENGR 1330 in subject line for email related to this class)</p>
-<p>Office location: CE 203F</p>
-<p>Office hours: 1400-1500 W, 1000-1100 F by <strong>Zoom</strong></p>
-<h2 id="Teaching-Assistant:">Teaching Assistant:<a class="anchor-link" href="#Teaching-Assistant:">&#182;</a></h2><p>Teaching Assistant: Josh Archer</p>
-<p>Email : Josh.Archer@ttu.edu (put ENGR 1330 in subject line for email related to this class)</p>
-<p>Office location:  (<strong>Zoom</strong>)</p>
-<p>Office hours: 0900-1000 M, 0900-1000 W or by <strong>Zoom</strong> appointment</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Textbook:">Textbook:<a class="anchor-link" href="#Textbook:">&#182;</a></h2><p>Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).  Link: <a href="https://www.inferentialthinking.com/chapters/intro">https://www.inferentialthinking.com/chapters/intro</a></p>
-<p>Theodore G. Cleveland, Farhang Forghanparast, Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. (2021) <em>Computational Thinking and Data Science: A WebBook to Accompany ENGR 1330 at TTU</em>, Whitacre College of Engineering, DOI (pending) <!--[http://54.243.252.9/engr-1330-webbook/](http://54.243.252.9/engr-1330-webbook/)--></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-Contents:">Course Contents:<a class="anchor-link" href="#Course-Contents:">&#182;</a></h2><ul>
-<li>Computational thinking for problem-solving: Logical problem solving, decomposition, pattern recognition, abstraction, representation, algorithm design, and generalization.</li>
-<li>Python Programming: <ol>
-<li>Variables, constants, data types, data structures, strings, math operators</li>
-<li>boolean operators, expressions, program constructs, functions, </li>
-<li>looping, I/O files, modules, and database.</li>
-</ol>
-</li>
-<li>Data science fundamentals:<ol>
-<li>Experimental setup: <ol>
-<li>Importing and formatting data sets, </li>
-<li>Displaying data, </li>
-<li>Data pre-processing.</li>
-</ol>
-</li>
-<li>Introductory statistical analysis with Python: <ol>
-<li>Elementary statistics, randomness, sampling, probability distributions,</li>
-<li>Confidence intervals, hypothesis testing, and A/B testing.</li>
-</ol>
-</li>
-<li>Basic data analysis, visualization, and machine learning: <ol>
-<li>Data pre-processing, </li>
-<li>Supervised/unsupervised learning, </li>
-<li>Performance evaluation metrics.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-Outcomes:">Learning Outcomes:<a class="anchor-link" href="#Learning-Outcomes:">&#182;</a></h2><p>On completion of the course, students will have</p>
-<ul>
-<li>Created Python programs employing computational thinking concepts to</li>
-<li>Employed Python libraries relevant to data science.</li>
-<li>Downloaded data files from selected public sources and analyzed content.</li>
-<li>Created scripts to perform fundamental data analytics and basic visualization.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ABET-Student-Outcomes">ABET Student Outcomes<a class="anchor-link" href="#ABET-Student-Outcomes">&#182;</a></h2><ul>
-<li>Engineering:<ol>
-<li>An ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.</li>
-<li>An ability to acquire and apply new knowledge as needed, using appropriate learning strategies. </li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>Computer Science:</p>
-<ol>
-<li>Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions.  </li>
-<li>Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline.  </li>
-</ol>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Resources/Tools">Resources/Tools<a class="anchor-link" href="#Resources/Tools">&#182;</a></h2><h3 id="Platforms-for-Python-Programming-(for-your-own-computers)">Platforms for Python Programming (for your own computers)<a class="anchor-link" href="#Platforms-for-Python-Programming-(for-your-own-computers)">&#182;</a></h3><ol>
-<li><p>Anaconda platform <a href="https://www.anaconda.com/">https://www.anaconda.com/</a>: Anaconda distribution is an open-source Data Science Distribution Development Platform.  It includes Python 3 with over 1,500 data science packages making it easy to manage libraries and dependencies.  Available in Linux, Windows, and Mac OS X.</p>
-</li>
-<li><p>Jupyter <a href="https://jupyter.org/">https://jupyter.org/</a>: JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: Configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. <code>note</code> Anaconda for MacOS includes a JupyterLab instance, so a separate install is not required.</p>
-</li>
-</ol>
-<h3 id="Additional-Modules-for-Python-Programming">Additional Modules for Python Programming<a class="anchor-link" href="#Additional-Modules-for-Python-Programming">&#182;</a></h3><ol>
-<li>Math module <a href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a>: Gives access to the mathematical functions defined by the C standard e.g. factorial, gcd, exponential, logarithm. </li>
-<li>Operator module <a href="https://docs.python.org/3/library/operator.html">https://docs.python.org/3/library/operator.html</a>: Helps in exporting a set of efficient functions corresponding to the intrinsic operators of Python.  For example, the operator add(x,y) is equivalent to the expression x+y.</li>
-</ol>
-<h3 id="Python-Modules-for-Data-Science">Python Modules for Data Science<a class="anchor-link" href="#Python-Modules-for-Data-Science">&#182;</a></h3><ol>
-<li>Scipy module <a href="https://www.scipy.org/">https://www.scipy.org/</a>: A Python-based ecosystem of open-source software for mathematics, science, and engineering. Some of the core packages are:<ul>
-<li>Numpy: Provides n-dimensional array package</li>
-<li>Scipy: Fundamental for scientific computing (e.g. linear algorithm, optimization)</li>
-<li>Matplotlib: Visualizations/2D plotting</li>
-<li>IPython: Enhanced interactive console &lt;&lt;= this is the kernel used in JupyterLab</li>
-<li>Pandas: Data structures and data analysis</li>
-</ul>
-</li>
-<li>Scikit-learn module <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>: A library for machine learning in Python. It is a simple and efficient tool for predictive data analysis.  It is built on NumPy, SciPy, and matplotlib modules.</li>
-</ol>
-<h3 id="On-Line-Options">On-Line Options<a class="anchor-link" href="#On-Line-Options">&#182;</a></h3><ul>
-<li>AWS Lightsail Instance (use Windows Server 2000 template; lowest resource provision tier; AWS RDP client, or download and install own RDP client) <ol>
-<li>Then install Anaconda onto the AWS Instance</li>
-</ol>
-</li>
-</ul>
-<h3 id="Hardware-Requirements">Hardware Requirements<a class="anchor-link" href="#Hardware-Requirements">&#182;</a></h3><ul>
-<li>Minimal, in fact this syllabus was created using a JupyterLab notebook (as a markdown processor) on a Raspberry Pi 4B, which technically cannot support a JupyterHub, but does.  </li>
-<li>Your current laptop should be fine, or if you only have a chromebook, build an AWS instance.</li>
-</ul>
-<p>The college of engineering has specific laptop requirements for your other courses that are listed at <a href="https://www.depts.ttu.edu/coe/dean/engineeringitservices/buyingtherightcomputer.php">https://www.depts.ttu.edu/coe/dean/engineeringitservices/buyingtherightcomputer.php</a></p>
-<h3 id="Content-Server">Content Server<a class="anchor-link" href="#Content-Server">&#182;</a></h3><p>Blackboard is used as the learning management system (LMS) for this class, and it uses web links to a content server at <a href="http://54.243.252.9/engr-1330-webroot/">http://54.243.252.9/engr-1330-webroot/</a>  The Blackboard links will generally go directly to a section in the webroot, as do the internal links in the schedule, but feel free to explore by going in the front door!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Course-Schedule">Course Schedule<a class="anchor-link" href="#Course-Schedule">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-1-Introduction">Week 1 Introduction<a class="anchor-link" href="#Week-1-Introduction">&#182;</a></h3><hr>
-<p>(480 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson topics</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory topics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">24Aug21</td>
-<td style="text-align:left">Computational Thinking and Data Science <br> - Syllabus  <br> - Computational Thinking Principles <br> - Data Science Principles</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson00/ENGR-1330-Lesson00.html">Lesson 0</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00.html">Lab 0</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.html">Lab 0-HW</a></td>
-<td style="text-align:left">Setting up computational environment <br> - Setting a browser exception  <br> - Anaconda (PC/Mac) <br> - Anaconda on AWS</td>
-</tr>
-<tr>
-<td style="text-align:left">26Aug21</td>
-<td style="text-align:left">Problem Solving with Computational Thinking <br> - CT and programming as a problem solving process <br> - Attribution via CCMR</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson01/ENGR-1330-Lesson01.html">Lesson 1</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01.html">Lab 1</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.html">Lab 1-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab fundamentals <br> - Code cells <br> - Markdown cells <br> - Exporting to a pdf <br> - Resetting a notebook <br> - Troubleshoot hung kernel</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-2-Programming-Fundamentals">Week 2 Programming Fundamentals<a class="anchor-link" href="#Week-2-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(960 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">31Aug21</td>
-<td style="text-align:left">Fundamental Arithmetic <br> - Data Types <br> - Variables and Constants <br> - Simple Arithmetic</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson02/ENGR-1330-Lesson02.html">Lesson 2</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.html">Lab 2</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.html">Lab 2-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab arithmetic <br> - Variables, Naming <br> - Data Types <br> - Expressions <br> - Simple Input/Output</td>
-</tr>
-<tr>
-<td style="text-align:left">2Sep21</td>
-<td style="text-align:left">Data Structures <br> - lists, arrays, tuples, sets, dictionaries           <br> - Names, position, index, contents <br> - position keys</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson03/ENGR-1330-Lesson03.html">Lesson 3</a>  <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.html">Lab 3</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.html">Lab 3-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab lists <br> - Lists <br> - dictionaries <br> - using keys <br> - position indices</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-3-Programming-Fundamentals">Week 3 Programming Fundamentals<a class="anchor-link" href="#Week-3-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(1440 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">7Sep21</td>
-<td style="text-align:left">User interaction <br> - input() <br> - triple quotes <br> - string manipulation <br> - special characters</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson04/ENGR-1330-Lesson04.html">Lesson 4</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.html">Lab 4</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.html">Lab 4-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab I/O exercises <br> - input() <br> - type casting <br> - output formats <br> - concatenation to build output strings</td>
-</tr>
-<tr>
-<td style="text-align:left">9Sep21</td>
-<td style="text-align:left">Flow Control Structures <br> - Sequence <br> - Selection <br> - Repetition <br> - Loop structures <br> - Flowcharts; Psuedocode</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson05/ENGR-1330-Lesson05.html">Lesson 5</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05.html">Lab 5</a><br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.html">Lab 5-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab Sequence, Selection, and Loops <br> - FOR loops <br> - <strong>range()</strong> function <br> - WHILE loops <br> - Error trapping <strong>try ... except</strong> structure</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-4-Programming-Fundamentals">Week 4 Programming Fundamentals<a class="anchor-link" href="#Week-4-Programming-Fundamentals">&#182;</a></h3><hr>
-<p>(1920 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">14Sep21</td>
-<td style="text-align:left">Functions <br> - Intrinsic (core) <br> - Common external  <br> - User written <br> - Saving user written as a module</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson06/ENGR-1330-Lesson06.html">Lesson 6</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06.html">Lab 6</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06-TH.html">Lab 6-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab Functions <br> - import packages <br> - aliasing <br> - user defined <br> - save as a file for later import</td>
-</tr>
-<tr>
-<td style="text-align:left">16Sep21</td>
-<td style="text-align:left">Data Files <br> - open/read/close  <br> - open/write/close <br> - create/append/delete</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson07/ENGR-1330-Lesson07.html">Lesson 7</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html">Lab 7</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html">Lab 7-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-5-Matrices">Week 5 Matrices<a class="anchor-link" href="#Week-5-Matrices">&#182;</a></h3><hr>
-<p>(2400 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">21Sep21</td>
-<td style="text-align:left">Vectors and Matrices (as lists) <br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations <br> - Gaussian Reduction without Pivoting</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson08/ENGR-1330-Lesson08.html">Lesson 8</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08.html">Lab 8</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.html">Lab 8-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-<tr>
-<td style="text-align:left">23Sep21</td>
-<td style="text-align:left"><font color=red>**Exam 1** <br> - In class 25 multiple choice questions <br> - Take-home problems (48 hours to complete) <br> - Both supplied on Blackboard available 48 hour access window</font></td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">none</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-6-Matrices-using-NUMPY">Week 6 Matrices using NUMPY<a class="anchor-link" href="#Week-6-Matrices-using-NUMPY">&#182;</a></h3><hr>
-<p>(2880 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">28Sep21</td>
-<td style="text-align:left">Matrices using NUMPY<br> - Vector/Matrix Addition/Multipication(Inner Product) <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/ENGR-1330-Lesson09.html">Lesson 9</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Lab 9-HW</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-<tr>
-<td style="text-align:left">30Sep21</td>
-<td style="text-align:left">Database Concepts <br> - Records <br> - Fields <br> - Relational model <br> - Unique record identifier/Primary Key</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson10.html">Lesson 10</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab10/Lab10.html">Lab 10</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab10/Lab10-TH.html">Lab 10-HW</a></td>
-<td style="text-align:left">Flat-File Database <br> - Searching a list <br> - Sorting a list (without sort method)</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-7-Databases-using-PANDAS">Week 7 Databases using PANDAS<a class="anchor-link" href="#Week-7-Databases-using-PANDAS">&#182;</a></h3><hr>
-<p>(3660 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">5Oct21</td>
-<td style="text-align:left">Databases using PANDAS <br> - Create tables <br> – Examine/extract contents <br> - Functions on elements</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson11/ENGR-1330-Lesson11.html">Lesson 11</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11.html">Lab 11</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11-TH.html">Lab 11-HW</a></td>
-<td style="text-align:left">PANDAS Data frames: <br> - Create, index, summarize statistics <br> - fill and drop values <br> - read/write to file</td>
-</tr>
-<tr>
-<td style="text-align:left">7Oct21</td>
-<td style="text-align:left">Plotting <br> - Plot types <br> - Plot uses <br> - Graphing conventions</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson12/ENGR-1330-Lesson12.html">Lesson 12</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 12</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 12-HW</a></td>
-<td style="text-align:left">Plotting Exercises <br> - Graphing Conventions <br> - Intreperting Graphs</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-8-Visual-Display-of-Data-using-MATPLOTLIB">Week 8 Visual Display of Data using MATPLOTLIB<a class="anchor-link" href="#Week-8-Visual-Display-of-Data-using-MATPLOTLIB">&#182;</a></h3><hr>
-<p>(3840 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">12Oct21</td>
-<td style="text-align:left">MATPLOTLIB package <br> - line plots <br> - scattergrams <br> - decorators</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson13/ENGR-1330-Lesson13.html">Lesson 13</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab13/Lab13.html">Lab 13</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab13/Lab13-TH.html">Lab 13-HW</a></td>
-<td style="text-align:left">MATPLOTLIB Exercises <br> - Graphing Conventions <br> - Data Display for line charts, bar charts,<br> - box plot, scatter plot, and histograms</td>
-</tr>
-<tr>
-<td style="text-align:left">14Oct21</td>
-<td style="text-align:left">Correlation,Causality, Randomness, and Probability <br> - Correlation compared to cause-effect <br> - Probability rules <br> - Conditional probabilities</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson14/ENGR-1330-Lesson14.html">Lesson 14</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14.html">Lab 14</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14-TH.html">Lab 14-HW</a></td>
-<td style="text-align:left">Classical Gambling Simulations <br> - Dice <br> - Russian Roulette <br> - Monte Hall Simulation</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-9-Data-Description">Week 9 Data Description<a class="anchor-link" href="#Week-9-Data-Description">&#182;</a></h3><hr>
-<p>(4320 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">19Oct21</td>
-<td style="text-align:left">Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson15/ENGR-1330-Lesson15.html">Lesson 15</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab15/Lab15.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab15/Lab15-TH.html">Lab 15-HW</a></td>
-<td style="text-align:left">iPython Descriptive Statistics <br> - Using SCIPY.STATS <br> - Using PANDAS <br> - Visualizing Results</td>
-</tr>
-<tr>
-<td style="text-align:left">21Oct21</td>
-<td style="text-align:left"><font color=red>**Exam 2** <br> - In class 25 multiple choice questions <br> - Take-home problems (48 hours to complete) <br> - Both supplied on Blackboard available 48 hour access window</font></td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">none</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-10-Data-Models-and-Decisions">Week 10 Data Models and Decisions<a class="anchor-link" href="#Week-10-Data-Models-and-Decisions">&#182;</a></h3><hr>
-<p>(4800 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">26Oct21</td>
-<td style="text-align:left">Comparing two (or more) collections of observations <br> - Histograms <br> - Hypothesis Tests</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson16/ENGR-1330-Lesson16.html">Lesson 16</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab16/Lab16-Part1-FullNarrative.html">Lab 16</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab16/Lab16-Part1-FullNarrative.html">Lab 16-HW</a></td>
-<td style="text-align:left">Hypothesis testing exercises <br> - Comparing sample means <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)</td>
-</tr>
-<tr>
-<td style="text-align:left">28Oct21</td>
-<td style="text-align:left">Testing for treatment effects <br> - A/B Testing</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson17/ENGR-1330-2021-3-Lesson17.html">Lesson 17</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html">Lab 17-HW</a></td>
-<td style="text-align:left">Hypothesis (A/B) testing exercises <br> - Comparing proportions</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-11-Prediction-Engines">Week 11 Prediction Engines<a class="anchor-link" href="#Week-11-Prediction-Engines">&#182;</a></h3><hr>
-<p>(5280 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2Nov21</td>
-<td style="text-align:left">Interval Estimates <br> - Bootstrap <br> - Prediction intervals <br> - Parameter intervals</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson18/ENGR-1330-Lesson18.html">Lesson 18</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18.html">Lab 18</a><br></td>
-<td style="text-align:left">Interval Estimates Exercises <br> - Confidence interval concept <br> - Bootstrap simulations</td>
-</tr>
-<tr>
-<td style="text-align:left">4Nov21</td>
-<td style="text-align:left">Regression Models <br> - Linear regression <br> - Ordinary Least Squares <br> - Design matrix</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson19/ENGR-1330-Lesson19.html">Lesson 19</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19.html">Lab 19</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19-TH.html">Lab 19-HW</a></td>
-<td style="text-align:left">Applications of OLS <br>- linear <br> - polynomial using multiple linear regression</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-12-Prediction-Engines">Week 12 Prediction Engines<a class="anchor-link" href="#Week-12-Prediction-Engines">&#182;</a></h3><hr>
-<p>(5760 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">9Nov21</td>
-<td style="text-align:left">Regression Models <br> - Parameter interval estimates <br> - Prediction interval estimates <br></td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson20/ENGR-1330-Lesson20.html">Lesson 20</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20.html">Lab 20</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab12-TH.html">Lab 20-HW</a></td>
-<td style="text-align:left">Applications of OLS <br> - linear <br> - parameter interval estimates <br> - prediction interval estimates</td>
-</tr>
-<tr>
-<td style="text-align:left">11Nov21</td>
-<td style="text-align:left">Probability Estimation Modeling <br> – Order statistics (plotting positions)  <br> - Histograms <br> - Visual assessment of Fit</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson21.html">Lesson 21</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.html">Lab 21</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.html">Lab 21-HW</a></td>
-<td style="text-align:left">Applications <br> - Precipation  <br> - Discharge <br> - Income</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-13-Classification-Engines">Week 13 Classification Engines<a class="anchor-link" href="#Week-13-Classification-Engines">&#182;</a></h3><hr>
-<p>(6240 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">16Nov21</td>
-<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 22</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 22</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 22-HW</a></td>
-<td style="text-align:left">Logistic Regression Applications <br> - Odor in a Bayou <br> - Solids in Construction Site Runoff <br></td>
-</tr>
-<tr>
-<td style="text-align:left">18Nov21</td>
-<td style="text-align:left"><font color=red>**Exam 3** <br> - In class 25 multiple choice questions <br> - Take-home problems (48 hours to complete) <br> - Both supplied on Blackboard available 48 hour access window</font></td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">none</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Week-14/15-Classification-and-Wrap-Up">Week 14/15 Classification and Wrap-Up<a class="anchor-link" href="#Week-14/15-Classification-and-Wrap-Up">&#182;</a></h3><hr>
-<p>(6720 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">23Nov21</td>
-<td style="text-align:left">K Nearest Neighbor Classification <br> - Concept of distance <br> - Training (a model fitting analog)<br> - Confusion matrix, precision, recall, accuracy, F-score<br> - Making decisions</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 23</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 23-HW</a></td>
-<td style="text-align:left">semester project workshop</td>
-</tr>
-<tr>
-<td style="text-align:left">30Nov21</td>
-<td style="text-align:left">Project Presentations <br> - 5 minute per team <br> - Present as a progress report</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">semester project workshop</td>
-</tr>
-</tbody>
-</table>
-<p><font color=red>**Project Report Due 6 Dec 2021**</font></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Course-Assessment-and-Grading-Criteria:">Course Assessment and Grading Criteria:<a class="anchor-link" href="#Course-Assessment-and-Grading-Criteria:">&#182;</a></h2><p>There will be three exams and one comprehensive final project for this course.</p>
-<p>In addition, lab notebooks, quizzes, and homework assignments also contribute to the final grade.<br>
-<strong>Late</strong> assignments will not be scored.</p>
-<p>Grades will be based on the following components; weighting is approximate:</p>
-<table>
-<thead><tr>
-<th>Assessment Instrument</th>
-<th style="text-align:right">Weight(%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Exam-1</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Exam-2</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Exam-3</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Lab Notebooks &amp; Homework</td>
-<td style="text-align:right">30</td>
-</tr>
-<tr>
-<td>Quizzes</td>
-<td style="text-align:right">15</td>
-</tr>
-<tr>
-<td>Final project</td>
-<td style="text-align:right">10</td>
-</tr>
-<tr>
-<td>Overall total</td>
-<td style="text-align:right">100</td>
-</tr>
-</tbody>
-</table>
-<p>Letter grades will be assigned using the following proportions:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Normalized Score Range</th>
-<th style="text-align:right">Letter Grade</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">≥ 90</td>
-<td style="text-align:right">A</td>
-</tr>
-<tr>
-<td style="text-align:left">80-89</td>
-<td style="text-align:right">B</td>
-</tr>
-<tr>
-<td style="text-align:left">70-79</td>
-<td style="text-align:right">C</td>
-</tr>
-<tr>
-<td style="text-align:left">55-69</td>
-<td style="text-align:right">D</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt; 55</td>
-<td style="text-align:right">F</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Classroom-Policy:">Classroom Policy:<a class="anchor-link" href="#Classroom-Policy:">&#182;</a></h2><p>The following activities are not allowed in the classroom: Texting or talking on the cellphone or other electronic devices, and reading non-course related materials.</p>
-<h3 id="Telepresence-(On-line)-Laboratory/Courses">Telepresence (On-line) Laboratory/Courses<a class="anchor-link" href="#Telepresence-(On-line)-Laboratory/Courses">&#182;</a></h3><p>Obviously electronic devices are vital; disrupting the conference is prohibited, please mute your microphone unless you have a question - consider typing your question into the chat window as well. Be aware of bandwidth issues and remember most lessons and laboratory sessions are recorded and posted on youtube.  Recording, editing, and rendering takes awhile, so expect 24-36 hour delay before video is available. Sometimes video capture fails and there will be missing audio and/or missing video.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Textbook-Resources">Textbook Resources<a class="anchor-link" href="#Textbook-Resources">&#182;</a></h1><p><a href="https://inferentialthinking.com/chapters/15/Prediction.html">https://inferentialthinking.com/chapters/15/Prediction.html</a></p>
+<p>You know the URL that no-one reads, perhaps because there is a "secret" module you need to install, without instructions of how!</p>
 <hr>
-<h2 id="ADA-Statement:">ADA Statement:<a class="anchor-link" href="#ADA-Statement:">&#182;</a></h2><p>Any student who, because of a disability, may require special arrangements in order to meet the course requirements should contact the instructor as soon as possible to make necessary arrangements.  Students must present appropriate verification from Student Disability Services during the instructor's office hours.  Please note that instructors are not allowed to provide classroom accommodation to a student until appropriate verification from Student Disability Services has been provided.  For additional information, please contact Student Disability Services 
-office in 335 West Hall or call 806.742.2405.</p>
-<h2 id="Academic-Integrity-Statement:">Academic Integrity Statement:<a class="anchor-link" href="#Academic-Integrity-Statement:">&#182;</a></h2><p>Academic integrity is taking responsibility for one’s own class and/or course work, being individually accountable, and demonstrating intellectual honesty and ethical behavior.  Academic integrity is a personal choice to abide by the standards of intellectual honesty and responsibility.  Because education is a shared effort to achieve learning through the exchange of ideas, students, faculty, and staff have the collective responsibility to build mutual trust and respect.  Ethical behavior and independent thought are essential for the highest level of academic achievement, which then must be measured.  Academic achievement includes scholarship, teaching, and learning, all of which are shared endeavors.  Grades are a device used to quantify the successful accumulation of knowledge through learning.  Adhering to the standards of academic integrity ensures grades are earned honestly.  Academic integrity is the foundation upon which students, faculty, and staff build their educational and professional careers.  [Texas Tech University (“University”) Quality Enhancement Plan, Academic Integrity Task Force, 2010].</p>
-<h2 id="Religious-Holy-Day-Statement:">Religious Holy Day Statement:<a class="anchor-link" href="#Religious-Holy-Day-Statement:">&#182;</a></h2><p>“Religious holy day” means a holy day observed by a religion whose places of worship are exempt from property taxation under Texas Tax Code §11.20.  A student who intends to observe a religious holy day should make that intention known to the instructor prior to the absence.  A student who is absent from classes for the observance of a religious holy day shall be allowed to take an examination or complete an assignment scheduled for that day within a reasonable time after the absence.  A student who is excused may not be penalized for the absence; however, the instructor may respond appropriately if the student fails to complete the assignment satisfactorily.</p>
-<hr>
-<p><strong>DISCRIMINATION, HARASSMENT, AND SEXUAL VIOLENCE STATEMENT:</strong>
-Texas Tech University is committed to providing and strengthening an educational, working, and living environment where students, faculty, staff, and visitors are free from gender and/or sex discrimination of any kind. Sexual assault, discrimination, harassment, and other Title IX violations are not tolerated by the University. Report any incidents to the Office for Student Rights &amp; Resolution, (806)-742-SAFE (7233) or file a report online at titleix.ttu.edu/students. Faculty and staff members at TTU are committed to connecting you to resources on campus. Some of these available resources are: TTU Student Counseling Center, 806- 742-3674, <a href="https://www.depts.ttu.edu/scc/(Provides">https://www.depts.ttu.edu/scc/(Provides</a> confidential support on campus.) TTU 24-hour Crisis Helpline, 806-742-5555, (Assists students who are experiencing a mental health or interpersonal violence crisis. If you call the helpline, you will speak with a mental health counselor.) Voice of Hope Lubbock Rape Crisis Center, 806-763-7273, voiceofhopelubbock.org (24-hour hotline that provides support for survivors of sexual violence.) The Risk, Intervention, Safety and Education (RISE) Office, 806-742-2110,  <a href="https://www.depts.ttu.edu/rise/">https://www.depts.ttu.edu/rise/</a> (Provides a range of resources and support options focused on prevention education and student wellness.) Texas Tech Police Department, 806-742- 3931,<a href="http://www.depts.ttu.edu/ttpd/">http://www.depts.ttu.edu/ttpd/</a> (To report criminal activity that occurs on or near Texas Tech campus.)</p>
-<p><strong>CIVILITY IN THE CLASSROOM STATEMENT:</strong>
-Texas Tech University is a community of faculty, students, and staff that enjoys an expectation of cooperation, professionalism, and civility during the conduct of all forms of university business, including the conduct of student–student and student–faculty interactions in and out of the classroom. Further, the classroom is a setting in which an exchange of ideas and creative thinking should be encouraged and where intellectual growth and development are fostered. Students who disrupt this classroom mission by rude, sarcastic, threatening, abusive or obscene language and/or behavior will be subject to appropriate sanctions according to university policy. Likewise, faculty members are expected to maintain the highest standards of professionalism in all interactions with all constituents of the university.
-To ensure that you are fully engaged in class discussions and account team meetings during class time, you are expected to do the following:</p>
-<ul>
-<li>Maintain the same level of civility and professionalism that would be expected in a face-to-face classroom setting.</li>
-<li>Attend all classes regularly.</li>
-<li>Log into the video conference on time and remain logged in for the duration of the class period.</li>
-<li>Activate your camera so that you are visible to the instructor and other students in the class. If you have concerns about leaving your camera on (such as childcare obligations, privacy issues, or a particular circumstance during a class period), please talk to the instructor.</li>
-<li>Refrain from engaging in non-class related activities during class time that create a distraction for other students in the class and/or limit your ability to engage in the course.
-Failure to meet these expectations may result in the following consequences:</li>
-</ul>
-<ol>
-<li>Being counted as absent for the class meeting.</li>
-<li>Not receiving credit for class participation for that class period.</li>
-<li>Other consequences as stipulated in the syllabus, Texas Tech Code of Student Conduct, or other university policy.
-Repeated failure to meet expectations (e.g., attendance, participation in class, etc.), in addition to the above consequences, may result in the one or more of the following consequences:</li>
-<li>Referral to the appropriate Associate Dean.</li>
-<li>Academic penalty, ranging from a warning to failure of the course.
-(www.depts.ttu.edu/ethics/matadorchallenge/ethicalprinciples.php).</li>
-</ol>
-<p><strong>LGBTQIA SUPPORT STATEMENT:</strong>
-I identify as an ally to the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community, and I am available to listen and support you in an affirming manner. I can assist in connecting you with resources on campus to address problems you may face pertaining to sexual orientation and/or gender identity that could interfere with your success at Texas Tech. Please note that additional resources are available through the Office of LGBTQIA within the Center for Campus Life, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433.”</p>
-<p>Office of LGBTQIA, Student Union Building Room 201, www.lgbtqia.ttu.edu, 806.742.5433
-Within the Center for Campus Life, the Office serves the Texas Tech community through facilitation and leadership of programming and advocacy efforts. This work is aimed at strengthening the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community and sustaining an inclusive campus that welcomes people of all sexual orientations, gender identities, and gender expressions.</p>
+
+
+<h1 id="An-example-of-Multiple-Linear-Regression">An example of Multiple Linear Regression<a class="anchor-link" href="#An-example-of-Multiple-Linear-Regression">&#182;</a></h1><p>As an example consider EcommerceCustomers and the effect, if any, of advertising.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ecom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;EcommerceCustomers.csv&quot;</span><span class="p">)</span> <span class="c1"># Read the file as a .CSV assign to a dataframe evapdf</span>
+<span class="n">ecom</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># check structure</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Avatar</th>
+      <th>Avg. Session Length</th>
+      <th>Time on App</th>
+      <th>Time on Website</th>
+      <th>Length of Membership</th>
+      <th>Yearly Amount Spent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mstephenson@fernandez.com</td>
+      <td>835 Frank Tunnel\nWrightmouth, MI 82180-9605</td>
+      <td>Violet</td>
+      <td>34.497268</td>
+      <td>12.655651</td>
+      <td>39.577668</td>
+      <td>4.082621</td>
+      <td>587.951054</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>hduke@hotmail.com</td>
+      <td>4547 Archer Common\nDiazchester, CA 06566-8576</td>
+      <td>DarkGreen</td>
+      <td>31.926272</td>
+      <td>11.109461</td>
+      <td>37.268959</td>
+      <td>2.664034</td>
+      <td>392.204933</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pallen@yahoo.com</td>
+      <td>24645 Valerie Unions Suite 582\nCobbborough, D...</td>
+      <td>Bisque</td>
+      <td>33.000915</td>
+      <td>11.330278</td>
+      <td>37.110597</td>
+      <td>4.104543</td>
+      <td>487.547505</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>riverarebecca@gmail.com</td>
+      <td>1414 David Throughway\nPort Jason, OH 22070-1220</td>
+      <td>SaddleBrown</td>
+      <td>34.305557</td>
+      <td>13.717514</td>
+      <td>36.721283</td>
+      <td>3.120179</td>
+      <td>581.852344</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mstephens@davidson-herman.com</td>
+      <td>14023 Rodriguez Passage\nPort Jacobville, PR 3...</td>
+      <td>MediumAquaMarine</td>
+      <td>33.330673</td>
+      <td>12.795189</td>
+      <td>37.536653</td>
+      <td>4.446308</td>
+      <td>599.406092</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">advrt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;advertisingB.csv&quot;</span><span class="p">)</span> <span class="c1"># Read the file as a .CSV assign to a dataframe </span>
+<span class="n">advrt</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># check structure</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Daily Time Spent on Site</th>
+      <th>Age</th>
+      <th>Area Income</th>
+      <th>Daily Internet Usage</th>
+      <th>Ad Topic Line</th>
+      <th>City</th>
+      <th>Male</th>
+      <th>Country</th>
+      <th>Timestamp</th>
+      <th>Clicked on Ad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>68.95</td>
+      <td>35</td>
+      <td>61833.90</td>
+      <td>256.09</td>
+      <td>Cloned 5thgeneration orchestration</td>
+      <td>Wrightburgh</td>
+      <td>0</td>
+      <td>Tunisia</td>
+      <td>2016-03-27 00:53:11</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>80.23</td>
+      <td>31</td>
+      <td>68441.85</td>
+      <td>193.77</td>
+      <td>Monitored national standardization</td>
+      <td>West Jodi</td>
+      <td>1</td>
+      <td>Nauru</td>
+      <td>2016-04-04 01:39:02</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>69.47</td>
+      <td>26</td>
+      <td>59785.94</td>
+      <td>236.50</td>
+      <td>Organic bottom-line service-desk</td>
+      <td>Davidton</td>
+      <td>0</td>
+      <td>San Marino</td>
+      <td>2016-03-13 20:35:42</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>74.15</td>
+      <td>29</td>
+      <td>54806.18</td>
+      <td>245.89</td>
+      <td>Triple-buffered reciprocal time-frame</td>
+      <td>West Terrifurt</td>
+      <td>1</td>
+      <td>Italy</td>
+      <td>2016-01-10 02:31:19</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>68.37</td>
+      <td>35</td>
+      <td>73889.99</td>
+      <td>225.58</td>
+      <td>Robust logistical utilization</td>
+      <td>South Manuel</td>
+      <td>0</td>
+      <td>Iceland</td>
+      <td>2016-06-03 03:36:18</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">A</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
+          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span>
+
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="c1">#    print (x)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">matrixvectormult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">xvector</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+    <span class="n">bvector</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">xvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">bvector</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">apptime</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Time on App&quot;</span><span class="p">]</span>
+<span class="n">seslen</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Avg. Session Length&quot;</span><span class="p">]</span>
+<span class="n">memlen</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Length of Membership&quot;</span><span class="p">]</span>
+<span class="n">webtime</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Time on Website&quot;</span><span class="p">]</span>
+<span class="n">moneyshot</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Yearly Amount Spent&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">colNum</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">rowNum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">moneyshot</span><span class="p">)</span>
+<span class="n">excitation_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNum</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNum</span><span class="p">)]</span>
+<span class="c1">#result_matrix = [[0 for j in range(colNumB)] for i in range(rowNumA)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNum</span><span class="p">):</span>
+    <span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">apptime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">seslen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="n">memlen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="n">webtime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="c1"># observe the triple for-loop structure and the counting scheme</span>
+<span class="n">xt_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNum</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNum</span><span class="p">)]</span> <span class="c1">#transpose the matrix</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNum</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNum</span><span class="p">):</span>
+        <span class="n">xt_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">excitation_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># a == transpose(excitation_matrix)</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="n">rowNum</span> 
+<span class="n">rowNumB</span> <span class="o">=</span> <span class="n">rowNum</span>
+<span class="n">colNumB</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># b == excitation_matrix</span>
+<span class="n">xtx_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumB</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+            <span class="n">xtx_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">xtx_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">xt_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">excitation_matrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="c1"># observe the triple for-loop structure and the counting scheme</span>
+<span class="n">xty_vector</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xty_vector</span> <span class="o">=</span> <span class="n">matrixvectormult</span><span class="p">(</span><span class="n">xt_matrix</span><span class="p">,</span><span class="n">moneyshot</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># copy amatrix into cmatrix</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">xtx_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumB</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dvector</span> <span class="o">=</span> <span class="p">[</span><span class="n">xty_vector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+
+<span class="n">dvector</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">xtx_matrix</span><span class="p">,</span><span class="n">xty_vector</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dvector</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[-1051.5942552997137,
+ 38.709153810827736,
+ 25.734271084677594,
+ 61.57732375487672,
+ 0.4367388355965311]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">moneyShot</span><span class="p">(</span><span class="n">app_time</span><span class="p">,</span><span class="n">session_length</span><span class="p">,</span><span class="n">member_length</span><span class="p">,</span><span class="n">website_time</span><span class="p">):</span>
+    <span class="n">moneyShot</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1051.5942552997137</span><span class="o">+</span><span class="mf">38.709153810827736</span><span class="o">*</span><span class="n">app_time</span><span class="o">+</span><span class="mf">25.734271084677594</span><span class="o">*</span><span class="n">session_length</span><span class="o">+</span><span class="mf">61.57732375487672</span><span class="o">*</span><span class="n">member_length</span><span class="o">+</span><span class="mf">0.4367388355965311</span><span class="o">*</span><span class="n">website_time</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">moneyShot</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predicted_spend</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">webtime</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">avgtim</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Time on App&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">avgses</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Avg. Session Length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">avgmem</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Length of Membership&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">avgweb</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Time on Website&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">varweb</span><span class="o">=</span><span class="n">ecom</span><span class="p">[</span><span class="s2">&quot;Time on Website&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">low</span> <span class="o">=</span> <span class="n">avgweb</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">varweb</span>
+<span class="n">high</span> <span class="o">=</span> <span class="n">avgweb</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">varweb</span>
+<span class="n">hilo</span> <span class="o">=</span> <span class="n">high</span> <span class="o">-</span> <span class="n">low</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">wtime</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">hilo</span><span class="o">/</span><span class="mf">100.</span>
+    <span class="n">webtime</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wtime</span><span class="p">)</span>
+    <span class="n">predicted_spend</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">moneyShot</span><span class="p">(</span><span class="n">avgtim</span><span class="p">,</span><span class="n">avgses</span><span class="p">,</span><span class="n">avgmem</span><span class="p">,</span><span class="n">wtime</span><span class="p">))</span>
+    
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">webtime</span><span class="p">,</span><span class="n">predicted_spend</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time on Website - minutes&#39;</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Customer Annual Spend &#39;</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time on Website - minutes&#39;</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spend versus Time on Website &#39;</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># In class - add other components; examine apparent slope</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Weighted-Least-Squares">Weighted Least Squares<a class="anchor-link" href="#Weighted-Least-Squares">&#182;</a></h1><p><a href="https://scipython.com/book/chapter-8-scipy/examples/weighted-and-non-weighted-least-squares-fitting/">https://scipython.com/book/chapter-8-scipy/examples/weighted-and-non-weighted-least-squares-fitting/</a></p>
+<p>Consider our last lesson where we used linear algebra to construct OLS regressions</p>
+<p>$\mathbf{X^T}\mathbf{Y}=\mathbf{X^T}\mathbf{X}\mathbf{\beta}$</p>
+<p>If we were to insert an identy matrix (1s on the diagonal, 0s elsewhere) we could write:</p>
+<p>$\mathbf{X^T}\mathbf{I}\mathbf{Y}=\mathbf{X^T}\mathbf{I}\mathbf{X}\mathbf{\beta}$  and there is no change.</p>
 
 </div>
 </div>
@@ -13921,7 +13697,293 @@ Within the Center for Campus Life, the Office serves the Texas Tech community th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ethical-Conduct-Addendum:">Ethical Conduct Addendum:<a class="anchor-link" href="#Ethical-Conduct-Addendum:">&#182;</a></h2><p>Cheating is prohibited, and the representation of the work of another person as your own will be reported to Office of Student Services for further investigation and sanctions as appropriate.</p>
+<p><a href="https://www.statsmodels.org/0.6.1/examples/notebooks/generated/wls.html">https://www.statsmodels.org/0.6.1/examples/notebooks/generated/wls.html</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># copy/adapted from https://www.statsmodels.org/0.6.1/examples/notebooks/generated/wls.html</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="kn">import</span> <span class="n">wls_prediction_std</span>
+<span class="kn">from</span> <span class="nn">statsmodels.iolib.table</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SimpleTable</span><span class="p">,</span> <span class="n">default_txt_fmt</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nsample</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">nsample</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">]</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nsample</span><span class="p">)</span>
+<span class="n">w</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">nsample</span> <span class="o">*</span> <span class="mi">6</span><span class="o">/</span><span class="mi">10</span><span class="p">):]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">nsample</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">+</span> <span class="n">sig</span> <span class="o">*</span> <span class="n">w</span> <span class="o">*</span> <span class="n">e</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mod_wls</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">WLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="n">w</span><span class="p">)</span>
+<span class="n">res_wls</span> <span class="o">=</span> <span class="n">mod_wls</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res_wls</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                            WLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.910
+Model:                            WLS   Adj. R-squared:                  0.909
+Method:                 Least Squares   F-statistic:                     487.9
+Date:                Tue, 06 Apr 2021   Prob (F-statistic):           8.52e-27
+Time:                        14:18:07   Log-Likelihood:                -57.048
+No. Observations:                  50   AIC:                             118.1
+Df Residuals:                      48   BIC:                             121.9
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          5.2726      0.185     28.488      0.000       4.900       5.645
+x1             0.4379      0.020     22.088      0.000       0.398       0.478
+==============================================================================
+Omnibus:                        5.040   Durbin-Watson:                   2.242
+Prob(Omnibus):                  0.080   Jarque-Bera (JB):                6.431
+Skew:                           0.024   Prob(JB):                       0.0401
+Kurtosis:                       4.756   Cond. No.                         17.0
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res_ols</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res_ols</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res_wls</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[5.24256099 0.43486879]
+[5.27260714 0.43794441]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">covb</span> <span class="o">=</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">cov_params</span><span class="p">()</span>
+<span class="n">prediction_var</span> <span class="o">=</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">mse_resid</span> <span class="o">+</span> <span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">covb</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">prediction_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">prediction_var</span><span class="p">)</span>
+<span class="n">tppf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">df_resid</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prstd_ols</span><span class="p">,</span> <span class="n">iv_l_ols</span><span class="p">,</span> <span class="n">iv_u_ols</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">res_ols</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">res_wls</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<span class="c1"># OLS</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_u_ols</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OLS&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_l_ols</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="c1"># WLS</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">res_wls</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;g--.&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_u</span><span class="p">,</span> <span class="s1">&#39;g--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WLS&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="s1">&#39;g--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">resid1</span> <span class="o">=</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">resid</span><span class="p">[</span><span class="n">w</span><span class="o">==</span><span class="mf">1.</span><span class="p">]</span>
+<span class="n">var1</span> <span class="o">=</span> <span class="n">resid1</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">res_ols</span><span class="o">.</span><span class="n">df_model</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">resid2</span> <span class="o">=</span> <span class="n">res_ols</span><span class="o">.</span><span class="n">resid</span><span class="p">[</span><span class="n">w</span><span class="o">!=</span><span class="mf">1.</span><span class="p">]</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="n">resid2</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">res_ols</span><span class="o">.</span><span class="n">df_model</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">w_est</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">w_est</span><span class="p">[</span><span class="n">w</span><span class="o">!=</span><span class="mf">1.</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+<span class="n">res_fwls</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">WLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="n">w_est</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res_fwls</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                            WLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.841
+Model:                            WLS   Adj. R-squared:                  0.838
+Method:                 Least Squares   F-statistic:                     253.8
+Date:                Thu, 05 Nov 2020   Prob (F-statistic):           8.51e-21
+Time:                        13:07:55   Log-Likelihood:                -74.830
+No. Observations:                  50   AIC:                             153.7
+Df Residuals:                      48   BIC:                             157.5
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          5.0946      0.267     19.052      0.000       4.557       5.632
+x1             0.4484      0.028     15.933      0.000       0.392       0.505
+==============================================================================
+Omnibus:                       14.163   Durbin-Watson:                   1.358
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               15.559
+Skew:                          -1.145   Prob(JB):                     0.000418
+Kurtosis:                       4.492   Cond. No.                         17.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://en.wikipedia.org/wiki/Weighted_least_squares">https://en.wikipedia.org/wiki/Weighted_least_squares</a></p>
+<p><a href="https://scipython.com/book/chapter-8-scipy/examples/weighted-and-non-weighted-least-squares-fitting/">https://scipython.com/book/chapter-8-scipy/examples/weighted-and-non-weighted-least-squares-fitting/</a></p>
 
 </div>
 </div>
