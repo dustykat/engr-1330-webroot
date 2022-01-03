@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+#- file: markdown
+#- file: notebooks
+- file: lessons/lesson00/lesson00
+- file: lessons/lesson01 # problem solving
+- file: lessons/lesson02 # expressions
+- file: lessons/lesson03 # data types
+- file: lessons/lesson04 # variables
+- file: lessons/lesson05 # mutable structures
+- file: lessons/lesson06 # immutable structures
+- file: lessons/lesson07 # input()
+- file: lessons/lesson08 # building blocks
+- file: lessons/lesson09 # sequence
+- file: lessons/lesson10 # selection
+- file: lessons/lesson11 # repetition (count control)
+- file: lessons/lesson12 # repetition (sentinel control)
+- file: lessons/lesson13 # functions
+- file: lessons/lesson14 # external modules
+- file: lessons/lesson15 # files
+- file: lessons/lesson16 # more files
+- file: lessons/lesson17 # matrices
+- file: lessons/lesson18 # matrices in numpy
+- file: lessons/lesson19 # database
+- file: lessons/lesson20 # pandas
+- file: lessons/lesson21 # visual display of data
+- file: lessons/lesson22 # matplotlib
+- file: lessons/lesson23 # data models
+#
+- file: lessons/lesson35 # logistic regression
+- file: lessons/lesson36 # logistic regression
+- file: lessons/lesson37 # knn classification
+- file: lessons/lesson38 # knn classification

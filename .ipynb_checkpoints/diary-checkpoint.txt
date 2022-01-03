@@ -3,4 +3,8 @@
           - 54.243.252.9 (AWS http)
           - 3.137.111.182 (AWS https)
           
+2022-0103 update remote, update to 3X/week, start jbook format
+          - 192.168.1.75 (raspberry pi at home)
+          - 54.243.252.9 (AWS http)
           
+          ** attempt GitHub update and push/pull
