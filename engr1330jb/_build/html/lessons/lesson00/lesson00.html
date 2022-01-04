@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 0 Introduction: &#8212; ENGR 1330 Course Notes (Cleveland)</title>
+    <title>Introduction: &#8212; ENGR 1330 Course Notes (Cleveland)</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 1 Data Science and Problem Solving:" href="../lesson01.html" />
+    <link rel="next" title="Lesson 1 Data Science and Problem Solving:" href="../lesson01/lesson01.html" />
     <link rel="prev" title="Welcome to ENGR 1330 (Cleveland)" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,11 +96,11 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 0 Introduction:
+   Introduction:
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson01.html">
+  <a class="reference internal" href="../lesson01/lesson01.html">
    Lesson 1 Data Science and Problem Solving:
   </a>
  </li>
@@ -206,8 +206,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson21.html">
-   Lesson 21: Visual display of data
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21. Visual display of data
   </a>
  </li>
  <li class="toctree-l1">
@@ -357,10 +357,47 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-content">
+   Course Content
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computational-thinking-and-data-science">
    Computational Thinking and Data Science
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ct-foundations">
+     CT Foundations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decomposition">
+       Decomposition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pattern-recognition">
+       Pattern Recognition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abstraction">
+       Abstraction
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithms">
+       Algorithms
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#system-integration-implementation">
+       System Integration (implementation)
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-data-science">
      <em>
@@ -514,16 +551,107 @@
     <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="lesson-0-introduction">
-<h1>Lesson 0 Introduction:<a class="headerlink" href="#lesson-0-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction:<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Introduction to Course and Web-enabled content</p></li>
 <li><p>Computational thinking concepts</p></li>
 <li><p>JupyterLab Environment for ENGR 1330</p></li>
 </ul>
+<hr class="docutils" />
+<div class="section" id="course-content">
+<h2>Course Content<a class="headerlink" href="#course-content" title="Permalink to this headline">¶</a></h2>
+<p>The course content is hosted at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/">http://54.243.252.9/engr-1330-webroot/</a>.  Direct access is not the intended way to get the content, as the web-site is comparatively unstructured.  Instead use the links in the syllabus located at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html">http://54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html</a> .</p>
+</div>
+<hr class="docutils" />
 <div class="section" id="computational-thinking-and-data-science">
 <h2>Computational Thinking and Data Science<a class="headerlink" href="#computational-thinking-and-data-science" title="Permalink to this headline">¶</a></h2>
+<p>Computational thinking (CT) refers to the thought processes involved in expressing solutions as computational steps or algorithms that can be carried out by a computer. Data science is one of several applications of CT.</p>
+<p>Much of what follows is borrowed from (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696102/</a>).</p>
+<p>Computational thinking is taking an approach to solving problems, designing systems and understanding human behaviour that draws on concepts fundamental to computing (<a class="reference external" href="http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">http://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf</a>).</p>
+<p>Computational thinking is a kind of analytical thinking:</p>
+<ul class="simple">
+<li><p>It shares with mathematical thinking in the general ways in which we might approach solving a problem.</p></li>
+<li><p>It shares with engineering thinking in the general ways in which we might approach designing and evaluating a large, complex system that operates within the constraints of the real world. - It shares with scientific thinking in the general ways in which we might approach understanding computability, intelligence, the mind and human behaviour.</p></li>
+</ul>
+<p>The essence of computational thinking is <strong>abstraction</strong> and <strong>automation</strong>.
+In computing, we abstract notions beyond the physical dimensions of time and space. Our abstractions are extremely general because they are symbolic, where numeric abstractions are just a special case.</p>
+<div class="section" id="ct-foundations">
+<h3>CT Foundations<a class="headerlink" href="#ct-foundations" title="Permalink to this headline">¶</a></h3>
+<p>CT is literally a process for breaking down a problem into smaller parts, looking for patterns in the problems, identifying what kind of information is needed, developing a step-by-step solution, and implementing that solution.</p>
+<ol class="simple">
+<li><p>Decomposition</p></li>
+<li><p>Pattern Recognition</p></li>
+<li><p>Abstraction</p></li>
+<li><p>Algorithms</p></li>
+<li><p>System Integration (implementation)</p></li>
+</ol>
+<div class="section" id="decomposition">
+<h4>Decomposition<a class="headerlink" href="#decomposition" title="Permalink to this headline">¶</a></h4>
+<p>Decomposition is the process of taking a complex problem and breaking it into more manageable sub-problems. Examples include:</p>
+<ul class="simple">
+<li><p>Writing a paper:</p></li>
+<li><p>Introduction</p></li>
+<li><p>Body</p></li>
+<li><p>Conclusion</p></li>
+<li><p>Wide-viewed (Panorama) image:</p></li>
+<li><p>Taking multiple overlapped photos</p></li>
+<li><p>Stitch them</p></li>
+</ul>
+<p>Decomposition often leaves a <strong>framework</strong> of sub-problems that later have to be <strong>assembled (system integration)</strong> to produce a desired solution.</p>
+</div>
+<div class="section" id="pattern-recognition">
+<h4>Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Permalink to this headline">¶</a></h4>
+<p>Refers to finding similarities, or shared characteristics of problems.  Allows a complex problem to become easier to solve. Allows use of same solution method for each occurrence of the pattern.</p>
+<p>Pattern recognition allows use of <strong>automation</strong> to process things - its a fundamental drilled shaft of CT.  It also provides a way to use analogs from old problems to address new situations; it also will require <strong>assembly (system integration)</strong> to produce a desired solution.</p>
+</div>
+<div class="section" id="abstraction">
+<h4>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">¶</a></h4>
+<p>Determine important characteristics of the problem and ignore characteristics that are not important. Use these characteristics to create a representation of what we are trying to solve.</p>
+<p>Books in an online bookstore</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Important</p></th>
+<th class="text-align:left head"><p>NOT important</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>title</p></td>
+<td class="text-align:left"><p>Cover color</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>ISBN</p></td>
+<td class="text-align:left"><p>Author’s hometown</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Authors</p></td>
+<td class="text-align:left"><p>…</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>…</p></td>
+<td class="text-align:left"><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="algorithms">
+<h4>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h4>
+<p>Step-by-step instructions of how to solve a problem (<a class="reference external" href="https://en.wikipedia.org/wiki/Algorithm">https://en.wikipedia.org/wiki/Algorithm</a>).
+Identifies what is to be done, and the order in which they should be done.</p>
+<div class="figure align-default" id="algorithm">
+<a class="reference internal image-reference" href="../../_images/algorithm.png"><img alt="../../_images/algorithm.png" src="../../_images/algorithm.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Humorous “algorithm”. Image from <a class="reference external" href="https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab">https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab</a></span><a class="headerlink" href="#algorithm" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#algorithm"><span class="std std-numref">Fig. 1</span></a></p>
+<!--![](algorithm.png) 
+
+||Image from [https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab](https://www.newyorker.com/magazine/2021/01/18/whats-wrong-with-the-way-we-work?utm_source=pocket-newtab)||
+|---|------------|---| -->
+<p>An algorithm is a <strong>finite</strong> sequence of defined, instructions, typically to solve a class of problems or to perform a computation. Algorithms are unambiguous and are used as specifications for performing calculations, data processing, automated reasoning, and other tasks. Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, proceeds through a finite number of defined successive states, eventually producing “output” and terminating at a final ending state. The transition from one state to the next is not necessarily deterministic; some algorithms, known as randomized algorithms, can incorporate random input.</p>
+</div>
+<div class="section" id="system-integration-implementation">
+<h4>System Integration (implementation)<a class="headerlink" href="#system-integration-implementation" title="Permalink to this headline">¶</a></h4>
+<p>System integration is the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a program which is the realization of an algorithm using a syntax that the computer can understand.</p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="what-is-data-science">
 <h3><em>What is Data Science?</em><a class="headerlink" href="#what-is-data-science" title="Permalink to this headline">¶</a></h3>
 <p>Data science enables businesses to process huge amounts of structured and unstructured big data to detect patterns. This in turn allows companies to increase efficiencies, manage costs, identify new market opportunities, and boost their market advantage.</p>
@@ -798,7 +926,7 @@ How is Data Visualization Used in Data Science?</p>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson01.html" title="next page">
+        <a class="right-next" href="../lesson01/lesson01.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
                 <p class="prevnext-title">Lesson 1 Data Science and Problem Solving:</p>

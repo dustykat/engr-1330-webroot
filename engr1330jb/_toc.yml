@@ -7,7 +7,7 @@ chapters:
 #- file: markdown
 #- file: notebooks
 - file: lessons/lesson00/lesson00
-- file: lessons/lesson01 # problem solving
+- file: lessons/lesson01/lesson01 # problem solving
 - file: lessons/lesson02 # expressions
 - file: lessons/lesson03 # data types
 - file: lessons/lesson04 # variables
@@ -27,7 +27,7 @@ chapters:
 - file: lessons/lesson18 # matrices in numpy
 - file: lessons/lesson19 # database
 - file: lessons/lesson20 # pandas
-- file: lessons/lesson21 # visual display of data
+- file: lessons/lesson21/lesson21 # visual display of data
 - file: lessons/lesson22 # matplotlib
 - file: lessons/lesson23 # data models
 #
