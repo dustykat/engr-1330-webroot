@@ -9,7 +9,7 @@
 # 
 # Last GitHub Commit Date: 12 August 2021
 #     
-# # 2. Expressions: 
+# # 2: Expressions
 # - fundamental operators
 # - arithmetic expressions
 # - simple output: print()

@@ -19,9 +19,9 @@
 # 
 # Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast
 # 
-# Last GitHub Commit Date: 
+# Last GitHub Commit Date: 4 Jan 22
 #     
-# # 3 Data Types and Typecasting: 
+# # 3: Data Types and Typecasting 
 # - integer
 # - float
 # - string
