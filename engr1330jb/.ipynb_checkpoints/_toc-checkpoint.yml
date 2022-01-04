@@ -9,7 +9,7 @@ chapters:
 - file: lessons/lesson00/lesson00
 - file: lessons/lesson01/lesson01 # problem solving
 - file: lessons/lesson02/lesson02 # expressions
-- file: lessons/lesson03 # data types
+- file: lessons/lesson03/lesson03 # data types
 - file: lessons/lesson04 # variables
 - file: lessons/lesson05 # mutable structures
 - file: lessons/lesson06 # immutable structures
