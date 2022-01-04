@@ -7,7 +7,7 @@
 # 
 # Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast
 #     
-# # Introduction: 
+# # 0. Introduction: 
 # - Introduction to Course and Web-enabled content
 # - Computational thinking concepts 
 # - JupyterLab Environment for ENGR 1330 
