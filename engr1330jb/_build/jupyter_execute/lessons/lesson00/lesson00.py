@@ -117,22 +117,27 @@
 # 
 # 5. How to Think Like a Computer Scientist (Interactive Book) [https://runestone.academy/runestone/books/published/thinkcspy/index.html](https://runestone.academy/runestone/books/published/thinkcspy/index.html) Interactive "CS 101" course taught in Python that really focuses on the art of problem solving. 
 
+# ---
+# 
+# ## Laboratory 0
+# 
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from:
+# 
+# [Laboratory 0](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00.ipynb)
+# 
+
+# <hr><hr>
+# 
 # ## Exercise Set 0
 # 
-# The exercises below are intended to reinforce what you learn in the laboratory sections, and your own readings. The process is:
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook from:
 # 
-# 1. Open a blank Jupyter Notebook on your computer.
-# 2. Make the first cell a Markdown cell. Into that cell copy
-# ```
-# # <font color=darkblue>Exercise Set 0 : Yes, That's how we count in python!</font>
+# [Exercise Set 0](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.ipynb)
 # 
-# **LAST NAME, FIRST NAME**
 # 
-# **R00000000**
-# 
-# ENGR 1330 Exercise Set 0 - 
-# 
-# ---
-# ```
-# 3. Add another cell, change to markdown
-# 
+
+# In[ ]:
+
+
+
+
