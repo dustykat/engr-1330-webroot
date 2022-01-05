@@ -117,8 +117,22 @@
 # 
 # 5. How to Think Like a Computer Scientist (Interactive Book) [https://runestone.academy/runestone/books/published/thinkcspy/index.html](https://runestone.academy/runestone/books/published/thinkcspy/index.html) Interactive "CS 101" course taught in Python that really focuses on the art of problem solving. 
 
-# In[ ]:
-
-
-
-
+# ## Exercise Set 0
+# 
+# The exercises below are intended to reinforce what you learn in the laboratory sections, and your own readings. The process is:
+# 
+# 1. Open a blank Jupyter Notebook on your computer.
+# 2. Make the first cell a Markdown cell. Into that cell copy
+# ```
+# # <font color=darkblue>Exercise Set 0 : Yes, That's how we count in python!</font>
+# 
+# **LAST NAME, FIRST NAME**
+# 
+# **R00000000**
+# 
+# ENGR 1330 Exercise Set 0 - 
+# 
+# ---
+# ```
+# 3. Add another cell, change to markdown
+# 
