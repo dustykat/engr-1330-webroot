@@ -43,9 +43,9 @@
 # ## Tokens and Structure
 # 
 # Consider the relativistic equation relating energy, mass, and the speed of light 
-# $$ e = m \cdot c^2 $$
+# $ e = m \cdot c^2 $
 # 
-# In this equation the tokens are $e$,$m$,$c$,$=$,$\cdot$, and the structure is parsed from left to right as into the token named $e$ place the result of the product of the contents of the tokens $m$ and $c^2$. Given that the speed of light is some universal constant, the only things that can change are the contents of $m$ and the resulting change in $e$.  
+# In this equation the tokens are $e$,$m$,$c$,$=$,$\cdot$,$~^2$ and the structure is parsed from left to right as into the token named $e$ place the result of the product of the contents of the tokens $m$ and $c \times c$ (this operation on $c$ is what the $~^2$ token means. Given that the speed of light is some universal constant, the only things that can change are the contents of $m$ and the resulting change in $e$.  
 # 
 # In the above discourse, the tokens $e$,$m$,$c$ are names for things that can have values -- we will call these variables (or constants as appropriate).  The tokens $=$,$\cdot$, and $~^2$ are symbols for various arithmetic operations -- we will call these operators.  The structure of the equation is specific -- we will call it a statement.
 # 
@@ -247,3 +247,28 @@ print(type(x1),x1)
 # 1. Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 3 [https://www.inferentialthinking.com/chapters/03/programming-in-python.html](https://www.inferentialthinking.com/chapters/03/programming-in-python.html)
 # 
 # 3. Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan [https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&keywords=learn+python+in+a+day&qid=1611108340&sr=8-3](https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&keywords=learn+python+in+a+day&qid=1611108340&sr=8-3)
+
+# ---
+# 
+# ## Laboratory 2
+# 
+# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 2
+# 
+# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.ipynb)
+# 
+# 
+
+# In[ ]:
+
+
+
+
