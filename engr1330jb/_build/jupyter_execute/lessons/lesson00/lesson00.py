@@ -121,18 +121,18 @@
 # 
 # ## Laboratory 0
 # 
-# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from:
+# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 0.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00.html)
 # 
-# [Laboratory 0](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 0.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 0
 # 
-# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook from:
+# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 0.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.html)
 # 
-# [Exercise Set 0](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 0.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.ipynb)
 # 
 # 
 
