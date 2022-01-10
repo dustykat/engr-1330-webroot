@@ -58,6 +58,7 @@
 # 
 # Consider the "math-like" variable $x$ below:
 # 
+# $
 # \begin{gather}
 # x_0= 7 \\
 # x_1= 11 \\
@@ -67,6 +68,7 @@
 # \dots \\
 # x_N= 223 \\
 # \end{gather}
+# $
 #     
 # The variable name is $x$ and the subscripts correspond to different values. 
 # Thus the `value` of the variable named $x$ associated with subscript $3$ is the number $9$.
