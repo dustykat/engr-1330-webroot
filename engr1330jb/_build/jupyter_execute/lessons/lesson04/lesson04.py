@@ -412,7 +412,7 @@ lipids in a variety of shapes'''.format(MyName,MyAge))
 # 
 # **Examine** (click) Laboratory 0 as a webpage at [Laboratory 4.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.1.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.ipynb)
 # 
 
 # <hr><hr>
