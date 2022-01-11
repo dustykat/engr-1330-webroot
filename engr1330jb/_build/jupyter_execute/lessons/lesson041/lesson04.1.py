@@ -113,9 +113,18 @@
 # 
 # Consider the statement below, how many parameters are in the parameter list?
 
-# ```
-# print ("Hello World, my name is", MyName, "and I am", MyAge, "years old.")
-# ```
+# In[1]:
+
+
+MyName = 'Taco Bell'
+MyAge = 66
+
+
+# In[2]:
+
+
+print ("Hello World, my name is", MyName, "and I am", MyAge, "years old.")
+
 
 # There are five parameters;
 # 
@@ -129,7 +138,7 @@
 
 # Some more examples
 
-# In[1]:
+# In[3]:
 
 
 # Examples of output
@@ -153,7 +162,7 @@ print("more text new line ")
 #  - the general `len()` function returns the length of a string
 #     
 
-# In[2]:
+# In[4]:
 
 
 # Experiment with indexing syntax
@@ -211,7 +220,7 @@ type(s[3])
 # Sometimes we may need to print some special “unprintable” characters such as a tab or a newline. 
 # In this case, you need to use the `\` (backslash) character to escape characters that otherwise have a different meaning.  For instance to print a tab, we type the backslash character before the letter t, like this `\t` using our earlier example we have:
 
-# In[3]:
+# In[5]:
 
 
 MyName = 'Taco Bell'
@@ -221,21 +230,21 @@ print ("Hello\t World, my name is {} and I am {} years old.".format(MyName,MyAge
 
 # Here are a few more examples:
 
-# In[4]:
+# In[6]:
 
 
 #newline after World
 print ("Hello World\n, my name is {} and I am {} years old.".format(MyName,MyAge)) 
 
 
-# In[5]:
+# In[7]:
 
 
 # backslash after World
 print ("Hello World\\, my name is {} and I am {} years old.".format(MyName,MyAge)) 
 
 
-# In[6]:
+# In[8]:
 
 
 # embedded quotes in the string literal
@@ -245,7 +254,7 @@ print ("I am 5\'9\" tall")
 # > If you do not want characters preceded by the `\` character to be interpreted as special characters, you can use raw strings by adding an `r` before the first quote. 
 # For instance, if you do not want `\t` to be interpreted as a tab in the string literal "Hello\tWorld", you would type 
 
-# In[7]:
+# In[9]:
 
 
 print(r"Hello\tWorld")
@@ -288,7 +297,7 @@ print(r"Hello\tWorld")
 # |s.replace()|Replace one substring with another|
 # |*Many, many, more ...*|Look them up as needed|
 
-# In[8]:
+# In[10]:
 
 
 # some string functions
@@ -302,7 +311,7 @@ print(str.replace("am", "am not"))
 "222".isnumeric()
 
 
-# In[9]:
+# In[11]:
 
 
 s = "Fox. Socks. Box. Knox. Knox in box. Fox in socks."
@@ -318,7 +327,7 @@ print(s[0] + s[5] + s[12])
 # 
 # An example using the string constructor (`%`) form using a placeholder in the print function call is:
 
-# In[10]:
+# In[12]:
 
 
 print ("Hello World, my name is %s and I am %s years old." %(MyName,MyAge))
@@ -328,7 +337,7 @@ print ("Hello World, my name is %s and I am %s years old." %(MyName,MyAge))
 # 
 # See what happens if we change the second `%s` into `%f` and run the script:
 
-# In[11]:
+# In[13]:
 
 
 print ("Hello World, my name is %s and I am %f years old." %(MyName,MyAge))
@@ -338,7 +347,7 @@ print ("Hello World, my name is %s and I am %f years old." %(MyName,MyAge))
 # 
 # > The `%f` formatter can also be used to place the decimal by preceeding the f with the decimal point and the number of digits after the decimal you want to render as in:
 
-# In[12]:
+# In[14]:
 
 
 print ("Hello World, my name is %s and I am %.1f years old." %(MyName,MyAge))
@@ -348,7 +357,7 @@ print ("Hello World, my name is %s and I am %.1f years old." %(MyName,MyAge))
 # 
 # Similar to the `%`operator structure there is a `format()` method.  Using the same example, the `%s` symbol is replaced by a pair of curly brackets `{}` playing the same placeholder role, and the `format` keyword precedes the tuple as
 
-# In[13]:
+# In[15]:
 
 
 print ("Hello World, my name is {} and I am {} years old.".format(MyName,MyAge))
@@ -365,7 +374,7 @@ print ("Hello World, my name is {} and I am {} years old.".format(MyName,MyAge))
 # 
 # If you need to display a long message, you can use the triple-quote symbol (‘’’ or “””) to span the  message over multiple lines. For instance:
 
-# In[14]:
+# In[16]:
 
 
 print ('''Hello World, my name is {} and I am a resturant
