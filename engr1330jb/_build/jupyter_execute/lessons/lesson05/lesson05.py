@@ -559,6 +559,25 @@ while y >= -12.: # sentinel controlled repetition
 # 
 # 4. Brian Christian and Tom Griffiths (2016) ALGORITHMS TO LIVE BY: The Computer Science of Human Decisions Henry Holt and Co. (https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365)
 
+# ---
+# 
+# ## Laboratory 5
+# 
+# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 5.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 5.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 5
+# 
+# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 5.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 5.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.ipynb)
+# 
+# 
+
 # In[ ]:
 
 
