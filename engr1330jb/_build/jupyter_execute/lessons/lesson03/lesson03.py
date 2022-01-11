@@ -375,3 +375,28 @@ elif(computed_stress >= yield_stress):
 # 1. Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 [https://www.inferentialthinking.com/chapters/04/Data_Types.html](https://www.inferentialthinking.com/chapters/04/Data_Types.html)
 # 
 # 3. Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book -- Kindle Edition by LCF Publishing (Author), Jamie Chan [https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&keywords=learn+python+in+a+day&qid=1611108340&sr=8-3](https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&keywords=learn+python+in+a+day&qid=1611108340&sr=8-3)
+
+# ---
+# 
+# ## Laboratory 3
+# 
+# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 3.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 3.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 3
+# 
+# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 3.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 3.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.ipynb)
+# 
+# 
+
+# In[ ]:
+
+
+
+

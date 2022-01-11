@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1: User Interaction &#8212; ENGR 1330 Course Notes (Cleveland)</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5: Algorithm Building Blocks:" href="../lesson05/lesson05.html" />
+    <link rel="prev" title="4: Data Structures" href="../lesson04/lesson04.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes (Cleveland)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330 (Cleveland)
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4.1: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   5: Algorithm Building Blocks:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06.html">
+   Lesson 6: Immutable Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07.html">
+   Lesson 7: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08.html">
+   Lesson 8: Algorithm building blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9: Sequential structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10: Selection structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11: Count Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12: Sentinel Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14.html">
+   Lesson 14: External modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15: Working with files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16: File Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21. Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   Lesson 38: Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson041/lesson04.1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson041/lesson04.1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson041/lesson04.1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-and-output">
+   Input and Output
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     User Interaction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-line-input">
+     Command-line input
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-the-input-function">
+     About the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       input()
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-line-output">
+     Command-line output
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-print-function">
+   About the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print()
+    </span>
+   </code>
+   function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-strings">
+     About Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-operators">
+     String Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-and-unprintable-characters">
+     Special and unprintable characters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-escape-sequences">
+     About Escape Sequences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-slicing">
+     String slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#empty-and-default-values-in-slicing">
+     Empty and default values in slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-functions">
+     String functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-operator">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     %
+    </span>
+   </code>
+   operator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-format-method">
+   About the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     format()
+    </span>
+   </code>
+   method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#triple-quotes">
+   Triple quotes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#future-versions">
+   Future Versions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-4-1">
+   Laboratory 4.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-4-1">
+   Exercise Set 4.1
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date: 29 August 2021</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="user-interaction">
+<h1>4.1: User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function</p></li>
+<li><p>triple quotes</p></li>
+<li><p>escape characters</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Develop awareness of interactive inputs</p></li>
+<li><p>Implement interactive inputs to generalize solution tools</p></li>
+<li><p>Develop awareness of output formatting to improve readability</p></li>
+<li><p>Implement output formats</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="input-and-output">
+<h2>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>Useful</em> programs take input and generate output</p></li>
+<li><p>Command-line interface</p></li>
+<li><p>Graphical user interface (GUI)</p></li>
+<li><p>Files</p></li>
+<li><p>Network sources</p></li>
+<li><p>Databases</p></li>
+</ul>
+<div class="section" id="id1">
+<h3>User Interaction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Until this point we have explicitly specified input values for variables (and constants) in a script; now lets leverage intrinsic functions that lets us makes use of variables. We’ll revisit earlier examples, but this time we’ll make them interactive. Instead of just computing and sending output, we want read into variables values that may change from time to time. In order to do that, our script needs to be able to prompt us for information and display them on the screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this Jupyter Book, interactive scripts don’t render completely, so they are inserted as cut-and-paste blocks for running in your Jupyter Book.</p>
+</div>
+<p>This whole process is the essence of user interaction, and from the simple examples herein, one builds more complex scripts.</p>
+</div>
+<div class="section" id="command-line-input">
+<h3>Command-line input<a class="headerlink" href="#command-line-input" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Function <code class="docutils literal notranslate"><span class="pre">input(prompt)</span></code></p></li>
+<li><p>prints the <em>optional</em> prompt on the command line, the prompt can be a string variable, or just a string literal</p></li>
+<li><p>waits for the user to type something</p></li>
+<li><p>the text is sent to the program only after the user types enter/return</p></li>
+<li><p>the entered data is always interpreted as text, <em>even if it’s numeric</em></p></li>
+</ul>
+</div>
+<div class="section" id="about-the-input-function">
+<h3>About the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function<a class="headerlink" href="#about-the-input-function" title="Permalink to this headline">¶</a></h3>
+<p>Consider the script below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyName</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name ?&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MyName</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">input</span></code> method sent the string ‘What is your name ?’ to the screen, and then waited for the user to reply.  Upon reply, the input supplied was captured and then placed into the variable named <code class="docutils literal notranslate"><span class="pre">MyName</span></code>.</p>
+<p>Then the next statement, used the <code class="docutils literal notranslate"><span class="pre">print()</span></code> method to print the contents of <code class="docutils literal notranslate"><span class="pre">MyName</span></code> back to the screen.  From this simple structure we can create quite useful input and output.</p>
+<p>As a matter of good practice, we should explicitly type the input variable, as shown below which takes the input stream and converts it into a string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyName</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name ?&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MyName</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Below we prompt for a second input, in this case the user’s age, which will be put into an integer.  As a sdie note, we are not error checking, so if an input stream that cannot be made into an integer is suppplied we will get an exception warning or an error message.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyAge</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How old are you ? &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MyAge</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try getting some input</span>
+<span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Please enter a value: &quot;</span><span class="p">)</span> <span class="c1"># input with a prompt</span>
+<span class="c1"># print(type(value)) # get data type -- note always a string</span>
+<span class="c1"># input() # without the prompt</span>
+<span class="c1"># print(hex(id(value))) # get memory location of value in hex - sometimes useful for squashing bugs</span>
+<span class="n">value</span> <span class="c1">#return contents</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># building the prompt</span>
+<span class="n">string_variable</span> <span class="o">=</span> <span class="s1">&#39;Enter a value&#39;</span>
+<span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">string_variable</span><span class="p">)</span>
+<span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-line-output">
+<h3>Command-line output<a class="headerlink" href="#command-line-output" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Function <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
+<li><p>prints the value(s) passed to it</p></li>
+<li><p>automatically converts data values to strings</p></li>
+<li><p>goes to the next line by default</p></li>
+<li><p>separates values with space by default</p></li>
+<li><p>optional arguments can set different separator and end of line values</p></li>
+<li><p>Format output using string formatting functions</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="about-the-print-function">
+<h2>About the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function<a class="headerlink" href="#about-the-print-function" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is used to display information to users.
+It accepts zero or more expressions as parameters, separated by commas.</p>
+<p>Consider the statement below, how many parameters are in the parameter list?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World, my name is&quot;</span><span class="p">,</span> <span class="n">MyName</span><span class="p">,</span> <span class="s2">&quot;and I am&quot;</span><span class="p">,</span> <span class="n">MyAge</span><span class="p">,</span> <span class="s2">&quot;years old.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are five parameters;</p>
+<ol class="simple">
+<li><p>“Hello World, my name is”</p></li>
+<li><p>MyName</p></li>
+<li><p>“and I am”</p></li>
+<li><p>MyAge</p></li>
+<li><p>“years old”</p></li>
+</ol>
+<p>Three of the parameters are string literals and are enclosed in quote marks, two are variables that are rendered as strings.</p>
+<p>Some more examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examples of output</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is a message.&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is a value:&quot;</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>  <span class="c1"># where did val come from?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t go to next line.&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;more text same line&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;more text new line &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="about-strings">
+<h3>About Strings<a class="headerlink" href="#about-strings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A string is a complex data type</p></li>
+<li><p>a <em>sequence</em> of characters that is <em>immutable</em></p></li>
+<li><p>individual characters are identified using indexing syntax: <code class="docutils literal notranslate"><span class="pre">s[position]</span></code></p></li>
+</ul>
+<!-- ![string indexing](string.png)-->
+<p><img alt="" src="../../_images/List-Slicing.jpg" /></p>
+<!--![](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson04/List-Slicing.jpg) -->
+<ul class="simple">
+<li><p>the general <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the length of a string</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Experiment with indexing syntax</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;birds&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-operators">
+<h3>String Operators<a class="headerlink" href="#string-operators" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>concatenate strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>test the equality of strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p>compare strings alphabetically</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># String operators</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;dog&quot;</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">==</span> <span class="n">s3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span> <span class="o">&lt;</span> <span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dog&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;cat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Strings are compared using lexiographic ranking <a class="reference external" href="https://en.wikipedia.org/wiki/Lexicographic_order">https://en.wikipedia.org/wiki/Lexicographic_order</a>.</p>
+</div>
+<div class="section" id="special-and-unprintable-characters">
+<h3>Special and unprintable characters<a class="headerlink" href="#special-and-unprintable-characters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Represented with <em>escape</em> sequences</p></li>
+<li><p>preceded by backslash <code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p>Common special characters</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>Escape Sequence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>newline</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>tab</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>backslash</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\\</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>quotes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\'</span></code> <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escape sequences</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1</span><span class="se">\t</span><span class="s2">2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\xEA</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The examples below use assigned values to illustrate escape characters.  You can supresses the first two lines and use <code class="docutils literal notranslate"><span class="pre">input()</span></code> if you wish - the variable names are same as those above.</p>
+</div>
+</div>
+<div class="section" id="about-escape-sequences">
+<h3>About Escape Sequences<a class="headerlink" href="#about-escape-sequences" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes we may need to print some special “unprintable” characters such as a tab or a newline.
+In this case, you need to use the <code class="docutils literal notranslate"><span class="pre">\</span></code> (backslash) character to escape characters that otherwise have a different meaning.  For instance to print a tab, we type the backslash character before the letter t, like this <code class="docutils literal notranslate"><span class="pre">\t</span></code> using our earlier example we have:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MyName</span> <span class="o">=</span> <span class="s1">&#39;Taco Bell&#39;</span>
+<span class="n">MyAge</span> <span class="o">=</span> <span class="mi">66</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\t</span><span class="s2"> World, my name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello	 World, my name is Taco Bell and I am 66 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are a few more examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#newline after World</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World</span><span class="se">\n</span><span class="s2">, my name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+, my name is Taco Bell and I am 66 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># backslash after World</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World</span><span class="se">\\</span><span class="s2">, my name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World\, my name is Taco Bell and I am 66 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># embedded quotes in the string literal</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;I am 5</span><span class="se">\&#39;</span><span class="s2">9</span><span class="se">\&quot;</span><span class="s2"> tall&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am 5&#39;9&quot; tall
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>If you do not want characters preceded by the <code class="docutils literal notranslate"><span class="pre">\</span></code> character to be interpreted as special characters, you can use raw strings by adding an <code class="docutils literal notranslate"><span class="pre">r</span></code> before the first quote.
+For instance, if you do not want <code class="docutils literal notranslate"><span class="pre">\t</span></code> to be interpreted as a tab in the string literal “Hello\tWorld”, you would type</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Hello\tWorld&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello\tWorld
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-slicing">
+<h3>String slicing<a class="headerlink" href="#string-slicing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>expanded indexing</p></li>
+<li><p>a slice of a string is a new string, composed of characters from the initial string</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s[start]</span></code></p></td>
+<td><p>a single character</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s[start:end]</span></code></p></td>
+<td><p>a substring</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s[start:end:step]</span></code></p></td>
+<td><p>a selection of characters</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>the end position is not inclusive (up to but not including <em>end</em>)</p></li>
+<li><p>the step can be positive or negative</p></li>
+<li><p>a negative step proceeds backwards through the string</p></li>
+</ul>
+</div>
+<div class="section" id="empty-and-default-values-in-slicing">
+<h3>Empty and default values in slicing<a class="headerlink" href="#empty-and-default-values-in-slicing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>the default step is <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p>the default end is <code class="docutils literal notranslate"><span class="pre">start+1</span></code></p></li>
+<li><p>an empty value for end means the end of the string (in the <em>step</em> direction)</p></li>
+<li><p>an empty value for start means the start of the string (in the <em>step</em> direction)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What will this do?</span>
+<span class="c1"># s[-1::-1]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-functions">
+<h3>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Behavior</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>s.split()</p></td>
+<td><p>Split a string into pieces based on a delimiter</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.strip()</p></td>
+<td><p>Remove leading/trailing whitespace or other characters</p></td>
+</tr>
+<tr class="row-even"><td><p>s.upper()</p></td>
+<td><p>Convert a string to uppercase</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.lower()</p></td>
+<td><p>Convert a string to lowercase</p></td>
+</tr>
+<tr class="row-even"><td><p>s.isnumeric()</p></td>
+<td><p>Return True if a string is numeric</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.find()</p></td>
+<td><p>Return the index of a substring</p></td>
+</tr>
+<tr class="row-even"><td><p>s.replace()</p></td>
+<td><p>Replace one substring with another</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Many, many, more …</em></p></td>
+<td><p>Look them up as needed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some string functions</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;I am a string.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;am&quot;</span><span class="p">,</span> <span class="s2">&quot;am not&quot;</span><span class="p">))</span>
+<span class="s2">&quot;222&quot;</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HELLO
+hello
+HELLO
+I am not a string.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Fox. Socks. Box. Knox. Knox in box. Fox in socks.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;ocks&quot;</span><span class="p">,</span> <span class="s2">&quot;ox&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o
+.
+Fox
+Fox. Sox. Box. Knox. Knox in box. Fox in sox.
+FSB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-operator">
+<h2>The <code class="docutils literal notranslate"><span class="pre">%</span></code> operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">¶</a></h2>
+<p>Strings can be formatted using the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator. This gives you greater control over how you want your string to be displayed and stored. The syntax for using the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator is “string to be formatted” %(values or variables to be inserted into string, separated by commas)</p>
+<p>An example using the string constructor (<code class="docutils literal notranslate"><span class="pre">%</span></code>) form using a placeholder in the print function call is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World, my name is </span><span class="si">%s</span><span class="s2"> and I am </span><span class="si">%s</span><span class="s2"> years old.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World, my name is Taco Bell and I am 66 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the syntax above.  The contents of the two variables are placed in the locations within the string indicated by the <code class="docutils literal notranslate"><span class="pre">%s</span></code> symbol, the tuple (MyName,MyAge) is parsed using this placeholder and converted into a string by the trailing <code class="docutils literal notranslate"><span class="pre">s</span></code> in the <code class="docutils literal notranslate"><span class="pre">%s</span></code> indicator.</p>
+<p>See what happens if we change the second <code class="docutils literal notranslate"><span class="pre">%s</span></code> into <code class="docutils literal notranslate"><span class="pre">%f</span></code> and run the script:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World, my name is </span><span class="si">%s</span><span class="s2"> and I am </span><span class="si">%f</span><span class="s2"> years old.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World, my name is Taco Bell and I am 66.000000 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The change to <code class="docutils literal notranslate"><span class="pre">%f</span></code> turns the rendered tuple value into a float.  Using these structures gives us a lot of output flexibility.</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">%f</span></code> formatter can also be used to place the decimal by preceeding the f with the decimal point and the number of digits after the decimal you want to render as in:</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World, my name is </span><span class="si">%s</span><span class="s2"> and I am </span><span class="si">%.1f</span><span class="s2"> years old.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World, my name is Taco Bell and I am 66.0 years old.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="about-the-format-method">
+<h2>About the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method<a class="headerlink" href="#about-the-format-method" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">%</span></code>operator structure there is a <code class="docutils literal notranslate"><span class="pre">format()</span></code> method.  Using the same example, the <code class="docutils literal notranslate"><span class="pre">%s</span></code> symbol is replaced by a pair of curly brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code> playing the same placeholder role, and the <code class="docutils literal notranslate"><span class="pre">format</span></code> keyword precedes the tuple as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hello World, my name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World, my name is Taco Bell and I am 66 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe the keyword <code class="docutils literal notranslate"><span class="pre">format</span></code> is joined to the string with a dot notation, because <code class="docutils literal notranslate"><span class="pre">format</span></code> is a formal method associated with all strings, and it is attached when the string literal is created.</p>
+<p><img alt="" src="../../_images/Python-String-format-Method-Syntax.png" /></p>
+<!--![](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson04/Python-String-format-Method-Syntax.png)-->
+<p>In this example the arguments to the method are the two variables, but other arguments and decorators are possible allowing for elaborate outputs.</p>
+</div>
+<div class="section" id="triple-quotes">
+<h2>Triple quotes<a class="headerlink" href="#triple-quotes" title="Permalink to this headline">¶</a></h2>
+<p>If you need to display a long message, you can use the triple-quote symbol (‘’’ or “””) to span the  message over multiple lines. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;&#39;&#39;Hello World, my name is </span><span class="si">{}</span><span class="s1"> and I am a resturant</span>
+<span class="s1">that is over </span><span class="si">{}</span><span class="s1"> years old. We serve sodium chloride infused </span>
+<span class="s1">lipids in a variety of shapes&#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MyName</span><span class="p">,</span><span class="n">MyAge</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World, my name is Taco Bell and I am a resturant
+that is over 66 years old. We serve sodium chloride infused 
+lipids in a variety of shapes
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="future-versions">
+<h2>Future Versions<a class="headerlink" href="#future-versions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>repr and map methods</p></li>
+<li><p>color codes</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapters 3-6 <a class="reference external" href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">https://www.inferentialthinking.com/chapters/03/programming-in-python.html</a></p></li>
+<li><p><a class="reference external" href="http://LearnPython.org">LearnPython.org</a> (Interactive Tutorial) (<a class="reference external" href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</p></li>
+<li><p>Brian Christian and Tom Griffiths (2016) ALGORITHMS TO LIVE BY: The Computer Science of Human Decisions Henry Holt and Co. (<a class="reference external" href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365</a>)</p></li>
+<li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book – Kindle Edition by LCF Publishing (Author), Jamie Chan <a class="reference external" href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p></li>
+<li><p>Learn Python the Hard Way (Online Book) (<a class="reference external" href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</p></li>
+<li><p>How to Learn Python for Data Science, The Self-Starter Way (<a class="reference external" href="https://elitedatascience.com/learn-python-for-data-science">https://elitedatascience.com/learn-python-for-data-science</a>)</p></li>
+<li><p>String Literals <a class="reference external" href="https://bic-berkeley.github.io/psych-214-fall-2016/string_literals.html">https://bic-berkeley.github.io/psych-214-fall-2016/string_literals.html</a></p></li>
+<li><p>Tutorial on <code class="docutils literal notranslate"><span class="pre">input()</span></code> and <code class="docutils literal notranslate"><span class="pre">print()</span></code> functions <a class="reference external" href="https://www.programiz.com/python-programming/input-output-import">https://www.programiz.com/python-programming/input-output-import</a></p></li>
+<li><p>Lexiographic Ordering <a class="reference external" href="https://en.wikipedia.org/wiki/Lexicographic_order">https://en.wikipedia.org/wiki/Lexicographic_order</a></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-4-1">
+<h2>Laboratory 4.1<a class="headerlink" href="#laboratory-4-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 0 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab04.1.html">Laboratory 4.1.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 0 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab04.1.ipynb">Laboratory 4.1.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-4-1">
+<h2>Exercise Set 4.1<a class="headerlink" href="#exercise-set-4-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 0 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab041-TH.html">Exercise 4.1.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 0 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab041-TH.ipynb">Exercise Set 4.1.ipynb</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson041"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson04/lesson04.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">4: Data Structures</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson05/lesson05.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">5: Algorithm Building Blocks:</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
