@@ -129,15 +129,17 @@
 
 # Some more examples
 
-# ```
-# # Examples of output
-# 
-# print("Here is a message." )
-# print("Here is a value:", value )  # where did val come from?
-# print("Don't go to next line.", end = ' ' )
-# print("more text same line")
-# print("more text new line ")
-# ```
+# In[1]:
+
+
+# Examples of output
+myvalue = 77 # suppress and use input() if you want! 
+print("Here is a message." )
+print("Here is a value:", myvalue )  # where did val come from?
+print("Don't go to next line.", end = ' ' )
+print("more text same line")
+print("more text new line ")
+
 
 # ### About Strings
 # - A string is a complex data type
@@ -151,22 +153,21 @@
 #  - the general `len()` function returns the length of a string
 #     
 
-# ```
-# # Experiment with indexing syntax
-# s = "birds"
-# print(s[3])
-# print(s[-1])
-# print(len(s))
-# type(s[3])
-# ```
+# In[2]:
+
+
+# Experiment with indexing syntax
+s = "birds"
+print(s[3])
+print(s[-1])
+print(len(s))
+type(s[3])
+
 
 # ### String Operators
-# - `+`
-#  - concatenate strings
-# - `==` `!=`
-#  - test the equality of strings
-# - `<` `<=` `>` `>=`
-#  - compare strings alphabetically
+# - `+` concatenate strings
+# - `==` `!=` test the equality of strings
+# - `<` `<=` `>` `>=` compare strings lexiographically (alphabetically sort of)
 
 # ```
 # # String operators
@@ -210,7 +211,7 @@
 # Sometimes we may need to print some special “unprintable” characters such as a tab or a newline. 
 # In this case, you need to use the `\` (backslash) character to escape characters that otherwise have a different meaning.  For instance to print a tab, we type the backslash character before the letter t, like this `\t` using our earlier example we have:
 
-# In[1]:
+# In[3]:
 
 
 MyName = 'Taco Bell'
@@ -220,21 +221,21 @@ print ("Hello\t World, my name is {} and I am {} years old.".format(MyName,MyAge
 
 # Here are a few more examples:
 
-# In[2]:
+# In[4]:
 
 
 #newline after World
 print ("Hello World\n, my name is {} and I am {} years old.".format(MyName,MyAge)) 
 
 
-# In[3]:
+# In[5]:
 
 
 # backslash after World
 print ("Hello World\\, my name is {} and I am {} years old.".format(MyName,MyAge)) 
 
 
-# In[4]:
+# In[6]:
 
 
 # embedded quotes in the string literal
@@ -244,7 +245,7 @@ print ("I am 5\'9\" tall")
 # > If you do not want characters preceded by the `\` character to be interpreted as special characters, you can use raw strings by adding an `r` before the first quote. 
 # For instance, if you do not want `\t` to be interpreted as a tab in the string literal "Hello\tWorld", you would type 
 
-# In[5]:
+# In[7]:
 
 
 print(r"Hello\tWorld")
@@ -270,12 +271,10 @@ print(r"Hello\tWorld")
 # - an empty value for end means the end of the string (in the *step* direction)
 # - an empty value for start means the start of the string (in the *step* direction)
 
-# In[6]:
-
-
-# What will this do?
+# ```
+# # What will this do?
 # s[-1::-1]
-
+# ```
 
 # ### String functions
 # |Name|Behavior|
@@ -289,7 +288,7 @@ print(r"Hello\tWorld")
 # |s.replace()|Replace one substring with another|
 # |*Many, many, more ...*|Look them up as needed|
 
-# In[7]:
+# In[8]:
 
 
 # some string functions
@@ -303,7 +302,7 @@ print(str.replace("am", "am not"))
 "222".isnumeric()
 
 
-# In[8]:
+# In[9]:
 
 
 s = "Fox. Socks. Box. Knox. Knox in box. Fox in socks."
@@ -319,7 +318,7 @@ print(s[0] + s[5] + s[12])
 # 
 # An example using the string constructor (`%`) form using a placeholder in the print function call is:
 
-# In[9]:
+# In[10]:
 
 
 print ("Hello World, my name is %s and I am %s years old." %(MyName,MyAge))
@@ -329,7 +328,7 @@ print ("Hello World, my name is %s and I am %s years old." %(MyName,MyAge))
 # 
 # See what happens if we change the second `%s` into `%f` and run the script:
 
-# In[10]:
+# In[11]:
 
 
 print ("Hello World, my name is %s and I am %f years old." %(MyName,MyAge))
@@ -339,7 +338,7 @@ print ("Hello World, my name is %s and I am %f years old." %(MyName,MyAge))
 # 
 # > The `%f` formatter can also be used to place the decimal by preceeding the f with the decimal point and the number of digits after the decimal you want to render as in:
 
-# In[11]:
+# In[12]:
 
 
 print ("Hello World, my name is %s and I am %.1f years old." %(MyName,MyAge))
@@ -349,7 +348,7 @@ print ("Hello World, my name is %s and I am %.1f years old." %(MyName,MyAge))
 # 
 # Similar to the `%`operator structure there is a `format()` method.  Using the same example, the `%s` symbol is replaced by a pair of curly brackets `{}` playing the same placeholder role, and the `format` keyword precedes the tuple as
 
-# In[12]:
+# In[13]:
 
 
 print ("Hello World, my name is {} and I am {} years old.".format(MyName,MyAge))
@@ -366,7 +365,7 @@ print ("Hello World, my name is {} and I am {} years old.".format(MyName,MyAge))
 # 
 # If you need to display a long message, you can use the triple-quote symbol (‘’’ or “””) to span the  message over multiple lines. For instance:
 
-# In[13]:
+# In[14]:
 
 
 print ('''Hello World, my name is {} and I am a resturant
@@ -415,8 +414,6 @@ lipids in a variety of shapes'''.format(MyName,MyAge))
 # 
 # **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 4.1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab041-TH.ipynb)
 # 
-# 
-
 # 
 
 # In[ ]:
