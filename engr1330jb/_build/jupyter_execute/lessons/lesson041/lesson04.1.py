@@ -365,7 +365,7 @@ print(type(empty))
 # 
 # **Examine** (click) Exercise Set 0 as a webpage at [Exercise 4.1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab04.1-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 4.1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab04-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 4.1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab041/Lab04.1-TH.ipynb)
 # 
 # 
 
