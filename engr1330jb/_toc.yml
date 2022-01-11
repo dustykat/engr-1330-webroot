@@ -10,8 +10,8 @@ chapters:
 - file: lessons/lesson01/lesson01 # problem solving
 - file: lessons/lesson02/lesson02 # expressions
 - file: lessons/lesson03/lesson03 # data types
-- file: lessons/lesson041/lesson04.1 # input()
-- file: lessons/lesson04/lesson04 # data structures
+- file: lessons/lesson04/lesson04 # input()
+- file: lessons/lesson041/lesson04.1 # data structures
 - file: lessons/lesson05/lesson05 # algorithm building blocks
 - file: lessons/lesson06 # immutable structures
 - file: lessons/lesson07 # input()
