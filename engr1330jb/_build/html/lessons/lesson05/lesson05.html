@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5: Algorithm Building Blocks: &#8212; ENGR 1330 Course Notes</title>
+    <title>5: Algorithm Building Blocks &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 6: Immutable Data Structures" href="../lesson06.html" />
+    <link rel="next" title="6: Functions" href="../lesson06/lesson06.html" />
     <link rel="prev" title="4.1: Data Structures" href="../lesson041/lesson04.1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -128,12 +128,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5: Algorithm Building Blocks:
+   5: Algorithm Building Blocks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson06.html">
-   Lesson 6: Immutable Data Structures
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   6: Functions
   </a>
  </li>
  <li class="toctree-l1">
@@ -363,140 +363,131 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   5: Algorithm Building Blocks:
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectives">
-     Objectives
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithm-structures">
+   Algorithm Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sequence">
+   Sequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-structures">
+   Selection Structures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison">
+     Comparison
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algorithm-structures">
-     Algorithm Structures
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence">
-     Sequence
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selection-structures">
-     Selection Structures
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comparison">
-       Comparison
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#block-if-statement">
-       Block
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         if
-        </span>
-       </code>
-       statement
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inline-if-statement">
-       Inline
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         if
-        </span>
-       </code>
-       statement
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#repetition-and-loops">
-     Repetition and Loops
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#loop-analogs">
-       Loop Analogs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loop-count-controlled-repetition-structure">
-     For Loop (Count controlled repetition structure)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#structured-for-loop">
-       Structured
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         FOR
-        </span>
-       </code>
-       loop
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#looping-through-an-iterable">
-       Looping through an iterable
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#the-range-function-to-create-an-iterable">
-         The
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           range()
-          </span>
-         </code>
-         function to create an iterable
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-for-loops">
-     Example
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#block-if-statement">
+     Block
      <code class="docutils literal notranslate">
       <span class="pre">
-       for
+       if
       </span>
      </code>
-     loops
+     statement
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sentinel-controlled-repetition">
-     Sentinel-controlled repetition.
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inline-if-statement">
+     Inline
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     statement
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#structured-while-loop">
-       Structured
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         WHILE
-        </span>
-       </code>
-       loop
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repetition-and-loops">
+   Repetition and Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-analogs">
+     Loop Analogs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop-count-controlled-repetition-structure">
+   For Loop (Count controlled repetition structure)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structured-for-loop">
+     Structured
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FOR
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-through-an-iterable">
+     Looping through an iterable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-range-function-to-create-an-iterable">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       range()
+      </span>
+     </code>
+     function to create an iterable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-for-loops">
+   Example
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-controlled-repetition">
+   Sentinel-controlled repetition.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structured-while-loop">
+     Structured
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       WHILE
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-while-loops">
    Example
    <code class="docutils literal notranslate">
@@ -506,23 +497,23 @@
    </code>
    loops
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nested-repetition">
-     Nested Repetition
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nested-repetition">
+   Nested Repetition
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break-to-exit-out-of-a-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     to exit out of a loop
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#break-to-exit-out-of-a-loop">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         break
-        </span>
-       </code>
-       to exit out of a loop
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-continue-statement">
        The
        <code class="docutils literal notranslate">
@@ -533,7 +524,7 @@
        statement
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-try-except-structure">
        The
        <code class="docutils literal notranslate">
@@ -552,39 +543,39 @@
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#flowcharts">
-     Flowcharts
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-a-flowchart">
-       What is a Flowchart?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#how-are-they-useful">
-       How are they useful?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#references">
-       References
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#laboratory-5">
-     Laboratory 5
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowcharts">
+   Flowcharts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-flowchart">
+     What is a Flowchart?
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-set-5">
-     Exercise Set 5
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-they-useful">
+     How are they useful?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-5">
+   Laboratory 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-5">
+   Exercise Set 5
+  </a>
  </li>
 </ul>
 
@@ -603,7 +594,7 @@
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
 <p>Last GitHub Commit Date: 13 July 2021</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="algorithm-building-blocks">
-<h1>5: Algorithm Building Blocks:<a class="headerlink" href="#algorithm-building-blocks" title="Permalink to this headline">¶</a></h1>
+<h1>5: Algorithm Building Blocks<a class="headerlink" href="#algorithm-building-blocks" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Three structures: sequence, selection , repetition (loops)</p></li>
 <li><p>Sequence structures</p></li>
@@ -641,8 +632,8 @@
 <hr class="docutils" />
 <div class="section" id="algorithm-structures">
 <h2>Algorithm Structures<a class="headerlink" href="#algorithm-structures" title="Permalink to this headline">¶</a></h2>
+<p>The three fundamental structures are sequence, selection, and repetition.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="sequence">
 <h2>Sequence<a class="headerlink" href="#sequence" title="Permalink to this headline">¶</a></h2>
 <p>Sequential processing are steps performed in sequence, one after another.  A default spreadsheet computation from top-to-bottom is a sequential process.</p>
@@ -796,7 +787,10 @@ num1
 </ol>
 <p>In general because we dont want to idle 999 sandwich artists, we would choose the serial structure, which frees 999 people to ask the existential question “would you like fries with that?”</p>
 <p>All cynicism aside, an automated process such as a loop, is typical in computational processing.</p>
-<p><em><strong>Aside</strong></em> NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel – the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This parallelization is called unrolling the loop, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel – the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This kind of parallelization is called “unrolling the loop”, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.</p>
+</div>
 <p>Main attractiveness of loops is:</p>
 <ul class="simple">
 <li><p>Leveraging  <code class="docutils literal notranslate"><span class="pre">pattern</span> <span class="pre">matching</span></code> and <code class="docutils literal notranslate"><span class="pre">automation</span></code></p></li>
@@ -836,8 +830,9 @@ print(a)
 </pre></div>
 </div>
 <p>Notice our friends the colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and the indentation.</p>
+</div>
 <div class="section" id="the-range-function-to-create-an-iterable">
-<h4>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function to create an iterable<a class="headerlink" href="#the-range-function-to-create-an-iterable" title="Permalink to this headline">¶</a></h4>
+<h3>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function to create an iterable<a class="headerlink" href="#the-range-function-to-create-an-iterable" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">range(begin,end,increment)</span></code> function will create an iterable starting at a value of begin, in steps defined by increment (<code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">+=</span> <span class="pre">increment</span></code>), ending at <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
 <p>So a generic syntax becomes</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for a in range(begin,end,increment):
@@ -845,7 +840,6 @@ print(a)
 </pre></div>
 </div>
 <p>The examples that follow are count-controlled repetition (increment skip if greater)</p>
-</div>
 </div>
 </div>
 <div class="section" id="example-for-loops">
@@ -877,6 +871,7 @@ print(a)
 </pre></div>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="sentinel-controlled-repetition">
 <h2>Sentinel-controlled repetition.<a class="headerlink" href="#sentinel-controlled-repetition" title="Permalink to this headline">¶</a></h2>
 <p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used.
@@ -898,9 +893,8 @@ The sentinel value itself need not be a part of the processed data.</p>
 <p>Notice our friends the colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and the indentation again.</p>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="example-while-loops">
-<h1>Example <code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#example-while-loops" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-while-loops">
+<h2>Example <code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#example-while-loops" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
 <span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
 <span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -930,6 +924,7 @@ The sentinel value itself need not be a part of the processed data.</p>
     <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <div class="section" id="nested-repetition">
 <h2>Nested Repetition<a class="headerlink" href="#nested-repetition" title="Permalink to this headline">¶</a></h2>
@@ -1172,9 +1167,8 @@ a practical limit except possibly for general-domain AI applications.</p>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="the-continue-statement">
-<h3>The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#the-continue-statement" title="Permalink to this headline">¶</a></h3>
+<h4>The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#the-continue-statement" title="Permalink to this headline">¶</a></h4>
 <p>The continue instruction skips the block of code after it is executed for that iteration.
 It is
 best illustrated by an example.</p>
@@ -1210,7 +1204,7 @@ best illustrated by an example.</p>
 </div>
 </div>
 <div class="section" id="the-try-except-structure">
-<h3>The <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code> structure<a class="headerlink" href="#the-try-except-structure" title="Permalink to this headline">¶</a></h3>
+<h4>The <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code> structure<a class="headerlink" href="#the-try-except-structure" title="Permalink to this headline">¶</a></h4>
 <p>An important control structure (and a pretty cool one for error trapping) is the <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>
 statement.</p>
 <p>The statement controls how the program proceeds when an error occurs in an instruction.
@@ -1281,6 +1275,7 @@ and keep running.</p>
     <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
 
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1384,10 +1379,10 @@ Your business processes may be subject to regulatory requirements such as Sarban
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson06.html" title="next page">
+        <a class="right-next" href="../lesson06/lesson06.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 6: Immutable Data Structures</p>
+                <p class="prevnext-title">6: Functions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

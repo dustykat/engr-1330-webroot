@@ -9,7 +9,7 @@
 # 
 # Last GitHub Commit Date: 13 July 2021
 #     
-# # 5: Algorithm Building Blocks:
+# # 5: Algorithm Building Blocks
 # - Three structures: sequence, selection , repetition (loops)
 # - Sequence structures
 # - Selection structures
@@ -41,8 +41,8 @@
 # ---
 # ## Algorithm Structures
 # 
+# The three fundamental structures are sequence, selection, and repetition.
 
-# ---
 # ## Sequence
 # 
 # Sequential processing are steps performed in sequence, one after another.  A default spreadsheet computation from top-to-bottom is a sequential process.
@@ -187,6 +187,7 @@
 # One can also use `if` to construct extremely inefficient loops.
 
 # ---
+# 
 # ## Repetition and Loops
 # 
 # **Computational thinking (CT)** concepts involved are:
@@ -220,7 +221,9 @@
 # 
 # All cynicism aside, an automated process such as a loop, is typical in computational processing. 
 # 
-# ***Aside*** NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel -- the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This parallelization is called unrolling the loop, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.
+# :::{note}
+# NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel -- the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This kind of parallelization is called "unrolling the loop", and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.
+# :::
 # 
 # Main attractiveness of loops is:
 # - Leveraging  `pattern matching` and `automation`
@@ -262,7 +265,7 @@
 #     
 # Notice our friends the colon `:` and the indentation.
 # 
-# #### The `range()` function to create an iterable
+# ### The `range()` function to create an iterable
 # 
 # The `range(begin,end,increment)` function will create an iterable starting at a value of begin, in steps defined by increment (`begin += increment`), ending at `end`. 
 # 
@@ -304,6 +307,8 @@
 #     print(linetoprint)
 # ```
 
+# ---
+# 
 # ## Sentinel-controlled repetition.
 # 
 # When loop control is based on the value of what we are processing, sentinel-controlled repetition is used. 
@@ -327,7 +332,7 @@
 # 
 # Notice our friends the colon `:` and the indentation again.
 
-# # Example `while` loops
+# ## Example `while` loops
 
 # ```
 # # sum numbers from 1 to n
@@ -366,7 +371,7 @@
 # 
 # Nested repetition is when a control structure is placed inside of the body or main part of another control structure.
 
-# #### `break` to exit out of a loop
+# ### `break` to exit out of a loop
 # 
 # Sometimes you may want to exit the loop when a certain condition different from the counting
 # condition is met. Perhaps you are looping through a list and want to exit when you find the

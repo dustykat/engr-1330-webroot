@@ -1,0 +1,1257 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6: Functions &#8212; ENGR 1330 Course Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lesson 7: User Interaction" href="../lesson07.html" />
+    <link rel="prev" title="5: Algorithm Building Blocks" href="../lesson05/lesson05.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
+   4.1: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   5: Algorithm Building Blocks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6: Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07.html">
+   Lesson 7: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08.html">
+   Lesson 8: Algorithm building blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9: Sequential structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10: Selection structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11: Count Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12: Sentinel Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14.html">
+   Lesson 14: External modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15: Working with files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16: File Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21. Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   Lesson 38: Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson06/lesson06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson06/lesson06.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson06/lesson06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-functions">
+   What are Functions?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-the-function">
+   Calling the Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#program-flow-and-prototyping">
+   Program Flow and Prototyping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#built-in-in-primitive-python-base-install">
+   Built-In in Primitive Python (Base install)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#added-in-using-external-packages-modules-and-libaries-e-g-math">
+   Added-In using External Packages/Modules and Libaries (e.g. math)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-built">
+   User-Built
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-built-within-a-code-block">
+     User-built within a Code Block
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-solving-process">
+     Problem Solving Process
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1">
+       Step 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2">
+       Step 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3">
+       Step 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4">
+       Step 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5">
+       Step 5
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6">
+       Step 6
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-scope">
+   Variable Scope
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-separate-module-file">
+     As Separate Module/File
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursion">
+   Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rudimentary-graphics">
+   Rudimentary Graphics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-6">
+   Laboratory 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-6">
+   Exercise Set 6
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date:</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions">
+<h1>6: Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Intrinsic (core)</p></li>
+<li><p>Common external</p></li>
+<li><p>User written</p></li>
+<li><p>Saving user written as a module</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Awareness of intrinsic functions available in core Python</p></li>
+<li><p>Import and implement external functions in libraries (external modules)</p></li>
+<li><p>Create and implement user-written functions</p></li>
+<li><p>Awareness of variable scope</p></li>
+<li><p>Save user-written functions to a file for import later</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-are-functions">
+<h2>What are Functions?<a class="headerlink" href="#what-are-functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions are simply pre-written code fragments that perform a certain task. In older procedural languages functions and subroutines are similar, but a function returns a value whereas a subroutine operates on data. The difference is subtle but important.</p>
+<p>More recent thinking has functions being able to operate on data (they always could) and the value returned may be simply an exit code. An analogy are the functions in <em>MS Excel</em>. To add numbers, we can use the sum(range) function and type <code class="docutils literal notranslate"><span class="pre">=sum(A1:A5)</span></code> instead of typing <code class="docutils literal notranslate"><span class="pre">=A1+A2+A3+A4+A5</span></code></p>
+<p>To restate <strong>A function is a block of code which only runs when it is
+called; it is pre-defined (prototyped) using parameters (placeholder variables)</strong></p>
+<ul class="simple">
+<li><p>You can pass data, known as parameters, into a function.</p></li>
+<li><p>A function can return derived data as a result, or just perform some operation</p></li>
+<li><p>They are useful for decomposition; Functions are used to modularize a program.</p></li>
+<li><p>The code blocks can be saved to a file, and imported in other scripts facilitating code reuse (i.e. pattern matching)</p></li>
+</ul>
+<p>The GIF below animates these ideas:</p>
+<img src="https://runestone.academy/runestone/books/published/fopp/_images/function_call.gif" width="300">
+<!--![](https://runestone.academy/runestone/books/published/fopp/_images/function_call.gif) <br> -->
+<p>Things you do using functions:</p>
+<ul class="simple">
+<li><p>Creating a function also called defining it. Then it is prototyped, that is suppliued to the kernel before you use it; in our Jupyter Notebooks, by running the defining cell before actually calling the function in a script.</p></li>
+<li><p>Calling a function (You have done did this before. For example, if you searched anything on Google, you called the search function; or when you press the plus button on your calculator, you are calling a sum function. In lab we have already used the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function)</p></li>
+</ul>
+</div>
+<div class="section" id="calling-the-function">
+<h2>Calling the Function<a class="headerlink" href="#calling-the-function" title="Permalink to this headline">¶</a></h2>
+<p>We call a function simply by typing the name of the function or by using a dot notation.
+Whether we can use the dot notation or not depends on how the function is written, whether it is part of a class, and how it is imported into a program.</p>
+<p>Some functions expect us to pass data to them to perform their tasks.
+These data are known as parameters( older terminology is arguments, or argument list) and we pass them to the function by enclosing their values in parenthesis ( ) separated by commas.</p>
+<p>For instance, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function for displaying text on the screen is “called” by typing <code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World')</span></code> where <strong>print</strong> is the name of the function and the literal (a string) ‘Hello World’ is the argument.</p>
+</div>
+<div class="section" id="program-flow-and-prototyping">
+<h2>Program Flow and Prototyping<a class="headerlink" href="#program-flow-and-prototyping" title="Permalink to this headline">¶</a></h2>
+<p>A function, whether built-in, or added must be defined <em>before</em> it is called, otherwise the script will fail.  Certain built-in functions “self define” upon start (such as <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">type()</span></code> and we need not worry about those funtions).  The diagram below illustrates the requesite flow control for functions that need to be defined before use.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson06/flow-control-diagram.png" /></p>
+<p>An example below  will illustrate, change the cell to code and run it, you should get an error.
+Then fix the indicated line (remove the leading “#” in the import math … line) and rerun, should get a functioning script.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># reset the notebook using a magic function in JupyterLab</span>
+<span class="o">%</span><span class="n">reset</span> <span class="o">-</span><span class="n">f</span> 
+<span class="c1"># An example, run once as is then activate indicated line, run again - what happens?</span>
+<span class="n">x</span><span class="o">=</span> <span class="mf">4.</span>
+<span class="n">sqrt_by_arithmetic</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using arithmetic square root of &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span><span class="n">sqrt_by_arithmetic</span> <span class="p">)</span>
+<span class="c1"># import math # import the math package ## activate and rerun</span>
+<span class="n">sqrt_by_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># note the dot notation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using math package square root of &#39;</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span><span class="n">sqrt_by_arithmetic</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An alternate way to load just the <strong>sqrt()</strong> function is shown below, either way is fine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reset the notebook using a magic function in JupyterLab </span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="c1"># An example, run once as is then activate indicated line, run again - what happens?</span>
+<span class="n">x</span><span class="o">=</span> <span class="mf">4.</span>
+<span class="n">sqrt_by_arithmetic</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using arithmetic square root of &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span><span class="n">sqrt_by_arithmetic</span> <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="c1"># import sqrt from the math package ## activate and rerun</span>
+<span class="n">sqrt_by_math</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># note the notation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using math package square root of &#39;</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span><span class="s1">&#39; is &#39;</span><span class="p">,</span><span class="n">sqrt_by_arithmetic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using arithmetic square root of  4.0  is  2.0
+Using math package square root of  4.0  is  2.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="built-in-in-primitive-python-base-install">
+<h2>Built-In in Primitive Python (Base install)<a class="headerlink" href="#built-in-in-primitive-python-base-install" title="Permalink to this headline">¶</a></h2>
+<p>The base Python functions and types built into it that are always available, the figure below lists those functions.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson06/base-functions.png" /></p>
+<p>Notice all have the structure of <code class="docutils literal notranslate"><span class="pre">function_name()</span></code>, except <code class="docutils literal notranslate"><span class="pre">__import__()</span></code> which has a constructor type structure, and is not intended for routine use (among other things it allows assigning multiple names for an imported module which usually breaks things badly) but instead we should stick with plain old <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code> as an expression rather than a function call.</p>
+</div>
+<div class="section" id="added-in-using-external-packages-modules-and-libaries-e-g-math">
+<h2>Added-In using External Packages/Modules and Libaries (e.g. math)<a class="headerlink" href="#added-in-using-external-packages-modules-and-libaries-e-g-math" title="Permalink to this headline">¶</a></h2>
+<p>Python is also distributed with a large number of external functions.
+These functions are saved
+in files known as modules.
+To use the built-in codes in Python modules, we have to import
+them into our programs first. We do that by using the import keyword.
+There are three
+ways to import:</p>
+<ol class="simple">
+<li><p>Import the entire module by writing import moduleName; For instance, to import the random module, we write import random. To use the randrange() function in the random module, we write random.randrange( 1, 10);28</p></li>
+<li><p>Import and rename the module by writing import random as r (where r is any name of your choice). Now to use the randrange() function, you simply write r.randrange(1, 10); and</p></li>
+<li><p>Import specific functions from the module by writing from moduleName import name1[,name2[, … nameN]]. For instance, to import the randrange() function from the random module, we write from random import randrange. To import multiple functions, we separate them with a comma. To import the randrange() and randint() functions, we write from random import randrange, randint. To use the function now, we do not have to use the dot notation anymore. Just write randrange( 1, 10).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1 of import</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">low</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span> <span class="c1">#generate random number in range low to high</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2 of import</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">r</span>
+<span class="n">low</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">r</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 3 of import</span>
+<span class="o">%</span><span class="k">reset</span> -f 
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span> 
+<span class="n">low</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">randrange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The modules that come with Python are extensive and listed at
+<a class="reference external" href="https://docs.python.org/3/py-modindex.html">https://docs.python.org/3/py-modindex.html</a>.
+There are also other modules that can be downloaded and used
+(just like user defined modules below).
+In these labs we are building primitive codes to learn how to code and how to create algorithms.
+For many practical cases you will want to load a well-tested package to accomplish the tasks.</p>
+<p>That exercise is saved for the end of the document.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="user-built">
+<h2>User-Built<a class="headerlink" href="#user-built" title="Permalink to this headline">¶</a></h2>
+<p>We can define our own functions in Python and reuse them throughout the program.
+The syntax for defining a function is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def functionName( argument ):
+    code detailing what the function should do
+    note the colon above and indentation
+    ...
+    ...
+    return [expression]
+</pre></div>
+</div>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> tells the program that the indented code from the next line onwards is
+part of the function.
+The keyword <code class="docutils literal notranslate"><span class="pre">return</span> </code>tells the program to return an answer from the
+function.
+There can be multiple return statements in a function.
+Once the function executes
+a return statement, the program exits the function and continues with <em>its</em> next executable
+statement.
+If the function does not need to return any value, you can omit the return
+statement, the exit code will be <strong>none</strong> which is a special constant with logical value <strong>false</strong></p>
+<p>Its probably a good habit to have a return statement anyway, and just <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">null</span></code></p>
+<p>Functions can be pretty elaborate; they can search for things in a list, determine variable
+types, open and close files, read and write to files.</p>
+<p>To get started we will build a few really
+simple mathematical functions; we will need this skill in the future anyway, especially in
+scientific programming contexts.</p>
+<hr class="docutils" />
+<div class="section" id="user-built-within-a-code-block">
+<h3>User-built within a Code Block<a class="headerlink" href="#user-built-within-a-code-block" title="Permalink to this headline">¶</a></h3>
+<p>For our first function we will code</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x\sqrt{1 + x}\]</div>
+<p>into a function named <code class="docutils literal notranslate"><span class="pre">dusty()</span></code>.</p>
+<p>When you run the next cell, all it does is prototype the function (defines it), nothing happens until we use the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dusty</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">((</span><span class="mf">1.0</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="c1"># don&#39;t need the math package</span>
+    <span class="k">return</span> <span class="n">temp</span>
+<span class="c1"># the function should make the evaluation</span>
+<span class="c1"># store in the local variable temp</span>
+<span class="c1"># return contents of temp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we run the cell above, it seems like nuttin happens - but in fact the kernel (Sanders himself) associates the name dusty with the block of code that we just created. Now we can use the dusty funcrtion at our leisure as below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrapper to run the dusty function</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter a numeric value&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;enter a bloody number! Try again </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># call the function, get value , write output</span>
+<span class="n">yvalue</span> <span class="o">=</span> <span class="n">dusty</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(&#39;</span><span class="p">,</span><span class="n">xvalue</span><span class="p">,</span><span class="s1">&#39;) = &#39;</span><span class="p">,</span><span class="n">yvalue</span><span class="p">)</span> <span class="c1"># and we are done </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Sum of numbers from 0 to N</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initialize the accumulator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># construct an accumulation loop</span>
+        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">mysum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_n</span><span class="p">(</span><span class="n">how_many</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Sum of numbers from 0 to N, but forget the return statement</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initialize the accumulator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># construct an accumulation loop</span>
+        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_n</span><span class="p">(</span><span class="n">how_many</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Sum of numbers from 0 to N, and including defaults.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_n</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initialize the accumulator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># construct an accumulation loop</span>
+        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">mysum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sum_of_n</span><span class="p">())</span> <span class="c1"># if we have no argument, uses the default</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Create a Fahrenhiet to Celsius converter and test it for these values:</p>
+<ul class="simple">
+<li><p>32</p></li>
+<li><p>15</p></li>
+<li><p>100</p></li>
+</ul>
+<p>*hint: Formula-(°F − 32) × 5/9 = °C</p>
+<div class="section" id="problem-solving-process">
+<h3>Problem Solving Process<a class="headerlink" href="#problem-solving-process" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="step-1">
+<h4>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h4>
+<p>Define the problem (problem statement):</p>
+<ul class="simple">
+<li><p>Create a tool to convert Fahrenhiet to Celsius</p></li>
+</ul>
+</div>
+<div class="section" id="step-2">
+<h4>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h4>
+<p>Gather information (identify known and unknown values, and governing equations)</p>
+<ul class="simple">
+<li><p>Known: Input in F</p></li>
+<li><p>Unknown: Output in C</p></li>
+<li><p>Governing Principles: <em>Formula: (°F − 32) × 5/9 = °C</em></p></li>
+</ul>
+</div>
+<div class="section" id="step-3">
+<h4>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h4>
+<p>Generate and evaluate potential solutions</p>
+<ul class="simple">
+<li><p>-40F = -40C</p></li>
+<li><p>32F = 0C</p></li>
+<li><p>212F = 100C</p></li>
+</ul>
+</div>
+<div class="section" id="step-4">
+<h4>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h4>
+<p>Refine and implement a solution</p>
+<ol class="simple">
+<li><p>Create function to evaluate input and produce output</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FC</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># convert F to C</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Create wrapper to prompt for input, execute function, label output</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">FC</span><span class="p">(</span><span class="mi">99</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.22222222222222
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5">
+<h4>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h4>
+<p>Verify and test the solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">FC</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-40.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">FC</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">FC</span><span class="p">(</span><span class="mi">212</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-6">
+<h4>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h4>
+<p>Refine to be useful</p>
+<ul class="simple">
+<li><p>Modify the wrapper to be interactive</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">F2C</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># convert F to C</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">return</span> <span class="n">C</span>
+<span class="c1"># wrapper to run the F2C function</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a temperature in Fairyheight&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Enter a bloody number! Try again </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># call the function, get value , write output</span>
+<span class="n">yvalue</span> <span class="o">=</span> <span class="n">F2C</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Temp: &#39;</span><span class="p">,</span><span class="n">xvalue</span><span class="p">,</span><span class="s1">&#39;F = &#39;</span><span class="p">,</span><span class="n">yvalue</span><span class="p">,</span><span class="s1">&#39; C&#39;</span><span class="p">)</span> <span class="c1"># and we are done </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variable-scope">
+<h2>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>
+<p>An important concept when defining a function is the concept of variable scope.
+Variables defined inside a function are treated differently from variables defined outside.
+Firstly, any variable declared within a function is only accessible within the function.
+These are known as local variables.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">dusty()</span></code> function, the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">temp</span></code> are local to the function.
+Any variable declared outside a function in a main program is known as a program variable
+and is accessible anywhere in the program.</p>
+<p>In the example, the variables <code class="docutils literal notranslate"><span class="pre">xvalue</span></code> and <code class="docutils literal notranslate"><span class="pre">yvalue</span></code> are program variables (global to the program; if they are addressed within a function, they could be operated on.)
+Generally we want to protect the program variables from the function unless the intent is to change their values.
+The way the function is written in the example, the function cannot damage <code class="docutils literal notranslate"><span class="pre">xvalue</span></code> or <code class="docutils literal notranslate"><span class="pre">yvalue</span></code>.</p>
+<p>If a local variable shares the same name as a program variable, any code inside the function is
+accessing the local variable. Any code outside is accessing the program variable</p>
+<div class="section" id="as-separate-module-file">
+<h3>As Separate Module/File<a class="headerlink" href="#as-separate-module-file" title="Permalink to this headline">¶</a></h3>
+<p>In this section we will invent the <code class="docutils literal notranslate"><span class="pre">neko()</span></code> function, export it to a file, so we can reuse it in later notebooks without having to retype or cut-and-paste. The <code class="docutils literal notranslate"><span class="pre">neko()</span></code> function evaluates:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x\sqrt{|(1 + x)|}\]</div>
+<p>Its the same as the dusty() function, except operates on the absolute value in the wadical.</p>
+<ol>
+<li><p>Create a text file named “mylibrary.txt”</p></li>
+<li><p>Copy the neko() function script below into that file.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> def neko(input_argument) :
+     import math #ok to import into a function
+     local_variable = input_argument * math.sqrt(abs(1.0+input_argument))
+     return local_variable
+</pre></div>
+</div>
+</li>
+<li><p>rename mylibrary.txt to <a class="reference external" href="http://mylibrary.py">mylibrary.py</a></p></li>
+<li><p>modify the wrapper script to use the neko function as an external module</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrapper to run the neko function</span>
+<span class="kn">import</span> <span class="nn">mylibrary</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter a numeric value&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">xvalue</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;enter a bloody number! Try again </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># call the function, get value , write output</span>
+<span class="n">yvalue</span> <span class="o">=</span> <span class="n">mylibrary</span><span class="o">.</span><span class="n">neko</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(&#39;</span><span class="p">,</span><span class="n">xvalue</span><span class="p">,</span><span class="s1">&#39;) = &#39;</span><span class="p">,</span><span class="n">yvalue</span><span class="p">)</span> <span class="c1"># and we are done </span>
+</pre></div>
+</div>
+<p>In JupyterHub environments, you may discover that changes you make to your external python file are not reflected when you re-run your script; you need to restart the kernel to get the changes to actually update. The figure below depicts the notebook, external file relatonship</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson06/external-file-import.png" /></p>
+<ul class="simple">
+<li><p>Future version - explain absolute path</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h2>
+<p>Functions can contain themselves as part of definition, this is called recursion.  Use the provilige with care, its easy to clobber the memory stack using recursive structures.  Consider the factorial function definition from math class:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 0! = 1 \\ 1! = 1 \\ 2! = 0! * 1! * 2 \\ \dots \\ N! = (N-1)! * N \end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>720
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="rudimentary-graphics">
+<h2>Rudimentary Graphics<a class="headerlink" href="#rudimentary-graphics" title="Permalink to this headline">¶</a></h2>
+<p>Graphing values is part of the broader field of data visualization, which has two main
+goals:</p>
+<ol class="simple">
+<li><p>To explore data, and</p></li>
+<li><p>To communicate data.</p></li>
+</ol>
+<p>In this subsection we will concentrate on introducing skills to start exploring data and to
+produce meaningful visualizations we can use throughout the rest of this notebook.
+Data visualization is a rich field of study that fills entire books.
+The reason to start visualization here instead of elsewhere is that with mathematical functions plotting
+is a natural activity and we have to import the matplotlib module to make the plots.</p>
+<p>The example below is code adapted from Grus (2015) that illustrates simple generic
+plots. I added a single line (label the x-axis), and corrected some transcription
+errors (not the original author’s mistake, just the consequence of how the API handled the
+cut-and-paste), but otherwise the code is unchanged.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># python script to illustrate plotting</span>
+<span class="c1"># CODE BELOW IS ADAPTED FROM:</span>
+<span class="c1"># Grus, Joel (2015-04-14). Data Science from Scratch: First Principles with Python</span>
+<span class="c1"># (Kindle Locations 1190-1191). O&#39;Reilly Media. Kindle Edition. </span>
+<span class="c1">#</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="c1"># import the plotting library from matplotlib.pyplot</span>
+<span class="c1"># build a couple of lists</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">]</span>  <span class="c1"># define one list for years</span>
+<span class="n">gdp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">300.2</span><span class="p">,</span> <span class="mf">543.3</span><span class="p">,</span> <span class="mf">1075.9</span><span class="p">,</span> <span class="mf">2862.5</span><span class="p">,</span> <span class="mf">5979.6</span><span class="p">,</span> <span class="mf">10289.7</span><span class="p">,</span> <span class="mf">14958.3</span><span class="p">]</span> <span class="c1"># and another one for Gross Domestic Product (GDP)</span>
+<span class="c1"># build the plot</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">years</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> <span class="c1"># create a line chart, years on x-axis, gdp on y-axis</span>
+                                                                       <span class="c1"># what if &quot;^&quot;, &quot;P&quot;, &quot;*&quot; for marker?</span>
+                                                                       <span class="c1"># what if &quot;red&quot; for color?  </span>
+                                                                       <span class="c1"># what if &quot;dashdot&quot;, &#39;--&#39; for linestyle?  </span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nominal GDP&quot;</span><span class="p">)</span><span class="c1"># add a title</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Billions of $&quot;</span><span class="p">)</span><span class="c1"># add a label to the x and y-axes</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span><span class="c1"># add a title</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson06_45_0.png" src="../../_images/lesson06_45_0.png" />
+</div>
+</div>
+<p>Now lets put the plotting script into a function so we can make line charts of any two numeric lists</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotAline</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">,</span><span class="n">strx</span><span class="p">,</span><span class="n">stry</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span> <span class="c1"># plot list1 on x, list2 on y, xlabel, ylabel, title</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="c1"># import the plotting library from matplotlib.pyplot</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> <span class="c1"># create a line chart, years on x-axis, gdp on y-axis</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span><span class="c1"># add a title</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">stry</span><span class="p">)</span><span class="c1"># add a label to the x and y-axes</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strx</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+    <span class="k">return</span> <span class="c1">#null return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrapper script</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">]</span>  <span class="c1"># define two lists years and gdp</span>
+<span class="n">gdp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">300.2</span><span class="p">,</span> <span class="mf">543.3</span><span class="p">,</span> <span class="mf">1075.9</span><span class="p">,</span> <span class="mf">2862.5</span><span class="p">,</span> <span class="mf">5979.6</span><span class="p">,</span> <span class="mf">10289.7</span><span class="p">,</span> <span class="mf">14958.3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">gdp</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">plotAline</span><span class="p">(</span><span class="n">years</span><span class="p">,</span><span class="n">gdp</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Billions of $&quot;</span><span class="p">,</span><span class="s2">&quot;Nominal GDP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson06_48_1.png" src="../../_images/lesson06_48_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Use the plotting script and create a function that draws a straight line between two points. We will cut-and-paste in class to see what this code does for us.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MakeALine</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="c1"># import the plotting library from matplotlib.pyplot</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter x value for point 1&#39;</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter y value for point 1&#39;</span><span class="p">)</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter x value for point 2&#39;</span><span class="p">)</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter y value for point 2&#39;</span><span class="p">)</span>
+    <span class="n">xlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">]</span>
+    <span class="n">ylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">]</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> 
+    <span class="c1">#plt.title(strtitle)# add a title</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y-axis&quot;</span><span class="p">)</span><span class="c1"># add a label to the x and y-axes</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X-axis&quot;</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+    <span class="k">return</span> <span class="c1">#null return</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MakeALine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Grus, Joel (2015-04-14). Data Science from Scratch: First Principles with Python
+(Kindle Locations 1190-1191). O’Reilly Media. Kindle Edition.</p></li>
+<li><p>Call Expressions in “Adhikari, A. and DeNero, J. Computational and Inferential Thinking The Foundations of Data Science” <a class="reference external" href="https://www.inferentialthinking.com/chapters/03/3/Calls.html">https://www.inferentialthinking.com/chapters/03/3/Calls.html</a></p></li>
+<li><p>Functions and Tables in “Adhikari, A. and DeNero, J. Computational and Inferential Thinking The Foundations of Data Science” <a class="reference external" href="https://www.inferentialthinking.com/chapters/08/Functions_and_Tables.html">https://www.inferentialthinking.com/chapters/08/Functions_and_Tables.html</a></p></li>
+<li><p>Visualization in “Adhikari, A. and DeNero, J. Computational and Inferential Thinking The Foundations of Data Science” <a class="reference external" href="https://www.inferentialthinking.com/chapters/07/Visualization.html">https://www.inferentialthinking.com/chapters/07/Visualization.html</a></p></li>
+<li><p>Documentation; The Python Standard Library; 9. Numeric and Mathematical Modules <a class="reference external" href="https://docs.python.org/2/library/math.html">https://docs.python.org/2/library/math.html</a></p></li>
+<li><p><a class="reference external" href="http://Code.org">Code.org</a>; Chris Bosh of Miami Heat and Jess Lee CEO of Polyvore. Let’s use code to join Anna and Elsa as they explore the magic and beauty of ice. <a class="reference external" href="https://youtu.be/0eo0ESEX9DE">https://youtu.be/0eo0ESEX9DE</a></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-6">
+<h2>Laboratory 6<a class="headerlink" href="#laboratory-6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 0 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06.html">Laboratory 6.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 6 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06.ipynb">Laboratory 6.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-6">
+<h2>Exercise Set 6<a class="headerlink" href="#exercise-set-6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 6 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06-TH.html">Exercise 6.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 6 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab06/Lab06-TH.ipynb">Exercise Set 6.ipynb</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson06"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson05/lesson05.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">5: Algorithm Building Blocks</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson07.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 7: User Interaction</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
