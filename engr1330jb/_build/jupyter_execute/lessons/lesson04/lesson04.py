@@ -410,18 +410,18 @@ lipids in a variety of shapes'''.format(MyName,MyAge))
 # 
 # ## Laboratory 4
 # 
-# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 4.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.html)
+# **Examine** (click) Laboratory 4 as a webpage at [Laboratory 4.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 4 as a jupyterlab notebook from [Laboratory 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 4
 # 
-# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 4.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.html)
+# **Examine** (click) Exercise Set 4 as a webpage at [Exercise 4.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 4 as a jupyterlab notebook at  [Exercise Set 4.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab04/Lab04-TH.ipynb)
 # 
 # 
 

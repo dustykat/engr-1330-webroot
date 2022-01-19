@@ -532,18 +532,18 @@ print("arithmetic mean = ",round(average(xlist),2))
 # 
 # ## Laboratory 1
 # 
-# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01.html)
+# **Examine** (click) Laboratory 1 as a webpage at [Laboratory 1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 1 as a jupyterlab notebook from [Laboratory 1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 1
 # 
-# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.html)
+# **Examine** (click) Exercise Set 1 as a webpage at [Exercise 1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 1 as a jupyterlab notebook at  [Exercise Set 1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab01/Lab01-TH.ipynb)
 # 
 # 
 

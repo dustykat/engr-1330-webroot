@@ -21,7 +21,7 @@ chapters:
 - file: lessons/lesson11 # repetition (count control)
 - file: lessons/lesson12 # repetition (sentinel control)
 - file: lessons/lesson13 # functions
-- file: lessons/lesson14 # external modules
+- file: lessons/lesson14/lesson14 # plotting conventions 
 - file: lessons/lesson15 # files
 - file: lessons/lesson16 # more files
 - file: lessons/lesson17 # matrices
@@ -32,6 +32,7 @@ chapters:
 - file: lessons/lesson22 # matplotlib
 - file: lessons/lesson23 # data models
 #
+- file: lessons/lesson32/lesson32 # KNN Classification
 - file: lessons/lesson35 # logistic regression
 - file: lessons/lesson36 # logistic regression
 - file: lessons/lesson37 # knn classification

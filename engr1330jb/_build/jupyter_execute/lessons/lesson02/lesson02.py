@@ -252,18 +252,18 @@ print(type(x1),x1)
 # 
 # ## Laboratory 2
 # 
-# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.html)
+# **Examine** (click) Laboratory 2 as a webpage at [Laboratory 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 0 as a jupyterlab notebook from [Laboratory 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 2 as a jupyterlab notebook from [Laboratory 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 2
 # 
-# **Examine** (click) Exercise Set 0 as a webpage at [Exercise 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.html)
+# **Examine** (click) Exercise Set 2 as a webpage at [Exercise 2.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 2 as a jupyterlab notebook at  [Exercise Set 2.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab02/Lab02-TH.ipynb)
 # 
 # 
 
