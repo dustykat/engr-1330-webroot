@@ -33,6 +33,8 @@ chapters:
 - file: lessons/lesson23 # data models
 #
 - file: lessons/lesson32/lesson32 # KNN Classification
+- file: lessons/lesson33/lesson33 # KNN Classification
+- file: lessons/lesson34/lesson34 # KNN Classification
 - file: lessons/lesson35 # logistic regression
 - file: lessons/lesson36 # logistic regression
 - file: lessons/lesson37 # knn classification

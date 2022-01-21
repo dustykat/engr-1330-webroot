@@ -13190,8 +13190,8 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2>Exercise 2: Number Manipulation <br></h2>
-<p>Create a script that accepts an integer (n) as input and computes the value of n+nn+nnn. For example for an input value of n = 5 the required result is 155</p>
+<h2>Exercise 2: Dictionary Manipulation <br></h2>
+<p>Create a script that accepts an integer (n) as input and computes the value of n+nn+nnn. For example for an input value of n = 5 the required result is 615</p>
 <p>Use the following cases to test your script:</p>
 <ul>
 <li>Case 1: <code>n=1</code></li>

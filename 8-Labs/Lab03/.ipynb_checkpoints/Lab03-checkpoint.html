@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lab03-TH</title>
+<title>Lab03</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13083,7 +13083,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from:</p>
-<p><a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.ipynb">Laboratory 3 - TH</a></p>
+<p><a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.ipynb">Laboratory 3</a></p>
 <hr>
 
 </div>
@@ -13092,17 +13092,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1><font color=darkblue>Exercise Set 3: Expressions and Problem Solving </font></h1>
+<h1><font color=darkblue>Laboratory 3: Expressions  </font></h1>
 <p><strong>LAST NAME, FIRST NAME</strong></p>
 <p><strong>R00000000</strong></p>
-<p>ENGR 1330 ES-3 - Homework</p>
+<p>ENGR 1330 Laboratory 3 - In-Lab</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
@@ -13131,8 +13131,8 @@ div#notebook {
 <pre>atomickitty
 sensei
 /opt/jupyterhub/bin/python3
-3.8.10 (default, Nov 26 2021, 20:14:08) 
-[GCC 9.3.0]
+3.8.10 (default, Jun  2 2021, 10:49:15) 
+[GCC 9.4.0]
 sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, serial=0)
 </pre>
 </div>
@@ -13145,17 +13145,8 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-1:-Odd/Even">Exercise 1: Odd/Even<a class="anchor-link" href="#Exercise-1:-Odd/Even">&#182;</a></h2><p>Depending on whether the number is even or odd, print out an appropriate message to the user.</p>
-<p>Use the following cases to test your script:</p>
-<ul>
-<li>Case 1: <code>number=33</code></li>
-<li>Case 2: <code>number=44</code></li>
-</ul>
-<p>Bonus(Optional):</p>
-<ul>
-<li>If the number is a multiple of 4, print out a different message.</li>
-<li>Supply two numbers: one number to check (call it <code>num</code>) and one number to divide by (<code>check</code>). If check divides evenly into num, tell that to the user. If not, print a different appropriate message.</li>
-</ul>
+<p>Example 1: Calculate the sum of two numbers</p>
+<p>Given two integer numbers return their sum.</p>
 
 </div>
 </div>
@@ -13163,6 +13154,80 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">number1</span><span class="o">+</span><span class="n">number2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>23
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Example 2: Calculate the product of two numbers</p>
+<p>Given two integer numbers return their product.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">number1</span><span class="o">*</span><span class="n">number2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exercise 1: Given two integer numbers return their product only if the product is greater than 1000, else return their sum.</p>
+<ul>
+<li>Apply the principles of problem solving in the lesson (the yield stress example).</li>
+<li>Using the same approach link the two examples above to complete the exercise</li>
+<li>Use the following inputs</li>
+<li>Case 1: <code>number1 = 20</code> and <code>number2 = 30</code></li>
+<li>Case 2: <code>number1 = 40</code> and <code>number2 = 30</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your Case 1 code here</span>
@@ -13175,7 +13240,7 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your Case 2 code here</span>
@@ -13189,18 +13254,7 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h2>Exercise 2: Number Manipulation <br></h2>
-<p>Create a script that accepts an integer (n) as input and computes the value of n+nn+nnn. For example for an input value of n = 5 the required result is 155</p>
-<p>Use the following cases to test your script:</p>
-<ul>
-<li>Case 1: <code>n=1</code></li>
-<li>Case 2: <code>n=6</code></li>
-</ul>
-<p>Bonus(Optional):</p>
-<ul>
-<li>Modify the script to accept multi-digit values, and test with <code>n=33</code></li>
-</ul>
+<p>Exercise 2: Write a program to check if the given number is a palindrome number. A palindrome number is a number that is same after reverse. For example 545, is a palindrome number.</p>
 
 </div>
 </div>
@@ -13220,7 +13274,7 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your Case 2 code here</span>
@@ -13230,6 +13284,33 @@ sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, seria
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Readings">Readings<a class="anchor-link" href="#Readings">&#182;</a></h2><p><em>Here are some great reads on this topic:</em></p>
+<ul>
+<li><strong>"Expressions and Statements in Python"</strong> by <strong>Md.Imran</strong> available at <em><a href="https://codepict.com/expressions-and-statements-in-python/">https://codepict.com/expressions-and-statements-in-python/</a></em> <br></li>
+<li><strong>"Conditional Statements in Python"</strong> by <strong>John Sturtz</strong> available at *<a href="https://realpython.com/python-conditional-statements/">https://realpython.com/python-conditional-statements/</a> <br></li>
+<li><strong>"Python If Statement explained with examples"</strong> by <strong>CHAITANYA SINGH</strong> available at *<a href="https://beginnersbook.com/2018/01/python-if-statement-example/">https://beginnersbook.com/2018/01/python-if-statement-example/</a> <br></li>
+</ul>
+<p><em>Here are some great videos on these topics:</em></p>
+<ul>
+<li><strong>"Python Expressions"</strong> <em><a href="https://www.youtube.com/watch?v=hecHkaSt4iY">https://www.youtube.com/watch?v=hecHkaSt4iY</a></em> <br></li>
+<li><strong>"How to Use If Else Statements in Python (Python Tutorial #2)"</strong> by <strong>CS Dojo</strong> available at *<a href="https://www.youtube.com/watch?v=AWek49wXGzI">https://www.youtube.com/watch?v=AWek49wXGzI</a> <br></li>
+<li><strong>"Python If Statements | Python Tutorial #10"</strong> by <strong>Amigoscode</strong> available at *<a href="https://www.youtube.com/watch?v=wKQRmXR3jhc">https://www.youtube.com/watch?v=wKQRmXR3jhc</a> <br></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
 </div>
     </div>
   </div>
