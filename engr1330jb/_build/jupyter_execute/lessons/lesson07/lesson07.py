@@ -554,7 +554,8 @@ get_ipython().system(' cat all_quads_gross_evaporation.csv')
 # > - `perl -pe 's/\r\n|\n|\r/\r\n/g' inputfile > outputfile`  # Convert to DOS
 # > - `perl -pe 's/\r\n|\n|\r/\n/g'   inputfile > outputfile`  # Convert to UNIX
 # > - `perl -pe 's/\r\n|\n|\r/\r/g'   inputfile > outputfile`  # Convert to old Mac
-# ** Probably need to just put links to working scripts in future revision **
+# 
+# ** Links to URLs with explaination in future revision **
 # :::
 # 
 # Now lets actually read the file into a list for some processing.  We will read it into a null list, and split on the commas (so we will be building a matrix of strings). Then we will print the first few rows and columns.
@@ -650,18 +651,18 @@ if c910 != 0:
 # 
 # ## Laboratory 7
 # 
-# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html)
+# **Examine** (click) Laboratory 7 as a webpage at [Laboratory 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 6 as a jupyterlab notebook from [Laboratory 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 7 as a jupyterlab notebook from [Laboratory 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 7
 # 
-# **Examine** (click) Exercise Set 6 as a webpage at [Exercise 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html)
+# **Examine** (click) Exercise Set 7 as a webpage at [Exercise 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 6 as a jupyterlab notebook at  [Exercise Set 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 7 as a jupyterlab notebook at  [Exercise Set 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.ipynb)
 # 
 # 
 

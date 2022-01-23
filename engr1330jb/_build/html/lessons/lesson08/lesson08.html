@@ -1,0 +1,1530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8: Vectors and Matrices (as lists) &#8212; ENGR 1330 Course Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lesson 9: Sequential structure" href="../lesson09.html" />
+    <link rel="prev" title="7: Files" href="../lesson07/lesson07.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
+   4.1: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   5: Algorithm Building Blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   6: Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07/lesson07.html">
+   7: Files
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8: Vectors and Matrices (as lists)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9: Sequential structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10: Selection structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11: Count Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12: Sentinel Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14/lesson14.html">
+   14: Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15: Working with files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16: File Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21: Testing Hypothesis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson32/lesson32.html">
+   32: K Nearest Neighbor (KNN) Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson33/lesson33.html">
+   33: KNN Classification (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson34/lesson34.html">
+   34: KNN Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   Lesson 38: Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson08/lesson08.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson08/lesson08.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson08/lesson08.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-matrix-a-special-data-structure">
+     The Matrix: A special data structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-arithmetic">
+     Matrix Arithmetic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Matrix Arithmetic
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiply-a-matrix-by-a-scalar">
+       Multiply a matrix by a scalar
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-addition-and-subtraction">
+       Matrix addition (and subtraction)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-multiplication">
+       Matrix multiplication
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#identity-matrix">
+       Identity matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-inverse">
+       Matrix Inverse
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gauss-jordan-method-of-finding-mathbf-a-1-optional">
+     Gauss-Jordan method of finding
+     <span class="math notranslate nohighlight">
+      \(\mathbf{A}^{-1}\)
+     </span>
+     (Optional)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-linear-systems-optional">
+     Solving Linear Systems (Optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-8">
+   Laboratory 8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-8">
+   Exercise Set 8
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date:</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="vectors-and-matrices-as-lists">
+<h1>8: Vectors and Matrices (as lists)<a class="headerlink" href="#vectors-and-matrices-as-lists" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>The Matrix: A special data structure</p></li>
+<li><p>Matrix Definition</p></li>
+<li><p>Matrix Arithmetic</p></li>
+<li><p>Multiply a matrix by a scalar .</p></li>
+<li><p>Matrix addition (and subtraction)</p></li>
+<li><p>Multiply a matrix</p></li>
+<li><p>Identity matrix</p></li>
+<li><p>Matrix Inverse</p>
+<ul>
+<li><p>Gauss-Jordan method of finding <span class="math notranslate nohighlight">\(A^{−1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Demonstrate matrices as a list of lists</p></li>
+<li><p>Demonstrate matrix arithmetic using fundamental arithmetic and list manipulation</p></li>
+</ol>
+<div class="section" id="the-matrix-a-special-data-structure">
+<h3>The Matrix: A special data structure<a class="headerlink" href="#the-matrix-a-special-data-structure" title="Permalink to this headline">¶</a></h3>
+<p>A matrix is a rectangular array of numbers:</p>
+<img src="https://64.media.tumblr.com/tumblr_lwa95v31MU1qgwsj9o1_250.gif" width= 600>
+<p>Or more for our needs something like:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 &amp; 2\\
+2 &amp; 9 &amp; 17 &amp; 5 \\
+11 &amp; 15 &amp; 8 &amp; 3 \\
+\end{pmatrix}
+\end{gather}
+\)</span></p>
+<p>The size of a matrix is referred to in terms of the number of rows and the number of columns.
+The enclosing parenthesis are optional above, but become meaningful when writing multiple matrices next to each other.
+The above matrix is 3 by 4.</p>
+<p>When we are discussing matrices we will often refer to specific numbers in the matrix.
+To refer to a specific element of a matrix we refer to the row number (i) and the column number (j).
+We will often call a specific element of the matrix, the <span class="math notranslate nohighlight">\(a_{i,j}\)</span> -th element of the matrix.
+For example <span class="math notranslate nohighlight">\(a_{2,3}\)</span> element in the above matrix is 17.</p>
+<p>We have seen in Python that we would refer to the element as <span class="math notranslate nohighlight">\(a_{matrix}[i][j]\)</span> or whatever the name of the matrix is in the program; with the caveat that the elements start counting at 0. For instance in the matrix above <span class="math notranslate nohighlight">\(a_{matrix}[0][0]\)</span> contains the value 1.</p>
+<p>A vector is really just a matrix with a single column, but are often treated as different kinds of entities.
+In python core, a matrix is simply a list of lists - each row is a list, and the matrix is a collection of rows.  A vector is simply a collection (list) of elements (we can force a vector to be a matrix, but we would have a structure that builds a collection of single element lists)</p>
+<p>For small matrices we can build them with explicit code; but larger ones are usually kept in files (hence the file handling lesson prior to this lesson).  Also processing matrices as lists is ultimately cumbersome, so we will later (<em>next lesson</em>) employ the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package that greatly facilitates matrix manipulation - here we will learn about matrix manipulation for the pedagogcal aspect.</p>
+<p>To complete this section, lets create the matrix above and access its contents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">17</span> <span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">11</span> <span class="p">,</span> <span class="mi">15</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rows = &#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">),</span><span class="s1">&#39;cols = &#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rows =  3 cols =  4
+[1, 5, 7, 2]
+[2, 9, 17, 5]
+[11, 15, 8, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="matrix-arithmetic">
+<h3>Matrix Arithmetic<a class="headerlink" href="#matrix-arithmetic" title="Permalink to this headline">¶</a></h3>
+<p>Analysis of many problems in engineering result in systems of simultaneous equations.
+We typically represent systems of equations with a matrix. For example the two-
+equation system,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\begin{matrix}
+2x_1 &amp; ~+~~3x_2  \\
+~\\
+4x_1 &amp; ~-~~3x_2 \\
+\end{matrix}
+\begin{matrix}
+=~8\\
+~\\
+=~-2\\
+\end{matrix}
+\end{gather}
+\end{split}\]</div>
+<p>Could be represented by set of vectors and matrices(Usually called <code class="docutils literal notranslate"><span class="pre">vector-matrix</span></code> form.<br />
+Additionally, a vector is really just a matrix with column rank = 1 (a single column matrix).)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A} =
+\begin{pmatrix}
+2 &amp; ~3 \\
+~\\
+4 &amp; -3 \\
+\end{pmatrix}
+~
+\mathbf{x} =
+\begin{pmatrix}
+x_1\\
+~\\
+x_2\\
+\end{pmatrix}
+~
+\mathbf{b} =
+\begin{pmatrix}
+~8\\
+~\\
+-2\\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>and the linear system then written as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{gather}
+\mathbf{A} \cdot \mathbf{x} = \mathbf{b}
+\end{gather}
+\]</div>
+<p>So the “algebra” is considerably simplified, at least for writing things,
+however we now have to be able to do things like multiplication (indicated by <span class="math notranslate nohighlight">\( ~\cdot \)</span>) as well as the concept of addition and subtraction, and division (multiplication by an inverse).</p>
+<p>There are also several kinds of matrix multiplication – the inner (or dot) product as required by the linear system, the vector (cross product), the exterior (wedge), and outer (tensor) product are a few of importance in both mathematics and engineering.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h3>Matrix Arithmetic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="multiply-a-matrix-by-a-scalar">
+<h4>Multiply a matrix by a scalar<a class="headerlink" href="#multiply-a-matrix-by-a-scalar" title="Permalink to this headline">¶</a></h4>
+<p>A scalar multiple of a matrix is simply each element of the matrix multiplied by the scalar value.
+Consider the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 \\
+2 &amp; 9 &amp; 3 \\
+4 &amp; 4 &amp; 8 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>If the scalar is say 2, then <span class="math notranslate nohighlight">\(2 \times \mathbf{A}\)</span> is computed by doubling each element of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+2\mathbf{A}=
+\begin{pmatrix}
+2 &amp; 10 &amp; 14\\
+4 &amp; 18 &amp; 6 \\
+8 &amp; 8 &amp; 16 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># interactive input - copy+paste into a notebook and run</span>
+<span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">4</span> <span class="p">,</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">]]</span>
+<span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter scalar value for multiply matrix </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">MyScalar</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">MyScalar</span><span class="p">)</span>  <span class="c1"># force a float</span>
+<span class="c1"># now perform element-by-element multiplication</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">1</span><span class="p">):</span>
+       <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">MyScalar</span> <span class="o">*</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1"># this will change contents of amatrix</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="matrix-addition-and-subtraction">
+<h4>Matrix addition (and subtraction)<a class="headerlink" href="#matrix-addition-and-subtraction" title="Permalink to this headline">¶</a></h4>
+<p>Matrix addition and subtraction are also element-by-element operations.
+In order to add or subtract two matrices they must be the same size and shape.
+This requirement means that they must have the same number of rows and columns.
+To add or subtract a matrix we simply add or subtract the corresponding elements from each matrix.</p>
+<p>For example consider the two matrices <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> below</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 \\
+2 &amp; 9 &amp; 3 \\
+\end{pmatrix}
+~ 
+\mathbf{B}=
+\begin{pmatrix}
+3 &amp; -2 &amp; 1 \\
+-2 &amp; 1 &amp; 1 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>For example the sum of these two matrices is the matrix named <span class="math notranslate nohighlight">\(\mathbf{A+B}\)</span>,  shown below:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A+B}=
+\begin{pmatrix}
+1+3 &amp; 5-2 &amp; 7+1 \\
+2-2 &amp; 9+1 &amp; 3+1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 &amp; 3 &amp; 8 \\
+0 &amp; 10 &amp; 4 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>Now to do the operation in Python, we need to read in the matrices, perform the addition, and write the result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span> <span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+           <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 0]
+[0, 0, 0]
+-----
+[4, 3, 8]
+[0, 10, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code example above I added a third matrix to store the result – generally we don’t want to clobber existing matrices; Also notice the construction of the third matrix, because I should know the size I can use a double constructor-type  iterator assignment to create and fill the matrix with zeros in the correct size and shape.</p>
+<p>Sometimes it doesn’t matter if we clobber an existing matrix in which case something like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span> <span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+           <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1"># amatrix is replaced with the sum</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 3, 8]
+[0, 10, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>would work just fine.</p>
+<p>Subtraction is performed in a similar fashion, except the subtraction operator is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span> <span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+           <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1"># subtract bmatrix from amatrix</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-2, 7, 6]
+[4, 8, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-multiplication">
+<h4>Matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h4>
+<p>Matrix multiplication is  more complex than addition and subtraction.  There are several types of multiplication with respect to matrices, usually when matrix multiplication is mentioned without further qualification ,the implied meaning is the inner (or dot) product of the matrix and a vector (or another matrix) of the correct shapes.</p>
+<p>If two matrices such as a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> (size L x m) and a matrix <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> ( size m x n) are multiplied together, the resulting matrix <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> has a size of L x n.  The order of multiplication of matrices is important (Matrix multiplication is not  transitive;  <span class="math notranslate nohighlight">\(\mathbf{A}~\mathbf{B} ~\ne~  \mathbf{B}~\mathbf{A}\)</span>.).</p>
+<p>To obtain <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> = <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>, the number of columns in <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> must be the same as the number of rows in <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.  In order to carry out the matrix operations for multiplication of matrices, the <span class="math notranslate nohighlight">\(i,j\)</span>-th element of  <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is simply equal to the scalar (dot or inner) product of row <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and column <span class="math notranslate nohighlight">\(j\)</span> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.</p>
+<p>Consider the example below</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 \\
+2 &amp; 9 &amp; 3 \\
+\end{pmatrix}
+~ 
+\mathbf{B}=
+\begin{pmatrix}
+3 &amp; -2  \\
+-2 &amp; 1 \\
+1 &amp; 1 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>Suppose we wish to compute the inner product <span class="math notranslate nohighlight">\(\mathbf{A}~\mathbf{B}\)</span></p>
+<p>First, we would evaluate if the operation is even possible, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has two rows and three columns.
+<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> has three rows and two columns.</p>
+<p>By our implied multiplication “rules” for the multiplication to be defined the first matrix must have the same number of rows as the second matrix has columns (in this case it does), and the result matrix will have the same number of rows as the first matrix, and the same number of columns as the second matrix (in this case the result will be a 2X2 matrix).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{C}=\mathbf{A}\mathbf{B}=
+\begin{pmatrix}
+c_{1,1} &amp; c_{1,2} \\
+c_{2,1} &amp; c_{2,2} \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>And each element of <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is the dot product of the row vector of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the column vector of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+c_{1,1} =
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+3 \\
+-2 \\
+1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(1)(3) +(5)(-2) + (7)(1)\\
+\end{pmatrix}
+= 0
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+c_{1,2} =
+\begin{pmatrix}
+1 &amp; 5 &amp; 7 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+-2 \\
+1 \\
+1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(1)(-2) +(5)(1) + (7)(1)\\
+\end{pmatrix}
+= 10
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+c_{2,1} =
+\begin{pmatrix}
+2 &amp; 9 &amp; 3 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+3 \\
+-2 \\
+1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(2)(3) +(9)(-2) + (3)(1)\\
+\end{pmatrix}
+= -9
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+c_{2,2} =
+\begin{pmatrix}
+2 &amp; 9 &amp; 3 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+-2 \\
+1 \\
+1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(2)(-2) +(9)(1) + (3)(1)\\
+\end{pmatrix}
+= 8
+\end{gather}
+\end{split}\]</div>
+<p>Making the substitutions results in :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{C}=\mathbf{A}\mathbf{B}=
+\begin{pmatrix}
+0 &amp; 10 \\
+-9 &amp; 8 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>So in an algorithmic sense we will have to deal with three matrices, the two source matrices and the destination matrix.<br />
+We will also have to manage element-by-element multiplication and be able to correctly store through rows and columns.</p>
+<p>Here is the process in a script. The <code class="docutils literal notranslate"><span class="pre">bmatrix</span></code> object must be a 2D list, or it won’t work</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span> <span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">],</span> 
+           <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+           <span class="p">[</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="c1"># destination matrix, rows count same a amatrix, columns count same as bmatrix</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
+<span class="c1"># now for the multiplication</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10]
+[-9, 8]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="identity-matrix">
+<h4>Identity matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">¶</a></h4>
+<p>In computational linear algebra we often need to make use of a special matrix called the “Identity Matrix”.<br />
+The Identity Matrix is a square matrix with all zeros except the <span class="math notranslate nohighlight">\(i,i\)</span>-th element (diagonal) which is equal to 1:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{I}_{3\times3}=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1\\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>Usually we don’t bother with the size subscript used above and just stipulate that the matrix is sized as appropriate.</p>
+<p>Multiplying any matrix by (a correctly sized) identity matrix results in no change in the matrix.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{I}\mathbf{A} = \mathbf{A}\)</span></p>
+<p>Using our script above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">7</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">9</span> <span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">4</span> <span class="p">,</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+<span class="c1"># destination matrix, rows count same a amatrix, columns count same as bmatrix</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
+<span class="c1"># now for the multiplication</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C = AB matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A matrix
+[1, 5, 7]
+[2, 9, 3]
+[4, 4, 8]
+B matrix
+[1, 0, 0]
+[0, 1, 0]
+[0, 0, 1]
+C = AB matrix
+[1, 5, 7]
+[2, 9, 3]
+[4, 4, 8]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-inverse">
+<h4>Matrix Inverse<a class="headerlink" href="#matrix-inverse" title="Permalink to this headline">¶</a></h4>
+<p>In many practical computational and theoretical operations we employ the concept of the inverse of a matrix.
+The inverse is somewhat analogous to “dividing” by the matrix.<br />
+Consider our linear system</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{gather}
+\mathbf{A} \cdot \mathbf{x} = \mathbf{b}
+\end{gather}
+\]</div>
+<p>If we wished to solve for <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> we would “divide” both sides of the equation by <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.
+Instead of division (which is essentially left undefined for matrices) we instead multiply by the inverse of the matrix (The matrix inverse is the multiplicative inverse of the matrix – we are defining a division operation, just calling it something else.).</p>
+<p>The inverse of a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is denoted by <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> and by definition is a matrix such that when <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> are multiplied together, the identity matrix <span class="math notranslate nohighlight">\(\mathbf{I}\)</span> results.  e.g. <span class="math notranslate nohighlight">\(\mathbf{A}^{-1} \mathbf{A} = \mathbf{I}\)</span></p>
+<p>Lets consider the matrixes below</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A}=
+\begin{pmatrix}
+2 &amp; 3 \\
+4 &amp; -3 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A}^{-1}=
+\begin{pmatrix}
+\frac{1}{6} &amp; \frac{1}{6} \\
+~\\
+\frac{2}{9} &amp; -\frac{1}{9} \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we have not actually shown <strong>how</strong> to invert a matrix, but we can test if two matrices are inversions of each other by taking their produce and seeing if it is an identity matrix.</p>
+</div>
+<p>We can check that the matrices are indeed inverses of each other using our Python code, performing the multiplication and then report the result.
+The result is the identity matrix regardless of the order of operation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span> <span class="p">,</span>  <span class="mi">3</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">4</span> <span class="p">,</span> <span class="o">-</span><span class="mi">3</span> <span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">9</span> <span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">9</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A-inverse matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+<span class="c1"># destination matrix, rows count same a amatrix, columns count same as bmatrix</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">))]</span> <span class="c1"># 2D list to receive input; explicit sizing</span>
+<span class="c1"># now for the multiplication</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C = A*A-inverse matrix&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">)):</span> <span class="c1"># print by row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A matrix
+[2, 3]
+[4, -3]
+A-inverse matrix
+[0.16666666666666666, 0.16666666666666666]
+[0.2222222222222222, -0.1111111111111111]
+C = A*A-inverse matrix
+[1.0, 0.0]
+[0.0, 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gauss-jordan-method-of-finding-mathbf-a-1-optional">
+<h3>Gauss-Jordan method of finding <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> (Optional)<a class="headerlink" href="#gauss-jordan-method-of-finding-mathbf-a-1-optional" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is presented as an introduction to algorithms/recipes for matrix inversion.  The method here is <a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_elimination">gaussian-elimination</a> which is ungodly slow (computationally), requires non-zero diagional elements ,and almost infinite-precision artithmetic being approximated.  In practice other methods would likely be more useful.</p>
+<p>A good source of practical algorithms is <a class="reference external" href="http://numerical.recipes/">Numerical Recipies</a></p>
+</div>
+<p>There are a number of methods that can be used to find the inverse of a matrix using elementary row operations.</p>
+<p>An elementary row operation is any one of the three operations listed below:</p>
+<ol class="simple">
+<li><p>Multiply or divide an entire row by a constant.</p></li>
+<li><p>Add or subtract a multiple of one row to/from another.</p></li>
+<li><p>Exchange the position of any 2 rows.</p></li>
+</ol>
+<p>The Gauss-Jordan method of inverting a matrix can be divided into 4 main steps.
+In order to find the inverse we will be working with the original matrix, augmented with the identity matrix – this new matrix is called the augmented matrix (because no-one has tried to think of a cooler name yet).</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\mathbf{A} | \mathbf{I} =
+\begin{pmatrix}
+2 &amp; 3 &amp; | &amp; 1 &amp; 0 \\
+4 &amp; -3 &amp; | &amp; 0 &amp; 1 \\
+\end{pmatrix}
+\end{gather}
+\)</span></p>
+<p>We will perform elementary row operations based on the left partition to convert it to an identity matrix – we perform the same operations on the right partition and the result when we are done is the inverse of the original matrix.</p>
+<p>So here goes – in the theory here, we also get to do infinite-precision arithmetic, no rounding/truncation errors.</p>
+<blockquote>
+<div><p>Divide row one by the <span class="math notranslate nohighlight">\(a_{1,1}\)</span> value to force a <span class="math notranslate nohighlight">\(1\)</span> in the <span class="math notranslate nohighlight">\(a_{1,1}\)</span> position.   This is elementary row operation 1 in our list above.</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A} | \mathbf{I} =
+\begin{pmatrix}
+2/2 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+4 &amp; -3 &amp; | &amp; 0 &amp; 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+4 &amp; -3 &amp; | &amp; 0 &amp; 1 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<blockquote>
+<div><p>For all rows below the first row, replace <span class="math notranslate nohighlight">\(row_j\)</span> with <span class="math notranslate nohighlight">\(row_j - a_{j,1}*row_1\)</span>.
+This happens to be elementary row operation 2 in our list above.</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A} | \mathbf{I} =
+\begin{pmatrix}
+1 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+4 - 4(1) &amp; -3 - 4(3/2) &amp; | &amp; 0-4(1/2) &amp; 1-4(0) \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+0 &amp; -9 &amp; | &amp; -2 &amp; 1 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<blockquote>
+<div><p>Now multiply <span class="math notranslate nohighlight">\(row_2\)</span> by <span class="math notranslate nohighlight">\( \frac{1}{ a_{2,2}} \)</span>.  This is again elementary row operation 1 in our list above.</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A} | \mathbf{I} =
+\begin{pmatrix}
+1 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+0 &amp; -9/-9 &amp; | &amp; -2/-9 &amp; 1/-9 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 3/2 &amp; | &amp; 1/2 &amp; 0 \\
+0 &amp; 1 &amp; | &amp; 2/9 &amp; -1/9 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<blockquote>
+<div><p>For all rows above and below this current row, replace <span class="math notranslate nohighlight">\(row_j\)</span> with <span class="math notranslate nohighlight">\(row_j - a_{2,2}*row_2\)</span>.
+This happens to again be elementary row operation 2 in our list above.
+What we are doing is systematically converting the left matrix into an identity matrix by multiplication of constants and addition to eliminate off-diagonal values and force 1 on the diagonal.</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{A} | \mathbf{I} = \\
+\begin{pmatrix}
+1 &amp; 3/2 - (3/2)(1) &amp; | &amp; 1/2 - (3/2)(2/9) &amp; 0-(3/2)(-1/9) \\
+0 &amp; 1 &amp; | &amp; 2/9 &amp; -1/9 \\
+\end{pmatrix}
+= \\
+\begin{pmatrix}
+1 &amp; 0 &amp; | &amp; 1/6 &amp; 1/6 \\
+0 &amp; 1 &amp; | &amp; 2/9 &amp; -1/9 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<blockquote>
+<div><p>As far as this example is concerned we are done and have found the inverse.
+With more than a 2X2 system there will be many operations moving up and down the matrix to eliminate the off-diagonal terms.</p>
+</div></blockquote>
+<p>So the next logical step is to build an algorithm to perform these operations for us.</p>
+<p>The code for inversion is a bit long, but is included as a monolithic block so we dont break things.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Naturally we will need the files these are downloaded from :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/A.txt">http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/A.txt</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/B.txt">http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/B.txt</a> <br> Do the usual right-click download as … Then verify files are non-empty, then can proceede.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<p>The first part reads in the matrix from a file named “A.txt”, and then builds some workspaces for the inversion process.
+One of the workspaces is a matrix called “bmatrix” which is an identity matrix and is also the augmented portion of the system depicted in the 2X2 example.  The actual inverse gets stored in a matrix named “xmatrix”, which is really a column-by-column collection of solutions to a linear system where the right hand side is the different columns of the identity matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># InvertASystem.py</span>
+<span class="c1"># Code to read A and b</span>
+<span class="c1"># Then solve Ax = b for x by Gaussian elimination with back substitution</span>
+<span class="c1">#</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;invert a matrix by Gaussian elimination - requires diagionally dominant system&quot;</span><span class="p">)</span>
+
+<span class="n">amatrix</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store matrix reads</span>
+<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;A.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># connect and read file for MATRIX A </span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">afile</span><span class="p">:</span>
+    <span class="n">amatrix</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+    <span class="n">rowNumA</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">bvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1"># will use as rhs in linear solver</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">bmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">xmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">xvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">#augmented partition</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">],</span> <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1"># copy amatrix into dmatrix  -- this is a static copy</span>
+
+<span class="c1"># outer wrapper loop</span>
+<span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+    <span class="n">xvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1"># empty column of the inverse</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span>
+    <span class="n">amatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">dmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">dmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># build the diagonal -- assume diagonally dominant</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span> <span class="o">=</span> <span class="n">bmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">-</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">*</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="c1"># gaussian reduction done</span>
+<span class="c1"># now for the back substitution</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">sum1</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+                <span class="k">continue</span> 
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">xvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">sum1</span> <span class="o">=</span> <span class="n">sum1</span> <span class="o">+</span> <span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">xmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span>
+            <span class="n">xvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">bvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="nb">sum</span><span class="p">)</span><span class="o">/</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">xmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">-</span><span class="n">sum1</span><span class="p">)</span><span class="o">/</span><span class="n">amatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+<span class="c1"># end of wrapper</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[      A-Matrix          ]|[       A-Inverse        ]&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;_____________________________________________________&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">dmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">],</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">xmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;_____________________________________________________&quot;</span><span class="p">)</span>
+<span class="n">ofile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;A-Matrix.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="c1"># &quot;w&quot; clobbers content already there!</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">dmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">]))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> 
+    <span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">ofile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;A-Inverse.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="c1"># &quot;w&quot; clobbers content already there!</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">repr</span><span class="p">,</span> <span class="n">xmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">]))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">ofile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">ofile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>invert a matrix by Gaussian elimination - requires diagionally dominant system
+[4.0, 1.5, 0.7, 1.2, 0.5] [1.0, 0, 0, 0, 0]
+[1.0, 6.0, 0.9, 1.4, 0.7] [0, 1.0, 0, 0, 0]
+[0.5, 1.0, 3.9, 3.2, 0.9] [0, 0, 1.0, 0, 0]
+[0.2, 2.0, 0.2, 7.5, 1.9] [0, 0, 0, 1.0, 0]
+[1.7, 0.9, 1.2, 2.3, 4.9] [0, 0, 0, 0, 1.0]
+-----------------------------
+[      A-Matrix          ]|[       A-Inverse        ]
+_____________________________________________________
+[4.0, 1.5, 0.7, 1.2, 0.5] | [0.27196423630168165, -0.05581183146290884, -0.032853102922602934, -0.016869919448735553, -0.0072026931722172435]
+[1.0, 6.0, 0.9, 1.4, 0.7] | [-0.036786468827077756, 0.18691841183385363, -0.032062455842026744, -0.011456196435011407, -0.012617687833839365]
+[0.5, 1.0, 3.9, 3.2, 0.9] | [-0.025949127789423248, -0.0013334022990376664, 0.26826513178341493, -0.10875073215127727, -0.004266180002777282]
+[0.2, 2.0, 0.2, 7.5, 1.9] | [0.027047195749338872, -0.05063248905238324, 0.01649816113355711, 0.1486518640705042, -0.05619749842697155]
+[1.7, 0.9, 1.2, 2.3, 4.9] | [-0.0939389748254409, 0.009124153146082323, -0.05615458031041434, -0.03518550386250331, 0.23632125710787594]
+_____________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yay it worked.  In practice we will not code our own inversion scripts, but will use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, however we now have a rudimentary script if we need it. How could we test if we indeed have an inverse?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could check our work using an on-line solver.  And systematically solving the system 5 times with different RHS.  Not too hard, but a bit of a pain - gets worse as our problem size grows!
+Here’s a useable solver website
+<a class="reference external" href="https://www.handymath.com/cgi-bin/matrix5.cgi">https://www.handymath.com/cgi-bin/matrix5.cgi</a></p>
+</div>
+</div>
+<div class="section" id="solving-linear-systems-optional">
+<h3>Solving Linear Systems (Optional)<a class="headerlink" href="#solving-linear-systems-optional" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This optional section is presented as an introduction to algorithms/recipes for linear systems of equations.  The method here is so-so computationally, but it does implement partial pivoting (so diagonal dominance is not vital), and finite precision artithmetic will work OK.  In practice other methods would likely be more useful. A good source of information is <a class="reference external" href="http://numerical.recipes/">Numerical Recipies</a></p>
+</div>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_elimination">gaussian-elimination</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Pivot_element">pivoting</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># linearsolver with pivoting adapted from </span>
+<span class="c1"># https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226</span>
+<span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">A</span> <span class="c1"># this is equivalence A and M are destroyed during the solution!</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># row reduction with pivots</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
+          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span>
+
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+<span class="c1"># allocate space for result</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1"># back-substitution</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="c1"># return result</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#######</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to read A and b</span>
+<span class="n">amatrix</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store matrix read</span>
+<span class="n">bvector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store vector read</span>
+<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rowNumB</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;A.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># connect and read file for MATRIX A</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">afile</span><span class="p">:</span>
+    <span class="n">amatrix</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+    <span class="n">rowNumA</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">amatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;B.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># connect and read file for VECTOR b</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">afile</span><span class="p">:</span>
+    <span class="n">bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>  <span class="c1"># vector read different -- just float the line</span>
+    <span class="n">rowNumB</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the arrays</span>
+<span class="k">if</span> <span class="n">rowNumA</span> <span class="o">!=</span> <span class="n">rowNumB</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;row ranks not same -- aborting now&quot;</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;row ranks same -- solve for x in Ax=b </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># print all columns each row</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">xvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+
+<span class="c1"># copy amatrix into cmatrix to preserve original structure</span>
+<span class="n">cmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="n">dvector</span> <span class="o">=</span> <span class="p">[</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+
+<span class="n">dvector</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">bvector</span><span class="p">)</span> <span class="c1">#Solve the linear system</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[A]*[x] = b </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="p">(</span><span class="n">cmatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">colNumA</span><span class="p">]),</span> <span class="s2">&quot;* [&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%9.5f</span><span class="s2">&quot;</span><span class="o">%</span> <span class="p">(</span><span class="n">dvector</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="s2">&quot;] = &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%9.5f</span><span class="s2">&quot;</span><span class="o">%</span> <span class="p">(</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="c1">#print (&quot;-----------------------------&quot;)</span>
+<span class="c1">#for i in range(0,rowNumA,1):</span>
+<span class="c1">#    print (&quot;%6.3f&quot;% (dvector[i]))</span>
+<span class="c1">#print (&quot;-----------------------------&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>row ranks same -- solve for x in Ax=b 
+
+[A]*[x] = b 
+
+[4.0, 1.5, 0.7, 1.2, 0.5] * [   0.15923 ] =    1.00000
+[1.0, 6.0, 0.9, 1.4, 0.7] * [   0.09400 ] =    1.00000
+[0.5, 1.0, 3.9, 3.2, 0.9] * [   0.12797 ] =    1.00000
+[0.2, 2.0, 0.2, 7.5, 1.9] * [   0.08537 ] =    1.00000
+[1.7, 0.9, 1.2, 2.3, 4.9] * [   0.06017 ] =    1.00000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we compare this result to an online solver with the same problem:</p>
+<p>Here is the input</p>
+<img src="solver-input.png" width= 400>
+<p>Here is the output</p>
+<img src="solver-output.png" width= 400>
+<p>The result is the same as ours!</p>
+</div>
+<p><em>Future versions – applied examples ?</em></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book – Kindle Edition by LCF Publishing (Author), Jamie Chan <a class="reference external" href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p></li>
+</ol>
+<hr class="docutils" />
+<ol class="simple">
+<li><p>Matrix manipulation using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <a class="reference external" href="https://www.geeksforgeeks.org/matrix-manipulation-python/">https://www.geeksforgeeks.org/matrix-manipulation-python/</a></p></li>
+<li><p>Outer products <a class="reference external" href="https://math.stackexchange.com/questions/973559/outer-product-of-two-matrices">https://math.stackexchange.com/questions/973559/outer-product-of-two-matrices</a></p></li>
+<li><p>Inner products <a class="reference external" href="https://mathworld.wolfram.com/InnerProduct.html">https://mathworld.wolfram.com/InnerProduct.html</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_elimination">Gaussian-elimination (wikipedia)</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pivot_element">Pivoting (wikipedia)</a></p></li>
+<li><p><a class="reference external" href="http://numerical.recipes/">Numerical Recipies (website)</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226">Linearsolver with pivoting (code)</a> slightly modded in this lesson.</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-8">
+<h2>Laboratory 8<a class="headerlink" href="#laboratory-8" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 8 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08.html">Laboratory 8.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 8 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08.ipynb">Laboratory 8.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-8">
+<h2>Exercise Set 8<a class="headerlink" href="#exercise-set-8" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 8 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.html">Exercise 8.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 8 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.ipynb">Exercise Set 8.ipynb</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson07/lesson07.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">7: Files</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson09.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 9: Sequential structure</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland and Farhang Forghanparast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

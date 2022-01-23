@@ -15,7 +15,7 @@ chapters:
 - file: lessons/lesson05/lesson05 # algorithm building blocks-loops
 - file: lessons/lesson06/lesson06 # functions
 - file: lessons/lesson07/lesson07 # data files
-- file: lessons/lesson08 # building blocks
+- file: lessons/lesson08/lesson08 # matrices as lists
 - file: lessons/lesson09 # sequence
 - file: lessons/lesson10 # selection
 - file: lessons/lesson11 # repetition (count control)
