@@ -515,12 +515,14 @@ print(numpy.greater_equal(Array1, Array3))             #Step3: Compare and see i
 # 
 # ### Example n-Dimensional Array Comparison
 # Using the numbers below:
-# #### 4,9,23,39,40,55,68,72
 # 
-# A) Create a 2x2 array with all the even numbers and print it out<br>
-# B) Create a 2x2 array with all the odd numbers and print it out<br>
-# C) Compare the two arrays using the "less_equal" function from numpy package
-# ---
+# **4,9,23,39,40,55,68,72**
+# 
+# - Create a 2x2 array with all the even numbers and print it out<br>
+# - Create a 2x2 array with all the odd numbers and print it out<br>
+# - Compare the two arrays using the "less_equal" function from numpy package
+# 
+# 
 
 # In[33]:
 
