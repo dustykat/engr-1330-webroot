@@ -887,11 +887,11 @@ for i in range(0,rowNumA,1):
 # 
 # Here is the input 
 # 
-# <img src="solver-input.png" width= 400>
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/solver-input.png" width= 400>
 # 
 # Here is the output
 # 
-# <img src="solver-output.png" width= 400>
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson08/solver-output.png" width= 400>
 # 
 # The result is the same as ours!
 # 
