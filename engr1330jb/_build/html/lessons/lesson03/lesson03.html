@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3: Data Types and Typecasting &#8212; ENGR 1330 Course Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4: User Interaction" href="../lesson04/lesson04.html" />
+    <link rel="prev" title="2: Expressions" href="../lesson02/lesson02.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
+   4.1: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   5: Algorithm Building Blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   6: Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07/lesson07.html">
+   7: Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08.html">
+   Lesson 8: Algorithm building blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9: Sequential structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10: Selection structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11: Count Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12: Sentinel Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14/lesson14.html">
+   14: Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15: Working with files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16: File Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21: Testing Hypothesis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson32/lesson32.html">
+   32: K Nearest Neighbor (KNN) Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson33/lesson33.html">
+   33: KNN Classification (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson34/lesson34.html">
+   34: KNN Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   Lesson 38: Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson03/lesson03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson03/lesson03.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson03/lesson03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-type">
+   Data Type
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer">
+     Integer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-float">
+     Real (Float)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-alphanumeric">
+     String(Alphanumeric)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-logical">
+     Boolean (Logical)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-types">
+     Changing Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-build-a-program-notebook">
+   How to Build a Program/Notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-understand-the-requirements">
+     Analysis (Understand the Requirements)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-test-plan">
+     Create a Test Plan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invent-a-solution">
+     Invent a Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#design-formalize-your-solution">
+     Design (Formalize your solution)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-coding">
+     Implementation (coding)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing">
+     Testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-of-problem-solving-process">
+     Example of Problem Solving Process
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     —
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-3">
+   Laboratory 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-3">
+   Exercise Set 3
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date: 4 Jan 22</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-types-and-typecasting">
+<h1>3: Data Types and Typecasting<a class="headerlink" href="#data-types-and-typecasting" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>integer</p></li>
+<li><p>float</p></li>
+<li><p>string</p></li>
+<li><p>boolean</p></li>
+<li><p>String functions and operations</p></li>
+<li><p>How to Build a Notebook (Another look at problem solving)</p></li>
+</ul>
+<div class="section" id="data-type">
+<h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h2>
+<p>In the computer data are all binary digits (actually 0 and +5 volts).
+At a higher level of <strong>abstraction</strong> data are typed into integers, real, or alphanumeric representation.
+The type affects the kind of arithmetic operations that are allowed (as well as the kind of arithmetic - integer versus real arithmetic; lexicographical ordering of alphanumeric , etc.)
+In scientific programming, a common (and really difficult to detect) source of slight inaccuracies (that tend to snowball as the program runs) is mixed mode arithmetic required because two numeric values are of different types (integer and real).</p>
+<p>Learn more from the textbook</p>
+<p><a class="reference external" href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p>
+<p>Here we present a quick summary</p>
+<div class="section" id="integer">
+<h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>Integers are numbers without any fractional portion (nothing after the decimal point { which
+is not used in integers). Numbers like -3, -2, -1, 0, 1, 2, 200 are integers. A number like 1.1
+is not an integer, and 1.0 is also not an integer (the presence of the decimal point makes the
+number a real).</p>
+<p>To declare an integer in Python, just assign the variable name to an integer for example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MyPhoneNumber = 14158576309
+</pre></div>
+</div>
+</div>
+<div class="section" id="real-float">
+<h3>Real (Float)<a class="headerlink" href="#real-float" title="Permalink to this headline">¶</a></h3>
+<p>A real or float is a number that has (or can have) a fractional portion - the number has
+decimal parts. The numbers 3.14159, -0.001, 11.11, 1., are all floats.
+The last one is especially tricky, if you don’t notice the decimal point you might think it is an integer but the
+inclusion of the decimal point in Python tells the program that the value is to be treated as a
+float.
+To declare a
+float in Python, just assign the variable name to a
+float for example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MyMassInKilos = 74.8427
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-alphanumeric">
+<h3>String(Alphanumeric)<a class="headerlink" href="#string-alphanumeric" title="Permalink to this headline">¶</a></h3>
+<p>A string is a data type that is treated as text elements. The usual letters are strings, but
+numbers can be included. The numbers in a string are simply characters and cannot be
+directly used in arithmetic.
+There are some kinds of arithmetic that can be performed on strings but generally we process string variables to capture the text nature of their contents.
+To declare a string in Python, just assign the variable name to a string value - the trick is the value is enclosed in quotes.
+The quotes are delimiters that tell the program that the characters between the quotes are characters and are to be treated as literal representation.</p>
+<p>For example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MyName = &#39;Theodore&#39;
+MyCatName = &quot;Dusty&quot;
+DustyMassInKilos = &quot;7.48427&quot;
+</pre></div>
+</div>
+<p>are all string variables.
+The last assignment is made a string on purpose.
+String variables can be combined using an operation called concatenation.
+The symbol for concatenation is the plus symbol <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<p>Strings can also be converted to all upper case using the <code class="docutils literal notranslate"><span class="pre">upper()</span></code> function. The syntax for
+the <code class="docutils literal notranslate"><span class="pre">upper()</span></code> function is <code class="docutils literal notranslate"><span class="pre">'string</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">upper</span> <span class="pre">case'.upper()</span></code>.
+Notice the “dot” in the syntax.
+The operation passes everything to the left of the dot to the function which then
+operates on that content and returns the result all upper case (or an error if the input stream
+is not a string).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variable Types Example</span>
+<span class="n">MyPhoneNumber</span> <span class="o">=</span> <span class="mi">14158576309</span>
+<span class="n">MyMassInKilos</span> <span class="o">=</span> <span class="mf">74.8427</span>
+<span class="n">MyName</span> <span class="o">=</span> <span class="s1">&#39;Theodore&#39;</span>
+<span class="n">MyCatName</span> <span class="o">=</span> <span class="s2">&quot;Dusty&quot;</span>
+<span class="n">DustyMassInKilos</span> <span class="o">=</span> <span class="s2">&quot;7.48427&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about me&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">,</span><span class="n">MyName</span><span class="p">,</span> <span class="s2">&quot; Mass :&quot;</span><span class="p">,</span><span class="n">MyMassInKilos</span><span class="p">,</span><span class="s2">&quot;Kg&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Phone : &#39;</span><span class="p">,</span><span class="n">MyPhoneNumber</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My cat</span><span class="se">\&#39;</span><span class="s1">s name :&#39;</span><span class="p">,</span> <span class="n">MyCatName</span><span class="p">)</span>  <span class="c1"># the \ escape character is used to get the &#39; into the literal</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All about concatenation!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A Silly String : &quot;</span><span class="p">,</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A SILLY STRING :  &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">MyCatName</span><span class="o">+</span><span class="n">MyName</span><span class="o">+</span><span class="n">DustyMassInKilos</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All about me
+Name:  Theodore  Mass : 74.8427 Kg
+Phone :  14158576309
+My cat&#39;s name : Dusty
+All about concatenation!
+A Silly String :  DustyTheodore7.48427
+A SILLY STRING :   DUSTYTHEODORE7.48427
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings can be formatted using the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator or the <code class="docutils literal notranslate"><span class="pre">format()</span></code> function. The concepts will
+be introduced later on as needed in the workbook, you can Google search for examples of
+how to do such formatting.</p>
+</div>
+<div class="section" id="boolean-logical">
+<h3>Boolean (Logical)<a class="headerlink" href="#boolean-logical" title="Permalink to this headline">¶</a></h3>
+<p>Python boolean type is one of the built-in data types provided by Python, which represents one of the two values i.e. True or False. Generally, it is used to represent the truth values of the expressions.  The boolean value can be of two types only i.e. either True or False. The output &lt;class ‘bool’&gt; indicates the variable is a boolean data type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Somewhat less confusing is to assign values to a variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span><span class="n">xx</span><span class="p">)</span> <span class="c1"># type function and value of variable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt; True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python program to illustrate</span>
+<span class="c1"># built-in method bool()</span>
+ 
+<span class="c1"># Returns False as x is not equal to y</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">))</span>
+ 
+<span class="c1"># Returns False as x is None</span>
+<span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+ 
+<span class="c1"># Returns False as x is an empty sequence</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+ 
+<span class="c1"># Returns False as x is an empty mapping</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+ 
+<span class="c1"># Returns False as x is 0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+ 
+<span class="c1"># Returns True as x is a non empty string</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;KittyKat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+False
+False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numbers can be used as bool values by using Python’s built-in bool() method. Any integer, floating-point number, or complex number having zero as a value is considered as False, while if they are having value as any positive or negative number then it is considered as True.</p>
+<p>Boolean Operations are simple arithmetic of True and False values. These values can be manipulated by the use of boolean operators which include AND, OR, and NOT. Common boolean operations are</p>
+<ul class="simple">
+<li><p>or</p></li>
+<li><p>and</p></li>
+<li><p>not</p></li>
+<li><p>== (equivalent)</p></li>
+<li><p>!= (not equivalent)</p></li>
+</ul>
+<p>Boolean are used extensively for program flow control.</p>
+</div>
+<div class="section" id="changing-types">
+<h3>Changing Types<a class="headerlink" href="#changing-types" title="Permalink to this headline">¶</a></h3>
+<p>A variable type can be changed.
+This activity is called type casting.
+Three functions allow
+type casting: <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, and <code class="docutils literal notranslate"><span class="pre">str()</span></code>.
+The function names indicate the result of using
+the function, hence <code class="docutils literal notranslate"><span class="pre">int()</span></code> returns an integer, <code class="docutils literal notranslate"><span class="pre">float()</span></code> returns a
+float, and <code class="docutils literal notranslate"><span class="pre">str()</span></code> returns a
+string.</p>
+<p>There is also the useful function <code class="docutils literal notranslate"><span class="pre">type()</span></code> which returns the type of variable.  Some things cannot be re-typed, for example the string “123IamAcat” has no integer representation, although the first 3 characters are integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;123IamAcat&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="c1"># s = int(s) # this will generate an error, activate and see for yourself</span>
+<span class="c1"># print(type(s))</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#but we can extract characters that are numeric - called slicing the string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some more examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type Casting Examples</span>
+<span class="n">MyInteger</span> <span class="o">=</span> <span class="mi">234</span>
+<span class="n">MyFloat</span> <span class="o">=</span> <span class="mf">876.543</span>
+<span class="n">MyString</span> <span class="o">=</span> <span class="s1">&#39;What is your name?&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">,</span><span class="n">MyFloat</span><span class="p">,</span><span class="n">MyString</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as float&#39;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; as integer&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as string&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer as hexadecimal&#39;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="n">MyInteger</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer Type&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">((</span><span class="n">MyInteger</span><span class="p">)))</span>  <span class="c1"># insert the hex conversion and see what happens!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>234 876.543 What is your name?
+Integer as float 234.0
+ as integer 234
+Integer as string 234
+Integer as hexadecimal 0xea
+Integer Type &lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-build-a-program-notebook">
+<h2>How to Build a Program/Notebook<a class="headerlink" href="#how-to-build-a-program-notebook" title="Permalink to this headline">¶</a></h2>
+<p>Recall our suggested problem solving protocol:</p>
+<ol class="simple">
+<li><p>Explicitly state the problem</p></li>
+<li><p>State the input information, governing equations or principles, and the required output information.</p></li>
+<li><p>Work a sample problem by-hand for testing the general solution.</p></li>
+<li><p>Develop a general solution method (coding).</p></li>
+<li><p>Test the general solution against the by-hand example, then apply to the real problem.</p></li>
+<li><p>Refine general solution for deployment (frequent use)</p></li>
+</ol>
+<p>The protocol below is shamelessly lifted from <a class="reference external" href="http://users.csc.calpoly.edu/~jdalbey/101/Lectures/HowToBuildAProgram.html">http://users.csc.calpoly.edu/~jdalbey/101/Lectures/HowToBuildAProgram.html</a> here we are using the concept of program and notebook as the same thing.</p>
+<p>Building a program is not an art, it is an engineering process.  As such there is a process to follow with clearly defined steps.</p>
+<div class="section" id="analysis-understand-the-requirements">
+<h3>Analysis (Understand the Requirements)<a class="headerlink" href="#analysis-understand-the-requirements" title="Permalink to this headline">¶</a></h3>
+<p>In this class you will usually be given the problem requirements, unlike the real-world where you have to elicit the requirements from a customer.  For you the first step will be to read the problem and be sure you understand what the program must do.  Summarize your understanding by writing the Input data, Output data, and Functions (operations or transformation on the data). In the context of our (WCOE) protocol this step comprises Steps 1 and 2.</p>
+</div>
+<div class="section" id="create-a-test-plan">
+<h3>Create a Test Plan<a class="headerlink" href="#create-a-test-plan" title="Permalink to this headline">¶</a></h3>
+<p>You must be able to verify that your program works correctly once it is written.  Invent some actual input data values and manually compute the expected result.  In the context of our (WCOE) protocol this step comprises Steps 3.</p>
+</div>
+<div class="section" id="invent-a-solution">
+<h3>Invent a Solution<a class="headerlink" href="#invent-a-solution" title="Permalink to this headline">¶</a></h3>
+<p>This is the creative, exploratory part of design where you figure out how to solve the problem.  Here is one strategy:</p>
+<ul class="simple">
+<li><p>Solve the problem manually, the way you would do it as a human. Pay careful to attention what operations you perform and write down each step.</p></li>
+<li><p>Look for a pattern in the steps you performed.</p></li>
+<li><p>Determine how this pattern could be automated using the 3 algorithm building blocks (which we learn about a few lectures from now) (Sequence, Selection, Iteration).</p></li>
+</ul>
+</div>
+<div class="section" id="design-formalize-your-solution">
+<h3>Design (Formalize your solution)<a class="headerlink" href="#design-formalize-your-solution" title="Permalink to this headline">¶</a></h3>
+<p>Arrange your solution into components; this is called the architecture.
+Write the algorithm for each component.  Refine your algorithm in a step-wise manner if necessary.
+Determine the data types and constraints for each data item.
+Review</p>
+<p>Perform a hand trace of your solution and simulate how the computer will carry out your algorithm.  Make sure your algorithm works correctly before you put it into the computer.</p>
+</div>
+<div class="section" id="implementation-coding">
+<h3>Implementation (coding)<a class="headerlink" href="#implementation-coding" title="Permalink to this headline">¶</a></h3>
+<p>Translate your algorithm into a programming language and enter it into the computer.<br />
+Compile your source code to produce an executable program.
+You may want to compile and test each subprogram individually before combining them into a complete program.</p>
+</div>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<p>Execute the program using the Test Plans you created above.
+Correct any errors as necessary.</p>
+</div>
+<div class="section" id="example-of-problem-solving-process">
+<h3>Example of Problem Solving Process<a class="headerlink" href="#example-of-problem-solving-process" title="Permalink to this headline">¶</a></h3>
+<p>Consider an engineering material problem.</p>
+<div class="figure align-default" id="stressstrain">
+<a class="reference internal image-reference" href="../../_images/StressStrain.png"><img alt="../../_images/StressStrain.png" src="../../_images/StressStrain.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Schematic of slender rod deformation under an applied load</span><a class="headerlink" href="#stressstrain" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#stressstrain"><span class="std std-numref">Fig. 3</span></a> is a schematic of a situation where we wish to <strong>classify</strong> whether a material is loaded in the elastic or inelastic region as determined the stress (solid pressure) in a rod for some applied load.  The yield stress is the <strong>classifier</strong>, and once the material yields (begins to fail) it will not carry any additional load (until ultimate failure, when it carries no load).</p>
+<p>Following our problem solving protocol:</p>
+<p><strong>Step 1.</strong> Compute the material stress under an applied load; determine if value exceedes yield stress, and report the loading condition</p>
+<p><strong>Step 2.</strong></p>
+<ul class="simple">
+<li><p>Inputs: applied load, cross sectional area, yield stress</p></li>
+<li><p>Governing equation: <span class="math notranslate nohighlight">\(\sigma = \frac{P}{A}\)</span> when <span class="math notranslate nohighlight">\(\frac{P}{A}\)</span> is less than the yield stress, and is equal to the yield stress otherwise.</p></li>
+<li><p>Outputs: The material stress <span class="math notranslate nohighlight">\(\sigma\)</span>, and the classification elastic or inelastic.</p></li>
+</ul>
+<p><strong>Step 3.</strong> Work a sample problem by-hand for testing the general solution.</p>
+<p>Assuming the yield stress is 1 million psi (units matter in an actual problem - kind of glossed over here)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Applied Load (lbf)</p></th>
+<th class="text-align:right head"><p>Cross Section Area (<a class="reference external" href="http://sq.in">sq.in</a>.)</p></th>
+<th class="text-align:right head"><p>Stress (psi)</p></th>
+<th class="text-align:right head"><p>Classification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>10,000</p></td>
+<td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>10,000</p></td>
+<td class="text-align:right"><p>Elastic</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>10,000</p></td>
+<td class="text-align:right"><p>0.1</p></td>
+<td class="text-align:right"><p>100,000</p></td>
+<td class="text-align:right"><p>Elastic</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>100,000</p></td>
+<td class="text-align:right"><p>0.1</p></td>
+<td class="text-align:right"><p>1,000,000</p></td>
+<td class="text-align:right"><p>Inelastic</p></td>
+</tr>
+</tbody>
+</table>
+<p>The stress requires us to read in the load value, read in the cross sectional area, divide the load by the area, and compare the result to the yield stress.  If it exceeds the yield stress, then the actual stress is the yield stress, and the loading is inelastic, otherwise elastic</p>
+<div class="math notranslate nohighlight">
+\[ \sigma = \frac{P}{A} \]</div>
+<div class="math notranslate nohighlight">
+\[ \text{If}~ \sigma &gt;= \text{Yield Stress then report Inelastic} \]</div>
+<p><strong>Step 4.</strong> Develop a general solution (code)</p>
+<p><a class="reference internal" href="#flowchart"><span class="std std-numref">Fig. 4</span></a> is a flow-chart for this problem.</p>
+<div class="figure align-default" id="flowchart">
+<a class="reference internal image-reference" href="../../_images/Flowchart.png"><img alt="../../_images/Flowchart.png" src="../../_images/Flowchart.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Flowchart for load classification</span><a class="headerlink" href="#flowchart" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<p>An alternative would be some kind of psuedocode for the problem.</p>
+<p><strong>Step 5.</strong> This step we would code the algorithm expressed in the figure and test it with the by-hand data and other small datasets until we are convinced it works correctly. We have not yet learned prompts to get input we simply direct assign values as below (and the conditional execution is the subject of a later lesson)</p>
+<p>In a simple JupyterLab script</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2 Problem Solving Process</span>
+<span class="n">yield_stress</span> <span class="o">=</span> <span class="mf">1e6</span>
+<span class="n">applied_load</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">cross_section</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">computed_stress</span> <span class="o">=</span> <span class="n">applied_load</span><span class="o">/</span><span class="n">cross_section</span>
+<span class="k">if</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&lt;</span> <span class="n">yield_stress</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elastic Region: Stress = &quot;</span><span class="p">,</span><span class="n">computed_stress</span><span class="p">)</span>
+<span class="k">elif</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&gt;=</span> <span class="n">yield_stress</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inelastic Region: Stress = &quot;</span><span class="p">,</span><span class="n">yield_stress</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inelastic Region: Stress =  1000000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 6.</strong> This step we would refine the code to generalize the algorithm.  In the example we want a way to supply the inputs by user entry,and tidy the output by rounding to only two decimal places.  A little CCMR from <a class="reference external" href="https://www.geeksforgeeks.org/taking-input-in-python/">https://www.geeksforgeeks.org/taking-input-in-python/</a> gives us a way to deal with the inputs and typecasting.  Some more CCMR from <a class="reference external" href="https://www.programiz.com/python-programming/methods/built-in/round">https://www.programiz.com/python-programming/methods/built-in/round</a> gets us rounded out!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code cell below contains interactive components, which will not compile into the Jupyter Book, so they are left for the reader to cut-and-paste.  We will demonstrate in class how these work.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2 Problem Solving Process</span>
+<span class="n">yield_stress</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Yield Stress (psi)&#39;</span><span class="p">))</span>
+<span class="n">applied_load</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Applied Load (lbf)&#39;</span><span class="p">))</span>
+<span class="n">cross_section</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Cross Section Area (sq.in.)&#39;</span><span class="p">))</span>
+<span class="n">computed_stress</span> <span class="o">=</span> <span class="n">applied_load</span><span class="o">/</span><span class="n">cross_section</span>
+<span class="k">if</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&lt;</span> <span class="n">yield_stress</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elastic Region: Stress = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">computed_stress</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">elif</span><span class="p">(</span><span class="n">computed_stress</span> <span class="o">&gt;=</span> <span class="n">yield_stress</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inelastic Region: Stress = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yield_stress</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    
+</pre></div>
+</div>
+<p>So the simple task of computing the stress, is a bit more complex when decomposed, that it first appears, but illustrates a five step process (with a refinement step), and we have done our first <strong>classification</strong> problem, albeit a very simple case!</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapter 4 <a class="reference external" href="https://www.inferentialthinking.com/chapters/04/Data_Types.html">https://www.inferentialthinking.com/chapters/04/Data_Types.html</a></p></li>
+<li><p>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book – Kindle Edition by LCF Publishing (Author), Jamie Chan <a class="reference external" href="https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3">https://www.amazon.com/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_3?dchild=1&amp;keywords=learn+python+in+a+day&amp;qid=1611108340&amp;sr=8-3</a></p></li>
+</ol>
+<div class="section" id="id1">
+<h3>—<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="laboratory-3">
+<h2>Laboratory 3<a class="headerlink" href="#laboratory-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 3 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.html">Laboratory 3.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 3 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03.ipynb">Laboratory 3.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-3">
+<h2>Exercise Set 3<a class="headerlink" href="#exercise-set-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 3 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.html">Exercise 3.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 3 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab03/Lab03-TH.ipynb">Exercise Set 3.ipynb</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson02/lesson02.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2: Expressions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson04/lesson04.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">4: User Interaction</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland and Farhang Forghanparast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1430 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5: Algorithm Building Blocks &#8212; ENGR 1330 Course Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6: Functions" href="../lesson06/lesson06.html" />
+    <link rel="prev" title="4.1: Data Structures" href="../lesson041/lesson04.1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
+   4.1: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5: Algorithm Building Blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   6: Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07/lesson07.html">
+   7: Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08.html">
+   Lesson 8: Algorithm building blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09.html">
+   Lesson 9: Sequential structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10.html">
+   Lesson 10: Selection structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11.html">
+   Lesson 11: Count Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12.html">
+   Lesson 12: Sentinel Controlled Repetition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13.html">
+   Lesson 13: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14/lesson14.html">
+   14: Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15.html">
+   Lesson 15: Working with files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16.html">
+   Lesson 16: File Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21: Testing Hypothesis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson32/lesson32.html">
+   32: K Nearest Neighbor (KNN) Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson33/lesson33.html">
+   33: KNN Classification (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson34/lesson34.html">
+   34: KNN Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   Lesson 38: Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson05/lesson05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson05/lesson05.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson05/lesson05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithm-structures">
+   Algorithm Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sequence">
+   Sequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-structures">
+   Selection Structures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison">
+     Comparison
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#block-if-statement">
+     Block
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inline-if-statement">
+     Inline
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repetition-and-loops">
+   Repetition and Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-analogs">
+     Loop Analogs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop-count-controlled-repetition-structure">
+   For Loop (Count controlled repetition structure)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structured-for-loop">
+     Structured
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FOR
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-through-an-iterable">
+     Looping through an iterable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-range-function-to-create-an-iterable">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       range()
+      </span>
+     </code>
+     function to create an iterable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-for-loops">
+   Example
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-controlled-repetition">
+   Sentinel-controlled repetition.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structured-while-loop">
+     Structured
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       WHILE
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-while-loops">
+   Example
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+   loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nested-repetition">
+   Nested Repetition
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break-to-exit-out-of-a-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     to exit out of a loop
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-continue-statement">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continue
+        </span>
+       </code>
+       statement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-try-except-structure">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         try
+        </span>
+       </code>
+       ,
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         except
+        </span>
+       </code>
+       structure
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowcharts">
+   Flowcharts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-flowchart">
+     What is a Flowchart?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-they-useful">
+     How are they useful?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-5">
+   Laboratory 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-5">
+   Exercise Set 5
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date: 13 July 2021</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="algorithm-building-blocks">
+<h1>5: Algorithm Building Blocks<a class="headerlink" href="#algorithm-building-blocks" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Three structures: sequence, selection , repetition (loops)</p></li>
+<li><p>Sequence structures</p></li>
+<li><p>Selection structures</p></li>
+<li><p>Structured FOR loops</p></li>
+<li><p>Structured WHILE loops</p></li>
+<li><p>Representing computational processes with flowcharts, a graphical abstraction</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Develop awareness of fundamental structures in algorithms:</p></li>
+</ol>
+<ul class="simple">
+<li><p>sequence</p></li>
+<li><p>selection</p></li>
+<li><p>repetition</p></li>
+</ul>
+<ol class="simple">
+<li><p>Develop awareness of loops, and their utility in automation.</p></li>
+</ol>
+<ul class="simple">
+<li><p>To understand loop types available in Python.</p></li>
+<li><p>To understand and implement loops in various examples and configurations.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Develop awareness of flowcharts as a tool for:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Post-development documentation</p></li>
+<li><p>Pre-development program design</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="algorithm-structures">
+<h2>Algorithm Structures<a class="headerlink" href="#algorithm-structures" title="Permalink to this headline">¶</a></h2>
+<p>The three fundamental structures are sequence, selection, and repetition.</p>
+</div>
+<div class="section" id="sequence">
+<h2>Sequence<a class="headerlink" href="#sequence" title="Permalink to this headline">¶</a></h2>
+<p>Sequential processing are steps performed in sequence, one after another.  A default spreadsheet computation from top-to-bottom is a sequential process.</p>
+<p><strong>Reliability Example</strong>
+Suppose we wish to estimate the reliability of a system comprised of many indetical parts iused in multiple places in a design, for instance rivets on an airplane wing. Using a Bernoulli model (which you will see in your statistics class) we can estimate the collective reliability of the system (all the parts work as desired).  The reliability is expressed as the fraction of time that no parts have failed, if the fraction is small we would want to either improve part reliability, or ensure redundancy so the system can function with broken parts.</p>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be the probability a single component is good and <span class="math notranslate nohighlight">\(N\)</span> be the total number of components in the system that work together in a “series” context.  The reliability, or the percentage of time that none of the components have failed is given by the Bernoulli equation:</p>
+<div class="math notranslate nohighlight">
+\[\% = (\frac{p}{100.0})^N \cdot 100.0 \]</div>
+<p>Suppose we want a script to read in a component probability and count, and estimate system reliability – we can apply our problem solving protocol and JupyterLab to do so, and the task will be mostly sequential</p>
+<p><strong>Step 1 Problem Statement</strong> Estimate the reliability of a component in an instrument relative to a group of components using a Bernoulli approximation.</p>
+<p><strong>Step 2 Input/Output Decomposition</strong> Inputs are the reliability of a single component and the number of components working together in a system, output is estimate of system reliability, governing principle is the Bernoulli equation above.</p>
+<p><strong>Step 3 By-Hand Example</strong>
+Suppose the system is a small FPGA with 20 transistors, each with reliability of 96-percent. The entire array reliability is</p>
+<div class="math notranslate nohighlight">
+\[\text{percentage} = (\frac{96.0}{100.0})^{20} \cdot 100.0 = 44.2\%\]</div>
+<p><strong>Step 4 Algorithm Development</strong>
+Decompose the computation problem as:</p>
+<ol class="simple">
+<li><p>Read reliability of a single component</p></li>
+<li><p>Read how many components</p></li>
+<li><p>Compute reliability  by bernoulli model</p></li>
+<li><p>Report result</p></li>
+</ol>
+<p><strong>Step 5 Scripting</strong>
+Written as a sequence we can have</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
+<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Reliability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 6 Refinement</strong>
+We have tested the script with the by-hand example, no refinement really needed here, but lets apply to new conditions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Component Reliability (percentage-numeric)?&#39;</span><span class="p">))</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of Components (integer-numeric)?&#39;</span><span class="p">))</span>
+<span class="n">reliability</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="p">(</span><span class="n">component</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span><span class="o">**</span><span class="n">howmany</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component Reliability: &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">component</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Components : &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System Reliability is : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">reliability</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="selection-structures">
+<h2>Selection Structures<a class="headerlink" href="#selection-structures" title="Permalink to this headline">¶</a></h2>
+<p>Selection via conditional statements is an important step in algorithm design; its one way to control the flow of execution of a program.</p>
+<p>Conditional statements in Python include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statement is true, then do …</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if....else</span></code> statement is true, then do …, otherwise do something else</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if....elif....else</span></code> statement is true, then do …, if something else is true then do …, otherwise do …</p></li>
+</ul>
+<p>Conditional statements are logical expressions that evaluate as TRUE or FALSE and using
+these results to perform further operations based on these conditions.
+All flow control in a program depends on evaluating conditions. The program will proceed
+diferently based on the outcome of one or more conditions - really sophisticated AI programs are a collection of conditions and correlations.</p>
+<p>Expressed in a flowchart a block <code class="docutils literal notranslate"><span class="pre">if</span></code> statement looks like:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson05/conditional.png" /></p>
+<p>As <a class="reference external" href="https://towardsdatascience.com/pseudocode-101-an-introduction-to-writing-good-pseudocode-1331cb855be7">psuedo code</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if(condition is true): 
+    do stuff
+</pre></div>
+</div>
+<p>Amazon knowing what you kind of want is based on correlations of your past behavior compared to other peoples similar, but more recent behavior, and then it uses conditional statements to decide what item to offer you in your recommendation items.
+It’s spooky, but ultimately just a program running in the background trying to make your money theirs.</p>
+<div class="section" id="comparison">
+<h3>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h3>
+<p>The most common conditional operation is comparison. If we wish to compare whether two
+variables are the same we use the == (double equal sign).</p>
+<p>For example x == y means the program will ask whether x and y have the same value.
+If they do, the result is TRUE if not then the result is FALSE.</p>
+<p>Other comparison signs are <code class="docutils literal notranslate"><span class="pre">!=</span></code> does NOT equal, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> smaller than, <code class="docutils literal notranslate"><span class="pre">&gt;</span> </code>larger than, <code class="docutils literal notranslate"><span class="pre">&lt;=</span> </code>less than or equal, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> greater than or equal.</p>
+<p>There are also three logical operators when we want to build multiple compares
+(multiple conditioning); these are <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator returns TRUE if (and only if) <strong>all</strong> conditions are TRUE.
+For instance <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">==</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">6</span></code> will return a TRUE because both conditions are true.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if at least one condition is true.
+If <strong>all</strong> conditions are FALSE, then it will return a FALSE. For instance <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">&gt;</span> <span class="pre">3</span> <span class="pre">or</span> <span class="pre">17</span> <span class="pre">&gt;</span> <span class="pre">20</span> <span class="pre">or</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">2</span></code> will return <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>because the first condition is true.
+The <code class="docutils literal notranslate"><span class="pre">not</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if the condition after the <code class="docutils literal notranslate"><span class="pre">not</span></code> keyword is false. Think of it
+as a way to do a logic reversal.</p>
+</div>
+<div class="section" id="block-if-statement">
+<h3>Block <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#block-if-statement" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is a common flow control statement.
+It allows the program to evaluate if a certain condition is satisfied and to perform a designed action based on the result of the evaluation. The structure of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if condition1 is met:
+    do A
+elif condition 2 is met:
+    do b
+elif condition 3 is met:
+    do c
+else:
+    do e
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> means “else if”. The <code class="docutils literal notranslate"><span class="pre">:</span></code> colon is an important part of the structure it tells where the action begins. Also there are no scope delimiters like (), or {} .
+Instead Python uses indentation to isolate blocks of code.</p>
+<p>This convention is hugely important - many other coding environments use delimiters (called scoping delimiters), but Python does not. The indentation itself is the scoping delimiter.</p>
+</div>
+<div class="section" id="inline-if-statement">
+<h3>Inline <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#inline-if-statement" title="Permalink to this headline">¶</a></h3>
+<p>An inline <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is a simpler form of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and is more convenient if you
+only need to perform a simple conditional task.
+The syntax is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do TaskA `if` condition is true `else` do TaskB
+</pre></div>
+</div>
+<p>An example would be</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>myInt = 3
+num1 = 12 if myInt == 0 else 13
+num1
+</pre></div>
+</div>
+<p>An alternative way is to enclose the condition in brackets for some clarity like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>myInt = 3
+num1 = 12 if (myInt == 0) else 13
+num1
+</pre></div>
+</div>
+<p>In either case the result is that <code class="docutils literal notranslate"><span class="pre">num1</span></code> will have the value <code class="docutils literal notranslate"><span class="pre">13</span></code> (unless you set myInt to 0).</p>
+<p>One can also use <code class="docutils literal notranslate"><span class="pre">if</span></code> to construct extremely inefficient loops.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="repetition-and-loops">
+<h2>Repetition and Loops<a class="headerlink" href="#repetition-and-loops" title="Permalink to this headline">¶</a></h2>
+<p><strong>Computational thinking (CT)</strong> concepts involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Decomposition</span></code> : Break a problem down into smaller pieces; the body of tasks in one repetition of a loop represent decomposition of the entire sets of repeated activities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pattern</span> <span class="pre">Recognition</span></code> : Finding similarities between things; the body of tasks in one repetition of a loop is the pattern, the indices and components that change are how we leverage reuse</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Abstraction</span></code> : Pulling out specific differences to make one solution work for multiple problems</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Algorithms</span></code> : A list of steps that you can follow to finish a task</p></li>
+</ul>
+<p>The action of doing something over and over again (repetition) is called a loop.  Basically, Loops repeats a portion of code a finite number of times until a process is complete. Repetitive tasks are very common and essential in programming. They save time in coding, minimize coding errors, and leverage the speed of electronic computation.</p>
+<div class="section" id="loop-analogs">
+<h3>Loop Analogs<a class="headerlink" href="#loop-analogs" title="Permalink to this headline">¶</a></h3>
+<p>If you think any mass manufacturing process, we apply the same process again and again. Even for something very simple such as preparing a peanut butter sandwich:</p>
+<p>Consider the <em><strong>flowchart</strong></em> in Figure 1, it represents a decomposition of sandwich assembly, but at a high level – for instance, <code class="docutils literal notranslate"><span class="pre">Gather</span> <span class="pre">Ingredients</span></code> contains a lot of substeps that would need to be decomposed if fully automated assembly were to be accomplished; nevertheless lets stipulate that this flowchart will indeed construct a single sandwich.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson05/sandwichchart.png" /></p>
+<!--|Figure 1|Supervisory Flowchart Sandwich Assembly (adapted from [https://imadrk.weebly.com/uploads/1/5/5/2/15524772/manual_draft.pdf](https://imadrk.weebly.com/uploads/1/5/5/2/15524772/manual_draft.pdf) ||
+|:---|:---|:---|-->
+<p>If we need to make 1000 peanut butter sandwichs we would then issue a directive to:</p>
+<ol class="simple">
+<li><p>Implement sandwich assembly, repeat 999 times (repeat is the loop structure) (A serial structure, 1 sandwich artist, doing same job over and over again)</p></li>
+</ol>
+<p><strong>OR</strong></p>
+<ol class="simple">
+<li><p>Implement 1000 sandwich assembly threads (A parallel structure, 1000 sandwich artists doing same job once)</p></li>
+</ol>
+<p>In general because we dont want to idle 999 sandwich artists, we would choose the serial structure, which frees 999 people to ask the existential question “would you like fries with that?”</p>
+<p>All cynicism aside, an automated process such as a loop, is typical in computational processing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NVIDIA CUDA, and AMD OpenGL compilers can detect the structure above, and if there are enough GPU threads available , create the 1000 sandwich artists (1000 GPU threads), and run the process in parallel – the actual workload is unchanged in a thermodynamic sense, but the apparent time (in human terms) spent in sandwich creation is a fraction of the serial approach.  This kind of parallelization is called “unrolling the loop”, and is a pretty common optimization step during compilation. This kind of programming is outside the scope of this class.</p>
+</div>
+<p>Main attractiveness of loops is:</p>
+<ul class="simple">
+<li><p>Leveraging  <code class="docutils literal notranslate"><span class="pre">pattern</span> <span class="pre">matching</span></code> and <code class="docutils literal notranslate"><span class="pre">automation</span></code></p></li>
+<li><p>Code is more organized and shorter,because a loop is a sequence of instructions that is continually repeated until a certain condition is reached.</p></li>
+</ul>
+<p>There are 2 main types loops based on the repetition control condition; <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and <code class="docutils literal notranslate"><span class="pre">while</span></code>loops.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="for-loop-count-controlled-repetition-structure">
+<h2>For Loop (Count controlled repetition structure)<a class="headerlink" href="#for-loop-count-controlled-repetition-structure" title="Permalink to this headline">¶</a></h2>
+<p>Count-controlled repetition is also called definite repetition because the number of repetitions is known before the loop begins executing.
+When we do not know in advance the number of times we want to execute a statement, we cannot use count-controlled repetition.
+In such an instance, we would use sentinel-controlled repetition.</p>
+<p>A count-controlled repetition will exit after running a certain number of times.
+The count is kept in a variable called an index or counter.
+When the index reaches a certain value (the loop bound) the loop will end.</p>
+<p>Count-controlled repetition requires</p>
+<ul class="simple">
+<li><p>control variable (or loop counter)</p></li>
+<li><p>initial value of the control variable</p></li>
+<li><p>increment (or decrement) by which the control variable is modified each iteration through the loop</p></li>
+<li><p>condition that tests for the final value of the control variable</p></li>
+</ul>
+<p>We can use both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, for count controlled repetition, but the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in combination with the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function is more common.</p>
+<div class="section" id="structured-for-loop">
+<h3>Structured <code class="docutils literal notranslate"><span class="pre">FOR</span></code> loop<a class="headerlink" href="#structured-for-loop" title="Permalink to this headline">¶</a></h3>
+<p>We have seen the for loop already, but we will formally introduce it here. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop executes a block of code repeatedly until the condition in the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement is no longer true.</p>
+</div>
+<div class="section" id="looping-through-an-iterable">
+<h3>Looping through an iterable<a class="headerlink" href="#looping-through-an-iterable" title="Permalink to this headline">¶</a></h3>
+<p>An iterable is anything that can be looped over - typically a list, string, or tuple.
+The syntax for looping through an iterable is illustrated by an example.</p>
+<p>First a generic syntax</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for a in iterable:
+print(a)
+</pre></div>
+</div>
+<p>Notice our friends the colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and the indentation.</p>
+</div>
+<div class="section" id="the-range-function-to-create-an-iterable">
+<h3>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function to create an iterable<a class="headerlink" href="#the-range-function-to-create-an-iterable" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">range(begin,end,increment)</span></code> function will create an iterable starting at a value of begin, in steps defined by increment (<code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">+=</span> <span class="pre">increment</span></code>), ending at <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
+<p>So a generic syntax becomes</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for a in range(begin,end,increment):
+print(a)
+</pre></div>
+</div>
+<p>The examples that follow are count-controlled repetition (increment skip if greater)</p>
+</div>
+</div>
+<div class="section" id="example-for-loops">
+<h2>Example <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#example-for-loops" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">howmany</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;?&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sentinel-controlled-repetition">
+<h2>Sentinel-controlled repetition.<a class="headerlink" href="#sentinel-controlled-repetition" title="Permalink to this headline">¶</a></h2>
+<p>When loop control is based on the value of what we are processing, sentinel-controlled repetition is used.
+Sentinel-controlled repetition is also called indefinite repetition because it is not known in advance how many times the loop will be executed.
+It is a repetition procedure for solving a problem by using a sentinel value (also called a signal value, a dummy value or a flag value) to indicate “end of process”.
+The sentinel value itself need not be a part of the processed data.</p>
+<p>One common example of using sentinel-controlled repetition is when we are processing data from a file and we do not know in advance when we would reach the end of the file.</p>
+<p>We can use both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, for <strong>Sentinel</strong> controlled repetition, but the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is more common.</p>
+<div class="section" id="structured-while-loop">
+<h3>Structured <code class="docutils literal notranslate"><span class="pre">WHILE</span></code> loop<a class="headerlink" href="#structured-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop repeats a block of instructions inside the loop while a condition remainsvtrue.</p>
+<p>First a generic syntax</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>while condition is true:
+    execute a
+    execute b
+....
+</pre></div>
+</div>
+<p>Notice our friends the colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and the indentation again.</p>
+</div>
+</div>
+<div class="section" id="example-while-loops">
+<h2>Example <code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#example-while-loops" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum numbers from 1 to n</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
+    <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum from 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum even numbers from 1 to n</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">accumulator</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">counter</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">accumulator</span> <span class="o">=</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Sum of Evens 1 to &#39;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span> <span class="s1">&#39;is </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">accumulator</span>  <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">howmany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter N&#39;</span><span class="p">))</span>
+<span class="n">linetoprint</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">howmany</span><span class="p">:</span>
+    <span class="n">linetoprint</span><span class="o">=</span><span class="n">linetoprint</span> <span class="o">+</span> <span class="s1">&#39;?&#39;</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linetoprint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nested-repetition">
+<h2>Nested Repetition<a class="headerlink" href="#nested-repetition" title="Permalink to this headline">¶</a></h2>
+<p>Nested repetition is when a control structure is placed inside of the body or main part of another control structure.</p>
+<div class="section" id="break-to-exit-out-of-a-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code> to exit out of a loop<a class="headerlink" href="#break-to-exit-out-of-a-loop" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you may want to exit the loop when a certain condition different from the counting
+condition is met. Perhaps you are looping through a list and want to exit when you find the
+first element in the list that matches some criterion. The break keyword is useful for such
+an operation.</p>
+<p>For example run the following program:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+        <span class="k">break</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i =  0 j =  2
+i =  1 j =  4
+i =  2 j =  6
+i =  3 j =  8
+i =  4 j =  10
+i =  5 j =  12
+i =  6 j =  14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;i = &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;j = &quot;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i =  0 j =  2
+i =  1 j =  4
+i =  2 j =  6
+i =  3 j =  8
+i =  4 j =  10
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the first case, the for loop only executes 3 times before the condition j == 6 is TRUE and the loop is exited.
+In the second case, j == 7 never happens so the loop completes all its anticipated traverses.</p>
+<p>In both cases an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement was used within a for loop. Such “mixed” control structures
+are quite common (and pretty necessary).
+A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop contained within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, with several <code class="docutils literal notranslate"><span class="pre">if</span></code> statements would be very common and such a structure is called <strong>nested control.</strong>
+There is typically an upper limit to nesting but the limit is pretty large - easily in the
+hundreds. It depends on the language and the system architecture ; suffice to say it is not
+a practical limit except possibly for general-domain AI applications.</p>
+<hr><p>We can also do mundane activities and leverage loops, arithmetic, and format codes to make useful tables like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># package that contains cosine</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Cosines     &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   x   &quot;</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="s2">&quot; cos(x) &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------|--------&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;  |&quot;</span><span class="p">,</span> <span class="s2">&quot; </span><span class="si">%.4f</span><span class="s2"> &quot;</span>  <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># note the format code and the placeholder % and syntax </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Cosines     
+   x    |  cos(x) 
+--------|--------
+0.000   |  1.0000 
+0.100   |  0.9950 
+0.200   |  0.9801 
+0.300   |  0.9553 
+0.400   |  0.9211 
+0.500   |  0.8776 
+0.600   |  0.8253 
+0.700   |  0.7648 
+0.800   |  0.6967 
+0.900   |  0.6216 
+1.000   |  0.5403 
+1.100   |  0.4536 
+1.200   |  0.3624 
+1.300   |  0.2675 
+1.400   |  0.1700 
+1.500   |  0.0707 
+1.600   |  -0.0292 
+1.700   |  -0.1288 
+1.800   |  -0.2272 
+1.900   |  -0.3233 
+2.000   |  -0.4161 
+2.100   |  -0.5048 
+2.200   |  -0.5885 
+2.300   |  -0.6663 
+2.400   |  -0.7374 
+2.500   |  -0.8011 
+2.600   |  -0.8569 
+2.700   |  -0.9041 
+2.800   |  -0.9422 
+2.900   |  -0.9710 
+3.000   |  -0.9900 
+3.100   |  -0.9991 
+3.200   |  -0.9983 
+3.300   |  -0.9875 
+3.400   |  -0.9668 
+3.500   |  -0.9365 
+3.600   |  -0.8968 
+3.700   |  -0.8481 
+3.800   |  -0.7910 
+3.900   |  -0.7259 
+4.000   |  -0.6536 
+4.100   |  -0.5748 
+4.200   |  -0.4903 
+4.300   |  -0.4008 
+4.400   |  -0.3073 
+4.500   |  -0.2108 
+4.600   |  -0.1122 
+4.700   |  -0.0124 
+4.800   |  0.0875 
+4.900   |  0.1865 
+5.000   |  0.2837 
+5.100   |  0.3780 
+5.200   |  0.4685 
+5.300   |  0.5544 
+5.400   |  0.6347 
+5.500   |  0.7087 
+5.600   |  0.7756 
+5.700   |  0.8347 
+5.800   |  0.8855 
+5.900   |  0.9275 
+6.000   |  0.9602 
+6.100   |  0.9833 
+6.200   |  0.9965 
+6.300   |  0.9999 
+6.400   |  0.9932 
+6.500   |  0.9766 
+6.600   |  0.9502 
+6.700   |  0.9144 
+6.800   |  0.8694 
+6.900   |  0.8157 
+7.000   |  0.7539 
+7.100   |  0.6845 
+7.200   |  0.6084 
+7.300   |  0.5261 
+7.400   |  0.4385 
+7.500   |  0.3466 
+7.600   |  0.2513 
+7.700   |  0.1534 
+7.800   |  0.0540 
+7.900   |  -0.0460 
+8.000   |  -0.1455 
+8.100   |  -0.2435 
+8.200   |  -0.3392 
+8.300   |  -0.4314 
+8.400   |  -0.5193 
+8.500   |  -0.6020 
+8.600   |  -0.6787 
+8.700   |  -0.7486 
+8.800   |  -0.8111 
+8.900   |  -0.8654 
+9.000   |  -0.9111 
+9.100   |  -0.9477 
+9.200   |  -0.9748 
+9.300   |  -0.9922 
+9.400   |  -0.9997 
+9.500   |  -0.9972 
+9.600   |  -0.9847 
+9.700   |  -0.9624 
+9.800   |  -0.9304 
+9.900   |  -0.8892 
+10.000   |  -0.8391 
+10.100   |  -0.7806 
+10.200   |  -0.7143 
+10.300   |  -0.6408 
+10.400   |  -0.5610 
+10.500   |  -0.4755 
+10.600   |  -0.3853 
+10.700   |  -0.2913 
+10.800   |  -0.1943 
+10.900   |  -0.0954 
+11.000   |  0.0044 
+11.100   |  0.1042 
+11.200   |  0.2030 
+11.300   |  0.2997 
+11.400   |  0.3935 
+11.500   |  0.4833 
+11.600   |  0.5683 
+11.700   |  0.6476 
+11.800   |  0.7204 
+11.900   |  0.7861 
+12.000   |  0.8439 
+12.100   |  0.8932 
+12.200   |  0.9336 
+12.300   |  0.9647 
+12.400   |  0.9862 
+12.500   |  0.9978 
+12.600   |  0.9994 
+12.700   |  0.9911 
+12.800   |  0.9728 
+12.900   |  0.9449 
+13.000   |  0.9074 
+13.100   |  0.8610 
+13.200   |  0.8059 
+13.300   |  0.7427 
+13.400   |  0.6722 
+13.500   |  0.5949 
+13.600   |  0.5117 
+13.700   |  0.4234 
+13.800   |  0.3308 
+13.900   |  0.2349 
+14.000   |  0.1367 
+14.100   |  0.0372 
+14.200   |  -0.0628 
+14.300   |  -0.1621 
+14.400   |  -0.2598 
+14.500   |  -0.3549 
+14.600   |  -0.4465 
+14.700   |  -0.5336 
+14.800   |  -0.6154 
+14.900   |  -0.6910 
+15.000   |  -0.7597 
+15.100   |  -0.8208 
+15.200   |  -0.8737 
+15.300   |  -0.9179 
+15.400   |  -0.9530 
+15.500   |  -0.9785 
+15.600   |  -0.9942 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-continue-statement">
+<h4>The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#the-continue-statement" title="Permalink to this headline">¶</a></h4>
+<p>The continue instruction skips the block of code after it is executed for that iteration.
+It is
+best illustrated by an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> i = &quot;</span><span class="p">,</span> <span class="n">i</span> <span class="p">,</span> <span class="s2">&quot;, j = &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="c1">#here the \n is a newline command</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; this message will be skipped over if j = 6 &quot;</span><span class="p">)</span> <span class="c1"># still within the loop, so the skip is implemented</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> i =  0 , j =  2
+ this message will be skipped over if j = 6 
+
+ i =  1 , j =  4
+ this message will be skipped over if j = 6 
+
+ i =  2 , j =  6
+
+ i =  3 , j =  8
+ this message will be skipped over if j = 6 
+
+ i =  4 , j =  10
+ this message will be skipped over if j = 6 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-try-except-structure">
+<h4>The <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code> structure<a class="headerlink" href="#the-try-except-structure" title="Permalink to this headline">¶</a></h4>
+<p>An important control structure (and a pretty cool one for error trapping) is the <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>
+statement.</p>
+<p>The statement controls how the program proceeds when an error occurs in an instruction.
+The structure is really useful to trap likely errors (divide by zero, wrong kind of input)
+yet let the program keep running or at least issue a meaningful message to the user.</p>
+<p>The syntax is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>try:
+do something
+except:
+do something else if ``do something&#39;&#39; returns an error
+</pre></div>
+</div>
+<p>Here is a really simple, but hugely important example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#MyErrorTrap.py</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
+<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
+    <span class="k">try</span><span class="p">:</span>         
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error divide by zero&quot;</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  12.0 y =  12.0 x/y =  1.0
+x =  12.0 y =  11.0 x/y =  1.0909090909090908
+x =  12.0 y =  10.0 x/y =  1.2
+x =  12.0 y =  9.0 x/y =  1.3333333333333333
+x =  12.0 y =  8.0 x/y =  1.5
+x =  12.0 y =  7.0 x/y =  1.7142857142857142
+x =  12.0 y =  6.0 x/y =  2.0
+x =  12.0 y =  5.0 x/y =  2.4
+x =  12.0 y =  4.0 x/y =  3.0
+x =  12.0 y =  3.0 x/y =  4.0
+x =  12.0 y =  2.0 x/y =  6.0
+x =  12.0 y =  1.0 x/y =  12.0
+error divide by zero
+x =  12.0 y =  -1.0 x/y =  -12.0
+x =  12.0 y =  -2.0 x/y =  -6.0
+x =  12.0 y =  -3.0 x/y =  -4.0
+x =  12.0 y =  -4.0 x/y =  -3.0
+x =  12.0 y =  -5.0 x/y =  -2.4
+x =  12.0 y =  -6.0 x/y =  -2.0
+x =  12.0 y =  -7.0 x/y =  -1.7142857142857142
+x =  12.0 y =  -8.0 x/y =  -1.5
+x =  12.0 y =  -9.0 x/y =  -1.3333333333333333
+x =  12.0 y =  -10.0 x/y =  -1.2
+x =  12.0 y =  -11.0 x/y =  -1.0909090909090908
+x =  12.0 y =  -12.0 x/y =  -1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So this silly code starts with x fixed at a value of 12, and y starting at 12 and decreasing by
+1 until y equals -1. The code returns the ratio of x to y and at one point y is equal to zero
+and the division would be undefined. By trapping the error the code can issue us a measure
+and keep running.</p>
+<p>Modify the script as shown below,Run, and see what happens</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#NoErrorTrap.py</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">12.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">12.</span>
+<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">12.</span><span class="p">:</span> <span class="c1"># sentinel controlled repetition</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x/y = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="flowcharts">
+<h2>Flowcharts<a class="headerlink" href="#flowcharts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-a-flowchart">
+<h3>What is a Flowchart?<a class="headerlink" href="#what-is-a-flowchart" title="Permalink to this headline">¶</a></h3>
+<p>A flowchart is a type of diagram that represents a workflow or process. A flowchart can also be defined as a diagrammatic representation of an algorithm, a step-by-step approach to solving a task.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson05/flowchart.png" /></p>
+<!--|Figure 2|Repair Flowchart for a Lamp|https://en.wikipedia.org/wiki/Flowchart|
+|:---|:---|:---|-->
+<p>The flowchart shows the steps as boxes of various kinds, and their order by connecting the boxes with arrows. This diagrammatic representation illustrates a solution model to a given problem. Flowcharts are used in analyzing, designing, documenting or managing a process or program in various fields.</p>
+<p>There is a symbol convention (a language) as depicted in Figure 2 below (from: <a class="reference external" href="https://en.wikipedia.org/wiki/Flowchart">https://en.wikipedia.org/wiki/Flowchart</a>)</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson05/flowchartsymbols.png" /></p>
+<!--|Figure 1|Flowchart Symbols|https://en.wikipedia.org/wiki/Flowchart|
+|:---|:---|:---|-->
+<p>IBM engineers implemented programming flowcharts based upon Goldstine and von Neumann’s unpublished report, “Planning and coding of problems for an electronic computing instrument, Part II, Volume 1” (1947), which is reproduced in von Neumann’s collected works.</p>
+<p>The flowchart became a popular tool for describing computer algorithms, but its popularity decreased in the 1970s, when interactive computer terminals and third-generation programming languages became common tools for computer programming, since algorithms can be expressed more concisely as source code in such languages. Often pseudo-code is used, which uses the common idioms of such languages without strictly adhering to the details of a particular one.</p>
+<p>Nowadays flowcharts are still used for describing computer algorithms.[9] Modern techniques such as UML activity diagrams and Drakon-charts can be considered to be extensions of the flowchart.</p>
+<p>Nearly all flowcharts focus on on some kind of control, rather than on the particular flow itself!  While quaint today, they are an effective way to document processes in a program and visualize structures.  We recomend you get in the habit of making rudimentary flowcharts, at least at the supervisory level (the sandwich chart above)</p>
+</div>
+<div class="section" id="how-are-they-useful">
+<h3>How are they useful?<a class="headerlink" href="#how-are-they-useful" title="Permalink to this headline">¶</a></h3>
+<p>(paraphrased from <a class="reference external" href="https://www.breezetree.com/articles/top-reasons-to-flowchart">https://www.breezetree.com/articles/top-reasons-to-flowchart</a>)</p>
+<p>Sometimes it’s more effective to visualize something graphically that it is to describe it with words. That is the essence of what flowcharts do for you. Flowcharts explain a process clearly through symbols and text. Moreover, flowcharts give you the gist of the process flow in a single glance. The following are some of the more salient reasons to use flowcharts.</p>
+<p><strong>Process Documentation / Training Materials</strong>
+Another common use for flowcharts is to create process documentation. Although this reason overlaps with regulatory and quality management requirements (below), many non-regulated businesses use flowcharts for their documentation as well. These can range in form from high-level procedures to low-level, detailed work instructions.</p>
+<p>You may think that this applies mainly to large organizations, but small companies can greatly benefit from flowcharting their processes as well. Small enterprises need to be nimble and organized. Standardizing their processes is a great way to achieve this. In fact, the popular entrepreneurial book The E-Myth Revisited: Why Most Small Businesses Don’t Work and What to Do About It by Michael Gerber is based on the fact that small businesses are more likely to succeed if they treat their operations like a franchise. in a nutshell, this means standardizing and documenting their business processes. There’s no better way to do that than with flowcharts, right?</p>
+<p>Training materials are often created using flowcharts because they’re visually stimulating and easy to understand. A nicely laid out flowchart will gain and hold the reader’s attention when a block of text will often fail.</p>
+<p><strong>Workflow Management and Continuous Improvement</strong>
+Workflows don’t manage themselves. To ensure that you are meeting your customers’ needs, you need to take control of your business processes. The first step to workflow management is to define the current state of your processes by creating an “As-Is Flowchart”. That allows you to analyze your processes for waste and inefficiency. After you have identified areas for process improvement, you can then craft new flowcharts to document the leaner processes.</p>
+<p><strong>Programming</strong>
+Information technology played a big influence on the use and spread of flowcharts in the 20th century. While Dr. W. Edwards Deming was advocating their use in quality management, professionals in the data processing world were using them to flesh out their programming logic. Flowcharts were a mainstay of procedural programming, however, and with the advent of object oriented programming and various modeling tools, the use of flowcharts for programming is no longer as commonplace as it once was.</p>
+<p>That said, even with in the scope of object oriented programming, complex program logic can be modeled effectively using a flowchart. Moreover, diagramming the user’s experience as they navigate through a program is a valuable prerequisite prior to designing the user interface. So flowcharts still have their place in the world of programming.</p>
+<p><strong>Troubleshooting Guides</strong>
+Most of us have come across a troubleshooting flowchart at one time or another. These are usually in the form of Decision Trees that progressively narrow the range of possible solutions based on a series of criteria. The effectiveness of these types of flowcharts depends on how neatly the range of problems and solutions can fit into a simple True/False diagnosis model. A well done troubleshooting flowcharts can cut the problem solving time greatly.</p>
+<p><strong>Regulatory and Quality Management Requirements</strong>
+Your business processes may be subject to regulatory requirements such as Sarbanes-Oxley (SOX), which requires that your accounting procedures be clearly defined and documented. An easy way to do this is to create accounting flowcharts for all your accounting processes.</p>
+<p>Similarly, many organizations fall under certification requirements for quality management systems - such as ISO 9000, TS 16949, or one of the many others. In such environments, flowcharts are not only useful but in certain clauses they are actually mandated.</p>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Computational and Inferential Thinking Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) Chapters 3-6 <a class="reference external" href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">https://www.inferentialthinking.com/chapters/03/programming-in-python.html</a></p></li>
+<li><p>Learn Python the Hard Way (Online Book) (<a class="reference external" href="https://learnpythonthehardway.org/book/">https://learnpythonthehardway.org/book/</a>)  Recommended for beginners who want a complete course in programming with Python.</p></li>
+<li><p><a class="reference external" href="http://LearnPython.org">LearnPython.org</a> (Interactive Tutorial) (<a class="reference external" href="https://www.learnpython.org/">https://www.learnpython.org/</a>)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.</p></li>
+<li><p>Brian Christian and Tom Griffiths (2016) ALGORITHMS TO LIVE BY: The Computer Science of Human Decisions Henry Holt and Co. (<a class="reference external" href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365</a>)</p></li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-5">
+<h2>Laboratory 5<a class="headerlink" href="#laboratory-5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 0 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05.html">Laboratory 5.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 0 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05.ipynb">Laboratory 5.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-5">
+<h2>Exercise Set 5<a class="headerlink" href="#exercise-set-5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 0 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.html">Exercise 5.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 0 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab05/Lab05-TH.ipynb">Exercise Set 5.ipynb</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/lesson05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../lesson041/lesson04.1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">4.1: Data Structures</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../lesson06/lesson06.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">6: Functions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland and Farhang Forghanparast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
