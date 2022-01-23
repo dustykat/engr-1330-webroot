@@ -17,8 +17,8 @@ chapters:
 - file: lessons/lesson07/lesson07 # data files
 - file: lessons/lesson08/lesson08 # matrices as lists
 - file: lessons/lesson09/lesson09 # matrices in numpy
-- file: lessons/lesson10 # selection
-- file: lessons/lesson11 # repetition (count control)
+- file: lessons/lesson10/lesson10 # matrix applications
+- file: lessons/lesson11/lesson11 # databases (pandas)
 - file: lessons/lesson12 # repetition (sentinel control)
 - file: lessons/lesson13 # functions
 - file: lessons/lesson14/lesson14 # plotting conventions 

@@ -5,53 +5,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to ENGR 1330 &#8212; ENGR 1330 Course Notes</title>
+    <title>Lesson 10: Vector/Matrix applications &#8212; ENGR 1330 Course Notes</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="0: Introduction" href="lessons/lesson00/lesson00.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11: Databases" href="../lesson11/lesson11.html" />
+    <link rel="prev" title="9: Matrix Manipulation(s) using NumPy" href="../lesson09/lesson09.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -68,141 +69,141 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/p4e.png" class="logo" alt="logo">
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
    Welcome to ENGR 1330
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson00/lesson00.html">
+  <a class="reference internal" href="../lesson00/lesson00.html">
    0: Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson01/lesson01.html">
+  <a class="reference internal" href="../lesson01/lesson01.html">
    1: Data Science and Problem Solving:
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson02/lesson02.html">
+  <a class="reference internal" href="../lesson02/lesson02.html">
    2: Expressions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson03/lesson03.html">
+  <a class="reference internal" href="../lesson03/lesson03.html">
    3: Data Types and Typecasting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson04/lesson04.html">
+  <a class="reference internal" href="../lesson04/lesson04.html">
    4: User Interaction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson041/lesson04.1.html">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
    4.1: Data Structures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson05/lesson05.html">
+  <a class="reference internal" href="../lesson05/lesson05.html">
    5: Algorithm Building Blocks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson06/lesson06.html">
+  <a class="reference internal" href="../lesson06/lesson06.html">
    6: Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson07/lesson07.html">
+  <a class="reference internal" href="../lesson07/lesson07.html">
    7: Files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson08/lesson08.html">
+  <a class="reference internal" href="../lesson08/lesson08.html">
    8: Vectors and Matrices (as lists)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson09/lesson09.html">
+  <a class="reference internal" href="../lesson09/lesson09.html">
    9: Matrix Manipulation(s) using
    <em>
     NumPy
    </em>
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson10/lesson10.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 10: Vector/Matrix applications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson11/lesson11.html">
+  <a class="reference internal" href="../lesson11/lesson11.html">
    11: Databases
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson12.html">
+  <a class="reference internal" href="../lesson12.html">
    Lesson 12: Sentinel Controlled Repetition
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson13.html">
+  <a class="reference internal" href="../lesson13.html">
    Lesson 13: functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson14/lesson14.html">
+  <a class="reference internal" href="../lesson14/lesson14.html">
    14: Visual display of data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson15.html">
+  <a class="reference internal" href="../lesson15.html">
    Lesson 15: Working with files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson16.html">
+  <a class="reference internal" href="../lesson16.html">
    Lesson 16: File Manipulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson17.html">
+  <a class="reference internal" href="../lesson17.html">
    Lesson 17: Matrix manipulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson18.html">
+  <a class="reference internal" href="../lesson18.html">
    Lesson 18: Arrays in numpy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson19.html">
+  <a class="reference internal" href="../lesson19.html">
    Lesson 19: Database concepts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson20.html">
+  <a class="reference internal" href="../lesson20.html">
    Lesson 20: Database processing (
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -213,12 +214,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson21/lesson21.html">
+  <a class="reference internal" href="../lesson21/lesson21.html">
    21: Testing Hypothesis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson22.html">
+  <a class="reference internal" href="../lesson22.html">
    Lesson 22: Plotting (
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -229,32 +230,32 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson23.html">
+  <a class="reference internal" href="../lesson23.html">
    Lesson 23: Data models and visualization
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson32/lesson32.html">
+  <a class="reference internal" href="../lesson32/lesson32.html">
    32: K Nearest Neighbor (KNN) Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson33/lesson33.html">
+  <a class="reference internal" href="../lesson33/lesson33.html">
    33: KNN Classification (Continued)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson34/lesson34.html">
+  <a class="reference internal" href="../lesson34/lesson34.html">
    34: KNN Applications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson35.html">
+  <a class="reference internal" href="../lesson35.html">
    Lesson 35: Logistic Regression (Homebrew)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson36.html">
+  <a class="reference internal" href="../lesson36.html">
    Lesson 36: Logistic Regression (
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -265,12 +266,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson37.html">
+  <a class="reference internal" href="../lesson37.html">
    Lesson 37: Nearest Neighbor Classification (Homebrew)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/lesson38.html">
+  <a class="reference internal" href="../lesson38.html">
    Lesson 38: Nearest Neighbor Classification (sklearn)
   </a>
  </li>
@@ -315,9 +316,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lessons/lesson10/lesson10.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -335,7 +336,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/lesson10/lesson10.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -351,6 +352,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/lesson10/lesson10.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -362,13 +380,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#suggested-citation">
-   Suggested Citation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copyright-information">
-   Copyright Information
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -382,47 +395,20 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-engr-1330">
-<h1>Welcome to ENGR 1330<a class="headerlink" href="#welcome-to-engr-1330" title="Permalink to this headline">¶</a></h1>
-<p>This is a JupyterBook that is comprised of notes used by Dr. Cleveland in his sections.  Other instructors may use different content, so be sure to use the content specific to your section.</p>
-<div class="section" id="suggested-citation">
-<h2>Suggested Citation<a class="headerlink" href="#suggested-citation" title="Permalink to this headline">¶</a></h2>
-<p><font color=blue>Theodore G. Cleveland, Farhang Forghanparast (2021), <em>Computational Thinking and Data Science: Instructor’s Notes for ENGR 1330 at TTU</em>, with contributions by: Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. Whitacre College of Engineering, DOI (pending) <!--[Active Copy](http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/intro.html)--></font></p>
-</div>
-<div class="section" id="copyright-information">
-<h2>Copyright Information<a class="headerlink" href="#copyright-information" title="Permalink to this headline">¶</a></h2>
-<p>Copyright © 2021 Cleveland et. al., <em>The contents of this book are licensed for free consumption under the following license: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0</a></em></p>
-<p>The links in the active book themselves access potentially other copyrighted materials.  We have taken efforts to correctly attribute such links, but may have missed some - if you find these please let us know!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The information below is of use to other potential institutional users of this book.</p>
-<p><strong>GitHub Repository</strong>
-This entire course (book, labs, and exercises) is contained in a public repository on GitHub <a class="reference external" href="https://github.com/dustykat/engr-1330-webroot">https://github.com/dustykat/engr-1330-webroot</a></p>
-<blockquote>
-<div><p><em><strong>How to Use</strong></em></p>
-<ol class="simple">
-<li><p>Clone the entire repository to /var/www/html/engr-1330-webroot.  Have your main index point to this directory i.e. <code class="docutils literal notranslate"><span class="pre">http://your-fqdn-server.org/engr-1330-webroot/</span></code> You can see working example at <a class="reference external" href="http:///54.243.252.9/engr-1330-webroot/">http:/54.243.252.9/engr-1330-webroot/</a></p></li>
-<li><p>If you plan to modify things, many of the internal links expect IP/hostname == <code class="docutils literal notranslate"><span class="pre">54.243.252.9</span></code>, so you will have to change these addresses to your server.  The string editor <code class="docutils literal notranslate"><span class="pre">sed</span></code> will become your friend!</p></li>
-</ol>
-</div></blockquote>
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2022 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date: Never</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="lesson-10-vector-matrix-applications">
+<h1>Lesson 10: Vector/Matrix applications<a class="headerlink" href="#lesson-10-vector-matrix-applications" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Materials herein come from many sources, in particular many from the Data8 repository from UC Berkeley, and many internet sources.  Sources in notebooks are at least cited by a URL.  As the content is matured, proper citations are to be inserted.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">3-Readings</span></code> directory contains copyrighted materials and should be exposed with care on a web server; generally because no one reads anymore, its probably safe enough to protect using <code class="docutils literal notranslate"><span class="pre">.htaccess</span></code> simple uid:pwd approach. In my courses we access things through the syllabus links, and the syllabus is accessed through our LMS (Blackboard)</p></li>
+<li><p>curve-fitting</p></li>
+<li><p>linear heat flow</p></li>
+<li><p>network flow</p></li>
 </ul>
-</div>
-<!--Below is a code block.  This JupyterBook is not interactive but the code blocks should cut-and-paste and run in a Jupyter Notebook.:
-
-```
-# example script
-m = 1000 #kg
-c = 290000 #m/sec
-e = mc^2
-print('energy = ',round(e,3),' Newton-meters')
-# end of example
-```
--->
-</div>
-<div class="toctree-wrapper compound">
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -439,7 +425,7 @@ print('energy = ',round(e,3),' Newton-meters')
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./lessons/lesson10"
         },
         predefinedOutput: true
     }
@@ -455,11 +441,20 @@ print('energy = ',round(e,3),' Newton-meters')
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../lesson09/lesson09.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">9: Matrix Manipulation(s) using <em>NumPy</em></p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="lessons/lesson00/lesson00.html" title="next page">
+        <a class="right-next" href="../lesson11/lesson11.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">0: Introduction</p>
+                <p class="prevnext-title">11: Databases</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -485,7 +480,7 @@ print('energy = ',round(e,3),' Newton-meters')
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
