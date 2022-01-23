@@ -4,7 +4,7 @@ This is a JupyterBook that is comprised of notes used by Dr. Cleveland in his se
 
 ## Suggested Citation
 
-<font color=blue>Theodore G. Cleveland, Farhang Forghanparast (2021), *Computational Thinking and Data Science: Instructor's Notes for ENGR 1330 at TTU*, with contributions by: Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. Whitacre College of Engineering, DOI (pending) [Active Copy](http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/intro.html)</font>
+<font color=blue>Theodore G. Cleveland, Farhang Forghanparast (2021), *Computational Thinking and Data Science: Instructor's Notes for ENGR 1330 at TTU*, with contributions by: Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. Whitacre College of Engineering, DOI (pending) <!--[Active Copy](http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/intro.html)--></font>
 
 ## Copyright Information
 Copyright © 2021 Cleveland et. al., *The contents of this book are licensed for free consumption under the following license: [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)*
@@ -14,6 +14,7 @@ The links in the active book themselves access potentially other copyrighted mat
 :::{note}
 
 The information below is of use to other potential institutional users of this book. 
+
 **GitHub Repository**
 This entire course (book, labs, and exercises) is contained in a public repository on GitHub [https://github.com/dustykat/engr-1330-webroot](https://github.com/dustykat/engr-1330-webroot)
 
