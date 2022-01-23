@@ -54,11 +54,11 @@
 # 
 # The figure below is a graphical representation of the filesystem on my office computer.  I have the file browser listing the contants of a directory named `/src`.  It is contained in a directory named `/final_report`, which is contained in a higher level directory all the way up to `/Users` (`/` is aliased to `Macintosh HD` in the figure)
 # 
-# <img src="Filesystem-graphic.png" width="700">
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson07/Filesystem-graphic.png" width="700">
 # 
 # An equivalent representation, in a `bash` shell is shown in the figure below which is a capture of a terminal window.
 # 
-# <img src="Filesystem-shell.png" width="700">
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson07/Filesystem-shell.png" width="700">
 
 # ---
 # 
@@ -546,12 +546,16 @@ get_ipython().system(' cat all_quads_gross_evaporation.csv')
 
 
 # Structure kind of looks like a spreadsheet as expected; notice the unsuual character `^M`; this unprintable character is the *carriage return+line feed* control character for MS DOS (Windows) architecture.  The script below will actually strip and linefeed correctly, but sometimes all that is needed is to make a quick conversion using the system shell.
+# 
+# :::{note}
 # > Here are some simple system commands (on a Linux or MacOS) to handle the conversion for ASCII files
 # > - `sed -e 's/$/\r/' inputfile > outputfile`                # UNIX to DOS  (adding CRs)
 # > - `sed -e 's/\r$//' inputfile > outputfile`                # DOS  to UNIX (removing CRs)
 # > - `perl -pe 's/\r\n|\n|\r/\r\n/g' inputfile > outputfile`  # Convert to DOS
 # > - `perl -pe 's/\r\n|\n|\r/\n/g'   inputfile > outputfile`  # Convert to UNIX
 # > - `perl -pe 's/\r\n|\n|\r/\r/g'   inputfile > outputfile`  # Convert to old Mac
+# ** Probably need to just put links to working scripts in future revision **
+# :::
 # 
 # Now lets actually read the file into a list for some processing.  We will read it into a null list, and split on the commas (so we will be building a matrix of strings). Then we will print the first few rows and columns.
 
