@@ -16,7 +16,7 @@ chapters:
 - file: lessons/lesson06/lesson06 # functions
 - file: lessons/lesson07/lesson07 # data files
 - file: lessons/lesson08/lesson08 # matrices as lists
-- file: lessons/lesson09 # sequence
+- file: lessons/lesson09/lesson09 # matrices in numpy
 - file: lessons/lesson10 # selection
 - file: lessons/lesson11 # repetition (count control)
 - file: lessons/lesson12 # repetition (sentinel control)
