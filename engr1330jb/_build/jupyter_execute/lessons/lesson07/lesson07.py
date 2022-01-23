@@ -641,3 +641,28 @@ if c910 != 0:
 # 12. Web Requests with Python (using http and/or https) [https://www.pluralsight.com/guides/web-scraping-with-request-python](https://www.pluralsight.com/guides/web-scraping-with-request-python)
 # 
 # 13. Troubleshooting certificate errors (really common with https requests) [https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error](https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error)
+
+# ---
+# 
+# ## Laboratory 7
+# 
+# **Examine** (click) Laboratory 0 as a webpage at [Laboratory 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 6 as a jupyterlab notebook from [Laboratory 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 7
+# 
+# **Examine** (click) Exercise Set 6 as a webpage at [Exercise 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 6 as a jupyterlab notebook at  [Exercise Set 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.ipynb)
+# 
+# 
+
+# In[ ]:
+
+
+
+

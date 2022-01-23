@@ -353,6 +353,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suggested-citation">
+   Suggested Citation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copyright-information">
+   Copyright Information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-repository">
+   GitHub Repository
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -363,16 +386,43 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-engr-1330">
 <h1>Welcome to ENGR 1330<a class="headerlink" href="#welcome-to-engr-1330" title="Permalink to this headline">¶</a></h1>
-<p>This is a JupyterBook that is comprised of notes used by Dr. Cleveland in his sections.
-Other instructors may have different content, so be sure to use the content specific to your section.</p>
+<p>This is a JupyterBook that is comprised of notes used by Dr. Cleveland in his sections.  Other instructors may use different content, so be sure to use the content specific to your section.</p>
+<div class="section" id="suggested-citation">
+<h2>Suggested Citation<a class="headerlink" href="#suggested-citation" title="Permalink to this headline">¶</a></h2>
+<p><font color=blue>Theodore G. Cleveland, Farhang Forghanparast (2021), <em>Computational Thinking and Data Science: Instructor’s Notes for ENGR 1330 at TTU</em>, with contributions by: Dinesh Sundaravadivelu Devarajan, Turgut Batuhan Baturalp (Batu), Tanja Karp, Long Nguyen, and Mona Rizvi. Whitacre College of Engineering, DOI (pending) <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/intro.html">Active Copy</a></font></p>
+</div>
+<div class="section" id="copyright-information">
+<h2>Copyright Information<a class="headerlink" href="#copyright-information" title="Permalink to this headline">¶</a></h2>
+<p>Copyright © 2021 Cleveland et. al., <em>The contents of this book are licensed for free consumption under the following license: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0</a></em></p>
+<p>The links in the active book themselves access potentially other copyrighted materials.  We have taken efforts to correctly attribute such links, but may have missed some - if you find these please let us know!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note! These play the same role as a footnote in paper-based documents.  They usually are to clarify contents, sometimes may just contain support codes</p>
+<p>The information below is of use to other potential institutional users of this book.</p>
 </div>
-<p>Below is a code block.  The JupyterBook is not interactive (yet!) but the code blocks will cut-and-paste and run in a Jupyter Notebook.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
-
+<p>Below is a code block.  This JupyterBook is not interactive but the code blocks should cut-and-paste and run in a Jupyter Notebook.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example script</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">#kg</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">290000</span> <span class="c1">#m/sec</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;energy = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; Newton-meters&#39;</span><span class="p">)</span>
+<span class="c1"># end of example</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="github-repository">
+<h2>GitHub Repository<a class="headerlink" href="#github-repository" title="Permalink to this headline">¶</a></h2>
+<p>This entire course (book, labs, and exercises) is contained in a public repository on GitHub <a class="reference external" href="https://github.com/dustykat/engr-1330-webroot">https://github.com/dustykat/engr-1330-webroot</a></p>
+<blockquote>
+<div><p><em><strong>How to Use</strong></em></p>
+<ol class="simple">
+<li><p>Clone the entire repository to /var/www/html/engr-1330-webroot.  Have your main index point to this directory i.e. <code class="docutils literal notranslate"><span class="pre">http://your-fqdn-server.org/engr-1330-webroot/</span></code> You can see working example at https:/54.243.252.9/engr-1330-webroot/</p></li>
+<li><p>If you plan to modify things, many of the internal links expect IP/hostname == <code class="docutils literal notranslate"><span class="pre">54.243.252.9</span></code>, so you will have to change these addresses to your server.  The string editor <code class="docutils literal notranslate"><span class="pre">sed</span></code> will become your friend!</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Materials herein come from many sources, in particular many from the Data8 repository from UC Berkeley, and many internet sources.  Sources in notebooks are at least cited by a URL.  As the content is matured, proper citations are to be inserted.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">3-Readings</span></code> directory contains copyrighted materials and should be exposed with care on a web server; generally because no one reads anymore, its probably safe enough to protect using <code class="docutils literal notranslate"><span class="pre">.htaccess</span></code> simple uid:pwd approach. In my courses we access things through the syllabus links, and the syllabus is accessed through our LMS (Blackboard)</p></li>
+</ul>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -425,7 +475,7 @@ Other instructors may have different content, so be sure to use the content spec
     <div class="container">
       <p>
         
-          By Theodore G. Cleveland<br/>
+          By Theodore G. Cleveland and Farhang Forghanparast<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
