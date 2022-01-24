@@ -420,12 +420,18 @@
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-pandas-module">
-     The Pandas module
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     module
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandas">
-       Pandas:
+      <a class="reference internal nav-link" href="#about-pandas">
+       About Pandas:
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
@@ -677,18 +683,21 @@
 <p>Suppose we need to store a car as a collection of its parts (implying dissassembly each time we park it), such decompotion would produce a situation like the image.</p>
 <img src="https://miro.medium.com/max/590/1*Xfxl8HoQqqg_KtpEsEcskw.jpeg" width="400">
 <p>If the location of each part is recorded, then we can determine if something is missing as in</p>
-<img src="./modifiedCar.jpeg" width="400">
+<img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/modifiedCar.jpeg" width="400">
 <p>In the image, the two missing parts are pretty large, and would be evident on a fully assembled car (missing front corner panel, and right rear tire.  Smaller parts would be harder to track on the fully assembled object.  However if we had two fully assembled cars, and when we moved them heard the tink-tink-tink of a ball bearing bouncing on the floor, we would know something is missing - a query of the database to find where all the balls are supposed to be will help us figure out which car is incomplete.</p>
 <p>In other contexts  you wouldn’t want to have to take your car apart and store every piece separately whenever you park it in the garage. In that case, you would want to store your car as a single entry in the database (garage), and access its pieces through it (used car parts are usually sourced from fully assembled cars.</p>
 <p>The U.S. Airforce keeps a lot of otherwise broken aircraft for parts replacement.  As a part is removed it is entered into a database “a transaction” so they know that part is no longer in the broken aircraft lot but in service somewhere.  So the database may locate a part in a bin in a hangar or a part that is residing in an assembled aircraft.  In either case, the hangar (and parts bin) as well as the broken aircarft are both within the database schema - an abstraction.</p>
-<img src="./boneyard.png" width = "500" >  
+<img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/boneyard.png" width = "500" >  
 <p>And occassionally they grab a whole airframe</p>
-<img src="./B52WhereRU.png" width = "500" ><hr class="docutils" />
+<img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/B52WhereRU.png" width = "500" ><hr class="docutils" />
 <div class="section" id="id1">
 <h3>Databases<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Databases are containers for data. A public library stores books, hence we could legitimately state that a library is a database of books. But strictly defined, databases are computer structures that save, organize, protect, and deliver data. A system that contains and manipulates databases is called a database management system, or DBMS.</p>
 <p>A database can be thought of as a kind of electronic filing cabinet; it contains digitized information (“data”), which is kept in persistent storage of some kind. Users can insert new information into the database, and delete, change, or retrieve existing information in the database, by issuing requests or commands to the software that manages the database—which is to say, the database management system (DBMS).</p>
 <p>In practice those user requests to the DBMS can be formulated in a variety of different ways (e.g., by pointing and clicking with a mouse). For our purposes, however, it’s more convenient to assume they’re expressed in the form of simple text strings in some formal language. Given a human resources database, for example, we might write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EMP</span> <span class="n">WHERE</span> <span class="n">JOB</span> <span class="o">=</span> <span class="s1">&#39;Programmer&#39;</span>
+</pre></div>
+</div>
 <p>And this expression represents a retrieval request—more usually known as a <code class="docutils literal notranslate"><span class="pre">query</span></code> for employee information for employees whose job title is ‘Programmer’.  A query submission and responce is called a transaction.</p>
 <hr class="docutils" />
 <div class="section" id="database-types">
@@ -703,7 +712,7 @@
 <div class="section" id="relational-database-concepts">
 <h4>Relational Database Concepts<a class="headerlink" href="#relational-database-concepts" title="Permalink to this headline">¶</a></h4>
 <p>The figure below shows sample values for a typical database, having to do with suppliers, parts, and shipments (of parts by suppliers).</p>
-<img src="./PartsAreParts.png" width="500">
+<img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/PartsAreParts.png" width="500">
 <p>Observe that this database contains three files, or tables. The tables are named S, P, and SP, respectively, and since they’re tables they’re made up of rows and columns (in conventional file terms, the rows correspond to records of the file in question and the columns to fields). They’re meant to be understood as follows:</p>
 <blockquote>
 <div><p>Table S represents suppliers under contract. Each supplier has one supplier number (SNO), unique to that supplier; one name (SNAME), not necessarily unique (though the sample values shown in Figure 1-1 do happen to be unique); one status value (STATUS); and one location (CITY). Note: In the rest of this book I’ll abbreviate “suppliers under contract,” most of the time, to just suppliers.</p>
@@ -734,7 +743,7 @@
              <span class="p">[</span><span class="s1">&#39;S2&#39;</span><span class="p">,</span><span class="s1">&#39;Jones&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Paris&#39;</span><span class="p">],</span>
              <span class="p">[</span><span class="s1">&#39;S3&#39;</span><span class="p">,</span><span class="s1">&#39;Blake&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;Paris&#39;</span><span class="p">],</span>
              <span class="p">[</span><span class="s1">&#39;S4&#39;</span><span class="p">,</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;London&#39;</span><span class="p">],</span>
-             <span class="p">[</span><span class="s1">&#39;S5&#39;</span><span class="p">,</span><span class="s1">&#39;Adams&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;Athens&#39;</span><span class="p">],]</span>
+             <span class="p">[</span><span class="s1">&#39;S5&#39;</span><span class="p">,</span><span class="s1">&#39;Adams&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;Athens&#39;</span><span class="p">]]</span>
 <span class="n">shipments</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;SNO&#39;</span><span class="p">,</span><span class="s1">&#39;PNO&#39;</span><span class="p">,</span><span class="s1">&#39;QTY&#39;</span><span class="p">],</span>
              <span class="p">[</span><span class="s1">&#39;S1&#39;</span><span class="p">,</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span>
              <span class="p">[</span><span class="s1">&#39;S1&#39;</span><span class="p">,</span><span class="s1">&#39;P2&#39;</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span>
@@ -803,12 +812,9 @@ P5 Blue Paris
 <ul class="simple">
 <li><p>We have to select the right table</p></li>
 <li><p>We have to construct a search to find all instances of status equal to 10</p></li>
-<li><p>If not equal to 10, copt the row, otherwise skip</p></li>
+<li><p>If not equal to 10, copy the row, otherwise skip</p></li>
 <li><p>Delete original table, and rename the temporary table</p></li>
 </ul>
-<p>for i in range(1,len(suppliers)):
-if suppliers[i][3] &lt; 13.0 :
-print(suppliers[i][0],suppliers[i][2],suppliers[i][4]) # slice the sublist</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">=</span><span class="p">[]</span>
@@ -842,7 +848,6 @@ print(suppliers[i][0],suppliers[i][2],suppliers[i][4]) # slice the sublist</p>
 </div>
 </div>
 <p>Now suppose we want to find how many parts are coming from London, our query gets more complex, but still manageable.</p>
-<p>However we would ultimately like to build these queries in an easier fashion - that’s what Pandas are for</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">=</span><span class="p">[]</span>
@@ -870,11 +875,13 @@ print(suppliers[i][0],suppliers[i][2],suppliers[i][4]) # slice the sublist</p>
 </div>
 </div>
 </div>
+<p>Instead of writing all our own scripts, unique to each database the python community created a module called <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, so named because most things in the world are made in China, and their national critter is a Panda Bear (actually the name is a contraction of <strong>PAN</strong>el <strong>DA</strong>ta <strong>S</strong>tructure’ or something close to that.</p>
+<p>So to build these queries in an easier fashion - lets examine <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="the-pandas-module">
-<h2>The Pandas module<a class="headerlink" href="#the-pandas-module" title="Permalink to this headline">¶</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module<a class="headerlink" href="#the-pandas-module" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>About Pandas</p></li>
 <li><p>How to install</p>
@@ -905,8 +912,8 @@ print(suppliers[i][0],suppliers[i][2],suppliers[i][4]) # slice the sublist</p>
 </li>
 </ul>
 <hr class="docutils" />
-<div class="section" id="pandas">
-<h3>Pandas:<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="about-pandas">
+<h3>About Pandas:<a class="headerlink" href="#about-pandas" title="Permalink to this headline">¶</a></h3>
 <p>Pandas is the core library for dataframe manipulation in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays. The library’s name is derived from the term ‘Panel Data’.
 If you are curious about Pandas, this cheat sheet is recommended: <a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p>
 <div class="section" id="data-structure">
@@ -1761,7 +1768,7 @@ Again useful to understand structure of the columns.</p>
     </tr>
     <tr>
       <th>top</th>
-      <td>P2</td>
+      <td>P6</td>
       <td>Screw</td>
       <td>Red</td>
       <td>12.0</td>
@@ -1837,38 +1844,38 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>23</td>
-      <td>69</td>
-      <td>13</td>
-      <td>78</td>
+      <td>30</td>
+      <td>99</td>
+      <td>26</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -1938,42 +1945,42 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>23</td>
-      <td>69</td>
-      <td>13</td>
-      <td>78</td>
+      <td>30</td>
+      <td>99</td>
+      <td>26</td>
+      <td>36</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
       <td>NA</td>
     </tr>
   </tbody>
@@ -2032,50 +2039,50 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>23</td>
-      <td>69</td>
-      <td>13</td>
-      <td>78</td>
+      <td>30</td>
+      <td>99</td>
+      <td>26</td>
+      <td>36</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
       <td>NA</td>
     </tr>
   </tbody>
@@ -2122,45 +2129,45 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>23</td>
-      <td>69</td>
-      <td>13</td>
-      <td>78</td>
+      <td>30</td>
+      <td>99</td>
+      <td>26</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2202,38 +2209,38 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2281,31 +2288,31 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2324,10 +2331,10 @@ Again useful to understand structure of the columns.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    63
-B    15
-D    57
-E    43
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    49
+B    20
+D    84
+E    78
 Name: X, dtype: int64
 </pre></div>
 </div>
@@ -2365,23 +2372,23 @@ Name: X, dtype: int64
   <tbody>
     <tr>
       <th>A</th>
+      <td>49</td>
       <td>63</td>
-      <td>16</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>15</td>
-      <td>24</td>
+      <td>20</td>
+      <td>73</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>57</td>
-      <td>74</td>
+      <td>84</td>
+      <td>49</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>43</td>
-      <td>39</td>
+      <td>78</td>
+      <td>84</td>
     </tr>
   </tbody>
 </table>
@@ -2394,10 +2401,10 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W    39
-X    43
-Y    75
-Z    36
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W    84
+X    78
+Y    25
+Z    96
 Name: E, dtype: int64
 </pre></div>
 </div>
@@ -2437,31 +2444,31 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>A</th>
-      <td>16</td>
       <td>63</td>
-      <td>57</td>
-      <td>80</td>
+      <td>49</td>
+      <td>93</td>
+      <td>64</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2501,24 +2508,24 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>E</th>
-      <td>39</td>
-      <td>43</td>
-      <td>75</td>
-      <td>36</td>
+      <td>84</td>
+      <td>78</td>
+      <td>25</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>74</td>
-      <td>57</td>
-      <td>11</td>
-      <td>22</td>
+      <td>49</td>
+      <td>84</td>
+      <td>13</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>24</td>
-      <td>15</td>
-      <td>37</td>
-      <td>66</td>
+      <td>73</td>
+      <td>20</td>
+      <td>69</td>
+      <td>99</td>
     </tr>
   </tbody>
 </table>
@@ -2556,18 +2563,18 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>B</th>
-      <td>15</td>
-      <td>37</td>
+      <td>20</td>
+      <td>69</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>43</td>
-      <td>75</td>
+      <td>78</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>57</td>
-      <td>11</td>
+      <td>84</td>
+      <td>13</td>
     </tr>
   </tbody>
 </table>
@@ -4210,7 +4217,7 @@ You may have to install the packages using something like <br><code class="docut
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;YYYY-MM&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson11_128_1.png" src="../../_images/lesson11_128_1.png" />
+<img alt="../../_images/lesson11_127_1.png" src="../../_images/lesson11_127_1.png" />
 </div>
 </div>
 <div class="cell docutils container">

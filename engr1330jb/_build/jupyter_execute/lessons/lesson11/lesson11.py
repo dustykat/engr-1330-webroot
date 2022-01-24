@@ -45,7 +45,7 @@
 # 
 # If the location of each part is recorded, then we can determine if something is missing as in 
 # 
-# <img src="./modifiedCar.jpeg" width="400">
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/modifiedCar.jpeg" width="400">
 # 
 # In the image, the two missing parts are pretty large, and would be evident on a fully assembled car (missing front corner panel, and right rear tire.  Smaller parts would be harder to track on the fully assembled object.  However if we had two fully assembled cars, and when we moved them heard the tink-tink-tink of a ball bearing bouncing on the floor, we would know something is missing - a query of the database to find where all the balls are supposed to be will help us figure out which car is incomplete.
 # 
@@ -53,11 +53,11 @@
 # 
 # The U.S. Airforce keeps a lot of otherwise broken aircraft for parts replacement.  As a part is removed it is entered into a database "a transaction" so they know that part is no longer in the broken aircraft lot but in service somewhere.  So the database may locate a part in a bin in a hangar or a part that is residing in an assembled aircraft.  In either case, the hangar (and parts bin) as well as the broken aircarft are both within the database schema - an abstraction.
 # 
-# <img src="./boneyard.png" width = "500" >  
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/boneyard.png" width = "500" >  
 # 
 # And occassionally they grab a whole airframe 
 # 
-# <img src="./B52WhereRU.png" width = "500" >
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/B52WhereRU.png" width = "500" >
 
 # In[ ]:
 
@@ -73,7 +73,11 @@
 # A database can be thought of as a kind of electronic filing cabinet; it contains digitized information (“data”), which is kept in persistent storage of some kind. Users can insert new information into the database, and delete, change, or retrieve existing information in the database, by issuing requests or commands to the software that manages the database—which is to say, the database management system (DBMS). 
 # 
 # In practice those user requests to the DBMS can be formulated in a variety of different ways (e.g., by pointing and clicking with a mouse). For our purposes, however, it’s more convenient to assume they’re expressed in the form of simple text strings in some formal language. Given a human resources database, for example, we might write:
-EMP WHERE JOB = 'Programmer'
+
+# ```
+# EMP WHERE JOB = 'Programmer'
+# ```
+
 # And this expression represents a retrieval request—more usually known as a `query` for employee information for employees whose job title is ‘Programmer’.  A query submission and responce is called a transaction.
 # 
 # ---
@@ -95,7 +99,7 @@ EMP WHERE JOB = 'Programmer'
 # 
 # The figure below shows sample values for a typical database, having to do with suppliers, parts, and shipments (of parts by suppliers).
 # 
-# <img src="./PartsAreParts.png" width="500">
+# <img src="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson11/PartsAreParts.png" width="500">
 # 
 # Observe that this database contains three files, or tables. The tables are named S, P, and SP, respectively, and since they’re tables they’re made up of rows and columns (in conventional file terms, the rows correspond to records of the file in question and the columns to fields). They’re meant to be understood as follows:
 # 
@@ -127,7 +131,7 @@ suppliers = [['SNO','SNAME','STATUS','CITY'],
              ['S2','Jones',10,'Paris'],
              ['S3','Blake',30,'Paris'],
              ['S4','Clark',20,'London'],
-             ['S5','Adams',30,'Athens'],]
+             ['S5','Adams',30,'Athens']]
 shipments = [['SNO','PNO','QTY'],
              ['S1','P1',300],
              ['S1','P2',200],
@@ -185,12 +189,8 @@ for i in range(1,len(parts)):
 # Again 
 # - We have to select the right table
 # - We have to construct a search to find all instances of status equal to 10
-# - If not equal to 10, copt the row, otherwise skip
+# - If not equal to 10, copy the row, otherwise skip
 # - Delete original table, and rename the temporary table
-
-# for i in range(1,len(suppliers)):
-#     if suppliers[i][3] < 13.0 :
-#         print(suppliers[i][0],suppliers[i][2],suppliers[i][4]) # slice the sublist
 
 # In[4]:
 
@@ -209,8 +209,6 @@ for i in range(len(suppliers)):
 
 
 # Now suppose we want to find how many parts are coming from London, our query gets more complex, but still manageable.
-# 
-# However we would ultimately like to build these queries in an easier fashion - that's what Pandas are for
 
 # In[5]:
 
@@ -233,9 +231,13 @@ for i in range(0,len(shipments)):
 print(howmany)
 
 
+# Instead of writing all our own scripts, unique to each database the python community created a module called `Pandas`, so named because most things in the world are made in China, and their national critter is a Panda Bear (actually the name is a contraction of **PAN**el **DA**ta **S**tructure' or something close to that.
+# 
+# So to build these queries in an easier fashion - lets examine `pandas`.
+# 
 # ---
 # 
-# ## The Pandas module 
+# ## The `pandas` module 
 # - About Pandas
 # - How to install
 #     - Anaconda
@@ -258,7 +260,7 @@ print(howmany)
 
 # ---
 # 
-# ### Pandas: 
+# ### About Pandas: 
 # Pandas is the core library for dataframe manipulation in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays. The library’s name is derived from the term ‘Panel Data’. 
 # If you are curious about Pandas, this cheat sheet is recommended: [https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 # 
