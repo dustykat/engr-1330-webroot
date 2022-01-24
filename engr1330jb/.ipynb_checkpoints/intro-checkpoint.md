@@ -9,7 +9,7 @@ This is a JupyterBook that is comprised of notes used by Dr. Cleveland in his se
 ## Copyright Information
 Copyright © 2021 Cleveland et. al., *The contents of this book are licensed for free consumption under the following license: [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)*
 
-The links in the active book themselves access potentially other copyrighted materials.  We have taken efforts to correctly attribute such links, but may have missed some - if you find these please let us know!
+The links in the active book themselves access **potentially** other copyrighted materials.  We have taken efforts to correctly attribute such links, but have likely missed some - if you find these please let us know so we can attribute (or replace with a public domain equivalent)!
 
 :::{note}
 
@@ -22,8 +22,8 @@ This entire course (book, labs, and exercises) is contained in a public reposito
 >1. Clone the entire repository to /var/www/html/engr-1330-webroot.  Have your main index point to this directory i.e. `http://your-fqdn-server.org/engr-1330-webroot/` You can see working example at [http:/54.243.252.9/engr-1330-webroot/](http:/54.243.252.9/engr-1330-webroot/)
 >2. If you plan to modify things, many of the internal links expect IP/hostname == `54.243.252.9`, so you will have to change these addresses to your server.  The string editor `sed` will become your friend!
 
-- Materials herein come from many sources, in particular many from the Data8 repository from UC Berkeley, and many internet sources.  Sources in notebooks are at least cited by a URL.  As the content is matured, proper citations are to be inserted.
-- The `3-Readings` directory contains copyrighted materials and should be exposed with care on a web server; generally because no one reads anymore, its probably safe enough to protect using `.htaccess` simple uid:pwd approach. In my courses we access things through the syllabus links, and the syllabus is accessed through our LMS (Blackboard)
+- Materials herein come from many sources, in particular many from the [Data8 repository](https://github.com/data-8/textbook) from UC Berkeley (and from the [Data8 Textbook](http://data8.org/zero-to-data-8/textbook.html), and many internet sources.  Sources in notebooks are at least cited by a URL.  As the content is matured, proper citations are to be inserted.
+- The `3-Readings` directory contains copyrighted materials and should be exposed with care on a web server; generally because no one reads anymore, its probably safe enough to protect using an `.htaccess` approach. In my courses we access things through the syllabus links, and the syllabus is accessed through our LMS (Blackboard)
 
 :::
 
