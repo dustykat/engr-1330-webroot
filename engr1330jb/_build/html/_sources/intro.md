@@ -11,6 +11,10 @@ Copyright © 2021 Cleveland et. al., *The contents of this book are licensed for
 
 The links in the active book themselves access **potentially** other copyrighted materials.  We have taken efforts to correctly attribute such links, but have likely missed some - if you find these please let us know so we can attribute (or replace with a public domain equivalent)!
 
+## Syllabus
+
+The most recent syllabus for ENGR-1330 is located at[http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html](http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html)
+
 :::{note}
 
 The information below is of use to other potential institutional users of this book. 
