@@ -10,11 +10,12 @@
 # Last GitHub Commit Date: 13 July 2021
 #     
 # # 5: Algorithm Building Blocks
-# - Three structures: sequence, selection , repetition (loops)
-# - Sequence structures
-# - Selection structures
-# - Structured FOR loops
-# - Structured WHILE loops
+# - Three building blocks (structures): sequence, selection , repetition (loops)
+#  - Sequence
+#  - Selection
+# - Repetition
+#  - Structured FOR loops
+#  - Structured WHILE loops
 # - Representing computational processes with flowcharts, a graphical abstraction
 
 # ---

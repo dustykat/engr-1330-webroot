@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 12: Sentinel Controlled Repetition" href="../lesson12.html" />
-    <link rel="prev" title="Lesson 10: Vector/Matrix applications" href="../lesson10/lesson10.html" />
+    <link rel="next" title="12: Databases and PANDAS" href="../lesson12/lesson12.html" />
+    <link rel="prev" title="10: Vector/Matrix applications (Under Construction)" href="../lesson10/lesson10.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -154,7 +154,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson10/lesson10.html">
-   Lesson 10: Vector/Matrix applications
+   10: Vector/Matrix applications (Under Construction)
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -163,13 +163,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson12.html">
-   Lesson 12: Sentinel Controlled Repetition
+  <a class="reference internal" href="../lesson12/lesson12.html">
+   12: Databases and PANDAS
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson13.html">
-   Lesson 13: functions
+  <a class="reference internal" href="../lesson13/lesson13.html">
+   13: Applications of PANDAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -605,18 +605,6 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downloading-files-from-websites-optional">
-     Downloading files from websites (optional)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#method-get-the-actual-file-from-a-remote-web-server-unencrypted">
-       Method: Get the actual file from a remote web server (unencrypted)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#references">
      References
     </a>
@@ -645,7 +633,6 @@
 <li><p>Fundamental Concepts</p></li>
 <li><p>Dataframes</p></li>
 <li><p>Read/Write to from files</p></li>
-<li><p>Access data from a URL</p></li>
 </ul>
 <hr class="docutils" />
 <div class="section" id="objectives">
@@ -661,13 +648,6 @@
 <ol class="simple">
 <li><p>MS Excel-type files (.xls,.xlsx,.csv) (LibreOffice files use the MS .xml standard)</p></li>
 <li><p>Ordinary ASCII (.txt) files</p></li>
-</ol>
-</li>
-<li><p>Access files directly from a URL (advanced concept)</p>
-<ol class="simple">
-<li><p>Using a wget-type function</p></li>
-<li><p>Using a curl-type function</p></li>
-<li><p>Using API keys (future versions)</p></li>
 </ol>
 </li>
 </ol>
@@ -1768,7 +1748,7 @@ Again useful to understand structure of the columns.</p>
     </tr>
     <tr>
       <th>top</th>
-      <td>P6</td>
+      <td>P1</td>
       <td>Screw</td>
       <td>Red</td>
       <td>12.0</td>
@@ -1844,38 +1824,38 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>30</td>
-      <td>99</td>
-      <td>26</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
     </tr>
     <tr>
-      <th>E</th>
+      <th>C</th>
       <td>84</td>
+      <td>88</td>
+      <td>99</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -1945,42 +1925,42 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>30</td>
-      <td>99</td>
-      <td>26</td>
-      <td>36</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
       <td>NA</td>
     </tr>
     <tr>
-      <th>E</th>
+      <th>C</th>
       <td>84</td>
+      <td>88</td>
+      <td>99</td>
+      <td>76</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
       <td>NA</td>
     </tr>
   </tbody>
@@ -2039,50 +2019,50 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>30</td>
-      <td>99</td>
-      <td>26</td>
-      <td>36</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
       <td>NA</td>
     </tr>
     <tr>
-      <th>E</th>
+      <th>C</th>
       <td>84</td>
+      <td>88</td>
+      <td>99</td>
+      <td>76</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
       <td>NA</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
       <td>NA</td>
     </tr>
   </tbody>
@@ -2129,45 +2109,45 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>30</td>
-      <td>99</td>
-      <td>26</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
     </tr>
     <tr>
-      <th>E</th>
+      <th>C</th>
       <td>84</td>
+      <td>88</td>
+      <td>99</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2209,38 +2189,38 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
     </tr>
     <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+    </tr>
+    <tr>
       <th>E</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
     <tr>
       <th>X</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2288,31 +2268,31 @@ Again useful to understand structure of the columns.</p>
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
     </tr>
     <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+    </tr>
+    <tr>
       <th>E</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2331,10 +2311,10 @@ Again useful to understand structure of the columns.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    49
-B    20
-D    84
-E    78
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    14
+B    63
+D    19
+E    99
 Name: X, dtype: int64
 </pre></div>
 </div>
@@ -2372,23 +2352,23 @@ Name: X, dtype: int64
   <tbody>
     <tr>
       <th>A</th>
-      <td>49</td>
-      <td>63</td>
+      <td>14</td>
+      <td>65</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>20</td>
-      <td>73</td>
+      <td>63</td>
+      <td>72</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>84</td>
-      <td>49</td>
+      <td>19</td>
+      <td>66</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>78</td>
-      <td>84</td>
+      <td>99</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -2401,10 +2381,10 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W    84
-X    78
-Y    25
-Z    96
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W     5
+X    99
+Y    17
+Z    78
 Name: E, dtype: int64
 </pre></div>
 </div>
@@ -2444,31 +2424,31 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>A</th>
-      <td>63</td>
-      <td>49</td>
-      <td>93</td>
-      <td>64</td>
+      <td>65</td>
+      <td>14</td>
+      <td>35</td>
+      <td>96</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
       <td>56</td>
     </tr>
     <tr>
+      <th>D</th>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
+    </tr>
+    <tr>
       <th>E</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
   </tbody>
 </table>
@@ -2508,24 +2488,24 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>E</th>
-      <td>84</td>
+      <td>5</td>
+      <td>99</td>
+      <td>17</td>
       <td>78</td>
-      <td>25</td>
-      <td>96</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>49</td>
-      <td>84</td>
-      <td>13</td>
-      <td>56</td>
+      <td>66</td>
+      <td>19</td>
+      <td>73</td>
+      <td>58</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>73</td>
-      <td>20</td>
-      <td>69</td>
-      <td>99</td>
+      <td>72</td>
+      <td>63</td>
+      <td>66</td>
+      <td>56</td>
     </tr>
   </tbody>
 </table>
@@ -2563,18 +2543,18 @@ Name: E, dtype: int64
   <tbody>
     <tr>
       <th>B</th>
-      <td>20</td>
-      <td>69</td>
+      <td>63</td>
+      <td>66</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>78</td>
-      <td>25</td>
+      <td>99</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>84</td>
-      <td>13</td>
+      <td>19</td>
+      <td>73</td>
     </tr>
   </tbody>
 </table>
@@ -3988,370 +3968,6 @@ You may have to install the packages using something like <br><code class="docut
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="downloading-files-from-websites-optional">
-<h2>Downloading files from websites (optional)<a class="headerlink" href="#downloading-files-from-websites-optional" title="Permalink to this headline">¶</a></h2>
-<p>This section shows how to get files from a remote computer.   There are several ways to get the files, most importantly  you need the FQDN to the file.</p>
-<div class="section" id="method-get-the-actual-file-from-a-remote-web-server-unencrypted">
-<h3>Method: Get the actual file from a remote web server (unencrypted)<a class="headerlink" href="#method-get-the-actual-file-from-a-remote-web-server-unencrypted" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
-<li><p>You know the FQDN to the file it will be in structure of “<a class="reference external" href="http://server-name/.../filename.ext">http://server-name/…/filename.ext</a>”</p></li>
-<li><p>The server is running ordinary (unencrypted) web services, i.e. <code class="docutils literal notranslate"><span class="pre">http://...</span></code></p></li>
-</ul>
-</div></blockquote>
-<p>We will need a module to interface with the remote server. Here we will use <code class="docutils literal notranslate"><span class="pre">requests</span></code> , so first we load the module</p>
-<blockquote>
-<div><p>You may need to install the module into your anaconda environment using the anaconda power shell, on my computer the commands are:</p>
-<ul class="simple">
-<li><p>sudo -H /opt/jupyterhub/bin/python3 -m pip install requests</p></li>
-</ul>
-<p>Or:</p>
-<ul class="simple">
-<li><p>sudo -H /opt/conda/envs/python/bin/python -m pip install requests</p></li>
-</ul>
-<p>You will have to do some reading, but with any luck something similar will work for you.</p>
-</div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># Module to process http/https requests</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we will generate a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the remote http server.  I chose to do so using a variable to store the remote URL so I can reuse code in future projects.  The <code class="docutils literal notranslate"><span class="pre">GET</span></code> request (an http/https method) is generated with the requests method <code class="docutils literal notranslate"><span class="pre">get</span></code> and assigned to an object named <code class="docutils literal notranslate"><span class="pre">rget</span></code> – the name is arbitrary.  Next we extract the file from the <code class="docutils literal notranslate"><span class="pre">rget</span></code> object and write it to a local file with the name of the remote file - esentially automating the download process. Then we import the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/all_quads_gross_evaporation.csv&quot;</span>  <span class="c1"># set the url</span>
-<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
-<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;all_quads_gross_evaporation.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Module to process dataframes (not absolutely needed but somewhat easier than using primatives, and gives graphing tools)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we can read the file contents and check its structure, before proceeding.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#evapdf = pd.read_csv(&quot;all_quads_gross_evaporation.csv&quot;,parse_dates=[&quot;YYYY-MM&quot;]) # Read the file as a .CSV assign to a dataframe evapdf</span>
-<span class="n">evapdf</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;all_quads_gross_evaporation.csv&quot;</span><span class="p">)</span>
-<span class="n">evapdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># check structure</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>YYYY-MM</th>
-      <th>104</th>
-      <th>105</th>
-      <th>106</th>
-      <th>107</th>
-      <th>108</th>
-      <th>204</th>
-      <th>205</th>
-      <th>206</th>
-      <th>207</th>
-      <th>...</th>
-      <th>911</th>
-      <th>912</th>
-      <th>1008</th>
-      <th>1009</th>
-      <th>1010</th>
-      <th>1011</th>
-      <th>1108</th>
-      <th>1109</th>
-      <th>1110</th>
-      <th>1210</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1954-01</td>
-      <td>1.80</td>
-      <td>1.80</td>
-      <td>2.02</td>
-      <td>2.24</td>
-      <td>2.24</td>
-      <td>2.34</td>
-      <td>1.89</td>
-      <td>1.80</td>
-      <td>1.99</td>
-      <td>...</td>
-      <td>1.42</td>
-      <td>1.30</td>
-      <td>2.50</td>
-      <td>2.42</td>
-      <td>1.94</td>
-      <td>1.29</td>
-      <td>2.59</td>
-      <td>2.49</td>
-      <td>2.22</td>
-      <td>2.27</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1954-02</td>
-      <td>4.27</td>
-      <td>4.27</td>
-      <td>4.13</td>
-      <td>3.98</td>
-      <td>3.90</td>
-      <td>4.18</td>
-      <td>4.26</td>
-      <td>4.27</td>
-      <td>4.26</td>
-      <td>...</td>
-      <td>2.59</td>
-      <td>2.51</td>
-      <td>4.71</td>
-      <td>4.30</td>
-      <td>3.84</td>
-      <td>2.50</td>
-      <td>5.07</td>
-      <td>4.62</td>
-      <td>4.05</td>
-      <td>4.18</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1954-03</td>
-      <td>4.98</td>
-      <td>4.98</td>
-      <td>4.62</td>
-      <td>4.25</td>
-      <td>4.20</td>
-      <td>5.01</td>
-      <td>4.98</td>
-      <td>4.98</td>
-      <td>4.68</td>
-      <td>...</td>
-      <td>3.21</td>
-      <td>3.21</td>
-      <td>6.21</td>
-      <td>6.06</td>
-      <td>5.02</td>
-      <td>3.21</td>
-      <td>6.32</td>
-      <td>6.20</td>
-      <td>5.68</td>
-      <td>5.70</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1954-04</td>
-      <td>6.09</td>
-      <td>5.94</td>
-      <td>5.94</td>
-      <td>6.07</td>
-      <td>5.27</td>
-      <td>6.31</td>
-      <td>5.98</td>
-      <td>5.89</td>
-      <td>5.72</td>
-      <td>...</td>
-      <td>3.83</td>
-      <td>3.54</td>
-      <td>6.45</td>
-      <td>6.25</td>
-      <td>4.92</td>
-      <td>3.54</td>
-      <td>6.59</td>
-      <td>6.44</td>
-      <td>5.88</td>
-      <td>5.95</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1954-05</td>
-      <td>5.41</td>
-      <td>5.09</td>
-      <td>5.14</td>
-      <td>4.40</td>
-      <td>3.61</td>
-      <td>5.57</td>
-      <td>4.56</td>
-      <td>4.47</td>
-      <td>4.18</td>
-      <td>...</td>
-      <td>3.48</td>
-      <td>3.97</td>
-      <td>7.92</td>
-      <td>8.13</td>
-      <td>6.31</td>
-      <td>3.99</td>
-      <td>7.75</td>
-      <td>7.98</td>
-      <td>7.40</td>
-      <td>7.40</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 93 columns</p>
-</div></div></div>
-</div>
-<p>Structure looks like a spreadsheet as expected; lets plot the time series for cell ‘911’</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evapdf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;YYYY-MM&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;911&#39;</span><span class="p">)</span> <span class="c1"># Plot quadrant 911 evaporation time series </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;YYYY-MM&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lesson11_127_1.png" src="../../_images/lesson11_127_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evapdf</span><span class="p">[[</span><span class="s1">&#39;911&#39;</span><span class="p">,</span><span class="s1">&#39;912&#39;</span><span class="p">]]</span> <span class="c1"># pull out columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>911</th>
-      <th>912</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.42</td>
-      <td>1.30</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.59</td>
-      <td>2.51</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.21</td>
-      <td>3.21</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.83</td>
-      <td>3.54</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3.48</td>
-      <td>3.97</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>787</th>
-      <td>5.96</td>
-      <td>6.06</td>
-    </tr>
-    <tr>
-      <th>788</th>
-      <td>5.17</td>
-      <td>5.39</td>
-    </tr>
-    <tr>
-      <th>789</th>
-      <td>4.47</td>
-      <td>4.39</td>
-    </tr>
-    <tr>
-      <th>790</th>
-      <td>2.49</td>
-      <td>2.40</td>
-    </tr>
-    <tr>
-      <th>791</th>
-      <td>2.39</td>
-      <td>2.31</td>
-    </tr>
-  </tbody>
-</table>
-<p>792 rows × 2 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evapdf</span><span class="p">[</span><span class="n">evapdf</span><span class="p">[</span><span class="s1">&#39;YYYY-MM&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1993-01&quot;</span><span class="p">][[</span><span class="s1">&#39;911&#39;</span><span class="p">,</span><span class="s1">&#39;912&#39;</span><span class="p">]]</span>  <span class="c1"># get 2 columns from 1993-01 date in YYYY-MM</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>911</th>
-      <th>912</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>468</th>
-      <td>1.79</td>
-      <td>1.81</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>Overland, B. (2018). Python Without Fear. Addison-Wesley
@@ -4404,15 +4020,15 @@ ISBN 978-1-849511-78-0.</p>
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 10: Vector/Matrix applications</p>
+                <p class="prevnext-title">10: Vector/Matrix applications (Under Construction)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson12.html" title="next page">
+        <a class="right-next" href="../lesson12/lesson12.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 12: Sentinel Controlled Repetition</p>
+                <p class="prevnext-title">12: Databases and PANDAS</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

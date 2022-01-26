@@ -10,9 +10,9 @@
 # Last GitHub Commit Date: 
 #     
 # # 4.1: Data Structures
-# - what are variables?
-# - naming conventions
-# - the assignment symbol
+# - What are data structures?
+# - Lists, Tuples, and Dictionaries
+# - Arrays (often ignored if using NUMPY)
 
 # In[ ]:
 

@@ -9,10 +9,10 @@
 # 
 # Last GitHub Commit Date: Never
 #     
-# # Lesson 10: Vector/Matrix applications
+# # 10: Vector/Matrix applications (Under Construction)
 # - curve-fitting
 # - linear heat flow
-# - network flow
+# - network flow (Optional; Non-linear System of equations)
 # 
 
 # In[ ]:

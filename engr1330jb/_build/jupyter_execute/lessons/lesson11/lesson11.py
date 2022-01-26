@@ -13,7 +13,6 @@
 # - Fundamental Concepts
 # - Dataframes
 # - Read/Write to from files 
-# - Access data from a URL
 # 
 
 # ---
@@ -24,10 +23,6 @@
 # 2. Read/Write from/to files
 #     1. MS Excel-type files (.xls,.xlsx,.csv) (LibreOffice files use the MS .xml standard)
 #     2. Ordinary ASCII (.txt) files 
-# 3. Access files directly from a URL (advanced concept)
-#     1. Using a wget-type function
-#     2. Using a curl-type function
-#     3. Using API keys (future versions)
 # 
 
 # ---
@@ -937,74 +932,6 @@ readfileexcel = pandas.read_excel('Excel_ReadingFile.xlsx', sheet_name='Sheet1',
 readfileexcel.to_excel('Excel_WritingFile.xlsx', sheet_name='Sheet1' , index = False, engine='openpyxl')
 readfileexcel = pandas.read_excel('Excel_WritingFile.xlsx', sheet_name='Sheet1', engine='openpyxl')
 print(readfileexcel)
-
-
-# ---
-# 
-# ## Downloading files from websites (optional)
-# 
-# This section shows how to get files from a remote computer.   There are several ways to get the files, most importantly  you need the FQDN to the file.
-
-# ### Method: Get the actual file from a remote web server (unencrypted)
-# 
-# > - You know the FQDN to the file it will be in structure of "http://server-name/.../filename.ext"
-# > - The server is running ordinary (unencrypted) web services, i.e. `http://...`
-# 
-# We will need a module to interface with the remote server. Here we will use ``requests`` , so first we load the module
-# 
-# > You may need to install the module into your anaconda environment using the anaconda power shell, on my computer the commands are:
-# > - sudo -H /opt/jupyterhub/bin/python3 -m pip install requests 
-# >
-# > Or:
-# > - sudo -H /opt/conda/envs/python/bin/python -m pip install requests
-# >
-# > You will have to do some reading, but with any luck something similar will work for you. 
-
-# In[68]:
-
-
-import requests # Module to process http/https requests
-
-
-# Now we will generate a ``GET`` request to the remote http server.  I chose to do so using a variable to store the remote URL so I can reuse code in future projects.  The ``GET`` request (an http/https method) is generated with the requests method ``get`` and assigned to an object named ``rget`` -- the name is arbitrary.  Next we extract the file from the ``rget`` object and write it to a local file with the name of the remote file - esentially automating the download process. Then we import the ``pandas`` module.
-
-# In[69]:
-
-
-remote_url="http://54.243.252.9/engr-1330-webroot/4-Databases/all_quads_gross_evaporation.csv"  # set the url
-rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links
-open('all_quads_gross_evaporation.csv','wb').write(rget.content) # extract from the remote the contents, assign to a local file same name
-import pandas as pd # Module to process dataframes (not absolutely needed but somewhat easier than using primatives, and gives graphing tools)
-
-
-# Now we can read the file contents and check its structure, before proceeding.
-
-# In[70]:
-
-
-#evapdf = pd.read_csv("all_quads_gross_evaporation.csv",parse_dates=["YYYY-MM"]) # Read the file as a .CSV assign to a dataframe evapdf
-evapdf = pandas.read_csv("all_quads_gross_evaporation.csv")
-evapdf.head() # check structure
-
-
-# Structure looks like a spreadsheet as expected; lets plot the time series for cell '911'
-
-# In[71]:
-
-
-evapdf.plot.line(x='YYYY-MM',y='911') # Plot quadrant 911 evaporation time series 
-
-
-# In[72]:
-
-
-evapdf[['911','912']] # pull out columns
-
-
-# In[73]:
-
-
-evapdf[evapdf['YYYY-MM'] == "1993-01"][['911','912']]  # get 2 columns from 1993-01 date in YYYY-MM
 
 
 # ---
