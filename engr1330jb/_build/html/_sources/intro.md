@@ -13,7 +13,7 @@ The links in the active book themselves access **potentially** other copyrighted
 
 ## Syllabus
 
-The most recent syllabus for ENGR-1330 is located at[http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html](http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html)
+The most recent syllabus for ENGR-1330 is located at [http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html](http:/54.243.252.9/engr-1330-webroot/0-Syllabus/ENGR-1330-2022-1-Syllabus.html)
 
 :::{note}
 
