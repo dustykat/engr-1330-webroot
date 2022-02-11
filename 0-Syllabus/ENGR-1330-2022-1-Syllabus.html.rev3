@@ -13209,7 +13209,7 @@ div#notebook {
 <h2 id="Course-Instructor:">Course Instructor:<a class="anchor-link" href="#Course-Instructor:">&#182;</a></h2><p>Instructor: Theodore G. Cleveland, Ph.D., P.E., M. ASCE, F. EWRI</p>
 <p>Email: theodore.cleveland@ttu.edu  (put ENGR 1330 in subject line for email related to this class)</p>
 <p>Office location: CE 203F</p>
-<p>Office hours: 1300-1400 M-F by <strong>Zoom</strong> appointment</p>
+<p>Office hours: TBD or by <strong>Zoom</strong> appointment</p>
 <h2 id="Teaching-Assistant:">Teaching Assistant:<a class="anchor-link" href="#Teaching-Assistant:">&#182;</a></h2><p>Teaching Assistant: Josh Archer</p>
 <p>Email : josh.archer@ttu.edu (put ENGR 1330 in subject line for email related to this class)</p>
 <p>Office location:  (<strong>Zoom</strong>)</p>
@@ -13460,12 +13460,14 @@ div#notebook {
 <tr>
 <td style="text-align:left">2Feb22</td>
 <td style="text-align:left">Data Files <br> - open/read/close  <br> - open/write/close <br> - create/append/delete</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson07/lesson07.html">Lesson 7</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html">Lab 7</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html">Exercise Set 7</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output <br> - reading a file from a website (unencrypted http:)</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson07/ENGR-1330-Lesson07.html">Lesson 7</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html">Lab 7</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html">Lab 7-HW</a></td>
+<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
 </tr>
 <tr>
 <td style="text-align:left">4Feb22</td>
-<td style="text-align:left"><strong>Snow Day</strong></td>
+<td style="text-align:left"><font color=red>**Exam 1** <br> - In class 25 multiple choice questions </font></td>
+<td style="text-align:left">none</td>
+<td style="text-align:left"><font color=red>- In lab programming problem(s)</font></td>
 </tr>
 </tbody>
 </table>
@@ -13484,21 +13486,21 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">7Feb22</td>
-<td style="text-align:left"><font color=red>**Exam 1** <br> - In class 25 multiple choice questions </font></td>
-<td style="text-align:left">none</td>
-<td style="text-align:left"><font color=red>- In lab programming problem(s)</font></td>
+<td style="text-align:left">Vectors and Matrices (as lists) <br> - Vector/Matrix Addition/Multipication <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations <br> - Gaussian Reduction without Pivoting</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson08/ENGR-1330-Lesson08.html">Lesson 8</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08.html">Lab 8</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.html">Lab 8-HW</a></td>
+<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
 </tr>
 <tr>
 <td style="text-align:left">9Feb22</td>
-<td style="text-align:left">Vectors and Matrices (as lists) <br> - Vector/Matrix Addition/Multipication <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Systems of Linear Equations <br> - Gaussian Reduction (Optional)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson08/lesson08.html">Lesson 8</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08.html">Lab 8</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab08/Lab08-TH.html">Exercise Set 8</a></td>
+<td style="text-align:left">Vectors and Matrices (using NUMPY)<br> - Vector/Matrix Addition/Multipication <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/ENGR-1330-Lesson09.html">Lesson 9</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Lab 9-HW</a></td>
 <td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
 </tr>
 <tr>
 <td style="text-align:left">11Feb22</td>
-<td style="text-align:left">Data Files (continued) <br> - reading from a website</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson071/lesson071.html">Lesson 7.1</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071.html">Lab 7.1</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071-TH.html">Exercise Set 7.1</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output <br> - reading a file from a website (unencrypted http:)</td>
+<td style="text-align:left">Applications <br> - example1 <br> - example2 <br> - example3</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/ENGR-1330-Lesson09.html">Lesson 10</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Lab 9-HW</a></td>
+<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
 </tr>
 </tbody>
 </table>
@@ -13515,21 +13517,21 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">14Feb22</td>
-<td style="text-align:left">Vectors and Matrices (using NUMPY)<br> - Vector/Matrix Addition/Multipication <br> - Matrix Inversion (Concept of multiplicative inverse) <br> - Solving Linear Systems of Equations</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson09/lesson09.html">Lesson 9</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Exercise Set 9</a></td>
-<td style="text-align:left">iPython/JupyterLab file manipulation <br> - open/close/create/delete <br> - reading into lists <br> - writing output</td>
-</tr>
-<tr>
-<td style="text-align:left">16Feb22</td>
 <td style="text-align:left">Database Concepts <br> - Records <br> - Fields <br> - Relational model <br> - Unique record identifier/Primary Key</td>
 <td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson10.html">Lesson 11</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab10/Lab10.html">Lab 10</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab10/Lab10-TH.html">Lab 10-HW</a></td>
 <td style="text-align:left">Flat-File Database <br> - Searching a list <br> - Sorting a list (without sort method)</td>
 </tr>
 <tr>
-<td style="text-align:left">18Feb22</td>
+<td style="text-align:left">16Feb22</td>
 <td style="text-align:left">Databases using PANDAS <br> - Create tables <br> – Examine/extract contents <br> - Functions on elements</td>
 <td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson11/ENGR-1330-Lesson11.html">Lesson 12</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11.html">Lab 11</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11-TH.html">Lab 11-HW</a></td>
 <td style="text-align:left">PANDAS Data frames: <br> - Create, index, summarize statistics <br> - fill and drop values <br> - read/write to file</td>
+</tr>
+<tr>
+<td style="text-align:left">18Feb22</td>
+<td style="text-align:left">Applications <br> - example1 <br> - example2 <br> - example3</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson09/ENGR-1330-Lesson09.html">Lesson 13</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09.html">Lab 9</a> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab09/Lab09-TH.html">Lab 9-HW</a></td>
+<td style="text-align:left">iPython/JupyterLab <br> - download file from a server <br> - topic <br> - topic</td>
 </tr>
 </tbody>
 </table>
