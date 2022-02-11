@@ -13124,13 +13124,12 @@ div#notebook {
 </code></pre>
 <p>The first column is time in seconds, the second is the speed of an object in meters/second.</p>
 <p>First download the file using the <strong>requests</strong> module</p>
-<blockquote><p>```
-import requests # Module to process http/https requests
-remote_url="<a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/ts-data.txt">http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/ts-data.txt</a>"  # set the url
-rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links
-localfile = open('ts-data.txt','wb') # open connection to a local file same name as remote
-localfile.write(rget.content) # extract from the remote the contents,insert into the local file same name
-localfile.close() # close connection to the local file</p>
+<blockquote><p>import requests # Module to process http/https requests<br>
+remote_url="<a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/ts-data.txt">http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/ts-data.txt</a>"  # set the url<br>
+rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links<br>
+localfile = open('ts-data.txt','wb') # open connection to a local file same name as remote<br>
+localfile.write(rget.content) # extract from the remote the contents,insert into the local file same name<br>
+localfile.close() # close connection to the local file<br></p>
 </blockquote>
 <p>Build a script that reads the data in the file, and then captures from the first row the two column labels (as strings) to be passed to the <code>plotAline</code> function below.  Also put the numeric values into two lists as floats for passing to the <code>plotAline</code> function.  Put your code after the <code>plotAline</code> definition</p>
 
