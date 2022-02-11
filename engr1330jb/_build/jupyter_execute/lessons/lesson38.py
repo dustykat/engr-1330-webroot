@@ -9,7 +9,7 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # Lesson 38: Nearest Neighbor Classification (sklearn)
+# # 38: K-Nearest Neighbor Classification (sklearn)
 # - distances
 # - normalization
 # - validate/update

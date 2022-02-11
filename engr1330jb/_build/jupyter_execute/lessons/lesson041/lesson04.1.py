@@ -28,7 +28,7 @@
 # 2. Address contents of lists , dictionaries, and tuples
 
 # ---
-# ## Data Structures and Conditional Statements
+# ## Data Structures 
 # 
 # **Computational thinking (CT)** concepts involved are:
 # 

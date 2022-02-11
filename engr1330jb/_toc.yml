@@ -16,6 +16,7 @@ chapters:
 - file: lessons/lesson06/lesson06 # functions
 - file: lessons/lesson07/lesson07 # data files
 - file: lessons/lesson08/lesson08 # matrices as lists
+- file: lessons/lesson071/lesson071 # data files
 - file: lessons/lesson09/lesson09 # matrices in numpy
 - file: lessons/lesson10/lesson10 # matrix applications
 - file: lessons/lesson11/lesson11 # databases (pandas)
@@ -39,3 +40,4 @@ chapters:
 - file: lessons/lesson36 # logistic regression
 - file: lessons/lesson37 # knn classification
 - file: lessons/lesson38 # knn classification
+- file: lessons/video_log/video_log # Appendix of video links

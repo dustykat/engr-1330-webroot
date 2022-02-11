@@ -116,6 +116,12 @@
 # 4. LearnPython.org (Interactive Tutorial) [https://www.learnpython.org/](https://www.learnpython.org/)  Short, interactive tutorial for those who just need a quick way to pick up Python syntax.
 # 
 # 5. How to Think Like a Computer Scientist (Interactive Book) [https://runestone.academy/runestone/books/published/thinkcspy/index.html](https://runestone.academy/runestone/books/published/thinkcspy/index.html) Interactive "CS 101" course taught in Python that really focuses on the art of problem solving. 
+# 
+# 6. Beginning Programming with Python® For Dummies®, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030-5774 [https://we.riseup.net/assets/345912/Beginning+Programming+with+Python+For+Dummies+Mueller%2C+John+Paul+%5BSRG%5D.pdf](https://we.riseup.net/assets/345912/Beginning+Programming+with+Python+For+Dummies+Mueller%2C+John+Paul+%5BSRG%5D.pdf)
+# 
+# <!--
+# [http://54.243.252.9/engr-1330-webroot/3-Readings/BeginningProgrammingwithPythonForDummiesMuellerJohnPaul[SRG].pdf](http://54.243.252.9/engr-1330-webroot/3-Readings/BeginningProgrammingwithPythonForDummiesMuellerJohnPaul[SRG].pdf)
+# -->
 
 # ---
 # 

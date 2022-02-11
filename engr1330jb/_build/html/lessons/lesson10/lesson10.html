@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -272,7 +274,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson38.html">
-   Lesson 38: Nearest Neighbor Classification (sklearn)
+   38: K-Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../video_log/video_log.html">
+   Video Archive
   </a>
  </li>
 </ul>
@@ -380,6 +387,38 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-systems-of-equations-optional">
+   Nonlinear Systems of Equations (Optional)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-variable-extension-of-newtons-method">
+     Multiple-variable extension of Newton’s Method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-using-analytical-derivatives">
+     Example using Analytical Derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative">
+     Quasi-Newton Method using Finite Difference Approximations for the Derivative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-of-non-linear-solvers-pipeline-network-simulation">
+   Application of Non-Linear Solvers:  Pipeline Network Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -407,6 +446,1204 @@
 <li><p>linear heat flow</p></li>
 <li><p>network flow (Optional; Non-linear System of equations)</p></li>
 </ul>
+<div class="section" id="nonlinear-systems-of-equations-optional">
+<h2>Nonlinear Systems of Equations (Optional)<a class="headerlink" href="#nonlinear-systems-of-equations-optional" title="Permalink to this headline">¶</a></h2>
+<p>Non-linear systems are extensions of the linear systems cases except the systems involve products and powers of the unknown variables. Non-linear problems are often quite difficult to manage, especially when the systems are large (many rows and many variables).
+The solution to non-linear systems, if non-trivial or even possible, are usually iterative. Within the iterative steps is a linearization component – these linear systems which are intermediate computations within the overall solution process are treated by an appropriate linear system method (direct or iterative).
+Consider the system below:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+x^2 &amp; +~y^2  \\
+ e^x &amp; +~y  \\
+\end{matrix}
+\begin{matrix}
+= 4\\
+= 1\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Suppose we have a solution guess <span class="math notranslate nohighlight">\(x_{k},y_{k}\)</span>, which of course could be wrong, but we could linearize about that guess as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\mathbf{A} =
+\begin{pmatrix}
+x_k &amp; + ~y_k  \\
+0 &amp; + ~1  \\
+\end{pmatrix}
+~\mathbf{x} = 
+\begin{pmatrix}
+x_{k+1} \\
+y_{k+1} \\
+\end{pmatrix}
+~ \mathbf{b} = 
+\begin{pmatrix}
+4\\
+1 - e^{x_k}\\
+\end{pmatrix}
+\end{gather}
+\)</span></p>
+<p>Now if we assemble the system in the usual fashion, <span class="math notranslate nohighlight">\(\mathbf{A} \cdot \mathbf{x_{k+1}} = ~ \mathbf{b}~\)</span> we have a system of linear equations (Linear in <span class="math notranslate nohighlight">\(\mathbf{x_{k+1}}\)</span>}), which expanded look like:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{pmatrix}
+x_k &amp; + ~y_k  \\
+0 &amp; + ~1  \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+x_{k+1} \\
+y_{k+1} \\
+\end{pmatrix}
+~ = 
+\begin{pmatrix}
+4\\
+1 - e^{x_k}\\
+\end{pmatrix}
+\end{gather}
+\)</span></p>
+<p>Now that the system is linear, and we can solve for <span class="math notranslate nohighlight">\(\mathbf{x_{k+1}}\)</span> using our linear system solver for the new guess.
+If the system is convergent (not all are) then if we update, and repeat  we will eventually find a result.</p>
+<p>What one really needs is a way to construct the linear system that has a systematic update method, that is discussed below</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The examples below use two user-defined modules listed below.  Use of user-defined modules is discussed in the lesson on functions</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">LinearSolverPivot</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># SolveLinearSystem.py</span>
+<span class="c1"># Code to read A and b</span>
+<span class="c1"># Then solve Ax = b for x by Gaussian elimination with back substitution</span>
+<span class="c1">#</span>
+<span class="c1">##########</span>
+<span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1">#    M = A  #this is object to object equivalence</span>
+<span class="c1"># copy A into M element by element</span>
+    <span class="n">M</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span><span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span>
+
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
+          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span>
+
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="c1">#    print (x)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">vector_matrix_lib</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># vector_matrix_lib.py</span>
+<span class="c1"># useful linear algebra tools</span>
+<span class="kn">import</span> <span class="nn">math</span>   <span class="c1"># This will import math module</span>
+
+<span class="k">def</span> <span class="nf">writeM</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="n">jc</span><span class="p">,</span><span class="n">label</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;------&quot;</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="s2">&quot;------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">jc</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="c1">#return</span>
+
+<span class="k">def</span> <span class="nf">writeV</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="n">label</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;------&quot;</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="s2">&quot;------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="c1">#return</span>
+
+<span class="k">def</span> <span class="nf">mmmult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">bmatrix</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="n">rowNumB</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+    <span class="n">AB</span> <span class="o">=</span><span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumB</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">mvmult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">xvector</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+    <span class="n">bvector</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">xvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">bvector</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vvadd</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">aplusb</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">aplusb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">aplusb</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vvsub</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">aminusb</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">aminusb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">aminusb</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vdotv</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">adotb</span><span class="o">=</span><span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">adotb</span><span class="o">=</span><span class="n">adotb</span><span class="o">+</span><span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">adotb</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="multiple-variable-extension-of-newtons-method">
+<h3>Multiple-variable extension of Newton’s Method<a class="headerlink" href="#multiple-variable-extension-of-newtons-method" title="Permalink to this headline">¶</a></h3>
+<p>This section presents the Newton-Raphson method as a way to sometimes solve systems of non-linear equations.</p>
+<p>Consider an example where the function <span class="math notranslate nohighlight">\(\textbf{f}\)</span> is a vector-valued function of a vector argument.</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\mathbf{f(x)} = 
+\begin{matrix}
+f_1 = &amp; x^2 &amp; +~y^2 &amp; - 4\\
+f_2 = &amp; e^x &amp; +~y  &amp; - 1\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Let’s also recall Newtons method for scalar valued function of a single variable.</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+x_{k+1}=x_{k} - \frac{  f(x_{k})  }{   \frac{df}{dx}\rvert_{x_k} } 
+\label{eqn:NewtonFormula}
+\end{equation}
+\)</span></p>
+<p>When extending to higher dimensions, the analog for <span class="math notranslate nohighlight">\(x\)</span> is the vector <span class="math notranslate nohighlight">\(\textbf{x}\)</span> and the analog for the function <span class="math notranslate nohighlight">\(f()\)</span> is the vector function <span class="math notranslate nohighlight">\(\textbf{f()}\)</span>.
+What remains is an analog for the first derivative in the denominator (and the concept of division of a matrix).</p>
+<p>The analog to the first derivative is a matrix called the Jacobian which is comprised of the first derivatives of the function <span class="math notranslate nohighlight">\(\textbf{f}\)</span> with respect to the arguments <span class="math notranslate nohighlight">\(\textbf{x}\)</span>.<br />
+For example for a 2-value function of 2 arguments (as our example above)</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{df}{dx}\rvert_{x_k} =&gt;
+\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} \\
+~ &amp; ~ \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} \\
+\end{pmatrix}
+\label{eqn:Jacobian}
+\end{equation}
+\)</span></p>
+<p>Next recall that division is replaced by matrix multiplication with the multiplicative inverse, so the analogy continues as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{1}{\frac{df}{dx}\rvert_{x_k}} =&gt;
+{\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} \\
+~ &amp; ~ \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} \\
+\end{pmatrix}}^{-1}
+\label{eqn:JacobianInverse}
+\end{equation}
+\)</span></p>
+<p>Let’s name the Jacobian <span class="math notranslate nohighlight">\(\textbf{J(x)}\)</span>.</p>
+<p>So the multi-variate Newton’s method can be written as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{x}_{k+1}=\mathbf{x}_{k} - \mathbf{J(x)}^{-1}\rvert_{x_k} \cdot \mathbf{f(x)}\rvert_{x_k}
+\label{eqn:VectorNewtonFormula}
+\end{equation}
+\)</span></p>
+<p>In the linear systems lessons we did find a way to solve for an inverse, but it’s not necessary, and is computationally expensive to invert in these examples – a series of rearrangement of the system above yields a nice scheme that does not require inversion of a matrix.</p>
+<p>First, move the <span class="math notranslate nohighlight">\(\mathbf{x}_{k}\)</span> to the left-hand side.</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{x}_{k+1}-\mathbf{x}_{k} = - \mathbf{J(x)}^{-1}\rvert_{x_k} \cdot \mathbf{f(x)}\rvert_{x_k}
+\end{equation}
+\)</span></p>
+<p>Next multiply both sides by the Jacobian (The Jacobian must be non-singular otherwise we are dividing by zero)</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{J(x)}\rvert_{x_k} \cdot (\mathbf{x}_{k+1}-\mathbf{x}_{k}) = - \mathbf{J(x)}\rvert_{x_k} \cdot \mathbf{J(x)}^{-1}\rvert_{x_k} \cdot \mathbf{f(x)}\rvert_{x_k}
+\end{equation}
+\)</span></p>
+<p>Recall a matrix multiplied by its inverse returns the identity matrix (the matrix equivalent of unity)</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+-\mathbf{J(x)}\rvert_{x_k} \cdot (\mathbf{x}_{k+1}-\mathbf{x}_{k}) = \mathbf{f(x)}\rvert_{x_k}
+\end{equation}
+\)</span></p>
+<p>So we now have an algorithm:</p>
+<ol class="simple">
+<li><p>Start with an initial guess <span class="math notranslate nohighlight">\(\mathbf{x}_{k}\)</span>, compute <span class="math notranslate nohighlight">\(\mathbf{f(x)}\rvert_{x_k}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{J(x)}\rvert_{x_k}\)</span>.</p></li>
+<li><p>Test for stopping.  Is <span class="math notranslate nohighlight">\(\mathbf{f(x)}\rvert_{x_k}\)</span> close to zero?  If yes, exit and report results, otherwise continue.</p></li>
+<li><p>Solve the linear system <span class="math notranslate nohighlight">\(\mathbf{J(x)}\rvert_{x_k} \cdot (\mathbf{x}_{k+1}-\mathbf{x}_{k}) = \mathbf{f(x)}\rvert_{x_k}\)</span>.</p></li>
+<li><p>Test for stopping.  Is <span class="math notranslate nohighlight">\( (\mathbf{x}_{k+1}-\mathbf{x}_{k})\)</span> close to zero?  If yes, exit and report results, otherwise continue.</p></li>
+<li><p>Compute the update <span class="math notranslate nohighlight">\(\mathbf{x}_{k+1} = \mathbf{x}_{k} - (\mathbf{x}_{k+1}-\mathbf{x}_{k}) \)</span>, then</p></li>
+<li><p>Move the update into the guess vector <span class="math notranslate nohighlight">\(\mathbf{x}_{k} &lt;=\mathbf{x}_{k+1}\)</span> =and repeat step 1. Stop after too many steps.</p></li>
+</ol>
+</div>
+<div class="section" id="example-using-analytical-derivatives">
+<h3>Example using Analytical Derivatives<a class="headerlink" href="#example-using-analytical-derivatives" title="Permalink to this headline">¶</a></h3>
+<p>Now to complete the example we will employ this algorithm.</p>
+<p>The function (repeated)</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\mathbf{f(x)} = 
+\begin{matrix}
+f_1 = &amp; x^2 &amp; +~y^2 &amp; - 4\\
+f_2 = &amp; e^x &amp; +~y  &amp; - 1\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Then the Jacobian, here we will compute it analytically because we can</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{J(x)}=&gt;
+{\begin{pmatrix}
+2x &amp; 2y \\
+~ &amp; ~ \\
+e^x &amp; 1 \\
+\end{pmatrix}}
+\end{equation}
+\)</span></p>
+<p>Now for the scripts.</p>
+<p>We will start by defining the two equations, and their derivatives, as well a a vector valued function <code class="docutils literal notranslate"><span class="pre">func</span></code> and its Jacobian <code class="docutils literal notranslate"><span class="pre">jacob</span></code> as below.  Here the two modules <code class="docutils literal notranslate"><span class="pre">LinearSolverPivot</span></code> and <code class="docutils literal notranslate"><span class="pre">vector_matrix_lib</span></code> are just python source code files containing prototype functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################################</span>
+<span class="c1"># Newton Solver Example -- Analytical Derivatives               #</span>
+<span class="c1">#################################################################</span>
+<span class="kn">import</span> <span class="nn">math</span>   <span class="c1"># This will import math module from python distribution</span>
+<span class="kn">from</span> <span class="nn">LinearSolverPivot</span> <span class="kn">import</span> <span class="n">linearsolver</span> <span class="c1"># This will import our solver module</span>
+<span class="kn">from</span> <span class="nn">vector_matrix_lib</span> <span class="kn">import</span> <span class="n">writeM</span><span class="p">,</span><span class="n">writeV</span><span class="p">,</span><span class="n">vdotv</span><span class="p">,</span><span class="n">vvsub</span> <span class="c1"># This will import our vector functions</span>
+
+<span class="k">def</span> <span class="nf">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">eq1</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">4.0</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">eq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">eq2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">1.0</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">eq2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddxeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ddxeq1</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddxeq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddyeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ddyeq1</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddyeq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddxeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ddxeq2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddxeq2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddyeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ddyeq2</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddyeq2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">func</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+    <span class="c1"># build the function</span>
+    <span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">func</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">jacob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">jacob</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># constructed list  </span>
+    <span class="c1">#build the  jacobian</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ddxeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">ddyeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ddxeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">ddyeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">jacob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we create vectors to store values, and supply initial guesses to the system, and echo the inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deltax</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">xguess</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">myfunc</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">myjacob</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># constructed list  </span>
+<span class="c1"># supply initial guess</span>
+<span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">;</span> <span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="c1">#xguess[0] = float(input(&quot;Value for x : &quot;))</span>
+<span class="c1">#xguess[1] = float(input(&quot;Value for y : &quot;))</span>
+<span class="c1"># build the initial function</span>
+<span class="n">myfunc</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#build the initial jacobian</span>
+<span class="n">myjacob</span><span class="o">=</span><span class="n">jacob</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#write initial results</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial X vector &quot;</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial FUNC vector &quot;</span><span class="p">)</span>
+<span class="n">writeM</span><span class="p">(</span><span class="n">myjacob</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial Jacobian &quot;</span><span class="p">)</span>
+<span class="c1"># solver parameters</span>
+<span class="n">tolerancef</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">tolerancex</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------ Initial X vector  ------
+1.0
+0.0
+-----------------------------
+------ Initial FUNC vector  ------
+-3.0
+1.718281828459045
+-----------------------------
+------ Initial Jacobian  ------
+[2.0, 0.0]
+[2.718281828459045, 1.0]
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we apply the algorithm a few times, here the count is set to 10. So eneter the loop, test for stopping, then update.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Newton-Raphson</span>
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">myfunc</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">testf</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">testf</span> <span class="o">&lt;=</span> <span class="n">tolerancef</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(x) close to zero</span><span class="se">\n</span><span class="s2"> test value : &quot;</span><span class="p">,</span> <span class="n">testf</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">myjacob</span><span class="o">=</span><span class="n">jacob</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">deltax</span><span class="o">=</span><span class="n">linearsolver</span><span class="p">(</span><span class="n">myjacob</span><span class="p">,</span><span class="n">myfunc</span><span class="p">)</span>
+    <span class="n">testx</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">deltax</span><span class="p">,</span><span class="n">deltax</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">testx</span> <span class="o">&lt;=</span> <span class="n">tolerancex</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;solution change small</span><span class="se">\n</span><span class="s2"> test value : &quot;</span><span class="p">,</span> <span class="n">testx</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">xguess</span><span class="o">=</span><span class="n">vvsub</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="n">deltax</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">##    print(&quot;iteration : &quot;,iteration)</span>
+<span class="c1">##    writeV(xguess,2,&quot;Current X vector &quot;)</span>
+<span class="c1">##    writeV(myfunc,2,&quot;Current FUNC vector &quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting Iteration : &quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Exiting X vector &quot;</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Exiting FUNC vector &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(x) close to zero
+ test value :  1.3156082836179522e-12
+Exiting Iteration :  6
+------ Exiting X vector  ------
+1.0041690772134464
+-1.7296372862705844
+-----------------------------
+------ Exiting FUNC vector  ------
+6.776891758875081e-07
+9.253894663885376e-07
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quasi-newton-method-using-finite-difference-approximations-for-the-derivative">
+<h3>Quasi-Newton Method using Finite Difference Approximations for the Derivative<a class="headerlink" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative" title="Permalink to this headline">¶</a></h3>
+<p>The next variant is to approximate the derivatives – usually a Finite-Difference approximation is used, either forward, backward, or centered differences – generally determined based on the actual behavior of the functions themselves or by trial and error.</p>
+<p>For really huge systems, we usually make the program itself make the adaptions as it proceeds.</p>
+<p>The coding for a finite-difference representation of a Jacobian is shown in Listing that follows
+In constructing the Jacobian, we observe that each column of the Jacobian is simply the directional derivative of the function with respect to the variable associated with the column.<br />
+For instance, the first column of the Jacobian in the example is first derivative of the first function (all rows) with respect to the first variable, in this case <span class="math notranslate nohighlight">\(x\)</span>.  The second column is the first derivative of the second function with respect to the second variable, <span class="math notranslate nohighlight">\(y\)</span>.<br />
+This structure is useful to generalize the Jacobian construction method because we could write (yet another) prototype function that can take the directional derivatives for us, and just insert the returns as columns; in the example we simply modified the <code class="docutils literal notranslate"><span class="pre">ddx</span></code> and <code class="docutils literal notranslate"><span class="pre">ddy</span></code> functions from analytical to simple finite differences.</p>
+<p>The example listing is specific to the 2X2 function in the example, but the extension to more general cases is evident.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################################</span>
+<span class="c1"># Newton Solver Example -- Numerical Derivatives               #</span>
+<span class="c1">#################################################################</span>
+<span class="kn">import</span> <span class="nn">math</span>   <span class="c1"># This will import math module from python distribution</span>
+<span class="kn">from</span> <span class="nn">LinearSolverPivot</span> <span class="kn">import</span> <span class="n">linearsolver</span> <span class="c1"># This will import our solver module</span>
+<span class="kn">from</span> <span class="nn">vector_matrix_lib</span> <span class="kn">import</span> <span class="n">writeM</span><span class="p">,</span><span class="n">writeV</span><span class="p">,</span><span class="n">vdotv</span><span class="p">,</span><span class="n">vvsub</span> <span class="c1"># This will import our vector functions</span>
+
+<span class="k">def</span> <span class="nf">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">eq1</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">4.0</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">eq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">eq2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">1.0</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">eq2</span><span class="p">)</span>
+<span class="c1">##############################################################</span>
+<span class="c1"># This portion is changed for finite-difference method to evaluate derivatives #</span>
+<span class="c1">##############################################################</span>
+<span class="k">def</span> <span class="nf">ddxeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+    <span class="n">ddxeq1</span> <span class="o">=</span> <span class="p">(</span><span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">delta</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">-</span><span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">delta</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddxeq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddyeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+    <span class="n">ddyeq1</span> <span class="o">=</span> <span class="p">(</span><span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">delta</span><span class="p">)</span><span class="o">-</span><span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">delta</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddyeq1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddxeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+    <span class="n">ddxeq2</span> <span class="o">=</span> <span class="p">(</span><span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">delta</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">-</span><span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">delta</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddxeq2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddyeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+    <span class="n">ddyeq2</span> <span class="o">=</span> <span class="p">(</span><span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">delta</span><span class="p">)</span><span class="o">-</span><span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">delta</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ddyeq2</span><span class="p">)</span>
+<span class="c1">##############################################################</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">func</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+    <span class="c1"># build the function</span>
+    <span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">func</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">jacob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">jacob</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># constructed list  </span>
+    <span class="c1">#build the  jacobian</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ddxeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">ddyeq1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ddxeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">jacob</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">ddyeq2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">jacob</span><span class="p">)</span>
+<span class="n">deltax</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">xguess</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">myfunc</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># null list</span>
+<span class="n">myjacob</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># constructed list  </span>
+<span class="c1"># supply initial guess</span>
+<span class="c1"># xguess[0] = float(input(&quot;Value for x : &quot;))</span>
+<span class="c1"># xguess[1] = float(input(&quot;Value for y : &quot;))</span>
+<span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">;</span> <span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="c1"># build the initial function</span>
+<span class="n">myfunc</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#build the initial jacobian</span>
+<span class="n">myjacob</span><span class="o">=</span><span class="n">jacob</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#write initial results</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial X vector &quot;</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial FUNC vector &quot;</span><span class="p">)</span>
+<span class="n">writeM</span><span class="p">(</span><span class="n">myjacob</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Initial Jacobian &quot;</span><span class="p">)</span>
+<span class="c1"># solver parameters</span>
+<span class="n">tolerancef</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">tolerancex</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="c1"># Newton-Raphson</span>
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">myfunc</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">testf</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">testf</span> <span class="o">&lt;=</span> <span class="n">tolerancef</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(x) close to zero</span><span class="se">\n</span><span class="s2"> test value : &quot;</span><span class="p">,</span> <span class="n">testf</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">myjacob</span><span class="o">=</span><span class="n">jacob</span><span class="p">(</span><span class="n">xguess</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xguess</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">deltax</span><span class="o">=</span><span class="n">linearsolver</span><span class="p">(</span><span class="n">myjacob</span><span class="p">,</span><span class="n">myfunc</span><span class="p">)</span>
+    <span class="n">testx</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">deltax</span><span class="p">,</span><span class="n">deltax</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">testx</span> <span class="o">&lt;=</span> <span class="n">tolerancex</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;solution change small</span><span class="se">\n</span><span class="s2"> test value : &quot;</span><span class="p">,</span> <span class="n">testx</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">xguess</span><span class="o">=</span><span class="n">vvsub</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="n">deltax</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">##    print(&quot;iteration : &quot;,iteration)</span>
+<span class="c1">##    writeV(xguess,2,&quot;Current X vector &quot;)</span>
+<span class="c1">##    writeV(myfunc,2,&quot;Current FUNC vector &quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting Iteration : &quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Exiting X vector &quot;</span><span class="p">)</span>
+<span class="n">writeV</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Exiting FUNC vector using Finite-Differences&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------ Initial X vector  ------
+1.0
+0.0
+-----------------------------
+------ Initial FUNC vector  ------
+-3.0
+1.718281828459045
+-----------------------------
+------ Initial Jacobian  ------
+[2.0000009999243673, 1.000088900582341e-06]
+[2.7182831874306146, 1.000000000139778]
+-----------------------------
+f(x) close to zero
+ test value :  1.319054848649505e-12
+Exiting Iteration :  6
+------ Exiting X vector  ------
+1.0041690776563807
+-1.7296372862709128
+-----------------------------
+------ Exiting FUNC vector using Finite-Differences ------
+6.785798740693849e-07
+9.265981886219521e-07
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<p>Write a script that forward defines the multi-variate functions and implements the Newton-Raphson technique.
+Implement the method, using analytical derivatives, and find a solution to:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+ x^3 &amp; +~3y^2 &amp; = 21\\
+x^2&amp; +~2y  &amp; = -2 \\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Repeat the exercise, except use finite-differences to approximate the derivatives.</p>
+<p>Write a script that forward defines the multi-variate functions and implements the Newton-Raphson technique.
+Implement the method, using analytical derivatives, and find a solution to:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+x^2 &amp; +~ y^2 &amp; +~z^2 &amp; =~ 9\\
+~ &amp; ~ &amp; xyz &amp; =~ 1\\
+x &amp; +~ y &amp; -z^2 &amp; =~ 0\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Repeat the exercise, except use finite-differences to approximate the derivatives.</p>
+<p>Write a script that forward defines the multi-variate functions and implements the Newton-Raphson technique.
+Implement the method, using analytical derivatives, and find a solution to:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{gather}
+\begin{matrix}
+xyz &amp; -~ x^2 &amp; +~y^2 &amp; =~ 1.34\\
+~ &amp; xy &amp;-~z^2 &amp; =~ 0.09\\
+e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
+\end{matrix}
+\end{gather}
+\)</span></p>
+<p>Repeat the exercise, except use finite-differences to approximate the derivatives.</p>
+</div>
+</div>
+<div class="section" id="application-of-non-linear-solvers-pipeline-network-simulation">
+<h2>Application of Non-Linear Solvers:  Pipeline Network Simulation<a class="headerlink" href="#application-of-non-linear-solvers-pipeline-network-simulation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The network simulator uses input files to convey the network to the program These files are listed below.</p>
+</div>
+<blockquote>
+<div><p>PipeNetwork.txt</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
+<span class="mi">11</span>
+<span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span>
+<span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> 
+<span class="mi">300</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">300</span>
+<span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span>
+<span class="mf">0.000011</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">10</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">300</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Pipe Network Simulation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hydraulic Functions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hydraulic elements prototype functions</span>
+<span class="c1"># Jain Friction Factor Function -- Tested OK 23SEP16</span>
+<span class="kn">import</span> <span class="nn">math</span>   <span class="c1"># This will import math module</span>
+
+<span class="k">def</span> <span class="nf">friction_factor</span><span class="p">(</span><span class="n">roughness</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">reynolds</span><span class="p">):</span>
+    <span class="n">temp1</span> <span class="o">=</span> <span class="n">roughness</span><span class="o">/</span><span class="p">(</span><span class="mf">3.7</span><span class="o">*</span><span class="n">diameter</span><span class="p">)</span>
+    <span class="n">temp2</span> <span class="o">=</span> <span class="mf">5.74</span><span class="o">/</span><span class="p">(</span><span class="n">reynolds</span><span class="o">**</span><span class="p">(</span><span class="mf">0.9</span><span class="p">))</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">temp1</span><span class="o">+</span><span class="n">temp2</span><span class="p">)</span>
+    <span class="n">temp3</span> <span class="o">=</span> <span class="n">temp3</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">friction_factor</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">/</span><span class="n">temp3</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">friction_factor</span><span class="p">)</span>
+
+<span class="c1"># Velocity Function</span>
+<span class="k">def</span> <span class="nf">velocity</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span><span class="n">discharge</span><span class="p">):</span>
+    <span class="n">velocity</span><span class="o">=</span><span class="n">discharge</span><span class="o">/</span><span class="p">(</span><span class="mf">0.25</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+
+<span class="c1"># Reynolds Number Function  </span>
+<span class="k">def</span> <span class="nf">reynolds_number</span><span class="p">(</span><span class="n">velocity</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
+    <span class="n">reynolds_number</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span><span class="o">*</span><span class="n">diameter</span><span class="o">/</span><span class="n">mu</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">reynolds_number</span><span class="p">)</span>
+
+<span class="c1"># Geometric factor function</span>
+<span class="k">def</span> <span class="nf">k_factor</span><span class="p">(</span><span class="n">howlong</span><span class="p">,</span><span class="n">diameter</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span>
+    <span class="n">k_factor</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="n">howlong</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">gravity</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">k_factor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linear Solver with Pivoting </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SolveLinearSystem.py</span>
+<span class="c1"># Code to read A and b</span>
+<span class="c1"># Then solve Ax = b for x by Gaussian elimination with back substitution</span>
+<span class="c1">#</span>
+<span class="c1">##########</span>
+<span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1">#    M = A  #this is object to object equivalence</span>
+<span class="c1"># copy A into M element by element - to operate on M without destroying A</span>
+    <span class="n">M</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span><span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">jcol</span><span class="p">]</span>
+
+<span class="c1">#</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
+          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span>
+
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="c1">#    print (x)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vector and Matrix Operations Support </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">writeM</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="n">jc</span><span class="p">,</span><span class="n">label</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;------&quot;</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="s2">&quot;------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">jc</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">writeV</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="n">label</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;------&quot;</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="s2">&quot;------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">matrixmatrixmult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">bmatrix</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="n">rowNumB</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+    <span class="n">AB</span> <span class="o">=</span><span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumB</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">matrixvectormult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">xvector</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+    <span class="n">bvector</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">xvector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">bvector</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vectoradd</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">cvector</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">cvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">cvector</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vectorsub</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">cvector</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">cvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">cvector</span><span class="p">)</span>
+             
+<span class="k">def</span> <span class="nf">vdotv</span><span class="p">(</span><span class="n">avector</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">adotb</span><span class="o">=</span><span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">adotb</span><span class="o">=</span><span class="n">adotb</span><span class="o">+</span><span class="n">avector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">bvector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">adotb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bvector</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rowNumB</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="s1">&#39;false&#39;</span>
+<span class="c1">#############################################</span>
+
+<span class="n">elevation</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list node elevations</span>
+<span class="n">diameter</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># null list pipe diameters</span>
+<span class="n">distance</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># null list pipe lengths</span>
+<span class="n">roughness</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list pipe roughness</span>
+<span class="n">flowguess</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list pipe flow rates</span>
+<span class="n">nodearcs</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># node-arc incidence matrix</span>
+<span class="n">rhs_true</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># null list for nodal demands</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">##############################################</span>
+<span class="c1"># connect and read file for Pipeline Network #</span>
+<span class="c1">##############################################</span>
+<span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;PipeNetwork.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">nnodes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">npipes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="c1"># read elevation vector</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">elevation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector</span>
+<span class="c1"># read diameter vector</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">diameter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector</span>
+<span class="c1"># read length vector</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">distance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector</span>
+<span class="c1"># read roughness vector</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">roughness</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector</span>
+<span class="c1"># read viscosity (scalar)</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="c1"># read current flow guess</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">flowguess</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector</span>
+<span class="c1"># read nodearc incidence matrix</span>
+<span class="c1">## future revisions read directly into augmented matrix, or find way to release nodearc from stack</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># then read each row</span>
+    <span class="n">nodearcs</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="c1"># read demands guess</span>
+<span class="n">tempvect</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">rhs_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tempvect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># reset vector      </span>
+<span class="c1">######################################</span>
+<span class="c1"># end file read ,disconnect file     #</span>
+<span class="c1">######################################</span>
+<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
+<span class="c1">######################################</span>
+<span class="c1"># echo the input in human readable   #</span>
+<span class="c1">######################################</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of nodes : &#39;</span><span class="p">,</span><span class="n">nnodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of pipes : &#39;</span><span class="p">,</span><span class="n">npipes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;viscosity       : &#39;</span><span class="p">,</span><span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node id:&#39;</span><span class="p">,</span><span class="n">irow</span><span class="p">,</span> <span class="s1">&#39;, elevation :&#39;</span><span class="p">,</span><span class="n">elevation</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="s1">&#39; head :&#39;</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">[</span><span class="n">irow</span><span class="o">+</span><span class="n">npipes</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, diameter : &#39;</span> <span class="p">,</span><span class="n">diameter</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, distance : &#39;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
+          <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow  : &#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="c1">##for jcol in range(0,nnodes+npipes):</span>
+<span class="c1">##    print(&#39;irow :&#39;,jcol,&#39; RHS True :&#39;,rhs_true[jcol])</span>
+<span class="c1">##print (&quot;-----------------------------&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;node-arc incidence matrix&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">nodearcs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">npipes</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of nodes :  8
+number of pipes :  11
+viscosity       :  1.1e-05
+-----------------------------
+node id: 0 , elevation : 200.0  head : 0.0
+node id: 1 , elevation : 200.0  head : 0.0
+node id: 2 , elevation : 200.0  head : 0.0
+node id: 3 , elevation : 200.0  head : 0.0
+node id: 4 , elevation : 200.0  head : 0.0
+node id: 5 , elevation : 200.0  head : 0.0
+node id: 6 , elevation : 200.0  head : 0.0
+node id: 7 , elevation : 200.0  head : -300.0
+-----------------------------
+pipe id: 0 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 1 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 2 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 3 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 4 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 5 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 6 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 7 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 8 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 9 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 10 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+-----------------------------
+node-arc incidence matrix
+[-1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+[1.0, -1.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0, 0.0, 1.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+[0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0]
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create augmented matrix</span>
+<span class="n">colNumA</span> <span class="o">=</span> <span class="n">npipes</span><span class="o">+</span><span class="n">nnodes</span>
+<span class="n">rowNumA</span> <span class="o">=</span> <span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span>
+<span class="n">augmentedMat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store augmented matrix</span>
+
+<span class="c1">#######################################################################################</span>
+<span class="n">augmentedMat</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1">#fill with zeroes</span>
+<span class="c1">#build upper left partition -- from nodearcs</span>
+<span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">jc</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+        <span class="n">augmentedMat</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodearcs</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span>
+<span class="n">istart</span><span class="o">=</span><span class="n">nnodes</span>
+<span class="n">iend</span><span class="o">=</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span>
+<span class="n">jstart</span><span class="o">=</span><span class="n">npipes</span>
+<span class="n">jend</span><span class="o">=</span><span class="n">npipes</span><span class="o">+</span><span class="n">nnodes</span>
+<span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">jc</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">jstart</span><span class="p">,</span><span class="n">jend</span><span class="p">):</span>
+        <span class="n">augmentedMat</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">nodearcs</span><span class="p">[</span><span class="n">jc</span><span class="o">-</span><span class="n">jstart</span><span class="p">][</span><span class="n">ir</span><span class="o">-</span><span class="n">istart</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.0</span>
+<span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;augmented matrix before loss factors&quot;</span><span class="p">)</span>
+    <span class="n">writeM</span><span class="p">(</span><span class="n">augmentedMat</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="s2">&quot;augmented matrix&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################################</span>
+<span class="n">howmany</span><span class="o">=</span><span class="mi">50</span> <span class="c1">#iterations max</span>
+<span class="n">tolerance1</span> <span class="o">=</span> <span class="mf">1e-24</span>
+<span class="n">tolerance2</span> <span class="o">=</span> <span class="mf">1e-24</span>
+<span class="n">velocity_pipe</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npipes</span><span class="p">)]</span>  <span class="c1"># null list velocities</span>
+<span class="n">reynolds</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npipes</span><span class="p">)]</span>  <span class="c1"># null list reynolds numbers</span>
+<span class="n">friction</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npipes</span><span class="p">)]</span>  <span class="c1"># null list friction </span>
+<span class="n">geometry</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npipes</span><span class="p">)]</span>  <span class="c1"># null list geometry</span>
+<span class="n">lossfactor</span>    <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npipes</span><span class="p">)]</span>  <span class="c1"># null list loss</span>
+<span class="n">jacbMat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store jacobian matrix</span>
+<span class="n">jacbMat</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1">#fill with zeroes</span>
+
+
+<span class="n">solvecguess</span> <span class="o">=</span><span class="p">[</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> 
+<span class="n">solvecnew</span> <span class="o">=</span><span class="p">[</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">geometry</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">k_factor</span><span class="p">(</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">diameter</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mf">32.2</span><span class="p">)</span>
+<span class="c1">#solvecguess is a current guess -- wonder if more pythonic way for this assignment</span>
+<span class="c1">##    print(&#39;irow :&#39;,i,&#39; Geometry Factor :&#39;,geometry[i])</span>
+<span class="c1">##print (&quot;-----------------------------&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###############################################################</span>
+<span class="c1">## ITERATION LOOP                                             #</span>
+<span class="c1">###############################################################</span>
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmany</span><span class="p">):</span> <span class="c1"># iteration outer loop</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;solutions at begin of iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">velocity_pipe</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">velocity</span><span class="p">(</span><span class="n">diameter</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>    
+        <span class="n">reynolds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">reynolds_number</span><span class="p">(</span><span class="n">velocity_pipe</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">diameter</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">viscosity</span><span class="p">)</span>
+        <span class="n">friction</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">friction_factor</span><span class="p">(</span><span class="n">roughness</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">diameter</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">reynolds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">lossfactor</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">friction</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">geometry</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, velocity : &#39;</span> <span class="p">,</span><span class="n">velocity_pipe</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, reynolds : &#39;</span><span class="p">,</span><span class="n">reynolds</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
+          <span class="s1">&#39;, friction : &#39;</span><span class="p">,</span><span class="n">friction</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, loss factor : &#39;</span><span class="p">,</span><span class="n">lossfactor</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;flow guess&#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+<span class="c1">################################################################</span>
+<span class="c1"># BUILD AUGMENTED MATRIX CURRENT Q+H SOLUTION                  #</span>
+<span class="c1">################################################################</span>
+    <span class="n">augmentedMat</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1">#fill with zeroes</span>
+    <span class="c1">#build upper left partition -- from nodearcs</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jc</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="n">augmentedMat</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodearcs</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span>
+    <span class="c1">#build lower right == transpose of upper left</span>
+    <span class="n">istart</span><span class="o">=</span><span class="n">nnodes</span>
+    <span class="n">iend</span><span class="o">=</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span>
+    <span class="n">jstart</span><span class="o">=</span><span class="n">npipes</span>
+    <span class="n">jend</span><span class="o">=</span><span class="n">npipes</span><span class="o">+</span><span class="n">nnodes</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jc</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">jstart</span><span class="p">,</span><span class="n">jend</span><span class="p">):</span>
+            <span class="n">augmentedMat</span><span class="p">[</span><span class="n">ir</span><span class="p">][</span><span class="n">jc</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">nodearcs</span><span class="p">[</span><span class="n">jc</span><span class="o">-</span><span class="n">jstart</span><span class="p">][</span><span class="n">ir</span><span class="o">-</span><span class="n">istart</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.0</span>
+    <span class="c1"># build lower left partition of the matrix</span>
+    <span class="n">istart</span> <span class="o">=</span> <span class="n">nnodes</span>
+    <span class="n">iend</span> <span class="o">=</span> <span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span>
+    <span class="n">jstart</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">jend</span> <span class="o">=</span> <span class="n">npipes</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span> <span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jstart</span><span class="p">,</span><span class="n">jend</span> <span class="p">):</span>
+    <span class="c1">#        print(&#39;i =&#39;,i,&#39;j=&#39;,j)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">istart</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span> <span class="p">:</span>
+    <span class="c1">#            print(&#39;i =&#39;,i,&#39;j=&#39;,j)</span>
+                <span class="n">augmentedMat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">lossfactor</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.0</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;updated augmented matrix in iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="n">writeM</span><span class="p">(</span><span class="n">augmentedMat</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="s2">&quot;augmented matrix&quot;</span><span class="p">)</span>
+<span class="c1">################################################################</span>
+<span class="c1"># BUILD JACOBIAN MATRIX CURRENT Q+H SOLUTION                   #</span>
+<span class="c1">################################################################        </span>
+    <span class="c1"># now build current jacobian</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumA</span><span class="p">):</span>
+            <span class="n">jacbMat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">augmentedMat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="c1"># modify lower left partition</span>
+    <span class="n">istart</span> <span class="o">=</span> <span class="n">nnodes</span>
+    <span class="n">iend</span> <span class="o">=</span> <span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span>
+    <span class="n">jstart</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">jend</span> <span class="o">=</span> <span class="n">npipes</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span> <span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jstart</span><span class="p">,</span><span class="n">jend</span> <span class="p">):</span>
+    <span class="c1">#        print(&#39;i =&#39;,i,&#39;j=&#39;,j)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">istart</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span> <span class="p">:</span>
+    <span class="c1">#            print(&#39;i =&#39;,i,&#39;j=&#39;,j)</span>
+                <span class="n">jacbMat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">jacbMat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="c1">##        for jcol in range(0,nnodes+npipes):</span>
+<span class="c1">##            print(&#39;irow :&#39;,jcol,&#39; solvecnew :&#39;,solvecnew[jcol],&quot; solvecguess &quot;,solvecguess[jcol])</span>
+<span class="c1">##        print (&quot;-----------------------------&quot;)</span>
+<span class="c1"># matrix multiply augmentedMat*solvecguess to get current g(Q)</span>
+<span class="c1">#    gq = [0.0 for i in range(rowNumA)] # zero gradient vector</span>
+<span class="c1">##    if verbose == &#39;true&#39; :</span>
+<span class="c1">##        print(&quot;augmented matrix in iteration&quot;,iteration)</span>
+<span class="c1">##        writeM(augmentedMat,rowNumA,colNumA,&quot;augmented matrix before mmult&quot;)</span>
+    <span class="n">gq</span> <span class="o">=</span> <span class="n">matrixvectormult</span><span class="p">(</span><span class="n">augmentedMat</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">)</span>
+<span class="c1">##    if verbose == &#39;true&#39; :</span>
+<span class="c1">##        writeV(gq,rowNumA,&quot;gq vectorbefore subtract rhs_true&quot;)</span>
+<span class="c1"># subtract rhs</span>
+<span class="c1">#    for i in range(rowNumA):</span>
+    <span class="n">gq</span> <span class="o">=</span> <span class="n">vectorsub</span><span class="p">(</span><span class="n">gq</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">)</span><span class="c1">#vector subtract</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;computed g(q) in iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="n">writeV</span><span class="p">(</span><span class="n">gq</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="s2">&quot;gq vector&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;compare current and new guess&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="n">dq</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span> <span class="c1"># zero update vector</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="n">writeV</span><span class="p">(</span><span class="n">dq</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="s2">&quot;dq vector before linear solve&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jacobian before linearsolve in iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="n">writeM</span><span class="p">(</span><span class="n">jacbMat</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="s2">&quot;jabobian matrix&quot;</span><span class="p">)</span>
+    <span class="n">dq</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">jacbMat</span><span class="p">,</span><span class="n">gq</span><span class="p">)</span> <span class="c1"># memory leak after this call - linearsolve clobbers input lists</span>
+<span class="c1">#    dq = np.linalg.solve(jacbMat,gq)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jacobian after linearsolve in iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="n">writeM</span><span class="p">(</span><span class="n">jacbMat</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="s2">&quot;jabobian matrix&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="n">writeV</span><span class="p">(</span><span class="n">dq</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="s2">&quot;dq vector -after linear solve&quot;</span><span class="p">)</span>
+    <span class="n">solvecnew</span> <span class="o">=</span> <span class="n">vectorsub</span><span class="p">(</span><span class="n">solvecguess</span><span class="p">,</span><span class="n">dq</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">)</span><span class="c1">#vector subtract</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q_new = Q_old - DQ&quot;</span><span class="p">)</span>
+        <span class="n">writeV</span><span class="p">(</span><span class="n">solvecnew</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="s2">&quot;new guess vector&quot;</span><span class="p">)</span>
+<span class="c1">#    tempvect =[ 0.0 for i in range(rowNumA)]</span>
+<span class="c1">##        tempvect = matrixvectormult(jacbMat,dq,rowNumA,colNumA)</span>
+<span class="c1">##        writeV(tempvect,rowNumA,&quot;J*dq vector&quot;)</span>
+<span class="c1">##        tempvect = vectorsub(tempvect,gq,rowNumA)</span>
+<span class="c1">##        writeV(tempvect,rowNumA,&quot;J*dq - gq vector&quot;)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;just after computing new guess, should be different&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="c1">#test for stopping</span>
+    <span class="n">tempvect</span> <span class="o">=</span><span class="p">[</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="n">tempvect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">test1</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">tempvect</span><span class="p">,</span><span class="n">tempvect</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span><span class="n">test1</span><span class="p">)</span>
+    <span class="n">tempvect</span> <span class="o">=</span><span class="p">[</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="n">tempvect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">gq</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">test2</span> <span class="o">=</span> <span class="n">vdotv</span><span class="p">(</span><span class="n">tempvect</span><span class="p">,</span><span class="n">tempvect</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span><span class="n">test2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">test1</span> <span class="o">&lt;</span> <span class="n">tolerance1</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;update not changing --exit and report current update&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+<span class="c1"># update guess</span>
+        <span class="n">solvecguess</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">solvecnew</span><span class="p">[:]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">test2</span> <span class="o">&lt;</span> <span class="n">tolerance2</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gradient near zero --exit and report current update&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+<span class="c1"># update guess</span>
+        <span class="n">solvecguess</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">solvecnew</span><span class="p">[:]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;solution continuing&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;iteration&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+    <span class="c1"># update guess</span>
+    <span class="n">solvecguess</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">solvecnew</span><span class="p">[:]</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of nodes : &#39;</span><span class="p">,</span><span class="n">nnodes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of pipes : &#39;</span><span class="p">,</span><span class="n">npipes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;viscosity       : &#39;</span><span class="p">,</span><span class="n">viscosity</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node id:&#39;</span><span class="p">,</span><span class="n">irow</span><span class="p">,</span> <span class="s1">&#39;, elevation :&#39;</span><span class="p">,</span><span class="n">elevation</span><span class="p">[</span><span class="n">irow</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, diameter : &#39;</span> <span class="p">,</span><span class="n">diameter</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, distance : &#39;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
+          <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow guess : &#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; RHS True :&#39;</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot;RHS Current&quot;</span><span class="p">,</span><span class="n">gq</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="c1"># end of outer loop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradient near zero --exit and report current update
+iteration 37
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;results at iteration = :&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of nodes : &#39;</span><span class="p">,</span><span class="n">nnodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of pipes : &#39;</span><span class="p">,</span><span class="n">npipes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;viscosity       : &#39;</span><span class="p">,</span><span class="n">viscosity</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="n">istart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">npipes</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node id:&#39;</span><span class="p">,</span><span class="n">irow</span><span class="p">,</span> <span class="s1">&#39;, elevation :&#39;</span><span class="p">,</span><span class="n">elevation</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="s1">&#39; head :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">irow</span><span class="o">+</span><span class="n">npipes</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, diameter : &#39;</span> <span class="p">,</span><span class="n">diameter</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, distance : &#39;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
+  <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow  : &#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; RHS True :&#39;</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot;RHS Current&quot;</span><span class="p">,</span><span class="n">gq</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>results at iteration = : 37
+number of nodes :  8
+number of pipes :  11
+viscosity       :  1.1e-05
+-----------------------------
+node id: 0 , elevation : 200.0  head : 298.6862826612833
+node id: 1 , elevation : 200.0  head : 298.0556983386993
+node id: 2 , elevation : 200.0  head : 297.5827600967613
+node id: 3 , elevation : 200.0  head : 298.00314964515064
+node id: 4 , elevation : 200.0  head : 297.8980522580533
+node id: 5 , elevation : 200.0  head : 297.76668052418165
+node id: 6 , elevation : 200.0  head : 297.53021140321266
+node id: 7 , elevation : 200.0  head : 297.10982185482334
+-----------------------------
+pipe id: 0 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  4.800000000001731
+pipe id: 1 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  3.600000000000692
+pipe id: 2 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  3.600000000000692
+pipe id: 3 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.2000000000010391
+pipe id: 4 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  -1.5999999999980494
+pipe id: 5 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  5.199999999998269
+pipe id: 6 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  3.60000000000022
+pipe id: 7 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  3.60000000000022
+pipe id: 8 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  2.7999999999990886
+pipe id: 9 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  -6.399999999999309
+pipe id: 10 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  10.0
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 </div>
