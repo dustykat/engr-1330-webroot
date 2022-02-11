@@ -222,102 +222,12 @@ localfile.close() # Disconnect the file
 colNumA = len(amatrix[0]) # get the column count
 
 
-# Next read in A
-
-# In[16]:
-
-
-
-
-
-# Echo the input
-
 # In[11]:
 
 
 print('A matrix')
 for i in range(0,rowNumA,1):
     print ( (amatrix[i][0:colNumA]))
-
-
-# Next read in x
-
-# In[12]:
-
-
-localfile = open("x.txt","r") # connect and read file for VECTOR x
-for line in localfile:
-    xvector.append(float(line))  # vector read different -- just float the line
-    rowNumX += 1
-localfile.close() # Disconnect the file
-
-
-# Echo the input
-
-# In[19]:
-
-
-print('x vector')
-for i in range(0,rowNumX,1):
-    print ( (xvector[i]))
-
-
-# Read in B
-
-# In[20]:
-
-
-localfile = open("B.txt","r") # connect and read file for VECTOR B
-for line in localfile:
-    bvector.append(float(line))  # vector read different -- just float the line
-    rowNumB += 1
-localfile.close() # Disconnect the file
-
-
-# Echo the input
-
-# In[21]:
-
-
-print('B vector')
-for i in range(0,rowNumB,1):
-    print ( (bvector[i]))
-
-
-# Now we need to perform the arithmetic.  
-
-# In[22]:
-
-
-rhs = [0 for i in range(rowNumX)] # here we will store Ax = rhs
-for i in range(0,rowNumA): # select row
-    for j in range(0,colNumA): # dot product current row*xvector
-            rhs[i]=rhs[i]+amatrix[i][j]*xvector[j]
-for i in range(0,rowNumA,1): # print out the result
-    print (rhs[i])
-
-
-# Now we need to compare the results, visually they are close and the floating point arithmetic using truncated inputs cannot ever be exact, so lets use our selection methods; or just print them
-
-# In[23]:
-
-
-tolerance = 1.0e-04 # decide that 1 part in 10,000 is enough
-same = True # here is our flag, as we compare element by element if we find one that is not close enough we quit and declare we dont have an answer
-for i in range(0,rowNumA,1): # just march through the lists
-    if abs(rhs[i]-bvector[i]) > tolerance: # too far apart
-        same = False
-        break # we can exit the loop, 
-    else:
-        continue # keep checking
-if same == True:
-    print('The two vectors are the same, so x solves Ax=B')
-else:
-    print('The two vectors are different, so x does not solve Ax=B')  
-    
-print('---Ax---','---B---')
-for i in range(0,rowNumA,1):
-    print (' ',round(rhs[i],3),'    ',round(bvector[i],3))
 
 
 # ---
@@ -356,20 +266,20 @@ for i in range(0,rowNumA,1):
 
 # ---
 # 
-# ## Laboratory 7
+# ## Laboratory 7.1
 # 
-# **Examine** (click) Laboratory 7 as a webpage at [Laboratory 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.html)
+# **Examine** (click) Laboratory 7 as a webpage at [Laboratory 7.1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 7 as a jupyterlab notebook from [Laboratory 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 7 as a jupyterlab notebook from [Laboratory 7.1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071.ipynb)
 # 
 
 # <hr><hr>
 # 
-# ## Exercise Set 7
+# ## Exercise Set 7.1
 # 
-# **Examine** (click) Exercise Set 7 as a webpage at [Exercise 7.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.html)
+# **Examine** (click) Exercise Set 7 as a webpage at [Exercise 7.1.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 7 as a jupyterlab notebook at  [Exercise Set 7.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab07/Lab07-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 7 as a jupyterlab notebook at  [Exercise Set 7.1.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab071/Lab071-TH.ipynb)
 # 
 # 
 
