@@ -53,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 10: Selection structure" href="../lesson10.html" />
-    <link rel="prev" title="8: Vectors and Matrices (as lists)" href="../lesson08/lesson08.html" />
+    <link rel="next" title="10: Vector/Matrix applications (Under Construction)" href="../lesson10/lesson10.html" />
+    <link rel="prev" title="7.1: Files from the Web (requests.get ...)" href="../lesson071/lesson071.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -146,6 +146,20 @@
    8: Vectors and Matrices (as lists)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson071/lesson071.html">
+   7.1: Files from the Web (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requests.get
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   )
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    9: Matrix Manipulation(s) using
@@ -155,23 +169,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson10.html">
-   Lesson 10: Selection structure
+  <a class="reference internal" href="../lesson10/lesson10.html">
+   10: Vector/Matrix applications (Under Construction)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson11.html">
-   Lesson 11: Count Controlled Repetition
+  <a class="reference internal" href="../lesson11/lesson11.html">
+   11: Databases
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson12.html">
-   Lesson 12: Sentinel Controlled Repetition
+  <a class="reference internal" href="../lesson12/lesson12.html">
+   12: Databases and PANDAS
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson13.html">
-   Lesson 13: functions
+  <a class="reference internal" href="../lesson13/lesson13.html">
+   13: Applications of PANDAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -274,7 +288,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson38.html">
-   Lesson 38: Nearest Neighbor Classification (sklearn)
+   38: K-Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../video_log/video_log.html">
+   Video Archive
   </a>
  </li>
 </ul>
@@ -841,7 +860,9 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2000, 2001], [2002, 2003], [2004, 2005], [2006, 2007], [2008, 2009]]
-(5, 2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 2)
 [[2000 2001]
  [2002 2003]
  [2004 2005]
@@ -1029,9 +1050,6 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   0    0  288  864 1728 2880 4320 6048 8064]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1052,9 +1070,6 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 5 10]
  [15 20]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1319,9 +1334,7 @@ If you want to read more about the differences between a Python list and NumPy a
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 4 40]
  [68 72]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 9 23]
+[[ 9 23]
  [39 55]]
 [[ True False]
  [False False]]
@@ -1368,9 +1381,6 @@ If you want to read more about the differences between a Python list and NumPy a
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1441,12 +1451,9 @@ z =  [1 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> x object at hex address 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0xffff62348f80
- y object at hex address  0xffff62348f80
- z object at hex address  0xffff6234f080
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> x object at hex address  0xffff7c08f350
+ y object at hex address  0xffff7c08f350
+ z object at hex address  0xffff7c08f620
 </pre></div>
 </div>
 </div>
@@ -1480,9 +1487,9 @@ z =  [1 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> x object at hex address  0xffff6234f4e0
- y object at hex address  0xffff62348f80
- z object at hex address  0xffff6234f080
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> x object at hex address  0xffff7c08bd50
+ y object at hex address  0xffff7c08f350
+ z object at hex address  0xffff7c08f620
 </pre></div>
 </div>
 </div>
@@ -2163,19 +2170,19 @@ ISBN 978-1-849511-78-0.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../lesson08/lesson08.html" title="previous page">
+        <a class="left-prev" href="../lesson071/lesson071.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">8: Vectors and Matrices (as lists)</p>
+                <p class="prevnext-title">7.1: Files from the Web (<code class="docutils literal notranslate"><span class="pre">requests.get</span> <span class="pre">...</span></code>)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson10.html" title="next page">
+        <a class="right-next" href="../lesson10/lesson10.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 10: Selection structure</p>
+                <p class="prevnext-title">10: Vector/Matrix applications (Under Construction)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

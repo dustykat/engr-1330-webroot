@@ -9,7 +9,7 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 7.1: Files (Continued)
+# # 7.1: Files from the Web (`requests.get ...`)
 # - Download files from a remote server
 # 
 # 
