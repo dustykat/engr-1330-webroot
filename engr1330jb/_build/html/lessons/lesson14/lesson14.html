@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 15: Working with files" href="../lesson15.html" />
+    <link rel="next" title="15: The matplotlib package" href="../lesson15/lesson15.html" />
     <link rel="prev" title="13: Applications of PANDAS" href="../lesson13/lesson13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -192,13 +192,19 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson15.html">
-   Lesson 15: Working with files
+  <a class="reference internal" href="../lesson15/lesson15.html">
+   15: The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   package
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson16.html">
-   Lesson 16: File Manipulation
+  <a class="reference internal" href="../lesson16/lesson16.html">
+   16: Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -432,21 +438,14 @@
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bar-graphs">
-     Bar Graphs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#line-charts">
-     Line Charts
+    <a class="reference internal nav-link" href="#line-charts-using-matplotlib">
+     Line Charts using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -461,17 +460,7 @@
      Line Charts in Pandas
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatter-plots">
-     Scatter Plots
-    </a>
-   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histograms">
-   Histograms
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -486,6 +475,16 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-14">
+   Laboratory 14
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-14">
+   Exercise Set 14
   </a>
  </li>
 </ul>
@@ -610,278 +609,9 @@ line charts, scatter plots, bar charts, box plot, and histograms.  <code class="
 <p><img alt="" src="../../_images/modelplot.png" /></p>
 </div>
 </div>
-</div>
 <hr class="docutils" />
-<div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>Data are not always numerical.
-Data can music (audio files), or places on a map (georeferenced attributes files), images (various imge files, e.g. .png, jpeg)</p>
-<p>They can also be categorical into which you can place individuals:</p>
-<ul class="simple">
-<li><p>The individuals are cartons of ice-cream, and the category is the flavor in the carton</p></li>
-<li><p>The individuals are professional basketball players, and the category is the player’s team.</p></li>
-</ul>
-<hr class="docutils" />
-<div class="section" id="bar-graphs">
-<h3>Bar Graphs<a class="headerlink" href="#bar-graphs" title="Permalink to this headline">¶</a></h3>
-<p>Bar charts (graphs) are good display tools to graphically represent categorical information.
-The bars are evenly spaced and of constant width.
-The height/length of each bar is proportional to the <code class="docutils literal notranslate"><span class="pre">relative</span> <span class="pre">frequency</span></code> of the corresponding category.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Relative</span> <span class="pre">frequency</span></code> is the ratio of how many things in the category to how many things in the whole collection.</p>
-<p>The example below uses <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to create a box plot for the ice cream analogy, the example is adapted from an example at <a class="reference external" href="https://www.geeksforgeeks.org/bar-plot-in-matplotlib/">https://www.geeksforgeeks.org/bar-plot-in-matplotlib/</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Strawberry&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Vanilla&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="c1"># the python plotting library</span>
-
-<span class="n">flavors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># make a list object based on flavors</span>
-<span class="n">cartons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># make a list object based on carton count -- assumes 1:1 association!</span>
-
-<span class="n">myfigure</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
-
-<span class="c1"># Built the plot</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">flavors</span><span class="p">,</span> <span class="n">cartons</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;teal&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> 
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flavors&quot;</span><span class="p">)</span> 
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;No. of Cartons in Stock&quot;</span><span class="p">)</span> 
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Current Ice Cream in Storage&quot;</span><span class="p">)</span> 
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_17_0.png" src="../../_images/lesson14_17_0.png" />
-</div>
-</div>
-<hr class="docutils" />
-<p>Lets tidy up the script so it is more understandable, a small change in the import statement makes a simpler to read (for humans) script - also changed the bar colors just ‘cause!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Strawberry&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Vanilla&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
-
-<span class="n">flavors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># make a list object based on flavors</span>
-<span class="n">cartons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># make a list object based on carton count -- assumes 1:1 association!</span>
-
-<span class="n">myfigure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
-
-<span class="c1"># Built the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">flavors</span><span class="p">,</span> <span class="n">cartons</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flavors&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;No. of Cartons in Stock&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Current Ice Cream in Storage&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_19_0.png" src="../../_images/lesson14_19_0.png" />
-</div>
-</div>
-<hr class="docutils" />
-<p>Now lets deconstruct the script a bit:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ice_cream = {&#39;Chocolate&#39;:16, &#39;Strawberry&#39;:5, &#39;Vanilla&#39;:9} # build a data model 
-import matplotlib.pyplot as plt # the python plotting library
-
-flavors = list(ice_cream.keys()) # make a list object based on flavors
-cartons = list(ice_cream.values()) # make a list object based on carton count -- assumes 1:1 association!
-</pre></div>
-</div>
-<p>This part of the code creates a dictionary object, keys are the flavors, values are the carton counts (not the best way, but good for our learning needs).  Next we import the python plotting library from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and name it <strong>plt</strong> to keep the script a bit easier to read.</p>
-<p>Next we use the list method to create two lists from the dictionary, <strong>flavors</strong> and <strong>cartons</strong>.  Keep this in mind plotting is usually done on lists, so we need to prepare the structures properly.</p>
-<p>The next statement</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>myfigure = plt.figure(figsize = (10,5)) # generate a object from the figure class, set aspect ratio
-</pre></div>
-</div>
-<p>Uses the figure class in <strong>pyplot</strong> from <strong>matplotlib</strong> to make a figure object named myfigure, the plot is built into this object.  Every call to a method in <code class="docutils literal notranslate"><span class="pre">plt</span></code> adds content to <code class="docutils literal notranslate"><span class="pre">myfigure</span></code> until we send the instruction to render the plot (<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>)</p>
-<p>The next portion of the script builds the plot:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plt.bar(flavors, cartons, color =&#39;orange&#39;, width = 0.4) # Build a bar chart, plot series flavor on x-axis, plot series carton on y-axis.  Make the bars orange, set bar width (units unspecified)
-plt.xlabel(&quot;Flavors&quot;) # Label the x-axis as Flavors
-plt.ylabel(&quot;No. of Cartons in Stock&quot;) # Label the x-axis as Flavors
-plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
-</pre></div>
-</div>
-<p>This last statement renders the plot to the graphics device (probably localhost in the web browser)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plt.show() 
-</pre></div>
-</div>
-<hr class="docutils" />
-<p>Now lets add another set of categories to the plot and see what happens</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Strawberry&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Vanilla&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="n">eaters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cats&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Dogs&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Ferrets&#39;</span><span class="p">:</span><span class="mi">19</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
-
-<span class="n">flavors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># make a list object based on flavors</span>
-<span class="n">cartons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># make a list object based on carton count -- assumes 1:1 association!</span>
-
-<span class="n">animals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eaters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> 
-<span class="n">beasts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eaters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> 
-<span class="n">myfigure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
-
-<span class="c1"># Built the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">flavors</span><span class="p">,</span> <span class="n">cartons</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">animals</span><span class="p">,</span> <span class="n">beasts</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flavors&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Counts: Cartons and Beasts&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Current Ice Cream in Storage&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_21_0.png" src="../../_images/lesson14_21_0.png" />
-</div>
-</div>
-<hr class="docutils" />
-<p>Now suppose we want horizontal bars we can search pyplot for such a thing.  If one types horizontal bar chart into the pyplot search engine there is a link that leads to:</p>
-<p><img alt="" src="../../_images/SearchPyplot.png" /></p>
-<p>Which has the right look!  If we examine the script there is a method called <code class="docutils literal notranslate"><span class="pre">barh</span></code> so lets try that.</p>
-<p><strong>Note</strong> Use the search engines to find out things you need to accomplish a task</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Strawberry&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Vanilla&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="n">eaters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cats&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Dogs&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Ferrets&#39;</span><span class="p">:</span><span class="mi">19</span><span class="p">}</span> <span class="c1"># build a data model </span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
-
-<span class="n">flavors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># make a list object based on flavors</span>
-<span class="n">cartons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ice_cream</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># make a list object based on carton count -- assumes 1:1 association!</span>
-
-<span class="n">animals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eaters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> 
-<span class="n">beasts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eaters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> 
-<span class="n">myfigure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
-
-<span class="c1"># Built the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">flavors</span><span class="p">,</span> <span class="n">cartons</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">animals</span><span class="p">,</span> <span class="n">beasts</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flavors&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Counts: Cartons and Beasts&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Current Ice Cream in Storage&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_23_0.png" src="../../_images/lesson14_23_0.png" />
-</div>
-</div>
-<hr class="docutils" />
-<p>Now using pandas, we can build bar charts a bit easier.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">my_data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Flavor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;Strawberry&#39;</span><span class="p">,</span> <span class="s1">&#39;Vanilla&#39;</span><span class="p">],</span>
-    <span class="s2">&quot;Number of Cartons&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-          <span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_data</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Flavor</th>
-      <th>Number of Cartons</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Chocolate</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Strawberry</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Vanilla</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Flavor&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Number of Cartons&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Flavor&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_26_1.png" src="../../_images/lesson14_26_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Flavor&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Number of Cartons&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># rotate the category labels</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Flavor&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_27_1.png" src="../../_images/lesson14_27_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  
-  
-   
-<span class="c1"># creating the dataset </span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;Java&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>  
-        <span class="s1">&#39;Python&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span> 
-<span class="n">courses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> 
-<span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> 
-   
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
-  
-<span class="c1"># creating the bar plot </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">courses</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;maroon&#39;</span><span class="p">,</span>  
-        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> 
-  
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Courses offered&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;No. of students enrolled&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Students enrolled in different courses&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_28_0.png" src="../../_images/lesson14_28_0.png" />
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="line-charts">
-<h3>Line Charts<a class="headerlink" href="#line-charts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="line-charts-using-matplotlib">
+<h3>Line Charts using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#line-charts-using-matplotlib" title="Permalink to this headline">¶</a></h3>
 <p>A line chart or line plot or line graph or curve chart is a type of chart which displays information as a series of data points called ‘markers’ connected by straight line segments.</p>
 <p>It is a basic type of chart common in many fields. It is similar to a scatter plot (below) except that the measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments.</p>
 <p>A line chart is often used to visualize a trend in data over intervals of time – a time series – thus the line is often drawn chronologically.</p>
@@ -922,6 +652,14 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 <p>Show the relationship between time and speed.  Is the relationship indicating acceleration? How much?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the package</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create two lists; time  and speed.</span>
 <span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">6.0</span><span class="p">]</span>
 <span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mf">45.6</span><span class="p">]</span>
@@ -939,7 +677,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_31_0.png" src="../../_images/lesson14_31_0.png" />
+<img alt="../../_images/lesson14_18_0.png" src="../../_images/lesson14_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -954,7 +692,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_32_0.png" src="../../_images/lesson14_32_0.png" />
+<img alt="../../_images/lesson14_19_0.png" src="../../_images/lesson14_19_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -977,7 +715,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_33_0.png" src="../../_images/lesson14_33_0.png" />
+<img alt="../../_images/lesson14_20_0.png" src="../../_images/lesson14_20_0.png" />
 </div>
 </div>
 </div>
@@ -1064,7 +802,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;AGE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson14_36_1.png" src="../../_images/lesson14_36_1.png" />
+<img alt="../../_images/lesson14_23_1.png" src="../../_images/lesson14_23_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1078,7 +816,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;AGE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson14_37_1.png" src="../../_images/lesson14_37_1.png" />
+<img alt="../../_images/lesson14_24_1.png" src="../../_images/lesson14_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1095,7 +833,7 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_38_0.png" src="../../_images/lesson14_38_0.png" />
+<img alt="../../_images/lesson14_25_0.png" src="../../_images/lesson14_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1108,378 +846,9 @@ plt.title(&quot;Current Ice Cream in Storage&quot;) # Title for the whole plot
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_39_0.png" src="../../_images/lesson14_39_0.png" />
+<img alt="../../_images/lesson14_26_0.png" src="../../_images/lesson14_26_0.png" />
 </div>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="scatter-plots">
-<h3>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
-<p>A scatter plot (also called a scatterplot, scatter graph, scatter chart, scattergram, or scatter diagram) is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the points are coded (color/shape/size), one additional variable can be displayed. The data are displayed as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis.</p>
-<p>A scatter plot can be used either when one continuous variable that is under the control of the experimenter and the other depends on it or when both continuous variables are independent. If a parameter exists that is systematically incremented and/or decremented by the other, it is called the control parameter or independent variable and is customarily plotted along the horizontal axis. The measured or dependent variable is customarily plotted along the vertical axis. If no dependent variable exists, either type of variable can be plotted on either axis and a scatter plot will illustrate only the degree of correlation (not causation) between two variables.</p>
-<p>A scatter plot can suggest various kinds of correlations between variables with a certain confidence interval. For example, weight and height, weight would be on y axis and height would be on the x axis.
-Correlations may be positive (rising), negative (falling), or null (uncorrelated).
-If the pattern of dots slopes from lower left to upper right, it indicates a positive correlation between the variables being studied.
-If the pattern of dots slopes from upper left to lower right, it indicates a negative correlation.</p>
-<p>A line of best fit (alternatively called ‘trendline’) can be drawn in order to study the relationship between the variables. An equation for the correlation between the variables can be determined by established best-fit procedures. For a linear correlation, the best-fit procedure is known as linear regression and is guaranteed to generate a correct solution in a finite time. No universal best-fit procedure is guaranteed to generate a  solution for arbitrary relationships.
-A scatter plot is also very useful when we wish to see how two comparable data sets agree and to show nonlinear relationships between variables.</p>
-<p>Furthermore, if the data are represented by a mixture model of simple relationships, these relationships will be visually evident as superimposed patterns.</p>
-<p>Scatter charts can be built in the form of bubble, marker, or/and line charts.</p>
-<p>Much of the above is verbatim/adapted from: <a class="reference external" href="https://en.wikipedia.org/wiki/Scatter_plot">https://en.wikipedia.org/wiki/Scatter_plot</a></p>
-<p>The example below uses a database table from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson12/galton_subset.csv">galton_subset.csv</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1.  A data file containing heights of fathers, mothers, and sons is to be examined</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;galton_subset.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;child&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;son&#39;</span><span class="p">]</span> <span class="p">;</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;son&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># rename son to child - got to imagine there are some daughters</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>father</th>
-      <th>mother</th>
-      <th>child</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>78.5</td>
-      <td>67.0</td>
-      <td>73.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>75.5</td>
-      <td>66.5</td>
-      <td>73.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>75.0</td>
-      <td>64.0</td>
-      <td>71.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>75.0</td>
-      <td>64.0</td>
-      <td>70.5</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>75.0</td>
-      <td>58.5</td>
-      <td>72.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build some lists</span>
-<span class="n">daddy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;father&#39;</span><span class="p">]</span> <span class="p">;</span> <span class="n">mommy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mother&#39;</span><span class="p">]</span> <span class="p">;</span> <span class="n">baby</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;child&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myfamily</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby</span><span class="p">,</span> <span class="n">daddy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># basic scatter plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_43_0.png" src="../../_images/lesson14_43_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looks lousy, needs some labels</span>
-<span class="n">myfamily</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby</span><span class="p">,</span> <span class="n">daddy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Father&#39;</span><span class="p">)</span> <span class="c1"># one plot series</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby</span><span class="p">,</span> <span class="n">mommy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mother&#39;</span><span class="p">)</span> <span class="c1"># two plot series</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Child&#39;s height&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Parents&#39; height&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># render the two plots</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lesson14_44_0.png" src="../../_images/lesson14_44_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat in pandas - The dataframe already is built</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;father&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;child&#39;, ylabel=&#39;father&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_46_1.png" src="../../_images/lesson14_46_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;father&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Father&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mother&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Child&#39;s height&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Parents&#39; Height&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &quot;Parents&#39; Height&quot;)
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_47_1.png" src="../../_images/lesson14_47_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;father&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;child&#39;, ylabel=&#39;father&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_48_1.png" src="../../_images/lesson14_48_1.png" />
-</div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="histograms">
-<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
-<p>Quoting from <a class="reference external" href="https://en.wikipedia.org/wiki/Histogram">https://en.wikipedia.org/wiki/Histogram</a></p>
-<p>“A histogram is an approximate representation of the distribution of numerical data. It was first introduced by Karl Pearson.[1] To construct a histogram, the first step is to “bin” (or “bucket”) the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size.</p>
-<p>If the bins are of equal size, a rectangle is erected over the bin with height proportional to the frequency—the number of cases in each bin. A histogram may also be normalized to display “relative” frequencies. It then shows the proportion of cases that fall into each of several categories, with the sum of the heights equaling 1.</p>
-<p>However, bins need not be of equal width; in that case, the erected rectangle is defined to have its area proportional to the frequency of cases in the bin. The vertical axis is then not the frequency but frequency density—the number of cases per unit of the variable on the horizontal axis. Examples of variable bin width are displayed on Census bureau data below.</p>
-<p>As the adjacent bins leave no gaps, the rectangles of a histogram touch each other to indicate that the original variable is continuous.</p>
-<p>Histograms give a rough sense of the density of the underlying distribution of the data, and often for density estimation: estimating the probability density function of the underlying variable. The total area of a histogram used for probability density is always normalized to 1. If the length of the intervals on the x-axis are all 1, then a histogram is identical to a relative frequency plot.</p>
-<p>A histogram can be thought of as a simplistic kernel density estimation, which uses a kernel to smooth frequencies over the bins. This yields a smoother probability density function, which will in general more accurately reflect distribution of the underlying variable. The density estimate could be plotted as an alternative to the histogram, and is usually drawn as a curve rather than a set of boxes. Histograms are nevertheless preferred in applications, when their statistical properties need to be modeled. The correlated variation of a kernel density estimate is very difficult to describe mathematically, while it is simple for a histogram where each bin varies independently.</p>
-<p>An alternative to kernel density estimation is the average shifted histogram, which is fast to compute and gives a smooth curve estimate of the density without using kernels.</p>
-<p>The histogram is one of the seven basic tools of quality control.</p>
-<p>Histograms are sometimes confused with bar charts. A histogram is used for continuous data, where the bins represent ranges of data, while a bar chart is a plot of categorical variables. Some authors recommend that bar charts have gaps between the rectangles to clarify the distinction.”</p>
-<p>The example below uses a database table from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson12/top_movies.csv">top_movies.csv</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;top_movies.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Title</th>
-      <th>Studio</th>
-      <th>Gross</th>
-      <th>Gross (Adjusted)</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Star Wars: The Force Awakens</td>
-      <td>Buena Vista (Disney)</td>
-      <td>906723418</td>
-      <td>906723400</td>
-      <td>2015</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Avatar</td>
-      <td>Fox</td>
-      <td>760507625</td>
-      <td>846120800</td>
-      <td>2009</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Titanic</td>
-      <td>Paramount</td>
-      <td>658672302</td>
-      <td>1178627900</td>
-      <td>1997</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Jurassic World</td>
-      <td>Universal</td>
-      <td>652270625</td>
-      <td>687728000</td>
-      <td>2015</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Marvel's The Avengers</td>
-      <td>Buena Vista (Disney)</td>
-      <td>623357910</td>
-      <td>668866600</td>
-      <td>2012</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Gross&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:title={&#39;center&#39;:&#39;Gross&#39;}&gt;]], dtype=object)
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_51_1.png" src="../../_images/lesson14_51_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Gross&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:title={&#39;center&#39;:&#39;Gross&#39;}&gt;]], dtype=object)
-</pre></div>
-</div>
-<img alt="../../_images/lesson14_53_1.png" src="../../_images/lesson14_53_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Gross</th>
-      <th>Gross (Adjusted)</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>2.000000e+02</td>
-      <td>2.000000e+02</td>
-      <td>200.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>2.216196e+08</td>
-      <td>5.041983e+08</td>
-      <td>1986.620000</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>1.441574e+08</td>
-      <td>2.159814e+08</td>
-      <td>20.493548</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>9.183673e+06</td>
-      <td>3.222619e+08</td>
-      <td>1921.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1.087824e+08</td>
-      <td>3.677804e+08</td>
-      <td>1973.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>2.001273e+08</td>
-      <td>4.388570e+08</td>
-      <td>1990.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>3.069535e+08</td>
-      <td>5.512131e+08</td>
-      <td>2003.250000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>9.067234e+08</td>
-      <td>1.757788e+09</td>
-      <td>2015.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="references">
@@ -1526,7 +895,7 @@ A scatter plot is also very useful when we wish to see how two comparable data s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lesson14_57_0.png" src="../../_images/lesson14_57_0.png" />
+<img alt="../../_images/lesson14_29_0.png" src="../../_images/lesson14_29_0.png" />
 </div>
 </div>
 <p>Now lets put the plotting script into a function so we can make line charts of any two numeric lists</p>
@@ -1560,7 +929,7 @@ A scatter plot is also very useful when we wish to see how two comparable data s
 &lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson14_60_1.png" src="../../_images/lesson14_60_1.png" />
+<img alt="../../_images/lesson14_32_1.png" src="../../_images/lesson14_32_1.png" />
 </div>
 </div>
 </div>
@@ -1583,6 +952,18 @@ A scatter plot is also very useful when we wish to see how two comparable data s
     <span class="k">return</span> <span class="c1">#null return</span>
 </pre></div>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-14">
+<h2>Laboratory 14<a class="headerlink" href="#laboratory-14" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 15 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14.html">Laboratory 14.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 15 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14.ipynb">Laboratory 14.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-14">
+<h2>Exercise Set 14<a class="headerlink" href="#exercise-set-14" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 15 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14-TH.html">Exercise 14.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 15 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14-TH.ipynb">Exercise Set 14.ipynb</a></p>
 </div>
 </div>
 
@@ -1625,10 +1006,10 @@ A scatter plot is also very useful when we wish to see how two comparable data s
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson15.html" title="next page">
+        <a class="right-next" href="../lesson15/lesson15.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 15: Working with files</p>
+                <p class="prevnext-title">15: The <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

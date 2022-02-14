@@ -194,13 +194,19 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson15.html">
-   Lesson 15: Working with files
+  <a class="reference internal" href="../lesson15/lesson15.html">
+   15: The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   package
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson16.html">
-   Lesson 16: File Manipulation
+  <a class="reference internal" href="../lesson16/lesson16.html">
+   16: Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -401,36 +407,166 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-systems-of-equations-optional">
-   Nonlinear Systems of Equations (Optional)
+  <a class="reference internal nav-link" href="#linear-systems-applications">
+   Linear Systems Applications
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-variable-extension-of-newtons-method">
-     Multiple-variable extension of Newton’s Method
+    <a class="reference internal nav-link" href="#curve-fitting">
+     Curve-Fitting
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-using-analytical-derivatives">
-     Example using Analytical Derivatives
+    <a class="reference internal nav-link" href="#linear-flow-of-heat">
+     Linear Flow of Heat
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-systems-applications">
+   Nonlinear Systems Applications
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative">
-     Quasi-Newton Method using Finite Difference Approximations for the Derivative
+    <a class="reference internal nav-link" href="#newton-raphson-method">
+     Newton-Raphson Method
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-using-analytical-derivatives">
+       Example using Analytical Derivatives
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative">
+       Quasi-Newton Method using Finite Difference Approximations for the Derivative
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercises">
      Exercises
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pipeline-network-simulation">
+     Pipeline Network Simulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#background-pipelines-and-networks">
+       Background: Pipelines and Networks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pipe-networks-topology">
+       Pipe Networks – Topology
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continunity-at-a-node">
+       Continunity (at a node)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#energy-loss-along-a-link">
+       Energy Loss (along a link)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#velocity-head">
+       Velocity Head
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#added-head-pumps">
+       Added Head — Pumps
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extracted-head-turbines">
+       Extracted Head — Turbines
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pipe-head-loss-models">
+       Pipe Head Loss Models
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#laminar-flow-eqn-2-36-pg-17-cite-chin2006">
+         Laminar flow (Eqn 2.36, pg. 17~\cite{chin2006}) :
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006">
+         Hydraulically Smooth Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006">
+         Hydraulically Rough Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006">
+         Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17~\cite{chin2006}):
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006">
+         Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19~\cite{chin2006}):
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pipe-networks-solution-methods">
+     Pipe Networks Solution Methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#network-analysis-example">
+     Network Analysis Example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#script-structure">
+       Script Structure
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#support-functions">
+       Support Functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#augmented-and-jacobian-matrices">
+       Augmented and Jacobian Matrices
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stopping-criteria-and-solution-report">
+       Stopping Criteria, and Solution Report}
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-advanced-optional">
+     Exercise 2 (Advanced; optional)
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-of-non-linear-solvers-pipeline-network-simulation">
-   Application of Non-Linear Solvers:  Pipeline Network Simulation
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -460,8 +596,17 @@
 <li><p>linear heat flow</p></li>
 <li><p>network flow (Optional; Non-linear System of equations)</p></li>
 </ul>
-<div class="section" id="nonlinear-systems-of-equations-optional">
-<h2>Nonlinear Systems of Equations (Optional)<a class="headerlink" href="#nonlinear-systems-of-equations-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-systems-applications">
+<h2>Linear Systems Applications<a class="headerlink" href="#linear-systems-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="curve-fitting">
+<h3>Curve-Fitting<a class="headerlink" href="#curve-fitting" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="linear-flow-of-heat">
+<h3>Linear Flow of Heat<a class="headerlink" href="#linear-flow-of-heat" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="nonlinear-systems-applications">
+<h2>Nonlinear Systems Applications<a class="headerlink" href="#nonlinear-systems-applications" title="Permalink to this headline">¶</a></h2>
 <p>Non-linear systems are extensions of the linear systems cases except the systems involve products and powers of the unknown variables. Non-linear problems are often quite difficult to manage, especially when the systems are large (many rows and many variables).
 The solution to non-linear systems, if non-trivial or even possible, are usually iterative. Within the iterative steps is a linearization component – these linear systems which are intermediate computations within the overall solution process are treated by an appropriate linear system method (direct or iterative).
 Consider the system below:</p>
@@ -625,8 +770,8 @@ If the system is convergent (not all are) then if we update, and repeat  we will
     <span class="k">return</span><span class="p">(</span><span class="n">adotb</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="multiple-variable-extension-of-newtons-method">
-<h3>Multiple-variable extension of Newton’s Method<a class="headerlink" href="#multiple-variable-extension-of-newtons-method" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="newton-raphson-method">
+<h3>Newton-Raphson Method<a class="headerlink" href="#newton-raphson-method" title="Permalink to this headline">¶</a></h3>
 <p>This section presents the Newton-Raphson method as a way to sometimes solve systems of non-linear equations.</p>
 <p>Consider an example where the function <span class="math notranslate nohighlight">\(\textbf{f}\)</span> is a vector-valued function of a vector argument.</p>
 <p><span class="math notranslate nohighlight">\(
@@ -708,9 +853,8 @@ For example for a 2-value function of 2 arguments (as our example above)</p>
 <li><p>Compute the update <span class="math notranslate nohighlight">\(\mathbf{x}_{k+1} = \mathbf{x}_{k} - (\mathbf{x}_{k+1}-\mathbf{x}_{k}) \)</span>, then</p></li>
 <li><p>Move the update into the guess vector <span class="math notranslate nohighlight">\(\mathbf{x}_{k} &lt;=\mathbf{x}_{k+1}\)</span> =and repeat step 1. Stop after too many steps.</p></li>
 </ol>
-</div>
 <div class="section" id="example-using-analytical-derivatives">
-<h3>Example using Analytical Derivatives<a class="headerlink" href="#example-using-analytical-derivatives" title="Permalink to this headline">¶</a></h3>
+<h4>Example using Analytical Derivatives<a class="headerlink" href="#example-using-analytical-derivatives" title="Permalink to this headline">¶</a></h4>
 <p>Now to complete the example we will employ this algorithm.</p>
 <p>The function (repeated)</p>
 <p><span class="math notranslate nohighlight">\(
@@ -873,7 +1017,7 @@ Exiting Iteration :  6
 </div>
 </div>
 <div class="section" id="quasi-newton-method-using-finite-difference-approximations-for-the-derivative">
-<h3>Quasi-Newton Method using Finite Difference Approximations for the Derivative<a class="headerlink" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative" title="Permalink to this headline">¶</a></h3>
+<h4>Quasi-Newton Method using Finite Difference Approximations for the Derivative<a class="headerlink" href="#quasi-newton-method-using-finite-difference-approximations-for-the-derivative" title="Permalink to this headline">¶</a></h4>
 <p>The next variant is to approximate the derivatives – usually a Finite-Difference approximation is used, either forward, backward, or centered differences – generally determined based on the actual behavior of the functions themselves or by trial and error.</p>
 <p>For really huge systems, we usually make the program itself make the adaptions as it proceeds.</p>
 <p>The coding for a finite-difference representation of a Jacobian is shown in Listing that follows
@@ -1006,6 +1150,7 @@ Exiting Iteration :  6
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="exercises">
 <h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
 <p>Write a script that forward defines the multi-variate functions and implements the Newton-Raphson technique.
@@ -1044,9 +1189,8 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 \)</span></p>
 <p>Repeat the exercise, except use finite-differences to approximate the derivatives.</p>
 </div>
-</div>
-<div class="section" id="application-of-non-linear-solvers-pipeline-network-simulation">
-<h2>Application of Non-Linear Solvers:  Pipeline Network Simulation<a class="headerlink" href="#application-of-non-linear-solvers-pipeline-network-simulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pipeline-network-simulation">
+<h3>Pipeline Network Simulation<a class="headerlink" href="#pipeline-network-simulation" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The network simulator uses input files to convey the network to the program These files are listed below.</p>
@@ -1054,40 +1198,317 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 <blockquote>
 <div><p>PipeNetwork.txt</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
-<span class="mi">11</span>
-<span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span>
-<span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> 
-<span class="mi">300</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">300</span> <span class="mi">150</span> <span class="mi">300</span>
-<span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">200</span>
+<span class="mf">1.00</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.5</span>
+<span class="mi">800</span> <span class="mi">800</span> <span class="mi">700</span> <span class="mi">700</span> <span class="mi">800</span> <span class="mi">600</span>
+<span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span>
 <span class="mf">0.000011</span>
-<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
-<span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">10</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">300</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">100</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
 
 </pre></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Pipe Network Simulation</span>
+<div class="section" id="background-pipelines-and-networks">
+<h4>Background: Pipelines and Networks<a class="headerlink" href="#background-pipelines-and-networks" title="Permalink to this headline">¶</a></h4>
+<p>Pipe networks are analyzed for head losses in order to size pumps, determine demand management strategies, and precict minimum pressures in the system.</p>
+</div>
+<div class="section" id="pipe-networks-topology">
+<h4>Pipe Networks – Topology<a class="headerlink" href="#pipe-networks-topology" title="Permalink to this headline">¶</a></h4>
+<p>Network topology refers to the layout and connections.<br />
+Networks are built of nodes (junctions) and arcs (links).</p>
+</div>
+<div class="section" id="continunity-at-a-node">
+<h4>Continunity (at a node)<a class="headerlink" href="#continunity-at-a-node" title="Permalink to this headline">¶</a></h4>
+<p>Water is considered incompressible in steady flow in pipelines and pipe networks, and the
+conservation of mass reduces to the volumetric flow rate, <span class="math notranslate nohighlight">\(Q\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(Q = AV\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the cross sectional of the pipe, and <span class="math notranslate nohighlight">\(V\)</span> is the mean section velocity. Typical units
+for discharge is liters per second (lps), gallons per minute (gpm), cubic meters per second
+(cms), cubic feet per second (cfs), and million gallons per day (mgd).</p>
+<p>The continuity equation in two cross-sections of a pipe as depicted in <a class="reference internal" href="#continuity-across-sections"><span class="std std-numref">Fig. 8</span></a> is</p>
+<p><span class="math notranslate nohighlight">\( A_1V_1 = A_2V_2 \)</span></p>
+<p>Junctions (nodes) are where two or more pipes join together.
+A three-pipe junction node with constant external demand is shown in <a class="reference internal" href="#continuity-at-node"><span class="std std-numref">Fig. 9</span></a>.</p>
+<p>The continuity equation for the
+junction node is
+\begin{equation}
+Q_1 - Q_2 - Q_3 - D = 0
+\end{equation}</p>
+<div class="figure align-default" id="continuity-across-sections">
+<a class="reference internal image-reference" href="../../_images/continuity-across-sections.png"><img alt="../../_images/continuity-across-sections.png" src="../../_images/continuity-across-sections.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Continuity of mass (discharge) across a change in cross section</span><a class="headerlink" href="#continuity-across-sections" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="continuity-at-node">
+<a class="reference internal image-reference" href="../../_images/continuity-at-node.png"><img alt="../../_images/continuity-at-node.png" src="../../_images/continuity-at-node.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Continuity of mass (discharge) across a node (junction)</span><a class="headerlink" href="#continuity-at-node" title="Permalink to this image">¶</a></p>
+</div>
+<p>In pipe network analysis, all demands on the system are stipulated to belocated at junctions (nodes), and the flow connecting junctions is assumed to be uniform across the cross sections (so that mean velocities apply).  If a substantial demand is located between nodes, then an additional node is established at the demand location.</p>
+</div>
+<div class="section" id="energy-loss-along-a-link">
+<h4>Energy Loss (along a link)<a class="headerlink" href="#energy-loss-along-a-link" title="Permalink to this headline">¶</a></h4>
+<p>The equation below is the one-dimensional steady flow form of the energy equation typically applied for pressurized conduit hydraulics.</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{p_1}{\rho g}+\alpha_1 \frac{V_1^2}{2g} + z_1 + h_p =
+\frac{p_2}{\rho g}+\alpha_2 \frac{V_2^2}{2g} + z_2 + h_t + h_l
+\label{eqn:closed-conduit-energy-equation}
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\frac{p}{\rho g}\)</span> is the pressure head at a location, <span class="math notranslate nohighlight">\(\alpha \frac{V^2}{2g}\)</span> is the velocity head at a location, <span class="math notranslate nohighlight">\(z\)</span> is the elevation, <span class="math notranslate nohighlight">\(h_p\)</span> is the added head from a pump, <span class="math notranslate nohighlight">\(h_t\)</span> is the added head extracted by a turbine, and <span class="math notranslate nohighlight">\(h_l\)</span> is the head loss between sections 1 and 2.   <a class="reference internal" href="#closed-conduit-energy"><span class="std std-numref">Fig. 10</span></a> is a sketch that illustrates the various components in the energy equation.</p>
+<div class="figure align-default" id="closed-conduit-energy">
+<a class="reference internal image-reference" href="../../_images/closed-conduit-energy.png"><img alt="../../_images/closed-conduit-energy.png" src="../../_images/closed-conduit-energy.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Definition sketch for energy equation</span><a class="headerlink" href="#closed-conduit-energy" title="Permalink to this image">¶</a></p>
+</div>
+<p>In network analysis this energy equation is applied to a link that joins two nodes.
+Pumps and turbines would be treated as separate components (links) and their hydraulic behavior must be supplied using their respective pump/turbine curves.</p>
+</div>
+<div class="section" id="velocity-head">
+<h4>Velocity Head<a class="headerlink" href="#velocity-head" title="Permalink to this headline">¶</a></h4>
+<p>The velocity in <span class="math notranslate nohighlight">\(\alpha \frac{V^2}{2g}\)</span> is the mean section velocity and is the ratio of discharge to flow area.  The kinetic energy correction coefficient is
+<span class="math notranslate nohighlight">\(\begin{equation}
+\alpha=\frac{\int_A u^3 dA}{V^3 A}
+\label{eqn:kinetic-energy-correction}
+\end{equation}
+\)</span>
+where <span class="math notranslate nohighlight">\(u\)</span> is the point velocity in the cross section (usually measured relative to the centerline or the pipe wall; axial symmetry is assumed).   Generally values of <span class="math notranslate nohighlight">\(\alpha\)</span> are 2.0 if the flow is laminar, and approach unity (1.0) for turbulent flow.  In most water distribution systems the flow is usually turbulent so <span class="math notranslate nohighlight">\(\alpha\)</span> is assumed to be unity and the velocity head is simply <span class="math notranslate nohighlight">\(\frac{V^2}{2g}\)</span>.</p>
+</div>
+<div class="section" id="added-head-pumps">
+<h4>Added Head — Pumps<a class="headerlink" href="#added-head-pumps" title="Permalink to this headline">¶</a></h4>
+<p>The head supplied by a pump is related to the mechanical power supplied to the flow.   Equation \ref{eqn:pump-power} is the relationship of mechanical power to added pump head.
+<span class="math notranslate nohighlight">\(
+\begin{equation}
+\eta P=Q\rho g h_p
+\label{eqn:pump-power}
+\end{equation}
+\)</span>
+where the power supplied to the motor is <span class="math notranslate nohighlight">\(P\)</span> and the  “wire-to-water” efficiency is <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
+<p>If the relationship is re-written in terms of added head(A negative head loss!} the pump curve is
+<span class="math notranslate nohighlight">\(
+\begin{equation}
+h_p = \frac{\eta P}{Q\rho g}
+\label{eqn:pump-curve}
+\end{equation}
+\)</span></p>
+<p>This relationship illustrates that as discharge increases (for a fixed power) the added head decreases.
+Power scales at about the cube of discharge, so pump curves for computational application typically have a mathematical structure like
+<span class="math notranslate nohighlight">\(
+\begin{equation}
+h_p =  H_{\text{shutoff}} - K_{\text{pump}}Q^{\text{exponent}}
+\label{eqn:pump-curve-2}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="extracted-head-turbines">
+<h4>Extracted Head — Turbines<a class="headerlink" href="#extracted-head-turbines" title="Permalink to this headline">¶</a></h4>
+<p>The head recovered by a turbine is also an “added head” but appears on the loss side of the equation.<br />
+The power that can be recovered by a turbine (again using the concept of “water-to-wire” efficiency is
+<span class="math notranslate nohighlight">\(
+\begin{equation}
+P=\eta Q\rho g h_t
+\label{eqn:turbine-power}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="pipe-head-loss-models">
+<h4>Pipe Head Loss Models<a class="headerlink" href="#pipe-head-loss-models" title="Permalink to this headline">¶</a></h4>
+<p>The Darcy-Weisbach, Chezy-Manning, and Hazen-Williams formulas are relationships between physical pipe characteristics, flow parameters, and head loss.   The Darcy-Weisbach formula is the most consistent with the energy equation formulation being derivable (in structural form) from elementary principles (continunity and linear momentum), whereas the other two are empirical (despite the empirical nature of these two models all three are of practical use, and given a choice select your favorite!)</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+h_{L_f}=f \frac{L}{D} \frac{V^2}{2g}
+\label{eqn:dw-headloss}
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(h_{L_f}\)</span> is the head loss from pipe friction, <span class="math notranslate nohighlight">\(f\)</span> is a dimensionless friction factor, <span class="math notranslate nohighlight">\(L\)</span> is the pipe length, <span class="math notranslate nohighlight">\(D\)</span> is the pipe characteristic diameter, <span class="math notranslate nohighlight">\(V\)</span> is the mean section velocity, and <span class="math notranslate nohighlight">\(g\)</span> is the gravitational acceleration.</p>
+<p>The friction factor, <span class="math notranslate nohighlight">\(f\)</span>, is a function of Reynolds number <span class="math notranslate nohighlight">\(Re_D\)</span> and the roughness ratio <span class="math notranslate nohighlight">\(\frac{k_s}{D}\)</span>.
+<span class="math notranslate nohighlight">\(
+\begin{equation}
+f=\sigma(Re_D,\frac{k_s}{D})
+\label{eqn:friction-factor-dimensionless}
+\end{equation}
+\)</span></p>
+<p>The structure of <span class="math notranslate nohighlight">\(\sigma\)</span> is determined experimentally.  Over the last century the structure is generally accepted to be one of the following depending on flow conditions and pipe properties</p>
+<div class="section" id="laminar-flow-eqn-2-36-pg-17-cite-chin2006">
+<h5>Laminar flow (Eqn 2.36, pg. 17~\cite{chin2006}) :<a class="headerlink" href="#laminar-flow-eqn-2-36-pg-17-cite-chin2006" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+f=\frac{64}{Re_D}
+\label{eqn:friction-factor-laminar}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006">
+<h5>Hydraulically Smooth Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):<a class="headerlink" href="#hydraulically-smooth-pipes-eqn-2-34-pg-16-cite-chin2006" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\frac{1}{\sqrt{f}}=-2 log_{10} (\frac{2.51}{Re_d \sqrt{f} })
+\label{eqn:friction-factor-smooth}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006">
+<h5>Hydraulically Rough Pipes(Eqn 2.34 pg. 16~\cite{chin2006}):<a class="headerlink" href="#hydraulically-rough-pipes-eqn-2-34-pg-16-cite-chin2006" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7})
+\label{eqn:friction-factor-rough}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006">
+<h5>Transitional Pipes (Colebrook-White Formula)(Eqn 2.35 pg. 17~\cite{chin2006}):<a class="headerlink" href="#transitional-pipes-colebrook-white-formula-eqn-2-35-pg-17-cite-chin2006" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{1}{\sqrt{f}}=-2 log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{2.51}{Re_d \sqrt{f} } )
+\label{eqn:friction-factor-CW}
+\end{equation}
+\)</span></p>
+</div>
+<div class="section" id="transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006">
+<h5>Transitional Pipes (Jain Formula)(Eqn 2.39 pg. 19~\cite{chin2006}):<a class="headerlink" href="#transitional-pipes-jain-formula-eqn-2-39-pg-19-cite-chin2006" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+f=\frac{0.25}{[log_{10} (\frac{\frac{k_e}{D}} {3.7} + \frac{5.74}{Re_d^{0.9} } )]  ^2}
+\label{eqn:friction-factor-Jain}
+\end{equation}
+\)</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="pipe-networks-solution-methods">
+<h3>Pipe Networks Solution Methods<a class="headerlink" href="#pipe-networks-solution-methods" title="Permalink to this headline">¶</a></h3>
+<p>Several methods are used to produce solutions (estimates of discharge, head loss, and pressure) in a network.<br />
+An early one, that only involves analysis of loops is the Hardy-Cross method.<br />
+A later one, more efficient, is a Newton-Raphson method that uses node equations to balance discharges and demands, and loop equations to balance head losses.</p>
+<p>However, a rather ingenious method exists developed by \cite{Haman1971}, where the flow distribution and head values are determined simultaneously.   The task here is to  outline the \cite{Haman1971} method on the problem below – first some necessary definitions and analysis.</p>
+<p>The fundamental procedure is:</p>
+<ul class="simple">
+<li><p>Continuity is written at nodes (node equations).</p></li>
+<li><p>Energy loss (gain) is written along links (pipe equations).</p></li>
+<li><p>The entire set of equations is solved simultaneously.</p></li>
+</ul>
+</div>
+<div class="section" id="network-analysis-example">
+<h3>Network Analysis Example<a class="headerlink" href="#network-analysis-example" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="pipe-net-hybrid">
+<a class="reference internal image-reference" href="../../_images/pipe-net-hybrid.png"><img alt="../../_images/pipe-net-hybrid.png" src="../../_images/pipe-net-hybrid.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Pipe network for illustrative example with supply and demands identified.  Pipe dimensions and diameters are also depicted.</span><a class="headerlink" href="#pipe-net-hybrid" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#pipe-net-hybrid"><span class="std std-numref">Fig. 11</span></a> is a sketch of the problem that will be used.<br />
+The network supply is the fixed-grade node in the upper left hand corner of the drawing.<br />
+The remaining nodes (N1 – N4) have demands specified as the purple outflow arrows.
+The pipes are labeled (P1 – P6), and the red arrows indicate a positive flow direction, that is, if the flow is in the indicated direction, the numerical value of flow (or velocity) in that link would be a positive number.</p>
+<p>Define the flows in each pipe and the total head at each node as <span class="math notranslate nohighlight">\(Q_i\)</span> and <span class="math notranslate nohighlight">\(H_i\)</span> where the subscript indicates the particular component identification.  Expressed as a vector, these unknowns are:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+[Q_1, &amp; Q_2, &amp; Q_3,  &amp; Q_4, &amp; Q_5, &amp; Q_6, &amp; H_1, &amp; H_2, &amp; H_3, &amp;H_4 ]&amp; =  &amp; \textbf{x} \\
+\end{matrix}
+\)</span></p>
+<p>If we analyze continuity for each node we will have 4 equations (corresponding to each node) for continunity, for instance for Node N2 the equation is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+~&amp; Q_2 &amp; -Q_3  &amp; ~ &amp; ~ &amp; Q_6 &amp; ~ &amp; ~ &amp; ~ &amp;~ &amp; =  &amp; 4\\
+\end{matrix}
+\)</span></p>
+<p>Similarily if we define head loss in any pipe as <span class="math notranslate nohighlight">\(\Delta H_i = f \frac{8 L_i}{\pi^2 g D_i^5} |Q_i| Q_i\)</span> or <span class="math notranslate nohighlight">\(\Delta H_i = L_i Q_i\)</span>, where <span class="math notranslate nohighlight">\(L_i = f \frac{8 L_i}{\pi^2 g D_i^5} |Q_i|\)</span>, then we have 6 equations (corresponding to each pipe) for energy, for instance for Pipe (P2) the equation is:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+~&amp; -L_2Q_2&amp; ~ &amp; ~ &amp; ~ &amp; ~&amp; H_1 &amp; -H_2 &amp; ~ &amp; ~ &amp; = &amp; 0\\
+ \end{matrix}
+\)</span></p>
+<p>If we now write all the node equations then all the pipe equations we could construct the following coefficient matrix below</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The horizontal lines divide the node and the pipe equations.</p>
+</div>
+<p>The upper partition are the node equations in Q and H, the lower partition are the pipe equations in Q and H}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+\hline
+~1&amp;-1 &amp; 0  &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;0 \\
+0&amp;~1 &amp; -1  &amp; 0 &amp; 0 &amp;~1 &amp; 0 &amp; 0 &amp; 0 &amp;0 \\
+0&amp; 0 &amp; 0 &amp;~1 &amp; -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp;0 \\
+0&amp; 0 &amp;~1  &amp; 0 &amp;~1 &amp; 0 &amp; 0  &amp; 0 &amp; 0 &amp;0 \\
+\hline
+-L_1&amp; 0&amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp;0 \\
+0&amp; -L_2&amp; 0 &amp; 0 &amp; 0 &amp; 0&amp;~1 &amp; -1 &amp; 0 &amp;0 \\
+0&amp; 0&amp; -L_3 &amp; 0 &amp; 0 &amp; 0&amp; 0 &amp;~1 &amp; 0 &amp; -1 \\
+0&amp; 0&amp; 0 &amp; -L_4 &amp; 0 &amp; 0&amp;~1 &amp; 0 &amp; -1 &amp; 0 \\
+0&amp; 0&amp; 0 &amp; 0 &amp; -L_5 &amp; 0&amp; 0 &amp; 0 &amp;~1 &amp; -1 \\
+0&amp; 0&amp; 0 &amp;0 &amp; 0 &amp; -L_6&amp; 0 &amp; -1 &amp;~1 &amp; 0 \\
+\hline
+\end{matrix}
+\)</span></p>
+<p>Declare the name of this matrix <span class="math notranslate nohighlight">\(\textbf{A(x)}\)</span>, where <span class="math notranslate nohighlight">\(\textbf{x}\)</span> denotes the unknown vector of Q augmented by H as above.  Next consider the right-hand-side at the correct solution (as of yet still unknown!) as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+[0, &amp; 4, &amp; 3,  &amp; 1, &amp; -100 , &amp; 0, &amp; 0, &amp; 0, &amp; 0, &amp;0 ] = \textbf{b}\\
+\end{matrix}
+\)</span></p>
+<p>So if the coefficient matrix is correct then the following system would result:
+<span class="math notranslate nohighlight">\(
+\mathbf{A(x)} \cdot \mathbf{x} = \mathbf{b}
+\)</span></p>
+<p>which would look like</p>
+<div class="figure align-default" id="vm-system">
+<a class="reference internal image-reference" href="../../_images/VM-system.png"><img alt="../../_images/VM-system.png" src="../../_images/VM-system.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Pipe network illustrative example as Matrtx-Vector system of equations.</span><a class="headerlink" href="#vm-system" title="Permalink to this image">¶</a></p>
+</div>
+<p>Observe, the system is non-linear because the coefficient matrix depends on the current values of <span class="math notranslate nohighlight">\(Q_i\)</span> for the <span class="math notranslate nohighlight">\(L_i\)</span> terms.
+However, the system is full-rank (rows == columns) so it is a candidate for Newton-Raphson.</p>
+<p>Further observe that the upper partition from column 6 and smaller is simply the node-arc incidence matrix, and the lower partition for the same columns only contains <span class="math notranslate nohighlight">\(L_i\)</span> terms on its diagonal, the remainder is zero.<br />
+Next observe that the partition associated with heads in the node equations is the zero-matrix.</p>
+<p>Lastly (and this is important!) the lower right partition is the transpose of the node-arc incidence matrix subjected to scalar multiplication of <span class="math notranslate nohighlight">\(-1\)</span>.
+The importance is that all the information needed to find a solution is contained in the node-arc incidence matrix and the right-hand-side – the engineer does not need to identify closed loops (nor does the computer need to find closed loops).</p>
+<p>The trade-off is a much larger system of equations, however solving large systems is far easier that searching a directed graph to identify closed loops, furthermore we obtain the heads as part of the solution process.</p>
+<div class="section" id="script-structure">
+<h4>Script Structure<a class="headerlink" href="#script-structure" title="Permalink to this headline">¶</a></h4>
+<p>The script will need to accomplish several tasks including reading the node-arc incidence matrix supplied as a file and convert the strings into numeric values.  The script will also need some support functions defined before constructing the matrix. First the file for the example is:</p>
+<blockquote>
+<div><p>PipeNetwork.txt</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mf">200.0</span> <span class="mf">200.0</span> <span class="mf">200.0</span> <span class="mf">200.0</span> 
+<span class="mf">1.00</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.67</span> <span class="mf">0.5</span>
+<span class="mi">800</span> <span class="mi">800</span> <span class="mi">700</span> <span class="mi">700</span> <span class="mi">800</span> <span class="mi">600</span>
+<span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span> <span class="mf">0.00001</span>
+<span class="mf">0.000011</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">000</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
+
 </pre></div>
 </div>
+<p>The rows of the input file are:</p>
+<ul class="simple">
+<li><p>The node count.</p></li>
+<li><p>The pipe count.</p></li>
+<li><p>Pipe diameters, in feet.</p></li>
+<li><p>Pipe lengths, in feet.</p></li>
+<li><p>Pipe roughness heights, in feet.</p></li>
+<li><p>Kinematic viscosity in feet<span class="math notranslate nohighlight">\(^2\)</span>/second.</p></li>
+<li><p>Initial guess of flow rates (unbalanced OK, non-zero vital!)</p></li>
+<li><p>The next four rows are the node-arc incidence matrix.</p></li>
+<li><p>The last row is the demand (and fixed-grade node total head) vector.</p></li>
+</ul>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hydraulic Functions</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="support-functions">
+<h4>Support Functions<a class="headerlink" href="#support-functions" title="Permalink to this headline">¶</a></h4>
+<p>The Reynolds number will need to be calculated for each pipe at each iteration of the solution, so a Reynolds number function will be useful.  For circular pipes, the following equation should work,</p>
+<p><span class="math notranslate nohighlight">\(Re_D=\frac{V_i \cdot D_i }{\mu}\)</span></p>
+<p>The Jain equation (Jain, 1976) that directly computes friction factor from Reynolds number, diameter, and roughness is</p>
+<p><span class="math notranslate nohighlight">\(f= \frac{0.25}{(log_{10}(\frac{\epsilon}{3.7D}+\frac{5.74}{Re_D^{0.9}}))^2}\)</span></p>
+<p>Once you have the Reynolds number for a pipe, and the friction factor, then the head loss factor that will be used in the coefficient matrix (and the Jacobian) is</p>
+<p><span class="math notranslate nohighlight">\(k_i = \frac{8 \cdot L_i}{\pi^2 g  D_i^5}\)</span></p>
+<p>We will also find it handy to be able to compute velocity heads  from discharge and pipe diameters so we can have a velocity function as</p>
+<p><span class="math notranslate nohighlight">\(V_i = \frac{Q_i}{0.25 \cdot \pi D_i^2}\)</span></p>
+<p>These support functions are coded below (in a code cell) as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hydraulic elements prototype functions</span>
@@ -1120,13 +1541,7 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linear Solver with Pivoting </span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>We will need our linear solver:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SolveLinearSystem.py</span>
@@ -1176,13 +1591,7 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vector and Matrix Operations Support </span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>We will also find some vector-matrix manipulation functions handy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">writeM</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">ir</span><span class="p">,</span><span class="n">jc</span><span class="p">,</span><span class="n">label</span><span class="p">):</span>
@@ -1236,13 +1645,64 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="augmented-and-jacobian-matrices">
+<h4>Augmented and Jacobian Matrices<a class="headerlink" href="#augmented-and-jacobian-matrices" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="math notranslate nohighlight">\(\textbf{A(x)}\)</span> is built using the node-arc incidence matrix (which does not change), and the current values of <span class="math notranslate nohighlight">\(L_i\)</span>.<br />
+We also need to build the Jacobian of <span class="math notranslate nohighlight">\(\textbf{A(x)}\)</span> to implement the update as-per Newton-Raphson.</p>
+<p>A brief review; at the solution we can write
+<span class="math notranslate nohighlight">\(\begin{equation}
+[\mathbf{A}(\mathbf{x})] \cdot \mathbf{x} - \mathbf{b} = \mathbf{f}(\mathbf{x}) = \mathbf{0}
+\end{equation}
+\)</span></p>
+<p>Lets assume we are not at the solution, so we need a way to update the current value of <span class="math notranslate nohighlight">\(\textbf{x}\)</span>.
+Recall from Newton’s method (for univariate cases) that the update formula is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+x_{k+1}=x_{k} - (\frac{df}{dx}\mid_{x_k})^{-1} f(x_k)
+\end{equation}
+\)</span></p>
+<p>The Jacobian will play the role of the derivative, and <span class="math notranslate nohighlight">\(\textbf{x}\)</span> is now a vector (instead of a single variable).
+Division is not defined for matrices, but the multiplicative inverse is (the inverse matrix), and plays the role of division.
+Hence, the extension to the pipeline case is</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{x}_{k+1}=\mathbf{x}_{k} - [\mathbf{J}(\mathbf{x}_{k})]^{-1} \mathbf{f}(\mathbf{x}_k) 
+\end{equation}
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{J}(\mathbf{x}_{k})\)</span> is the Jacobian of the coefficient matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> evaluated at <span class="math notranslate nohighlight">\(\mathbf{x}_{k}\)</span>.<br />
+Although a bit cluttered, here is the formula for a single update step, with the matrix, demand vector, and the solution vector in their proper places.</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\mathbf{x}_{k+1}=\mathbf{x}_{k} - [\mathbf{J}(\mathbf{x}_{k})]^{-1} \{[\mathbf{A}(\mathbf{x}_k)] \cdot \mathbf{x}_k - \mathbf{b}\}
+\end{equation}
+\)</span></p>
+<p>As a practical matter we actually never invert the Jacobian, instead we solve the related Linear system of</p>
+<p><span class="math notranslate nohighlight">\(
+[\mathbf{J}(\mathbf{x}_{k})] \cdot \Delta \mathbf{x} = \{[\mathbf{A}(\mathbf{x}_k)] \cdot \mathbf{x}_k - \mathbf{b}\}
+\)</span></p>
+<p>for <span class="math notranslate nohighlight">\(\Delta\textbf{x}\)</span>, then perform the update as <span class="math notranslate nohighlight">\(\textbf{x}_{k+1} = \textbf{x}_{k} - \Delta\textbf{x}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inverting the matrix every step is computationally inefficient, and unnecessary.  As an example, solving the system in this case would at worst take 10 row operations each step, but nearly 100 row operations to invert at each step – to accomplish the same result, generate an update.  Now imagine when there are hundreds of nodes and pipes!</p>
+</div>
+<p>The Jacobian of the pipeline model is a matrix with the following properties:</p>
+<ul class="simple">
+<li><p>The partition of the matrix that corresponds to the node formulas (upper left partition) is identical to the original coefficient matrix — it will be comprised of <span class="math notranslate nohighlight">\(0~\text{or}~\pm~1\)</span> in the same pattern at the equivalent partition of the <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matrix.</p></li>
+<li><p>The partition of the matrix that corresponds to the pipe head loss terms (lower left partition), will consist of values that are twice the values of the coefficients in the original coefficient matrix (at any supplied value of <span class="math notranslate nohighlight">\(\mathbf{x}_k\)</span>.</p></li>
+<li><p>The partition of the matrix that corresponds to the head terms (lower right partition), will consist of values that are identical to the original matrix.</p></li>
+<li><p>The partition of the matrix that corresponds to the head coefficients in the node equations (upper right partition) will also remain unchanged.</p></li>
+</ul>
+<p>We will want to take advantage of problem structure to build the Jacobian (you could just finite-difference the coefficient matrix to approximate the partial derivatives, but that is terribly inefficient if you already know the structure).</p>
+<p>So now lets code reading the input file and building at least the starting instance of the matrix equations</p>
+<p>First allocate some memory</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bvector</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">colNumA</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">rowNumB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">verbose</span> <span class="o">=</span> <span class="s1">&#39;false&#39;</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="s1">&#39;false&#39;</span> <span class="c1"># set to true for in-class demonstration</span>
 <span class="c1">#############################################</span>
 
 <span class="n">elevation</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list node elevations</span>
@@ -1253,8 +1713,14 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 <span class="n">nodearcs</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># node-arc incidence matrix</span>
 <span class="n">rhs_true</span> <span class="o">=</span>  <span class="p">[]</span> <span class="c1"># null list for nodal demands</span>
 <span class="n">tempvect</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1">##############################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now read in the data from a file (useful to expand problem scale to many,many pipes and nodes).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##############################################</span>
 <span class="c1"># connect and read file for Pipeline Network #</span>
 <span class="c1">##############################################</span>
 <span class="n">afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;PipeNetwork.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -1300,7 +1766,14 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 <span class="c1"># end file read ,disconnect file     #</span>
 <span class="c1">######################################</span>
 <span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
-<span class="c1">######################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Echo the data just read, could put into a conditional and choose not to display except for debugging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
 <span class="c1"># echo the input in human readable   #</span>
 <span class="c1">######################################</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of nodes : &#39;</span><span class="p">,</span><span class="n">nnodes</span><span class="p">)</span>
@@ -1325,45 +1798,33 @@ e^x &amp; -~ e^y &amp; +z &amp; =~ 0.41\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of nodes :  8
-number of pipes :  11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of nodes :  4
+number of pipes :  6
 viscosity       :  1.1e-05
 -----------------------------
-node id: 0 , elevation : 200.0  head : 0.0
-node id: 1 , elevation : 200.0  head : 0.0
-node id: 2 , elevation : 200.0  head : 0.0
-node id: 3 , elevation : 200.0  head : 0.0
-node id: 4 , elevation : 200.0  head : 0.0
-node id: 5 , elevation : 200.0  head : 0.0
-node id: 6 , elevation : 200.0  head : 0.0
-node id: 7 , elevation : 200.0  head : -300.0
+node id: 0 , elevation : 0.0  head : 0.0
+node id: 1 , elevation : 0.0  head : 0.0
+node id: 2 , elevation : 0.0  head : 0.0
+node id: 3 , elevation : 0.0  head : 0.0
 -----------------------------
-pipe id: 0 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 1 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 2 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 3 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 4 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 5 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 6 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 7 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 8 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 9 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  1.0
-pipe id: 10 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 0 , diameter :  1.0 , distance :  800.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 1 , diameter :  0.67 , distance :  800.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 2 , diameter :  0.67 , distance :  700.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 3 , diameter :  0.67 , distance :  700.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 4 , diameter :  0.67 , distance :  800.0 , roughness :  1e-05 , flow  :  1.0
+pipe id: 5 , diameter :  0.5 , distance :  600.0 , roughness :  1e-05 , flow  :  1.0
 -----------------------------
 node-arc incidence matrix
-[-1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-[1.0, -1.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0.0, 0.0, 0.0, 0.0, 1.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0]
-[0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0]
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0]
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0]
-[0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0]
+[1.0, -1.0, 0.0, -1.0, 0.0, 0.0]
+[0.0, 1.0, -1.0, 0.0, 0.0, 1.0]
+[0.0, 0.0, 0.0, 1.0, -1.0, -1.0]
+[0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
 -----------------------------
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now create the augmented matrix using the structure of the problem.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create augmented matrix</span>
@@ -1391,6 +1852,17 @@ node-arc incidence matrix
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="stopping-criteria-and-solution-report">
+<h4>Stopping Criteria, and Solution Report}<a class="headerlink" href="#stopping-criteria-and-solution-report" title="Permalink to this headline">¶</a></h4>
+<p>You will need some way to stop the process – the three most obvious (borrowed from Newton’s method) are:</p>
+<ul class="simple">
+<li><p>Approaching the correct solution (e.g. <span class="math notranslate nohighlight">\([\mathbf{A}(\mathbf{x})] \cdot \mathbf{x} - \mathbf{b} = \mathbf{f}(\mathbf{x}) = \mathbf{0}\)</span>).</p></li>
+<li><p>Update vector is not changing (e.g. <span class="math notranslate nohighlight">\(\mathbf{x}_{k+1}=\mathbf{x}_{k}\)</span>), so either have an answer, or the algorithm is stuck.</p></li>
+<li><p>You have done a lot of iterations (say 100).</p></li>
+</ul>
+<p>We want to have the script determine when to stop and report the conditions (which stopping criterion was used), and the values of flows and heads in the system.</p>
+<p>Fisrt lets set some tolerances and an iteration limit, as well as allocate memory to store the auxiliary functions results</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################################</span>
@@ -1418,6 +1890,7 @@ node-arc incidence matrix
 </div>
 </div>
 </div>
+<p>And finally the money shot; where we wrap everything into a for loop to iteratively find a solution</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###############################################################</span>
@@ -1554,6 +2027,7 @@ node-arc incidence matrix
         <span class="n">solvecguess</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">solvecnew</span><span class="p">[:]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
         <span class="k">break</span>
     <span class="k">if</span> <span class="n">test2</span> <span class="o">&lt;</span> <span class="n">tolerance2</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gradient near zero --exit and report current update&quot;</span><span class="p">)</span>
@@ -1562,6 +2036,7 @@ node-arc incidence matrix
         <span class="n">solvecguess</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">solvecnew</span><span class="p">[:]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
         <span class="k">break</span>
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;solution continuing&quot;</span><span class="p">)</span>
@@ -1571,6 +2046,8 @@ node-arc incidence matrix
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">flowguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">solvecguess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="c1">## Write Current State ######################</span>
+        <span class="n">gq</span> <span class="o">=</span> <span class="n">matrixvectormult</span><span class="p">(</span><span class="n">augmentedMat</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of nodes : &#39;</span><span class="p">,</span><span class="n">nnodes</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of pipes : &#39;</span><span class="p">,</span><span class="n">npipes</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;viscosity       : &#39;</span><span class="p">,</span><span class="n">viscosity</span><span class="p">)</span>
@@ -1580,25 +2057,27 @@ node-arc incidence matrix
         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, diameter : &#39;</span> <span class="p">,</span><span class="n">diameter</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, distance : &#39;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
-          <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow guess : &#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+          <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow guess : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; RHS True :&#39;</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot;RHS Current&quot;</span><span class="p">,</span><span class="n">gq</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; RHS True :&#39;</span><span class="p">,</span><span class="n">rhs_true</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot;RHS Current&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">gq</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;irow :&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39; solvecnew :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s2">&quot; solvecguess &quot;</span><span class="p">,</span><span class="n">solvecguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>   
+<span class="c1">################################################</span>
 <span class="c1"># end of outer loop</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradient near zero --exit and report current update
-iteration 37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>update not changing --exit and report current update
+iteration 39
 </pre></div>
 </div>
 </div>
 </div>
+<p>Finally write the results and exit the process</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;results at iteration = :&quot;</span><span class="p">,</span><span class="n">iteration</span><span class="p">)</span>
@@ -1610,11 +2089,11 @@ iteration 37
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
 <span class="n">istart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">npipes</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node id:&#39;</span><span class="p">,</span><span class="n">irow</span><span class="p">,</span> <span class="s1">&#39;, elevation :&#39;</span><span class="p">,</span><span class="n">elevation</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="s1">&#39; head :&#39;</span><span class="p">,</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">irow</span><span class="o">+</span><span class="n">npipes</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node id:&#39;</span><span class="p">,</span><span class="n">irow</span><span class="p">,</span> <span class="s1">&#39;, elevation :&#39;</span><span class="p">,</span><span class="n">elevation</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="s1">&#39; head :&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">solvecnew</span><span class="p">[</span><span class="n">irow</span><span class="o">+</span><span class="n">npipes</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">npipes</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pipe id:&#39;</span><span class="p">,</span><span class="n">jcol</span><span class="p">,</span><span class="s1">&#39;, diameter : &#39;</span> <span class="p">,</span><span class="n">diameter</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, distance : &#39;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span>
-  <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow  : &#39;</span><span class="p">,</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">])</span>
+  <span class="s1">&#39;, roughness : &#39;</span><span class="p">,</span><span class="n">roughness</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="s1">&#39;, flow  : &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">flowguess</span><span class="p">[</span><span class="n">jcol</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="p">:</span>
     <span class="k">for</span> <span class="n">jcol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nnodes</span><span class="o">+</span><span class="n">npipes</span><span class="p">):</span>
@@ -1627,35 +2106,54 @@ iteration 37
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>results at iteration = : 37
-number of nodes :  8
-number of pipes :  11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>results at iteration = : 39
+number of nodes :  4
+number of pipes :  6
 viscosity       :  1.1e-05
 -----------------------------
-node id: 0 , elevation : 200.0  head : 298.6862826612833
-node id: 1 , elevation : 200.0  head : 298.0556983386993
-node id: 2 , elevation : 200.0  head : 297.5827600967613
-node id: 3 , elevation : 200.0  head : 298.00314964515064
-node id: 4 , elevation : 200.0  head : 297.8980522580533
-node id: 5 , elevation : 200.0  head : 297.76668052418165
-node id: 6 , elevation : 200.0  head : 297.53021140321266
-node id: 7 , elevation : 200.0  head : 297.10982185482334
+node id: 0 , elevation : 0.0  head : 97.197
+node id: 1 , elevation : 0.0  head : 87.489
+node id: 2 , elevation : 0.0  head : 88.871
+node id: 3 , elevation : 0.0  head : 87.013
 -----------------------------
-pipe id: 0 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  4.800000000001731
-pipe id: 1 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  3.600000000000692
-pipe id: 2 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  3.600000000000692
-pipe id: 3 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  1.2000000000010391
-pipe id: 4 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  -1.5999999999980494
-pipe id: 5 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  5.199999999998269
-pipe id: 6 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  3.60000000000022
-pipe id: 7 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  3.60000000000022
-pipe id: 8 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  2.7999999999990886
-pipe id: 9 , diameter :  1.0 , distance :  150.0 , roughness :  1e-05 , flow  :  -6.399999999999309
-pipe id: 10 , diameter :  1.0 , distance :  300.0 , roughness :  1e-05 , flow  :  10.0
+pipe id: 0 , diameter :  1.0 , distance :  800.0 , roughness :  1e-05 , flow  :  8.0
+pipe id: 1 , diameter :  0.67 , distance :  800.0 , roughness :  1e-05 , flow  :  4.04
+pipe id: 2 , diameter :  0.67 , distance :  700.0 , roughness :  1e-05 , flow  :  0.227
+pipe id: 3 , diameter :  0.67 , distance :  700.0 , roughness :  1e-05 , flow  :  3.96
+pipe id: 4 , diameter :  0.67 , distance :  800.0 , roughness :  1e-05 , flow  :  0.773
+pipe id: 5 , diameter :  0.5 , distance :  600.0 , roughness :  1e-05 , flow  :  0.187
 -----------------------------
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-1">
+<h3>Exercise 1:<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="#simplenetwork"><span class="std std-numref">Fig. 13</span></a> is a five-pipe network with a water supply source at Node 1, and demands at Nodes 1-4.  The pipe dimensions are shown in  the figure.</p>
+<div class="figure align-default" id="simplenetwork">
+<a class="reference internal image-reference" href="../../_images/SimpleNetwork.png"><img alt="../../_images/SimpleNetwork.png" src="../../_images/SimpleNetwork.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Pipe network for</span><a class="headerlink" href="#simplenetwork" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="simple">
+<li><p>Make a table that lists each node name, node elevation, and the resultant pressure in U.S. Customary units.</p></li>
+<li><p>Make a table that lists each pipe name,  length,  diameter,  roughness height, and the resultant flow rate in U.S. Customary units.</p></li>
+<li><p>Determine the flow rate in each pipe of the network, for the case where the total head at Node 1 is 100 feet.</p></li>
+<li><p>Determine the Darcy-Weisbach friction factor in each pipe of the network.</p></li>
+<li><p>Using the results of your flow distribution, determine the head loss from Node 1 to Node 4.</p></li>
+<li><p>Determine the head at Node 4</p></li>
+<li><p>Identify the node with the lowest <strong>pressure</strong> in your solution.</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-advanced-optional">
+<h3>Exercise 2 (Advanced; optional)<a class="headerlink" href="#exercise-2-advanced-optional" title="Permalink to this headline">¶</a></h3>
+<p>Modify the algorithm and script to replace Pipe 1 in the lesson example <a class="reference internal" href="#pipe-net-hybrid"><span class="std std-numref">Fig. 11</span></a> with a pump with the following pump curve.</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+h_p = H_{\text{shutoff}} - K_{pump}Q^2
+\end{equation}
+\)</span></p>
+<p>Starting with values of shutoff head (116’) and a pump constant (0.05) and exponent (2) to supply water to the nodes; assume the supply node is as shown and all the nodes are at elevation 100’ (thus the pump must lift 100’).</p>
 </div>
 </div>
 <div class="section" id="references">

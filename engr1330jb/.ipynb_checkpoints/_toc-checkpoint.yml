@@ -23,8 +23,8 @@ chapters:
 - file: lessons/lesson12/lesson12 # databases (download from server)
 - file: lessons/lesson13/lesson13 # pandas applications
 - file: lessons/lesson14/lesson14 # plotting conventions 
-- file: lessons/lesson15 # files
-- file: lessons/lesson16 # more files
+- file: lessons/lesson15/lesson15 # matplotlib bar,scatter,histograms
+- file: lessons/lesson16/lesson16 # exploratory data analysis
 - file: lessons/lesson17 # matrices
 - file: lessons/lesson18 # matrices in numpy
 - file: lessons/lesson19 # database
