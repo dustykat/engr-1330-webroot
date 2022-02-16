@@ -961,11 +961,24 @@ print(readfileexcel)
 # 
 # https://realpython.com/pandas-read-write-files/#using-pandas-to-write-and-read-excel-files
 
-# In[ ]:
+# ---
+# 
+# ## Laboratory 11
+# 
+# **Examine** (click) Laboratory 11 as a webpage at [Laboratory 11.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 11 as a jupyterlab notebook from [Laboratory 11.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11.ipynb)
+# 
 
-
-
-
+# <hr><hr>
+# 
+# ## Exercise Set 11
+# 
+# **Examine** (click) Exercise Set 11 as a webpage at [Exercise 11.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 11 as a jupyterlab notebook at  [Exercise Set 11.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab11/Lab11-TH.ipynb)
+# 
+# 
 
 # In[ ]:
 
