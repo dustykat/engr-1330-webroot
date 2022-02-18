@@ -41,3 +41,5 @@ chapters:
 - file: lessons/lesson37 # knn classification
 - file: lessons/lesson38 # knn classification
 - file: lessons/video_log/video_log # Appendix of video links
+- file: lessons/nummeth/Numericalintegration # Appendix of video links
+- file: lessons/nummeth/NewtonsMethod # Appendix of video linksengr-1330-webroot/engr1330jb/lessons/nummeth/Numericalintegration.ipynb

@@ -1,0 +1,1399 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix: Integration of Functions and Tabular Data &#8212; ENGR 1330 Course Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix: Newton’s Method" href="NewtonsMethod.html" />
+    <link rel="prev" title="Video Archive" href="../video_log/video_log.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/p4e.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGR 1330 Course Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to ENGR 1330
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson00/lesson00.html">
+   0: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01/lesson01.html">
+   1: Data Science and Problem Solving:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson02/lesson02.html">
+   2: Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson03/lesson03.html">
+   3: Data Types and Typecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson04/lesson04.html">
+   4: User Interaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson041/lesson04.1.html">
+   4.1: Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson05/lesson05.html">
+   5: Algorithm Building Blocks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson06/lesson06.html">
+   6: Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson07/lesson07.html">
+   7: Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson08/lesson08.html">
+   8: Vectors and Matrices (as lists)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson071/lesson071.html">
+   7.1: Files from the Web (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requests.get
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson09/lesson09.html">
+   9: Matrix Manipulation(s) using
+   <em>
+    NumPy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson10/lesson10.html">
+   10: Vector/Matrix applications (Under Construction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson11/lesson11.html">
+   11: Databases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson12/lesson12.html">
+   12: Databases and PANDAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13/lesson13.html">
+   13: Applications of PANDAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson14/lesson14.html">
+   14: Visual display of data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson15/lesson15.html">
+   15: The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson16/lesson16.html">
+   16: Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson17.html">
+   Lesson 17: Matrix manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson18.html">
+   Lesson 18: Arrays in numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson19.html">
+   Lesson 19: Database concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson20.html">
+   Lesson 20: Database processing (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson21/lesson21.html">
+   21: Testing Hypothesis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson22.html">
+   Lesson 22: Plotting (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson23.html">
+   Lesson 23: Data models and visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson32/lesson32.html">
+   32: K Nearest Neighbor (KNN) Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson33/lesson33.html">
+   33: KNN Classification (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson34/lesson34.html">
+   34: KNN Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson35.html">
+   Lesson 35: Logistic Regression (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson36.html">
+   Lesson 36: Logistic Regression (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sklearn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson37.html">
+   Lesson 37: Nearest Neighbor Classification (Homebrew)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson38.html">
+   38: K-Nearest Neighbor Classification (sklearn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../video_log/video_log.html">
+   Video Archive
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Appendix: Integration of Functions and Tabular Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NewtonsMethod.html">
+   Appendix: Newton’s Method
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/nummeth/Numericalintegration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/nummeth/Numericalintegration.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/nummeth/Numericalintegration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Appendix: Integration of Functions and Tabular Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integration-of-functions">
+     Integration of Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#background">
+       Background
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rectangular-panels">
+       Rectangular Panels
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-math-package">
+       Using the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         math
+        </span>
+       </code>
+       package
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trapezoidal-panels">
+       Trapezoidal Panels
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parabolic-panels">
+       Parabolic Panels
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integration-of-tabular-data">
+     Integration of Tabular Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-from-a-file-open-read-close-files">
+       Reading from a file — open, read, close files
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#read-into-a-list">
+       Read into a list
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#integrating-the-tabular-data">
+       Integrating the Tabular Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="alert alert-block alert-info">
+    <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
+</div> 
+<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
+<p>Last GitHub Commit Date:</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="appendix-integration-of-functions-and-tabular-data">
+<h1>Appendix: Integration of Functions and Tabular Data<a class="headerlink" href="#appendix-integration-of-functions-and-tabular-data" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Background</p></li>
+<li><p>Rectangular, Trapezoidal, Parabolic Panels</p></li>
+<li><p>Tabular Data</p></li>
+<li><p>Exercises</p></li>
+</ul>
+<div class="section" id="integration-of-functions">
+<h2>Integration of Functions<a class="headerlink" href="#integration-of-functions" title="Permalink to this headline">¶</a></h2>
+<p>At this point we have enough Python to consider doing some useful computations. We
+will start with numerical integration because it is useful and only requires count-controlled
+repetition and single subscript lists.</p>
+<div class="section" id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<p>Numerical integration is the numerical approximation of</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+I = \int_a^b f(x)dx
+\end{equation}\)</span></p>
+<p>Consider the problem of determining the shaded area under the curve <span class="math notranslate nohighlight">\(y = f(x)\)</span> from <span class="math notranslate nohighlight">\(x = a\)</span> to <span class="math notranslate nohighlight">\(x = b\)</span>, as depicted in the figure below, and suppose that analytical integration is not feasible.</p>
+<p><img alt="figure1" src="../../_images/schematic_panels.png" /></p>
+<p>The function may be known in tabular form from experimental measurements or it may be known in an analytical form.
+The function is taken to be continuous within the interval <span class="math notranslate nohighlight">\(a &lt; x &lt; b\)</span>. We may divide the area into <span class="math notranslate nohighlight">\(n\)</span> vertical panels, each of width <span class="math notranslate nohighlight">\(\Delta x = (b - a)/n\)</span>, and then add the areas of all strips to obtain  <span class="math notranslate nohighlight">\(A~\approx \int ydx\)</span>.</p>
+<p>A representative panel of area <span class="math notranslate nohighlight">\(A_i\)</span> is shown with darker shading in the figure. Three useful numerical approximations are listed in the following sections.  The approximations differ in how the function is represented by the panels — in all cases the function is approximated by known polynomial models between the panel end points.</p>
+<p>In each case the greater the number of strips, and correspondingly smaller value of <span class="math notranslate nohighlight">\(\Delta x\)</span>, the more accurate the approximation. Typically, one can begin with a relatively small number of panels and increase the number until the resulting area approximation stops changing.</p>
+</div>
+<div class="section" id="rectangular-panels">
+<h3>Rectangular Panels<a class="headerlink" href="#rectangular-panels" title="Permalink to this headline">¶</a></h3>
+<p>The figure below is a schematic of a rectangular panels.  The figure is assuming the function structure is known and can be evaluated at an arbitrary location in the <span class="math notranslate nohighlight">\(\Delta x\)</span> dimension.</p>
+<p><img alt="figure2" src="../../_images/rect_panels.png" /></p>
+<p>Each panel is treated as a rectangle, as shown by the representative panel whose height <span class="math notranslate nohighlight">\(y_m\)</span> is chosen visually so that the small cross-hatched areas are as nearly equal as possible. Thus, we form the sum <span class="math notranslate nohighlight">\(\sum y_m\)</span> of the effective heights and multiply by <span class="math notranslate nohighlight">\(\Delta x\)</span>. For a function known in analytical form, a value for <span class="math notranslate nohighlight">\(y_m\)</span> equal to that of the function at the midpoint <span class="math notranslate nohighlight">\(x_i + \Delta x /2\)</span> may be calculated and used in the summation.</p>
+<p>For tabulated functions, we have to choose to either take <span class="math notranslate nohighlight">\(y_m\)</span> as the value at the left endpoint or right endpoint.    This limitation is often quite handy when we are trying to integrate a function that is integrable, but undefined on one endpoint.</p>
+<p>Lets try some examples in Python.</p>
+<p>Find the area under the curve <span class="math notranslate nohighlight">\(y= x\sqrt{1+x^2}\)</span>  from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p>First lets read in the value for the lowerlimit, we will do some limited error checks to be sure user enters a number, but won’t check that the number is non-negative.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code below could be used for interactive inputs</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># RectangularPanels.py</span>
+<span class="c1"># Numerical Integration</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Program finds area under curve y = x * sqrt(1+x)&quot;</span><span class="p">)</span>
+<span class="c1"># Get input data -- use error checking</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a lower bound x_low </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_low really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># exit the while loop when finally have a valid number</span>
+
+</pre></div>
+</div>
+<p>Verify that value is indeed what we entered</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_low</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now do the same for the upper limit, notice how we are using the <code class="docutils literal notranslate"><span class="pre">yes</span></code> variable.  We set a “fail” value, and demand input until we get “success”.  The structure used here is called a <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">--</span> <span class="pre">exception</span></code> structure and is very common in programming.   Error checking is really important so that garbled input does not hang things up.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an upper bound x_high </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_high really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># exit the while loop when finally have a valid number</span>
+</pre></div>
+</div>
+<p>Again verify!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_high</span><span class="o">=</span><span class="mf">4.0</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now use the try - exception structure to input how many panels we wish to use.  Notice you can enter a negative value which will ultimately break things. Also observe this value is an integer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">how_many</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter how many panels </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Panels really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># exit the while loop when finally have a valid number</span>
+</pre></div>
+</div>
+<p>Again verify!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many</span><span class="o">=</span><span class="mi">5</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can actually perform the integration by evaluating the function at the panel half-widths.
+In this example we are using primitive arithmetic, so the <span class="math notranslate nohighlight">\(\sqrt{}\)</span> is accomplished by exponentation, the syntax is <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">**</span> <span class="pre">b</span></code> is the operation <span class="math notranslate nohighlight">\(c = a^b\)</span>.</p>
+<p>The integration uses an accumulator, which is a memory location where subsquent results are added (accumulated) back into the accumulator.  This structure is so common that there are alternate, compact syntax to perform this task, here it is all out in the open.</p>
+<p>The counting loop where we evaluate the function at different <code class="docutils literal notranslate"><span class="pre">x</span></code> values, starts at 1 and ends at <code class="docutils literal notranslate"><span class="pre">how_many+1</span></code> because python <code class="docutils literal notranslate"><span class="pre">for</span></code> loops use an increment skip if equal structure. When the value in <code class="docutils literal notranslate"><span class="pre">range</span></code> equals <code class="docutils literal notranslate"><span class="pre">how_many</span></code> the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop exits (<code class="docutils literal notranslate"><span class="pre">break</span></code> is implied.)  A loop control structure starting from 0 is shown in the code as a comment line.  Simply uncomment this line, and comment the line just below to have the structure typical in python scripts.  In the start from 1 case, we want to evaluate at the last value of <code class="docutils literal notranslate"><span class="pre">how_many</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OK we should have the three things we need for evaluating the integral</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">x_low</span> <span class="o">+</span> <span class="n">delta_x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># initial value for x</span>
+<span class="c1">### OK THIS IS THE ACTUAL INTEGRATOR PART ###</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># initial value in an accumulator</span>
+<span class="c1">#for i in range(0,how_many,1): #note we are counting from 0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">accumulated_area</span> <span class="o">=</span> <span class="n">accumulated_area</span> <span class="o">+</span> <span class="p">(</span> <span class="n">xx</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">delta_x</span>
+<span class="c1">### AND WE ARE DONE INTEGRATING #############</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we want to report our result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+<span class="c1"># the backslash \</span>
+<span class="c1">#       &quot; to x = .....     lets us use multiple lines</span>
+<span class="c1"># the \n is a &quot;newline&quot; character </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Area under curve y = x * sqrt(1+x) from x =  2.0  to x =  4.0 
+ is approximately:  19.610958667237167
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code implements rudimentary error checking – it forces us to enter numeric values for the lower and upper values of <span class="math notranslate nohighlight">\(x\)</span> as well as the number of panels to use.  It does not check for undefined ranges and such, but you should get the idea – notice that a large fraction of the entire program is error trapping; this devotion to error trapping is typical for professional programs where you are going to distribute executable modules and not expect the end user to be a programmer.</p>
+</div>
+<div class="section" id="using-the-math-package">
+<h3>Using the <code class="docutils literal notranslate"><span class="pre">math</span></code> package<a class="headerlink" href="#using-the-math-package" title="Permalink to this headline">¶</a></h3>
+<p>The actual computations are done rather crudely – there is a math package that would give us the ability to compute the square root as a function call rather than exponentiation to a real values exponent.</p>
+<p>That is illustrated below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RectangularPanels.py</span>
+<span class="c1"># Numerical Integration</span>
+<span class="c1"># Use built-in math functions</span>
+<span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># a package of math functions</span>
+<span class="c1"># we are naming an object &quot;sqrt&quot; that will compute the square root</span>
+<span class="k">def</span> <span class="nf">sqrt</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># saves us having to type math.NAME every time we wish to use a function</span>
+<span class="c1"># in this program not all that meaningful, but in complex programs handy!</span>
+<span class="n">x_low</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#this is for JB demo only</span>
+<span class="n">x_high</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">how_many</span><span class="o">=</span><span class="mi">6</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Program finds area under curve y = x * sqrt(1+x)&quot;</span><span class="p">)</span>
+<span class="c1"># Get input data -- use error checking</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a lower bound x_low </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_low really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an upper bound x_high </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_high really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">how_many</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter how many panels </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Panels really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># initial value in an accumulator</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">x_low</span> <span class="o">+</span> <span class="n">delta_x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># initial value for x</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">accumulated_area</span> <span class="o">=</span> <span class="n">accumulated_area</span> <span class="o">+</span> <span class="p">(</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">delta_x</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Program finds area under curve y = x * sqrt(1+x)
+Area under curve y = x * sqrt(1+x) from x =  0  to x =  2 
+ is approximately:  3.3793974379024605
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="trapezoidal-panels">
+<h3>Trapezoidal Panels<a class="headerlink" href="#trapezoidal-panels" title="Permalink to this headline">¶</a></h3>
+<p>The trapezoidal panels are approximated as shown in the figure below.</p>
+<p><img alt="" src="../../_images/trap_panels.png" /></p>
+<p>The area <span class="math notranslate nohighlight">\(A_i\)</span> is the average height <span class="math notranslate nohighlight">\((y_i + y_{i+1} )/2\)</span> times <span class="math notranslate nohighlight">\(\Delta x\)</span>. Adding the areas gives the area approximation as tabulated.   For the example with the curvature shown, the approximation will be on the low side. For the reverse curvature, the approximation will be on the high side.  The trapezoidal approximation is commonly used with tabulated values.</p>
+<p>The script below illustrates the trapezoidal method for approximating an integral.  In the example, the left and right panel endpoints in <span class="math notranslate nohighlight">\(x\)</span> are set as separate variables <span class="math notranslate nohighlight">\(x_{left}\)</span> and <span class="math notranslate nohighlight">\(x_{right}\)</span> and incremented by <span class="math notranslate nohighlight">\(\Delta x\)</span> as we step through the count-controlled repetition to accumulate the area.  The corresponding <span class="math notranslate nohighlight">\(y\)</span> values are computed within the loop and averaged, then multiplied by <span class="math notranslate nohighlight">\(\Delta x\)</span> and added to the accumulator.  Finally the <span class="math notranslate nohighlight">\(x\)</span> values are incremented — for grins, we used the += operator on the accumulator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TrapezoidalPanels.py</span>
+<span class="c1"># Numerical Integration</span>
+<span class="c1"># Use built-in math functions</span>
+<span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># a package of math functions</span>
+<span class="c1"># we are naming an object &quot;sqrt&quot; that will compute the square root</span>
+<span class="k">def</span> <span class="nf">sqrt</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># saves us having to type math.NAME every time we wish to use a function</span>
+<span class="c1"># in this program not all that meaningful, but in complex programs handy!</span>
+<span class="n">x_low</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#this is for JB demo only</span>
+<span class="n">x_high</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">how_many</span><span class="o">=</span><span class="mi">6</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Program finds area under curve y = x * sqrt(1+x)&quot;</span><span class="p">)</span>
+<span class="c1"># Get input data -- use error checking</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a lower bound x_low </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_low really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an upper bound x_high </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_high really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">how_many</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter how many panels </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Panels really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>      <span class="c1"># initial value in an accumulator</span>
+<span class="n">x_left</span> <span class="o">=</span> <span class="n">x_low</span>              <span class="c1"># initial value for x_left edge panel</span>
+<span class="n">x_right</span> <span class="o">=</span> <span class="n">x_left</span> <span class="o">+</span> <span class="n">delta_x</span>  <span class="c1"># initial value for x_right edge panel</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">y_left</span> <span class="o">=</span> <span class="p">(</span> <span class="n">x_left</span><span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x_left</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">y_right</span> <span class="o">=</span> <span class="p">(</span> <span class="n">x_right</span><span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x_right</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">accumulated_area</span> <span class="o">+=</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">y_left</span> <span class="o">+</span> <span class="n">y_right</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">x_left</span> <span class="o">+=</span> <span class="n">delta_x</span>
+    <span class="n">x_right</span> <span class="o">+=</span> <span class="n">delta_x</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Program finds area under curve y = x * sqrt(1+x)
+Area under curve y = x * sqrt(1+x) from x =  0  to x =  2 
+ is approximately:  3.4215064275621776
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parabolic-panels">
+<h3>Parabolic Panels<a class="headerlink" href="#parabolic-panels" title="Permalink to this headline">¶</a></h3>
+<p>Parabolic panels approximate the shape of the panel with a parabola.  The area between the chord and the curve (neglected in the trapezoidal solution) may be accounted for by approximating the function with a parabola passing through the points defined by three successive values of <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><img alt="" src="../../_images/para-panels.png" /></p>
+<p>This area may be calculated from the geometry of the parabola and added to the trapezoidal area of the pair of strips to give the area <span class="math notranslate nohighlight">\(\Delta A\)</span> of the pair as illustrated. Adding all of the <span class="math notranslate nohighlight">\(\Delta A\)</span>s produces the tabulation shown, which is known as Simpson’s rule. To use Simpson’s rule, the number <span class="math notranslate nohighlight">\(n\)</span> of strips must be even.</p>
+<p>The same example as presented for rectangular panels is repeated, except using parabolic panels.  The code is changed yet again because we will evaluate at each end of the panel as well as at an intermediate value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ParabolicPanels.py</span>
+<span class="c1"># Numerical Integration</span>
+<span class="c1"># Use built-in math functions</span>
+<span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># a package of math functions</span>
+<span class="c1"># we are naming an object &quot;sqrt&quot; that will compute the square root</span>
+<span class="k">def</span> <span class="nf">sqrt</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># saves us having to type math.NAME every time we wish to use a function</span>
+<span class="c1"># in this program not all that meaningful, but in complex programs handy!</span>
+<span class="n">x_low</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#this is for JB demo only</span>
+<span class="n">x_high</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">how_many</span><span class="o">=</span><span class="mi">4</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Program finds area under curve y = x * sqrt(1+x)&quot;</span><span class="p">)</span>
+<span class="c1"># Get input data -- use error checking</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a lower bound x_low </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_low really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an upper bound x_high </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_high really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">how_many</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter how many panels </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Panels really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>         <span class="c1"># initial value in an accumulator</span>
+<span class="n">x_left</span>   <span class="o">=</span> <span class="n">x_low</span>               <span class="c1"># initial value for x_left edge panel</span>
+<span class="n">x_middle</span> <span class="o">=</span> <span class="n">x_left</span>   <span class="o">+</span> <span class="n">delta_x</span>  <span class="c1"># initial value for x_middle edge panel</span>
+<span class="n">x_right</span>  <span class="o">=</span> <span class="n">x_middle</span> <span class="o">+</span> <span class="n">delta_x</span>  <span class="c1"># initial value for x_right edge panel</span>
+<span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># using 2 panels every step, so 1/2 many steps -- force integer result </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">y_left</span>   <span class="o">=</span> <span class="p">(</span> <span class="n">x_left</span>   <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span>   <span class="n">x_left</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">y_middle</span> <span class="o">=</span> <span class="p">(</span> <span class="n">x_middle</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">x_middle</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">y_right</span>  <span class="o">=</span> <span class="p">(</span> <span class="n">x_right</span>  <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span>  <span class="n">x_right</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">accumulated_area</span> <span class="o">=</span> <span class="n">accumulated_area</span> <span class="o">+</span> \
+                       <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">y_left</span> <span class="o">+</span> <span class="mf">4.</span><span class="o">*</span> <span class="n">y_middle</span> <span class="o">+</span> <span class="n">y_right</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">x_left</span>   <span class="o">=</span> <span class="n">x_left</span>   <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">delta_x</span>
+    <span class="n">x_middle</span> <span class="o">=</span> <span class="n">x_left</span>   <span class="o">+</span>   <span class="n">delta_x</span>
+    <span class="n">x_right</span>  <span class="o">=</span> <span class="n">x_middle</span> <span class="o">+</span>   <span class="n">delta_x</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Program finds area under curve y = x * sqrt(1+x)
+Area under curve y = x * sqrt(1+x) from x =  0  to x =  1 
+ is approximately:  0.6094186631272838
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we study all the forms of the numerical method we observe that the numerical integration method is really the sum of function values at specific locations in the interval of interest, with each value multiplied by a specific weight.</p>
+<p>In this development the weights were based on polynomials, but other method use different weighting functions.  An extremely important method is called gaussian quadrature. This method is valuable because one can approximate convolution integrals quite effectively using quadrature routines, while the number of function evaluations for a polynomial based approximation could be hopeless.</p>
+<p>When the function values are tabular, we are going to have to accept the rectangular (with adaptations) and trapezoidal as our best tools to approximate an integral because we don’t have any really effective way to evaluate the function between the tabulated values.</p>
+</div>
+</div>
+<div class="section" id="integration-of-tabular-data">
+<h2>Integration of Tabular Data<a class="headerlink" href="#integration-of-tabular-data" title="Permalink to this headline">¶</a></h2>
+<p>This section is going to work with tabular data – different from function evaluation, but
+similar. To be really useful, we need to learn how to read data from a file; manually
+entering tabular data is really time consuming, error prone, and just plain idiotic.</p>
+<p>So in this chapter we will learn how to read data from a file into a list, then we can process
+the list as if it were a function and integrate its contents.</p>
+<div class="section" id="reading-from-a-file-open-read-close-files">
+<h3>Reading from a file — open, read, close files<a class="headerlink" href="#reading-from-a-file-open-read-close-files" title="Permalink to this headline">¶</a></h3>
+<p>First, lets consider a file named <code class="docutils literal notranslate"><span class="pre">MyFile.txt</span></code>.   The extension is important so that the Shell does not think it is a Python script.
+The contents of <code class="docutils literal notranslate"><span class="pre">MyFile.txt</span></code> are:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1  1
+2  4
+3  9
+4  16
+5  25
+</pre></div>
+</div>
+<p>The code fragment below, will let us look at the file (already existing in our local directory)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span> <span class="c1"># lets us run &quot;shell&quot; commands and recover stdio stream</span>
+<span class="n">usefull_cat_call</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;MyFile.txt&quot;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># this is the call to run the bash command &quot;cat MyFile.txt&quot; which will display the contents of the file if it exists.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usefull_cat_call</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  1
+2  4
+3  9
+4  16
+5  25
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we know that the file exists,to read the contents into a Python script we have to do the following:</p>
+<ul class="simple">
+<li><p>Open a connection to the file — this is a concept common to all languages, it might be called something different, but the program needs to somehow know the location and name of the file.</p></li>
+<li><p>Read the contents into an object — we have a lot of control on how this gets done, for the time being we won’t exercise much control yet.  When you do substantial programs, you will depend on the control of the reads (and writes).</p></li>
+<li><p>Disconnect the file — this too is common to all languages.  Its a really easy step to forget.  Not a big deal if the program ends as planned but terrible if there is a error in the program and the connection is still open.  Usually nothing bad happens, but with an open connection it is possible for the file to get damaged.   If that file represents millions of customers credit card numbers, that’s kind of a problem, and time to go work on your resume, or get your passport collection out and choose a country without extradition.</p></li>
+</ul>
+<p>The code fragment below performs these three tasks and prints the things we read</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MyFile.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a connection to the file; set to &quot;read&quot;</span>
+<span class="c1"># read the five lines</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">line3</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">line4</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">line5</span> <span class="o">=</span> <span class="n">Afile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect from the file</span>
+<span class="c1"># echo the input</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line2</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line3</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line4</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line5</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  1
+2  4
+3  9
+4  16
+5  25
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-into-a-list">
+<h3>Read into a list<a class="headerlink" href="#read-into-a-list" title="Permalink to this headline">¶</a></h3>
+<p>A far more useful and elegant way to read from a file is to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.   The attribute <code class="docutils literal notranslate"><span class="pre">line</span></code> within a file is an iterable, hence construction the loop is pretty straightforward.</p>
+<p>A script fragment below does the same thing as the example above, but uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to accomplish stepping through the file.</p>
+<p>Additionally, I have added a counter to keep track of how many lines were read — in a lot of engineering programs, the number of things read becomes important later in a program, hence it is usually a good idea to capture the count when the data are first read.</p>
+<p>First lets work out if we can automatically detect the end of the file.  So this script just reads and prints the attribute <code class="docutils literal notranslate"><span class="pre">line</span></code> from object <code class="docutils literal notranslate"><span class="pre">Afile</span></code>.<br />
+Notice how the print statement is changed, to suppress the extra line feed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MyFile.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a connection to the file; set to &quot;read&quot;</span>
+<span class="c1"># read using a for loop, exit when at end of file  and report line count</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># start our counter!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Afile</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect from the file</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">File has &quot;</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="s2">&quot; records (lines)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  1
+2  4
+3  9
+4  16
+5  25
+File has  5  records (lines)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will add a list to receive the input, here it reads the file above as a string into a list <code class="docutils literal notranslate"><span class="pre">xy</span></code>, then splits that list and places the contents into two other lists, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.  The script has several parts to discuss.   First, the destination variables (lists) must be created – I used the null list concept here because I don’t know how big the list is until I read the list.<br />
+Next I used the <code class="docutils literal notranslate"><span class="pre">.append()</span></code> method which operates on the <code class="docutils literal notranslate"><span class="pre">xy</span></code> list.<br />
+The arguments of the method <code class="docutils literal notranslate"><span class="pre">[str(n)</span> <span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">line.strip().split()]</span></code> tells the program that the elements are to be interpreted as a string, and to split (split) the line into sub-strings based on a null delimiter (whitespace), and to remove all the whitespace (strip) characters.</p>
+<p>Once the line is split, the strings are appended into the <code class="docutils literal notranslate"><span class="pre">xy</span></code> list.  The <code class="docutils literal notranslate"><span class="pre">xy</span></code> list is printed to show that it is a list of 5 things, each thing being a string comprised of two sets of characters separated by a comma.   <code class="docutils literal notranslate"><span class="pre">xy</span></code> is a list of strings.</p>
+<p>The next section of the code then uses the <code class="docutils literal notranslate"><span class="pre">pair</span></code> function within another <code class="docutils literal notranslate"><span class="pre">.append()</span></code> method to break the character sets in each element of <code class="docutils literal notranslate"><span class="pre">xy</span></code> into two parts <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.<br />
+Lastly during the pair operation, the code also converts the data into real values (float) and then prints the data in two columns.<br />
+This seems like a lot of work, but we could easily get this code to be super reliable, then save it as a function and never have to write it again.   That too comes later – suffice to say for now we can read a file, parse its contents into two lists <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.  Thus we are now able to integrate tabular data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store the lines</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the first column</span>
+<span class="n">y</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the second column</span>
+<span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MyFile.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a connection to the file; set to &quot;read&quot;</span>
+<span class="c1"># read using a for loop, exit when at end of file  and report line count</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># start our counter!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Afile</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">xy</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span> <span class="c1"># append line to xy, split the line on whitespace, strip out whitespace</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect from the file</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">File has &quot;</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="s2">&quot; records (lines)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The list is: &quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="c1"># the list</span>
+<span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">xy</span><span class="p">:</span>  <span class="c1"># parse into x and y</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="c1"># verify parsed</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot; y = &quot;</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1  1
+2  4
+3  9
+4  16
+5  25
+File has  5  records (lines)
+The list is: [[&#39;1&#39;, &#39;1&#39;], [&#39;2&#39;, &#39;4&#39;], [&#39;3&#39;, &#39;9&#39;], [&#39;4&#39;, &#39;16&#39;], [&#39;5&#39;, &#39;25&#39;]]
+x =  1.0  y =  1.0
+x =  2.0  y =  4.0
+x =  3.0  y =  9.0
+x =  4.0  y =  16.0
+x =  5.0  y =  25.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integrating-the-tabular-data">
+<h3>Integrating the Tabular Data<a class="headerlink" href="#integrating-the-tabular-data" title="Permalink to this headline">¶</a></h3>
+<p>Suppose instead of a function we only have tabulations and wist to estimate the area under the curve represented by the tabular values.  Then our integration rules from the prior chapter still work more or less, except the rectangular panels will have to be shifted to either the left edge or right edge of a panel (where the tabulation exists).</p>
+<p>Lets just examine an example.  Suppose some measurement technology produced a table of related values.<br />
+The excitation variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is the response.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    x    f(x) 
+   1.0  1.543 
+   1.1  1.668 
+   1.2  1.811 
+   1.3  1.971 
+   1.4  2.151 
+   1.5  2.352 
+   1.6  2.577 
+   1.7  2.828 
+   1.8  3.107
+</pre></div>
+</div>
+<p>To integrate this table using the trapezoidal method is straightforward.<br />
+We will modify our earlier code to read the table (which we put into a file), and compute the integral.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># My Tabular Integration</span>
+<span class="c1"># Integrate a table of values using Trapezoidal Panels</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store the lines</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the first column</span>
+<span class="n">y</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the second column</span>
+<span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MyTableOfData.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a connection to the file; set to &quot;read&quot;</span>
+<span class="c1"># read using a for loop, exit when at end of file  and report line count</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># start our counter!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Afile</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">xy</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span> <span class="c1"># append line to xy, split the line on whitespace, strip out whitespace</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect from the file</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">File has &quot;</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="s2">&quot; records (lines)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The list is: &quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="c1"># the list</span>
+<span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">xy</span><span class="p">:</span>  <span class="c1"># parse into x and y</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="c1"># verify parsed</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot; y = &quot;</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="c1"># now the actual integration</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># an accumulator</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many_lines</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#index stops at n-1 things because each panel evaluated at both ends</span>
+    <span class="n">delta_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">height</span> <span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="n">accumulated_area</span> <span class="o">+=</span> <span class="n">height</span><span class="o">*</span><span class="n">delta_x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area = &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>  <span class="c1"># report the result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0  1.543 
+1.1  1.668 
+1.2  1.811 
+1.3  1.971 
+1.4  2.151 
+1.5  2.352 
+1.6  2.577 
+1.7  2.828 
+1.8  3.107
+File has  9  records (lines)
+The list is: [[&#39;1.0&#39;, &#39;1.543&#39;], [&#39;1.1&#39;, &#39;1.668&#39;], [&#39;1.2&#39;, &#39;1.811&#39;], [&#39;1.3&#39;, &#39;1.971&#39;], [&#39;1.4&#39;, &#39;2.151&#39;], [&#39;1.5&#39;, &#39;2.352&#39;], [&#39;1.6&#39;, &#39;2.577&#39;], [&#39;1.7&#39;, &#39;2.828&#39;], [&#39;1.8&#39;, &#39;3.107&#39;]]
+x =  1.0  y =  1.543
+x =  1.1  y =  1.668
+x =  1.2  y =  1.811
+x =  1.3  y =  1.971
+x =  1.4  y =  2.151
+x =  1.5  y =  2.352
+x =  1.6  y =  2.577
+x =  1.7  y =  2.828
+x =  1.8  y =  3.107
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Area =  1.7683000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool, it seems to work – now tidy the code a bit by suppressing extra outputs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># My Tabular Integration</span>
+<span class="c1"># Integrate a table of values using Trapezoidal Panels</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store the lines</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the first column</span>
+<span class="n">y</span>  <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a null list for the second column</span>
+<span class="n">Afile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MyTableOfData.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># open a connection to the file; set to &quot;read&quot;</span>
+<span class="c1"># read using a for loop, exit when at end of file  and report line count</span>
+<span class="n">how_many_lines</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># start our counter!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">Afile</span><span class="p">:</span>
+    <span class="c1">##print(line,end=&quot;&quot;)</span>
+    <span class="n">xy</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span> <span class="c1"># append line to xy, split the line on whitespace, strip out whitespace</span>
+    <span class="n">how_many_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">Afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># disconnect from the file</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Records read =: &quot;</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">)</span>
+<span class="c1">##print(&quot;The list is: &quot;,end=&quot;&quot;)</span>
+<span class="c1">##print(xy) # the list</span>
+<span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">xy</span><span class="p">:</span>  <span class="c1"># parse into x and y</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="c1"># verify parsed</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many_lines</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot; y = &quot;</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="c1"># now the actual integration</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># an accumulator</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many_lines</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#index stops at n-1 things because each panel evaluated at both ends</span>
+    <span class="n">delta_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">height</span> <span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="n">accumulated_area</span> <span class="o">+=</span> <span class="n">height</span><span class="o">*</span><span class="n">delta_x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area = &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>  <span class="c1"># report the result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Records read =:  9
+x =  1.0  y =  1.543
+x =  1.1  y =  1.668
+x =  1.2  y =  1.811
+x =  1.3  y =  1.971
+x =  1.4  y =  2.151
+x =  1.5  y =  2.352
+x =  1.6  y =  2.577
+x =  1.7  y =  2.828
+x =  1.8  y =  3.107
+Area =  1.7683000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realistically the only other simple integration method for tabular data is the rectangular rule, either using the left edge of a panel or the right edge of a panel (and I suppose you could do both and average the result which would be the trapezoidal method).</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Approximate <span class="math notranslate nohighlight">\(\int_0^2 f(x) dx\)</span> from the tabulation in the Table below:</p>
+<p>x     f(x)
+0.00  1.0000
+0.12  0.8869
+0.53  0.5886
+0.87  0.4190
+1.08  0.3396
+1.43  0.2393
+2.00  0.1353</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>The table below is a tabulation of various values of the hyperbolic cosine function.</p>
+<p>x     cosh(x)
+1.0  1.54308063481524<br />
+1.1   1.66851855382226<br />
+1.2   1.81065556732437<br />
+1.3   1.97091423032663<br />
+1.4   2.15089846539314<br />
+1.5   2.35240961524325<br />
+1.6   2.57746447119489<br />
+1.7   2.82831545788997<br />
+1.8   3.10747317631727<br />
+2.0   3.76219569108363<br />
+2.2   4.56790832889823<br />
+2.4   5.55694716696551<br />
+2.6   6.76900580660801<br />
+2.8   8.25272841686113<br />
+3.0   10.0676619957778<br />
+3.3   13.5747610440296<br />
+3.6   18.3127790830626<br />
+3.9   24.711345508488<br />
+4.2   33.3506633088728<br />
+4.6   49.7471837388392<br />
+5.0   74.2099485247878<br />
+5.5   122.348009517829<br />
+6.0   201.715636122456<br />
+7.0   548.317035155212<br />
+8.0   1490.47916125218<br />
+9.0   4051.54202549259</p>
+</li>
+</ol>
+<p>Approximate <span class="math notranslate nohighlight">\(\int_1^{9.0} cosh(x) dx\)</span> from the tabulation above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>The table below is a tabulation of various values of the hyperbolic cosine function.</p>
+<p>x     cosh(x)
+1.0  1.54308063481524<br />
+1.1   1.66851855382226<br />
+1.2   1.81065556732437<br />
+1.3   1.97091423032663<br />
+1.4   2.15089846539314<br />
+1.5   2.35240961524325<br />
+1.6   2.57746447119489<br />
+1.7   2.82831545788997<br />
+1.8   3.10747317631727<br />
+2.0   3.76219569108363<br />
+2.2   4.56790832889823<br />
+2.4   5.55694716696551<br />
+2.6   6.76900580660801<br />
+2.8   8.25272841686113<br />
+3.0   10.0676619957778<br />
+3.3   13.5747610440296<br />
+3.6   18.3127790830626<br />
+3.9   24.711345508488<br />
+4.2   33.3506633088728<br />
+4.6   49.7471837388392<br />
+5.0   74.2099485247878<br />
+5.5   122.348009517829<br />
+6.0   201.715636122456<br />
+7.0   548.317035155212<br />
+8.0   1490.47916125218<br />
+9.0   4051.54202549259</p>
+</li>
+</ol>
+<p>Approximate <span class="math notranslate nohighlight">\(\int_1^{4.2} cosh(x) dx\)</span> from the tabulation above.  Briefly explain how you handle starting and stopping the integration from values that are intermediate and are tabulated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>(Advanced) The table below is a tabulation of various values of the hyperbolic cosine function.</p>
+<p>x     cosh(x)
+1.0  1.54308063481524<br />
+1.1   1.66851855382226<br />
+1.2   1.81065556732437<br />
+1.3   1.97091423032663<br />
+1.4   2.15089846539314<br />
+1.5   2.35240961524325<br />
+1.6   2.57746447119489<br />
+1.7   2.82831545788997<br />
+1.8   3.10747317631727<br />
+2.0   3.76219569108363<br />
+2.2   4.56790832889823<br />
+2.4   5.55694716696551<br />
+2.6   6.76900580660801<br />
+2.8   8.25272841686113<br />
+3.0   10.0676619957778<br />
+3.3   13.5747610440296<br />
+3.6   18.3127790830626<br />
+3.9   24.711345508488<br />
+4.2   33.3506633088728<br />
+4.6   49.7471837388392<br />
+5.0   74.2099485247878<br />
+5.5   122.348009517829<br />
+6.0   201.715636122456<br />
+7.0   548.317035155212<br />
+8.0   1490.47916125218<br />
+9.0   4051.54202549259</p>
+</li>
+</ol>
+<p>Approximate <span class="math notranslate nohighlight">\(\int_1^{4.0} cosh(x) dx\)</span> from the tabulation above.  Explain how handled working with values that fall between tabulated values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rstudio-pubs-static.s3.amazonaws.com/286315_f00cf07beb3945d2a0260d6eaecb5d36.html">https://rstudio-pubs-static.s3.amazonaws.com/286315_f00cf07beb3945d2a0260d6eaecb5d36.html</a></p></li>
+<li><p>Lagrangian Interpolation (Video) <a class="reference external" href="https://www.youtube.com/watch?v=_zK_KhHW6og">https://www.youtube.com/watch?v=_zK_KhHW6og</a></p></li>
+<li><p>Lagrange Polynomials <a class="reference external" href="https://en.wikipedia.org/wiki/Lagrange_polynomial">https://en.wikipedia.org/wiki/Lagrange_polynomial</a></p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/nummeth"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../video_log/video_log.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Video Archive</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="NewtonsMethod.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Appendix: Newton’s Method</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland and Farhang Forghanparast<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
