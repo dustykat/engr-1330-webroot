@@ -404,32 +404,66 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   12: Databases and PANDAS
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#access-files-directly-from-a-url-ordinary-http">
-   Access files directly from a URL (ordinary http://… )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-get-the-actual-file-from-a-remote-web-server-unencrypted">
-     Method: Get the actual file from a remote web server (unencrypted)
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review">
+     Review
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-a-file-into-a-dataframe">
+     Reading a File into a Dataframe
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#access-files-directly-from-a-url-encrypted-https-future-semesters">
-   Access files directly from a URL (encrypted https://… )(Future Semesters)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-dataframe-to-file">
+   Writing a dataframe to file
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-files-directly-from-a-url-ordinary-http">
+     Access files directly from a URL (ordinary http://… )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-get-the-actual-file-from-a-remote-web-server-unencrypted">
+       Method: Get the actual file from a remote web server (unencrypted)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-files-directly-from-a-url-encrypted-https-future-semesters">
+     Access files directly from a URL (encrypted https://… )(Future Semesters)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#laboratory-12">
+     Laboratory 12
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-set-12">
+     Exercise Set 12
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -470,10 +504,131 @@
 <li><p>Using API keys (future versions)</p></li>
 </ol>
 </div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>Pandas data abstraction is a dataframe.  Once a dataframe is created there are a lot of methods attached to the dataframe structure (actually its class).</p>
+<p>Some useful quick-reference sheets</p>
+<p>Hence summary sheets will be useful</p>
+<ul class="simple">
+<li><p>A summary sheet: <a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p></li>
+<li><p>A different one: <a class="reference external" href="http://datacamp-community-prod.s3.amazonaws.com/f04456d7-8e61-482f-9cc9-da6f7f25fc9b">http://datacamp-community-prod.s3.amazonaws.com/f04456d7-8e61-482f-9cc9-da6f7f25fc9b</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="reading-a-file-into-a-dataframe">
+<h2>Reading a File into a Dataframe<a class="headerlink" href="#reading-a-file-into-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Pandas has methods to read common file types, such as <code class="docutils literal notranslate"><span class="pre">csv</span></code>,<code class="docutils literal notranslate"><span class="pre">xls</span></code>, and <code class="docutils literal notranslate"><span class="pre">json</span></code>.<br />
+Ordinary text files are also quite manageable.</p>
+<blockquote>
+<div><p>Specifying <code class="docutils literal notranslate"><span class="pre">engine='openpyxl'</span></code> in the read/write statement is required for the xml versions of Excel (xlsx).  Default is .xls regardless of file name. If you still encounter read errors, try opening the file in Excel and saving as .xls (Excel 97-2004 Workbook) or as a CSV if the structure is appropriate.<br><br>
+You <strong>may</strong> have to install the packages using something like <br><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">/opt/jupyterhub/bin/python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xlwt</span> <span class="pre">openpyxl</span> <span class="pre">xlsxwriter</span> <span class="pre">xlrd</span></code> from the terminal interface (adjust the path to your system) or something like <br><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">/opt/conda/envs/python/bin/python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xlwt</span> <span class="pre">openpyxl</span> <span class="pre">xlsxwriter</span> <span class="pre">xlrd</span></code> <br><br>
+Or in the anaconda powershell <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">xlwt</span> <span class="pre">openpyxl</span> <span class="pre">xlsxwriter</span> <span class="pre">xlrd</span></code></p>
+</div></blockquote>
+<p>The files in the following examples are <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson11/CSV_ReadingFile.csv">CSV_ReadingFile.csv</a>, <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson11/Excel_ReadingFile.xlsx">Excel_ReadingFile.xlsx</a>,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="n">readfilecsv</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CSV_ReadingFile.csv&#39;</span><span class="p">)</span>  <span class="c1">#Reading a .csv file</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readfilecsv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    a   b   c   d
+0   0   1   2   3
+1   4   5   6   7
+2   8   9  10  11
+3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to reading and writing .csv files, you can also read and write .xslx files as below (useful to know this)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">readfileexcel</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Excel_ReadingFile.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span> <span class="c1">#Reading a .xlsx file</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readfileexcel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Unnamed: 0   a   b   c   d
+0           0   0   1   2   3
+1           1   4   5   6   7
+2           2   8   9  10  11
+3           3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="writing-a-dataframe-to-file">
+<h1>Writing a dataframe to file<a class="headerlink" href="#writing-a-dataframe-to-file" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Creating and writing to a .csv file</span>
+<span class="n">readfilecsv</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CSV_ReadingFile.csv&#39;</span><span class="p">)</span>
+<span class="n">readfilecsv</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CSV_WritingFile1.csv&#39;</span><span class="p">)</span> <span class="c1"># write to local directory</span>
+<span class="n">readfilecsv</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CSV_WritingFile1.csv&#39;</span><span class="p">)</span> <span class="c1"># read the file back</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readfilecsv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Unnamed: 0   a   b   c   d
+0           0   0   1   2   3
+1           1   4   5   6   7
+2           2   8   9  10  11
+3           3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Creating and writing to a .csv file by excluding row labels </span>
+<span class="n">readfilecsv</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CSV_ReadingFile.csv&#39;</span><span class="p">)</span>
+<span class="n">readfilecsv</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CSV_WritingFile2.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">readfilecsv</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CSV_WritingFile2.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readfilecsv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    a   b   c   d
+0   0   1   2   3
+1   4   5   6   7
+2   8   9  10  11
+3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Creating and writing to a .xls file</span>
+<span class="n">readfileexcel</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Excel_ReadingFile.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
+<span class="n">readfileexcel</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;Excel_WritingFile.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span> <span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
+<span class="n">readfileexcel</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Excel_WritingFile.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readfileexcel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Unnamed: 0   a   b   c   d
+0           0   0   1   2   3
+1           1   4   5   6   7
+2           2   8   9  10  11
+3           3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
 <hr class="docutils" />
 <div class="section" id="access-files-directly-from-a-url-ordinary-http">
 <h2>Access files directly from a URL (ordinary http://… )<a class="headerlink" href="#access-files-directly-from-a-url-ordinary-http" title="Permalink to this headline">¶</a></h2>
-<p>This lesson shows how to get files from a remote computer.   There are several ways to get the files, most importantly  you need the FQDN to the file.</p>
+<p>This section shows how to get files from a remote computer.   There are several ways to get the files, most importantly  you need the FQDN to the file.</p>
 <div class="section" id="method-get-the-actual-file-from-a-remote-web-server-unencrypted">
 <h3>Method: Get the actual file from a remote web server (unencrypted)<a class="headerlink" href="#method-get-the-actual-file-from-a-remote-web-server-unencrypted" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -484,13 +639,14 @@
 </div></blockquote>
 <p>We will need a module to interface with the remote server. Here we will use <code class="docutils literal notranslate"><span class="pre">requests</span></code> , so first we load the module</p>
 <blockquote>
-<div><p>You may need to install the module into your anaconda environment using the anaconda power shell, on my computer the commands are:</p>
+<div><p>You <strong>may</strong> need to install the module into your anaconda environment using the anaconda power shell using <br>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">requests</span></code> or if you are running a JupyterHub using the terminal prompt and system commands.  On the course content host computer the commands are: <br></p>
 <ul class="simple">
-<li><p>sudo -H /opt/jupyterhub/bin/python3 -m pip install requests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">/opt/jupyterhub/bin/python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code></p></li>
 </ul>
 <p>Or:</p>
 <ul class="simple">
-<li><p>sudo -H /opt/conda/envs/python/bin/python -m pip install requests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">/opt/conda/envs/python/bin/python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code></p></li>
 </ul>
 <p>You will have to do some reading, but with any luck something similar will work for you.</p>
 </div></blockquote>
@@ -701,7 +857,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;YYYY-MM&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson12_10_1.png" src="../../_images/lesson12_10_1.png" />
+<img alt="../../_images/lesson12_18_1.png" src="../../_images/lesson12_18_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -863,6 +1019,18 @@ ISBN 978-1-849511-78-0.</p>
 <p>Sorting <a class="reference external" href="https://www.programiz.com/python-programming/methods/list/sort">https://www.programiz.com/python-programming/methods/list/sort</a></p>
 <p><a class="reference external" href="https://www.oreilly.com/library/view/relational-theory-for/9781449365431/ch01.html">https://www.oreilly.com/library/view/relational-theory-for/9781449365431/ch01.html</a></p>
 <p><a class="reference external" href="https://realpython.com/pandas-read-write-files/#using-pandas-to-write-and-read-excel-files">https://realpython.com/pandas-read-write-files/#using-pandas-to-write-and-read-excel-files</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="laboratory-12">
+<h2>Laboratory 12<a class="headerlink" href="#laboratory-12" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 12 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Laboratory 12.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 12 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.ipynb">Laboratory 12.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-12">
+<h2>Exercise Set 12<a class="headerlink" href="#exercise-set-12" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 11 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Exercise 12.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 12 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.ipynb">Exercise Set 12.ipynb</a></p>
 </div>
 </div>
 

@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Lab12-TH</title>
+<title>Lab12</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13082,7 +13082,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12-TH/Lab12-TH.ipynb">ES-12</a></p>
+<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.ipynb">Lab12</a></p>
 <hr>
 
 </div>
@@ -13091,10 +13091,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1><font color=darkred>Exercise Set 12: Practice with Pandas </font></h1>
+<h1><font color=darkred>Laboratory 12: Practice with Pandas </font></h1>
 <p><strong>LAST NAME, FIRST NAME</strong></p>
 <p><strong>R00000000</strong></p>
-<p>ENGR 1330 ES 12 - Homework</p>
+<p>ENGR 1330 Laboratory 12 - In-Lab</p>
 
 </div>
 </div>
@@ -13102,7 +13102,6 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
 <h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Profile your computer</p>
 <p>Run the script below exactly as written</p>
 
@@ -13111,7 +13110,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -13149,25 +13148,25 @@ sensei
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>This homework involves a winequality database, our first step is to get the database.  Run the script below to get the database.  If it does not work for you, then manually get the database from the URL in the script</p>
+<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2><p>Population Lines</p>
+<p>Use pandas to read a dataframe from the file <a href="http://54.243.252.9/engr-1330-webroot/4-Databases/census_18.csv">http://54.243.252.9/engr-1330-webroot/4-Databases/census_18.csv</a>.<br>
+Then produce a line plot of the counts by age for the 2010 census, x-axis will be the series <code>age</code>, y-axis will be the census values for <code>2010</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######### CODE TO AUTOMATICALLY DOWNLOAD THE DATABASE ################</span>
-<span class="c1">#! pip install requests #install packages into local environment</span>
-<span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># import needed modules to interact with the internet</span>
-<span class="c1"># make the connection to the remote file (actually its implementing &quot;bash curl -O http://fqdn/path ...&quot;)</span>
-<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&#39;</span> <span class="c1"># a csv file</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">)</span> <span class="c1"># Gets the file contents puts into an object</span>
-<span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;winequality-red.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># Prepare a destination, local</span>
-<span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># write contents of object to named local file</span>
-<span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the connection</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get the file (using requests, or just download to your computer by hand)</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># Module to process http/https requests</span>
+<span class="c1">#</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/census_18.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="c1">#</span>
+<span class="n">junk</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;census_18.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
 </pre></div>
 
     </div>
@@ -13175,225 +13174,151 @@ sensei
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.1-Verify-you-have-the-database.">2.1 Verify you have the database.<a class="anchor-link" href="#2.1-Verify-you-have-the-database.">&#182;</a></h3><p>Some ways to verify:</p>
-<ul>
-<li>Open the database in the file system; screen capture the database or</li>
-<li>Use a system command like <code>! cat winequality-red.csv</code>, observe the output.  <br> <em>Windows users can try <code>! type winequality-red.csv</code> to list the file contents</em></li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> cat winequality-red.csv
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read the file into a dataframe</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;census_18.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Examine dataframe layout</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2--Read-the-data-as-a-data-frame-and-print-the-first-few-rows.-In-a-few-lines-explain-what-can-be-understood-about-the-data-from-this.">2.2  Read the data as a data frame and print the first few rows. In a few lines explain what can be understood about the data from this.<a class="anchor-link" href="#2.2--Read-the-data-as-a-data-frame-and-print-the-first-few-rows.-In-a-few-lines-explain-what-can-be-understood-about-the-data-from-this.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Put-your-explaination-here">Put your explaination here<a class="anchor-link" href="#Put-your-explaination-here">&#182;</a></h3><p>...</p>
-<p>...</p>
+<div class="output_area">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.3--Use-the-appropriate-function-and-get-a-summary-of-information-on-the-data-frame.-Explain-what-you-can-learn-from-this-summary-report.">2.3  Use the appropriate function and get a summary of information on the data frame. Explain what you can learn from this summary report.<a class="anchor-link" href="#2.3--Use-the-appropriate-function-and-get-a-summary-of-information-on-the-data-frame.-Explain-what-you-can-learn-from-this-summary-report.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
-    </div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.4--Are-there-any-missing-values-in-the-data?-Justify-your-answer.">2.4  Are there any missing values in the data? Justify your answer.<a class="anchor-link" href="#2.4--Are-there-any-missing-values-in-the-data?-Justify-your-answer.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.5--Use-the-appropriate-function-and-get-the-5-number-summary-for-the-data-frame.-Explain-what-you-can-learn-from-this-summary-report-for-each-column.">2.5  Use the appropriate function and get the 5-number summary for the data frame. Explain what you can learn from this summary report for each column.<a class="anchor-link" href="#2.5--Use-the-appropriate-function-and-get-the-5-number-summary-for-the-data-frame.-Explain-what-you-can-learn-from-this-summary-report-for-each-column.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.6--Rename-the-&quot;quality-(score-_0to10)&quot;-column-heading-to-&quot;quality&quot;">2.6  Rename the "quality (score _0to10)" column heading to "quality"<a class="anchor-link" href="#2.6--Rename-the-&quot;quality-(score-_0to10)&quot;-column-heading-to-&quot;quality&quot;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.7--Make-a-subset-of-all-the-wines-with-a-quality-above-7.-Name-this-subset-&quot;TopQ&quot;.">2.7  Make a subset of all the wines with a quality above 7. Name this subset "TopQ".<a class="anchor-link" href="#2.7--Make-a-subset-of-all-the-wines-with-a-quality-above-7.-Name-this-subset-&quot;TopQ&quot;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.8-What-percentage-of-wines-in-&quot;TopQ&quot;-has-an-alcohol-content-less-than-10%?-What-is-this-percentage-out-of-the-entire-set-of-wine-(the-original-data)?">2.8 What percentage of wines in "TopQ" has an alcohol content less than 10%? What is this percentage out of the entire set of wine (the original data)?<a class="anchor-link" href="#2.8-What-percentage-of-wines-in-&quot;TopQ&quot;-has-an-alcohol-content-less-than-10%?-What-is-this-percentage-out-of-the-entire-set-of-wine-(the-original-data)?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.9-Print-the-above-subset-of-the-dataframe,-sorted-by-wine-quality.">2.9 Print the above subset of the dataframe, sorted by wine quality.<a class="anchor-link" href="#2.9-Print-the-above-subset-of-the-dataframe,-sorted-by-wine-quality.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3>2.10 Define a function that labels the wines based on their quality according to the table below: <br></h3>
-<table>
-<thead><tr>
-<th style="text-align:right">Quality Score</th>
-<th style="text-align:right">Label.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">q&gt;= 7</td>
-<td style="text-align:right">Top</td>
-</tr>
-<tr>
-<td style="text-align:right">5&lt;q&lt;7</td>
-<td style="text-align:right">Average</td>
-</tr>
-<tr>
-<td style="text-align:right">q&lt;=5</td>
-<td style="text-align:right">Low</td>
-</tr>
-</tbody>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AGE</th>
+      <th>2010</th>
+      <th>2014</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3951330</td>
+      <td>3949775</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>3957888</td>
+      <td>3949776</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>4090862</td>
+      <td>3959664</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>4111920</td>
+      <td>4007079</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>4077551</td>
+      <td>4005716</td>
+    </tr>
+  </tbody>
 </table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># plotting </span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;AGE&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;2010&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;duh&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="c1"># Make a plot fill in the parameters</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;AxesSubplot:xlabel=&#39;AGE&#39;&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Exercise-2:">Exercise 2:<a class="anchor-link" href="#Exercise-2:">&#182;</a></h2><p>Using your dataframe from above, plot both the 2010 and 2014 census values by age. Plot the 2010 distribution in blue and the 2014 distribution in red.</p>
 
 </div>
 </div>
@@ -13403,7 +13328,8 @@ sensei
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span> <span class="c1"># fill in the parameters</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13414,67 +13340,12 @@ sensei
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.11-Apply-the-function-on-the-data-frame-and-store-the-result-in-a-new-column-&quot;Qlabel&quot;.">2.11 Apply the function on the data frame and store the result in a new column "Qlabel".<a class="anchor-link" href="#2.11-Apply-the-function-on-the-data-frame-and-store-the-result-in-a-new-column-&quot;Qlabel&quot;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
+<h2 id="Exercise-3.">Exercise 3.<a class="anchor-link" href="#Exercise-3.">&#182;</a></h2><ol>
+<li>What is population for age = 9 for the 2010 census?</li>
+<li>What is population for age = 9 for the 2014 census?</li>
+<li>Is the portion of population over 9 years old increasing? decreasing? staying the same?</li>
+</ol>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.12-Report-the-share-of-each-quality-label-in-percentage.">2.12 Report the share of each quality label in percentage.<a class="anchor-link" href="#2.12-Report-the-share-of-each-quality-label-in-percentage.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.13-Plot-a-histogram-of-pH-for-all-the-Low-quality-wines.-Explain-what-you-can-infer-from-this-plot.">2.13 Plot a histogram of pH for all the Low quality wines. Explain what you can infer from this plot.<a class="anchor-link" href="#2.13-Plot-a-histogram-of-pH-for-all-the-Low-quality-wines.-Explain-what-you-can-infer-from-this-plot.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.14-Make-a-similar-histogram-for-pH-for-all-the-Top-quality-wines.">2.14 Make a similar histogram for pH for all the Top quality wines.<a class="anchor-link" href="#2.14-Make-a-similar-histogram-for-pH-for-all-the-Top-quality-wines.">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13495,6 +13366,13 @@ sensei
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h3><p>Put the new histogram and the previous one next to each other and explain what you can infer by comparing them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
