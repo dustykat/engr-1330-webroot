@@ -13578,7 +13578,7 @@ div#notebook {
 <tr>
 <td style="text-align:left">28Feb22</td>
 <td style="text-align:left">Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 17</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html">Exercise Set 17</a></td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 17</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 15-HW</a></td>
 <td style="text-align:left">iPython Descriptive Statistics <br> - Using SCIPY.STATS <br> - Using PANDAS <br> - Visualizing Results</td>
 </tr>
 <tr>
