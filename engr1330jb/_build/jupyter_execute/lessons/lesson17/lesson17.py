@@ -50,9 +50,9 @@ import requests
 
 
 # put script here to download file from server
-remote_url="http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.cs"  # set the url
+remote_url="http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.csv"  # set the url
 rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links
-open('HighestGrossingMovies.cs','wb').write(rget.content) # extract from the remote the contents, assign to a local file same name
+open('HighestGrossingMovies.csv','wb').write(rget.content) # extract from the remote the contents, assign to a local file same name
 #
 
 Movies = pd.read_csv("HighestGrossingMovies.csv")         #Dataset of the Top10 highest-grossing films as of 2019 (adjusted for inflation)
@@ -577,7 +577,7 @@ print("The kurtosis of the budget of the Top10 highest-grossing films is ",Kurt)
 
 # <hr><hr>
 # 
-# ## Exercise Set 16
+# ## Exercise Set 17
 # 
 # **Examine** (click) Exercise Set 17 as a webpage at [Exercise 17.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html)
 # 

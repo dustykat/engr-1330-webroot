@@ -548,8 +548,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-set-16">
-   Exercise Set 16
+  <a class="reference internal nav-link" href="#exercise-set-17">
+   Exercise Set 17
   </a>
  </li>
 </ul>
@@ -604,9 +604,9 @@ by <strong><em>Bee Guan Teo</em></strong>, available &#64; <a class="reference e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put script here to download file from server</span>
-<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.cs&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.csv&quot;</span>  <span class="c1"># set the url</span>
 <span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
-<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;HighestGrossingMovies.cs&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;HighestGrossingMovies.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
 <span class="c1">#</span>
 
 <span class="n">Movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;HighestGrossingMovies.csv&quot;</span><span class="p">)</span>         <span class="c1">#Dataset of the Top10 highest-grossing films as of 2019 (adjusted for inflation)</span>
@@ -1403,8 +1403,8 @@ by <strong><em>Stan Brown</em></strong>, available &#64; <a class="reference ext
 <p><strong>Download</strong> (right-click, save target as …) Laboratory 17 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.ipynb">Laboratory 17.ipynb</a></p>
 <hr><hr>
 </div>
-<div class="section" id="exercise-set-16">
-<h2>Exercise Set 16<a class="headerlink" href="#exercise-set-16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-set-17">
+<h2>Exercise Set 17<a class="headerlink" href="#exercise-set-17" title="Permalink to this headline">¶</a></h2>
 <p><strong>Examine</strong> (click) Exercise Set 17 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html">Exercise 17.html</a></p>
 <p><strong>Download</strong> (right-click, save target as …) Exercise Set 17 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.ipynb">Exercise Set 17.ipynb</a></p>
 </div>
