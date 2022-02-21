@@ -49,6 +49,11 @@
 # 
 # ## Graphics Conventions for Plots
 # 
+# ```{note}
+# This section needs to have graphics replaced with author generated examples in future editions
+# 
+# ```
+# 
 # ### Terminology: Ordinate, Abscissa, Dependent and Independent Variables
 # 
 # A few terms are used in describing plots:

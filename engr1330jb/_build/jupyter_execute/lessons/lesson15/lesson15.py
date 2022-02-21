@@ -294,14 +294,14 @@ df['child']= df['son'] ; df.drop('son', axis=1, inplace = True) # rename son to 
 df.head()
 
 
-# In[27]:
+# In[10]:
 
 
 # build some lists
 daddy = df['father'] ; mommy = df['mother'] ; baby = df['child']
 
 
-# In[28]:
+# In[11]:
 
 
 myfamily = plt.figure(figsize = (10, 10)) # build a square drawing canvass from figure class
@@ -309,7 +309,7 @@ plt.scatter(baby, daddy, c='red') # basic scatter plot
 plt.show()
 
 
-# In[29]:
+# In[12]:
 
 
 # Looks lousy, needs some labels
@@ -328,14 +328,14 @@ plt.show() # render the two plots
 
 
 
-# In[ ]:
+# In[13]:
 
 
 # Repeat in pandas - The dataframe already is built
 df.plot.scatter(x="child", y="father")
 
 
-# In[30]:
+# In[14]:
 
 
 ax = df.plot.scatter(x="child", y="father", c="red", label='Father')
@@ -345,7 +345,7 @@ ax.set_xlabel("Child's height")
 ax.set_ylabel("Parents' Height")
 
 
-# In[32]:
+# In[15]:
 
 
 df.plot.scatter(x="child", y="father")
@@ -377,7 +377,7 @@ df.plot.scatter(x="child", y="father")
 # 
 # The example below uses a database table from [top_movies.csv](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson12/top_movies.csv)
 
-# In[34]:
+# In[16]:
 
 
 import pandas as pd
@@ -386,7 +386,7 @@ df = pd.read_csv('top_movies.csv')
 df.head()
 
 
-# In[35]:
+# In[17]:
 
 
 df[["Gross"]].hist()
@@ -398,13 +398,13 @@ df[["Gross"]].hist()
 
 
 
-# In[41]:
+# In[18]:
 
 
 df[["Gross"]].hist(bins=100)
 
 
-# In[40]:
+# In[19]:
 
 
 df.describe()
@@ -440,7 +440,7 @@ df.describe()
 # The addendum is intended for in-class demonstration
 # :::
 
-# In[1]:
+# In[20]:
 
 
 # python script to illustrate plotting
@@ -466,7 +466,7 @@ plt.show() # display the plot
 
 # Now lets put the plotting script into a function so we can make line charts of any two numeric lists
 
-# In[2]:
+# In[21]:
 
 
 def plotAline(list1,list2,strx,stry,strtitle): # plot list1 on x, list2 on y, xlabel, ylabel, title
@@ -479,7 +479,7 @@ def plotAline(list1,list2,strx,stry,strtitle): # plot list1 on x, list2 on y, xl
     return #null return
 
 
-# In[3]:
+# In[22]:
 
 
 # wrapper
