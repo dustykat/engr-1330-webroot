@@ -565,3 +565,28 @@ print("The kurtosis of the budget of the Top10 highest-grossing films is ",Kurt)
 # 
 # - "Measures of Shape: Skewness and Kurtosis"
 # by __*Stan Brown*__, available @ https://brownmath.com/stat/shape.htm
+
+# <hr>
+# 
+# ## Laboratory 17
+# 
+# **Examine** (click) Laboratory 17 as a webpage at [Laboratory 17.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 17 as a jupyterlab notebook from [Laboratory 17.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 16
+# 
+# **Examine** (click) Exercise Set 17 as a webpage at [Exercise 17.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 17 as a jupyterlab notebook at  [Exercise Set 17.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.ipynb)
+# 
+# 
+
+# In[ ]:
+
+
+
+
