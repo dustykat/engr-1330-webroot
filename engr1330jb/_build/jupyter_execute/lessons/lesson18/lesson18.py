@@ -9,10 +9,10 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 13: PANDAS Applications (Under Construction)
-# - concrete database
-# - solids-in-rivers database
-# - ???
+# # 18: Randomness, Simulation, and Probability
+# - topic1
+# - topic2
+# - topic 3
 
 # In[ ]:
 
