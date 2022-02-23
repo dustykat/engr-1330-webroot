@@ -13338,6 +13338,26 @@ the counts by age for the 2010 census, x-axis will be the series <code>age</code
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######### CODE TO AUTOMATICALLY DOWNLOAD THE DATABASE ################</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># import needed modules to interact with the internet</span>
+<span class="c1"># make the connection to the remote file (actually its implementing &quot;bash curl -O http://fqdn/path ...&quot;)</span>
+<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/8-Labs/Lab15/census_18.csv&#39;</span> <span class="c1"># a csv file</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">)</span> <span class="c1"># Gets the file contents puts into an object</span>
+<span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;census_18.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># Prepare a destination, local</span>
+<span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># write contents of object to named local file</span>
+<span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the connection</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
