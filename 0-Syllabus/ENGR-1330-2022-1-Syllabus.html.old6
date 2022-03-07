@@ -13578,14 +13578,14 @@ div#notebook {
 <tr>
 <td style="text-align:left">28Feb22</td>
 <td style="text-align:left">Descriptive Statistics <br> - Mean, median, mode (measures of central tendency) <br> - Variance, Standard deviation (measures of dispersion) <br> - Skew (measures of symmetry) <br> - Higher moments (pointyness ...)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson17/lesson17.html">Lesson 17</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html">Exercise Set 17</a></td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 17</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17-TH.html">Exercise Set 17</a></td>
 <td style="text-align:left">iPython Descriptive Statistics <br> - Using SCIPY.STATS <br> - Using PANDAS <br> - Visualizing Results</td>
 </tr>
 <tr>
 <td style="text-align:left">2Mar22</td>
-<td style="text-align:left">Pandas, Numpy, Plotting review</td>
-<td style="text-align:left"><br></td>
-<td style="text-align:left"><br></td>
+<td style="text-align:left">Randomness, Simulation and Probability <br> - Randomness <br> - Probability rules <br> - Conditional probabilities</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson14/ENGR-1330-Lesson14.html">Lesson 18</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14.html">Lab 14</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14-TH.html">Lab 14-HW</a></td>
+<td style="text-align:left">Classical Gambling Simulations <br> - Dice <br> - Russian Roulette <br> - Monte Hall Simulation</td>
 </tr>
 <tr>
 <td style="text-align:left">4Mar22</td>
@@ -13610,21 +13610,21 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">7Mar22</td>
-<td style="text-align:left">Causality, Correlation, Randomness, and Probability <br> -Causailty <br> - Correlation  <br> - Probability rules <br> - Conditional probabilities</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson18/lesson18.html">Lesson 18</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18.html">Lab 18</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18-TH.html">Exercise Set 18</a></td>
+<td style="text-align:left">Correlation,Causality <br> - Correlation as compared to Causation <br> - Covariance and Pearson's R <br> - topic</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson14/ENGR-1330-Lesson14.html">Lesson 19</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14.html">Lab 14</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab14/Lab14-TH.html">Lab 14-HW</a></td>
 <td style="text-align:left">Classical Gambling Simulations <br> - Dice <br> - Russian Roulette <br> - Monte Hall Simulation</td>
 </tr>
 <tr>
 <td style="text-align:left">9Mar22</td>
-<td style="text-align:left">Simulation  <br> - Simulating random processes <br> - Distributions <br></td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson19/lesson19.html">Lesson 19</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19.html">Lab 19</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19-TH.html">Exercise Set 19</a></td>
-<td style="text-align:left"></td>
+<td style="text-align:left">Interval Estimates by Simulation <br> - Bootstrap <br> - Prediction intervals <br> - Parameter intervals</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 20</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 18</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 18-HW</a></td>
+<td style="text-align:left">Interval Estimates Exercises <br> - Confidence interval concept <br> - Bootstrap simulations</td>
 </tr>
 <tr>
 <td style="text-align:left">11Mar22</td>
-<td style="text-align:left">Interval Estimates by Simulation <br> - Bootstrap <br> - Prediction intervals <br> - Parameter intervals</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson20/lesson20.html">Lesson 20</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20.html">Lab 18</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20-TH.html">Exercise Set 20</a></td>
-<td style="text-align:left">Interval Estimates Exercises <br> - Confidence interval concept <br> - Bootstrap simulations</td>
+<td style="text-align:left">Hypothesis Tests <br> - Comparing two (or more) collections of observations <br> - Parametric and Non-Parametric Tests</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 21</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 17-HW</a></td>
+<td style="text-align:left">Hypothesis testing exercises <br> - Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)</td>
 </tr>
 </tbody>
 </table>
@@ -13828,7 +13828,6 @@ div#notebook {
 </tr>
 </tbody>
 </table>
-<p>|11Mar22|Hypothesis Tests <br> - Comparing two (or more) collections of observations <br> - Parametric and Non-Parametric Tests|<a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 21</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 17-HW</a>|Hypothesis testing exercises <br> - Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)|</p>
 
 </div>
 </div>
