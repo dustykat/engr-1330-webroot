@@ -25,11 +25,11 @@ chapters:
 - file: lessons/lesson14/lesson14 # plotting conventions 
 - file: lessons/lesson15/lesson15 # matplotlib bar,scatter,histograms
 - file: lessons/lesson16/lesson16 # exploratory data analysis
-- file: lessons/lesson17 # matrices
-- file: lessons/lesson18 # matrices in numpy
-- file: lessons/lesson19 # database
-- file: lessons/lesson20 # pandas
-- file: lessons/lesson21/lesson21 # visual display of data
+- file: lessons/lesson17/lesson17 # descriptive statistics
+- file: lessons/lesson18/lesson18 # randomness
+- file: lessons/lesson19/lesson19 # simulation
+- file: lessons/lesson20/lesson20 # bootstrap
+- file: lessons/lesson21/lesson21 # hypothesis tests
 - file: lessons/lesson22 # matplotlib
 - file: lessons/lesson23 # data models
 #
