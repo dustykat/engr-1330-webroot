@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="15: The matplotlib package" href="../lesson15/lesson15.html" />
-    <link rel="prev" title="12: Databases and PANDAS" href="../lesson12/lesson12.html" />
+    <link rel="prev" title="13: PANDAS Applications (Under Construction)" href="../lesson13/lesson13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -181,6 +181,11 @@
    12: Databases and PANDAS
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson13/lesson13.html">
+   13: PANDAS Applications (Under Construction)
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    14: Visual display of data
@@ -203,13 +208,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson17.html">
-   Lesson 17: Matrix manipulation
+  <a class="reference internal" href="../lesson17/lesson17.html">
+   17: Descriptive Statistics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson18.html">
-   Lesson 18: Arrays in numpy
+  <a class="reference internal" href="../lesson18/lesson18.html">
+   18: Causality, Correlation, Randomness, and Probability
   </a>
  </li>
  <li class="toctree-l1">
@@ -708,7 +713,7 @@ line charts, scatter plots, bar charts, box plot, and histograms.  <code class="
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate acceleration (naive)</span>
 <span class="n">dvdt</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">speed</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
-<span class="n">plottitle</span> <span class="o">=</span> <span class="s1">&#39;Average acceleration </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dvdt</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; m/sec/sec&#39;</span>
+<span class="n">plottitle</span> <span class="o">=</span> <span class="s1">&#39;Average acceleration </span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dvdt</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39; ($\frac</span><span class="si">{m}</span><span class="s1">{s^2}$)&#39;</span>
 <span class="n">seriesnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;Model&#39;</span><span class="p">]</span>
 <span class="n">modely</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">speed</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">speed</span><span class="p">)]</span>
 <span class="n">modelx</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">time</span><span class="p">)]</span>
@@ -716,7 +721,7 @@ line charts, scatter plots, bar charts, box plot, and histograms.  <code class="
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic line plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">modelx</span><span class="p">,</span> <span class="n">modely</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic line plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Speed (m/sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Speed &#39;</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;($\frac</span><span class="si">{m}{s}</span><span class="s1">$)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">seriesnames</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1006,11 +1011,11 @@ line charts, scatter plots, bar charts, box plot, and histograms.  <code class="
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../lesson12/lesson12.html" title="previous page">
+        <a class="left-prev" href="../lesson13/lesson13.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">12: Databases and PANDAS</p>
+                <p class="prevnext-title">13: PANDAS Applications (Under Construction)</p>
             </div>
         </a>
     </div>

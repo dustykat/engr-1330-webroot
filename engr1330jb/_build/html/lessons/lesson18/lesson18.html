@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18: Randomness, Simulation, and Probability &#8212; ENGR 1330 Course Notes</title>
+    <title>18: Causality, Correlation, Randomness, and Probability &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -214,7 +216,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   18: Randomness, Simulation, and Probability
+   18: Causality, Correlation, Randomness, and Probability
   </a>
  </li>
  <li class="toctree-l1">
@@ -415,8 +417,135 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-concepts">
+     Computational Thinking Concepts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation-and-causality">
+   Correlation and Causality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-causality-a-long-winded-psuedo-definition">
+     What is causality? (A long winded psuedo definition!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-causality-s-mimic">
+     Correlation (Causality’s mimic!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#association-measures-covariance-and-correlation">
+     Association Measures (Covariance and Correlation)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#now-let-s-explore-the-data">
+       Now, let’s explore the data:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implications">
+   Implications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confounding-factors">
+     Confounding Factors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#randomization">
+   Randomization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-of-multiple-gamblers-multiple-visits-to-the-casino">
+   Simulation of multiple gamblers/multiple visits to the Casino
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation">
+     Simulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-example">
+   Simulation Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpret-results">
+     Interpret Results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#randomness-and-probability">
+   Randomness and Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-exclusion">
+   Simple Exclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complete-enumeration">
+   Complete Enumeration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditioning-two-events-must-happen">
+   Conditioning (Two events must happen)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partitioning-when-sequence-doesn-t-matter-a-kind-of-enumeration">
+   Partitioning (When sequence doesn’t matter) - A kind of enumeration!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#at-least-one-success-a-kind-of-exclusion-partition">
+   At Least One Success (A kind of exclusion/partition)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-should-anyone-buy-flood-insurance">
+   Why Should anyone buy Flood Insurance?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-18">
+   Laboratory 18
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-18">
+   Exercise Set 18
   </a>
  </li>
 </ul>
@@ -434,16 +563,1521 @@
     <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="randomness-simulation-and-probability">
-<h1>18: Randomness, Simulation, and Probability<a class="headerlink" href="#randomness-simulation-and-probability" title="Permalink to this headline">¶</a></h1>
+<p>Last GitHub Commit Date: 31 January 2021</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="causality-correlation-randomness-and-probability">
+<h1>18: Causality, Correlation, Randomness, and Probability<a class="headerlink" href="#causality-correlation-randomness-and-probability" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>topic1</p></li>
-<li><p>topic2</p></li>
-<li><p>topic 3</p></li>
+<li><p>Concept of causality and correlation (compare and contrast)</p></li>
+<li><p>Randomness (a prelude to simulation)</p></li>
 </ul>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To understand the fundamental concepts involved in causality; and the difference between cause and correlation.</p></li>
+<li><p>To understand the fundamental concepts involved in simulation.</p></li>
+<li><p>To apply concepts involved in iteration.</p></li>
+</ul>
+<div class="section" id="computational-thinking-concepts">
+<h3>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Causality, Iteration, Simulation =&gt; <code class="docutils literal notranslate"><span class="pre">Algorithm</span> <span class="pre">Design</span></code></p></li>
+<li><p>Iteration, Simulation =&gt; <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Computational</span> <span class="pre">Models</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="correlation-and-causality">
+<h2>Correlation and Causality<a class="headerlink" href="#correlation-and-causality" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-causality-a-long-winded-psuedo-definition">
+<h3>What is causality? (A long winded psuedo definition!)<a class="headerlink" href="#what-is-causality-a-long-winded-psuedo-definition" title="Permalink to this headline">¶</a></h3>
+<p>Causality is the relationship between causes and effects.
+The notion of causality does not have a uniform definition in the sciences, and is studied using philosophy and statistics.
+From the perspective of physics, it is generally believed that causality cannot occur between an effect and an event that is not in the back (past) light cone of said effect.
+Similarly, a cause could not have an effect outside its front (future) light cone.</p>
+<ul class="simple">
+<li><p>Here are some recent articles regarding Closed Time Loops, that explains causal consistency. The second paper is by an undergraduate student!</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.040605">https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.040605</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1361-6382/aba4bc">https://iopscience.iop.org/article/10.1088/1361-6382/aba4bc</a></p></li>
+</ol>
+</li>
+<li><p>Both to some extent theoretically support our popular notion of time travel (aka Dr. Who)  without pesky paradoxes; someone with creative writing juices, could have a good science fiction career using these papers as a starting thesis!</p></li>
+</ul>
+<p>In classical physics, an effect cannot occur before its cause.
+In Einstein’s theory of special relativity, causality means that an effect can not occur from a cause that is not in the back (past) light cone of that event.
+Similarly, a cause cannot have an effect outside its front (future) light cone.
+These restrictions are consistent with the assumption that causal influences cannot travel faster than the speed of light and/or backwards in time. In quantum field theory, observables of events with a spacelike relationship, “elsewhere”, have to commute, so the order of observations or measurements of such observables do not impact each other.</p>
+<p>Causality in this context should not be confused with Newton’s second law, which is related to the conservation of momentum, and is a consequence of the spatial homogeneity of physical laws. The word causality in this context means that all effects must have specific causes.</p>
+<p>Another requirement, at least valid at the level of human experience, is that cause and effect be mediated across space and time (requirement of contiguity). This requirement has been very influential in the past, in the first place as a result of direct observation of causal processes (like pushing a cart), in the second place as a problematic aspect of Newton’s theory of gravitation (attraction of the earth by the sun by means of action at a distance) replacing mechanistic proposals like Descartes’ vortex theory; in the third place as an incentive to develop dynamic field theories (e.g., Maxwell’s electrodynamics and Einstein’s general theory of relativity) restoring contiguity in the transmission of influences in a more successful way than in Descartes’ theory.</p>
+<p>Yada yada bla bla bla …</p>
+</div>
+<div class="section" id="correlation-causality-s-mimic">
+<h3>Correlation (Causality’s mimic!)<a class="headerlink" href="#correlation-causality-s-mimic" title="Permalink to this headline">¶</a></h3>
+<p>The literary (as in writing!) formulation of causality is a “why?, because …” structure (sort of like if=&gt;then) The answer to a because question, should be the “cause.”  Many authors use “since” to imply cause, but it is incorrect grammar - since answers the question of when?</p>
+<p>Think “CAUSE” =&gt; “EFFECT”</p>
+<p>Correlation doesn’t mean cause (although it is a really good predictor of the crap we all buy - its why Amazon is sucessfull)</p>
+<p>Consider the chart below</p>
+<!--![](correlationgraph.png)-->
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson14/correlationgraph.png" width="600">
+<p>The correlation between money spent on pets and the number of lawyers is quite good (nearly perfect), so does having pets cause lawyers?  Of course not, the general social economic conditions that improve general wealth, and create sufficient disposable income to have pets (here we mean companion animals, not food on the hoof) also creates conditions for laywers to proliferate, hence a good correlation.</p>
+<p>Nice video : Correlation and Causation <a class="reference external" href="https://www.youtube.com/watch?v=1Sa2v7kVEc0">https://www.youtube.com/watch?v=1Sa2v7kVEc0</a></p>
+<hr>
+<p>Taking some cues from <a class="reference external" href="http://water.usgs.gov/pubs/twri/twri4a3/">http://water.usgs.gov/pubs/twri/twri4a3/</a></p>
+<blockquote>
+<div><p>Concentrations of atrazine and nitrate in shallow groundwaters are measured in wells over a
+several county area. For each sample, the concentration of one is plotted versus the
+concentration of the other. As atrazine concentrations increase, so do nitrate. How might the
+strength of this association be measured and summarized?</p>
+</div></blockquote>
+<blockquote>
+<div><p>Streams draining the Sierra Nevada mountains in California usually receive less precipitation in
+November than in other months. Has the amount of November precipitation significantly
+changed over the last 70 years, showing a gradual change in the climate of the area? How might
+this be tested?</p>
+</div></blockquote>
+<blockquote>
+<div><p>The above situations require a measure of the strength of association between two continuous
+variables, such as between two chemical concentrations, or between amount of precipitation and
+time. How do they co-vary? One class of measures are called <strong>correlation coefficients</strong>.</p>
+</div></blockquote>
+<p>Also important is how the significance of that association can be tested for, to determine whether the observed pattern differs from what is expected due entirely to chance.</p>
+<p>Whenever a correlation coefficient is to be calculated, the data should be plotted on a scatterplot. No single numerical measure can substitute for the visual insight gained from a plot. Many different
+patterns can produce the same correlation coefficient, and similar strengths of relationships can
+produce differing coefficients, depending on the curvature of the relationship.</p>
+</div>
+<div class="section" id="association-measures-covariance-and-correlation">
+<h3>Association Measures (Covariance and Correlation)<a class="headerlink" href="#association-measures-covariance-and-correlation" title="Permalink to this headline">¶</a></h3>
+<p><strong>Covariance:</strong>
+is a measure of the joint variability of two random variables.  The formula to compute covariance is:</p>
+<div class="math notranslate nohighlight">
+\[cov(x,y)=\frac{\sum_{i=1}^{n}(x-\bar x)(y-\bar y)}{n-1}\]</div>
+<p>If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values, (i.e., the variables tend to show similar behavior), the covariance is positive.
+In the opposite case, when the greater values of one variable mainly correspond to the lesser values of the other, (i.e., the variables tend to show opposite behavior), the covariance is negative.
+The sign of the covariance therefore shows the tendency of any linear relationship between the variables.
+The magnitude of the covariance is not particularly useful to interpret because it depends on the magnitudes of the variables.</p>
+<!--![](https://www.wallstreetmojo.com/wp-content/uploads/2019/03/Covariance-Formula.jpg) <br>-->
+<p>A normalized version of the covariance, the correlation coefficient, however, is useful in terms of sign and magnitude.</p>
+<!--![](https://media.geeksforgeeks.org/wp-content/uploads/Correl.png) <br>-->
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/Correl.png" width="500">
+<p><strong>Correlation Coefficient:</strong> is a measure how strong a relationship is between two variables. There are several types of correlation coefficients, but the most popular is Pearson’s. Pearson’s correlation (also called Pearson’s R) is a correlation coefficient commonly used in linear regression. Correlation coefficient formulas are used to find how strong a relationship is between data. The formula for Pearson’s R is:</p>
+<div class="math notranslate nohighlight">
+\[r=\frac{n(\sum xy)-(\sum x)(\sum y)}{[n\sum x^2 - (\sum x)^2][n\sum y^2 - (\sum y)^2]}\]</div>
+<!--![](https://www.statisticshowto.com/wp-content/uploads/2012/10/pearson.gif) <br>-->
+<p>The correlation coefficient returns a value between -1 and 1, where:</p>
+<p><img src="https://www.statisticshowto.com/wp-content/uploads/2012/10/pearson-2-small.png" width="500"> <br></p>
+<ul class="simple">
+<li><p>1 : A correlation coefficient of 1 means that for every positive increase in one variable, there is a positive increase of a fixed proportion in the other. For example, shoe sizes go up in (almost) perfect correlation with foot length.</p></li>
+<li><p>-1: A correlation coefficient of -1 means that for every positive increase in one variable, there is a negative decrease of a fixed proportion in the other. For example, the amount of gas in a tank decreases in (almost) perfect correlation with speed.</p></li>
+<li><p>0 : Zero means that for every increase, there isn’t a positive or negative increase. The two just aren’t related.</p></li>
+</ul>
+<hr class="docutils" />
+<p>A simple example should illustrate the concept of association</p>
+<p>Consider a table of recorded times and speeds from some experimental observations:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Elapsed Time (s)</p></th>
+<th class="text-align:right head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2.0</p></td>
+<td class="text-align:right"><p>7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3.0</p></td>
+<td class="text-align:right"><p>12</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4.0</p></td>
+<td class="text-align:right"><p>20</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5.0</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6.0</p></td>
+<td class="text-align:right"><p>45.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7.0</p></td>
+<td class="text-align:right"><p>60.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8.0</p></td>
+<td class="text-align:right"><p>77.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9.0</p></td>
+<td class="text-align:right"><p>97.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>10.0</p></td>
+<td class="text-align:right"><p>121.1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Create a dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the necessary packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span> <span class="c1"># this package contains correlation and covariance, so we don&#39;t have to write code</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Create a dataframe:</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">45.6</span><span class="p">,</span> <span class="mf">60.3</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">97.3</span><span class="p">,</span> <span class="mf">121.2</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Time&#39;</span><span class="p">:</span><span class="n">time</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">:</span><span class="n">speed</span><span class="p">})</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6.0</td>
+      <td>45.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7.0</td>
+      <td>60.3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8.0</td>
+      <td>77.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9.0</td>
+      <td>97.3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10.0</td>
+      <td>121.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="now-let-s-explore-the-data">
+<h4>Now, let’s explore the data:<a class="headerlink" href="#now-let-s-explore-the-data" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>11.000000</td>
+      <td>11.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.000000</td>
+      <td>43.100000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.316625</td>
+      <td>41.204077</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.500000</td>
+      <td>9.500000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.000000</td>
+      <td>30.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7.500000</td>
+      <td>69.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10.000000</td>
+      <td>121.200000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_var</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">speed_var</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance of recorded times is &quot;</span><span class="p">,</span><span class="n">time_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance of recorded times is &quot;</span><span class="p">,</span><span class="n">speed_var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variance of recorded times is  11.0
+Variance of recorded times is  1697.7759999999998
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is there evidence of a relationship (based on covariance, correlation) between time and speed?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To find the covariance  </span>
+<span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Time</th>
+      <td>11.00</td>
+      <td>131.750</td>
+    </tr>
+    <tr>
+      <th>Speed</th>
+      <td>131.75</td>
+      <td>1697.776</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To find the correlation among the columns </span>
+<span class="c1"># using pearson method </span>
+<span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Time</th>
+      <td>1.000000</td>
+      <td>0.964082</td>
+    </tr>
+    <tr>
+      <th>Speed</th>
+      <td>0.964082</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>These values suggest that time, <span class="math notranslate nohighlight">\(t\)</span>, is a good estimator of time (correlation is perfect as anticipated), and also a good estimator of speed, <span class="math notranslate nohighlight">\(u\)</span>, (nearly perfect).</p>
+<p>We can hack a useable linear model as:</p>
+<p><span class="math notranslate nohighlight">\(u \approx \bar u + (cov(u,t)/cov(t,t))(t-\bar t)\)</span></p>
+<p>And assess the model by plotting</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">make2plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span><span class="n">strlablx</span><span class="p">,</span><span class="n">strlably</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># basic data plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic model plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strlablx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">strlably</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observations&#39;</span><span class="p">,</span><span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="c1"># modify for argument insertion</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">*</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">make2plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Speed&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">],</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="s1">&#39;Speed&#39;</span><span class="p">,</span><span class="s1">&#39;Speed vs Time using Correlation Model&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson18_17_0.png" src="../../_images/lesson18_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="implications">
+<h2>Implications<a class="headerlink" href="#implications" title="Permalink to this headline">¶</a></h2>
+<p>Most research questions attempt to explain cause and effect.</p>
+<ul class="simple">
+<li><p>In experimental research, the relationship is constructed and the experiment is somewhat of a failure if none of the presumed causal (causal == explainatory) variables influence the response (response == effect)</p></li>
+<li><p>In a data science experimental context, causality may be impossible to establish, however correlations can be established and exploited.</p></li>
+</ul>
+<p>In data science, many studies involve observations on a group of individuals, a factor of interest called a treatment (explainatory variable, predictor variable, predictor feature …), and an outcome (response, effect, state, predicted value …) measured on each individual.</p>
+<p>The presumptive establishment of causality takes place in two stages.</p>
+<ol class="simple">
+<li><p>First, an association is observed. Any relation between the treatment and the outcome is called an association (we can measure the strength of the association using correlation coefficients!).</p></li>
+<li><p>Second, A more careful analysis is used to establish causality.</p></li>
+<li><p>One approach would be to control all variables other than the suspected (explainatory) variables, which for any meaningful process is essentially impossible.</p></li>
+<li><p>Another approach is to establish randomized control studies:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Start with a sample from a population (e.g. volunteers to test Covid 19 vaccines)</p></li>
+<li><p>Randomly assign members to either
+1. Control group
+2. Treatment group</p></li>
+<li><p>Expose the two groups identically, except the control group recieves a false (null) treatment</p></li>
+<li><p>Compare the responses of the two groups, if they are same, there exists no evidence that the treatment variable CAUSES a response</p></li>
+</ul>
+<p>These concepts can be extended with some ingenuity to engineered systems and natural systems.</p>
+<hr class="docutils" />
+<p>Consider</p>
+<!--![](https://www.dshs.texas.gov/uploadedImages/Content/Prevention_and_Preparedness/IDCU/disease/influenza/surveillance/2010/Fig1FluTypesPosPerWeek.png)-->
+<img src="https://www.dshs.texas.gov/uploadedImages/Content/Prevention_and_Preparedness/IDCU/disease/influenza/surveillance/2010/Fig1FluTypesPosPerWeek.png" width="600">
+<p>Data Science Questions:</p>
+<ul>
+<li><p>Does going to school cause flu?</p></li>
+<li><p>Does flu cause school attendance?</p></li>
+<li><p>Does going to school contribute to the spread of flu?</p></li>
+<li><p>Does the spread of flu contribute to the school attendance?</p></li>
+<li><p>Are there other variables that affects both?</p>
+<p>a. These are called  “confounding factors” or “lurking variables”.</p>
+<p>b. Cold weather?, more indoor time?, more interaction?</p>
+</li>
+</ul>
+<div class="section" id="confounding-factors">
+<h3>Confounding Factors<a class="headerlink" href="#confounding-factors" title="Permalink to this headline">¶</a></h3>
+<p>An underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.</p>
+<p>For example, Cold weather in the previous example.</p>
+<p>Confounding also occurs when explainatory variables are correlated to another, for instance flood flows are well correlated to drainage area, main channel length, mean annual precipitation, main channel slope, and elevation. However main channel length is itself strongly correlated to drainage area, so much so as to be nearly useless as an explainatory variable when drainage area is retained in a data model.  It would be a “confounding variable” in this context.</p>
+</div>
+</div>
+<div class="section" id="randomization">
+<h2>Randomization<a class="headerlink" href="#randomization" title="Permalink to this headline">¶</a></h2>
+<p>To establish presumptive causality in  data science experiments, we need randomization tools.
+We can use Python to make psuedo-random choices.
+There are built-in functions in numpy library under random submodule.
+The <code class="docutils literal notranslate"><span class="pre">choice</span></code> function randomly picks one item from an array.</p>
+<p>The syntax is</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.choice(array_name)</span></code>, where array_name is the name of the array from which to make the choice.​</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Making Random Choice from an Array (or list)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">two_groups</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;treatment&#39;</span><span class="p">,</span> <span class="s1">&#39;control&#39;</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">two_groups</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># mylist = [&#39;treatment&#39;, &#39;control&#39;]  # this works too</span>
+<span class="c1"># np.random.choice(mylist)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;control&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The difference of this function from others that we learned so far, is that it doesn’t give the same result every time.
+We can roll a dice using this function by randomly selecting from an array from 1 to 6.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_die</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span><span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="s1">&#39;six&#39;</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;one&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now a bunch of rolls</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #1 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #2 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #3 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #4 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #5 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll #6 &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll #1  four
+roll #2  two
+roll #3  four
+roll #4  five
+roll #5  four
+roll #6  two
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># or multiple rolls, single call</span>
+<span class="n">myDiceRolls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_die</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">myDiceRolls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;four&#39; &#39;six&#39; &#39;six&#39; &#39;four&#39; &#39;two&#39; &#39;six&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We might need to repeat a process multiple times to reach better results or cover more results.
+Let’s create a game with following rules:</p>
+<ul class="simple">
+<li><p>If the dice shows 1 or 2 spots, my net gain is -1 dollar.</p></li>
+<li><p>If the dice shows 3 or 4 spots, my net gain is 0 dollars.</p></li>
+<li><p>If the dice shows 5 or 6 spots, my net gain is 1 dollar.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_wallet</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># start with 1 dollars</span>
+
+<span class="k">def</span> <span class="nf">place_a_bet</span><span class="p">(</span><span class="n">wallet</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Place your bet!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">wallet</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have no money, get out of my Casino!&quot;</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_a_roll</span><span class="p">(</span><span class="n">wallet</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns my net gain on one bet&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roll the die!&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># roll a die once and record the number of spots</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You Lose,  Bummer!&quot;</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># lose the bet</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You Draw, Take your bet back.&quot;</span><span class="p">)</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># draw, get bet back</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win a dollar!&quot;</span><span class="p">)</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">+</span><span class="mi">2</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># win, get bet back and win a dollar!</span>
+    
+
+
+
+<span class="c1"># Single play    </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount in my account =:&quot;</span><span class="p">,</span><span class="n">my_wallet</span><span class="p">)</span>
+<span class="n">my_wallet</span> <span class="o">=</span> <span class="n">place_a_bet</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+<span class="n">my_wallet</span> <span class="o">=</span> <span class="n">make_a_roll</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount in my account =:&quot;</span><span class="p">,</span><span class="n">my_wallet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount in my account =: 1
+Place your bet!
+Roll the die!
+You Lose,  Bummer!
+Amount in my account =: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>A more automated solution is to use a for statement to loop over the contents of a sequence. Each result is called iteration.
+Here we use a for statement in a more realistic way: we print the results of betting five times on the die as described earlier.
+This process is called simulating the results of five bets.
+We use the word simulating to remind ourselves that we are not physically rolling dice and exchanging money but using Python to mimic the process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some printing tricks</span>
+<span class="n">CRED</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[91m&#39;</span>
+<span class="n">CEND</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+
+<span class="n">my_wallet</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">how_many_throws</span> <span class="o">=</span> <span class="mi">1</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many_throws</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount in my account =:&quot;</span><span class="p">,</span><span class="n">my_wallet</span><span class="p">)</span>
+    <span class="n">my_wallet</span> <span class="o">=</span> <span class="n">place_a_bet</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+    <span class="n">my_wallet</span> <span class="o">=</span> <span class="n">make_a_roll</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+
+<span class="c1">#print(CRED + &quot;Error, does not compute!&quot; + CEND)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After &quot;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot; plays&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">CRED</span> <span class="o">+</span> <span class="s2">&quot;Amount in my account =:&quot;</span><span class="p">,</span><span class="n">my_wallet</span><span class="p">,</span><span class="n">CEND</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;_______________________&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount in my account =: 10
+Place your bet!
+Roll the die!
+You win a dollar!
+After  1  plays
+Amount in my account =: 11 
+_______________________
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulation-of-multiple-gamblers-multiple-visits-to-the-casino">
+<h2>Simulation of multiple gamblers/multiple visits to the Casino<a class="headerlink" href="#simulation-of-multiple-gamblers-multiple-visits-to-the-casino" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.inferentialthinking.com/chapters/09/3/Simulation.html">https://www.inferentialthinking.com/chapters/09/3/Simulation.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>  <span class="c1">#null array to store outcomes</span>
+
+<span class="c1"># redefine functions to suppress output</span>
+
+<span class="k">def</span> <span class="nf">place_a_bet</span><span class="p">(</span><span class="n">wallet</span><span class="p">):</span>
+    <span class="c1"># print(&quot;Place your bet!&quot;)</span>
+    <span class="k">if</span> <span class="n">wallet</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># print(&quot;You have no money, get out of my Casino!&quot;)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_a_roll</span><span class="p">(</span><span class="n">wallet</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns my net gain on one bet&quot;&quot;&quot;</span>
+    <span class="c1"># print(&quot;Roll the die!&quot;)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># roll a die once and record the number of spots</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1">#print(&quot;You Lose,  Bummer!&quot;)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># lose the bet</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="c1">#print(&quot;You Draw, Take your bet back.&quot;)</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># draw, get bet back</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="c1">#print(&quot;You win a dollar!&quot;)</span>
+        <span class="n">wallet</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">+</span><span class="mi">2</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="c1"># win, get bet back and win a dollar!</span>
+    
+
+<span class="c1"># Some printing tricks</span>
+<span class="n">CRED</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[91m&#39;</span>
+<span class="n">CEND</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+
+
+<span class="n">how_many_simulations</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many_simulations</span><span class="p">):</span>
+    <span class="n">my_wallet</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">how_many_throws</span> <span class="o">=</span> <span class="mi">30</span> 
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many_throws</span><span class="p">):</span>
+     <span class="c1">#   print(&quot;Amount in my account =:&quot;,my_wallet)</span>
+        <span class="n">my_wallet</span> <span class="o">=</span> <span class="n">place_a_bet</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+        <span class="n">my_wallet</span> <span class="o">=</span> <span class="n">make_a_roll</span><span class="p">(</span><span class="n">my_wallet</span><span class="p">)</span>
+
+<span class="c1">#print(CRED + &quot;Error, does not compute!&quot; + CEND)</span>
+<span class="c1">#    print(&quot;After &quot;,i+1,&quot; plays&quot;)</span>
+<span class="c1">#    print(CRED + &quot;Amount in my account =:&quot;,my_wallet,CEND)</span>
+<span class="c1">#    print(&quot;_______________________&quot;)</span>
+
+    <span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span><span class="n">my_wallet</span><span class="p">)</span>
+
+<span class="c1"># build a histogram chart - outcomes is an array</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gamma</span>
+
+<span class="c1">#ax.hist(r, density=True, histtype=&#39;stepfilled&#39;, alpha=0.2)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Dollars in Gamer&#39;s Wallet&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Relative Frequency&#39;</span><span class="p">)</span>
+<span class="c1">#### just a data model, gamma distribution ##############</span>
+<span class="c1"># code below adapted from https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gamma.html</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># bit of trial and error</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">gamma</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span><span class="n">gamma</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">gamma</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">loc</span><span class="o">=-</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gamma pdf&#39;</span><span class="p">)</span>
+<span class="c1">#########################################################</span>
+<span class="c1"># Render the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#print(&quot;Expected value of wallet (mean) =: &quot;,outcomes.mean())</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson18_31_0.png" src="../../_images/lesson18_31_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.820000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.720591</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>13.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="simulation">
+<h3>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
+<p>Simulation is the process of using a computer to mimic a real experiment or process.
+In this class, those experiments will almost invariably involve chance.</p>
+<p>To summarize from: <a class="reference external" href="https://www.inferentialthinking.com/chapters/09/3/Simulation.html">https://www.inferentialthinking.com/chapters/09/3/Simulation.html</a></p>
+<ul class="simple">
+<li><p>Step 1: What to Simulate: Specify the quantity you want to simulate. For example, you might decide that you want to simulate the outcomes of tosses of a coin.</p></li>
+<li><p>Step 2: Simulating One Value: Figure out how to simulate one value of the quantity you specified in Step 1. (usually turn into a function for readability)</p></li>
+<li><p>Step 3: Number of Repetitions: Decide how many times you want to simulate the quantity. You will have to repeat Step 2 that many times.</p></li>
+<li><p>Step 4: Coding the Simulation: Put it all together in code.</p></li>
+<li><p>Step 5: Interpret the results (plots,</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="simulation-example">
+<h2>Simulation Example<a class="headerlink" href="#simulation-example" title="Permalink to this headline">¶</a></h2>
+<p>Should I change my choice?</p>
+<p>Based on Monty Hall example from <a class="reference external" href="https://youtu.be/Xp6V_lO1ZKA">https://youtu.be/Xp6V_lO1ZKA</a> But we already have a small car!
+(Also watch <a class="reference external" href="https://www.youtube.com/watch?v=6Ewq_ytHA7g">https://www.youtube.com/watch?v=6Ewq_ytHA7g</a> to learn significance of the small car!)</p>
+<p>Consider</p>
+<!--![](montyhall.png)-->
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson14/montyhall.png" width="600">
+<p>The gist of the game is that a contestent chooses a door, the host reveals one of the unselected doors and offers the contestant a chance to change their choice. Should the contestant stick with her initial choice, or switch to the other door? That is the Monty Hall problem.</p>
+<p>Using classical probability theory it is straightforward to show that:</p>
+<ul class="simple">
+<li><p>The chance that the car is behind the originally chosen door is 1/3.</p></li>
+<li><p>After Monty opens the door with the goat, the chance distribution changes.</p></li>
+<li><p>If the contestant switches the decision, he/she doubles the chance.</p></li>
+</ul>
+<p>Suppose we have harder situations, can we use this simple problem to learn how to ask complex questions?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  
+
+<span class="k">def</span> <span class="nf">othergoat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>         <span class="c1">#Define a function to return &quot;the other goat&quot;!</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Goat 1&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Goat 2&quot;</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Goat 2&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Goat 1&quot;</span>
+
+<span class="n">Doors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Car&quot;</span><span class="p">,</span><span class="s2">&quot;Goat 1&quot;</span><span class="p">,</span><span class="s2">&quot;Goat 2&quot;</span><span class="p">])</span>     <span class="c1">#Define a list for objects behind the doors</span>
+<span class="n">goats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Goat 1&quot;</span> <span class="p">,</span> <span class="s2">&quot;Goat 2&quot;</span><span class="p">])</span>          <span class="c1">#Define a list for goats!</span>
+
+<span class="k">def</span> <span class="nf">MHgame</span><span class="p">():</span>
+    <span class="c1">#Function to simulate the Monty Hall Game</span>
+    <span class="c1">#For each guess, return [&quot;the guess&quot;,&quot;the revealed&quot;, &quot;the remaining&quot;]</span>
+    <span class="n">userguess</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Doors</span><span class="p">)</span>         <span class="c1">#randomly selects a door as userguess</span>
+    <span class="k">if</span> <span class="n">userguess</span> <span class="o">==</span> <span class="s2">&quot;Goat 1&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">userguess</span><span class="p">,</span> <span class="s2">&quot;Goat 2&quot;</span><span class="p">,</span><span class="s2">&quot;Car&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">userguess</span> <span class="o">==</span> <span class="s2">&quot;Goat 2&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">userguess</span><span class="p">,</span> <span class="s2">&quot;Goat 1&quot;</span><span class="p">,</span><span class="s2">&quot;Car&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">userguess</span> <span class="o">==</span> <span class="s2">&quot;Car&quot;</span><span class="p">:</span>
+        <span class="n">revealed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">goats</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">userguess</span><span class="p">,</span> <span class="n">revealed</span><span class="p">,</span><span class="n">othergoat</span><span class="p">(</span><span class="n">revealed</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check and see if the MHgame function is doing what it is supposed to do:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span><span class="n">MHgame</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Goat 2&#39;, &#39;Goat 1&#39;, &#39;Car&#39;]
+Goat 2
+Goat 1
+Car
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="p">[]</span>         <span class="c1">#Create an empty list for the userguess</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="p">[]</span>         <span class="c1">#Create an empty list for the revealed</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="p">[]</span>         <span class="c1">#Create an empty list for the remaining</span>
+
+<span class="n">how_many_games</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">how_many_games</span><span class="p">):</span>         <span class="c1">#Simulate the game for 1000 rounds - or any other number of rounds you desire</span>
+    <span class="n">game</span> <span class="o">=</span> <span class="n">MHgame</span><span class="p">()</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>             <span class="c1">#In each round, add the first element to the userguess list</span>
+    <span class="n">c2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>             <span class="c1">#In each round, add the second element to the revealed list</span>
+    <span class="n">c3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>             <span class="c1">#In each round, add the third element to the remaining list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a data frame (gamedf) with 3 columns (&quot;Guess&quot;,&quot;Revealed&quot;, &quot;Remaining&quot;) and 1000 (or how many number of rounds) rows</span>
+<span class="n">gamedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Guess&#39;</span><span class="p">:</span><span class="n">c1</span><span class="p">,</span>
+                       <span class="s1">&#39;Revealed&#39;</span><span class="p">:</span><span class="n">c2</span><span class="p">,</span>
+                       <span class="s1">&#39;Remaining&#39;</span><span class="p">:</span><span class="n">c3</span><span class="p">})</span>
+<span class="n">gamedf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Guess</th>
+      <th>Revealed</th>
+      <th>Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Car</td>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Car</td>
+      <td>Goat 1</td>
+      <td>Goat 2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>Car</td>
+      <td>Goat 1</td>
+      <td>Goat 2</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>Goat 1</td>
+      <td>Goat 2</td>
+      <td>Car</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>Car</td>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>Goat 1</td>
+      <td>Goat 2</td>
+      <td>Car</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the count of each item in the first and 3rd column</span>
+<span class="n">original_car</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Guess</span> <span class="o">==</span> <span class="s1">&#39;Car&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">remaining_car</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Remaining</span> <span class="o">==</span> <span class="s1">&#39;Car&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">original_g1</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Guess</span> <span class="o">==</span> <span class="s1">&#39;Goat 1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">remaining_g1</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Remaining</span> <span class="o">==</span> <span class="s1">&#39;Goat 1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">original_g2</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Guess</span> <span class="o">==</span> <span class="s1">&#39;Goat 2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">remaining_g2</span> <span class="o">=</span><span class="n">gamedf</span><span class="p">[</span><span class="n">gamedf</span><span class="o">.</span><span class="n">Remaining</span> <span class="o">==</span> <span class="s1">&#39;Goat 2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot a grouped barplot</span>
+
+<span class="c1"># set width of bar</span>
+<span class="n">barWidth</span> <span class="o">=</span> <span class="mf">0.25</span>
+ 
+<span class="c1"># set height of bar</span>
+<span class="n">bars1</span> <span class="o">=</span> <span class="p">[</span><span class="n">original_car</span><span class="p">,</span><span class="n">original_g1</span><span class="p">,</span><span class="n">original_g2</span><span class="p">]</span>
+<span class="n">bars2</span> <span class="o">=</span> <span class="p">[</span><span class="n">remaining_car</span><span class="p">,</span><span class="n">remaining_g1</span><span class="p">,</span><span class="n">remaining_g2</span><span class="p">]</span>
+ 
+<span class="c1"># Set position of bar on X axis</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bars1</span><span class="p">))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">barWidth</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r1</span><span class="p">]</span>
+ 
+<span class="c1"># Make the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">bars1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">barWidth</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original Guess&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">bars2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;midnightblue&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">barWidth</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Remaining Door&#39;</span><span class="p">)</span>
+ 
+<span class="c1"># Add xticks on the middle of the group bars</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="n">r</span> <span class="o">+</span> <span class="n">barWidth</span><span class="o">/</span><span class="mi">2</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bars1</span><span class="p">))],</span> <span class="p">[</span><span class="s1">&#39;Car&#39;</span><span class="p">,</span> <span class="s1">&#39;Goat 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Goat 2&#39;</span><span class="p">])</span>
+ 
+<span class="c1"># Create legend &amp; Show graphic</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson18_39_0.png" src="../../_images/lesson18_39_0.png" />
+</div>
+</div>
+<div class="section" id="interpret-results">
+<h3>Interpret Results<a class="headerlink" href="#interpret-results" title="Permalink to this headline">¶</a></h3>
+<p><font color=crimson><strong>According to the plot, it is beneficial for the players to switch doors because the initial chance for being correct is only 1/3</strong></font></p>
+<p>Does changing doors have a CAUSAL effect on outcome?</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="randomness-and-probability">
+<h2>Randomness and Probability<a class="headerlink" href="#randomness-and-probability" title="Permalink to this headline">¶</a></h2>
+<p>The textbook presents randomness at: <a class="reference external" href="https://www.inferentialthinking.com/chapters/09/Randomness.html">https://www.inferentialthinking.com/chapters/09/Randomness.html</a></p>
+<p>Section 9.5 of that link elaborates on probabilities</p>
+<p>“Over the centuries, there has been considerable philosophical debate about what probabilities are. Some people think that probabilities are relative frequencies; others think they are long run relative frequencies; still others think that probabilities are a subjective measure of their own personal degree of uncertainty.”</p>
+<p>As a practical matter, most probabilities are relative frequencies.  If you are a Bayesian statistician, its just conditioned relative frequency.  By convention, probabilities are numbers between 0 and 1, or, equivalently, 0% and 100%. Impossible events have probability 0. Events that are certain have probability 1.</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRY93kpa8YEikMTZsMZk8Rka4DTQrpxkDxmkA&usqp=CAU" width="400">
+<p>As a silly example, the probability that a Great White shark will swim up your sewer pipe and bite you on the bottom, is zero.  Unless the sewer pipe is pretty big, the shark cannot physically get to you - hence impossible.  Now if you are swimming in a freshwater river, lets say the Columbia river on the Oregon border, that probability of sharkbite increases a bit, perhaps 1 in 100 million, or 0.000001% chance of a Great White shark (a pelagic species adapted to salt water), swimming upriver in freshwater, past a couple of fish ladders, still hungry enough bite your bottom. It would be a rare bite indeed; but not physically impossible.</p>
+<img src="https://www.myyosemitepark.com/wp-content/uploads/2020/07/yt-galen-clark-overhanging-rock_georgefiske1900.jpg" width="400">
+<p>At the other end of the scale, “sure things” have a probability close to 1. If you run and jump off Glacier point in Yosemite Valley, its almost guarenteed that you will have a 1000 foot plunge until you hit the apron of the cliff and make a big red smear - there could be a gust of wind pushing you away into the trees, but pretty unlikely. So without a squirrel suit and a parachute you are pretty much going to expire with probability 100% chance.</p>
+<p>Math is the main tool for finding probabilities exactly, though computers are useful for this purpose too. Simulation can provide excellent approximations. In this section, we will informally develop a few simple rules that govern the calculation of probabilities. In subsequent sections we will return to simulations to approximate probabilities of complex events.</p>
+<p>We will use the standard notation 𝑃(event) to denote the probability that “event” happens, and we will use the words “chance” and “probability” interchangeably.</p>
+<ul class="simple">
+<li><p>Concepts of sample, population, and probabilities.</p></li>
+<li><p>Computing probability: single events, both events, at least event.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="simple-exclusion">
+<h2>Simple Exclusion<a class="headerlink" href="#simple-exclusion" title="Permalink to this headline">¶</a></h2>
+<p>If the chance that event happens is 40%, then the chance that it doesn’t happen is 60%.
+This natural calculation can be described in general as follows:</p>
+<p>𝑃(an event doesn’t happen) = 1−𝑃(the event happens)</p>
+<p>The result is correct if the entireity of possibilities are enumerated, that is the entire population is described.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="complete-enumeration">
+<h2>Complete Enumeration<a class="headerlink" href="#complete-enumeration" title="Permalink to this headline">¶</a></h2>
+<p>If you are rolling an ordinary die, a natural assumption is that all six faces are equally likely.
+Then probabilities of how one roll comes out can be easily calculated as a ratio.
+For example, the chance that the die shows an even number is</p>
+<div class="math notranslate nohighlight">
+\[\frac{number~of~even~faces}{number~of~all~faces} =  \frac{\#{2,4,6}}{\#{1,2,3,4,5,6}} = \frac{3}{6} \]</div>
+<p>Similarly,
+$<span class="math notranslate nohighlight">\(𝑃(die~shows~a~multiple~of~3) = \frac{\#{3,6}}{\#{1,2,3,4,5,6}} = \frac{2}{6}\)</span>$</p>
+<p>In general,
+$<span class="math notranslate nohighlight">\(𝑃(an event happens) = \frac{outcomes that make the event happen}{all outcomes}\)</span>$</p>
+<p>Provided all the outcomes are equally likely.  As above, this presumes the entireity of possibilities are enumerated.</p>
+<p>In the case of a single die, there are six outcomes - these comprise the entire <strong>population</strong> of outcomes.  If we roll two die there are 12 outcomes, three die 18 and so on.</p>
+<p>Not all random phenomena are as simple as one roll of a die. The two main rules of probability, developed below, allow mathematicians to find probabilities even in complex situations.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="conditioning-two-events-must-happen">
+<h2>Conditioning (Two events must happen)<a class="headerlink" href="#conditioning-two-events-must-happen" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you have a box that contains three tickets: one red, one blue, and one green. Suppose you draw two tickets at random without replacement; that is, you shuffle the three tickets, draw one, shuffle the remaining two, and draw another from those two. What is the chance you get the green ticket first, followed by the red one?</p>
+<p>There are six possible pairs of colors: RB, BR, RG, GR, BG, GB (we’ve abbreviated the names of each color to just its first letter). All of these are equally likely by the sampling scheme, and only one of them (GR) makes the event happen. So
+$<span class="math notranslate nohighlight">\( 𝑃(green~first,~then~red) = \frac{GR}{RB, BR, RG, GR, BG, GB} = \frac{1}{6} \)</span>$</p>
+<p>But there is another way of arriving at the answer, by thinking about the event in two stages. First, the green ticket has to be drawn. That has chance 1/3, which means that the green ticket is drawn first in about 1/3 of all repetitions of the experiment.</p>
+<p>But that doesn’t complete the event. Among the 1/3 of repetitions when green is drawn first, the red ticket has to be drawn next.
+That happens in about 1/2 of those repetitions, and so:</p>
+<div class="math notranslate nohighlight">
+\[𝑃(green~first,~then~red) = \frac{1}{2} of \frac{1}{3} = \frac{1}{6} \]</div>
+<p>This calculation is usually written “in chronological order,” as follows.</p>
+<div class="math notranslate nohighlight">
+\[𝑃(green~first,~then~red) = \frac{1}{3} of \frac{1}{2} = \frac{1}{6} \]</div>
+<p>The factor of $<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>$ is called ” the <strong>conditional</strong> chance that the red ticket appears second, given that the green ticket appeared first.”</p>
+<p>In general, we have the multiplication rule:</p>
+<div class="math notranslate nohighlight">
+\[ 𝑃(two~events~both~happen) = 𝑃(one~event~happens)\times 𝑃(the~other~event~happens, given~that~the~first~one~happened) \]</div>
+<p>Thus, when there are two conditions – one event must happen, as well as another – the chance is a fraction of a fraction, which is smaller than either of the two component fractions. The more conditions that have to be satisfied, the less likely they are to all be satisfied.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="partitioning-when-sequence-doesn-t-matter-a-kind-of-enumeration">
+<h2>Partitioning (When sequence doesn’t matter) - A kind of enumeration!<a class="headerlink" href="#partitioning-when-sequence-doesn-t-matter-a-kind-of-enumeration" title="Permalink to this headline">¶</a></h2>
+<p>Suppose instead we want the chance that one of the two tickets is green and the other red.
+This event doesn’t specify the order in which the colors must appear.
+So they can appear in either order.</p>
+<p>A good way to tackle problems like this is to partition the event so that it can happen in exactly one of several different ways.
+The natural partition of “one green and one red” is: GR, RG.</p>
+<p>Each of GR and RG has chance 1/6 by the calculation above.</p>
+<p>So you can calculate the chance of “one green and one red” by adding them up.</p>
+<div class="math notranslate nohighlight">
+\[𝑃(one~green~and~one~red) = 𝑃(GR)+𝑃(RG) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} \]</div>
+<p>In general, we have the addition rule:</p>
+<div class="math notranslate nohighlight">
+\[ 𝑃(an~event~happens) = 𝑃(first~way~it~can~happen)+𝑃(second~way~it~can~happen) \]</div>
+<p>provided the event happens in exactly one of the two ways.</p>
+<p>Thus, when an event can happen in one of two different ways, the chance that it happens is a sum of chances, and hence bigger than the chance of either of the individual ways.</p>
+<p>The multiplication rule has a natural extension to more than two events, as we will see below. So also the addition rule has a natural extension to events that can happen in one of several different ways.</p>
+<p>Learn more at: <a class="reference external" href="https://ocw.mit.edu/courses/mathematics/18-440-probability-and-random-variables-spring-2014/lecture-notes/MIT18_440S14_Lecture3.pdf">https://ocw.mit.edu/courses/mathematics/18-440-probability-and-random-variables-spring-2014/lecture-notes/MIT18_440S14_Lecture3.pdf</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="at-least-one-success-a-kind-of-exclusion-partition">
+<h2>At Least One Success (A kind of exclusion/partition)<a class="headerlink" href="#at-least-one-success-a-kind-of-exclusion-partition" title="Permalink to this headline">¶</a></h2>
+<p>Data scientists work with random samples from populations.
+A question that sometimes arises is about the likelihood that a particular individual in the population is selected to be in the sample.
+To work out the chance, that individual is called a “success,” and the problem is to find the chance that the sample contains a success.</p>
+<p>To see how such chances might be calculated, we start with a simpler setting: tossing a coin two times.</p>
+<p>If you toss a coin twice, there are four equally likely outcomes: HH, HT, TH, and TT.
+We have abbreviated “Heads” to H and “Tails” to T.
+The chance of getting at least one head in two tosses is therefore 3/4.</p>
+<p>Another way of coming up with this answer is to work out what happens if you don’t get at least one head: both the tosses have to land tails. So
+$<span class="math notranslate nohighlight">\(𝑃(at~least~one~head~in~two~tosses) = 1−𝑃(both~tails) = 1−\frac{1}{4} = \frac{3}{4}\)</span>$</p>
+<p>Notice also that
+$<span class="math notranslate nohighlight">\(𝑃(both~tails) = \frac{1}{4} = \frac{1}{2} \times \frac{1}{2} = (\frac{1}{2})^2\)</span>$</p>
+<p>by the multiplication rule.</p>
+<p>These two observations allow us to find the chance of at least one head in any given number of tosses. For example,
+$<span class="math notranslate nohighlight">\(𝑃(at~least~one~head~in~17~tosses) = 1−𝑃(all~17~are~tails) = 1−(\frac{1}{2})^{17}\)</span>$</p>
+<p>And now we are in a position to find the chance that the face with six spots comes up at least once in rolls of a die.</p>
+<p>For example,
+$<span class="math notranslate nohighlight">\(𝑃(a~single~roll~is~not~6) = 𝑃(1)+𝑃(2)+𝑃(3)+𝑃(4)+𝑃(5) = \frac{5}{6}\)</span>$</p>
+<p>Therefore,
+$<span class="math notranslate nohighlight">\(𝑃(at~least~one~6~in~two~rolls) = 1−𝑃(both~rolls~are~not~6) = 1−(\frac{5}{6})^2\)</span>$</p>
+<p>and
+$<span class="math notranslate nohighlight">\(𝑃(at~least~one~6~in~17~rolls) = 1−(\frac{5}{6})^{17}\)</span>$</p>
+<p>The table below shows these probabilities as the number of rolls increases from 1 to 50.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">HowManyRollsToTake</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">numRolls</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">probabilities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">HowManyRollsToTake</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">numRolls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">probabilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">rolls</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NumRolls&quot;</span><span class="p">:</span> <span class="n">numRolls</span><span class="p">,</span>
+    <span class="s2">&quot;Prob at least one 6&quot;</span><span class="p">:</span> <span class="n">probabilities</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rolls</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;NumRolls&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Prob at least one 6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;NumRolls&#39;, ylabel=&#39;Prob at least one 6&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson18_47_1.png" src="../../_images/lesson18_47_1.png" />
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-should-anyone-buy-flood-insurance">
+<h2>Why Should anyone buy Flood Insurance?<a class="headerlink" href="#why-should-anyone-buy-flood-insurance" title="Permalink to this headline">¶</a></h2>
+<p>Lets apply these ideas to insurance.</p>
+<img src="https://www.snopes.com/uploads/2015/05/tropical-storm-allison-865x452.jpg" width="500">
+<!--![](https://www.snopes.com/uploads/2015/05/tropical-storm-allison-865x452.jpg)-->
+<p>Suppose you have a house that is located in the 100-year ARI (Annual Recurrance Interval) regulatory flood plain; and you are in a community with a good engineer, who got the probability about correct, that is the chance in any year of a <strong>total loss</strong> is 1 in 100 or 0.01. Thus the chance of <strong>no loss</strong> in any year is 99 in 100 or 0.99 (pretty good odds)!</p>
+<p>So what is the chance during a 30-year loan, of no loss?</p>
+<p>We can just apply the multiplication rule on the <strong>no loss</strong> probability
+$<span class="math notranslate nohighlight">\( P(No~Loss) = 0.99^{30} \)</span>$</p>
+<p>But lets simulate - literally adapting the prior script.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">HowManyYears</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">numYears</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">nolossprobabilities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lossprobabilities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">HowManyYears</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">numYears</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># How many years in the sequence</span>
+    <span class="n">nolossprobabilities</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span><span class="o">**</span><span class="n">i</span><span class="p">)</span> <span class="c1">#Probability of No Loss after i-years</span>
+    <span class="n">lossprobabilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span><span class="o">**</span><span class="n">i</span><span class="p">)</span> <span class="c1">#Probability of Loss after i-years</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Years from Start of Loan&quot;</span><span class="p">:</span> <span class="n">numYears</span><span class="p">,</span>
+    <span class="s2">&quot;Probability of No Loss&quot;</span><span class="p">:</span> <span class="n">nolossprobabilities</span><span class="p">,</span>
+    <span class="s2">&quot;Probability of Loss&quot;</span><span class="p">:</span> <span class="n">lossprobabilities</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">years</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Years from Start of Loan&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Probability of Loss&quot;</span><span class="p">)</span>
+<span class="c1"># df.plot.line(x=&quot;Years from Start of Loan&quot;, y=&quot;Probability of No Loss&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Years from Start of Loan&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson18_50_1.png" src="../../_images/lesson18_50_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Years from Start of Loan</th>
+      <th>Probability of No Loss</th>
+      <th>Probability of Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.990000</td>
+      <td>0.010000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.980100</td>
+      <td>0.019900</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.970299</td>
+      <td>0.029701</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.960596</td>
+      <td>0.039404</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>0.950990</td>
+      <td>0.049010</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.941480</td>
+      <td>0.058520</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.932065</td>
+      <td>0.067935</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>0.922745</td>
+      <td>0.077255</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>0.913517</td>
+      <td>0.086483</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.904382</td>
+      <td>0.095618</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.895338</td>
+      <td>0.104662</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>0.886385</td>
+      <td>0.113615</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>0.877521</td>
+      <td>0.122479</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.868746</td>
+      <td>0.131254</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>0.860058</td>
+      <td>0.139942</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>0.851458</td>
+      <td>0.148542</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.842943</td>
+      <td>0.157057</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>0.834514</td>
+      <td>0.165486</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>0.826169</td>
+      <td>0.173831</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>0.817907</td>
+      <td>0.182093</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>0.809728</td>
+      <td>0.190272</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>0.801631</td>
+      <td>0.198369</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>23</td>
+      <td>0.793614</td>
+      <td>0.206386</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>0.785678</td>
+      <td>0.214322</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>0.777821</td>
+      <td>0.222179</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>26</td>
+      <td>0.770043</td>
+      <td>0.229957</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>27</td>
+      <td>0.762343</td>
+      <td>0.237657</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>0.754719</td>
+      <td>0.245281</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>0.747172</td>
+      <td>0.252828</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Probability of Loss&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2602996266117198
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.inferentialthinking.com/chapters/09/Randomness.html">https://www.inferentialthinking.com/chapters/09/Randomness.html</a></p></li>
+<li><p><a class="reference external" href="https://ocw.mit.edu/courses/mathematics/18-440-probability-and-random-variables-spring-2014/lecture-notes/MIT18_440S14_Lecture3.pdf">https://ocw.mit.edu/courses/mathematics/18-440-probability-and-random-variables-spring-2014/lecture-notes/MIT18_440S14_Lecture3.pdf</a></p></li>
+<li><p><a class="reference external" href="http://water.usgs.gov/pubs/twri/twri4a3/">http://water.usgs.gov/pubs/twri/twri4a3/</a></p></li>
+</ol>
+<hr>
+</div>
+<div class="section" id="laboratory-18">
+<h2>Laboratory 18<a class="headerlink" href="#laboratory-18" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 18 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18.html">Laboratory 18.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 18 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18.ipynb">Laboratory 18.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-18">
+<h2>Exercise Set 18<a class="headerlink" href="#exercise-set-18" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 18 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18-TH.html">Exercise 18.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 18 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab18/Lab18-TH.ipynb">Exercise Set 18.ipynb</a></p>
 </div>
 </div>
 

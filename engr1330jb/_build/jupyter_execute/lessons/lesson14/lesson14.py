@@ -187,7 +187,7 @@ plt.show()
 
 # Estimate acceleration (naive)
 dvdt = (max(speed) - min(speed))/(max(time)-min(time))
-plottitle = 'Average acceleration %.3f' % (dvdt) + ' m/sec/sec'
+plottitle = 'Average acceleration %.1f' % (dvdt) + r' ($\frac{m}{s^2}$)'
 seriesnames = ['Data','Model']
 modely = [min(speed),max(speed)]
 modelx = [min(time),max(time)]
@@ -195,7 +195,7 @@ mydata = plt.figure(figsize = (10,5)) # build a square drawing canvass from figu
 plt.plot(time, speed, c='red', marker='v',linewidth=1) # basic line plot
 plt.plot(modelx, modely, c='blue',linewidth=1) # basic line plot
 plt.xlabel('Time (sec)')
-plt.ylabel('Speed (m/sec)')
+plt.ylabel('Speed '+r'($\frac{m}{s}$)')
 plt.legend(seriesnames)
 plt.title(plottitle)
 plt.show()
