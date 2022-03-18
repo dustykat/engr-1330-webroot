@@ -30,16 +30,23 @@ chapters:
 - file: lessons/lesson19/lesson19 # simulation
 - file: lessons/lesson20/lesson20 # bootstrap
 - file: lessons/lesson21/lesson21 # hypothesis tests
-- file: lessons/lesson22 # matplotlib
-- file: lessons/lesson23 # data models
-#
+- file: lessons/lesson22/lesson22 
+- file: lessons/lesson23/lesson23
+- file: lessons/lesson24/lesson24 
+- file: lessons/lesson25/lesson25
+- file: lessons/lesson26/lesson26 
+- file: lessons/lesson27/lesson27
+- file: lessons/lesson28/lesson28 
+- file: lessons/lesson29/lesson29
+- file: lessons/lesson30/lesson30 
+- file: lessons/lesson31/lesson31
 - file: lessons/lesson32/lesson32 # KNN Classification
 - file: lessons/lesson33/lesson33 # KNN Classification
 - file: lessons/lesson34/lesson34 # KNN Classification
-- file: lessons/lesson35 # logistic regression
-- file: lessons/lesson36 # logistic regression
-- file: lessons/lesson37 # knn classification
-- file: lessons/lesson38 # knn classification
+- file: lessons/lesson35/lesson35 # logistic regression
+- file: lessons/lesson36/lesson36 # logistic regression
+#- file: lessons/lesson37 # knn classification
+#- file: lessons/lesson38 # knn classification
 - file: lessons/video_log/video_log # Appendix of video links
 - file: lessons/nummeth/Numericalintegration # Appendix of video links
 - file: lessons/nummeth/NewtonsMethod # Appendix of video linksengr-1330-webroot/engr1330jb/lessons/nummeth/Numericalintegration.ipynb

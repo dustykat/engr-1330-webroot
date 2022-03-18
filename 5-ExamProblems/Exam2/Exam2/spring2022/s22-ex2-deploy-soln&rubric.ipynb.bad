@@ -1,0 +1,517 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# <font color=darkblue>ENGR 1330-2022-2 Exam1-Laboratory Portion  </font>\n",
+    "\n",
+    "**LAST NAME, FIRST NAME**\n",
+    "\n",
+    "**R00000000**\n",
+    "\n",
+    "ENGR 1330 Exam 1 - Laboratory/Programming Skills\n",
+    "\n",
+    "---\n",
+    "\n",
+    "**Download** (right-click, save target as ...) this page as a jupyterlab notebook from: [s22-ex1-deploy.ipynb](http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam1/Exam1/spring2022/s22-ex1-deploy.ipynb)\n",
+    "\n",
+    "**If you are unable to download the file, create an empty notebook and copy paste the problems into Markdown cells and Code cells (problem-by-problem)**\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Problem 0 (5 pts) : <font color = 'magenta'>*Profile your computer*</font>\n",
+    "\n",
+    "Execute the code cell below exactly as written.  If you get an error just continue to the remaining problems."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Preamble script block to identify host, user, and kernel\n",
+    "import sys\n",
+    "! hostname\n",
+    "! whoami\n",
+    "print(sys.executable)\n",
+    "print(sys.version)\n",
+    "print(sys.version_info)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Problem 1 NUMPY (20 points) : <font color = 'magenta'> *Show me the money!* </font>\n",
+    "\n",
+    "Assume that you have access to 50,000 bank accounts.  Assume that the account balances are uniformly distributed between \\\\$100 and \\\\$100,000. Assume that the annual interest rate on the accounts is 5% and the interest is compounded daily and added to the accounts, except that fractions of cents are truncated. Assume that your illegal account initially has a $0 balance.\n",
+    "\n",
+    "Explain what the code below does."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "accounts = 100 + (100000-100) * np.random.rand(50000,1);\n",
+    "accounts = np.floor(100*accounts)/100;"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Develop the mathematical steps necessary to increase each of the 50,000 accounts by (5/365)% per day, truncate the accounts to the nearest penny, and add the truncated amount into a seperate account titled “bitcoin”\n",
+    "    \n",
+    "Using a repetative structure, iterate over your code until the bitcoin account has accumulated $1,000,000. \n",
+    "How long (days) does it take?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# generate the accounts\n",
+    "# compute daily addition to each account, sweep fractional portion into bitcoin\n",
+    "# report bitcoin amount and days since steal begin\n",
+    "# stop when have a million dollars"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem 2 (5 pts) : <font color = 'magenta'>*Get the data files*</font>\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "######### CODE TO AUTOMATICALLY DOWNLOAD THE DATABASE ################\n",
+    "import requests # import needed modules to interact with the internet\n",
+    "# make the connection to the remote file (actually its implementing \"bash curl -O http://fqdn/path ...\")\n",
+    "remote_url = 'http://54.243.252.9/engr-1330-webroot/8-Labs/Lab15/galton_subset.csv' # a csv file\n",
+    "response = requests.get(remote_url) # Gets the file contents puts into an object\n",
+    "output = open('galton_subset.csv', 'wb') # Prepare a destination, local\n",
+    "output.write(response.content) # write contents of object to named local file\n",
+    "output.close() # close the connection"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Problem 3: Dataframe read/organize (5 pts): <font color = 'magenta'>*read file into a dataframe, rename columns, show a few rows of the dataframe*</font>\n",
+    "\n",
+    "Read the `galton_subset.csv` into a dataframe.  Name/rename the columns to **\"Father\",\"Mother\",\"Child\"**.  Display the first 9 rows of the dataframe."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# import necessary packages\n",
+    "# read the csv file into a dataframe\n",
+    "# rename son to child\n",
+    "# show dataframe head"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>father</th>\n",
+       "      <th>mother</th>\n",
+       "      <th>child</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>78.5</td>\n",
+       "      <td>67.0</td>\n",
+       "      <td>73.2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>75.5</td>\n",
+       "      <td>66.5</td>\n",
+       "      <td>73.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>75.0</td>\n",
+       "      <td>64.0</td>\n",
+       "      <td>71.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>75.0</td>\n",
+       "      <td>64.0</td>\n",
+       "      <td>70.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>75.0</td>\n",
+       "      <td>58.5</td>\n",
+       "      <td>72.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>74.0</td>\n",
+       "      <td>68.0</td>\n",
+       "      <td>76.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>74.0</td>\n",
+       "      <td>62.0</td>\n",
+       "      <td>74.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>73.0</td>\n",
+       "      <td>67.0</td>\n",
+       "      <td>71.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>73.0</td>\n",
+       "      <td>67.0</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   father  mother  child\n",
+       "0    78.5    67.0   73.2\n",
+       "1    75.5    66.5   73.5\n",
+       "2    75.0    64.0   71.0\n",
+       "3    75.0    64.0   70.5\n",
+       "4    75.0    58.5   72.0\n",
+       "5    74.0    68.0   76.5\n",
+       "6    74.0    62.0   74.0\n",
+       "7    73.0    67.0   71.0\n",
+       "8    73.0    67.0   68.0"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# import necessary packages\n",
+    "# read the csv file into a dataframe\n",
+    "# rename son to child\n",
+    "# show dataframe head\n",
+    "import pandas as pd\n",
+    "df = pd.read_csv('galton_subset.csv')\n",
+    "df['child']= df['son'] ; df.drop('son', axis=1, inplace = True) # rename son to child - got to imagine there are some daughters\n",
+    "df.head(9)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Problem 4 Dataframe analyse/summarize (5 pts): <font color = 'magenta'>*find mean values, father, mother, child*</font>\n",
+    "\n",
+    "Using the dataframe from the previous problem, find the average height of **\"Father\",\"Mother\",\"Child\"** columns (series) and the standard deviation of these columns.\n",
+    "\n",
+    "On average which category is taller (father, mother, child)?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# query dataframe by each series\n",
+    "# print average height and standard deviation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# who is taller?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "69.09888268156423 2.546555038637639\n",
+      "63.99385474860335 2.366815572940062\n",
+      "70.45474860335196 2.5570605751055795\n"
+     ]
+    },
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>father</th>\n",
+       "      <th>mother</th>\n",
+       "      <th>child</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>179.000000</td>\n",
+       "      <td>179.000000</td>\n",
+       "      <td>179.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>69.098883</td>\n",
+       "      <td>63.993855</td>\n",
+       "      <td>70.454749</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>2.546555</td>\n",
+       "      <td>2.366816</td>\n",
+       "      <td>2.557061</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>62.000000</td>\n",
+       "      <td>58.000000</td>\n",
+       "      <td>63.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>68.000000</td>\n",
+       "      <td>62.850000</td>\n",
+       "      <td>69.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>69.000000</td>\n",
+       "      <td>64.000000</td>\n",
+       "      <td>70.700000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>70.750000</td>\n",
+       "      <td>65.500000</td>\n",
+       "      <td>72.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>78.500000</td>\n",
+       "      <td>70.500000</td>\n",
+       "      <td>79.000000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           father      mother       child\n",
+       "count  179.000000  179.000000  179.000000\n",
+       "mean    69.098883   63.993855   70.454749\n",
+       "std      2.546555    2.366816    2.557061\n",
+       "min     62.000000   58.000000   63.000000\n",
+       "25%     68.000000   62.850000   69.000000\n",
+       "50%     69.000000   64.000000   70.700000\n",
+       "75%     70.750000   65.500000   72.000000\n",
+       "max     78.500000   70.500000   79.000000"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# query dataframe by series\n",
+    "print(df['father'].mean(),df['father'].std())\n",
+    "print(df['mother'].mean(),df['mother'].std())\n",
+    "print(df['child'].mean(),df['child'].std())\n",
+    "\n",
+    "# or\n",
+    "\n",
+    "df.describe()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Problem 5 Dataframe Histograms (10 points) : <font color = 'magenta'> *histograms; df['...'].hist(alpha=0.5,color='...')* </font>\n",
+    "Using the dataframe from the prior problem, produce a histogram of fathers and a histogram of mothers on the same plot.  Do the histograms suggest that one group is shorter than the other? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# build histograms df['...'].hist(alpha=0.5,color='...') of father and mother\n",
+    "# show the plot same figure"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# who is shorter?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<AxesSubplot:>"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    },
+    {
+     "data": {
+      "image/png": "iVBORw0KGgoAAAANSUhEUgAAAXAAAAD4CAYAAAD1jb0+AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/Il7ecAAAACXBIWXMAAAsTAAALEwEAmpwYAAAOxUlEQVR4nO3df4hl91nH8ffTSUM107q5nTosSXWjCQkh0NQMaUsh3OlaSas0EZaQImWRyPhHKxYFG/uXgn+k+KNWKIUxqa6incRo2RDwR1h7WQWtzTa1tk1KYkhq1nTXdTYmN6Al4+Mfc9admczMPbNzf8yz+37BMvd877nnPPvdcz/z3e8959zITCRJ9bxh0gVIki6MAS5JRRngklSUAS5JRRngklTUZePc2czMTB44cGCcu9y1V199lSuuuGLSZex59lM79lM79tN6J06cOJOZb9vYPtYAP3DgAI8//vg4d7lrvV6Pbrc76TL2PPupHfupHftpvYh4frN2p1AkqSgDXJKKMsAlqSgDXJKKMsAlqSgDXJKKMsAlqSgDXJKKMsAlqaixXokplbK4OPxtdjrrt7uwMPx96JLhCFySijLAJakoA1ySijLAJakoA1ySijLAJakoTyO8yAzzzDfPcJP2NkfgklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklRUq/PAI+I54BVgBXgtM+ciogM8CBwAngPuysyzoylTkrTRTkbg85l5c2bONcv3Ascy8zrgWLMsSRqT3Uyh3AEcaR4fAe7cdTWSpNbaBngCfxMRJyLi3AXWs5n5YvP4u8Ds0KuTJG0pMnPwShFXZebJiPhB4DHgF4BHMnPfmnXOZuaVm7x2AVgAmJ2dvWVpaWlYtY9Fv99nenp60mW0dubM8LY1M9N+3Wr91MowO7PRn5piemXlfMNOOvkSclEeT7swPz9/Ys309f9r9SFmZp5sfp6OiC8CtwKnImJ/Zr4YEfuB01u8dhFYBJibm8tut3uBf4XJ6PV6VKp5mDezOnSo/brV+qmVEXwnZq/Tobu8fL5hJ518Cbkoj6cRGDiFEhFXRMSbzz0GfgL4BvAIcLhZ7TBwdFRFSpJer80IfBb4YkScW/9PM/OvIuIrwEMRcQ/wPHDX6MqUJG00MMAz81ngHZu0/ydwcBRFSZIG80pMSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrqskkXIF2wxcVJVyBNlCNwSSrKAJekogxwSSqqdYBHxFREPBERjzbL10TElyPimYh4MCIuH12ZkqSNdjIC/0XgyTXLnwI+nZnXAmeBe4ZZmCRpe60CPCKuBn4SuL9ZDuB9wMPNKkeAO0dQnyRpC21PI/xd4FeANzfLbwVeyszXmuUXgKs2e2FELAALALOzs/R6vQutdSL6/X6pmjud4W1rJ3/tifTTMP+yY9KfmqK3tu5Cx9Y4VXvfTcrAAI+InwJOZ+aJiOjudAeZuQgsAszNzWW3u+NNTFSv16NSzcM8NfrQofbrTqSfCp4H3ut06C4vn2/YSSdfQqq97yalzQj8vcCHIuKDwJuAtwCfAfZFxGXNKPxq4OToypQkbTRwDjwzfzUzr87MA8DdwN9m5s8AXwLODR8OA0dHVqUk6XV2cx74J4BfiohnWJ0Tf2A4JUmS2tjRvVAyswf0msfPArcOvyRJUhteiSlJRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklSUAS5JRe3oG3mkCzHML49fWBjetqTqHIFLUlEGuCQVZYBLUlEGuCQVZYBLUlEGuCQVZYBLUlEGuCQVZYBLUlEGuCQVZYBLUlEDAzwi3hQR/xQR/xwR34yIX2/ar4mIL0fEMxHxYERcPvpyJUnntBmB/w/wvsx8B3AzcHtEvBv4FPDpzLwWOAvcM7IqJUmvMzDAc1W/WXxj8yeB9wEPN+1HgDtHUaAkaXORmYNXipgCTgDXAp8FfhP4x2b0TUS8HfjLzLxpk9cuAAsAs7OztywtLQ2v+jHo9/tMT09PuozWzpwZ3rZmZtqvu10/jaymYW54TPpTU0yvrIxvhzv5R9xDqr3vRm1+fv5EZs5tbG91P/DMXAFujoh9wBeBG9ruODMXgUWAubm57Ha7bV+6J/R6PSrVPMx7bx861H7d7fppZDUNc8Nj0ut06C4vj2+HO/lH3EOqve8mZUdnoWTmS8CXgPcA+yLi3C+Aq4GTwy1NkrSdNmehvK0ZeRMR3we8H3iS1SA/9+v9MHB0RDVKkjbRZgplP3CkmQd/A/BQZj4aEd8CliLiN4AngAdGWKckaYOBAZ6ZXwfeuUn7s8CtoyhKkjSYV2JKUlF+K722tJOTPDqdkieFSKU5ApekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrKAJekogxwSSrqskErRMTbgT8CZoEEFjPzMxHRAR4EDgDPAXdl5tnRlXpxW1ycdAWSqmkzAn8N+OXMvBF4N/DRiLgRuBc4lpnXAceaZUnSmAwM8Mx8MTO/2jx+BXgSuAq4AzjSrHYEuHNENUqSNhGZ2X7liAPAceAm4DuZua9pD+DsueUNr1kAFgBmZ2dvWVpa2nXR49Tv95menh75fs6cGfkuRmpqqs/Kyuj7aWZmzULBTutPTTG9sjK+Ha7rsDrG9b6rYn5+/kRmzm1sHzgHfk5ETAN/Dnw8M19ezexVmZkRselvgsxcBBYB5ubmstvt7rD0yer1eoyj5upz4J1Oj+Xl7sj3c+jQmoWCndbrdOguL49vh+s6rI5xve+qa3UWSkS8kdXw/pPM/Ium+VRE7G+e3w+cHk2JkqTNDAzwZnrkAeDJzPydNU89AhxuHh8Gjg6/PEnSVtpMobwX+AjwLxHxtabtk8B9wEMRcQ/wPHDXSCqUJG1qYIBn5t8DscXTB4dbjiSpLa/ElKSiDHBJKsoAl6SiDHBJKsoAl6SiDHBJKsoAl6SiDHBJKsoAl6SiDHBJKsoAl6SiDHBJKsoAl6SiWn8jj7Qjx4+PaMNPjWi7F6lxfGvRwsLo96FNOQKXpKIMcEkqygCXpKIMcEkqygCXpKIMcEkqygCXpKI8D/xSNezztA/2R3jut6TNOAKXpKIMcEkqygCXpKIMcEkqygCXpKIMcEkqygCXpKIGBnhEfD4iTkfEN9a0dSLisYh4uvl55WjLlCRt1GYE/ofA7Rva7gWOZeZ1wLFmWZI0RgMDPDOPA8sbmu8AjjSPjwB3DrcsSdIgkZmDV4o4ADyamTc1yy9l5r7mcQBnzy1v8toFYAFgdnb2lqWlpaEUvhtnzrRfd2qqz8rK9KbPzcwMqSB2VtNQvNIf6uam3rLCystTQ93mqM28+b/Hvs/+1BTTKytj3+9IDfON0Oj3+0xPb/6+uxTNz8+fyMy5je27vhdKZmZEbPlbIDMXgUWAubm57Ha7u93lru3kawI7nR7Ly91Nnzt0aDj1wHi+unCdId+3pHPwZZaPvWWo2xy1Q7f9+9j32et06C5v/A9tccN8IzR6vR57ISv2ugs9C+VUROwHaH6eHl5JkqQ2LjTAHwEON48PA0eHU44kqa02pxF+AfgH4PqIeCEi7gHuA94fEU8DP94sS5LGaOAceGZ+eIunDg65FknSDnglpiQVZYBLUlF+pZouWYvHbxjKdhZue2oo25F2yhG4JBVlgEtSUWWmUMZ+pWILe7EmSZcOR+CSVJQBLklFGeCSVJQBLklFGeCSVJQBLklFGeCSVFSZ88Al7VGjuCCi0zm/3YWF4W//IuEIXJKKMsAlqSgDXJKKMsAlqSgDXJKKMsAlqSgDXJKKMsAlqSgDXJKKMsAlqSgvpd+Ljh+fdAWSCnAELklFGeCSVJQBLklFOQcu7dLi8Rtar9s5+PK26y/c9tQwSrq4jOJ2teM2olvi7moEHhG3R8S3I+KZiLh3WEVJkga74ACPiCngs8AHgBuBD0fEjcMqTJK0vd2MwG8FnsnMZzPze8AScMdwypIkDRKZeWEvjDgE3J6ZP9csfwR4V2Z+bMN6C8C5CaDrgW9feLkTMQOcmXQRBdhP7dhP7dhP6/1wZr5tY+PIP8TMzEWg7KcQEfF4Zs5Nuo69zn5qx35qx35qZzdTKCeBt69ZvrppkySNwW4C/CvAdRFxTURcDtwNPDKcsiRJg1zwFEpmvhYRHwP+GpgCPp+Z3xxaZXtH2emfMbOf2rGf2rGfWrjgDzElSZPlpfSSVJQBLklFGeBrRMS+iHg4Ip6KiCcj4j0R0YmIxyLi6ebnlZOuc9K26Kdfi4iTEfG15s8HJ13npEXE9Wv642sR8XJEfNxjar1t+sljagDnwNeIiCPA32Xm/c2ZNd8PfBJYzsz7mvu9XJmZn5hooRO2RT99HOhn5m9NtLg9qrn1xEngXcBH8Zja1IZ++lk8prblCLwRET8A3AY8AJCZ38vMl1i9PcCRZrUjwJ2TqG+v2KaftL2DwL9m5vN4TG1nbT9pAAP8vGuA/wD+ICKeiIj7I+IKYDYzX2zW+S4wO7EK94at+gngYxHx9Yj4/KU+LbCJu4EvNI89pra2tp/AY2pbBvh5lwE/BnwuM98JvAqsu0Vurs43XepzTlv10+eAHwVuBl4EfntSBe41zTTTh4A/2/icx9R5m/STx9QABvh5LwAvZOaXm+WHWQ2qUxGxH6D5eXpC9e0Vm/ZTZp7KzJXM/F/g91m9W6VWfQD4amaeapY9pja3rp88pgYzwBuZ+V3g3yLi+qbpIPAtVm8PcLhpOwwcnUB5e8ZW/XQukBo/DXxj7MXtXR9m/bSAx9Tm1vWTx9RgnoWyRkTcDNwPXA48y+qn4G8AHgJ+CHgeuCszlydV416wRT/9Hqv/1U3gOeDn18zzXrKazwe+A/xIZv5X0/ZWPKbW2aKf/hiPqW0Z4JJUlFMoklSUAS5JRRngklSUAS5JRRngklSUAS5JRRngklTU/wGKy/Vkf6NxgQAAAABJRU5ErkJggg==\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# define function\n",
+    "df['father'].hist(alpha=0.4,color='red')\n",
+    "df['mother'].hist(alpha=0.4,color='blue')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

@@ -9,12 +9,9 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 21: Testing Hypothesis
+# # 21: Testing Hypothesis - Comparing Collections
 # - Comparing two (or more) collections of observations
-# - Parametric and Non-Parametric Tests
 # - Comparing proportions
-# - Type 1 & Type 2 errors
-# - Attained significance (p-value)
 
 # In[ ]:
 

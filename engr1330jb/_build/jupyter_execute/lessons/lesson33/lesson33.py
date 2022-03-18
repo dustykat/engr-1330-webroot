@@ -9,9 +9,9 @@
 # 
 # Last GitHub Commit Date: 
 # 
-# # 33: KNN Classification (Continued)
-# - Confusion matrix, precision, recall, accuracy, F-score
-# - Making decisions
+# # 33: Logistic Regression (packages)
+# - sklearn
+# - 
 
 # In[ ]:
 

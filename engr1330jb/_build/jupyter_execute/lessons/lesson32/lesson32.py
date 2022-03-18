@@ -9,8 +9,8 @@
 # 
 # Last GitHub Commit Date: 
 # 
-# # 32: K Nearest Neighbor (KNN) Classification
-# - Concept of distance 
+# # 32: Logistic Regression (Homebrew)
+# - Concept of ...
 # - Training (a model fitting analog)	
 
 # In[ ]:
