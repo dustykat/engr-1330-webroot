@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson 19: Database concepts" href="../lesson19.html" />
+    <link rel="next" title="19: Simulation" href="../lesson19/lesson19.html" />
     <link rel="prev" title="17: Descriptive Statistics" href="../lesson17/lesson17.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -220,50 +220,78 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson19.html">
-   Lesson 19: Database concepts
+  <a class="reference internal" href="../lesson19/lesson19.html">
+   19: Simulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson20.html">
-   Lesson 20: Database processing (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pandas
-    </span>
-   </code>
-   )
+  <a class="reference internal" href="../lesson20/lesson20.html">
+   20: Interval Estimates by Simulation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis
+   21: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson22.html">
-   Lesson 22: Plotting (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     matplotlib
-    </span>
-   </code>
-   )
+  <a class="reference internal" href="../lesson22/lesson22.html">
+   22: Testing Hypothesis - Comparing Treatments
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson23.html">
-   Lesson 23: Data models and visualization
+  <a class="reference internal" href="../lesson23/lesson23.html">
+   23: Testing Hypothesis - Attained Significance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson24/lesson24.html">
+   24: Ordinary Functions as Predictor-Response Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson25/lesson25.html">
+   25: Distribution Functions as Magnitude-Probability Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson26/lesson26.html">
+   26: Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson27/lesson27.html">
+   27: Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson28/lesson28.html">
+   28: Regression Quality Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson29/lesson29.html">
+   29: Multiple Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson30/lesson30.html">
+   30: Multiple Least Squares (continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson31/lesson31.html">
+   31: Multiple Least Squares Quality Assessment
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson32/lesson32.html">
-   32: K Nearest Neighbor (KNN) Classification
+   32: Logistic Regression (Homebrew)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson33/lesson33.html">
-   33: KNN Classification (Continued)
+   33: Logistic Regression (packages)
   </a>
  </li>
  <li class="toctree-l1">
@@ -272,29 +300,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson35.html">
-   Lesson 35: Logistic Regression (Homebrew)
+  <a class="reference internal" href="../lesson35/lesson35.html">
+   35: KNN Application
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lesson36.html">
-   Lesson 36: Logistic Regression (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     sklearn
-    </span>
-   </code>
-   )
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lesson37.html">
-   Lesson 37: Nearest Neighbor Classification (Homebrew)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lesson38.html">
-   38: K-Nearest Neighbor Classification (sklearn)
+  <a class="reference internal" href="../lesson36/lesson36.html">
+   36: Artifical Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -1116,7 +1128,7 @@ We can roll a dice using this function by randomly selecting from an array from 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;one&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;two&#39;
 </pre></div>
 </div>
 </div>
@@ -1136,10 +1148,10 @@ We can roll a dice using this function by randomly selecting from an array from 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll #1  four
 roll #2  two
-roll #3  four
-roll #4  five
-roll #5  four
-roll #6  two
+roll #3  five
+roll #4  one
+roll #5  three
+roll #6  six
 </pre></div>
 </div>
 </div>
@@ -1153,7 +1165,7 @@ roll #6  two
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;four&#39; &#39;six&#39; &#39;six&#39; &#39;four&#39; &#39;two&#39; &#39;six&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;four&#39; &#39;five&#39; &#39;five&#39; &#39;two&#39; &#39;six&#39; &#39;six&#39;]
 </pre></div>
 </div>
 </div>
@@ -1209,8 +1221,8 @@ Let’s create a game with following rules:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount in my account =: 1
 Place your bet!
 Roll the die!
-You Lose,  Bummer!
-Amount in my account =: 0
+You Draw, Take your bet back.
+Amount in my account =: 1
 </pre></div>
 </div>
 </div>
@@ -1244,9 +1256,9 @@ We use the word simulating to remind ourselves that we are not physically rollin
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount in my account =: 10
 Place your bet!
 Roll the die!
-You win a dollar!
+You Draw, Take your bet back.
 After  1  plays
-Amount in my account =: 11 
+Amount in my account =: 10 
 _______________________
 </pre></div>
 </div>
@@ -1367,11 +1379,11 @@ _______________________
     </tr>
     <tr>
       <th>mean</th>
-      <td>3.820000</td>
+      <td>4.050000</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>2.720591</td>
+      <td>3.169855</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1383,7 +1395,7 @@ _______________________
     </tr>
     <tr>
       <th>50%</th>
-      <td>3.000000</td>
+      <td>4.000000</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -1391,7 +1403,7 @@ _______________________
     </tr>
     <tr>
       <th>max</th>
-      <td>13.000000</td>
+      <td>15.000000</td>
     </tr>
   </tbody>
 </table>
@@ -1470,9 +1482,9 @@ In this class, those experiments will almost invariably involve chance.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Goat 2&#39;, &#39;Goat 1&#39;, &#39;Car&#39;]
-Goat 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Goat 1&#39;, &#39;Goat 2&#39;, &#39;Car&#39;]
 Goat 1
+Goat 2
 Car
 </pre></div>
 </div>
@@ -1532,33 +1544,33 @@ Car
   <tbody>
     <tr>
       <th>0</th>
-      <td>Goat 2</td>
       <td>Goat 1</td>
+      <td>Goat 2</td>
       <td>Car</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Goat 2</td>
       <td>Goat 1</td>
+      <td>Goat 2</td>
       <td>Car</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Car</td>
-      <td>Goat 2</td>
       <td>Goat 1</td>
+      <td>Goat 2</td>
+      <td>Car</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Goat 2</td>
       <td>Goat 1</td>
+      <td>Goat 2</td>
       <td>Car</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Car</td>
-      <td>Goat 1</td>
       <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1568,21 +1580,21 @@ Car
     </tr>
     <tr>
       <th>9995</th>
-      <td>Car</td>
-      <td>Goat 1</td>
       <td>Goat 2</td>
+      <td>Goat 1</td>
+      <td>Car</td>
     </tr>
     <tr>
       <th>9996</th>
+      <td>Car</td>
       <td>Goat 1</td>
       <td>Goat 2</td>
-      <td>Car</td>
     </tr>
     <tr>
       <th>9997</th>
-      <td>Car</td>
-      <td>Goat 2</td>
       <td>Goat 1</td>
+      <td>Goat 2</td>
+      <td>Car</td>
     </tr>
     <tr>
       <th>9998</th>
@@ -1592,8 +1604,8 @@ Car
     </tr>
     <tr>
       <th>9999</th>
-      <td>Goat 1</td>
       <td>Goat 2</td>
+      <td>Goat 1</td>
       <td>Car</td>
     </tr>
   </tbody>
@@ -2120,10 +2132,10 @@ $<span class="math notranslate nohighlight">\( P(No~Loss) = 0.99^{30} \)</span>$
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../lesson19.html" title="next page">
+        <a class="right-next" href="../lesson19/lesson19.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 19: Database concepts</p>
+                <p class="prevnext-title">19: Simulation</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
