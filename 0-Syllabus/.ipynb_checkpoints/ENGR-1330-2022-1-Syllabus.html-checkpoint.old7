@@ -13564,7 +13564,7 @@ div#notebook {
 </tr>
 </tbody>
 </table>
-<h3 id="Week-8-Data-Description">Week 8 Data Description<a class="anchor-link" href="#Week-8-Data-Description">&#182;</a></h3><hr>
+<h3 id="Week-8">Week 8<a class="anchor-link" href="#Week-8">&#182;</a></h3><hr>
 <p>(3840 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13597,7 +13597,7 @@ div#notebook {
 </table>
 <hr>
 <hr>
-<h3 id="Week-9">Week 9<a class="anchor-link" href="#Week-9">&#182;</a></h3><hr>
+<h3 id="Week-9-Data-Description">Week 9 Data Description<a class="anchor-link" href="#Week-9-Data-Description">&#182;</a></h3><hr>
 <p>(4320 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13617,48 +13617,19 @@ div#notebook {
 <tr>
 <td style="text-align:left">9Mar22</td>
 <td style="text-align:left">Simulation  <br> - Simulating random processes <br> - Distributions <br></td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson19/lesson19.html">Lesson 19</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19.html">Lab 19 (none)</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19-TH.html">Exercise Set 19 (none)</a></td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson19/lesson19.html">Lesson 19</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19.html">Lab 19</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab19/Lab19-TH.html">Exercise Set 19</a></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">11Mar22</td>
 <td style="text-align:left">Interval Estimates by Simulation <br> - Bootstrap <br> - Prediction intervals <br> - Parameter intervals</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson20/lesson20.html">Lesson 20</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20.html">Lab 20 (none)</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20-TH.html">Exercise Set 20 (none)</a></td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson20/lesson20.html">Lesson 20</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20.html">Lab 18</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab20/Lab20-TH.html">Exercise Set 20</a></td>
 <td style="text-align:left">Interval Estimates Exercises <br> - Confidence interval concept <br> - Bootstrap simulations</td>
 </tr>
 </tbody>
 </table>
-<h3 id="Week-10-Decisions-and-Hypothesis-Tests">Week 10 Decisions and Hypothesis Tests<a class="anchor-link" href="#Week-10-Decisions-and-Hypothesis-Tests">&#182;</a></h3><hr>
+<h3 id="Week-10-Data-Models-and-Decisions">Week 10 Data Models and Decisions<a class="anchor-link" href="#Week-10-Data-Models-and-Decisions">&#182;</a></h3><hr>
 <p>(4800 cumulative minutes)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">date</th>
-<th style="text-align:left">lesson</th>
-<th style="text-align:left">links</th>
-<th style="text-align:left">laboratory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">21Mar22</td>
-<td style="text-align:left">Hypothesis Tests <br> - Comparing two (or more) collections of observations <br> - Histograms as tools</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson21/lesson21.html">Lesson 21</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.html">Lab 21</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.html">Exercise Set 21</a></td>
-<td style="text-align:left">Functions and Observations on same plots <br> - Visual interpretation of results <br> - Judging the model</td>
-</tr>
-<tr>
-<td style="text-align:left">23Mar22</td>
-<td style="text-align:left">Hypothesis Tests <br> - Comparing two (or more) treatments aka A/B Testing <br> - Parametric and Non-Parametric Tests <br> - Type1 &amp; Type2 errors</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson22/lesson22.html">Lesson 22</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22.html">Lab 22</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22-TH.html">Exercise Set 22-HW</a></td>
-<td style="text-align:left">Hypothesis testing exercises <br> - Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)</td>
-</tr>
-<tr>
-<td style="text-align:left">25Mar22</td>
-<td style="text-align:left">Hypothesis Tests <br> - Attained significance (p-value)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson23/lesson23.html">Lesson 23</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23-TH.html">Exercise Set-23</a></td>
-<td style="text-align:left">Hypothesis testing exercises <br> - Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="&lt;!--###-Week-10-starData-Models,-Decisions-and-Hypothesis-Tests">&lt;!--### Week 10 starData Models, Decisions and Hypothesis Tests<a class="anchor-link" href="#&lt;!--###-Week-10-starData-Models,-Decisions-and-Hypothesis-Tests">&#182;</a></h2><p>(4800 cumulative minutes)</p>
 <table>
 <thead><tr>
 <th style="text-align:left">date</th>
@@ -13685,11 +13656,10 @@ div#notebook {
 <td style="text-align:left">Probability Estimation Modeling <br> – Order statistics (plotting positions)  <br> - Histograms <br> - Visual assessment of Fit</td>
 <td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 24</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 21</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 21-HW</a></td>
 <td style="text-align:left">Applications <br> - Precipation  <br> - Discharge <br> - Income</td>
-<td>--&gt;</td>
 </tr>
 </tbody>
 </table>
-<h3 id="Week-11-Data-Models">Week 11 Data Models<a class="anchor-link" href="#Week-11-Data-Models">&#182;</a></h3><hr>
+<h3 id="Week-11-Linear-Regression">Week 11 Linear Regression<a class="anchor-link" href="#Week-11-Linear-Regression">&#182;</a></h3><hr>
 <p>(5280 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13702,29 +13672,26 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">28Mar22</td>
-<td style="text-align:left">Ordinary Functions as Data Models-I (<font color="blue">Predictor-Response Models</font>)<br> - Line (affine functions) <br> - Polynomials  <br> - Periodic</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson24/lesson24.html">Lesson 24</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24.html">Lab 24</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24-TH.html">Exercise Set 24</a></td>
-<td style="text-align:left">Functions and Observations on same plots <br> - Visual interpretation of results <br> - Judging the model</td>
+<td style="text-align:left">Linear regression <br> - Ordinary Least Squares</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 25</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 20</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 20-HW</a></td>
+<td style="text-align:left">Applications of OLS <br>- linear</td>
 </tr>
 <tr>
 <td style="text-align:left">30Mar22</td>
-<td style="text-align:left">Distribution Functions as Data Models-II (<font color="blue">Magnitude-Probability Models</font>)<br>– Order statistics (plotting positions) <br> - Normal Distribution Function <br> - Gamma Distribution Function <br> - Extreme Value Distribution Function</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson25/lesson25.html">Lesson 25</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab25/Lab25.html">Lab 25</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab25/Lab25-TH.html">Exercise Set 25</a></td>
-<td style="text-align:left">Functions and Observations on same plots <br> - Visual interpretation of results <br> - Judging the model</td>
+<td style="text-align:left">Linear regression <br> - Prediction interval estimates <br> - Design matrix</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 26</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 20</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 20-HW</a></td>
+<td style="text-align:left">Applications of OLS <br>- linear <br> - polynomial</td>
 </tr>
 <tr>
 <td style="text-align:left">1Apr22</td>
 <td style="text-align:left"><font color=red>**Exam 3** <br> - In class 25 multiple choice questions </font></td>
 <td style="text-align:left">none</td>
-<td style="text-align:left"><font color=red> - In lab programming problem(s)</font></td>
+<td style="text-align:left"><font color=red>- In lab programming problem(s)</font></td>
 </tr>
 </tbody>
 </table>
-<!--|28Mar22|Linear regression <br> - Ordinary Least Squares |[Lesson 25](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html) <br> <br> [Lab 20](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html)<br>  [Lab 20-HW](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html)|Applications of OLS <br>- linear |
-|30Mar22|Linear regression <br> - Prediction interval estimates <br> - Design matrix|[Lesson 26](http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html) <br> <br> [Lab 20](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html)<br>  [Lab 20-HW](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html)|Applications of OLS <br>- linear <br> - polynomial|
-|1Apr22|<font color=red>**Exam 3** <br> - In class 25 multiple choice questions </font>|none|<font color=red>- In lab programming problem(s)</font>|-->
-
-<h3 id="Week-12-Simple-Linear-Regression">Week 12 Simple Linear Regression<a class="anchor-link" href="#Week-12-Simple-Linear-Regression">&#182;</a></h3><hr>
+<p>exam 3 this week</p>
+<h3 id="Week-12-Linear-Regression">Week 12 Linear Regression<a class="anchor-link" href="#Week-12-Linear-Regression">&#182;</a></h3><hr>
 <p>(5760 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13737,25 +13704,24 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">4Apr22</td>
-<td style="text-align:left">Linear regression <br> - Why regression belongs to both statistics and machine learning <br> - Representation and learning algorithms used to create a linear regression model <br> - How to prepare data for linear regression</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson26/lesson26.html">Lesson 26</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26.html">Lab 26</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26-TH.html">Exercise Set 26</a></td>
-<td style="text-align:left">Applications of OLS <br>- linear</td>
+<td style="text-align:left">Linear regression <br> - applications</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 27</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 15-HW</a></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">6Apr22</td>
-<td style="text-align:left">Linear regression <br> - Ordinary Least Squares <br> - <em>numpy.linalg.lstsq</em> <br> - <em>stats package</em></td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson27/lesson27.html">Lesson 27</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab27/Lab27.html">Lab 27</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab27/Lab27-TH.html">Exercise Set 27</a></td>
-<td style="text-align:left">Applications of OLS <br>- linear</td>
+<td style="text-align:left">Linear regression <br> - Multiple Least Squares</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 28</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 15-HW</a></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">8Apr22</td>
-<td style="text-align:left">Linear regression <br> - Prediction interval estimates</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson28/lesson28.html">Lesson 28</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28.html">Lab 28</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28-TH.html">Exercise Set 28</a></td>
-<td style="text-align:left">Applications of OLS <br>- linear <br> - polynomial</td>
+<td style="text-align:left">Linear regression <br> - Multiple Least Squares</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 29</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 15-HW</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="Week-13-Multiple-Linear-Regression">Week 13 Multiple Linear Regression<a class="anchor-link" href="#Week-13-Multiple-Linear-Regression">&#182;</a></h3><hr>
+<h3 id="Week-13-Logistic-Regression">Week 13 Logistic Regression<a class="anchor-link" href="#Week-13-Logistic-Regression">&#182;</a></h3><hr>
 <p>(6240 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13768,25 +13734,25 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">11Apr22</td>
-<td style="text-align:left">Multiple Least Squares <br> - A Design matrix</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson29/lesson29.html">Lesson 29</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29.html">Lab 29</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29-TH.html">Exercise Set 29</a></td>
-<td style="text-align:left">- Multiple predictors <br> - Polynomial fits of single predictors</td>
+<td style="text-align:left">Multiple Least Squares <br> - applications</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 29.1</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 15</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 15-HW</a></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">13Apr22</td>
-<td style="text-align:left">Multiple Least Squares <br> - A Design matrix</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson30/lesson30.html">Lesson 30</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30.html">Lab 30</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30-TH.html">Exercise Set 30</a></td>
-<td style="text-align:left">- Logarithmic fits <br> - Power-Law Fits</td>
+<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 30</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 22</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 22-HW</a></td>
+<td style="text-align:left">Logistic Regression Applications <br> - Odor in a Bayou <br> - Solids in Construction Site Runoff <br></td>
 </tr>
 <tr>
 <td style="text-align:left">15Apr22</td>
-<td style="text-align:left">Multiple Least Squares <br> - A Design matrix</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson31/lesson31.html">Lesson 31</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31.html">Lab 31</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31-TH.html">Exercise Set 31</a></td>
-<td style="text-align:left">- Confounding predictors</td>
+<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 31</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 22</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 22-HW</a></td>
+<td style="text-align:left">Logistic Regression Applications <br> - Odor in a Bayou <br> - Solids in Construction Site Runoff <br></td>
 </tr>
 </tbody>
 </table>
-<h3 id="Week-14-Logistic-Regression-and-Classification">Week 14 Logistic Regression and Classification<a class="anchor-link" href="#Week-14-Logistic-Regression-and-Classification">&#182;</a></h3><hr>
+<h3 id="Week-14-Nearest-Neighbor-Classification">Week 14 Nearest Neighbor Classification<a class="anchor-link" href="#Week-14-Nearest-Neighbor-Classification">&#182;</a></h3><hr>
 <p>(6720 cumulative minutes)</p>
 <table>
 <thead><tr>
@@ -13805,19 +13771,16 @@ div#notebook {
 </tr>
 <tr>
 <td style="text-align:left">20Apr22</td>
-<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson32/lesson32.html">Lesson 32</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab32/Lab32.html">Lab 32</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab32/Lab32-TH.html">Exercise Set 32</a></td>
-<td style="text-align:left">Logistic Regression Applications <br> - Odor in a Bayou <br> - Solids in Construction Site Runoff <br></td>
 </tr>
 <tr>
 <td style="text-align:left">22Apr22</td>
-<td style="text-align:left">Classification <br> - Classification vs Prediction <br> - Logistic Regression</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson33/lesson33.html">Lesson 33</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33.html">Lab 33</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33-TH.html">Exercise Set 33</a></td>
-<td style="text-align:left">Logistic Regression Applications <br> - Odor in a Bayou <br> - Solids in Construction Site Runoff <br></td>
+<td style="text-align:left">K Nearest Neighbor (KNN) Classification <br> - Concept of distance <br> - Training (a model fitting analog)</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 32</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 23-HW</a></td>
+<td style="text-align:left">semester project workshop</td>
 </tr>
 </tbody>
 </table>
-<h3 id="Week-15-Nearest-Neighbor-Classification">Week 15 Nearest Neighbor Classification<a class="anchor-link" href="#Week-15-Nearest-Neighbor-Classification">&#182;</a></h3><hr>
+<h3 id="Week-15-ANN-Classification">Week 15 ANN Classification<a class="anchor-link" href="#Week-15-ANN-Classification">&#182;</a></h3><hr>
 <table>
 <thead><tr>
 <th style="text-align:left">date</th>
@@ -13829,9 +13792,9 @@ div#notebook {
 <tbody>
 <tr>
 <td style="text-align:left">25Apr22</td>
-<td style="text-align:left">K Nearest Neighbor (KNN) Classification <br> - Concept of distance <br> - Training (a model fitting analog)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson34/lesson34.html">Lesson 34</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab34/Lab34.html">Lab 34</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab34/Lab34-TH.html">Exercise Set 34</a></td>
-<td style="text-align:left">- Quality Classification <br> - Bank Note Fraud Detection</td>
+<td style="text-align:left">KNN Classification <br> - Confusion matrix, precision, recall, accuracy, F-score<br> - Making decisions</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 33</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 23-HW</a></td>
+<td style="text-align:left">semester project workshop</td>
 </tr>
 <tr>
 <td style="text-align:left">27Apr22</td>
@@ -13841,8 +13804,8 @@ div#notebook {
 </tr>
 <tr>
 <td style="text-align:left">29Apr22</td>
-<td style="text-align:left">KNN Classification <br> - Confusion matrix, precision, recall, accuracy, F-score<br> - Making decisions</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson35/lesson35.html">Lesson 35</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab35/Lab35.html">Lab 35 (none)</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab35/Lab35-TH.html">Exercise Set 35 (none)</a></td>
+<td style="text-align:left">KNN Applications</td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 34</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 23-HW</a></td>
 <td style="text-align:left">semester project workshop</td>
 </tr>
 </tbody>
@@ -13860,11 +13823,12 @@ div#notebook {
 <tr>
 <td style="text-align:left">2May22</td>
 <td style="text-align:left">Artifical Neural Networks (Demonstration)</td>
-<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/engr1330jb/_build/html/lessons/lesson36/lesson36.html">Lesson 36</a> <br><br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab36/Lab36.html">Lab 36 (none)</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab36/Lab36-TH.html">Exercise Set 36 (none)</a></td>
+<td style="text-align:left"><a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 35</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 23</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 23-HW</a></td>
 <td style="text-align:left">semester project workshop</td>
 </tr>
 </tbody>
 </table>
+<p>|11Mar22|Hypothesis Tests <br> - Comparing two (or more) collections of observations <br> - Parametric and Non-Parametric Tests|<a href="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson10/ENGR-1330-Lesson12.html">Lesson 21</a> <br> <br> <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12.html">Lab 17</a><br>  <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab12/Lab12-TH.html">Lab 17-HW</a>|Hypothesis testing exercises <br> - Comparing proportions <br> - Type1 &amp; Type2 errors <br> - Attained significance (p-value)|</p>
 
 </div>
 </div>
