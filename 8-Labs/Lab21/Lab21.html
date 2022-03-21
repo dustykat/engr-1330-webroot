@@ -13082,7 +13082,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook <a href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.ipynb">Lab21</a></p>
+<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="http://54.243.252.9/engr-1003-webroot/8-Labs/Lab21/Lab21.ipynb">Lab21</a></p>
 <hr>
 
 </div>
@@ -13091,12 +13091,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1><font color=darkred>Laboratory 21: Probability Estimation Modeling </font></h1>
+<h1><font color=darkred>Laboratory 21: "Towards Hypothesis Testing"</font></h1>
 <p>LAST NAME, FIRST NAME</p>
 <p>R00000000</p>
-<p>ENGR 1330 Laboratory 21 - In-Lab</p>
-<hr>
-<p><strong>Important Hint</strong> You will find it useful to have the Lab 21 HTML notebook available to cut and paste code -- the lab HTML is presented as complete, whereas the lab IPYNB is not completed</p>
+<p>ENGR 1330 Laboratory 17 - In-Lab</p>
 
 </div>
 </div>
@@ -13104,102 +13102,32 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Important-Terminology:">Important Terminology:<a class="anchor-link" href="#Important-Terminology:">&#182;</a></h3><p><strong>Population:</strong> In statistics, a population is the entire pool from which a statistical sample is drawn. A population may refer to an entire group of people, objects, events, hospital visits, or measurements. <br>
-<strong>Sample:</strong> In statistics and quantitative research methodology, a sample is a set of individuals or objects collected or selected from a statistical population by a defined procedure. The elements of a sample are known as sample points, sampling units or observations.<br>
-<strong>Distribution (Data Model):</strong> A data distribution is a function or a listing which shows all the possible values (or intervals) of the data. It also (and this is important) tells you how often each value occurs. <br></p>
-<p><strong><em>From <a href="https://www.investopedia.com/terms">https://www.investopedia.com/terms</a></em></strong><br>
-<strong><em><a href="https://www.statisticshowto.com/data-distribution/">https://www.statisticshowto.com/data-distribution/</a></em></strong></p>
+<h2 id="Hypothesis-Testing">Hypothesis Testing<a class="anchor-link" href="#Hypothesis-Testing">&#182;</a></h2><p>Hypothesis tests are methods to quantify if two groups of data are similar or different.
+In this lab we will just get started using mostly exploratory data analysis and histograms, and will explore the concept in increasing detail over the next few labs.</p>
+<p>First import some necessary packages:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Important-Steps:">Important Steps:<a class="anchor-link" href="#Important-Steps:">&#182;</a></h3><ol>
-<li><strong>Get descriptive statistics- mean, variance, std. dev.</strong></li>
-<li><strong>Use plotting position formulas (e.g., weibull, gringorten, cunnane) and plot the SAMPLES (data you already have)</strong></li>
-<li><strong>Use different data models (e.g., normal, log-normal, Gumbell) and find the one that better FITs your samples- Visual or Numerical</strong></li>
-<li><strong>Use the data model that provides the best fit to infer about the POPULATION</strong></li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Estimate-the-magnitude-of-the-annual-peak-flow-at-Spring-Ck-near-Spring,-TX.">Estimate the magnitude of the annual peak flow at Spring Ck near Spring, TX.<a class="anchor-link" href="#Estimate-the-magnitude-of-the-annual-peak-flow-at-Spring-Ck-near-Spring,-TX.">&#182;</a></h1><p>The file <code>08068500.pkf</code> is an actual WATSTORE formatted file for a USGS gage at Spring Creek, Texas. The first few lines of the file look like:</p>
-
-<pre><code>Z08068500                       USGS 
-H08068500       3006370952610004848339SW12040102409    409     72.6             
-N08068500       Spring Ck nr Spring, TX
-Y08068500       
-308068500       19290530  483007              34.30        1879          
-308068500       19390603    838               13.75                    
-308068500       19400612   3420               21.42                    
-308068500       19401125  42700               33.60                    
-308068500       19420409  14200               27.78                    
-308068500       19430730   8000               25.09                    
-308068500       19440319   5260               23.15                    
-308068500       19450830  31100               32.79                    
-308068500       19460521  12200               27.97                 
-
-</code></pre>
-<p>The first column are some agency codes that identify the station , the second column after the fourth row is a date in YYYYMMDD format, the third column is a discharge in CFS, the fourth and fifth column are not relevant for this laboratory exercise.  The file was downloadef from</p>
-<p><a href="https://nwis.waterdata.usgs.gov/tx/nwis/peak?site_no=08068500&amp;agency_cd=USGS&amp;format=hn2">https://nwis.waterdata.usgs.gov/tx/nwis/peak?site_no=08068500&amp;agency_cd=USGS&amp;format=hn2</a></p>
-<p>In the original file there are a couple of codes that are manually removed:</p>
-<ul>
-<li>19290530  483007;  the trailing 7 is a code identifying a break in the series (non-sequential)</li>
-<li>20170828  784009; the trailing 9 identifies the historical peak</li>
-</ul>
-<p>The laboratory task is to fit the data models to this data, decide the best model from visual perspective, and report from that data model the magnitudes of peak flow associated with the probebilitiess below (i.e. populate the table)</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
-<p>The first step is to read the file, skipping the first part, then build a dataframe:</p>
+<p>Next lets get a database to work with, in this case the database is simply two collections of numerical values.</p>
 
 </div>
 </div>
@@ -13209,7 +13137,15 @@ Y08068500
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Download the file from http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/08068500.pkf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######### CODE TO AUTOMATICALLY DOWNLOAD THE DATABASE ################</span>
+<span class="c1">#! pip install requests #install packages into local environment</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># import needed modules to interact with the internet</span>
+<span class="c1"># make the connection to the remote file (actually its implementing &quot;bash curl -O http://fqdn/path ...&quot;)</span>
+<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21_data.csv&#39;</span> <span class="c1"># a csv file</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">)</span> <span class="c1"># Gets the file contents puts into an object</span>
+<span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Lab21_data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># Prepare a destination, local</span>
+<span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># write contents of object to named local file</span>
+<span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the connection</span>
 </pre></div>
 
     </div>
@@ -13219,57 +13155,11 @@ Y08068500
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read the data file</span>
-<span class="n">amatrix</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># null list to store matrix reads</span>
-<span class="n">rowNumA</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">matrix1</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">col0</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">col1</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">col2</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;08068500.pkf&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">afile</span><span class="p">:</span>
-    <span class="n">lines_after_4</span> <span class="o">=</span> <span class="n">afile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">4</span><span class="p">:]</span>
-<span class="n">afile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Disconnect the file</span>
-<span class="n">howmanyrows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines_after_4</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanyrows</span><span class="p">):</span>
-    <span class="n">matrix1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines_after_4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanyrows</span><span class="p">):</span>
-    <span class="n">col0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">matrix1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">col1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matrix1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">col2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">matrix1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span> <span class="c1">#We need to conver it to integers </span>
-<span class="c1"># col2 is date, col3 is peak flow</span>
-<span class="c1">#now build a datafranem</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">col0</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">col1</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;flow&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">col2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mydata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Lab21_data.csv&quot;</span><span class="p">)</span> 
+<span class="n">mydata</span>
 </pre></div>
 
     </div>
@@ -13282,7 +13172,7 @@ Y08068500
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -13305,44 +13195,69 @@ Y08068500
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>date</th>
-      <th>flow</th>
+      <th>Set1</th>
+      <th>Set2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>308068500</td>
-      <td>19290530</td>
-      <td>48300</td>
+      <td>46.688625</td>
+      <td>512.459480</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>308068500</td>
-      <td>19390603</td>
-      <td>838</td>
+      <td>44.825192</td>
+      <td>480.551364</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>308068500</td>
-      <td>19400612</td>
-      <td>3420</td>
+      <td>71.453564</td>
+      <td>560.502112</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>308068500</td>
-      <td>19401125</td>
-      <td>42700</td>
+      <td>30.360172</td>
+      <td>503.885912</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>308068500</td>
-      <td>19420409</td>
-      <td>14200</td>
+      <td>47.657087</td>
+      <td>458.124749</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>60.040915</td>
+      <td>462.122309</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>21.527991</td>
+      <td>509.909507</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>59.523999</td>
+      <td>572.309957</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>38.173070</td>
+      <td>562.580099</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>39.671168</td>
+      <td>497.784981</td>
     </tr>
   </tbody>
 </table>
+<p>100 rows × 2 columns</p>
 </div>
 </div>
 
@@ -13355,17 +13270,17 @@ Y08068500
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now explore if you can plot the dataframe as a plot of peaks versus date.</p>
+<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h3><p>What are the names of the two series in "mydata"?</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
 </pre></div>
 
     </div>
@@ -13376,56 +13291,17 @@ Y08068500
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From here on you can proceede using the lecture notebook as a go-by, although you should use functions as much as practical to keep your work concise</p>
+<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h3><p>Describe the two data series, which has a larger mean value, which has a larger variance?</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Descriptive Statistics </span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Weibull Plotting Position Function</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Normal Quantile Function </span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting Data to Normal Data Model </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
 </pre></div>
 
     </div>
@@ -13436,74 +13312,297 @@ Y08068500
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Normal-Distribution-Data-Model">Normal Distribution Data Model<a class="anchor-link" href="#Normal-Distribution-Data-Model">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
+<p>Now lets prepare histograms of the two data series, an easy way to generate two histoprgams on the same plot is listed below</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">mydata</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histogram: Set1 vs. Set2&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-3:">Question 3:<a class="anchor-link" href="#Question-3:">&#182;</a></h3><p><strong>Are the two data series similar or not?</strong></p>
+<p>Describe (using words, and sentences, not the method) how the series are different.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now lets generate two more series using the descriptive statistics from "Set1" and "Set2"</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set1_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mydata</span><span class="p">[</span><span class="s1">&#39;Set1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mydata</span><span class="p">[</span><span class="s1">&#39;Set1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
+<span class="n">set2_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mydata</span><span class="p">[</span><span class="s1">&#39;Set2&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mydata</span><span class="p">[</span><span class="s1">&#39;Set2&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Put these into a new dataframe</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mydata_d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Set1s&#39;</span><span class="p">:</span><span class="n">set1_s</span><span class="p">,</span><span class="s1">&#39;Set2s&#39;</span><span class="p">:</span><span class="n">set2_s</span><span class="p">})</span> <span class="c1"># make into a dataframe _d == derived</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now lets prepare histograms of the two data series, an easy way to generate two histograms on the same plot is listed below</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">mydata_d</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histogram: Set1 samples vs. Set2 samples&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-4:">Question 4:<a class="anchor-link" href="#Question-4:">&#182;</a></h3><p><strong>Are the two new data series similar or not?</strong></p>
+<p>Describe (using words, and sentences, not the method) how the series are different.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now lets examine all 4 data series. First a histogram of all 4 on the same graph</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">mydata_d</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histogram: Set1 and Set1 samples vs. Set2 and Set2 samples&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">mydata</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-5:">Question 5:<a class="anchor-link" href="#Question-5:">&#182;</a></h3><p>Are the series "Set1" and "Set1s" the same or different?  How do they compare? What about series "Set2" and "Set2s"?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another graphical tool is a set of boxplots</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span> <span class="p">([</span><span class="n">set1</span><span class="p">,</span> <span class="n">set1_s</span><span class="p">,</span> <span class="n">set2</span><span class="p">,</span> <span class="n">set2_s</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="s1">&#39;Set1_s&#39;</span><span class="p">,</span> <span class="s1">&#39;Set2&#39;</span><span class="p">,</span> <span class="s1">&#39;Set2_s&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h3><p>Interpret the results of the boxplot.  Are the Set2 "collections" different from the Set1 "collections"?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h3><p>Suppose we are comparing the arithmetic means of the 4 collections.  Are the mean values of "Set1" and "Set2" far apart?<br>
+How many "Set1" standard deviations is the "Set1" mean value from "Set2"?  How about the converse (Set2 deviations)?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h3><p>Visit <a href="https://en.wikipedia.org/wiki/Six_Sigma">SixSigma</a> and after reading the Wiki, decide if the Set1 and Set2 collections are far enough apart to be considered "statistically" different.
+Repeat with Set1 and Set1s - are they far apart?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># put your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+<p><img src="https://media2.giphy.com/media/dNgK7Ws7y176U/200.gif" alt=""> <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Exercise: What is the meaning of "statistically significant difference" ? <br></h2>
+<h4 id="Make-sure-to-cite-any-resources-that-you-may-use."><em>Make sure to cite any resources that you may use.</em><a class="anchor-link" href="#Make-sure-to-cite-any-resources-that-you-may-use.">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Log-Normal Quantile Function </span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting Data to Normal Data Model </span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
@@ -13514,296 +13613,10 @@ Y08068500
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Log-Normal-Distribution-Data-Model">Log-Normal Distribution Data Model<a class="anchor-link" href="#Log-Normal-Distribution-Data-Model">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Gumbell EV1 Quantile Function</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<p><img src="https://64.media.tumblr.com/5c04ade79d88dde46cfab21ef3f62822/tumblr_nf7id4LDDw1rmagk1o1_640.png" alt=""></p>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting Data to Gumbell EV1 Data Model </span>
-</pre></div>
-
-    </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Gumbell-Double-Exponential-(EV1)-Distribution-Data-Model">Gumbell Double Exponential (EV1) Distribution Data Model<a class="anchor-link" href="#Gumbell-Double-Exponential-(EV1)-Distribution-Data-Model">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Gamma (Pearson Type III) Quantile Function</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting Data to Pearson (Gamma) III Data Model </span>
-<span class="c1"># This is new, in lecture the fit was to log-Pearson, same procedure, but not log transformed</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pearson-III-Distribution-Data-Model">Pearson III Distribution Data Model<a class="anchor-link" href="#Pearson-III-Distribution-Data-Model">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting Data to Log-Pearson (Log-Gamma) III Data Model </span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Log-Pearson-III-Distribution-Data-Model">Log-Pearson III Distribution Data Model<a class="anchor-link" href="#Log-Pearson-III-Distribution-Data-Model">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:left">Exceedence Probability</th>
-<th style="text-align:left">Flow Value</th>
-<th style="text-align:left">Remarks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">25%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">75% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">50% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">75%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">25% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">90%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">10% chance of greater value</td>
-</tr>
-<tr>
-<td style="text-align:left">99%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">1% chance of greater value (in flood statistics, this is the 1 in 100-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.8%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.002% chance of greater value (in flood statistics, this is the 1 in 500-yr chance event)</td>
-</tr>
-<tr>
-<td style="text-align:left">99.9%</td>
-<td style="text-align:left">????</td>
-<td style="text-align:left">0.001% chance of greater value (in flood statistics, this is the 1 in 1000-yr chance event)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Summary-of-&quot;Best&quot;-Data-Model-based-on-Graphical-Fit">Summary of "Best" Data Model based on Graphical Fit<a class="anchor-link" href="#Summary-of-&quot;Best&quot;-Data-Model-based-on-Graphical-Fit">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your interpretation here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
