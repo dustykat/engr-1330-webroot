@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -427,8 +429,69 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-thinking-concepts">
+   Computational Thinking Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamental-concepts">
+     Fundamental Concepts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-what-is-hypothesis-testing-font-br">
+       <font color="crimson">
+        What is hypothesis testing ?
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-why-do-we-use-it-font-br">
+       <font color="crimson">
+        Why do we use it ?
+       </font>
+       <br/>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-two-collections">
+     Comparing Two Collections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-statement-br">
+     Problem Statement
+     <br/>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-21">
+   Laboratory 21
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-21">
+   Exercise Set 21
   </a>
  </li>
 </ul>
@@ -453,8 +516,186 @@
 <li><p>Comparing two (or more) collections of observations</p></li>
 <li><p>Comparing proportions</p></li>
 </ul>
+<p>A procedure to systematically decide if two data collections are similar or substantially different.</p>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To apply fundamental concepts involved in probability estimation modeling and descriptive statistics;</p>
+<ul>
+<li><p>Concept of a hypothesis</p></li>
+</ul>
+</li>
+<li><p>Hypothesis components</p>
+<ul>
+<li><p>Null hypothesis and alternative hypothesis</p></li>
+<li><p>Normal distribution model</p></li>
+<li><p>One-tail, two-tail tests</p></li>
+<li><p>Attained significance</p></li>
+</ul>
+</li>
+<li><p>Decision Error</p>
+<ul>
+<li><p>Type-1, Type-2</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="computational-thinking-concepts">
+<h2>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h2>
+<p>The CT concepts include:</p>
+<ul class="simple">
+<li><p>Abstraction =&gt; Represent data behavior with a function</p></li>
+<li><p>Pattern Recognition =&gt; Patterns in data models to make decision</p></li>
+</ul>
+<p>In engineering, when we wish to start asking questions about the data and interpret the results, we use statistical methods that provide a confidence or likelihood about the answers. In general, this class of methods is called statistical hypothesis testing, or significance tests. The material for today’s lecture is inspired by and gathered from several resources including:</p>
+<ul class="simple">
+<li><p>Hypothesis testing in Machine learning using Python by Yogesh Agrawal available at <a class="reference external" href="https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce">https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce</a></p></li>
+<li><p>Demystifying hypothesis testing with simple Python examples by Tirthajyoti Sarkar available at <a class="reference external" href="https://towardsdatascience.com/demystifying-hypothesis-testing-with-simple-python-examples-4997ad3c5294">https://towardsdatascience.com/demystifying-hypothesis-testing-with-simple-python-examples-4997ad3c5294</a></p></li>
+<li><p>A Gentle Introduction to Statistical Hypothesis Testing by Jason Brownlee available at <a class="reference external" href="https://machinelearningmastery.com/statistical-hypothesis-tests/">https://machinelearningmastery.com/statistical-hypothesis-tests/</a></p></li>
+</ul>
+<div class="section" id="fundamental-concepts">
+<h3>Fundamental Concepts<a class="headerlink" href="#fundamental-concepts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="font-color-crimson-what-is-hypothesis-testing-font-br">
+<h4><font color=crimson>What is hypothesis testing ?</font><br><a class="headerlink" href="#font-color-crimson-what-is-hypothesis-testing-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Hypothesis testing is a statistical method that is used in making statistical decisions (about population) using experimental data (samples). Hypothesis Testing is basically an assumption that we make about the population parameter.<br></p>
+<p>Example : You state “on average, students in the class are taller than 5 ft and 4 inches” or “an average boy is taller than an average girl” or “a specific treatment is effective in treating COVID-19 patients”. <br></p>
+<p>We need some mathematical way support that whatever we are stating is true.
+We validate these hypotheses, basing our conclusion on random samples and empirical distributions.</p>
+</div>
+<div class="section" id="font-color-crimson-why-do-we-use-it-font-br">
+<h4><font color=crimson>Why do we use it ?</font><br><a class="headerlink" href="#font-color-crimson-why-do-we-use-it-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Hypothesis testing is an essential procedure in experimentation. A hypothesis test evaluates two mutually exclusive statements about a population to determine which statement is supported by the sample data. When we say that a finding is <strong>statistically significant</strong>, it’s thanks to a hypothesis test.</p>
+</div>
+</div>
+<div class="section" id="comparing-two-collections">
+<h3>Comparing Two Collections<a class="headerlink" href="#comparing-two-collections" title="Permalink to this headline">¶</a></h3>
+<p>Lets first examine a typical data question; you will need an empty notebook to follow along, as only the code is supplied!</p>
+<p><font color=crimson>Do construction activities impact stormwater solids metrics?</font><br></p>
+<p>The webroot for the subsequent examples/exercises is <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/">http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/</a></p>
+</div>
+<div class="section" id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<p>The Clean Water Act (CWA) prohibits storm water discharge from construction sites
+that disturb 5 or more acres, unless authorized by a National Pollutant Discharge
+Elimination System (NPDES) permit. Permittees must provide a site description,
+identify sources of contaminants that will affect storm water, identify appropriate
+measures to reduce pollutants in stormwater discharges, and implement these measures.
+The appropriate measures are further divided into four classes: erosion and
+sediment control, stabilization practices, structural practices, and storm water management.
+Collectively the site description and accompanying measures are known as
+the facility’s Storm Water Pollution Prevention Plan (SW3P).
+The permit contains no specific performance measures for construction activities,
+but states that ”EPA anticipates that storm water management will be able to
+provide for the removal of at least 80% of the total suspended solids (TSS).” The
+rules also note ”TSS can be used as an indicator parameter to characterize the
+control of other pollutants, including heavy metals, oxygen demanding pollutants,
+and nutrients commonly found in stormwater discharges”; therefore, solids control is
+critical to the success of any SW3P.
+Although the NPDES permit requires SW3Ps to be in-place, it does not require
+any performance measures as to the effectiveness of the controls with respect to
+construction activities. The reason for the exclusion was to reduce costs associated
+with monitoring storm water discharges, but unfortunately the exclusion also makes
+it difficult for a permittee to assess the effectiveness of the controls implemented at
+their site. Assessing the effectiveness of controls will aid the permittee concerned
+with selecting the most cost effective SW3P.<br></p>
+</div>
+<div class="section" id="problem-statement-br">
+<h3>Problem Statement <br><a class="headerlink" href="#problem-statement-br" title="Permalink to this headline">¶</a></h3>
+<p>The files precon.CSV and durcon.CSV contain observations of cumulative
+rainfall, total solids, and total suspended solids collected from a construction
+site on Nasa Road 1 in Harris County. <br>
+The data in the file precon.CSV was collected <code class="docutils literal notranslate"><span class="pre">before</span></code> construction began. The data in the file durcon.CSV were collected <code class="docutils literal notranslate"><span class="pre">during</span></code> the construction activity.<br>
+The first column is the date that the observation was made, the second column the total solids (by standard methods), the third column is is the total suspended solids (also by standard methods), and the last column is the cumulative rainfall for that storm.<br></p>
+<p>These data are not time series (there was sufficient time between site visits that you can safely assume each storm was independent.
+<strong>Our task is to analyze these two data sets and decide if construction activities impact stormwater quality in terms of solids measures.</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>Lets introduce script to automatically get the files from the named resource, in this case a web server!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># Module to process http/https requests</span>
+
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/precon.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;precon.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/durcon.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;durcon.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+</pre></div>
+</div>
+<p>Read and examine the files, see if we can understand their structure</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;precon.csv&quot;</span><span class="p">)</span>
+<span class="n">durcon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;durcon.csv&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Lets make some exploratory histograms to guide our investigation</p>
+<ul class="simple">
+<li><p>Is the rainfall different before construction?</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will show that as “distributions” they look pretty similar, although the during construction data has a few larger events.</p>
+<p>Now</p>
+<ul class="simple">
+<li><p>Is the total solids (TS) different before construction?</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here it is hard to tell, but the preconstruction values are all to the left while the during construction phase has some large values.</p>
+<p>Lets compare means and standard deviations</p>
+<p><span class="math notranslate nohighlight">\( \mu TS_{pre} = 463 \)</span><br>
+<span class="math notranslate nohighlight">\( \sigma TS_{pre} = 361 \)</span><br>
+<span class="math notranslate nohighlight">\( \mu TS_{dur} = 3495 \)</span><br>
+<span class="math notranslate nohighlight">\( \sigma TS_{dur} = 7104 \)</span><br></p>
+<p>Certainly different, and the mean during construction is 8 pre-construction standard deviations larger, hence supportive of a claim that there is a difference, however the standard deviation of the during phase is huge, easily encompassing the preconstruction mean, so is there really a difference?  We could resort to simulation to try to answer the question.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+<span class="n">pre_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
+<span class="n">dur_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
+<span class="n">myfakedata_d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;PreSim&#39;</span><span class="p">:</span><span class="n">pre_s</span><span class="p">,</span><span class="s1">&#39;DurSim&#39;</span><span class="p">:</span><span class="n">dur_s</span><span class="p">})</span> <span class="c1"># make into a dataframe _d == derived</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">myfakedata_d</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histogram: Pre samples vs. Dur samples&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we learn the standard deviations mean a lot, and the normal distribution is probably not the best model (negative solids don’t make physical sense).  However it does point to the important issue, how to quantify the sameness or differences?</p>
+<p>Thats the goal of hypothesis testing methods.</p>
+<p>In lab you will use similar explorations, and next time we will get into the actual methods.</p>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<hr>
+</div>
+<div class="section" id="laboratory-21">
+<h2>Laboratory 21<a class="headerlink" href="#laboratory-21" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 17 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.html">Laboratory 21.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 17 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.ipynb">Laboratory 21.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-21">
+<h2>Exercise Set 21<a class="headerlink" href="#exercise-set-21" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 17 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.html">Exercise 21.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 17 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.ipynb">Exercise Set 21.ipynb</a></p>
 </div>
 </div>
 
