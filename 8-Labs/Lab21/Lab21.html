@@ -13094,7 +13094,7 @@ div#notebook {
 <h1><font color=darkred>Laboratory 21: "Towards Hypothesis Testing"</font></h1>
 <p>LAST NAME, FIRST NAME</p>
 <p>R00000000</p>
-<p>ENGR 1330 Laboratory 17 - In-Lab</p>
+<p>ENGR 1330 Laboratory 21 - In-Lab</p>
 
 </div>
 </div>
@@ -13141,7 +13141,7 @@ In this lab we will just get started using mostly exploratory data analysis and 
 <span class="c1">#! pip install requests #install packages into local environment</span>
 <span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># import needed modules to interact with the internet</span>
 <span class="c1"># make the connection to the remote file (actually its implementing &quot;bash curl -O http://fqdn/path ...&quot;)</span>
-<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21_data.csv&#39;</span> <span class="c1"># a csv file</span>
+<span class="n">remote_url</span> <span class="o">=</span> <span class="s1">&#39;http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21_data.csv&#39;</span> <span class="c1"># a csv file</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">)</span> <span class="c1"># Gets the file contents puts into an object</span>
 <span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Lab21_data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># Prepare a destination, local</span>
 <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># write contents of object to named local file</span>
