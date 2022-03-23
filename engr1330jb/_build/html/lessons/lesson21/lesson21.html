@@ -607,12 +607,20 @@ The data in the file precon.CSV was collected <code class="docutils literal notr
 The first column is the date that the observation was made, the second column the total solids (by standard methods), the third column is is the total suspended solids (also by standard methods), and the last column is the cumulative rainfall for that storm.<br></p>
 <p>These data are not time series (there was sufficient time between site visits that you can safely assume each storm was independent.
 <strong>Our task is to analyze these two data sets and decide if construction activities impact stormwater quality in terms of solids measures.</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Lets introduce script to automatically get the files from the named resource, in this case a web server!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You would need to insert this script into your notebook, and run it to replicate the example here.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># Module to process http/https requests</span>
 
 <span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/precon.csv&quot;</span>  <span class="c1"># set the url</span>
@@ -625,38 +633,352 @@ The first column is the date that the observation was made, the second column th
 </pre></div>
 </div>
 <p>Read and examine the files, see if we can understand their structure</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;precon.csv&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;precon.csv&quot;</span><span class="p">)</span>
 <span class="n">durcon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;durcon.csv&quot;</span><span class="p">)</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DATE</th>
+      <th>TS.PRE</th>
+      <th>TSS.PRE</th>
+      <th>RAIN.PRE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>03/27/97</td>
+      <td>408.5</td>
+      <td>111.0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>03/31/97</td>
+      <td>524.5</td>
+      <td>205.5</td>
+      <td>0.52</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>04/04/97</td>
+      <td>171.5</td>
+      <td>249.0</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>04/07/97</td>
+      <td>436.5</td>
+      <td>65.0</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04/11/97</td>
+      <td>627.0</td>
+      <td>510.5</td>
+      <td>2.19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.DUR</th>
+      <th>TSS.DUR</th>
+      <th>RAIN.DUR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3014.0</td>
+      <td>2871.5</td>
+      <td>1.59</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1137.0</td>
+      <td>602.0</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2362.5</td>
+      <td>2515.0</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>395.5</td>
+      <td>130.0</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>278.5</td>
+      <td>36.5</td>
+      <td>0.27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.PRE</th>
+      <th>TSS.PRE</th>
+      <th>RAIN.PRE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>17.000000</td>
+      <td>17.000000</td>
+      <td>17.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>462.941176</td>
+      <td>286.882353</td>
+      <td>0.878235</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>361.852779</td>
+      <td>312.659786</td>
+      <td>0.882045</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>163.000000</td>
+      <td>25.000000</td>
+      <td>0.130000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>268.000000</td>
+      <td>111.000000</td>
+      <td>0.460000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>408.500000</td>
+      <td>205.500000</td>
+      <td>0.690000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>524.500000</td>
+      <td>312.000000</td>
+      <td>0.950000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1742.000000</td>
+      <td>1373.000000</td>
+      <td>3.760000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.DUR</th>
+      <th>TSS.DUR</th>
+      <th>RAIN.DUR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>37.000000</td>
+      <td>37.000000</td>
+      <td>37.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3495.283784</td>
+      <td>2749.216216</td>
+      <td>1.016486</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7104.602041</td>
+      <td>5322.194188</td>
+      <td>1.391886</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>124.000000</td>
+      <td>14.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>270.000000</td>
+      <td>57.000000</td>
+      <td>0.270000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1058.000000</td>
+      <td>602.000000</td>
+      <td>0.550000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2671.500000</td>
+      <td>2515.000000</td>
+      <td>1.010000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>29954.500000</td>
+      <td>24146.500000</td>
+      <td>6.550000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Lets make some exploratory histograms to guide our investigation</p>
 <ul class="simple">
 <li><p>Is the rainfall different before construction?</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 <span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson21_17_1.png" src="../../_images/lesson21_17_1.png" />
+</div>
 </div>
 <p>This will show that as “distributions” they look pretty similar, although the during construction data has a few larger events.</p>
 <p>Now</p>
 <ul class="simple">
 <li><p>Is the total solids (TS) different before construction?</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 <span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson21_19_1.png" src="../../_images/lesson21_19_1.png" />
+</div>
 </div>
 <p>Here it is hard to tell, but the preconstruction values are all to the left while the during construction phase has some large values.</p>
 <p>Lets compare means and standard deviations</p>
@@ -665,9 +987,9 @@ The first column is the date that the observation was made, the second column th
 <span class="math notranslate nohighlight">\( \mu TS_{dur} = 3495 \)</span><br>
 <span class="math notranslate nohighlight">\( \sigma TS_{dur} = 7104 \)</span><br></p>
 <p>Certainly different, and the mean during construction is 8 pre-construction standard deviations larger, hence supportive of a claim that there is a difference, however the standard deviation of the during phase is huge, easily encompassing the preconstruction mean, so is there really a difference?  We could resort to simulation to try to answer the question.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-<span class="n">pre_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
 <span class="n">dur_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># random sample from a normal distribution function</span>
 <span class="n">myfakedata_d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;PreSim&#39;</span><span class="p">:</span><span class="n">pre_s</span><span class="p">,</span><span class="s1">&#39;DurSim&#39;</span><span class="p">:</span><span class="n">dur_s</span><span class="p">})</span> <span class="c1"># make into a dataframe _d == derived</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -675,6 +997,11 @@ The first column is the date that the observation was made, the second column th
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson21_21_0.png" src="../../_images/lesson21_21_0.png" />
+</div>
 </div>
 <p>Here we learn the standard deviations mean a lot, and the normal distribution is probably not the best model (negative solids don’t make physical sense).  However it does point to the important issue, how to quantify the sameness or differences?</p>
 <p>Thats the goal of hypothesis testing methods.</p>

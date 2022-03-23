@@ -100,13 +100,19 @@
 # These data are not time series (there was sufficient time between site visits that you can safely assume each storm was independent.
 # __Our task is to analyze these two data sets and decide if construction activities impact stormwater quality in terms of solids measures.__
 
-# ```
-# import numpy as np
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# ```
+# In[1]:
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
 
 # Lets introduce script to automatically get the files from the named resource, in this case a web server!
+# 
+# ```{note}
+# You would need to insert this script into your notebook, and run it to replicate the example here.
+# ```
 
 # ```
 # import requests # Module to process http/https requests
@@ -122,47 +128,61 @@
 
 # Read and examine the files, see if we can understand their structure
 
-# ```
-# precon = pd.read_csv("precon.csv")
-# durcon = pd.read_csv("durcon.csv") 
-# ```
+# In[2]:
 
-# ```
-# precon.head()
-# ```
 
-# ```
-# durcon.head()
-# ```
+precon = pd.read_csv("precon.csv")
+durcon = pd.read_csv("durcon.csv") 
 
-# ```
-# precon.describe()
-# ```
 
-# ```
-# durcon.describe()
-# ```
+# In[3]:
+
+
+precon.head()
+
+
+# In[4]:
+
+
+durcon.head()
+
+
+# In[5]:
+
+
+precon.describe()
+
+
+# In[6]:
+
+
+durcon.describe()
+
 
 # Lets make some exploratory histograms to guide our investigation
 # 
 # - Is the rainfall different before construction?
-# 
-# ```
-# precon['RAIN.PRE'].hist(alpha=0.4,color='red',density="True")
-# durcon['RAIN.DUR'].hist(alpha=0.4,color='blue',density="True")
-# ```
-# 
+
+# In[7]:
+
+
+precon['RAIN.PRE'].hist(alpha=0.4,color='red',density="True")
+durcon['RAIN.DUR'].hist(alpha=0.4,color='blue',density="True")
+
+
 # This will show that as "distributions" they look pretty similar, although the during construction data has a few larger events.
 # 
 # Now
 # 
 # - Is the total solids (TS) different before construction?
-# 
-# ```
-# precon['TS.PRE'].hist(alpha=0.4,color='red',density="True")
-# durcon['TS.DUR'].hist(alpha=0.4,color='blue',density="True")
-# ```
-# 
+
+# In[8]:
+
+
+precon['TS.PRE'].hist(alpha=0.4,color='red',density="True")
+durcon['TS.DUR'].hist(alpha=0.4,color='blue',density="True")
+
+
 # Here it is hard to tell, but the preconstruction values are all to the left while the during construction phase has some large values.  
 # 
 # Lets compare means and standard deviations
@@ -173,19 +193,19 @@
 # $ \sigma TS_{dur} = 7104 $<br>
 # 
 # Certainly different, and the mean during construction is 8 pre-construction standard deviations larger, hence supportive of a claim that there is a difference, however the standard deviation of the during phase is huge, easily encompassing the preconstruction mean, so is there really a difference?  We could resort to simulation to try to answer the question.
-# 
-# ```
-# 
-# 
-# pre_s = np.random.normal(np.array(precon['TS.PRE']).mean(), np.array(precon['TS.PRE']).std(), 10000) # random sample from a normal distribution function
-# dur_s = np.random.normal(np.array(durcon['TS.DUR']).mean(), np.array(durcon['TS.DUR']).std(), 10000) # random sample from a normal distribution function
-# myfakedata_d = pd.DataFrame({'PreSim':pre_s,'DurSim':dur_s}) # make into a dataframe _d == derived
-# fig, ax = plt.subplots()
-# myfakedata_d.plot.hist(density=False, ax=ax, title='Histogram: Pre samples vs. Dur samples', bins=40)
-# ax.set_ylabel('Count')
-# ax.grid(axis='y')
-# ```
-# 
+
+# In[9]:
+
+
+pre_s = np.random.normal(np.array(precon['TS.PRE']).mean(), np.array(precon['TS.PRE']).std(), 10000) # random sample from a normal distribution function
+dur_s = np.random.normal(np.array(durcon['TS.DUR']).mean(), np.array(durcon['TS.DUR']).std(), 10000) # random sample from a normal distribution function
+myfakedata_d = pd.DataFrame({'PreSim':pre_s,'DurSim':dur_s}) # make into a dataframe _d == derived
+fig, ax = plt.subplots()
+myfakedata_d.plot.hist(density=False, ax=ax, title='Histogram: Pre samples vs. Dur samples', bins=40)
+ax.set_ylabel('Count')
+ax.grid(axis='y')
+
+
 # Here we learn the standard deviations mean a lot, and the normal distribution is probably not the best model (negative solids don't make physical sense).  However it does point to the important issue, how to quantify the sameness or differences?  
 # 
 # Thats the goal of hypothesis testing methods.
