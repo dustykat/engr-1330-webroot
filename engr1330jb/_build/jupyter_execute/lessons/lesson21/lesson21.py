@@ -206,16 +206,16 @@
 # 
 # **Examine** (click) Laboratory 21 as a webpage at [Laboratory 21.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.html)
 # 
-# **Download** (right-click, save target as ...) Laboratory 21 as a jupyterlab notebook from [Laboratory 21.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab17/Lab17.ipynb)
+# **Download** (right-click, save target as ...) Laboratory 21 as a jupyterlab notebook from [Laboratory 21.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21.ipynb)
 # 
 
 # <hr><hr>
 # 
 # ## Exercise Set 21
 # 
-# **Examine** (click) Exercise Set 21 as a webpage at [Exercise 21.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.html)
+# **Examine** (click) Exercise Set 21 as a webpage at [Exercise 21](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.html)
 # 
-# **Download** (right-click, save target as ...) Exercise Set 21 as a jupyterlab notebook at  [Exercise Set 21.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.ipynb)
+# **Download** (right-click, save target as ...) Exercise Set 21 as a jupyterlab notebook at  [Exercise Set 21](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab21-TH.ipynb)
 # 
 # 
 

@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -427,8 +429,215 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-what-is-hypothesis-testing-font-br">
+     <font color="crimson">
+      What is hypothesis testing ?
+     </font>
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-why-do-we-use-it-font-br">
+     <font color="crimson">
+      Why do we use it ?
+     </font>
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-which-are-important-elements-of-hypothesis-testing-font-br">
+     <font color="crimson">
+      Which are important elements of hypothesis testing ?
+     </font>
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-what-are-basic-of-hypothesis-font-br">
+     <font color="crimson">
+      What are basic of hypothesis ?
+     </font>
+     <br/>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#normal-distribution">
+       Normal Distribution:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standardised-normal-distribution">
+       Standardised Normal Distribution:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-z-score-font-br">
+       <font color="crimson">
+        Z score:
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-tailing-of-hypothesis-font-br">
+       <font color="crimson">
+        Tailing of Hypothesis:
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-level-of-significance-font-br">
+       <font color="crimson">
+        Level of significance:
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-p-value-font-br">
+       <font color="crimson">
+        P-value :
+       </font>
+       <br/>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-br">
+     Example :
+     <br/>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-reject-vs-failure-to-reject-font-br">
+       <font color="crimson">
+        “Reject” vs “Failure to Reject”
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-errors-in-statistical-tests-font-br">
+       <font color="crimson">
+        Errors in Statistical Tests
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-some-important-statistical-hypothesis-tests-font-br">
+       <font color="crimson">
+        Some Important Statistical Hypothesis Tests
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-normality-tests-shapiro-wilk-test-font-br">
+       <font color="crimson">
+        Normality Tests: Shapiro-Wilk Test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-normality-tests-dagostinos-k-2-test-font-br">
+       <font color="crimson">
+        Normality Tests: D’Agostino’s K^2 Test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-parametric-statistical-hypothesis-tests-students-t-test-font-br">
+       <font color="crimson">
+        Parametric Statistical Hypothesis Tests: Student’s t-test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-parametric-statistical-hypothesis-tests-paired-students-t-test-font-br">
+       <font color="crimson">
+        Parametric Statistical Hypothesis Tests: Paired Student’s t-test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-parametric-statistical-hypothesis-tests-analysis-of-variance-test-anova-font-br">
+       <font color="crimson">
+        Parametric Statistical Hypothesis Tests: Analysis of Variance Test (ANOVA)
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-mann-whitney-u-test-font-br">
+       <font color="crimson">
+        Nonparametric Statistical Hypothesis Tests: Mann-Whitney U Test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-wilcoxon-signed-rank-test-font-br">
+       <font color="crimson">
+        Nonparametric Statistical Hypothesis Tests: Wilcoxon Signed-Rank Test
+       </font>
+       <br/>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-kruskal-wallis-h-test-font-br">
+       <font color="crimson">
+        Nonparametric Statistical Hypothesis Tests: Kruskal-Wallis H Test
+       </font>
+       <br/>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-statement-br">
+     Problem Statement
+     <br/>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#references">
+       References
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
    References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-22">
+   Laboratory 22
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-22">
+   Exercise Set 22
   </a>
  </li>
 </ul>
@@ -454,8 +663,1425 @@
 <li><p>Parametric and Non-Parametric Tests</p></li>
 <li><p>Type 1 &amp; Type 2 errors</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/sensei/engr-1330-webroot/engr1330jb/lessons/lesson22
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>In engineering, when we wish to start asking questions about the data and interpret the results, we use statistical methods that provide a confidence or likelihood about the answers. In general, this class of methods is called statistical hypothesis testing, or significance tests. The material for today’s lecture is inspired by and gathered from several resources including:</p>
+<ul class="simple">
+<li><p><em>Hypothesis testing in Machine learning using Python</em> by <em>Yogesh Agrawal</em> available at <a class="reference external" href="https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce">https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce</a></p></li>
+<li><p><em>Demystifying hypothesis testing with simple Python examples</em> by <em>Tirthajyoti Sarkar</em> available at <a class="reference external" href="https://towardsdatascience.com/demystifying-hypothesis-testing-with-simple-python-examples-4997ad3c5294">https://towardsdatascience.com/demystifying-hypothesis-testing-with-simple-python-examples-4997ad3c5294</a></p></li>
+<li><p><em>A Gentle Introduction to Statistical Hypothesis Testing</em> by <em>Jason Brownlee</em> available at <a class="reference external" href="https://machinelearningmastery.com/statistical-hypothesis-tests/">https://machinelearningmastery.com/statistical-hypothesis-tests/</a></p></li>
+</ul>
+<p>Let’s go over a few important concepts first.</p>
+<div class="section" id="font-color-crimson-what-is-hypothesis-testing-font-br">
+<h3><font color=crimson>What is hypothesis testing ?</font><br><a class="headerlink" href="#font-color-crimson-what-is-hypothesis-testing-font-br" title="Permalink to this headline">¶</a></h3>
+<p>Hypothesis testing is a statistical method that is used in making statistical decisions (about population) using experimental data (samples). Hypothesis Testing is basically an assumption that we make about the population parameter.<br>
+Ex : you say on average, students in the class are taller than 5 ft and 4 inches or an average boy is taller than girls or a specific treatment is effective in treating COVID-19 patients. <br>
+We need some mathematical conclusion that whatever we are assuming is true. We will validate our hypotheses, basing our conclusion on random samples and empirical distributions._</p>
+</div>
+<div class="section" id="font-color-crimson-why-do-we-use-it-font-br">
+<h3><font color=crimson>Why do we use it ?</font><br><a class="headerlink" href="#font-color-crimson-why-do-we-use-it-font-br" title="Permalink to this headline">¶</a></h3>
+<p>Hypothesis testing is an essential procedure in statistics. A hypothesis test evaluates two mutually exclusive statements about a population to determine which statement is best supported by the sample data. When we say that a finding is statistically significant, it’s thanks to a hypothesis test._</p>
+<p><img alt="" src="https://luminousmen.com/media/demystifying-hypothesis-testing.jpg" /></p>
+</div>
+<div class="section" id="font-color-crimson-which-are-important-elements-of-hypothesis-testing-font-br">
+<h3><font color=crimson>Which are important elements of hypothesis testing ?</font><br><a class="headerlink" href="#font-color-crimson-which-are-important-elements-of-hypothesis-testing-font-br" title="Permalink to this headline">¶</a></h3>
+<p><strong>Null hypothesis:</strong><br></p>
+<p>The assertion of a statistical test is called the null hypothesis, or hypothesis 0 (H0 for short). It is often called the default assumption, or the assumption that nothing has changed. In inferential statistics, the null hypothesis is a general statement or default position that there is no relationship between two measured phenomena, or no association among groups. In other words it is a basic assertion made based on domain or problem knowledge.</p>
+<p>Example : a company’s gadget production is = 50 unit/per day.</p>
+<p><strong>Alternative hypothesis:</strong><br></p>
+<p>A violation of the test’s assertion is often called the first hypothesis, hypothesis 1 or H1 for short. H1 is really a short hand for “some other hypothesis,” as all we know is that the evidence suggests that the H0 can be rejected. The alternative hypothesis is the hypothesis used in hypothesis testing that is contrary to the null hypothesis. It is usually taken to be that the observations are the result of a real effect (with some amount of chance variation superposed).
+Example : a company’s production is !=50 unit/per day.</p>
+</div>
+<div class="section" id="font-color-crimson-what-are-basic-of-hypothesis-font-br">
+<h3><font color=crimson>What are basic of hypothesis ?</font><br><a class="headerlink" href="#font-color-crimson-what-are-basic-of-hypothesis-font-br" title="Permalink to this headline">¶</a></h3>
+<p>A fundamental stipulation  is normalisation and standard normalisation. all our assertions and alternatives revolve around these 2 terms.<br></p>
+<p><img alt="" src="https://miro.medium.com/max/350/1*U-cR-vP8pYUmLUDwCPv23A.png" /> <br>
+<img alt="" src="https://miro.medium.com/max/350/1*2vTwIrqdELKJY-tpheO7GA.jpeg" /> <br></p>
+<p>in the 1st image, you can see there are different normal curves. Those normal curves have different means and variances. In the 2nd image if you notice the graph is properly distributed with a mean =0 and variance =1. Concept of z-score comes in picture when we use standardized normal data.</p>
+<div class="section" id="normal-distribution">
+<h4>Normal Distribution:<a class="headerlink" href="#normal-distribution" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A variable is said to be normally distributed or have a normal distribution if its distribution has the shape of a normal curve — a special bell-shaped curve. The graph of a normal distribution is called the normal curve, for which the mean, median, and mode are equal. (The 1st Image)
+</pre></div>
+</div>
+</div>
+<div class="section" id="standardised-normal-distribution">
+<h4>Standardised Normal Distribution:<a class="headerlink" href="#standardised-normal-distribution" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A standard normal distribution is a normal distribution with mean 0 and standard deviation 1 (The 2nd Image)
+</pre></div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-z-score-font-br">
+<h4><font color=crimson>Z score:</font><br><a class="headerlink" href="#font-color-crimson-z-score-font-br" title="Permalink to this headline">¶</a></h4>
+<p>It is a method of expressing data in relation to the group mean. To obtain the Z-score of a particular data, we calculate its deviation from the mean and then divide it by the SD.<br>
+<img alt="" src="https://clavelresearch.files.wordpress.com/2019/03/z-score-sample.png" /> <br></p>
+<p>The Z score is one way of standardizing a score so that it can be referred to a standard normal distribution curve.<br><br />
+<img alt="" src="https://datalabbd.com/wp-content/uploads/2019/05/4a.png" /> <br></p>
+<p><em>Read more on Z-Score &#64;</em></p>
+<ul class="simple">
+<li><p><strong><em>Z-Score: Definition, Formula and Calculation</em> available at <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/z-score/">https://www.statisticshowto.com/probability-and-statistics/z-score/</a></strong></p></li>
+<li><p><strong><em>Z-Score: Definition, Calculation and Interpretation</em> by <em>Saul McLeod</em> available at <a class="reference external" href="https://www.simplypsychology.org/z-score.html">https://www.simplypsychology.org/z-score.html</a></strong></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-tailing-of-hypothesis-font-br">
+<h4><font color=crimson>Tailing of Hypothesis:</font><br><a class="headerlink" href="#font-color-crimson-tailing-of-hypothesis-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Depending on the research question hypothesis can be of 2 types. In the Nondirectional (two-tailed) test the Research Question is like: Is there a (statistically) significant difference between scores of Group-A and Group-B in a certain competition? In Directional (one-tailed) test the Research Question is like: Do Group-A score significantly higher than Group-B in a certain competition?<br></p>
+<p><img alt="" src="https://datalabbd.com/wp-content/uploads/2019/05/4d.png" /> <br></p>
+<p><em>Read more on Tailing &#64;</em></p>
+<ul class="simple">
+<li><p><em>One- and two-tailed tests</em> available at <a class="reference external" href="https://en.wikipedia.org/wiki/One-_and_two-tailed_tests">https://en.wikipedia.org/wiki/One-_and_two-tailed_tests</a></p></li>
+<li><p><em>Z-Score: Definition, Calculation and Interpretation</em> by <em>Saul McLeod</em> available at <a class="reference external" href="https://www.simplypsychology.org/z-score.html">https://www.simplypsychology.org/z-score.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-level-of-significance-font-br">
+<h4><font color=crimson>Level of significance:</font><br><a class="headerlink" href="#font-color-crimson-level-of-significance-font-br" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://saffold.com/blog/wp-content/uploads/2014/04/significance.png" /><br></p>
+<p>Refers to the degree of significance in which we accept or reject the null-hypothesis. 100% accuracy is not possible for accepting or rejecting a hypothesis, so we therefore select a level of significance.</p>
+<p>This significance level is usually denoted with alpha <span class="math notranslate nohighlight">\(\alpha\)</span> and often it is set to 0.05 or 5% , which means your output should be 95% confident to give similar kind of result in each sample. A smaller alpha value suggests a more robust interpretation of the null hypothesis, such as 1% or 0.1%.</p>
+</div>
+<div class="section" id="font-color-crimson-p-value-font-br">
+<h4><font color=crimson>P-value :</font><br><a class="headerlink" href="#font-color-crimson-p-value-font-br" title="Permalink to this headline">¶</a></h4>
+<p>The P value, or attained (calculated) probability, is the probability (p-value) of the collected data, given that the null hypothesis was true. The p-value reflects the strength of evidence against the null hypothesis. Accordingly, we’ll encounter two situations: the strength is strong enough or not strong enough to reject the null hypothesis.</p>
+<p>The p-value is compared to the pre-chosen alpha value. A result is statistically significant when the p-value is less than alpha. If your P value is less than the chosen significance level then you reject the null hypothesis i.e. accept that your sample gives reasonable evidence to support the alternative hypothesis.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If p-value &gt; alpha: Do not reject the null hypothesis (i.e. not significant result).<br>
+If p-value &lt;= alpha: Reject the null hypothesis (i.e. significant result).<br></p>
+</div>
+<p><img alt="" src="https://www.simplypsychology.org/p-value.png" /><br></p>
+<p>For example, if we were performing a test of whether a data sample was normally distributed and we calculated a p-value of .07, we could state something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;The test found that the data sample was normal, failing to reject the null hypothesis at a 5% significance level.&quot;&quot;
+</pre></div>
+</div>
+<p>The significance level can be inverted by subtracting it from 1 to give a <strong>confidence level</strong> of the hypothesis given the observed sample data.
+Therefore, statements such as the following can also be made:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;The test found that the data was normal, failing to reject the null hypothesis at a 95% confidence level.&quot;&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-br">
+<h3>Example :<br><a class="headerlink" href="#example-br" title="Permalink to this headline">¶</a></h3>
+<p>You have a coin and you don’t know whether that is fair or tricky so let’s decide null and alternate hypothes is<br></p>
+<ol class="simple">
+<li><p>H0 : a coin is a fair coin.<br></p></li>
+<li><p>H1 : a coin is a tricky coin. <br></p></li>
+<li><p>alpha = 5% or 0.05<br></p></li>
+</ol>
+<p>Now let’s toss the coin and calculate p-value (probability value).<br></p>
+<p>Toss a coin 1st time (sample size =1) and result is tail</p>
+<ul class="simple">
+<li><p>P-value = 50% (as head and tail have equal probability)<br></p></li>
+</ul>
+<p>Toss a coin 2nd time (sample size =2) and result is tail, now</p>
+<ul class="simple">
+<li><p>P-value = 50/2 = 25%<br></p></li>
+</ul>
+<p>and similarly suppose we Toss 6 consecutive times (sample size =6) and got result as P-value = 1.5%</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;probability of 6 tails in 6 tosses if coin is fair&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>probability of 6 tails in 6 tosses if coin is fair 0.016
+</pre></div>
+</div>
+</div>
+</div>
+<p>but we set our significance level as 5%. Here we see we are beyond that level i.e. our null- hypothesis does not hold good so we need to reject and propose that this coin is not fair.  It does not necessarily mean that the coin is tricky, but 6 tails in a row is quite unlikely with a fair coin, and a good “bet” would be to reject the coin as unfair, and 95% of the time you would be correct.</p>
+<p>Alternatively, one could phrase the result as a fair coin would produce a result <strong>other</strong> than 6 tails in a row 98.5% of the time.</p>
+<p>Read more on p-value &#64;<br></p>
+<ul class="simple">
+<li><p><em>P-values Explained By Data Scientist For Data Scientists</em> by <em>Admond Lee</em> available at <a class="reference external" href="https://towardsdatascience.com/p-values-explained-by-data-scientist-f40a746cfc8">https://towardsdatascience.com/p-values-explained-by-data-scientist-f40a746cfc8</a><br></p></li>
+<li><p><em>What a p-Value Tells You about Statistical Data</em> by <em>Deborah J. Rumsey</em> available at <a class="reference external" href="https://www.dummies.com/education/math/statistics/what-a-p-value-tells-you-about-statistical-data/">https://www.dummies.com/education/math/statistics/what-a-p-value-tells-you-about-statistical-data/</a><br></p></li>
+<li><p><em>Key to statistical result interpretation: P-value in plain English</em> by <em>Tran Quang Hung</em> available at <a class="reference external" href="https://s4be.cochrane.org/blog/2016/03/21/p-value-in-plain-english-2/">https://s4be.cochrane.org/blog/2016/03/21/p-value-in-plain-english-2/</a><br></p></li>
+</ul>
+<p>Watch more on p-value &#64;<br></p>
+<ul class="simple">
+<li><p><em>StatQuest: P Values, clearly explained</em> available at <a class="reference external" href="https://www.youtube.com/watch?v=5Z9OIYA8He8">https://www.youtube.com/watch?v=5Z9OIYA8He8</a><br></p></li>
+<li><p><em>Understanding the p-value - Statistics Help</em> available at <a class="reference external" href="https://www.youtube.com/watch?v=eyknGvncKLw">https://www.youtube.com/watch?v=eyknGvncKLw</a><br></p></li>
+<li><p><em>What Is A P-Value? - Clearly Explained</em> available at <a class="reference external" href="https://www.youtube.com/watch?v=ukcFrzt6cHk">https://www.youtube.com/watch?v=ukcFrzt6cHk</a><br></p></li>
+</ul>
+<div class="section" id="font-color-crimson-reject-vs-failure-to-reject-font-br">
+<h4><font color=crimson>“Reject” vs “Failure to Reject”</font><br><a class="headerlink" href="#font-color-crimson-reject-vs-failure-to-reject-font-br" title="Permalink to this headline">¶</a></h4>
+<p>The p-value is probabilistic. This means that when we interpret the result of a statistical test, we do not know what is true or false, only what is likely. Rejecting the null hypothesis means that there is sufficient statistical evidence (from the samples) that the null hypothesis does not look likely (for the population). Otherwise, it means that there is not sufficient statistical evidence to reject the null hypothesis.<br></p>
+<p>We may think about the statistical test in terms of the dichotomy of rejecting and accepting the null hypothesis. The danger is that if we say that we “accept” the null hypothesis, the “language” implies that the null hypothesis is true. Instead, it is more preferred to say that we “fail to reject” the null hypothesis, as in, there is insufficient statistical evidence to reject it.<br></p>
+</div>
+<div class="section" id="font-color-crimson-errors-in-statistical-tests-font-br">
+<h4><font color=crimson>Errors in Statistical Tests</font><br><a class="headerlink" href="#font-color-crimson-errors-in-statistical-tests-font-br" title="Permalink to this headline">¶</a></h4>
+<p>The interpretation of a statistical hypothesis test is probabilistic. That means that the evidence of the test may suggest an outcome and be mistaken. For example, if alpha was 5%, it suggests that (at most) 1 time in 20 that the null hypothesis would be mistakenly rejected or failed to be rejected (e.g., because of the statistical noise in the data sample).<br></p>
+<p>Having a small p-value (rejecting the null hypothesis) either means that the null hypothesis is false (we got it right) or it is true and some rare and unlikely event has been observed (we made a mistake). If this type of error is made, it is called a false positive. We falsely rejected of the null hypothesis.</p>
+<p>Alternately, given a large p-value (failing to reject the null hypothesis), it may mean that the null hypothesis is true (we got it right) or that the null hypothesis is false and some unlikely event occurred (we made a mistake). If this type of error is made, it is called a false negative. We falsely believe the null hypothesis or assumption of the statistical test.<br></p>
+<p><img alt="" src="https://res.cloudinary.com/data-science-dojo/image/upload/v1527879483/type1and2error_bglnqy.gif" /><br></p>
+<p>Each of these two types of error has a specific name:<br></p>
+<ul class="simple">
+<li><p>Type I Error: The incorrect rejection of a true null hypothesis or a false positive.<br></p></li>
+<li><p>Type II Error: The incorrect failure of rejection of a false null hypothesis or a false negative.<br></p></li>
+</ul>
+<p><img alt="" src="https://miro.medium.com/max/619/1*T5mfQqhcn-nB-n7LOiPv6A.png" /><br></p>
+<p>All statistical hypothesis tests have a risk of making either of these types of errors. False findings are more than just possible; they are probable!<br></p>
+<p>Ideally, we want to choose a significance level that minimizes the likelihood of one of these errors. E.g. a very small significance level. Although significance levels such as 0.05 and 0.01 are common in many fields of science, harder sciences (as defined by Dr. Sheldon Cooper), such as physics, are more aggressive.</p>
+<p>Read more on Type I and Type II Errors &#64;<br></p>
+<ul class="simple">
+<li><p><em>Type I and type II errors</em> available at <a class="reference external" href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#:~:text=In%20statistical%20hypothesis%20testing%2C%20a,false%20negative%22%20finding%20or%20conclusion">https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#:~:text=In statistical hypothesis testing, a,false negative” finding or conclusion</a><br></p></li>
+<li><p><em>To Err is Human: What are Type I and II Errors?</em> available at <a class="reference external" href="https://www.statisticssolutions.com/to-err-is-human-what-are-type-i-and-ii-errors/">https://www.statisticssolutions.com/to-err-is-human-what-are-type-i-and-ii-errors/</a><br></p></li>
+<li><p><em>Statistics: What are Type 1 and Type 2 Errors?</em> available at <a class="reference external" href="https://www.abtasty.com/blog/type-1-and-type-2-errors/">https://www.abtasty.com/blog/type-1-and-type-2-errors/</a><br></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-some-important-statistical-hypothesis-tests-font-br">
+<h4><font color=crimson>Some Important Statistical Hypothesis Tests</font><br><a class="headerlink" href="#font-color-crimson-some-important-statistical-hypothesis-tests-font-br" title="Permalink to this headline">¶</a></h4>
+<p><strong>Variable Distribution Type Tests (Gaussian)</strong></p>
+<ul class="simple">
+<li><p>Shapiro-Wilk Test</p></li>
+<li><p>D’Agostino’s K^2 Test</p></li>
+<li><p>Anderson-Darling Test</p></li>
+</ul>
+<p><strong>Compare Sample Means (parametric)</strong></p>
+<ul class="simple">
+<li><p>Student’s t-test</p></li>
+<li><p>Paired Student’s t-test</p></li>
+<li><p>Analysis of Variance Test (ANOVA)</p></li>
+<li><p>Repeated Measures ANOVA Test</p></li>
+</ul>
+<p><strong>Compare Sample Means (nonparametric)</strong></p>
+<ul class="simple">
+<li><p>Mann-Whitney U Test</p></li>
+<li><p>Wilcoxon Signed-Rank Test</p></li>
+<li><p>Kruskal-Wallis H Test</p></li>
+<li><p>Friedman Test</p></li>
+</ul>
+<p>Check these excellent links to read more on different Statistical Hypothesis Tests:_<br></p>
+<ul class="simple">
+<li><p><em>17 Statistical Hypothesis Tests in Python (Cheat Sheet)</em> by *Jason Brownlee * available at <a class="reference external" href="https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/">https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/</a><br></p></li>
+<li><p><em>Statistical Tests — When to use Which ?</em> by <em>vibhor nigam</em> available at <a class="reference external" href="https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740">https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740</a><br></p></li>
+<li><p><em>Comparing Hypothesis Tests for Continuous, Binary, and Count Data</em> by <em>Jim Frost</em> available at <a class="reference external" href="https://statisticsbyjim.com/hypothesis-testing/comparing-hypothesis-tests-data-types/">https://statisticsbyjim.com/hypothesis-testing/comparing-hypothesis-tests-data-types/</a><br></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="font-color-crimson-normality-tests-shapiro-wilk-test-font-br">
+<h4><font color=crimson>Normality Tests: Shapiro-Wilk Test</font><br><a class="headerlink" href="#font-color-crimson-normality-tests-shapiro-wilk-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether a data sample has a Gaussian distribution.<br></p>
+<p>Assumptions:<br></p>
+<p>Observations in each sample are independent and identically distributed (iid).<br></p>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the sample has a Gaussian distribution.</p></li>
+<li><p>H1: the sample does not have a Gaussian distribution.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Shapiro-Wilk Normality Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">shapiro</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Gaussian&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably not Gaussian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.895, p=0.193
+Probably Gaussian
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-normality-tests-dagostinos-k-2-test-font-br">
+<h4><font color=crimson>Normality Tests: D’Agostino’s K^2 Test</font><br><a class="headerlink" href="#font-color-crimson-normality-tests-dagostinos-k-2-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether a data sample has a Gaussian distribution.<br></p>
+<p>Assumptions:<br></p>
+<p>Observations in each sample are independent and identically distributed (iid).<br></p>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the sample has a Gaussian distribution.</p></li>
+<li><p>H1: the sample does not have a Gaussian distribution.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the D&#39;Agostino&#39;s K^2 Normality Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">normaltest</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">normaltest</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Gaussian&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably not Gaussian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=3.392, p=0.183
+Probably Gaussian
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/jupyterhub/lib/python3.8/site-packages/scipy/stats/stats.py:1603: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=10
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Read more on Normality Tests &#64;</em><br></p>
+<ul class="simple">
+<li><p><strong><em>A Gentle Introduction to Normality Tests in Python</em> by <em>Jason Brownlee</em> available at <a class="reference external" href="https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/">https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/</a></strong><br></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-parametric-statistical-hypothesis-tests-students-t-test-font-br">
+<h4><font color=crimson>Parametric Statistical Hypothesis Tests: Student’s t-test</font><br><a class="headerlink" href="#font-color-crimson-parametric-statistical-hypothesis-tests-students-t-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the means of two independent samples are significantly different.</p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).<br></p></li>
+<li><p>Observations in each sample are normally distributed.<br></p></li>
+<li><p>Observations in each sample have the same variance.<br></p></li>
+</ul>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p>H0: the means of the samples are equal.<br></p></li>
+<li><p>H1: the means of the samples are unequal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Student&#39;s t-test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=-0.326, p=0.748
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-parametric-statistical-hypothesis-tests-paired-students-t-test-font-br">
+<h4><font color=crimson>Parametric Statistical Hypothesis Tests: Paired Student’s t-test</font><br><a class="headerlink" href="#font-color-crimson-parametric-statistical-hypothesis-tests-paired-students-t-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the means of two paired samples are significantly different.<br></p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).<br></p></li>
+<li><p>Observations in each sample are normally distributed.<br></p></li>
+<li><p>Observations in each sample have the same variance.<br></p></li>
+<li><p>Observations across each sample are paired.<br></p></li>
+</ul>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the means of the samples are equal.<br></p></li>
+<li><p>H1: the means of the samples are unequal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Paired Student&#39;s t-test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_rel</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_rel</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=-0.334, p=0.746
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-parametric-statistical-hypothesis-tests-analysis-of-variance-test-anova-font-br">
+<h4><font color=crimson>Parametric Statistical Hypothesis Tests: Analysis of Variance Test (ANOVA)</font><br><a class="headerlink" href="#font-color-crimson-parametric-statistical-hypothesis-tests-analysis-of-variance-test-anova-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the means of two or more independent samples are significantly different.<br></p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).<br></p></li>
+<li><p>Observations in each sample are normally distributed.<br></p></li>
+<li><p>Observations in each sample have the same variance.<br></p></li>
+</ul>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the means of the samples are equal.<br></p></li>
+<li><p>H1: one or more of the means of the samples are unequal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Analysis of Variance Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">f_oneway</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">data3</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.696</span><span class="p">,</span> <span class="mf">0.928</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.148</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.213</span><span class="p">,</span> <span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.137</span><span class="p">,</span> <span class="mf">0.269</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.870</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.204</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">f_oneway</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">data3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.096, p=0.908
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Read more on Parametric Statistical Hypothesis Tests &#64;</em><br></p>
+<ul class="simple">
+<li><p><strong><em>How to Calculate Parametric Statistical Hypothesis Tests in Python</em> by <em>Jason Brownlee</em> available at <a class="reference external" href="https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/">https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/</a></strong><br></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-nonparametric-statistical-hypothesis-tests-mann-whitney-u-test-font-br">
+<h4><font color=crimson>Nonparametric Statistical Hypothesis Tests: Mann-Whitney U Test</font><br><a class="headerlink" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-mann-whitney-u-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the distributions of two independent samples are equal or not.<br></p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).<br></p></li>
+<li><p>Observations in each sample can be ranked.<br></p></li>
+</ul>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the distributions of both samples are equal.<br></p></li>
+<li><p>H1: the distributions of both samples are not equal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Mann-Whitney U Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=40.000, p=0.236
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-nonparametric-statistical-hypothesis-tests-wilcoxon-signed-rank-test-font-br">
+<h4><font color=crimson>Nonparametric Statistical Hypothesis Tests: Wilcoxon Signed-Rank Test</font><br><a class="headerlink" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-wilcoxon-signed-rank-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the distributions of two paired samples are equal or not.<br></p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).:<br></p></li>
+<li><p>Observations in each sample can be ranked.<br></p></li>
+<li><p>Observations across each sample are paired.<br></p></li>
+</ul>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the distributions of both samples are equal.<br></p></li>
+<li><p>H1: the distributions of both samples are not equal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Wilcoxon Signed-Rank Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">wilcoxon</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">wilcoxon</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=21.000, p=0.557
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-nonparametric-statistical-hypothesis-tests-kruskal-wallis-h-test-font-br">
+<h4><font color=crimson>Nonparametric Statistical Hypothesis Tests: Kruskal-Wallis H Test</font><br><a class="headerlink" href="#font-color-crimson-nonparametric-statistical-hypothesis-tests-kruskal-wallis-h-test-font-br" title="Permalink to this headline">¶</a></h4>
+<p>Tests whether the distributions of two or more independent samples are equal or not.<br></p>
+<p>Assumptions:<br></p>
+<ul class="simple">
+<li><p>Observations in each sample are independent and identically distributed (iid).<br></p></li>
+<li><p>Observations in each sample can be ranked.<br></p></li>
+</ul>
+<p>Interpretation:<br></p>
+<ul class="simple">
+<li><p>H0: the distributions of all samples are equal.<br></p></li>
+<li><p>H1: the distributions of one or more samples are not equal.<br></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Kruskal-Wallis H Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kruskal</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.873</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">0.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.436</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.637</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.869</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.142</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.432</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.938</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.183</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.169</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">kruskal</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.571, p=0.450
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Read more on Nonparametric Statistical Hypothesis Tests &#64;</em><br></p>
+<ul class="simple">
+<li><p><strong><em>How to Calculate Nonparametric Statistical Hypothesis Tests in Python</em> by <em>Jason Brownlee</em> available at <a class="reference external" href="https://machinelearningmastery.com/nonparametric-statistical-significance-tests-in-python/">https://machinelearningmastery.com/nonparametric-statistical-significance-tests-in-python/</a></strong><br></p></li>
+</ul>
+</hr>
+#### <font color=crimson>Example with REAL data: Do construction activities impact stormwater solids metrics?</font><br>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Background<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The Clean Water Act (CWA) prohibits storm water discharge from construction sites
+that disturb 5 or more acres, unless authorized by a National Pollutant Discharge
+Elimination System (NPDES) permit. Permittees must provide a site description,
+identify sources of contaminants that will affect storm water, identify appropriate
+measures to reduce pollutants in stormwater discharges, and implement these measures.
+The appropriate measures are further divided into four classes: erosion and
+sediment control, stabilization practices, structural practices, and storm water management.
+Collectively the site description and accompanying measures are known as
+the facility’s Storm Water Pollution Prevention Plan (SW3P).
+The permit contains no specific performance measures for construction activities,
+but states that ”EPA anticipates that storm water management will be able to
+provide for the removal of at least 80% of the total suspended solids (TSS).” The
+rules also note ”TSS can be used as an indicator parameter to characterize the
+control of other pollutants, including heavy metals, oxygen demanding pollutants,
+and nutrients commonly found in stormwater discharges”; therefore, solids control is
+critical to the success of any SW3P.
+Although the NPDES permit requires SW3Ps to be in-place, it does not require
+any performance measures as to the effectiveness of the controls with respect to
+construction activities. The reason for the exclusion was to reduce costs associated
+with monitoring storm water discharges, but unfortunately the exclusion also makes
+it difficult for a permittee to assess the effectiveness of the controls implemented at
+their site. Assessing the effectiveness of controls will aid the permittee concerned
+with selecting the most cost effective SW3P.<br></p>
+</div>
+<div class="section" id="problem-statement-br">
+<h3>Problem Statement <br><a class="headerlink" href="#problem-statement-br" title="Permalink to this headline">¶</a></h3>
+<p>The files precon.CSV and durcon.CSV contain observations of cumulative
+rainfall, total solids, and total suspended solids collected from a construction
+site on Nasa Road 1 in Harris County. <br>
+The data in the file precon.CSV was collected <code class="docutils literal notranslate"><span class="pre">before</span></code> construction began. The data in the file durcon.CSV were collected <code class="docutils literal notranslate"><span class="pre">during</span></code> the construction activity.<br>
+The first column is the date that the observation was made, the second column the total solids (by standard methods), the third column is is the total suspended solids (also by standard methods), and the last column is the cumulative rainfall for that storm.<br></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Script to get the files automatically is listed below this note:</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span> <span class="c1"># Module to process http/https requests</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/precon.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;precon.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/9-MyJupyterNotebooks/41A-HypothesisTests/durcon.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;durcon.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+
+</pre></div>
+</div>
+<p>These data are not time series (there was sufficient time between site visits that you can safely assume each storm was independent.
+<strong>Our task is to analyze these two data sets and decide if construction activities impact stormwater quality in terms of solids measures.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Read and examine the files, see if we can understand their structure</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;precon.csv&quot;</span><span class="p">)</span>
+<span class="n">durcon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;durcon.csv&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DATE</th>
+      <th>TS.PRE</th>
+      <th>TSS.PRE</th>
+      <th>RAIN.PRE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>03/27/97</td>
+      <td>408.5</td>
+      <td>111.0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>03/31/97</td>
+      <td>524.5</td>
+      <td>205.5</td>
+      <td>0.52</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>04/04/97</td>
+      <td>171.5</td>
+      <td>249.0</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>04/07/97</td>
+      <td>436.5</td>
+      <td>65.0</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04/11/97</td>
+      <td>627.0</td>
+      <td>510.5</td>
+      <td>2.19</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>04/18/97</td>
+      <td>412.5</td>
+      <td>93.0</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>04/26/97</td>
+      <td>434.0</td>
+      <td>224.0</td>
+      <td>3.76</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>04/27/97</td>
+      <td>389.5</td>
+      <td>187.0</td>
+      <td>0.13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>05/10/97</td>
+      <td>247.0</td>
+      <td>141.5</td>
+      <td>0.70</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>05/14/97</td>
+      <td>163.0</td>
+      <td>87.0</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>05/16/97</td>
+      <td>283.5</td>
+      <td>160.5</td>
+      <td>0.94</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>05/23/97</td>
+      <td>193.0</td>
+      <td>25.0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>05/27/97</td>
+      <td>268.0</td>
+      <td>364.5</td>
+      <td>0.46</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>05/29/97</td>
+      <td>359.5</td>
+      <td>276.0</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>06/02/97</td>
+      <td>1742.0</td>
+      <td>1373.0</td>
+      <td>0.65</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>06/09/97</td>
+      <td>595.0</td>
+      <td>492.5</td>
+      <td>0.30</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>06/18/97</td>
+      <td>615.0</td>
+      <td>312.0</td>
+      <td>0.69</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.DUR</th>
+      <th>TSS.DUR</th>
+      <th>RAIN.DUR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3014.0</td>
+      <td>2871.5</td>
+      <td>1.59</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1137.0</td>
+      <td>602.0</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2362.5</td>
+      <td>2515.0</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>395.5</td>
+      <td>130.0</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>278.5</td>
+      <td>36.5</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>506.5</td>
+      <td>320.5</td>
+      <td>0.69</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2829.5</td>
+      <td>3071.5</td>
+      <td>1.06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>22209.5</td>
+      <td>17424.5</td>
+      <td>6.55</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2491.5</td>
+      <td>1931.5</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1278.0</td>
+      <td>1129.5</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1428.5</td>
+      <td>1328.0</td>
+      <td>1.06</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>274.5</td>
+      <td>193.5</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>435.0</td>
+      <td>243.0</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>213.0</td>
+      <td>57.0</td>
+      <td>1.04</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>329.0</td>
+      <td>71.0</td>
+      <td>0.51</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>228.0</td>
+      <td>25.0</td>
+      <td>1.01</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>270.0</td>
+      <td>22.0</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>260.0</td>
+      <td>44.0</td>
+      <td>0.13</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3176.5</td>
+      <td>2401.0</td>
+      <td>0.28</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>29954.5</td>
+      <td>24146.5</td>
+      <td>3.55</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>26099.5</td>
+      <td>15454.0</td>
+      <td>4.91</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1484.0</td>
+      <td>1268.0</td>
+      <td>3.33</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>146.0</td>
+      <td>43.0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1069.0</td>
+      <td>891.0</td>
+      <td>0.51</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>242.0</td>
+      <td>38.0</td>
+      <td>0.14</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>5310.0</td>
+      <td>6103.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2671.5</td>
+      <td>2737.0</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>214.0</td>
+      <td>29.0</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1058.0</td>
+      <td>776.5</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>319.5</td>
+      <td>263.0</td>
+      <td>0.48</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>4864.0</td>
+      <td>4865.0</td>
+      <td>0.68</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2647.0</td>
+      <td>2473.0</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>259.0</td>
+      <td>14.0</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>124.0</td>
+      <td>45.0</td>
+      <td>0.28</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>9014.5</td>
+      <td>7680.5</td>
+      <td>1.77</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>159.0</td>
+      <td>80.0</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>573.0</td>
+      <td>397.5</td>
+      <td>0.55</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.PRE</th>
+      <th>TSS.PRE</th>
+      <th>RAIN.PRE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>17.000000</td>
+      <td>17.000000</td>
+      <td>17.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>462.941176</td>
+      <td>286.882353</td>
+      <td>0.878235</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>361.852779</td>
+      <td>312.659786</td>
+      <td>0.882045</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>163.000000</td>
+      <td>25.000000</td>
+      <td>0.130000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>268.000000</td>
+      <td>111.000000</td>
+      <td>0.460000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>408.500000</td>
+      <td>205.500000</td>
+      <td>0.690000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>524.500000</td>
+      <td>312.000000</td>
+      <td>0.950000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1742.000000</td>
+      <td>1373.000000</td>
+      <td>3.760000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TS.DUR</th>
+      <th>TSS.DUR</th>
+      <th>RAIN.DUR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>37.000000</td>
+      <td>37.000000</td>
+      <td>37.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3495.283784</td>
+      <td>2749.216216</td>
+      <td>1.016486</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7104.602041</td>
+      <td>5322.194188</td>
+      <td>1.391886</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>124.000000</td>
+      <td>14.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>270.000000</td>
+      <td>57.000000</td>
+      <td>0.270000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1058.000000</td>
+      <td>602.000000</td>
+      <td>0.550000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2671.500000</td>
+      <td>2515.000000</td>
+      <td>1.010000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>29954.500000</td>
+      <td>24146.500000</td>
+      <td>6.550000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_48_1.png" src="../../_images/lesson22_48_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_49_1.png" src="../../_images/lesson22_49_1.png" />
+</div>
+</div>
+<p>Here we see that the scales of the two data sets are quite different. Let’s see if  the two construction phases represent approximately the same rainfall conditions?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    17.000000
+mean      0.878235
+std       0.882045
+min       0.130000
+25%       0.460000
+50%       0.690000
+75%       0.950000
+max       3.760000
+Name: RAIN.PRE, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    37.000000
+mean      1.016486
+std       1.391886
+min       0.100000
+25%       0.270000
+50%       0.550000
+75%       1.010000
+max       6.550000
+Name: RAIN.DUR, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we look at the summary statistics, we might conclude there is more rainfall during construction, which could bias our interpretation, a box plot of just rainfall might be useful, as would hypothesis tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_54_1.png" src="../../_images/lesson22_54_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_55_1.png" src="../../_images/lesson22_55_1.png" />
+</div>
+</div>
+<p>Hard to tell from the plots, they look a little different, but are they? Lets apply some hypothesis tests</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span> <span class="c1"># import a useful non-parametric test</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">],</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=291.500, p-value at rejection =0.338
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;RAIN.PRE&#39;</span><span class="p">],</span> <span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;RAIN.DUR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=-0.375, p-value at rejection =0.709 
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+<p>From these two tests (the data are NOT paired) we conclude that the two sets of data originate from the same distribution. Thus the question “Do the two construction phases represent approximately the same rainfall conditions?” can be safely answered in the affirmative.</p>
+<p>Continuing, lets ask the same about total solids, first plots:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_60_1.png" src="../../_images/lesson22_60_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson22_61_1.png" src="../../_images/lesson22_61_1.png" />
+</div>
+</div>
+<p>Look at the difference in scales, the during construction phase, is about 5 to 10 times greater.
+But lets apply some tests to formalize our interpretation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">],</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=221.000, p-value at rejection =0.042
+Probably different distributions
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">],</span> <span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=-1.750, p-value at rejection =0.086 
+Probably different distributions
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both these tests indicate that the data derive from distirbutions with different measures of central tendency (means). Lets now ask the question about normality, we will apply a test called normaltest. This function tests a null hypothesis that a sample comes from a normal distribution. It is based on D’Agostino and Pearson’s test that combines skew and kurtosis to produce an omnibus test of normality. We will likely get a warning because our sample size is pretty small.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">normaltest</span><span class="p">(</span><span class="n">precon</span><span class="p">[</span><span class="s1">&#39;TS.PRE&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably normal distributed&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Not-normal distributed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=32.081, p-value at rejection =0.000
+Probably Not-normal distributed
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/jupyterhub/lib/python3.8/site-packages/scipy/stats/stats.py:1603: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=17
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">normaltest</span><span class="p">(</span><span class="n">durcon</span><span class="p">[</span><span class="s1">&#39;TS.DUR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;statistic=</span><span class="si">%.3f</span><span class="s1">, p-value at rejection =</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably normal distributed&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Not-normal distributed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>statistic=41.701, p-value at rejection =0.000
+Probably Not-normal distributed
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h4>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h4>
+<p>D’Agostino, R. B. (1971), “An omnibus test of normality for moderate and large sample size”, Biometrika, 58, 341-348</p>
+<p>D’Agostino, R. and Pearson, E. S. (1973), “Tests for departure from normality”, Biometrika, 60, 613-622</p>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>References<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<hr>
+</div>
+<div class="section" id="laboratory-22">
+<h2>Laboratory 22<a class="headerlink" href="#laboratory-22" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 22 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab22.html">Laboratory 22.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 22 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22.ipynb">Laboratory 21.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-22">
+<h2>Exercise Set 22<a class="headerlink" href="#exercise-set-22" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 22 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22-TH.html">Exercise 22.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 21 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22-TH.ipynb">Exercise Set 22.ipynb</a></p>
 </div>
 </div>
 
