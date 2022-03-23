@@ -718,7 +718,7 @@ else:
 # 
 # ## Laboratory 22
 # 
-# **Examine** (click) Laboratory 22 as a webpage at [Laboratory 22.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab21/Lab22.html)
+# **Examine** (click) Laboratory 22 as a webpage at [Laboratory 22.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22.html)
 # 
 # **Download** (right-click, save target as ...) Laboratory 22 as a jupyterlab notebook from [Laboratory 21.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab22/Lab22.ipynb)
 # 
