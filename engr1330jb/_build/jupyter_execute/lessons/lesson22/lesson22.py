@@ -9,16 +9,10 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 22: Testing Hypothesis - Comparing Treatments
-# - Comparing two (or more) treatments (aka. A/B Testing)
+# # 22: Testing Hypothesis - Comparing Collections
+# - Comparing two (or more) collections
 # - Parametric and Non-Parametric Tests
 # - Type 1 & Type 2 errors
-
-# In[1]:
-
-
-get_ipython().system(' pwd')
-
 
 # ## Background
 
@@ -143,7 +137,7 @@ get_ipython().system(' pwd')
 # 
 # and similarly suppose we Toss 6 consecutive times (sample size =6) and got result as P-value = 1.5% 
 
-# In[2]:
+# In[1]:
 
 
 print("probability of 6 tails in 6 tosses if coin is fair",round((0.5)**6,3))
@@ -237,7 +231,7 @@ print("probability of 6 tails in 6 tosses if coin is fair",round((0.5)**6,3))
 # - H0: the sample has a Gaussian distribution.
 # - H1: the sample does not have a Gaussian distribution.
 
-# In[3]:
+# In[2]:
 
 
 # Example of the Shapiro-Wilk Normality Test
@@ -263,7 +257,7 @@ else:
 # - H0: the sample has a Gaussian distribution.
 # - H1: the sample does not have a Gaussian distribution.
 
-# In[4]:
+# In[3]:
 
 
 # Example of the D'Agostino's K^2 Normality Test
@@ -294,7 +288,7 @@ else:
 # - H0: the means of the samples are equal.<br>
 # - H1: the means of the samples are unequal.<br>
 
-# In[5]:
+# In[4]:
 
 
 # Example of the Student's t-test
@@ -325,7 +319,7 @@ else:
 # - H0: the means of the samples are equal.<br>
 # - H1: the means of the samples are unequal.<br>
 
-# In[6]:
+# In[5]:
 
 
 # Example of the Paired Student's t-test
@@ -355,7 +349,7 @@ else:
 # - H0: the means of the samples are equal.<br>
 # - H1: one or more of the means of the samples are unequal.<br>
 
-# In[7]:
+# In[6]:
 
 
 # Example of the Analysis of Variance Test
@@ -388,7 +382,7 @@ else:
 # - H0: the distributions of both samples are equal.<br>
 # - H1: the distributions of both samples are not equal.<br>
 
-# In[8]:
+# In[7]:
 
 
 # Example of the Mann-Whitney U Test
@@ -418,7 +412,7 @@ else:
 # - H0: the distributions of both samples are equal.<br>
 # - H1: the distributions of both samples are not equal.<br>
 
-# In[9]:
+# In[8]:
 
 
 # Example of the Wilcoxon Signed-Rank Test
@@ -447,7 +441,7 @@ else:
 # - H0: the distributions of all samples are equal.<br>
 # - H1: the distributions of one or more samples are not equal.<br>
 
-# In[10]:
+# In[9]:
 
 
 # Example of the Kruskal-Wallis H Test
@@ -521,7 +515,7 @@ else:
 # These data are not time series (there was sufficient time between site visits that you can safely assume each storm was independent.
 # __Our task is to analyze these two data sets and decide if construction activities impact stormwater quality in terms of solids measures.__
 
-# In[11]:
+# In[10]:
 
 
 import numpy as np
@@ -531,44 +525,44 @@ import matplotlib.pyplot as plt
 
 # Read and examine the files, see if we can understand their structure
 
-# In[12]:
+# In[11]:
 
 
 precon = pd.read_csv("precon.csv")
 durcon = pd.read_csv("durcon.csv") 
 
 
-# In[13]:
+# In[12]:
 
 
 precon
 
 
-# In[14]:
+# In[13]:
 
 
 durcon
 
 
-# In[15]:
+# In[14]:
 
 
 precon.describe()
 
 
-# In[16]:
+# In[15]:
 
 
 durcon.describe()
 
 
-# In[17]:
+# In[16]:
 
 
 precon.plot.box()
 
 
-# In[18]:
+# In[17]:
 
 
 durcon.plot.box()
@@ -576,13 +570,13 @@ durcon.plot.box()
 
 # Here we see that the scales of the two data sets are quite different. Let's see if  the two construction phases represent approximately the same rainfall conditions? 
 
-# In[19]:
+# In[18]:
 
 
 precon['RAIN.PRE'].describe()
 
 
-# In[20]:
+# In[19]:
 
 
 durcon['RAIN.DUR'].describe()
@@ -590,13 +584,13 @@ durcon['RAIN.DUR'].describe()
 
 # If we look at the summary statistics, we might conclude there is more rainfall during construction, which could bias our interpretation, a box plot of just rainfall might be useful, as would hypothesis tests.
 
-# In[21]:
+# In[20]:
 
 
 precon['RAIN.PRE'].plot.box()
 
 
-# In[22]:
+# In[21]:
 
 
 durcon['RAIN.DUR'].plot.box()
@@ -604,7 +598,7 @@ durcon['RAIN.DUR'].plot.box()
 
 # Hard to tell from the plots, they look a little different, but are they? Lets apply some hypothesis tests
 
-# In[23]:
+# In[22]:
 
 
 from scipy.stats import mannwhitneyu # import a useful non-parametric test
@@ -616,7 +610,7 @@ else:
     print('Probably different distributions')
 
 
-# In[24]:
+# In[23]:
 
 
 from scipy import stats
@@ -632,13 +626,13 @@ else:
 # 
 # Continuing, lets ask the same about total solids, first plots:
 
-# In[25]:
+# In[24]:
 
 
 precon['TS.PRE'].plot.box()
 
 
-# In[26]:
+# In[25]:
 
 
 durcon['TS.DUR'].plot.box()
@@ -647,7 +641,7 @@ durcon['TS.DUR'].plot.box()
 # Look at the difference in scales, the during construction phase, is about 5 to 10 times greater.
 # But lets apply some tests to formalize our interpretation.
 
-# In[27]:
+# In[26]:
 
 
 stat, p = mannwhitneyu(precon['TS.PRE'],durcon['TS.DUR'])
@@ -658,7 +652,7 @@ else:
     print('Probably different distributions')
 
 
-# In[28]:
+# In[27]:
 
 
 results = stats.ttest_ind(precon['TS.PRE'], durcon['TS.DUR'])
@@ -671,7 +665,7 @@ else:
 
 # Both these tests indicate that the data derive from distirbutions with different measures of central tendency (means). Lets now ask the question about normality, we will apply a test called normaltest. This function tests a null hypothesis that a sample comes from a normal distribution. It is based on D’Agostino and Pearson’s test that combines skew and kurtosis to produce an omnibus test of normality. We will likely get a warning because our sample size is pretty small.
 
-# In[29]:
+# In[28]:
 
 
 stat, p = stats.normaltest(precon['TS.PRE'])
@@ -682,7 +676,7 @@ else:
     print('Probably Not-normal distributed')
 
 
-# In[30]:
+# In[29]:
 
 
 stat, p = stats.normaltest(durcon['TS.DUR'])

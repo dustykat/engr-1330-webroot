@@ -9,9 +9,9 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 21: Testing Hypothesis - Comparing Collections
-# - Comparing two (or more) collections of observations
-# - Comparing proportions
+# # 21: Testing Hypothesis - Introductions
+# - Comparing two (or more) collections of observations (graphically)
+# 
 # 
 # A procedure to systematically decide if two data collections are similar or substantially different.
 # 

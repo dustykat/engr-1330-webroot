@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>22: Testing Hypothesis - Comparing Treatments &#8212; ENGR 1330 Course Notes</title>
+    <title>22: Testing Hypothesis - Comparing Collections &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="23: Testing Hypothesis - Attained Significance" href="../lesson23/lesson23.html" />
-    <link rel="prev" title="21: Testing Hypothesis - Comparing Collections" href="../lesson21/lesson21.html" />
+    <link rel="prev" title="21: Testing Hypothesis - Introductions" href="../lesson21/lesson21.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -231,12 +231,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
@@ -656,25 +656,13 @@
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
 <p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="testing-hypothesis-comparing-treatments">
-<h1>22: Testing Hypothesis - Comparing Treatments<a class="headerlink" href="#testing-hypothesis-comparing-treatments" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="testing-hypothesis-comparing-collections">
+<h1>22: Testing Hypothesis - Comparing Collections<a class="headerlink" href="#testing-hypothesis-comparing-collections" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Comparing two (or more) treatments (aka. A/B Testing)</p></li>
+<li><p>Comparing two (or more) collections</p></li>
 <li><p>Parametric and Non-Parametric Tests</p></li>
 <li><p>Type 1 &amp; Type 2 errors</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> pwd
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/sensei/engr-1330-webroot/engr1330jb/lessons/lesson22
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>In engineering, when we wish to start asking questions about the data and interpret the results, we use statistical methods that provide a confidence or likelihood about the answers. In general, this class of methods is called statistical hypothesis testing, or significance tests. The material for today’s lecture is inspired by and gathered from several resources including:</p>
@@ -1831,7 +1819,7 @@ The first column is the date that the observation was made, the second column th
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_48_1.png" src="../../_images/lesson22_48_1.png" />
+<img alt="../../_images/lesson22_47_1.png" src="../../_images/lesson22_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1844,7 +1832,7 @@ The first column is the date that the observation was made, the second column th
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_49_1.png" src="../../_images/lesson22_49_1.png" />
+<img alt="../../_images/lesson22_48_1.png" src="../../_images/lesson22_48_1.png" />
 </div>
 </div>
 <p>Here we see that the scales of the two data sets are quite different. Let’s see if  the two construction phases represent approximately the same rainfall conditions?</p>
@@ -1899,7 +1887,7 @@ Name: RAIN.DUR, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_54_1.png" src="../../_images/lesson22_54_1.png" />
+<img alt="../../_images/lesson22_53_1.png" src="../../_images/lesson22_53_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1912,7 +1900,7 @@ Name: RAIN.DUR, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_55_1.png" src="../../_images/lesson22_55_1.png" />
+<img alt="../../_images/lesson22_54_1.png" src="../../_images/lesson22_54_1.png" />
 </div>
 </div>
 <p>Hard to tell from the plots, they look a little different, but are they? Lets apply some hypothesis tests</p>
@@ -1966,7 +1954,7 @@ Probably the same distribution
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_60_1.png" src="../../_images/lesson22_60_1.png" />
+<img alt="../../_images/lesson22_59_1.png" src="../../_images/lesson22_59_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1979,7 +1967,7 @@ Probably the same distribution
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lesson22_61_1.png" src="../../_images/lesson22_61_1.png" />
+<img alt="../../_images/lesson22_60_1.png" src="../../_images/lesson22_60_1.png" />
 </div>
 </div>
 <p>Look at the difference in scales, the during construction phase, is about 5 to 10 times greater.
@@ -2119,7 +2107,7 @@ Probably Not-normal distributed
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">21: Testing Hypothesis - Comparing Collections</p>
+                <p class="prevnext-title">21: Testing Hypothesis - Introductions</p>
             </div>
         </a>
     </div>
