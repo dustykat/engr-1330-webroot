@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>23: Testing Hypothesis - Attained Significance &#8212; ENGR 1330 Course Notes</title>
+    <title>23: Testing Hypothesis (continued) &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="24: Ordinary Functions as Predictor-Response Models" href="../lesson24/lesson24.html" />
-    <link rel="prev" title="22: Testing Hypothesis - Comparing Treatments" href="../lesson22/lesson22.html" />
+    <link rel="prev" title="22: Testing Hypothesis - Comparing Collections" href="../lesson22/lesson22.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -426,10 +428,116 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   23: Testing Hypothesis (continued)
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-concepts">
+     Computational Thinking Concepts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mendel-s-pea-flowers">
+     Mendel’s Pea Flowers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mendel-s-model">
+       <em>
+        Mendel’s Model
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#approach-to-assessment">
+       Approach to Assessment
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predicting-the-statistic-under-the-model">
+       Predicting the Statistic Under the Model
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-the-simulation">
+       Running the Simulation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-prediction">
+       The Prediction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comparing-the-prediction-and-the-data">
+       Comparing the Prediction and the Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elements-of-a-statistical-test">
+     Elements of a Statistical Test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-b-testing">
+       A/B Testing
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-website-design-a-practical-example-of-a-b-testing">
+       Example: Website Design: A practical example of A/B Testing
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#why-not-just-change-the-website-and-monitor-it-for-a-week">
+         Why not just change the website and monitor it for a week?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#why-is-it-not-an-a-b-c-test">
+         Why is it not an A/B/C test?
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experimental-work-for-future-semesters">
+   Experimental Work for Future Semesters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     References
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -446,14 +554,700 @@
     <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="testing-hypothesis-attained-significance">
-<h1>23: Testing Hypothesis - Attained Significance<a class="headerlink" href="#testing-hypothesis-attained-significance" title="Permalink to this headline">¶</a></h1>
+<p>Last GitHub Commit Date: 16 Mar 2021</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="testing-hypothesis-continued">
+<h1>23: Testing Hypothesis (continued)<a class="headerlink" href="#testing-hypothesis-continued" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Attained significance (p-value)</p></li>
 </ul>
+<p><em>Hypothesis Testing</em> A procedure to systematically decide if two data collections are similar or substantially different by comparing descriptive statistics (typically mean and variance).</p>
+<!--![](https://www.thermofisher.com/blog/wp-content/uploads/sites/11/2018/01/istock-829172394_redumbrella.jpg)-->
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To apply fundamental concepts involved in probability estimation modeling and descriptive statistics;</p>
+<ul>
+<li><p>Use of non-standard external module</p></li>
+<li><p>Use of graphics to visualize hypothesis tests</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="computational-thinking-concepts">
+<h2>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h2>
+<p>The CT concepts include:</p>
+<ul class="simple">
+<li><p>Abstraction =&gt; Represent data behavior with a statistic</p></li>
+<li><p>Pattern Recognition =&gt; Compare patterns in (our) data models to make a decision</p></li>
+</ul>
+<hr class="docutils" />
+<p>Lets actually examine the course textbook:
+<a class="reference external" href="https://www.inferentialthinking.com/chapters/11/Testing_Hypotheses.html">https://www.inferentialthinking.com/chapters/11/Testing_Hypotheses.html</a></p>
+<p>There is a “secret” module you need to install, without instructions of how!  Welcome to the world of obfuscation!</p>
+<blockquote>
+<div><p>To get access to the datascience library in the textbook you use pip. <br>
+On my server I did: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-H</span> <span class="pre">/opt/jupyterhub/bin/python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datascience</span></code> <br>
+On your anaconda environment the following might work: <br>
+<code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datascience</span></code> &lt;= put this into a Jupyter code cell and run it once!</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ! pip install datascience - activate if import fails</span>
+<span class="kn">import</span> <span class="nn">datascience</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#required to get kernel to render the image</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mendel-s-pea-flowers">
+<h2>Mendel’s Pea Flowers<a class="headerlink" href="#mendel-s-pea-flowers" title="Permalink to this headline">¶</a></h2>
+<p>Gregor Mendel (1822-1884) was an Austrian monk who is widely recognized as the founder of the modern field of genetics.</p>
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson17/gotitfrommymama.jpg" style="padding-right: 10px; padding-left: 10px;" width="200" align="left">
+<p>Mendel performed careful and large-scale experiments on plants to come up with fundamental laws of genetics.
+Many of his experiments were on varieties of pea plants. He formulated sets of assumptions about each variety; these were his models. He then tested the validity of his models by growing the plants and gathering data.</p>
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson17/mendels-garden.jpg" style="padding-right: 10px; padding-left: 10px;" width="200" align="right" >
+<p>Let’s analyze the data from one such experiment to see if Mendel’s model was good.</p>
+<p>In a particular variety, each plant has either purple flowers or white. The color in each plant is unaffected by the colors in other plants. Mendel hypothesized that the plants should bear purple or white flowers at random, in the ratio 3:1.</p>
+<div class="section" id="mendel-s-model">
+<h3><em>Mendel’s Model</em><a class="headerlink" href="#mendel-s-model" title="Permalink to this headline">¶</a></h3>
+<p>For every plant, there is a 75% chance that it will have purple flowers, and a 25% chance that the flowers will be white, regardless of the colors in all the other plants.</p>
+</div>
+<div class="section" id="approach-to-assessment">
+<h3>Approach to Assessment<a class="headerlink" href="#approach-to-assessment" title="Permalink to this headline">¶</a></h3>
+<p>To go about assessing Mendel’s model, we can simulate plants under the assumptions of the model and see what it predicts. Then we will be able to compare the predictions with the data that Mendel recorded.
+The Statistic</p>
+<p>Our goal is to see whether or not Mendel’s model is good. We need to simulate a statistic that will help us make this decision.</p>
+<p>If the model is good, the percent of purple-flowering plants in the sample should be close to 75%. If the model is not good, the percent purple-flowering will be away from 75%. It may be higher, or lower; the direction doesn’t matter.</p>
+<p>The key for us is the distance between 75% and the percent of purple-flowering plants in the sample. Big distances are evidence that the model isn’t good.</p>
+<blockquote>
+<div><p>Our statistic, therefore, is the distance between the sample percent and 75%: <br><br>
+<span class="math notranslate nohighlight">\(\text{Distance} = ~∣\frac{\text{sample percent of purple}}{\text{flowering plants}}|−75\%\)</span></p>
+</div></blockquote>
+</div>
+<div class="section" id="predicting-the-statistic-under-the-model">
+<h3>Predicting the Statistic Under the Model<a class="headerlink" href="#predicting-the-statistic-under-the-model" title="Permalink to this headline">¶</a></h3>
+<p>To see how big the distance would be if Mendel’s model were true, we can use sample_proportions to simulate the distance under the assumptions of the model.</p>
+<p>First, we have to figure out how many times to sample. To do this, remember that we are going to compare our simulation with Mendel’s plants. So we should simulate the same number of plants that he had.</p>
+<p>Mendel grew a lot of plants. There were 929 plants of the variety corresponding to this model. So we have to sample 929 times.
+Generating One Value of the Statistic</p>
+<p>The steps in the calculation:</p>
+<blockquote>
+<div><p>Sample 929 times at random from the distribution specified by the model and find the sample proportion in the purple-flowering category. <br>
+Multiply the proportion by 100 to get a pecent.<br>
+Subtract 75 and take the absolute value of the difference.<br></p>
+</div></blockquote>
+<p>That’s the statistic: the distance between the sample percent and 75.</p>
+<p>We will start by defining a function that takes a proportion and returns the absolute difference between the corresponding percent and 75.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance_from_75</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">p</span> <span class="o">-</span> <span class="mi">75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To simulate one value of the distance between the sample percent of purple-flowering plants and 75%, under the assumptions of Mendel’s model, we have to first simulate the proportion of purple-flowering plants among 929 plants under the assumption of the model, and then calculate the discrepancy from 75%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_proportions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proportion_purple_in_sample</span> <span class="o">=</span> <span class="n">datascience</span><span class="o">.</span><span class="n">sample_proportions</span><span class="p">(</span><span class="mi">929</span><span class="p">,</span> <span class="n">model_proportions</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">distance_from_75</span><span class="p">(</span><span class="n">proportion_purple_in_sample</span><span class="p">)</span>
+<span class="c1">#proportion_purple_in_sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.618945102260497
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s one simulated value of the distance between the sample percent of purple-flowering plants and 75% as predicted by Mendel’s model.</p>
+</div>
+<div class="section" id="running-the-simulation">
+<h3>Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this headline">¶</a></h3>
+<p>To get a sense of how variable the distance could be, we have to simulate it many more times.</p>
+<p>We will generate 10,000 values of the distance. As before, we will first use the code we developed above to define a function that returns one simulated value Mendel’s hypothesis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">one_simulated_distance</span><span class="p">():</span>
+    <span class="n">proportion_purple_in_sample</span> <span class="o">=</span> <span class="n">datascience</span><span class="o">.</span><span class="n">sample_proportions</span><span class="p">(</span><span class="mi">929</span><span class="p">,</span> <span class="n">model_proportions</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">distance_from_75</span><span class="p">(</span><span class="n">proportion_purple_in_sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we will use a for loop to create 10,000 such simulated distances.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">datascience</span><span class="o">.</span><span class="n">make_array</span><span class="p">()</span>
+
+<span class="n">repetitions</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">one_simulated_distance</span><span class="p">())</span>
+    
+<span class="nb">len</span><span class="p">(</span><span class="n">distances</span><span class="p">);</span>
+<span class="c1">#distances[999]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-prediction">
+<h3>The Prediction<a class="headerlink" href="#the-prediction" title="Permalink to this headline">¶</a></h3>
+<p>The empirical histogram of the simulated values shows the distribution of the distance as predicted by Mendel’s model.  First we will plot a histogram of the simulated distances, small values (close to zero) are supportive of Mendel’s model, larger values are not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_14_0.png" src="../../_images/lesson23_14_0.png" />
+</div>
+</div>
+<p>Here we see that the majority of the distances are between 0-1, lets find the value of distance for the 25%,50%,75%, and 99%</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quants</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">distances</span><span class="p">,[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.99</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;25 </span><span class="si">% o</span><span class="s1">f the distances are between 0 and &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quants</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;50 </span><span class="si">% o</span><span class="s1">f the distances are between 0 and &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quants</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;75 </span><span class="si">% o</span><span class="s1">f the distances are between 0 and &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quants</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99 </span><span class="si">% o</span><span class="s1">f the distances are between 0 and &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quants</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 % of the distances are between 0 and  0.46
+50 % of the distances are between 0 and  1.0
+75 % of the distances are between 0 and  1.64
+99 % of the distances are between 0 and  3.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>The median distance is slightly less than 1, so for any single experiment half the time we expect distances less than 1, half greater.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datascience</span><span class="o">.</span><span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s1">&#39;Distance between Sample </span><span class="si">% a</span><span class="s1">nd 75%&#39;</span><span class="p">,</span> <span class="n">distances</span>
+<span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_18_0.png" src="../../_images/lesson23_18_0.png" />
+</div>
+</div>
+<p>Look on the horizontal axis to see the typical values of the distance, as predicted by the model. They are rather small. For example, a high proportion of the distances are in the range 0 to 1, meaning that for a high proportion of the samples, the percent of purple-flowering plants is within 1% of 75%, that is, the sample percent is in the range 74% to 76%.</p>
+</div>
+<div class="section" id="comparing-the-prediction-and-the-data">
+<h3>Comparing the Prediction and the Data<a class="headerlink" href="#comparing-the-prediction-and-the-data" title="Permalink to this headline">¶</a></h3>
+<p>To assess the model, we have to compare this prediction with the data. Mendel recorded the number of purple and white flowering plants. In an actual experiment of the 929 plants that he grew, 705 were purple flowering. That’s just about 75.89%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span><span class="o">*</span><span class="nb">round</span><span class="p">(</span><span class="mi">705</span> <span class="o">/</span> <span class="mi">929</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.89
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the <code class="docutils literal notranslate"><span class="pre">observed</span> <span class="pre">value</span></code> of our statistic – the distance between Mendel’s sample percent and 75 – is about 0.89:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">observed_statistic</span> <span class="o">=</span> <span class="n">distance_from_75</span><span class="p">(</span><span class="mi">705</span><span class="o">/</span><span class="mi">929</span><span class="p">)</span>
+<span class="nb">round</span><span class="p">(</span><span class="n">observed_statistic</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.89
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just by eye, locate roughly where 0.89 is on the horizontal axis of the histogram. You will see that it is clearly in the heart of the distribution predicted by Mendel’s model.</p>
+<p>The cell below redraws the histogram with the observed value plotted on the horizontal axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">observed_statistic</span><span class="p">,</span> <span class="mf">75.00</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_24_0.png" src="../../_images/lesson23_24_0.png" />
+</div>
+</div>
+<p>Here’s the same plot using the datascience module - essentially helps decorate the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datascience</span><span class="o">.</span><span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s1">&#39;Distance between Sample </span><span class="si">% a</span><span class="s1">nd 75%&#39;</span><span class="p">,</span> <span class="n">distances</span>
+<span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">observed_statistic</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_26_0.png" src="../../_images/lesson23_26_0.png" />
+</div>
+</div>
+<p>The observed statistic is like a typical distance predicted by the model. By this measure, the data are consistent with the histogram that we generated under the assumptions of Mendel’s model. This is evidence in favor of the model.</p>
+<p>We can further find the quantile associated with the observed statistic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qvalue</span><span class="o">=</span><span class="mf">0.0</span> <span class="c1">#quantile value to start</span>
+<span class="n">tolerance</span><span class="o">=</span><span class="mf">0.0001</span>
+<span class="n">how_many</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">tolerance</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">):</span> <span class="c1">#brute force search</span>
+    <span class="n">how_close</span> <span class="o">=</span> <span class="n">observed_statistic</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="n">qvalue</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">how_close</span> <span class="o">&gt;=</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="n">qvalue</span> <span class="o">=</span> <span class="n">qvalue</span><span class="o">+</span><span class="n">tolerance</span>
+        <span class="c1">#print(how_close,qvalue)</span>
+    <span class="k">if</span> <span class="n">how_close</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="c1">#print(how_close,qvalue)</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The observed statistic :&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">observed_statistic</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;is smaller than &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">qvalue</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; percent of the simulated sample&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The observed statistic : 0.888 is smaller than  54.89  percent of the simulated sample
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example is the essence of hypothesis tests that are conducted in all fields in which theory can be compared to observation.</p>
+<p>Here we used simulation to replicate many prospective experiments, by randomly sampling from a population that had the desired proportions.
+Then compared an actual experiment, to the simulated population behavoir using a histogram to learn where our measurement (test statistic) landed with respect to many other experiments.  Lastly, we can use quantiles (probability estimates) to judge the measurement’s chance of occurance as compared to a random simulation of the correct behavior.  Here we found that our measurement is expected roughly half the time as compared to a random population <strong>with the correct(null) proportions</strong></p>
+<p>The next section formalizes these kinds of tests when the population is not available (bear in mind the rules are built using simulations, then common patterns emerge and we use the patterns)</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="elements-of-a-statistical-test">
+<h2>Elements of a Statistical Test<a class="headerlink" href="#elements-of-a-statistical-test" title="Permalink to this headline">¶</a></h2>
+<p>The four essential elements are:</p>
+<ol class="simple">
+<li><p>null hypothesis, <span class="math notranslate nohighlight">\(H_0\)</span></p></li>
+<li><p>alternative hypothesis, <span class="math notranslate nohighlight">\(H_a\)</span></p></li>
+<li><p>a test statistic</p></li>
+<li><p>a rejection region</p></li>
+</ol>
+<div class="section" id="id1">
+<h3><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wish to test a hypothesis concerning a parameter <span class="math notranslate nohighlight">\(\theta\)</span> based on a random sample <span class="math notranslate nohighlight">\(Y_1,Y_2, \dots ,Y_n\)</span> from which we compute an estimate named <span class="math notranslate nohighlight">\(\hat\theta\)</span>.  Assume for this lesson that the estimator has an approximately normical distribution with mean <span class="math notranslate nohighlight">\(\theta\)</span> and variance <span class="math notranslate nohighlight">\(\sigma_{\hat\theta}^2\)</span></p>
+<p>Suppose <span class="math notranslate nohighlight">\(\theta_0\)</span> is a particular (target) value of <span class="math notranslate nohighlight">\(\theta\)</span>, we wish to test <span class="math notranslate nohighlight">\(H_0:\theta = \theta_0\)</span> versus <span class="math notranslate nohighlight">\(H_a:\theta &gt; \theta_0\)</span>.</p>
+<p>The figure below depicts sampling distributions of <span class="math notranslate nohighlight">\(\hat\theta\)</span> for different values of <span class="math notranslate nohighlight">\(\theta\)</span>, including one that happens to center on <span class="math notranslate nohighlight">\(\theta_0\)</span></p>
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson17/samplngDists.png" style="padding-right: 10px; padding-left: 10px;" width="300" >
+<p>If <span class="math notranslate nohighlight">\(\hat\theta\)</span> is close to <span class="math notranslate nohighlight">\(\theta_0\)</span>, it is reasonable to accept  <span class="math notranslate nohighlight">\(H_0\)</span>.
+However if <span class="math notranslate nohighlight">\(\theta &gt; \theta_0\)</span>, it is more likely that <span class="math notranslate nohighlight">\(\hat\theta\)</span> is going to be large.</p>
+<p>Thus large values of <span class="math notranslate nohighlight">\(\hat\theta\)</span> (larger than <span class="math notranslate nohighlight">\(\theta_0\)</span>) favor the rejection of <span class="math notranslate nohighlight">\(H_0:\theta = \theta_0\)</span> and the acceptance of <span class="math notranslate nohighlight">\(H_a:\theta &gt; \theta_0\)</span>.  Using the 4 elements as a guide, we can concisely state :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>item</p></th>
+<th class="text-align:left head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_0\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\theta = \theta_0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_a\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\theta &gt; \theta_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Test Statistic</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\hat\theta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Rejection Region</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(RR = \hat\theta &gt; k\)</span> for some choice of <span class="math notranslate nohighlight">\(k\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The actual value of <span class="math notranslate nohighlight">\(RR\)</span> is determined by setting the type-I-error prbability <span class="math notranslate nohighlight">\(\alpha\)</span> and choosing <span class="math notranslate nohighlight">\(k\)</span> accordingly, such as in the figure below.</p>
+<img src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson17/type1.png" style="padding-right: 10px; padding-left: 10px;" width="300" >
+<p>If <span class="math notranslate nohighlight">\(H_0\)</span> is true, <span class="math notranslate nohighlight">\(\hat\theta\)</span> having an approximately normal distribution with mean <span class="math notranslate nohighlight">\(\theta_0\)</span> and variance <span class="math notranslate nohighlight">\(\sigma_{\hat\theta}^2\)</span>, if we desire a type-I-error probability of <span class="math notranslate nohighlight">\(\alpha\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[k = \theta_0 + z_{\alpha} \sigma_{\hat\theta}\]</div>
+<p>is the choice for <span class="math notranslate nohighlight">\(k\)</span> where <span class="math notranslate nohighlight">\(P(Z &gt; z_{\alpha}) = \alpha \)</span> when <span class="math notranslate nohighlight">\(Z\)</span> is a standard normal variate (our firend the Z-score).</p>
+<p>Our <span class="math notranslate nohighlight">\(RR\)</span> can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[ RR = \hat\theta : \frac{\hat\theta - \theta_0}{\sigma_{\hat\theta}} &gt; z_{\alpha}\]</div>
+<p>Thus our test is:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>item</p></th>
+<th class="text-align:left head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_0\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\theta = \theta_0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_a\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\theta&gt; \theta_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Test Statistic</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(Z=\frac{\hat\theta-\theta_0}{\sigma_{\hat\theta}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Rejection Region</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(z&gt;z_{\alpha}\)</span> for some value <span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Recall we choose <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>A machine in a factory must be stopped and maintained when its defects exceede 10% on the daily production runs.   A random sample of 100 items from one day of production contain 15 defective items and the shop foreman claims the machine must be maintained/repaired.  Does the sample evidence support the foreman’s assertion?</p>
+<p>Lets apply our process.</p>
+<p><span class="math notranslate nohighlight">\(Y\)</span> denotes the number of defectives.  <span class="math notranslate nohighlight">\(Y\)</span> will be a binomial variate (with value TRUE/FALSE or 0/1) with a probability of one outcome of <span class="math notranslate nohighlight">\(p\)</span> and the other <span class="math notranslate nohighlight">\(1-p\)</span>.  Kind of like an oddly weighted coin.  Lets say the defect outcome is the value <span class="math notranslate nohighlight">\(p\)</span>. We will assume 100 is large enough so that we can approximate the binomial with a Z-score statistic.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>item</p></th>
+<th class="text-align:left head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_0\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(p = 0.10\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(H_a\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(p &gt; 0.10\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Test Statistic</p></td>
+<td class="text-align:left"><p>$<span class="math notranslate nohighlight">\(Z=\frac{\hat p-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Rejection Region</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(z&gt;z_{\alpha}\)</span> for some value <span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Lets choose <span class="math notranslate nohighlight">\(\alpha = 0.01\)</span> what is the value for <span class="math notranslate nohighlight">\(z_{\alpha}\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">normdist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">):</span>
+    <span class="n">argument</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span>    
+    <span class="n">normdist</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span><span class="n">argument</span><span class="p">))</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="k">return</span> <span class="n">normdist</span>
+
+<span class="n">sample_count</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">defect_count</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">phat</span> <span class="o">=</span> <span class="n">defect_count</span><span class="o">/</span><span class="n">sample_count</span>
+<span class="n">pzero</span> <span class="o">=</span> <span class="mf">0.10</span>
+
+<span class="n">z_test</span> <span class="o">=</span> <span class="p">(</span><span class="n">phat</span> <span class="o">-</span> <span class="n">pzero</span><span class="p">)</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">pzero</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">pzero</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">sample_count</span><span class="p">))</span>
+
+<span class="n">z_alpha</span> <span class="o">=</span>  <span class="mf">2.325</span> <span class="c1">#1.646 #2.325 #here we find by trial and error</span>
+<span class="n">quantile</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">normdist</span><span class="p">(</span><span class="n">z_alpha</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quantile</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">z_test</span> <span class="o">&gt;</span> <span class="n">z_alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reject Ho&quot;</span><span class="p">,</span><span class="s2">&quot;Test Statistic = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">z_test</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;Rejection Value = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">z_alpha</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; Type-I-error probability = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quantile</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Do Not Reject Ho&quot;</span><span class="p">,</span><span class="s2">&quot;Test Statistic = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">z_test</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;Rejection Value = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">z_alpha</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; Type-I-error probability = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">quantile</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># or we can compute p-value</span>
+
+<span class="n">pvalue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">normdist</span><span class="p">(</span><span class="n">z_test</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P-value at rejection = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">pvalue</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010035980100274067
+Do Not Reject Ho Test Statistic =  1.667 Rejection Value =  2.325  Type-I-error probability =  0.010036
+P-value at rejection =  0.04779
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets examine the actual defect distribution by simulation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">sample_parts</span><span class="p">(</span><span class="n">how_many</span><span class="p">,</span><span class="n">proportion</span><span class="p">):</span>
+    <span class="n">sample_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#empty list to store results</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">how_many</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;=</span> <span class="n">proportion</span><span class="p">:</span>
+            <span class="n">sample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">sample_list</span><span class="p">)</span>
+
+<span class="c1">#machine_parts = sample_parts(100,0.10)</span>
+<span class="c1">#plt.hist(machine_parts, density = False)</span>
+<span class="c1">#plt.show()</span>
+
+<span class="c1"># simulate sampling then computing the defect rate</span>
+<span class="n">defect_rate</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5000</span><span class="p">):</span> <span class="c1">#change from 10 to 50,70,90,100,1000,2000,3000</span>
+    <span class="n">machine_parts</span> <span class="o">=</span> <span class="n">sample_parts</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mf">0.10</span><span class="p">)</span>
+    <span class="n">sample_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">machine_parts</span><span class="p">)</span>
+    <span class="n">defect_count</span> <span class="o">=</span> <span class="n">sample_count</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">machine_parts</span><span class="p">)</span>
+    <span class="n">defect_rate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">defect_count</span><span class="o">/</span><span class="n">sample_count</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">defect_rate</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="c1">#matplotlib.pyplot.scatter(0.15, 0.00, color=&#39;red&#39;, s=66);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_33_0.png" src="../../_images/lesson23_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="a-b-testing">
+<h3>A/B Testing<a class="headerlink" href="#a-b-testing" title="Permalink to this headline">¶</a></h3>
+<p>In modern data analytics, deciding whether two numerical samples come from the same underlying distribution is called A/B testing. The name refers to the labels of the two samples, A and B.</p>
+<p>An example will illustrate the concept</p>
+</div>
+<div class="section" id="example-website-design-a-practical-example-of-a-b-testing">
+<h3>Example: Website Design: A practical example of A/B Testing<a class="headerlink" href="#example-website-design-a-practical-example-of-a-b-testing" title="Permalink to this headline">¶</a></h3>
+<p><em>inspired by an example in <strong>“A/B Test Significance in Python”</strong> by <strong>Samuel Hinton</strong> available at</em> <a class="reference external" href="https://cosmiccoding.com.au/tutorials/ab_tests">https://cosmiccoding.com.au/tutorials/ab_tests</a> <br>
+<img alt="" src="https://www.invespcro.com/blog/images/blog-images/ab-test-1-1.jpg" /> <br>
+Imagine you’re in charge of a website (e.g., an online videogame shop). You have the current version of the website (aka. “A”), but aren’t happy with it. For instance, you are not selling as much as you like. You want to change the design of the “Add to Cart” button (aka. “B”) and maybe that will increase your sells. <br>
+<img alt="" src="https://www.volusion.com/blog/content/images/wp/buttonaandbuttonn.jpg" /> <br></p>
+<p>you set up your website so that half the people are directed to the old website, and half to one where you’ve made your change. You have data from both, and want to know, with confidence, “Does the change I made increase the sells?”.<br></p>
+<p><em>This is an A/B test. Often this is used interchangably with the term “split testing”, though in general A/B tests test small changes, and split testing might be when you present two entirely different websites to the user.</em> <br></p>
+<div class="section" id="why-not-just-change-the-website-and-monitor-it-for-a-week">
+<h4>Why not just change the website and monitor it for a week?<a class="headerlink" href="#why-not-just-change-the-website-and-monitor-it-for-a-week" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Good question - by having two sites active at once and randomly directing users to one or the other, you control for all other variables. If one week later puts you the week before Christmas, this will impact sales, and you might draw the wrong conclusion because of these confounding effects.</p>
+</div></blockquote>
+</div>
+<div class="section" id="why-is-it-not-an-a-b-c-test">
+<h4>Why is it not an A/B/C test?<a class="headerlink" href="#why-is-it-not-an-a-b-c-test" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>One can have as many perturbations running as you want, but got to keep the name simple. The more perturbations you try though, the smaller a number of samples you’ll have for each case, and the harder it will be to draw statistically significant conclusions.</p>
+</div></blockquote>
+<p>Let us assume you have 1000 users, 550 were directed to site A, 450 to site B. In site A, 48 users made a purchase. In site B, 56 users made a purchase. Is this a statistically significant result?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_a</span><span class="o">=</span> <span class="mi">550</span>
+<span class="n">num_b</span> <span class="o">=</span> <span class="mi">450</span>
+<span class="n">click_a</span><span class="o">=</span> <span class="mi">48</span>
+<span class="n">click_b</span> <span class="o">=</span> <span class="mi">56</span>
+<span class="n">rate_a</span><span class="o">=</span> <span class="n">click_a</span> <span class="o">/</span> <span class="n">num_a</span>
+<span class="n">rate_b</span> <span class="o">=</span> <span class="n">click_b</span> <span class="o">/</span> <span class="n">num_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rate_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rate_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08727272727272728
+0.12444444444444444
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can click a button, or not. Two discrete options are available, so this is a textbook binomial distribution, with some unknown rate for site A and site B. We don’t know the true click rate, but we can estimate it using our small sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
+
+<span class="c1"># Determine the probability of having x number of clicks - Binomial Dist.</span>
+<span class="n">clicks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">prob_a</span> <span class="o">=</span> <span class="n">binom</span><span class="p">(</span><span class="n">num_a</span><span class="p">,</span> <span class="n">rate_a</span><span class="p">)</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">clicks</span><span class="p">)</span>
+<span class="n">prob_b</span> <span class="o">=</span> <span class="n">binom</span><span class="p">(</span><span class="n">num_b</span><span class="p">,</span> <span class="n">rate_b</span><span class="p">)</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">clicks</span><span class="p">)</span>
+
+<span class="c1"># Make the bar plots.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">clicks</span><span class="p">,</span> <span class="n">prob_a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">clicks</span><span class="p">,</span> <span class="n">prob_b</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;# of Sells&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_38_0.png" src="../../_images/lesson23_38_0.png" />
+</div>
+</div>
+<p>So we can see here that b has an edge, but its certaintly possible if we pick two random points according to the histograms for A and B, that A might actually be higher than B! <Br></p>
+<p>As we’re interested in the average # of sells, this averaging of an underlying distribution means our final estimate will be well approximated by a normal distribution. So let’s reformulate, using the normal approximation here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># Where does this come from? See this link: https://en.wikipedia.org/wiki/Binomial_distribution#Normal_approximation</span>
+<span class="n">std_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rate_a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rate_a</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_a</span><span class="p">)</span>
+<span class="n">std_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rate_b</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rate_b</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_b</span><span class="p">)</span>
+
+<span class="n">click_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">prob_a</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">rate_a</span><span class="p">,</span> <span class="n">std_a</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">click_rate</span><span class="p">)</span>
+<span class="n">prob_b</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">rate_b</span><span class="p">,</span> <span class="n">std_b</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">click_rate</span><span class="p">)</span>
+
+<span class="c1"># Make the bar plots.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">click_rate</span><span class="p">,</span> <span class="n">prob_a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">click_rate</span><span class="p">,</span> <span class="n">prob_b</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Purchase rate&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_40_0.png" src="../../_images/lesson23_40_0.png" />
+</div>
+</div>
+<p>This is also a better plot than the first one, because we’ve removed the confusing effect of site A and site B having a slightly different number of visitors had. So our question is still the same: What is the chance that a draw from B is higher than a draw from A. Is it significant? <br></p>
+<p>To answer this, let us utilise the handy fact that the sum (or difference) of normally distributed random numbers is also normally distributed. This is simple - take the difference in the means and sum the variance. We’ll do two things below: First, get the z-score, and second, plot the proper distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z_score</span> <span class="o">=</span> <span class="p">(</span><span class="n">rate_b</span> <span class="o">-</span> <span class="n">rate_a</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std_a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">std_b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">rate_b</span> <span class="o">-</span> <span class="n">rate_a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std_a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">std_b</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">area_under_curve</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob(b&gt;a)&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Area=</span><span class="si">{</span><span class="n">area_under_curve</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Difference in purchase rate&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Prob&quot;</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;zscore is </span><span class="si">{</span><span class="n">z_score</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">, with p-value </span><span class="si">{</span><span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">z_score</span><span class="p">)</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zscore is 1.890, with p-value 0.029
+</pre></div>
+</div>
+<img alt="../../_images/lesson23_42_1.png" src="../../_images/lesson23_42_1.png" />
+</div>
+</div>
+<p>we can say that given the null hypothesis (“B is less than or equal to A”) is true , we would expect to get this result or a result more extreme only 2.9% of the time. As that is a significant result (typically p &lt; 5%), we reject the null hypothesis, and state that we have evidence that B &gt; A. <br></p>
+<blockquote>
+<div><p>We’ve made a lot of plots for this to try and explain the concept. You can easily write a tiny function to simplify all of this. Whether you want the confidence or the p-value just means changing the final “norm.cdf” to “norm.sf”.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_confidence_ab_test</span><span class="p">(</span><span class="n">click_a</span><span class="p">,</span> <span class="n">num_a</span><span class="p">,</span> <span class="n">click_b</span><span class="p">,</span> <span class="n">num_b</span><span class="p">):</span>
+    <span class="n">rate_a</span> <span class="o">=</span> <span class="n">click_a</span> <span class="o">/</span> <span class="n">num_a</span>
+    <span class="n">rate_b</span> <span class="o">=</span> <span class="n">click_b</span> <span class="o">/</span> <span class="n">num_b</span>
+    <span class="n">std_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rate_a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rate_a</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_a</span><span class="p">)</span>
+    <span class="n">std_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rate_b</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rate_b</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_b</span><span class="p">)</span>
+    <span class="n">z_score</span> <span class="o">=</span> <span class="p">(</span><span class="n">rate_b</span> <span class="o">-</span> <span class="n">rate_a</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std_a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">std_b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">norm</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">z_score</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_confidence_ab_test</span><span class="p">(</span><span class="n">click_a</span><span class="p">,</span> <span class="n">num_a</span><span class="p">,</span> <span class="n">click_b</span><span class="p">,</span> <span class="n">num_b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.029402650172421833
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember Non-parametric Statistical Hypothesis Tests? We can use them here as well! <br></p>
+<p>Imagine we have the raw results of clicks (purchases), as 0s or 1s, as our distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">mannwhitneyu</span>
+
+<span class="n">a_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_a</span><span class="p">)</span>
+<span class="n">a_dist</span><span class="p">[:</span><span class="n">click_a</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_b</span><span class="p">)</span>
+<span class="n">b_dist</span><span class="p">[:</span><span class="n">click_b</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">a_dist</span><span class="p">,</span> <span class="n">b_dist</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;less&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mann-Whitney U test for null hypothesis B &lt;= A is </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mann-Whitney U test for null hypothesis B &lt;= A is 0.028
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.inferentialthinking.com/chapters/11/Testing_Hypotheses.html">https://www.inferentialthinking.com/chapters/11/Testing_Hypotheses.html</a></p></li>
+<li><p><strong>“Implementing A/B Tests in Python”</strong> by <strong>Robbie Geoghegan</strong>  <a class="reference external" href="https://medium.com/&#64;robbiegeoghegan/implementing-a-b-tests-in-python-514e9eb5b3a1">https://medium.com/&#64;robbiegeoghegan/implementing-a-b-tests-in-python-514e9eb5b3a1</a> <br></p></li>
+<li><p><strong>“The Math Behind A/B Testing with Example Python Code”</strong> by <strong>Nguyen Ngo</strong>  <a class="reference external" href="https://towardsdatascience.com/the-math-behind-a-b-testing-with-example-code-part-1-of-2-7be752e1d06f">https://towardsdatascience.com/the-math-behind-a-b-testing-with-example-code-part-1-of-2-7be752e1d06f</a> <br></p></li>
+<li><p><strong>“A/B Testing”</strong>  <a class="reference external" href="https://www.optimizely.com/optimization-glossary/ab-testing/">https://www.optimizely.com/optimization-glossary/ab-testing/</a> <br></p></li>
+<li><p><strong>“A/B Testing Guide”</strong>  <a class="reference external" href="https://vwo.com/ab-testing/">https://vwo.com/ab-testing/</a> <br></p></li>
+</ol>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="experimental-work-for-future-semesters">
+<h1>Experimental Work for Future Semesters<a class="headerlink" href="#experimental-work-for-future-semesters" title="Permalink to this headline">¶</a></h1>
+<p>Code below to figure out how to manipulate histograms</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implementation of matplotlib function </span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+   
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span> 
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">21</span> 
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> 
+   
+<span class="n">num_bins</span> <span class="o">=</span> <span class="mi">100</span>
+   
+<span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">,</span>  
+                            <span class="n">density</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>  
+                            <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> 
+                            <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span> 
+   
+<span class="n">y</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">))</span> <span class="o">*</span>
+     <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">bins</span> <span class="o">-</span> <span class="n">mu</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> 
+  
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> 
+  
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X-Axis&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y-Axis&#39;</span><span class="p">)</span> 
+  
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;matplotlib.pyplot.hist() function Example</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> 
+          <span class="n">fontweight</span> <span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span> 
+  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson23_50_0.png" src="../../_images/lesson23_50_0.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h2>References<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -491,7 +1285,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">22: Testing Hypothesis - Comparing Treatments</p>
+                <p class="prevnext-title">22: Testing Hypothesis - Comparing Collections</p>
             </div>
         </a>
     </div>
