@@ -563,15 +563,26 @@ print(f"Mann-Whitney U test for null hypothesis B <= A is {p_value:0.3f}")
 # 4.  __"A/B Testing"__  https://www.optimizely.com/optimization-glossary/ab-testing/ <br>
 # 5. __"A/B Testing Guide"__  https://vwo.com/ab-testing/ <br>
 
-# In[ ]:
-
-
-
-
-
-# # Experimental Work for Future Semesters
+# <hr>
 # 
-# Code below to figure out how to manipulate histograms
+# ## Laboratory 23
+# 
+# **Examine** (click) Laboratory 22 as a webpage at [Laboratory 23.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 22 as a jupyterlab notebook from [Laboratory 22.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 23
+# 
+# **Examine** (click) Exercise Set 22 as a webpage at [Exercise 23.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 21 as a jupyterlab notebook at  [Exercise Set 23.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab23/Lab23-TH.ipynb)
+# 
+# 
+
+# Code below to figure out how to manipulate histograms, leave here until decide where in notes script belongs
 
 # In[23]:
 
@@ -606,18 +617,4 @@ plt.title('matplotlib.pyplot.hist() function Example\n\n',
           fontweight ="bold") 
   
 plt.show() 
-
-
-# In[ ]:
-
-
-
-
-
-# ## References
-
-# In[ ]:
-
-
-
 
