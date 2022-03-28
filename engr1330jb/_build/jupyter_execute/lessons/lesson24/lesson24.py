@@ -354,6 +354,10 @@ print('Estimated time to burn-out is: ',ttb,' seconds;  Speed at burn-out is: ',
 # example goes here
 
 
+# ### Periodic Models
+# 
+# Models with periodic (repeating behavior) are often a special challenge and are often dealt with using transformations (LaPlace, Fourier, $\dots$)
+
 # ## References
 
 # In[ ]:
