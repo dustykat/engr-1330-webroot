@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="25: Distribution Functions as Magnitude-Probability Models" href="../lesson25/lesson25.html" />
-    <link rel="prev" title="23: Testing Hypothesis - Attained Significance" href="../lesson23/lesson23.html" />
+    <link rel="prev" title="23: Testing Hypothesis (continued)" href="../lesson23/lesson23.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -427,8 +429,67 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-thinking-concepts">
+   Computational Thinking Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explaining-data">
+   Explaining Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additive-models">
+     Additive Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomials-and-product-models">
+     Polynomials and Product Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#polynomial-example">
+       Polynomial Example
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#design-matrix">
+       Design Matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-law-models">
+     Power-Law Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logarithmic-models">
+     Logarithmic Models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-24">
+   Laboratory 24
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-24">
+   Exercise Set 24
   </a>
  </li>
 </ul>
@@ -454,8 +515,401 @@
 <li><p>Polynomials</p></li>
 <li><p>Periodic</p></li>
 </ul>
+<p>Data Models for Predictor-Response.</p>
+<!--![](http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/1-Lessons/Lesson13/PsuedoLesson/roulette.png)-->
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To understand the fundamental concepts involved in representing a data collection with some functional form to make predictions;</p>
+<ul>
+<li><p>Interpolation</p></li>
+<li><p>Extrapolation</p></li>
+<li><p>Concept of a fitting function</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="computational-thinking-concepts">
+<h2>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h2>
+<p>The CT concepts include:</p>
+<ul class="simple">
+<li><p>Decomposition =&gt; Assert data are drawn from some process that is functionally explainable</p></li>
+<li><p>Abstraction =&gt; Represent data behavior with a function</p></li>
+<li><p>Algorithm Design =&gt;  Use the function to predict “new” values of observations</p></li>
+</ul>
+</div>
+<div class="section" id="explaining-data">
+<h2>Explaining Data<a class="headerlink" href="#explaining-data" title="Permalink to this headline">¶</a></h2>
+<p>Interpolation and extrapolation were discussed earlier in the course, here we will revist in a prelude to regression tools.  Data modeling as used herein has two related but quite different approaches.  First (as discussed here) is a predictor-response type model, the second is a magnitude-probability type model (which is discussed in the subsequent lesson).</p>
+<p>In predictor-response, we are seeking a functional form (and parameters) that relate a predictor variable to a response so we can use the <strong>model</strong> to predict anticipated responses to different predictor inputs.</p>
+<p>Recall our speed and time example, repeated below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our data</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">6.0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mf">45.6</span><span class="p">]</span>
+<span class="c1"># Our data model</span>
+<span class="k">def</span> <span class="nf">poly1</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># return y = b0 + b1*x</span>
+    <span class="n">poly1</span><span class="o">=</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">poly1</span><span class="p">)</span>
+<span class="c1"># Our plotting function</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">make2plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span><span class="n">strlablx</span><span class="p">,</span><span class="n">strlably</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># basic data plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic model plot</span>
+<span class="c1">#    plt.plot(listx3,listy3, c=&#39;green&#39;,linewidth=1) # basic model plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strlablx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">strlably</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="c1"># modify for argument insertion</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Our &quot;fitting&quot; process</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.0</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">modelSpeed</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">modelSpeed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">poly1</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span><span class="n">slope</span><span class="p">,</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="c1"># Plotting results</span>
+<span class="n">charttitle</span><span class="o">=</span><span class="s2">&quot;Plot of y=b0+b1*x model and observations </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; Model equation: y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;x&quot;</span>
+<span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">modelSpeed</span><span class="p">,</span><span class="s1">&#39;time (sec.)&#39;</span><span class="p">,</span><span class="s1">&#39;speed (m/s)&#39;</span><span class="p">,</span><span class="n">charttitle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson24_1_0.png" src="../../_images/lesson24_1_0.png" />
+</div>
+</div>
+<p>So the data model is <span class="math notranslate nohighlight">\(y=-3.0 + 7x\)</span> and we can assess how “good” the model is by some measure of error (sum of squared error, max error, and various other measures).  We could also postulate another data model as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">poly2</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># return y = b0 + b1*x</span>
+    <span class="n">poly2</span><span class="o">=</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">poly2</span><span class="p">)</span>
+
+<span class="c1"># Our &quot;fitting&quot; process</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">curvature</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">modelSpeed</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">modelSpeed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">poly2</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span><span class="n">slope</span><span class="p">,</span><span class="n">curvature</span><span class="p">,</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="c1"># Plotting results</span>
+<span class="n">charttitle</span><span class="o">=</span><span class="s2">&quot;Plot of y=b0+b1*x+b2*x^2 model and observations </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; Model equation: y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; x + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">curvature</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; x^2 &quot;</span> 
+<span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">modelSpeed</span><span class="p">,</span><span class="s1">&#39;time (sec.)&#39;</span><span class="p">,</span><span class="s1">&#39;speed (m/s)&#39;</span><span class="p">,</span><span class="n">charttitle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson24_3_0.png" src="../../_images/lesson24_3_0.png" />
+</div>
+</div>
+<p>Now this model appears visibly “superior” and we would anticipate that the error measurement would be smaller than the previous model.  If we decided our second model was awesome, we now have a prediction tool.</p>
+<p>Our model is <span class="math notranslate nohighlight">\(y = 0.0 + 2.0 x + 0.9 x^2\)</span> so if we wished to predict the speed at time 11 seconds we would simply evaluate the function using the parameters at <span class="math notranslate nohighlight">\(x=11\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Speed @ time = 11 sec. is &quot;</span><span class="p">,</span><span class="n">poly2</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span><span class="n">slope</span><span class="p">,</span><span class="n">curvature</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span><span class="s2">&quot; meters per second&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Speed @ time = 11 sec. is  130.9  meters per second
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will examine a few common kinds of predictor-response models.</p>
+<div class="section" id="additive-models">
+<h3>Additive Models<a class="headerlink" href="#additive-models" title="Permalink to this headline">¶</a></h3>
+<p>A function that produces a line is called an affine function.  In the example above, we have only a single predictor variable, but we can have multiple predictors.  If the multiple predictors are additive the model will look like:</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_0 + \beta_{11}*u +\beta_{12}*v + \beta_{13}*w\]</div>
+<p>where <span class="math notranslate nohighlight">\(u,v,w\)</span> are predictors</p>
+</div>
+<div class="section" id="polynomials-and-product-models">
+<h3>Polynomials and Product Models<a class="headerlink" href="#polynomials-and-product-models" title="Permalink to this headline">¶</a></h3>
+<p>In the example above, we have only additive predictor variables, but we can form products of predictors.  Product models will look like:</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_0 + \beta_{11}*u +\beta_{12}*v + \beta_{13}*w +\beta_{21}*u^2 +\beta_{22}*uv + \beta_{23}*uw + \beta_{31}*uv +\beta_{32}*v^2 + \beta_{33}*wv +\beta_{41}*uw +\beta_{42}*vw + \beta_{43}*w^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(u,v,w\)</span> are predictors.</p>
+<p>If the product model is simply powers of single predictors the model is called a polynomial model such as:</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_0 + \beta_{11}*u +\beta_{21}*u^2 + \beta_{31}*u^3 +\beta_{41}*u^4 +\dots\]</div>
+<p>Often the coefficient list is stored as a matrix, and this is called a design matrix.</p>
+<div class="section" id="polynomial-example">
+<h4>Polynomial Example<a class="headerlink" href="#polynomial-example" title="Permalink to this headline">¶</a></h4>
+<p>Consider the data collected during the boost-phase of a ballistic missle.  The maximum speed of a solid-fueled missle at burn-out (when the boost-phase ends) is about 7km/s. Using this knowledge and the early-time telemetry below; fit a data model using the linear system approach and use the model to estimate boost phase burn-out.  Plot the model and data on the same axis to demonstrate the quality of the fit.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Elapsed Time (s)</p></th>
+<th class="text-align:right head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2.0</p></td>
+<td class="text-align:right"><p>7.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3.0</p></td>
+<td class="text-align:right"><p>16.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4.0</p></td>
+<td class="text-align:right"><p>23.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5.0</p></td>
+<td class="text-align:right"><p>32.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6.0</p></td>
+<td class="text-align:right"><p>42.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7.0</p></td>
+<td class="text-align:right"><p>65.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8.0</p></td>
+<td class="text-align:right"><p>73.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9.0</p></td>
+<td class="text-align:right"><p>99.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>10.0</p></td>
+<td class="text-align:right"><p>123.4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="design-matrix">
+<h4>Design Matrix<a class="headerlink" href="#design-matrix" title="Permalink to this headline">¶</a></h4>
+<p>The data model as a linear system is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather}
+\mathbf{X} \cdot \mathbf{\beta} = \mathbf{Y}
+\end{gather}\]</div>
+<p>For example using the Polynomial Model (order 2 for brevity, but extendable as justified)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{X}=
+\begin{pmatrix}
+1 &amp; x_1 &amp; x_1^2\\
+~\\
+1 &amp; x_2 &amp; x_2^2\\
+~ \\
+1 &amp; x_3 &amp; x_3^2\\
+\dots &amp; \dots &amp; \dots \\
+1 &amp; x_n &amp; x_n^2\\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{\beta}=
+\begin{pmatrix}
+\beta_0 \\
+~\\
+\beta_1 \\
+~ \\
+\beta_2 \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{X}=
+\begin{pmatrix}
+y_1 \\
+~\\
+y_2 \\
+~ \\
+y_3 \\
+\dots  \\
+y_n \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<p>A way to find the unknown <span class="math notranslate nohighlight">\(\beta\)</span> values is to solve the linear system below</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather}
+[\mathbf{X^T}\mathbf{X}] \cdot \mathbf{\beta} = [\mathbf{X^T}]\mathbf{Y}
+\end{gather}\]</div>
+<p>Once the values for <span class="math notranslate nohighlight">\(\beta\)</span> are obtained then we can apply our plotting tools and use the model to extrapolate and interpolate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start with the early-time data</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">6.0</span><span class="p">,</span><span class="mf">7.0</span><span class="p">,</span><span class="mf">8.0</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">7.4</span><span class="p">,</span><span class="mf">16.2</span><span class="p">,</span><span class="mf">23.5</span><span class="p">,</span><span class="mf">32.2</span><span class="p">,</span><span class="mf">42.2</span><span class="p">,</span> <span class="mf">65.1</span> <span class="p">,</span><span class="mf">73.5</span> <span class="p">,</span><span class="mf">99.3</span> <span class="p">,</span><span class="mf">123.4</span><span class="p">,]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># trial-and-error approach</span>
+<span class="c1"># our data model</span>
+<span class="k">def</span> <span class="nf">polynomial</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">polynomial</span> <span class="o">=</span> <span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">time</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">time</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">polynomial</span><span class="p">)</span>
+<span class="c1"># our &quot;goodness&quot; measure</span>
+<span class="k">def</span> <span class="nf">sqerr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">sqerr</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">sqerr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#########################################</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]</span> <span class="c1"># our &quot;guessed&quot; betas; these are all just guesses - how would you make a way to update the guess?</span>
+<span class="c1">#########################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build our data model to plot</span>
+<span class="n">my_model</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">))]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">my_model</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># evaluate the model fit</span>
+<span class="n">err</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">err</span> <span class="o">+</span> <span class="n">sqerr</span><span class="p">(</span><span class="n">my_model</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">speed</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># our plotting tool</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">make2plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span><span class="n">strlablx</span><span class="p">,</span><span class="n">strlably</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># basic data plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic model plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strlablx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">strlably</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observations&#39;</span><span class="p">,</span><span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="c1"># modify for argument insertion</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+
+<span class="c1"># build our plot</span>
+<span class="n">plottitle</span> <span class="o">=</span> <span class="s2">&quot;Polynomial Model: y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x^2 </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; SSE = &quot;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">my_model</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;Speed&quot;</span><span class="p">,</span><span class="n">plottitle</span><span class="p">);</span>
+
+<span class="c1"># estimate time to burnout</span>
+<span class="n">ttb</span> <span class="o">=</span> <span class="mf">77.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated time to burn-out is: &#39;</span><span class="p">,</span><span class="n">ttb</span><span class="p">,</span><span class="s1">&#39; seconds;  Speed at burn-out is: &#39;</span><span class="p">,</span><span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">ttb</span><span class="p">),</span><span class="s1">&#39; meters/second&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson24_14_0.png" src="../../_images/lesson24_14_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  77.0  seconds;  Speed at burn-out is:  8908.9  meters/second
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solving the linear system to make a model</span>
+<span class="c1">##############################</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)),</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># build the design X matrix #</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># get into correct shape for linear solver</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="c1"># build the response Y vector</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="nd">@X</span> <span class="c1"># build the XtX matrix</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="nd">@Y</span> <span class="c1"># build the XtY vector</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1"># avoid inversion and just solve the linear system </span>
+<span class="c1">#print(x)</span>
+<span class="k">def</span> <span class="nf">polynomial</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">polynomial</span> <span class="o">=</span> <span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">*</span><span class="n">time</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">time</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">polynomial</span><span class="p">)</span>
+
+<span class="n">my_model</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">))]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">my_model</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># evaluate the model fit</span>
+<span class="n">err</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">err</span> <span class="o">+</span> <span class="n">sqerr</span><span class="p">(</span><span class="n">my_model</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">speed</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">make2plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span><span class="n">strlablx</span><span class="p">,</span><span class="n">strlably</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx1</span><span class="p">,</span><span class="n">listy1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># basic data plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">listx2</span><span class="p">,</span><span class="n">listy2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic model plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strlablx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">strlably</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observations&#39;</span><span class="p">,</span><span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="c1"># modify for argument insertion</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+
+<span class="n">plottitle</span> <span class="o">=</span> <span class="s2">&quot;Polynomial Model: y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x^2 </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; SSE = &quot;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">my_model</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;Speed&quot;</span><span class="p">,</span><span class="n">plottitle</span><span class="p">);</span>
+
+<span class="n">ttb</span> <span class="o">=</span> <span class="mf">77.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated time to burn-out is: &#39;</span><span class="p">,</span><span class="n">ttb</span><span class="p">,</span><span class="s1">&#39; seconds;  Speed at burn-out is: &#39;</span><span class="p">,</span><span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">ttb</span><span class="p">),</span><span class="s1">&#39; meters/second&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson24_15_0.png" src="../../_images/lesson24_15_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  77.0  seconds;  Speed at burn-out is:  6832.781818181805  meters/second
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="power-law-models">
+<h3>Power-Law Models<a class="headerlink" href="#power-law-models" title="Permalink to this headline">¶</a></h3>
+<p>A power-law model is a model of the form:</p>
+<p><span class="math notranslate nohighlight">\(y = \beta_{0}*u^{\beta_1}\)</span></p>
+<p>One can join multiple power-law models (if they wish) in an additive or even a product model fashion; in such instances some physical understanding of the process is needed, to make reasonably useful models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logarithmic-models">
+<h3>Logarithmic Models<a class="headerlink" href="#logarithmic-models" title="Permalink to this headline">¶</a></h3>
+<p>A logarithmic model is a model of the form:</p>
+<p><span class="math notranslate nohighlight">\(y = \beta_{0}+\beta{_1}log(u)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<hr>
+</div>
+<div class="section" id="laboratory-24">
+<h2>Laboratory 24<a class="headerlink" href="#laboratory-24" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 24 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24.html">Laboratory 24.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 24 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24.ipynb">Laboratory 24.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-24">
+<h2>Exercise Set 24<a class="headerlink" href="#exercise-set-24" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 24 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24-TH.html">Exercise 24.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 24 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab24/Lab24-TH.ipynb">Exercise Set 24.ipynb</a></p>
 </div>
 </div>
 
@@ -493,7 +947,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">23: Testing Hypothesis - Attained Significance</p>
+                <p class="prevnext-title">23: Testing Hypothesis (continued)</p>
             </div>
         </a>
     </div>
