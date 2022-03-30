@@ -987,7 +987,7 @@ print(newton(f, myguess))
 # 
 # ## Exercise Set 25
 # 
-# **Examine** (click) Exercise Set 25 as a webpage at [Exercise 25.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab25/Lab24-TH.html)
+# **Examine** (click) Exercise Set 25 as a webpage at [Exercise 25.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab25/Lab25-TH.html)
 # 
 # **Download** (right-click, save target as ...) Exercise Set 25 as a jupyterlab notebook at  [Exercise Set 25.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab25/Lab25-TH.ipynb)
 # 
