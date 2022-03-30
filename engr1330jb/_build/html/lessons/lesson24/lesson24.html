@@ -809,14 +809,14 @@ y_n \\
 <span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">my_model</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;Speed&quot;</span><span class="p">,</span><span class="n">plottitle</span><span class="p">);</span>
 
 <span class="c1"># estimate time to burnout</span>
-<span class="n">ttb</span> <span class="o">=</span> <span class="mf">77.</span>
+<span class="n">ttb</span> <span class="o">=</span> <span class="mf">79.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated time to burn-out is: &#39;</span><span class="p">,</span><span class="n">ttb</span><span class="p">,</span><span class="s1">&#39; seconds;  Speed at burn-out is: &#39;</span><span class="p">,</span><span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">ttb</span><span class="p">),</span><span class="s1">&#39; meters/second&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson24_14_0.png" src="../../_images/lesson24_14_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  77.0  seconds;  Speed at burn-out is:  8908.9  meters/second
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  79.0  seconds;  Speed at burn-out is:  9377.3  meters/second
 </pre></div>
 </div>
 </div>
@@ -861,14 +861,14 @@ y_n \\
 <span class="n">plottitle</span> <span class="o">=</span> <span class="s2">&quot;Polynomial Model: y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;*x^2 </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; SSE = &quot;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">make2plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">my_model</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;Speed&quot;</span><span class="p">,</span><span class="n">plottitle</span><span class="p">);</span>
 
-<span class="n">ttb</span> <span class="o">=</span> <span class="mf">77.</span>
+<span class="n">ttb</span> <span class="o">=</span> <span class="mf">77.79</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated time to burn-out is: &#39;</span><span class="p">,</span><span class="n">ttb</span><span class="p">,</span><span class="s1">&#39; seconds;  Speed at burn-out is: &#39;</span><span class="p">,</span><span class="n">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">ttb</span><span class="p">),</span><span class="s1">&#39; meters/second&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson24_15_0.png" src="../../_images/lesson24_15_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  77.0  seconds;  Speed at burn-out is:  6832.781818181805  meters/second
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated time to burn-out is:  77.79  seconds;  Speed at burn-out is:  6973.262059999987  meters/second
 </pre></div>
 </div>
 </div>

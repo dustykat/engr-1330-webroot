@@ -278,7 +278,7 @@ plottitle = "Polynomial Model: y = " + str(x[0]) + " + " + str(x[1]) + "*x + " +
 make2plot(time,speed,time,my_model,"Time","Speed",plottitle);
 
 # estimate time to burnout
-ttb = 77.
+ttb = 79.
 print('Estimated time to burn-out is: ',ttb,' seconds;  Speed at burn-out is: ',polynomial(x[0],x[1],x[2],ttb),' meters/second')
 
 
@@ -323,7 +323,7 @@ def make2plot(listx1,listy1,listx2,listy2,strlablx,strlably,strtitle):
 plottitle = "Polynomial Model: y = " + str(x[0]) + " + " + str(x[1]) + "*x + " + str(x[2]) + "*x^2 \n" + " SSE = " +str(round(err,3))
 make2plot(time,speed,time,my_model,"Time","Speed",plottitle);
 
-ttb = 77.
+ttb = 77.79
 print('Estimated time to burn-out is: ',ttb,' seconds;  Speed at burn-out is: ',polynomial(x[0],x[1],x[2],ttb),' meters/second')
 
 
