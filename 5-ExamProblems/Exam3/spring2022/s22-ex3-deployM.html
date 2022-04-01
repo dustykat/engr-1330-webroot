@@ -13096,9 +13096,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-1-(5-pts.)">Exercise 1 (5 pts.)<a class="anchor-link" href="#Exercise-1-(5-pts.)">&#182;</a></h2><p>The file <a href="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv">http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv</a> below contains values of impact strength of packaging materials in foot-pounds of branded boxes.</p>
-<p>Download the file and read it into a dataframe.</p>
-<!--```
+<h2 id="Exercise-1-(5-pts.)">Exercise 1 (5 pts.)<a class="anchor-link" href="#Exercise-1-(5-pts.)">&#182;</a></h2><h4 id="The-file-boxes.csv-contains-values-of-impact-strength-of-packaging-materials-in-foot-pounds-of-branded-boxes.">The file <a href="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv">boxes.csv</a> contains values of impact strength of packaging materials in foot-pounds of branded boxes.<a class="anchor-link" href="#The-file-boxes.csv-contains-values-of-impact-strength-of-packaging-materials-in-foot-pounds-of-branded-boxes.">&#182;</a></h4><!--```
 import requests
 remote_url="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv"  # set the url
 rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links
@@ -13109,12 +13107,19 @@ localfile.close() # close connection to the local file
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Download-the-necessary-datafile">Download the necessary datafile<a class="anchor-link" href="#Download-the-necessary-datafile">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># download script goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># download the datafile</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv&quot;</span>  <span class="c1"># set the url</span>
 <span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
@@ -13128,12 +13133,19 @@ localfile.close() # close connection to the local file
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Store-the-datafile-into-a-datafrome">Store the datafile into a datafrome<a class="anchor-link" href="#Store-the-datafile-into-a-datafrome">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read dataframe script goes here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script/answers go here</span>
 </pre></div>
 
     </div>
@@ -13144,8 +13156,7 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Describe the dataframe, how many columns are in the dataframe?  What are the column names?</p>
-
+<h4 id="Describe-the-dataframe,-how-many-columns-are-in-the-dataframe?--What-are-the-column-names?">Describe the dataframe, how many columns are in the dataframe?  What are the column names?<a class="anchor-link" href="#Describe-the-dataframe,-how-many-columns-are-in-the-dataframe?--What-are-the-column-names?">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13165,15 +13176,20 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 2 (15 pts.) Produce a histogram of the Amazon series and the USPS series on the same plot.  Plot Amazon using red, and USPS using blue.</p>
-<blockquote><ul>
+<h2 id="Exercise-2-(15-pts.)-Produce-a-histogram-of-the-Amazon-series-and-the-USPS-series-on-the-same-plot.--Plot-Amazon-using-red,-and-Wallmart-using-blue.">Exercise 2 (15 pts.) Produce a histogram of the Amazon series and the USPS series on the same plot.  Plot Amazon using red, and Wallmart using blue.<a class="anchor-link" href="#Exercise-2-(15-pts.)-Produce-a-histogram-of-the-Amazon-series-and-the-USPS-series-on-the-same-plot.--Plot-Amazon-using-red,-and-Wallmart-using-blue.">&#182;</a></h2><blockquote><ul>
 <li>Import suitable package to build histograms</li>
 <li>Apply package with plotting call to prodice two histograms on same figure space</li>
 <li>Label plot and axes with suitable annotation</li>
 </ul>
 </blockquote>
-<p>Comment on the histograms, do they overlap?</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Plot-the-histograms-with-proper-formatting">Plot the histograms with proper formatting<a class="anchor-link" href="#Plot-the-histograms-with-proper-formatting">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13193,8 +13209,34 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 3 (5 pts.) Determine the mean strength and the standard deviation of the Amazon and USPS brands.  Which one has a greater mean value? Which one has the greater standard deviation?</p>
+<h4 id="Comment-on-the-histograms,-do-they-overlap?">Comment on the histograms, do they overlap?<a class="anchor-link" href="#Comment-on-the-histograms,-do-they-overlap?">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-comments-regarding-histograms-here"><font color="red">\# Type your comments regarding histograms here</font><a class="anchor-link" href="#\#-Type-your-comments-regarding-histograms-here">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-3-(5-pts.)-Summary-Statistics-for-the-Amazon-and-USPS-Brands">Exercise 3 (5 pts.) Summary Statistics for the Amazon and USPS Brands<a class="anchor-link" href="#Exercise-3-(5-pts.)-Summary-Statistics-for-the-Amazon-and-USPS-Brands">&#182;</a></h2><blockquote><ul>
+<li>Compute the mean strength and the standard deviation of the Amazon and USPS brands</li>
+<li>Identify which series has a greater mean value</li>
+<li>Identify which series has the greater standard deviation</li>
+</ul>
+</blockquote>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Compute-the-means-and-standard-deviations">Compute the means and standard deviations<a class="anchor-link" href="#Compute-the-means-and-standard-deviations">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13214,8 +13256,42 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 4 (5 pts.) Test the Amazon data for normality, interpret the results.</p>
-
+<h4 id="Identify-which-has-the-largest-mean">Identify which has the largest mean<a class="anchor-link" href="#Identify-which-has-the-largest-mean">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-comments-regarding-which-has-a-greater-mean"><font color="red">\# Type your comments regarding which has a greater mean</font><a class="anchor-link" href="#\#-Type-your-comments-regarding-which-has-a-greater-mean">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Identify-which-has-the-largest-standard-deviation">Identify which has the largest standard deviation<a class="anchor-link" href="#Identify-which-has-the-largest-standard-deviation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-comments-regarding-which-has-a-greater-standard-deviation"><font color="red">\# Type your comments regarding which has a greater standard deviation</font><a class="anchor-link" href="#\#-Type-your-comments-regarding-which-has-a-greater-standard-deviation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-4-(5-pts.)-Test-the-Amazon-data-for-normality,-interpret-the-results.">Exercise 4 (5 pts.) Test the Amazon data for normality, interpret the results.<a class="anchor-link" href="#Exercise-4-(5-pts.)-Test-the-Amazon-data-for-normality,-interpret-the-results.">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Build-your-test-below">Build your test below<a class="anchor-link" href="#Build-your-test-below">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13224,7 +13300,7 @@ localfile.close() # close connection to the local file
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script goes here</span>
 </pre></div>
 
     </div>
@@ -13235,17 +13311,37 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 5 (5 pts.) Test the USPS data for normality, interpret the results.</p>
-
+<h4 id="Interpret-the-results">Interpret the results<a class="anchor-link" href="#Interpret-the-results">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-interpretation-here"><font color="red">\# Type your interpretation here</font><a class="anchor-link" href="#\#-Type-your-interpretation-here">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-5-(5-pts.)-Test-the-USPS-data-for-normality,-interpret-the-results.">Exercise 5 (5 pts.) Test the USPS data for normality, interpret the results.<a class="anchor-link" href="#Exercise-5-(5-pts.)-Test-the-USPS-data-for-normality,-interpret-the-results.">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Build-your-test-below">Build your test below<a class="anchor-link" href="#Build-your-test-below">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script goes here</span>
 </pre></div>
 
     </div>
@@ -13256,8 +13352,21 @@ localfile.close() # close connection to the local file
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 6 (15 pts.)Determine if there is evidence of a difference in mean strength between the two brands.<br>
-Use an appropriate hypothesis test to support your assertion at a level of significance of $\alpha = 0.10$.</p>
+<h4 id="Interpret-the-results">Interpret the results<a class="anchor-link" href="#Interpret-the-results">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-interpretation-here"><font color="red">\# Type your interpretation here</font><a class="anchor-link" href="#\#-Type-your-interpretation-here">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-6-(15-pts.)-Determine-if-there-is-evidence-of-a-difference-in-mean-strength-between-the-two-brands.">Exercise 6 (15 pts.) Determine if there is evidence of a difference in mean strength between the two brands.<a class="anchor-link" href="#Exercise-6-(15-pts.)-Determine-if-there-is-evidence-of-a-difference-in-mean-strength-between-the-two-brands.">&#182;</a></h2><p>Use an appropriate hypothesis test to support your assertion at a level of significance of $\alpha = 0.10$.</p>
 <blockquote><ul>
 <li>Choose a test and justify choice</li>
 <li>Import suitable package to run the test</li>
@@ -13269,18 +13378,39 @@ Use an appropriate hypothesis test to support your assertion at a level of signi
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Build-your-hypothesis-test-below">Build your hypothesis test below<a class="anchor-link" href="#Build-your-hypothesis-test-below">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script here</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Interpret-the-results">Interpret the results<a class="anchor-link" href="#Interpret-the-results">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="\#-Type-your-interpretation-here"><font color="red">\# Type your interpretation here</font><a class="anchor-link" href="#\#-Type-your-interpretation-here">&#182;</a></h4>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
