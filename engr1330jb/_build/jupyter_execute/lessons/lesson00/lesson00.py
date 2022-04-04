@@ -104,6 +104,19 @@
 # System integration is the assembly of the parts above into the complete (integrated) solution.  Integration combines parts into a program which is the realization of an algorithm using a syntax that the computer can understand. 
 
 # ## JupyterLab Environment
+# 
+# ```{note}
+# here is a note
+# ```
+# 
+# ```{admonition} Tip
+# :class: tip
+# here is a tip
+# ```
+# 
+# ```{warning}
+# here is a warning
+# ```
 
 # ## References
 # 
@@ -141,9 +154,5 @@
 # **Download** (right-click, save target as ...) Exercise Set 0 as a jupyterlab notebook at  [Exercise Set 0.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab00/Lab00-TH.ipynb)
 # 
 # 
-
-# In[ ]:
-
-
-
-
+https://pp4e-book.github.io/chapters/ch2_programming.html
+https://pythonnumericalmethods.berkeley.edu/notebooks/Index.html

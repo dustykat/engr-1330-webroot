@@ -1,0 +1,11 @@
+School,10-year Salary,Annual Tuition
+Princeton ,137000 ,28540
+Harvey Mudd ,135000 ,40133
+CalTech ,127000 ,39900
+US Naval Academy ,122000 ,0
+West Point ,120000 ,0
+MIT ,118000 ,42050
+Lehigh University ,118000 ,43220
+NYU-Poly ,117000 ,39565
+Babson College ,117000 , 40400
+Stanford ,114000,54506

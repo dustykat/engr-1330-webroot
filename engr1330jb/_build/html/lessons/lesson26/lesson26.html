@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -427,6 +429,99 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-regression">
+   What is Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-concepts">
+     Computational Thinking Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#textbook-resources">
+     Textbook Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-modeling-regression-approach">
+   Data Modeling: Regression Approach
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fundamental-questions">
+     Fundamental Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classical-regression-by-normal-equations">
+     Classical Regression by Normal Equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-do-these-normal-equations-come-from">
+     Where do these normal equations come from?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-linear-algebra">
+     Computational Linear Algebra
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-s-the-value-of-the-computational-linear-algebra">
+       What’s the Value of the Computational Linear Algebra ?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-packages">
+     Using packages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#statsmodel-package">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         statsmodel
+        </span>
+       </code>
+       package
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sklearn-package">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sklearn
+        </span>
+       </code>
+       package
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#now-repeat-using-the-original-texas-instruments-example">
+       Now repeat using the original Texas Instruments example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -446,7 +541,7 @@
     <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date:</p>
+<p>Last GitHub Commit Date: 4 Nov 2021</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="linear-regression">
 <h1>26: Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -455,8 +550,918 @@
 <li><p>Learning algorithms used to create a linear regression model</p></li>
 <li><p>Preparing data for linear regression</p></li>
 </ul>
+<div class="section" id="what-is-regression">
+<h2>What is Regression<a class="headerlink" href="#what-is-regression" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>systematic</strong> procedure to model the relationship between one dependent variable and one or more independent variables and quantify the uncertainty involved in <em>response predictions</em>.</p>
+<!--![](https://www.thermofisher.com/blog/wp-content/uploads/sites/11/2018/01/istock-829172394_redumbrella.jpg)-->
+<div class="section" id="objectives">
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create linear regression models from data using primitive python</p></li>
+<li><p>Create linear regression models from data using NumPy and Pandas tools</p></li>
+<li><p>Create presentation-quality graphs and charts for reporting results</p></li>
+</ul>
+</div>
+<div class="section" id="computational-thinking-concepts">
+<h3>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Description</p></th>
+<th class="text-align:left head"><p>Computational Thinking Concept</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Linear Model</p></td>
+<td class="text-align:left"><p>Abstraction</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Response and Explanatory Variables</p></td>
+<td class="text-align:left"><p>Decomposition</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Primitive arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>NumPy arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="textbook-resources">
+<h3>Textbook Resources<a class="headerlink" href="#textbook-resources" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://inferentialthinking.com/chapters/15/Prediction.html">https://inferentialthinking.com/chapters/15/Prediction.html</a></p>
+<hr>
+</div>
+</div>
+<div class="section" id="data-modeling-regression-approach">
+<h2>Data Modeling: Regression Approach<a class="headerlink" href="#data-modeling-regression-approach" title="Permalink to this headline">¶</a></h2>
+<p>Regression is a basic and commonly used type of predictive analysis.</p>
+<p>The overall idea of regression is to assess:</p>
+<ul class="simple">
+<li><p>does a set of predictor/explainatory variables (features) do a good job in predicting an outcome (dependent/response) variable?</p></li>
+<li><p>Which explainatory variables (features) in particular are significant predictors of the outcome variable, and in what way do they–indicated by the magnitude and sign of the beta estimates–impact the outcome variable?</p></li>
+<li><p>What is the estimated(predicted) value of the response under various excitation (explainatory) variable values?</p></li>
+<li><p>What is the uncertainty involved in the prediction?</p></li>
+</ul>
+<p>These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.</p>
+<p>The simplest form is a linear regression equation with one dependent(response) and one independent(explainatory) variable is defined by the formula</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1*x_i\)</span>, where <span class="math notranslate nohighlight">\(y_i\)</span> = estimated dependent(response) variable value, <span class="math notranslate nohighlight">\(\beta_0\)</span> = constant(intercept), <span class="math notranslate nohighlight">\(\beta_1\)</span> = regression coefficient (slope), and <span class="math notranslate nohighlight">\(x_i\)</span> = independent(predictor) variable value</p>
+<p>More complex forms involving non-linear (in the <span class="math notranslate nohighlight">\(\beta_{i}\)</span>) parameters and non-linear combinations of the independent(predictor) variables are also used - these are beyond the scope of this lesson.</p>
+<p>We have already explored the underlying computations involved (without explaination) by just solving a particular linear equation system; what follows is some background on the source of that equation system.</p>
+<hr><div class="section" id="fundamental-questions">
+<h3>Fundamental Questions<a class="headerlink" href="#fundamental-questions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is regression used for?</p></li>
+<li><p>Why is it useful?</p></li>
+</ul>
+<p>Three major uses for regression analysis are (1) determining the strength of predictors, (2) forecasting an effect, and (3) trend forecasting.</p>
+<ul class="simple">
+<li><p>First, the regression might be used to identify the strength of the effect that the independent variable(s) have on a dependent variable.  Typical questions are what is the strength of relationship between dose and effect, sales and marketing spending, or age and income.</p></li>
+<li><p>Second, it can be used to forecast effects or impact of changes.  That is, the regression analysis helps us to understand how much the dependent variable changes with a change in one or more independent variables.  A typical question is, “how much additional sales income do I get for each additional $1000 spent on marketing?”</p></li>
+<li><p>Third, regression analysis predicts trends and future values.  The regression analysis can be used to get point estimates.  A typical question is, “what will the price of gold be in 6 months?”</p></li>
+</ul>
+<p>Consider the image below from a Texas Instruments Calculator user manual</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson19/PsuedoLesson/ti-manual.png" /></p>
+<p>In the context of our class, the straight solid line is the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Model</span></code> whose equation is
+<span class="math notranslate nohighlight">\(Y = \beta_0 + \beta_1*X\)</span>.
+The ordered pairs <span class="math notranslate nohighlight">\((x_i,y_i)\)</span> in the scatterplot are the observation (or training set).
+As depicted here <span class="math notranslate nohighlight">\(Y\)</span> is the response to different values of the explainitory variable <span class="math notranslate nohighlight">\(X\)</span>. The typical convention is response on the up-down axis, but not always.
+The model parameters are <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> ; once known can estimate (predict) response to (as yet) unobserved values of <span class="math notranslate nohighlight">\(x\)</span></p>
+<p>Classically, the normal equations are evaluated to find the model parameters:</p>
+<p><span class="math notranslate nohighlight">\(\beta_1 = \frac{\sum x\sum y~-~N\sum xy}{(\sum x)^2~-~N\sum x^2}\)</span> and <span class="math notranslate nohighlight">\(\beta_0 = \bar y - \beta_1 \bar x\)</span></p>
+<p>These two equations are the solution to the “design matrix” linear system earlier, but presented as a set of discrete arithmetic operations.</p>
+<hr><hr>
+</div>
+<div class="section" id="classical-regression-by-normal-equations">
+<h3>Classical Regression by Normal Equations<a class="headerlink" href="#classical-regression-by-normal-equations" title="Permalink to this headline">¶</a></h3>
+<p>We will illustrate the classical approach to finding the slope and intercept using the normal equations first a plotting function, then we will use the values from the Texas Instruments TI-55 user manual.</p>
+<p>First a way to plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Lets Make a Plotting Function</span>
+
+<span class="k">def</span> <span class="nf">makeAbear</span><span class="p">(</span><span class="n">xvalues</span><span class="p">,</span><span class="n">yvalues</span><span class="p">,</span><span class="n">xleft</span><span class="p">,</span><span class="n">yleft</span><span class="p">,</span><span class="n">xright</span><span class="p">,</span><span class="n">yright</span><span class="p">,</span><span class="n">xlab</span><span class="p">,</span><span class="n">ylab</span><span class="p">,</span><span class="n">title</span><span class="p">):</span>
+<span class="c1"># plotting function dependent on matplotlib installed above </span>
+<span class="c1"># xvalues, yvalues == data pairs to scatterplot; FLOAT</span>
+<span class="c1"># xleft,yleft == left endpoint line to draw; FLOAT</span>
+<span class="c1"># xright,yright == right endpoint line to draw; FLOAT</span>
+<span class="c1"># xlab,ylab == axis labels, STRINGS!!</span>
+<span class="c1"># title == Plot title, STRING</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> 
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xvalues</span><span class="p">,</span><span class="n">yvalues</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xleft</span><span class="p">,</span> <span class="n">xright</span><span class="p">],</span> <span class="p">[</span><span class="n">yleft</span><span class="p">,</span> <span class="n">yright</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">xlab</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylab</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the two lists to process</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make two lists</span>
+<span class="n">sample_length</span> <span class="o">=</span> <span class="p">[</span><span class="mf">101.3</span><span class="p">,</span><span class="mf">103.7</span><span class="p">,</span><span class="mf">98.6</span><span class="p">,</span><span class="mf">99.9</span><span class="p">,</span><span class="mf">97.2</span><span class="p">,</span><span class="mf">100.1</span><span class="p">]</span>
+<span class="n">sample_weight</span> <span class="o">=</span> <span class="p">[</span><span class="mi">609</span><span class="p">,</span><span class="mi">626</span><span class="p">,</span><span class="mi">586</span><span class="p">,</span><span class="mi">594</span><span class="p">,</span><span class="mi">579</span><span class="p">,</span><span class="mi">605</span><span class="p">]</span>
+<span class="c1"># We will assume weight is the explainatory variable, and it is to be used to predict length.</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">sample_length</span><span class="p">,</span><span class="mi">580</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">630</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="s1">&#39;Weight (g)&#39;</span><span class="p">,</span><span class="s1">&#39;Length (cm)&#39;</span><span class="p">,</span><span class="s1">&#39;Length versus Weight for </span><span class="se">\n</span><span class="s1"> NASA CF0132 Fiber Reinforced Polymer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_9_0.png" src="../../_images/lesson26_9_0.png" />
+</div>
+</div>
+<p>Notice the dashed line, we supplied only two (x,y) pairs to plot the line, so lets get a colonoscope and find where it came from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Returns a tuple ([x1,x2],[y1,y2]) from y=slope*value+intercept&#39;&#39;&#39;</span>
+    <span class="n">listy</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="n">listx</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">listx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value1</span><span class="p">)</span>
+    <span class="n">listx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+    <span class="n">listy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slope</span><span class="o">*</span><span class="n">listx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">intercept</span><span class="p">)</span>
+    <span class="n">listy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slope</span><span class="o">*</span><span class="n">listx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">intercept</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">listx</span><span class="p">,</span><span class="n">listy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The myline function returns a tuple, that we parse below to make the plot of the data model.  This is useful if we wish to plot beyond the range of the observations data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="mf">0.13</span>  <span class="c1">#0.13</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mi">23</span> <span class="c1"># 23</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="mi">540</span> <span class="c1"># here we define the lower bound of the model plot</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">640</span> <span class="c1"># upper bound</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">sample_length</span><span class="p">,</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;Weight (g)&#39;</span><span class="p">,</span><span class="s1">&#39;Length (cm)&#39;</span><span class="p">,</span><span class="s1">&#39;Length versus Weight for </span><span class="se">\n</span><span class="s1"> NASA CF0132 Fiber Reinforced Polymer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_13_0.png" src="../../_images/lesson26_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>540 93.2
+640 106.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets get “optimal” values of slope and intercept from the Normal equations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate the normal equations</span>
+<span class="n">sumx</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">sumy</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">sumxy</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">sumx2</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">sumy2</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)):</span>
+    <span class="n">sumx</span> <span class="o">=</span> <span class="n">sumx</span> <span class="o">+</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sumx2</span> <span class="o">=</span> <span class="n">sumx2</span> <span class="o">+</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">sumy</span> <span class="o">=</span> <span class="n">sumy</span> <span class="o">+</span> <span class="n">sample_length</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sumy2</span> <span class="o">=</span> <span class="n">sumy2</span> <span class="o">+</span> <span class="n">sample_length</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">sumxy</span> <span class="o">=</span> <span class="n">sumxy</span> <span class="o">+</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">sample_length</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="p">(</span><span class="n">sumx</span><span class="o">*</span><span class="n">sumy</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)</span><span class="o">*</span><span class="n">sumxy</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sumx</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)</span><span class="o">*</span><span class="n">sumx2</span><span class="p">)</span>
+<span class="n">b0</span> <span class="o">=</span> <span class="n">sumy</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_length</span><span class="p">)</span> <span class="o">-</span> <span class="n">b1</span><span class="o">*</span> <span class="p">(</span><span class="n">sumx</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">))</span>
+<span class="n">lineout</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Linear Model is y=</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;x + </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Model is y=</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b1</span> <span class="p">,</span><span class="s2">&quot;x + </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Model is y=0.129 x + 22.813
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="mf">0.129</span>  <span class="c1">#0.129</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mf">22.813</span>  <span class="c1"># 22.813</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="mi">540</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">640</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">sample_length</span><span class="p">,</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;Weight (g)&#39;</span><span class="p">,</span><span class="s1">&#39;Length (cm)&#39;</span><span class="p">,</span><span class="s1">&#39;Length versus Weight for </span><span class="se">\n</span><span class="s1"> NASA CF0132 Fiber Reinforced Polymer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_17_0.png" src="../../_images/lesson26_17_0.png" />
+</div>
+</div>
+<hr>
+</div>
+<div class="section" id="where-do-these-normal-equations-come-from">
+<h3>Where do these normal equations come from?<a class="headerlink" href="#where-do-these-normal-equations-come-from" title="Permalink to this headline">¶</a></h3>
+<p>Consider our linear model <span class="math notranslate nohighlight">\(y = \beta_0 + \beta_1 \cdot x + \epsilon\)</span>. Where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the error in the estimate. If we square each error and add them up (for our training set) we will have <span class="math notranslate nohighlight">\(\sum \epsilon^2 = \sum (y_i - \beta_0 - \beta_1 \cdot x_i)^2 \)</span>.  Our goal is to minimize this error by our choice of <span class="math notranslate nohighlight">\(\beta_0 \)</span> and <span class="math notranslate nohighlight">\( \beta_1 \)</span></p>
+<p>The necessary and sufficient conditions for a minimum is that the first partial derivatives of the <code class="docutils literal notranslate"><span class="pre">error</span></code> as a function must vanish (be equal to zero).  We can leverage that requirement as</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial(\sum \epsilon^2)}{\partial \beta_0} = \frac{\partial{\sum (y_i - \beta_0 - \beta_1 \cdot x_i)^2}}{\partial \beta_0} = - \sum 2[y_i - \beta_0 + \beta_1 \cdot x_i] = -2(\sum_{i=1}^n y_i - n \beta_0 - \beta_1 \sum_{i=1}^n x_i) = 0 \)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial(\sum \epsilon^2)}{\partial \beta_1} = \frac{\partial{\sum (y_i - \beta_0 - \beta_1 \cdot x_i)^2}}{\partial \beta_1} = - \sum 2[y_i - \beta_0 + \beta_1 \cdot x_i]x_i = -2(\sum_{i=1}^n x_i y_i - n \beta_0 \sum_{i=1}^n x_i - \beta_1 \sum_{i=1}^n x_i^2) = 0 \)</span></p>
+<p>Solving the two equations for <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> produces the normal equations (for linear least squares), which leads to</p>
+<p><span class="math notranslate nohighlight">\(\beta_1 = \frac{\sum x\sum y~-~n\sum xy}{(\sum x)^2~-~n\sum x^2}\)</span>
+<span class="math notranslate nohighlight">\(\beta_0 = \bar y - \beta_1 \bar x\)</span></p>
+<p>Lets consider a more flexible way by fitting the data model using linear algebra instead of the summation notation.</p>
+<hr><hr>
+</div>
+<div class="section" id="computational-linear-algebra">
+<h3>Computational Linear Algebra<a class="headerlink" href="#computational-linear-algebra" title="Permalink to this headline">¶</a></h3>
+<p>We will start again with our linear data model’</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The linear system below should be familiar, we used it in the Predictor-Response Data Model (without much background).  Here we learn it is simply the matrix equivalent of minimizing the sumn of squares error for each equation</p>
+</div>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 \cdot x_i + \epsilon_i\)</span>  then replace with vectors as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+\mathbf{Y}=
+\begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n \\
+\end{pmatrix}
+\end{gather}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbf{\beta}=
+\begin{pmatrix}
+\beta_0 \\
+\beta_1 \\
+\end{pmatrix}
+\end{gather}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbf{X}=
+\begin{pmatrix}
+1 &amp; x_1 &amp; x_1^2\\
+1 &amp; x_2 &amp; x_2^2\\
+\vdots \\
+1 &amp; x_n &amp; x_n^2\\
+\end{pmatrix}
+\end{gather}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbf{\epsilon}=
+\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n \\
+\end{pmatrix}
+\end{gather}\end{split}\]</div>
+<p>So our system can now be expressed in matrix-vector form as</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Y}=\mathbf{X}\mathbf{\beta}+\mathbf{\epsilon}\)</span> if we perfrom the same vector calculus as before we will end up with a result where pre-multiply by the transpose of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> we will have a linear system in <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> which we can solve using Gaussian reduction, or LU decomposition or some other similar method.</p>
+<p>The resulting system (that minimizes <span class="math notranslate nohighlight">\(\mathbf{\epsilon^T}\mathbf{\epsilon}\)</span>) is</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{X^T}\mathbf{Y}=\mathbf{X^T}\mathbf{X}\mathbf{\beta}\)</span> and solving for the parameters gives
+<span class="math notranslate nohighlight">\(\mathbf{\beta}=(\mathbf{X^T}\mathbf{X})^{-1}\mathbf{X^T}\mathbf{Y}\)</span></p>
+<p>So lets apply it to our example - what follows is mostly in python primative</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># linearsolver with pivoting adapted from </span>
+<span class="c1"># https://stackoverflow.com/questions/31957096/gaussian-elimination-with-pivoting-in-python/31959226</span>
+<span class="k">def</span> <span class="nf">linearsolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">A</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># row reduction with pivots</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]):</span>
+          <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+       <span class="k">else</span><span class="p">:</span>
+          <span class="k">pass</span>
+
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+         <span class="n">q</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+         <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">-=</span>  <span class="n">q</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+<span class="c1"># allocate space for result</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1"># back-substitution</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">])</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">z</span>  <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="c1"># return result</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#######</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matrix multiply script</span>
+<span class="k">def</span> <span class="nf">mmult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">bmatrix</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">,</span><span class="n">rowNumB</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+    <span class="n">result_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumB</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumB</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">result_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">result_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">bmatrix</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">result_matrix</span><span class="p">)</span>
+<span class="c1"># matrix vector multiply script</span>
+<span class="k">def</span> <span class="nf">mvmult</span><span class="p">(</span><span class="n">amatrix</span><span class="p">,</span><span class="n">bvector</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+    <span class="n">result_v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumA</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rowNumA</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">colNumA</span><span class="p">):</span>
+                <span class="n">result_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">result_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">amatrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">bvector</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">result_v</span><span class="p">)</span>
+
+<span class="n">colNumX</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#</span>
+<span class="n">rowNumX</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)</span>
+<span class="n">xmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="n">xtransp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">yvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">):</span>
+    <span class="n">xmatrix</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">xtransp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">irow</span><span class="p">]</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">yvector</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>   <span class="o">=</span><span class="n">sample_length</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+<span class="n">xtx</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">xtx</span> <span class="o">=</span> <span class="n">mmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">xmatrix</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">colNumX</span><span class="p">)</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="n">mvmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">yvector</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">)</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#solve XtXB = XtY for B</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">xtx</span><span class="p">,</span><span class="n">xty</span><span class="p">)</span> <span class="c1">#Solve the linear system  What would the numpy equivalent be?</span>
+
+<span class="n">slope</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#0.129</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 22.813</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="mi">580</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">630</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">sample_length</span><span class="p">,</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;Weight (g)&#39;</span><span class="p">,</span><span class="s1">&#39;Length (cm)&#39;</span><span class="p">,</span><span class="s1">&#39;Length versus Weight for </span><span class="se">\n</span><span class="s1"> NASA CF0132 Fiber Reinforced Polymer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_21_0.png" src="../../_images/lesson26_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22.812624584693076, 0.12890365448509072]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-s-the-value-of-the-computational-linear-algebra">
+<h4>What’s the Value of the Computational Linear Algebra ?<a class="headerlink" href="#what-s-the-value-of-the-computational-linear-algebra" title="Permalink to this headline">¶</a></h4>
+<p>The value comes when we have more explainatory variables, and we may want to deal with curvature.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The lists below are different that the example above!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make two lists</span>
+<span class="n">yyy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">xxx</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1">#0.129</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 22.813</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">xxx</span><span class="p">,</span> <span class="n">yyy</span><span class="p">,</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;xxx&#39;</span><span class="p">,</span><span class="s1">&#39;yyy&#39;</span><span class="p">,</span><span class="s1">&#39;yyy versus xxx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_24_0.png" src="../../_images/lesson26_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colNumX</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#</span>
+<span class="n">rowNumX</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
+<span class="n">xmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="n">xtransp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">yvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">):</span>
+    <span class="n">xmatrix</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">xtransp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">irow</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">yvector</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>   <span class="o">=</span><span class="n">yyy</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+<span class="n">xtx</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">xtx</span> <span class="o">=</span> <span class="n">mmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">xmatrix</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">colNumX</span><span class="p">)</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="n">mvmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">yvector</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">)</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#solve XtXB = XtY for B</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">xtx</span><span class="p">,</span><span class="n">xty</span><span class="p">)</span> <span class="c1">#Solve the linear system</span>
+
+<span class="n">slope</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#0.129</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 22.813</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">xxx</span><span class="p">,</span> <span class="n">yyy</span><span class="p">,</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;xxx&#39;</span><span class="p">,</span><span class="s1">&#39;yyy&#39;</span><span class="p">,</span><span class="s1">&#39;yyy versus xxx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_25_0.png" src="../../_images/lesson26_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colNumX</span><span class="o">=</span><span class="mi">4</span> <span class="c1">#</span>
+<span class="n">rowNumX</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
+<span class="n">xmatrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="n">xtransp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">yvector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rowNumX</span><span class="p">):</span>
+    <span class="n">xmatrix</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">xmatrix</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">xmatrix</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span>
+    <span class="n">xtransp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">irow</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">xtransp</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">irow</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">xtransp</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">irow</span><span class="p">]</span><span class="o">=</span><span class="n">xxx</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span>
+    <span class="n">yvector</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>   <span class="o">=</span><span class="n">yyy</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+<span class="n">xtx</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colNumX</span><span class="p">)]</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">xtx</span> <span class="o">=</span> <span class="n">mmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">xmatrix</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">,</span><span class="n">colNumX</span><span class="p">)</span>
+<span class="n">xty</span> <span class="o">=</span> <span class="n">mvmult</span><span class="p">(</span><span class="n">xtransp</span><span class="p">,</span><span class="n">yvector</span><span class="p">,</span><span class="n">colNumX</span><span class="p">,</span><span class="n">rowNumX</span><span class="p">)</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#solve XtXB = XtY for B</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">linearsolver</span><span class="p">(</span><span class="n">xtx</span><span class="p">,</span><span class="n">xty</span><span class="p">)</span> <span class="c1">#Solve the linear system</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">howMany</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">deltax</span> <span class="o">=</span> <span class="p">(</span><span class="n">xhigh</span> <span class="o">-</span> <span class="n">xlow</span><span class="p">)</span><span class="o">/</span><span class="n">howMany</span>
+<span class="n">xmodel</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ymodel</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howMany</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">xnow</span> <span class="o">=</span> <span class="n">xlow</span> <span class="o">+</span> <span class="n">deltax</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">xmodel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+    <span class="n">ymodel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xnow</span><span class="o">+</span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">xnow</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Now plot the sample values and plotting position</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> 
+<span class="n">myfigure</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
+
+<span class="c1"># Built the plot</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xxx</span><span class="p">,</span> <span class="n">yyy</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xmodel</span><span class="p">,</span> <span class="n">ymodel</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span> 
+<span class="n">mytitle</span> <span class="o">=</span> <span class="s2">&quot;YYY versus XXX&quot;</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">mytitle</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_27_0.png" src="../../_images/lesson26_27_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-packages">
+<h3>Using packages<a class="headerlink" href="#using-packages" title="Permalink to this headline">¶</a></h3>
+<p>So in core python, there is a fair amount of work involved to write script - how about an easier way? First lets get things into a dataframe. Using the lists from the example above we can build a dataframe using pandas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the necessary packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Create a dataframe:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">xxx</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">yyy</span><span class="p">})</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="statsmodel-package">
+<h4><code class="docutils literal notranslate"><span class="pre">statsmodel</span></code> package<a class="headerlink" href="#statsmodel-package" title="Permalink to this headline">¶</a></h4>
+<p>Now load in one of many modeling packages that have regression tools.  Here we use <strong>statsmodel</strong> which is an API (applications programming interface) with a nice formula syntax.  In the package call we use <code class="docutils literal notranslate"><span class="pre">Y~X</span></code> which is interpreted by the API as fit <code class="docutils literal notranslate"><span class="pre">Y</span></code> as a linear function of <code class="docutils literal notranslate"><span class="pre">X</span></code>, which interestingly is our design matrix from a few lessons ago.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># repeat using statsmodel</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="c1"># Initialise and fit linear regression model using `statsmodels`</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Y ~ X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># model object constructor syntax</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now recover the parameters of the model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    1.0
+X            0.7
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict values</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;model vs observed&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_34_0.png" src="../../_images/lesson26_34_0.png" />
+</div>
+</div>
+<p>We could use our own plotting functions if we wished, and would obtain an identical plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#0.7</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 1.0</span>
+<span class="n">xlow</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">xhigh</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">object</span> <span class="o">=</span> <span class="n">myline</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">,</span><span class="n">xlow</span><span class="p">,</span><span class="n">xhigh</span><span class="p">)</span>
+<span class="n">xone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">xtwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="n">yone</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="n">ytwo</span> <span class="o">=</span> <span class="nb">object</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">makeAbear</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span><span class="n">xone</span><span class="p">,</span><span class="n">yone</span><span class="p">,</span><span class="n">xtwo</span><span class="p">,</span><span class="n">ytwo</span><span class="p">,</span><span class="s1">&#39;xxx&#39;</span><span class="p">,</span><span class="s1">&#39;yyy&#39;</span><span class="p">,</span><span class="s1">&#39;yyy versus xxx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_36_0.png" src="../../_images/lesson26_36_0.png" />
+</div>
+</div>
+<p>Now lets add another column <span class="math notranslate nohighlight">\(x^2\)</span> to introduce the ability to fit some curvature</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;XX&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># add a column of X^2</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Y ~ X + XX&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># model object constructor syntax</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    0.571429
+X            0.700000
+XX           0.214286
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict values</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;model vs observed&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_39_0.png" src="../../_images/lesson26_39_0.png" />
+</div>
+</div>
+<p>Our homebrew plotting tool could be modified a bit (shown below just cause …)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myfigure</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># generate a object from the figure class, set aspect ratio</span>
+
+<span class="c1"># Built the plot</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span> 
+<span class="n">mytitle</span> <span class="o">=</span> <span class="s2">&quot;YYY versus XXX&quot;</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">mytitle</span><span class="p">)</span> 
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_41_0.png" src="../../_images/lesson26_41_0.png" />
+</div>
+</div>
+<p>Another useful package is <strong>sklearn</strong> so repeat using that tool (same example)</p>
+</div>
+<div class="section" id="sklearn-package">
+<h4><code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package<a class="headerlink" href="#sklearn-package" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># repeat using sklearn</span>
+<span class="c1"># Multiple Linear Regression with scikit-learn:</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Build linear regression model using X,XX as predictors</span>
+<span class="c1"># Split data into predictors X and output Y</span>
+<span class="n">predictors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;XX&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">predictors</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+
+<span class="c1"># Initialise and fit model</span>
+<span class="n">lm</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>  <span class="c1"># This is the sklearn model tool here</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;betas = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alpha = 0.5714285714285716
+betas = [0.7        0.21428571]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fitted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Plot regression against actual data - What do we see?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">fitted</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;plot title&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_45_0.png" src="../../_images/lesson26_45_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="now-repeat-using-the-original-texas-instruments-example">
+<h4>Now repeat using the original Texas Instruments example<a class="headerlink" href="#now-repeat-using-the-original-texas-instruments-example" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_length</span> <span class="o">=</span> <span class="p">[</span><span class="mf">101.3</span><span class="p">,</span><span class="mf">103.7</span><span class="p">,</span><span class="mf">98.6</span><span class="p">,</span><span class="mf">99.9</span><span class="p">,</span><span class="mf">97.2</span><span class="p">,</span><span class="mf">100.1</span><span class="p">]</span>
+<span class="n">sample_weight</span> <span class="o">=</span> <span class="p">[</span><span class="mi">609</span><span class="p">,</span><span class="mi">626</span><span class="p">,</span><span class="mi">586</span><span class="p">,</span><span class="mi">594</span><span class="p">,</span><span class="mi">579</span><span class="p">,</span><span class="mi">605</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">sample_weight</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">sample_length</span><span class="p">})</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>609</td>
+      <td>101.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>626</td>
+      <td>103.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>586</td>
+      <td>98.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>594</td>
+      <td>99.9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>579</td>
+      <td>97.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>605</td>
+      <td>100.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build linear regression model using X,XX as predictors</span>
+<span class="c1"># Split data into predictors X and output Y</span>
+<span class="n">predictors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">predictors</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+
+<span class="c1"># Initialise and fit model</span>
+<span class="n">lm</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;betas = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alpha = 22.812624584717568
+betas = [0.12890365]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fitted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">xvalue</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="c1"># Plot regression against actual data - What do we see?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xvalue</span><span class="p">,</span> <span class="n">fitted</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Weight (g)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sample Length (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Length versus Weight for </span><span class="se">\n</span><span class="s1"> NASA CF0132 Fiber Reinforced Polymer&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson26_49_0.png" src="../../_images/lesson26_49_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>We examined regression as a way to fit lines to data (and make predictions from those lines).  The methods presented are</p>
+<ol class="simple">
+<li><p>Using the normal equations (pretty much restricted to a linear model)</p></li>
+<li><p>Constructed as a linear system of equations using <span class="math notranslate nohighlight">\(Y=X \cdot \beta\)</span> where <span class="math notranslate nohighlight">\(X\)</span> is the design matrix.  We used homebrew solver, but <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> would be a better bet for practice.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">statsmodel</span></code> package</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are probably dozens of other ways to perform linear regression - different packages and such.  Just read the package documentation, construct a simple example so you understand the function call(s) and you can regress to your heart’s content.</p>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>“Linear Regression in Python”</strong> by <strong>Sadrach Pierre</strong> available at* <a class="reference external" href="https://towardsdatascience.com/linear-regression-in-python-a1d8c13f3242">https://towardsdatascience.com/linear-regression-in-python-a1d8c13f3242</a> <br></p></li>
+<li><p><strong>“Introduction to Linear Regression in Python”</strong> available at* <a class="reference external" href="https://cmdlinetips.com/2019/09/introduction-to-linear-regression-in-python/">https://cmdlinetips.com/2019/09/introduction-to-linear-regression-in-python/</a> <br></p></li>
+<li><p><strong>“Linear Regression in Python”</strong> by <strong>Mirko Stojiljković</strong> available at* <a class="reference external" href="https://realpython.com/linear-regression-in-python/">https://realpython.com/linear-regression-in-python/</a> <br></p></li>
+<li><p><a class="reference external" href="https://inferentialthinking.com/chapters/15/Prediction.html">https://inferentialthinking.com/chapters/15/Prediction.html</a><br></p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">If you can’t read …</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=PaFPbb66DxQ&amp;list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU"><strong>“StatQuest: Fitting a line to data, aka least squares, aka linear regression.”</strong> by <strong>StatQuest with Josh Starmer</strong> <em>YouTube</em></a> <br></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ZkjP5RJLQF4"><strong>“Statistics 101: Linear Regression, The Very Basics”</strong> by <strong>Brandon Foltz</strong> <em>YouTube</em></a> <br></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=MRm5sBfdBBQ"><strong>“How to Build a Linear Regression Model in Python | Part 1” and 2,3,4!</strong> by <strong>Sigma Coding</strong><em>YouTube</em></a> <br></p></li>
+</ul>
+</div>
 </div>
 </div>
 
