@@ -740,8 +740,21 @@ plt.show();
 # :::
 # 
 
-# In[ ]:
+# <hr><hr>
+# 
+# ## Laboratory 26
+# 
+# **Examine** (click) Laboratory 26 as a webpage at [Laboratory 26.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 26 as a jupyterlab notebook from [Laboratory 26.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26.ipynb)
+# 
 
-
-
-
+# <hr><hr>
+# 
+# ## Exercise Set 26
+# 
+# **Examine** (click) Exercise Set 26 as a webpage at [Exercise 26.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 26 as a jupyterlab notebook at  [Exercise Set 26.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab26/Lab26-TH.ipynb)
+# 
+# 
