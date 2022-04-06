@@ -11,6 +11,11 @@
 #     
 # # 26: Linear Regression
 # - Purpose
+# - Homebrew (using covariance formulas)
+# - Homebrew using Matrix Algebra
+# - Using packages: *numpy.linalg.lstsq* (future versions of this ebook)
+# - Using packages: *statsmodel* package 
+# - Using packages: *sklearn* package
 # - Why regression belongs to both statistics and machine learning 
 # - Learning algorithms used to create a linear regression model 
 # - Preparing data for linear regression 

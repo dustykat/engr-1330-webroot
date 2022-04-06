@@ -13079,57 +13079,17 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="c">&lt;!--Script block to left align Markdown Tables--&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">table</span> <span class="p">{</span><span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<!--Script block to left align Markdown Tables-->
-<style>
-  table {margin-left: 0 !important;}
-</style>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">ENGR 1330 &#8211; Computational Thinking and Data Science Fall 2021<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science-Fall-2021">&#182;</a></h1>
+<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science---Spring-2022">ENGR 1330 &#8211; Computational Thinking and Data Science - Spring 2022<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science---Spring-2022">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Concrete-Strength-Predictor-Final-Project---Background">Concrete Strength Predictor Final Project - Background<a class="anchor-link" href="#Concrete-Strength-Predictor-Final-Project---Background">&#182;</a></h2><p>The Compressive Strength of Concrete determines the quality of Concrete. 
+<h2 id="Introduction:-Concrete-Strength-Prediction">Introduction: Concrete Strength Prediction<a class="anchor-link" href="#Introduction:-Concrete-Strength-Prediction">&#182;</a></h2><p>The Compressive Strength of Concrete determines the quality of Concrete. 
 The strength is determined by a standard crushing test on a concrete cylinder, that requires engineers to build small concrete cylinders with different combinations of raw materials and test these cylinders for strength variations with a change in each raw material. 
 The recommended wait time for testing the cylinder is 28 days to ensure correct results, although there are formulas for making estimates from shorter cure times.
 The formal 28-day approach consumes a lot of time and labor to prepare different prototypes and test them; the method itself is error prone and mistakes can cause the wait time to drastically increase.</p>
@@ -13138,6 +13098,8 @@ This approach can reduce the number of combinations we can try physically and re
 But, to design such software we have to know the relations between all the raw materials and how one material affects the strength. 
 It is possible to derive mathematical equations and run simulations based on these equations, but we cannot expect the relations to be same in real-world. 
 Also, these tests have been performed for many numbers of times now and we have enough real-world data that can be used for predictive modelling.</p>
+<p>The figure below shows a picture of a typical conrete cylinder tested in compression.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Compressometer_for_testing_concrete_stress-strain_relation.jpg" alt=""> <br></p>
 <h2 id="Objective(s):">Objective(s):<a class="anchor-link" href="#Objective(s):">&#182;</a></h2><ul>
 <li>Literature scan on concrete design, and utility of a predictive approach</li>
 <li>Analyse an existing concrete compressive strength database and build a data model to predict the compressive strength of a concrete mixture.</li>
@@ -13151,8 +13113,7 @@ Also, these tests have been performed for many numbers of times now and we have 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tasks:">Tasks:<a class="anchor-link" href="#Tasks:">&#182;</a></h2><p><strong>Literature Research:</strong></p>
-<ul>
+<h2 id="Tasks:">Tasks:<a class="anchor-link" href="#Tasks:">&#182;</a></h2><h3 id="Literature-Research:"><strong>Literature Research:</strong><a class="anchor-link" href="#Literature-Research:">&#182;</a></h3><ul>
 <li>Describe the challenge of concrete mixture design and the importance of compressive strength.</li>
 <li>Summarize the value of a data model in the context of the conventional approach to strength prediction</li>
 </ul>
@@ -13171,21 +13132,18 @@ Also, these tests have been performed for many numbers of times now and we have 
 <li><p>de Larrard, François &amp; Sedran, Thierry. (2002). Mixture-proportioning of high-performance concrete. Cement and Concrete Research. 32. 1699-1704. 10.1016/S0008-8846(02)00861-X. copy at: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mixture-ProportioningCCR-deLarrardSedran-full.pdf">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/Mixture-ProportioningCCR-deLarrardSedran-full.pdf</a></p>
 </li>
 </ul>
-<p><strong>Database Acquisition</strong></p>
-<ul>
+<h3 id="Database-Acquisition"><strong>Database Acquisition</strong><a class="anchor-link" href="#Database-Acquisition">&#182;</a></h3><ul>
 <li>Get the database from the repository: <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls">https://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls</a></li>
 <li>Supply links to any additional databases discovered during the literature research</li>
 <li>A copy of the database is located at: <a href="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/concreteData.xls">http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/6-Projects/P-ConcreteStrength/concreteData.xls</a> If you cannot access the original database you can use this copy</li>
 </ul>
-<p><strong>Exploratory Data Analysis</strong></p>
-<ul>
+<h3 id="Exploratory-Data-Analysis"><strong>Exploratory Data Analysis</strong><a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h3><ul>
 <li>Describe (in words) the database.</li>
 <li>Reformat as needed (column headings perhaps) the database for subsequent analysis.</li>
 <li>Select possible data model structures (multi-feature linear model, power-law, ...)</li>
 <li>Select possible data model "fitting" tools (ordinary least squares,lasso regression, decision trees, random forests, ...)</li>
 </ul>
-<p><strong>Model Building</strong></p>
-<ul>
+<h3 id="Model-Building"><strong>Model Building</strong><a class="anchor-link" href="#Model-Building">&#182;</a></h3><ul>
 <li>Build data models</li>
 <li>Assess data model quality (decide which model is best) </li>
 <li>Build the input data interface for using the "best" model</li>
@@ -13256,13 +13214,6 @@ Also, these tests have been performed for many numbers of times now and we have 
 </tr>
 </tbody>
 </table>
-<p><strong>Documentation</strong></p>
-<ul>
-<li>Training video on how to use your tool, and demonstrate the tool(s) as they are run</li>
-<li>Project management video </li>
-<li>Interim report (see deliverables below); this document must be rendered as a .pdf, but you are free to use your favorite writing software (Word,LibreOffice, ...).</li>
-<li>Final Report (see deliverables below)</li>
-</ul>
 
 </div>
 </div>
@@ -13286,39 +13237,38 @@ Also, these tests have been performed for many numbers of times now and we have 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Deliverables:">Deliverables:<a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Effort-Sheets-(due-every-week-on-Friday):">Effort Sheets (due every week on Friday):<a class="anchor-link" href="#Effort-Sheets-(due-every-week-on-Friday):">&#182;</a></h4><p>Each team must submit an effort sheet which is a table with a clear discription of the tasks undertaken by each member and has the signiture of all team members. The effort sheets should be submitted digitally via email.</p>
-<h4 id="Interim-Report-(due-November-24):">Interim Report (due November 24):<a class="anchor-link" href="#Interim-Report-(due-November-24):">&#182;</a></h4><p>A report that briefly describes the concrete strength database and how you plan to solve the tasks of creating a suitable data model.</p>
+<h4 id="Interim-Report-(due-Wednesday-April-20th,-2022):">Interim Report (due Wednesday April 20th, 2022):<a class="anchor-link" href="#Interim-Report-(due-Wednesday-April-20th,-2022):">&#182;</a></h4><p>This report must include:</p>
 <ul>
+<li>The "Literature Research" section</li>
+<li>A description of the Concrete Strength database </li>
+<li>A plan of work for how you want to handle the project and solve the modeling tasks.  </li>
 <li>Break down each task into manageable subtasks and describe how you intend to solve the subtasks and how you will test each task. (Perhaps make a simple Gantt Chart)</li>
 <li>Address the responsibilities of each team member for tasks completed and tasks to be completed until the end of the semester. (Perhaps make explicit subtask assignments)</li>
 </ul>
-<p>Your report should be limited to 4 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used.</p>
-<h4 id="Final-Report-(due-on-December-7):">Final Report (due on December 7):<a class="anchor-link" href="#Final-Report-(due-on-December-7):">&#182;</a></h4><ul>
-<li>A well-documented JupyterLab (using a python kernel) analysis and implementation for the data model.</li>
-<li>A well-documented JupyterLab (using a python kernel) implementation for the data model user interface.</li>
-<li>A well-documented JupyterLab (using a python kernel) implementation for the database update interface.</li>
-</ul>
-<p><strong>Above items can reside in a single notebook; but clearly identify sections that perform different tasks.</strong></p>
+<p>Your report should be limited to 7 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used. This report must be submitted by Midnight April 20th in PDF format.</p>
+<h4 id="Final-Report-(due-Tuesday-May-2nd,-2022):">Final Report (due Tuesday May 2nd, 2022):<a class="anchor-link" href="#Final-Report-(due-Tuesday-May-2nd,-2022):">&#182;</a></h4><p>This report must include:</p>
 <ul>
-<li>A how-to video demonstrating performance and description of problems that you were not able to solve.</li>
-<li>A project management video (up to 5 minutes) in which you explain how you completed the project and how you worked as a team.</li>
+<li>All the required parts, including the ones from the Interim report as well as the sections on EDA and Model Building parts.</li>
+<li>All the filled effort sheets with the signitures of the team members with a clear description of all the tasks performed by each member.</li>
+<li><p>All the references used in the entire length of the project. <br>
+This report must be submitted by Midnight May 2nd in PDF format, along with the following documents:</p>
+<ul>
+<li>A well-documented Jupyter Notebook (.ipynb file) for the analysis and implementation of the data models.</li>
+<li><p>A well-documented Jupyter Notebook (.ipynb file) for the implementation of the data model user interface.</p>
+<p><strong>Above items can reside in a single notebook; but clearly identify sections that perform different tasks.</strong></p>
+</li>
+<li><p>A how-to video demonstrating the application, performance and description of what you did for the project, including the problems that you solved as well as those that you were not able to solve.</p>
+</li>
+<li><p>A project management video (up to 5 minutes) in which you explain how you completed the project and how you worked as a team.</p>
+<p><strong>Above items can reside in a single video; but structure the video into the two parts; use an obvious transition when moving from "how to ..." into the project management portion.</strong><br>
+<strong>Keep the total video length to less than 10 minutes; submit as an "unlisted" YouTube video, and just supply the link (someone on each team is likely to have a YouTube creator account).  Keep in mind a 10 minute video can approach 100MB file size before compression, so it won't upload to Blackboard and cannot be emailed.</strong></p>
+</li>
 </ul>
-<p><strong>Above items can reside in a single video; but structure the video into the two parts; use an obvious transition when moving from "how to ..." into the project management portion.</strong>  Keep the total video length to less than 10 minutes; submit as an <em>unlisted</em> YouTube video, and just supply the link (someone on each team is likely to have a YouTube creator account).  Keep in mind a 10 minute video can approach 100MB file size before compression, so it won't upload to Blackboard and cannot be emailed.</p>
+</li>
+</ul>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>

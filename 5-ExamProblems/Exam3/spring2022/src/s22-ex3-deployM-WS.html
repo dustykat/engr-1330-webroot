@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ENGR-1330-Streamflow-Project</title>
+<title>s22-ex3-deployM-WS</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13082,24 +13082,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science---Spring-2022">ENGR 1330 &#8211; Computational Thinking and Data Science - Spring 2022<a class="anchor-link" href="#ENGR-1330-&#8211;-Computational-Thinking-and-Data-Science---Spring-2022">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction:-The-Colorado-River-in-Texas">Introduction: The Colorado River in Texas<a class="anchor-link" href="#Introduction:-The-Colorado-River-in-Texas">&#182;</a></h2><p>The Colorado River is an approximately 862-mile (1,387 km) long river in the U.S. state of Texas. It is the 18th longest river in the United States and the longest river with both its source and its mouth within Texas.</p>
-<p>The Colorado River originates south of Lubbock, on the Llano Estacado near Lamesa. It flows generally southeast out of the Llano Estacado and through the Texas Hill Country, then through several reservoirs including Lake J.B. Thomas, E.V. Spence Reservoir, and O.H. Ivie Lake. The river flows through several more reservoirs before reaching Austin, including Lake Buchanan, Inks Lake, Lake Lyndon B. Johnson (commonly referred to as Lake LBJ), and Lake Travis. The Llano River joins the Colorado at Lake LBJ near Kingsland, and the Pedernales River joins at Lake Travis near Briarcliff. After passing through Austin, the Colorado River continues flowing southeast until emptying into Matagorda Bay on the Gulf of Mexico, near Matagorda. The Colorado is the largest river lying entirely within Texas; it drains an area of about 39,900 square miles (103,350 square km) and receives several forks of the Concho River, the Pecan Bayou, and the San Saba, Llano, and Pedernales rivers.</p>
-<p>The figure below shows a map of the Colorado River.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/ColoradoTexas_Watershed.png/450px-ColoradoTexas_Watershed.png" alt=""> <br></p>
-<p>The river is an important source of water for farming, cities, and electrical power production. In addition to power plants operating on each of the major lakes, waters of the Colorado are used for cooling the South Texas Nuclear Project near Bay City. Altogether, there are over 7,500 miles of creeks, streams, and rivers in our basin, and well over 2 million people live and work here. The Colorado’s watershed includes several major metropolitan areas, including Midland-Odessa, San Angelo, and Austin, and there are hundreds of smaller towns and communities as well. Many communities, like Austin, rely on the Colorado River for 100% of their municipal water. Because of its importance to the state’s economy, environment, industry, and agriculture it is recognized as the lifeblood of Texas.</p>
+<h1><font color=darkblue>ENGR 1330-2022 Exam 3-Laboratory Portion  </font></h1>
+<p><strong>LAST NAME, FIRST NAME</strong></p>
+<p><strong>R00000000</strong></p>
+<p>ENGR 1330 Exam 3M - Demonstrate Laboratory/Programming Skills</p>
 <hr>
-<p><img src="https://cdn.vox-cdn.com/thumbor/z67Uw_p2JYudnXeeouxgil4XtoQ=/0x0:5999x3685/1200x800/filters:focal(2521x1364:3479x2322)/cdn.vox-cdn.com/uploads/chorus_image/image/64045588/Mount_Bonnell_shutterstock.0.jpg" width="70%"> <br></p>
-<h3 id="The-Dataset-|-Streamflow-Data">The Dataset | Streamflow Data<a class="anchor-link" href="#The-Dataset-|-Streamflow-Data">&#182;</a></h3><p>Streamflow data is downloaded for the most upstream streamflow monitoring station from "waterdata.usgs.gov". USGS Streamflow Monitoring Station 08117995 located in Borden County, Texas (Latitude  32°37'43", Longitude 101°17'06" NAD27) provided monthly streamflow records from March 1988 until May 2021.</p>
-<p><img src="https://deeply-assets.thenewhumanitarian.org/20170616094245/Idaho-gauge.jpg?w=640&fit=max&q=60" width="70%"> <br></p>
-<h3 id="The-Dataset-|-Meteorological-Data">The Dataset | Meteorological Data<a class="anchor-link" href="#The-Dataset-|-Meteorological-Data">&#182;</a></h3><p>Meteorological data is downloaded for the same period of time and the same time scale from "prism.oregonstate.edu". This data includes monthly precipitation and temperature (max, mean, and min) records.</p>
-<p><img src="https://stjohn23pburg.files.wordpress.com/2013/06/river-rain.jpg" width="70%"> <br></p>
+<p><strong>Download</strong> (right-click, save target as ...) this page as a jupyterlab notebook from: <a href="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/Exam3/spring2022/s22-ex3-deploy.ipynb">s22-ex3-deployM.ipynb</a></p>
+<p><strong>If you are unable to download the file, create an empty notebook and copy paste the problems into Markdown cells and Code cells (problem-by-problem)</strong></p>
 
 </div>
 </div>
@@ -13107,117 +13096,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>Why is Streamflow Analysis Important?</p>
-<p>Information gained from streamflow data is used for many different purposes:</p>
-<ul>
-<li><strong><em>Water supply plans</em></strong><ul>
-<li>Municipalities</li>
-<li>Agriculture</li>
-<li>Industries</li>
-</ul>
-</li>
-<li><strong><em>Engineering design</em></strong><ul>
-<li>Reservoirs</li>
-<li>Bridges, Roads, Culverts</li>
-<li>Treatment Plans</li>
-</ul>
-</li>
-<li><strong><em>Operations</em></strong><ul>
-<li>Reservoirs</li>
-<li>Power plants</li>
-<li>Navigation</li>
-</ul>
-</li>
-<li><strong><em>Identifying changes in streamflows</em></strong><ul>
-<li>Climate change</li>
-<li>Water use</li>
-<li>Land use</li>
-</ul>
-</li>
-<li><strong><em>Flood planning and warning</em></strong><ul>
-<li>Floodplain mapping</li>
-<li>Flood forecasts</li>
-</ul>
-</li>
-<li><strong><em>Streamflow forecasting</em></strong></li>
-<li><strong><em>Characterizing and evaluating in-stream conditions</em></strong><ul>
-<li>Habitat assessment</li>
-<li>Environmental flow requirements</li>
-<li>Recreation</li>
-</ul>
-</li>
-<li><strong><em>Support of water quality sampling</em></strong><ul>
-<li>Water quality conditions</li>
-<li>Contaminant transport</li>
-</ul>
-</li>
-</ul>
-<p><br>
-<br></p>
-<p><img src="https://www.lrp.usace.army.mil/portals/72/siteimages/Recreation/conemauglake.jpg" width="50%"> <br></p>
-<p>In this project, you will analyse a streamflow dataset and build a Machine Learning Model to predict the flow status and flowrate in a river.</p>
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h3 id="How-Streamflow-is-Measured?">How Streamflow is Measured?<a class="anchor-link" href="#How-Streamflow-is-Measured?">&#182;</a></h3><p>USGS describes the process at <a href="https://www.usgs.gov/special-topic/water-science-school/science/how-streamflow-measured?qt-science_center_objects=0#qt-science_center_objects">https://www.usgs.gov/special-topic/water-science-school/science/how-streamflow-measured?qt-science_center_objects=0#qt-science_center_objects</a></p>
-<p><img src="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/wss-banner-staff-gage.jpg" alt=""> <br></p>
-<p>Streamgaging generally involves 3 steps:</p>
-<ol>
-<li><strong><em>Measuring stream stage</em></strong>—obtaining a continuous record of stage—the height of the water surface at a location along a stream or river</li>
-<li><strong><em>The discharge measurement</em></strong>—obtaining periodic measurements of discharge (the quantity of water passing a location along a stream)</li>
-<li><strong><em>The stage-discharge relation</em></strong>—defining the natural but often changing relation between the stage and discharge; using the stage-discharge relation to convert the continuously measured stage into estimates of streamflow or discharge</li>
-</ol>
-<p><img src="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/streamgage-graphics%20-%20Copy.jpg" width="50%"> <br></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h3 id="The-Dataset-|-Overview">The Dataset | Overview<a class="anchor-link" href="#The-Dataset-|-Overview">&#182;</a></h3><p>The dataset <a href="http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv">http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv</a> is contains the following information:</p>
-<table>
-<thead><tr>
-<th style="text-align:right">Columns</th>
-<th style="text-align:right">Info.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">Date</td>
-<td style="text-align:right">The date of a measurement in YYYY-MM format</td>
-</tr>
-<tr>
-<td style="text-align:right">ppt (inches)</td>
-<td style="text-align:right">The total recorded precipitation in inches for each month</td>
-</tr>
-<tr>
-<td style="text-align:right">tmin (degrees F)</td>
-<td style="text-align:right">The minimum recorded temperature in degrees Fahrenheit for each month</td>
-</tr>
-<tr>
-<td style="text-align:right">tmean (degrees F)</td>
-<td style="text-align:right">The average recorded temperature in degrees Fahrenheit for each month</td>
-</tr>
-<tr>
-<td style="text-align:right">tmax (degrees F)</td>
-<td style="text-align:right">The maximum recorded temperature in degrees Fahrenheit for each month</td>
-</tr>
-<tr>
-<td style="text-align:right">Flowrate (cfs)</td>
-<td style="text-align:right">The average recorded streamflow in cubic feet per second for each month</td>
-</tr>
-</tbody>
-</table>
-<p>A script to get and download the database is provided below:</p>
+<h2 id="Problem-0-(5-pts)-:-*Profile-your-computer*">Problem 0 (5 pts) : <font color="magenta">*Profile your computer*</font><a class="anchor-link" href="#Problem-0-(5-pts)-:-*Profile-your-computer*">&#182;</a></h2><p>Execute the code cell below exactly as written.  If you get an error just continue to the remaining problems.</p>
 
 </div>
 </div>
@@ -13227,10 +13106,99 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/ColoradoRiverData.csv&quot;</span>  <span class="c1"># set the url</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preamble script block to identify host, user, and kernel</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span> hostname
+<span class="o">!</span> whoami
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>atomickitty
+sensei
+/opt/jupyterhub/bin/python3
+3.8.10 (default, Mar 15 2022, 12:22:08) 
+[GCC 9.4.0]
+sys.version_info(major=3, minor=8, micro=10, releaselevel=&#39;final&#39;, serial=0)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if script is not executed</li>
+<li>+4 points if executed and there is an exception (pink) block; the script works regardless of architecture</li>
+<li>+5 points if executed.  Examine the user name ("whoami"), these should be unique for each student unless they are sharing files.</li>
+</ul>
+<p><hr></p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-1-(5-pts.)">Exercise 1 (5 pts.)<a class="anchor-link" href="#Exercise-1-(5-pts.)">&#182;</a></h2><p>The file <a href="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv">http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv</a> below contains values of impact strength of packaging materials in foot-pounds of branded boxes.</p>
+<p>Download the file and read it into a dataframe.</p>
+<!--```
+import requests
+remote_url="http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv"  # set the url
+rget = requests.get(remote_url, allow_redirects=True)  # get the remote resource, follow imbedded links
+localfile = open('boxes.csv','wb') # open connection to a local file same name as remote
+localfile.write(rget.content) # extract from the remote the contents,insert into the local file same name
+localfile.close() # close connection to the local file
+```-->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># download script goes here</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/5-ExamProblems/Exam3/spring2022/boxes.csv&quot;</span>  <span class="c1"># set the url</span>
 <span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
-<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ColoradoRiverData.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">);</span> <span class="c1"># extract from the remote the contents, assign</span>
+<span class="n">localfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;boxes.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="c1"># open connection to a local file same name as remote</span>
+<span class="n">localfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents,insert into the local file same name</span>
+<span class="n">localfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close connection to the local file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read dataframe script goes here</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="n">myboxes</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;boxes.csv&#39;</span><span class="p">)</span>  <span class="c1">#Reading a .csv file</span>
 </pre></div>
 
     </div>
@@ -13241,13 +13209,304 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Describe the dataframe, how many columns are in the dataframe?  What are the column names?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script/answers go here</span>
+<span class="n">myboxes</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Amazon Branded Boxes</th>
+      <th>Walmart Branded Boxes</th>
+      <th>US Postal Service Branded Boxes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>250000.000000</td>
+      <td>250000.000000</td>
+      <td>250000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.210037</td>
+      <td>0.780308</td>
+      <td>1.199937</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.300282</td>
+      <td>0.200181</td>
+      <td>0.119895</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-0.131195</td>
+      <td>-0.153808</td>
+      <td>0.663480</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.007211</td>
+      <td>0.646009</td>
+      <td>1.118755</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.211051</td>
+      <td>0.780008</td>
+      <td>1.200183</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.411952</td>
+      <td>0.914654</td>
+      <td>1.280694</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2.535326</td>
+      <td>1.655256</td>
+      <td>1.730012</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if script is not supplied</li>
+<li>+1 points if the download block appears to have run sucessfully, without an error block.  Students have used this tool for weeks now, so no excuse for fail to download.  If they manually downloaded, they may have not run the download part, but if the next part is correct award the point there</li>
+<li>+2 points if the import and read file are done correctly </li>
+<li>+1 points if the import and read file code look OK, but error block and no debug attempt, usually forget to import pandas.</li>
+<li>+2 points if the .head() or .describe() or .info() are supplied, or the dataframe is printed</li>
+</ul>
+<p><hr></p>
 <hr>
-<h2 id="Objective(s):">Objective(s):<a class="anchor-link" href="#Objective(s):">&#182;</a></h2><ul>
-<li>Literature scan on the importance and approaches to streamflow forecasting. </li>
-<li>Analyse an existing hydro-meteorological database and build a data model to predict the streamflow based on various features.</li>
-<li>Build an interface to allow users to enter relative input features (e.g., precipitation) and return an estimated flowrate and an assessment of the uncertainty in the estimate</li>
-<li>Build an interface to allow users to enter relative input features (e.g., precipitation) and return an estimated flow state.</li>
-<li>Document the project in an interim and final report; prepare videos of use cases and project mangagement issues.</li>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exercise 2 (15 pts.) Produce a histogram of the Amazon series and the USPS series on the same plot.  Plot Amazon using red, and USPS using blue.</p>
+<blockquote><ul>
+<li>Import suitable package to build histograms</li>
+<li>Apply package with plotting call to prodice two histograms on same figure space</li>
+<li>Label plot and axes with suitable annotation</li>
+</ul>
+</blockquote>
+<p>Comment on the histograms, do they overlap?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script goes here</span>
+<span class="c1">#myboxes[&#39;Amazon Branded Boxes&#39;].hist(alpha=0.4,color=&#39;red&#39;,density=&quot;True&quot;,bins=100,legend=&#39;True&#39;,ax.set_xlabel(&#39;x-label&#39;),ax.set_ylabel(&#39;y-label&#39;))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;Amazon Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;False&quot;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;US Postal Service Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="s2">&quot;False&quot;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x-label&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0.5, 1.0, &#39;title&#39;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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evTowU033cTbb7/N+vXr+e6773J12Rw6dIi33nqL+++/n7vuiswq/5e//IVq1aqxYcMG7rrrLlatirwO27dvZ8qUKSxatIh33nmHjh07cu+997J//36uvfZaXnjhBVatWsX//d//FfgaL126lLZt29KwYUMWLVrEVVddBcDEiRNp164d//nPf/jtb3/LsGHDqFixIjNnzuSGG25g0aJFvPLKK0ycOJENGzYwb9483njjDVavXk1KSkqsdfTFF1+wfv161q1bx8iRI0v0f1BeKBGIlMCcOXMYPHgwAP/zP4N59tkfuoc6depEvXr1qFKlCqeddhp9+vQBoHXr1mzZsgWInAtxwQUX0Lp1a6ZOncp7770Xe/727dsZOnQoTz75JDVq1GDZsmX87//+LwAtW7akUaNGfPTRRwCcd9551KhRg6pVq3LGGWfw6af5zys2e/Zs1q5dy2effca0adNi5VJSUrj00ktj5RYvXkyXLl1o3bo1r7/+eq64fvKTnwDQoUOHWD2WLFkSi61Nmza0adMGgOXLl/P+++/TvXt32rZty6xZs/j000/54IMPaNKkCc2aNcPMYs/NT3bX0Oeff87IkSNjLZ5ly5YxdOhQAM4991x27NjBnj17OPPMMxk6dCgXX3wxjz76KJUrV+a1115j1apVdOrUibZt2/Laa6/x8ccf07RpUz7++GPGjBnDK6+8wgknnFBgHGGgwWKRYtq5cyevv/4669atw8z4/vvDmBl33jkVAPcq/Pe/cMopUKFCBapEB6YrVKjAoUOHABgzZgw/+9nP6NevHxkZGUyKDlAfPnyYwYMHM2HCBNLS0oqMpUqOQe+UlJTY9gtSp04d2rdvz4oVK2jUqBFVq1aNtQ7279/P6NGjWblyJQ0aNGDSpEm5jkfP3lc8+3F3zj///FzjJxBpwZREv379ciWsgqxbt46aNWvy1VdfxeIYPnw4v/vd744ou2bNGv75z38yY8YMnnrqKR599NESxVYeqEUgUkzz589n6NChfPrpp2zZsoWVKz+nYcMmrFixNFe5wgaOd+/eTf369QGYNWtWbPn48eNp06ZNrLUBkV/Gs2fPBuCjjz7is88+o0WLFiWKfd++fbz77rucdtppR6zL/tKvXbs2mZmZzJ8/v8jtnXPOOTz55JMArF+/nrVr1wLQtWtX3njjDTZt2gREuqA++ugjWrZsyZYtW2JjJXkTRUGWLVsWiznn65GRkUHt2rU54YQTeOaZZ9i5cydLlixhzJgx7Nq1i/POO4/58+fHEsPOnTv59NNP2b59O1lZWVx66aVMmTKFd955J644yiu1CKTsK+bho9/v3UuVo5iaYM6cOdx+++25ll144aU8++wc+vUbFNc2Jk2axOWXX86JJ57IueeeyyeffALAtGnTOPPMM2nbti0AkydPZvTo0dxwww20bt061hdepbDDX/Nx5ZVXxg4fHTFiBB06HDnRb82aNbn22mtJS0vjRz/6EZ06dSpyuzfccAMjR46kVatWtGrVKrbdOnXqMHPmTIYMGcKBA5EJhqdMmULz5s156KGHuOiii6hWrRo9e/Zk7969+W47e4zA3alRowYPP/xw7LW76qqr6NatG6mpqcyaNYvt27czfvx4XnvtNRo0aMBNN93E2LFjmTVrFlOmTKFPnz5kZWVRqVIlHnzwQY477jhGjhxJVlYWQL4thjCx7KMCyoqOHTv6ypUrE77fjIwM0tPTE77fRCorddywYQOtWrUq8fNLa46aeA4VPeWUo95NiWgenvKhpHXM7zNiZqvcPd8TPNQ1JCISckoEIiIhp0QgIhJySgQiIiGnRCAiEnJKBCIiIafzCKTMK+ZpBBw4UPmoZqHesmULF198Ma++uj627A9/mMTxx6dy/fU/Z9Wq5UycOJYDBw6QlXWAQYMGxc4czpZzmuUDBw4wePBgJk6cWKx6ZGRkULlyZc4+++xCy82cOZOVK1cyffr0XMu//PJLrr76aj7//HMOHjxI48aNWbhwYbFiKMjZZ5/Nm2++eVTbmDlzJr/4xS+oX78+Bw8epFWrVjz++ONUq1atVGLMu6/8XqPCNG7cmJUrV1K7du0jllevXp2UlBQOHz7MlClT6N+/f2mHXKrUIhApgcJmWLjlluHcc89D/Otfq1m/fj0//elP8y2XPZfOypUr+fvf/17ss1szMjKO6st2woQJnH/++axZs4b333+fu+++O+7nunvsZKz8HG0SyDZo0CBWr17Ne++9R+XKlZk3b94RZYqa7iIZFi9ezOrVq5k/fz4333xzssMpkhKBSCnbseMr6tatB0Tm5TnjjDMKLX/88cfToUMHNm3axOrVq+natStt2rRh4MCBfPPNNwD86U9/4owzzohNP7FlyxZmzJjBfffdR9u2bVm6dGmuqa379esXm9q6INu2bePUU0+NPc6eMA5g6tSpdOrUiTZt2sRaKlu2bKFFixYMGzaMtLQ0fv3rX/OLX/wi9pyZM2dy0003AZHprbPdc889tG7dmrPOOovx48cDsHnzZvr27UuHDh3o2bMnH3zwQaGxHjp0iG+//TY2FfWIESO45ZZb6NKlC7fddhtvvfUW3bp1o127dpx99tl8+OGHsZgKmqr7scceo3nz5nTu3Jk33ngjtvzrr7/m0ksvpVOnTnTq1Cm2bseOHfTp04czzzyTa665hnhOxt2zZ08sZoB7772XtLQ00tLSuP/++wG47777YjOrrlu3jrS0NPbt28fmzZsZOHDgEa/RP/7xD9LS0jjrrLM455xziowhHuoaEill1147jnPOaUG3bumkp/dl7NjhVK1atcDyO3bsYPny5dx5550MGTKEBx54gF69ejFhwgTuuusu7r//fu6++24++eQTqlSpwq5du6hZsybXX389qamp/PznPwfgm2++Yfny5ZgZ06dP5/e//z1/+MMfCtzvjTfeyKBBg5g+fTo//vGPGTlyJKeccgqvvvoqGzdu5K233sLd6devH0uWLKFhw4Zs3LiRWbNm0bVrV77++mu6devG1KmRyfbmzZsXuwZAtpdffpnnnnuOFStWUK1aNXbu3AnAqFGjmDFjBs2aNWPFihWMHj2a119//YgY582bx7Jly9i2bRvNmzfnkksuia374osvePPNN0lJSWHPnj0sXbqUihUrsmjRIn75y1/y9NNPA5GJ7t59912qVKlCixYtGDNmDBUrVmTixImsWrWKGjVq0Lt3b9q1awfA2LFjGTduHD169OCzzz7jggsuiE2z3aNHDyZMmMBLL73EI488UuBr27t3b9ydjz/+mKeeegqAVatW8dhjj7FixQrcnS5dutCrVy/Gjh1Leno6CxYs4De/+Q1//etfqVatGqNGjWLatGm0a9cu12s0efJk/vnPf1K/fn127dpVYAzFEVgiMLOqwBKgSnQ/8919Yp4yVYDHgQ7ADmCQu28JKiaR0lDwxcEjy8eNm8DAgVfy73+/yrPPPsnLL8+JXTAlp6VLl9KuXTsqVKjA+PHjOfXUU9m1axe9evUCYPjw4Vx++eVA5Nf6lVdeyYABAxgwYEC+e9+6dSuDBg1i27Zt7N+/P9+J5XK64IIL+Pjjj3nllVd4+eWXadeuHevXr+fVV1/l1VdfjX0xZmZmsnHjRho2bEijRo3o2rUrEJlPqGnTpixfvpxmzZrxwQcf0L1791z7WLRoESNHjoz165900klkZmby5ptvxuoGxOYjyis7Ubk7N954I1OnTo21KgYMGBCbOXX37t0MHz6cjRs3YmYcPHgwto3sqbqB2FTd27dvJz09nTp16sT2kz2196JFi3j//fdjz9+zZw+ZmZksWbIkdiGdiy66KNcv/bwWL15M7dq12bx5M+eddx7p6eksW7aMgQMHcvzxxwORab2z/wdmzpxJmzZtuO666+jevXvsNRo+fDgVKlTI9Rp1796dESNG8NOf/jQ2NfjRCrJFcAA4190zzawSsMzMXnb35TnKXA184+6nm9lg4B4gvlm7RJKkVq1a7N79Ta5lu3btpEGDJrHHjRufRuPGN3Dllddy1ll12LFjB7Vq1cr1nJ49e+a68Mvu3bsL3OdLL73EkiVLeOGFF/jNb37DunXrjiiTc2rrhQsXxi52U5iTTjqJK664giuuuIKLL76YJUuW4O7ccccdXHfddbnKbtmyJfYllm3w4ME89dRTtGzZkoEDBxaSJH+QlZVFzZo1izUltZlxySWX8MADD8QSQc5Y7rzzTnr37s2CBQvYsmVLrjmzijtVd1ZWFsuXLy+0FRev0047jbp16+ZKLPnZuHEjqamp/Dc6gVX2a/TGG28cMdfQjBkzWLFiBS+99BIdOnRg1apVR/xvFVdgYwQekRl9WCl6y9up1h/InoN3PnCexfOfJJJEqampnHxyPZYti3RlfPPNThYvfoXOnXsAsGjRS7H+408+2UhKSgo1a9Yscrs1atTgxBNPjF0G8oknnqBXr15kZWXx+eef07t3b+655x52795NZmYm1atXzzVzZ86prbOnhi7M66+/zr59+4DI5GabN2+mYcOGXHDBBTz66KOxS0t+8cUXsWmc8xo4cCDPPfdcrgv15HT++efz2GOPxfazc+dOTjjhBJo0acI//vEPIDLwvGbNmiLjzTkVdV456z5z5swit9WlSxf+/e9/s2PHDg4ePBiLBaBPnz6xK8nBD9dQyDnl9ssvvxwbvynMV199xSeffEKjRo3o2bMnzz77LPv27ePbb79lwYIF9OzZk927d3PzzTezZMkSduzYwfz582Ov0YIFC4Dcr9HmzZvp0qULkydPpk6dOgVela44Ah0jMLMUYBVwOvCgu6/IU6Q+8DmAux8ys91ALWB7nu2MAkYB1K1bN99mdtAyMzOTst9EKit1rFGjRq4vwFtvLd7zDx8+TErKkRdvz1bArMi5/OUvf+G2227l17++BYDbbruNFi1OBvayYMGj3HXXWKpVq0ZKSkX+9re/xb4Is+3bt49Dhw4dMQXzn//8Z2655Ra+++47GjduzJ///Gd27drFkCFD2LNnD+7OddddR0pKCr1792bYsGEsWLCAqVOncvvtt3PZZZdRs2ZNevTowaeffsrevXvZv38/33///RH7evPNNxk9ejQVK1YkKyuLoUOH0rJlSyDSbdGlSxcg8sv7b3/7GykpKWRlZeXaTsWKFWnWrBkffvghrVq1yrVu7969dO/enQsuuID27dtTuXJl+vTpw8SJE/nrX//KuHHjmDx5MgcPHuTSSy+ladOmueLbv38/c+fOZcmSJWRlZXHKKacwY8YM9u7dy8GDB3PFcuONN3L99dczefJk+vTpE7vOcd66Hzp0iH379pGamsr48ePp0qULNWrUoE2bNrFyv/3tb7n11ltJS0vj0KFDdO/enfvvv5+f/exnXHXVVcyePZsuXbrQoEEDMjMzj5gS3N3p1asXKSkpHDx4kEmTJlGtWjWaNWvGkCFD6NgxMgHosGHDOP300xk9ejRXX3019erV449//CMXXXQR7du3j71GU6dOzfUajRs3js2bN8f207Rp0yPe2/379xfrs5yQaajNrCawABjj7utzLF8P9HX3rdHHm4Eu7r493w2haaiDVFbqmOxpqOOZfjqnZExFrSmay4dyNQ21u+8CFgN986z6AmgAYGYVgRpEBo1FRCRBAksEZlYn2hLAzI4DzgfyHiz8PDA8ev8y4HUva1fKESlCcVsQIokW5BhBPWBWdJygAvCUu79oZpOBle7+PPAI8ISZbQJ2AkeONonkw93jOkJFJGxK8ls6sETg7muBdvksn5Dj/n7g8rxlRApTtWrV2OGYSgYiP3B3duzYUexDX3VmsZQ5p556Klu3buXrr78u0fP3799f4mPES3oiZyGnCATiaOpYVqiO+atatWquqUPioUQgZU6lSpVo0qRJ0QULkJGRETtrtriKO9NpaT8/XkdTx7JCdSw9mnRORCTklAhEREJOiUBEJOSUCEREQk6JQEQk5JQI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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if script is not executed</li>
+<li>+5 points if executed and there is an exception (pink) block</li>
+<li>+10 points if histograms are plotted on same chart as specified.</li>
+<li>-1 no xlabel and/or ylabel</li>
+<li>-1 no title</li>
+<li>-1 no legend</li>
+<li>-2 points if two separate graph objects</li>
+<li>-1 points if colors are not explicity specified (defaults will typically be orange and blue)</li>
+</ul>
+
+</div>
+</div>
+</div>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+myboxes.plot(kind='hist',
+        alpha=0.5,
+        bins=100,
+        title='Histogram Of Box Strength',
+        rot=45,
+        grid=True,
+        figsize=(12,8),
+        fontsize=15, 
+        color=['red', 'blue', 'green'])
+plt.xlabel('Strength')
+plt.ylabel("Count");
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exercise 3 (5 pts.) Determine the mean strength and the standard deviation of the Amazon and USPS brands.  Which one has a greater mean value? Which one has the greater standard deviation?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script goes here</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amazon mean: &quot;</span><span class="p">,</span><span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;Amazon Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amazon   sd: &quot;</span><span class="p">,</span><span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;Amazon Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;###################################################&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;USPS mean: &quot;</span><span class="p">,</span><span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;US Postal Service Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;USPS  sd: &quot;</span><span class="p">,</span><span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;US Postal Service Branded Boxes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Amazon mean:  1.210036656744606
+Amazon   sd:  0.3002821784033327
+###################################################
+USPS mean:  1.1999368519101166
+USPS  sd:  0.11989487155671906
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if script is not executed</li>
+<li>+4 points if executed and there is an exception (pink) block; the script works regardless of architecture</li>
+<li>+5 points if executed and report mean and sd each series, with some kind of label .describe() or .info() is fine</li>
+<li>-2 syntax, did not access series or move to a list and process.</li>
 </ul>
 
 </div>
@@ -13256,201 +13515,231 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h2 id="Tasks:">Tasks:<a class="anchor-link" href="#Tasks:">&#182;</a></h2><h3 id="Literature-Research:"><strong>Literature Research:</strong><a class="anchor-link" href="#Literature-Research:">&#182;</a></h3><p>In a short essay (1-2 pages):</p>
-<ul>
-<li>Describe the importance and challenges of streamflow forecasting.</li>
-<li>Summarize the value of a data model in the context of the conventional approach to streamflow forecasting</li>
-</ul>
-<p>Some places to start are:</p>
-<ul>
-<li><p>Cuo, L., Pagano, T. C., &amp; Wang, Q. J. (2011). A Review of Quantitative Precipitation Forecasts and Their Use in Short- to Medium-Range Streamflow Forecasting, Journal of Hydrometeorology, 12(5), 713-728. Retrieved Oct 21, 2021, from <a href="https://journals.ametsoc.org/view/journals/hydr/12/5/2011jhm1347_">https://journals.ametsoc.org/view/journals/hydr/12/5/2011jhm1347_</a></p>
-</li>
-<li><p>Yaseen, Z. M., El-Shafie, A., Jaafar, O., Afan, H. A., &amp; Sayl, K. N. (2015). Artificial intelligence based models for stream-flow forecasting: 2000–2015. Journal of Hydrology, 530, 829-844. available at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022169415008069">https://www.sciencedirect.com/science/article/abs/pii/S0022169415008069</a></p>
-</li>
-</ul>
-<ul>
-<li>Zhenghao Zhang, Qiang Zhang &amp; Vijay P. Singh (2018) Univariate streamflow forecasting using commonly used data-driven models: literature review and case study, Hydrological Sciences Journal, 63:7, 1091-1111, DOI: 10.1080/02626667.2018.1469756 available at <a href="https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1469756">https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1469756</a></li>
-</ul>
-<ul>
-<li>Mosavi A, Ozturk P, Chau K-w. Flood Prediction Using Machine Learning Models: Literature Review. Water. 2018; 10(11):1536. <a href="https://doi.org/10.3390/w10111536">https://doi.org/10.3390/w10111536</a> available at <a href="https://www.mdpi.com/2073-4441/10/11/1536">https://www.mdpi.com/2073-4441/10/11/1536</a></li>
-</ul>
-<ul>
-<li>Cheng, M., Fang, F., Kinouchi, T., Navon, I. M., &amp; Pain, C. C. (2020). Long lead-time daily and monthly streamflow forecasting using machine learning methods. Journal of Hydrology, 590, 125376. available at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022169420308362">https://www.sciencedirect.com/science/article/abs/pii/S0022169420308362</a></li>
-</ul>
-<h3 id="Exploratory-Data-Analysis-(EDA):"><strong>Exploratory Data Analysis (EDA):</strong><a class="anchor-link" href="#Exploratory-Data-Analysis-(EDA):">&#182;</a></h3><p>Provide a summary (description) of the dataset in 2-3 pages. This summery should appropriately present the essential infromation about the dataset in a concise, well-written and clear manner. Things you may want to include ...</p>
-<ul>
-<li>An overall description of the dataset</li>
-<li>A summary of the information extracted from the important statistics of different parameters in the dataset</li>
-<li>A summary of the distributional charactristics of different parameters in the dataset </li>
-<li>A summary of the relationship status within the different parameters in the dataset</li>
-</ul>
-<p>Your EDA section must include your answers for the following questions:</p>
-<ul>
-<li>Which parameter (between precipitation and temperature values) can be a better predictor for streamflow at the station of study? why?</li>
-<li>What can you infer from comparing the maximum recorded floods in the 90s, 2000s, and 2010s? Based on the records available in the dataset, would you expect to see more or less extreme floods in the future?</li>
-<li>Periods with the flowrate of 0 (No-flow periods) can be viewed as indicators of drought. What can you understand from comparing the number of no-flow days in the 90s, 2000s, and 2010s? Is the upstream of the Colorado River becoming more or less prone to drought?</li>
-</ul>
-<h3 id="Model-Building:-Part-1-|-Forecasting-flowrates"><strong>Model Building: Part 1 | Forecasting flowrates</strong><a class="anchor-link" href="#Model-Building:-Part-1-|-Forecasting-flowrates">&#182;</a></h3><p>In this part, the goal is to make models to predict flowrates in the Colorado River, and then evaluate their performance using appropriate goodness-of-fit measures, and analyze the outcomes. Use the first 75% of the dataset for training your models and the remaining 25% for testing.</p>
-<ul>
-<li>Build 3 data models that you see appropriate for this task. (<em>Please note that these models should be unique and this uniqueness can be defined based on using different algorithms, inputs, or both.</em>)</li>
-<li>Assess data model quality (decide which model is best) </li>
-<li>Build the input data interface for using the "best" model</li>
-<li>Using your best model determine the estimated flowrate for the hydro-meteorological conditions in the table below:</li>
-</ul>
-<table>
-<thead><tr>
-<th style="text-align:left">ppt</th>
-<th style="text-align:left">tmax</th>
-<th style="text-align:left">tmean</th>
-<th style="text-align:left">tmin</th>
-<th style="text-align:left">last month flowrate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">0.0</td>
-<td style="text-align:left">113.0</td>
-<td style="text-align:left">99.0</td>
-<td style="text-align:left">85.0</td>
-<td style="text-align:left">0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">4.5</td>
-<td style="text-align:left">95.0</td>
-<td style="text-align:left">85.0</td>
-<td style="text-align:left">75.0</td>
-<td style="text-align:left">74.5</td>
-</tr>
-<tr>
-<td style="text-align:left">2.2</td>
-<td style="text-align:left">20.0</td>
-<td style="text-align:left">10.0</td>
-<td style="text-align:left">0.0</td>
-<td style="text-align:left">55.0</td>
-</tr>
-<tr>
-<td style="text-align:left">1.0</td>
-<td style="text-align:left">80.0</td>
-<td style="text-align:left">60.0</td>
-<td style="text-align:left">40.0</td>
-<td style="text-align:left">36.3</td>
-</tr>
-<tr>
-<td style="text-align:left">0.0</td>
-<td style="text-align:left">80.0</td>
-<td style="text-align:left">60.0</td>
-<td style="text-align:left">40.0</td>
-<td style="text-align:left">12.0</td>
-</tr>
-</tbody>
-</table>
-<p><em>note that you may not all the values for each case, depending on your best model.</em></p>
-<p>Your "Model Building: Part 1" section must include your answers for the following questions:</p>
-<ul>
-<li>What are the most important assumptions in your modeling?</li>
-<li>Is it benefitial to use the streamflow recorded in the previous step (a lagged streamflow value) as an input feature? why?</li>
-<li>Which parameter (between precipitation and temperature values) was be a better predictor for streamflow at the station of study? why?</li>
-<li>Is there a specific range of streamflow values that are harder to capture accurately for your data models? If yes, what range and why?</li>
-</ul>
-<h3 id="Model-Building:-Part-2-|-Forecasting-flow-states"><strong>Model Building: Part 2 | Forecasting flow states</strong><a class="anchor-link" href="#Model-Building:-Part-2-|-Forecasting-flow-states">&#182;</a></h3><p>In this part, the goal is to make models to predict whether the Colorado River's flowstate is in the "Flow" or the "No-Flow" state. Then, evaluate their performance using appropriate goodness-of-fit measures, and analyze the outcomes. Use the first 75% of the dataset for training your models and the remaining 25% for testing.</p>
-<ul>
-<li>Add a column to the dataframe for the flow state: It should be 0 when the flowrate is equal to 0 and 1 when the flowrate is non-zero. </li>
-<li>Build 3 data models that you see appropriate for predicting the flow state. (<em>Please note that these models should be unique and this uniqueness can be defined based on using different algorithms, inputs, or both.</em>)</li>
-<li>Assess data model quality (decide which model is best) </li>
-<li>Build the input data interface for using the "best" model</li>
-<li>Using your best model determine the estimated flow state for the hydro-meteorological conditions in the table below:</li>
-</ul>
-<table>
-<thead><tr>
-<th style="text-align:left">ppt</th>
-<th style="text-align:left">tmax</th>
-<th style="text-align:left">tmean</th>
-<th style="text-align:left">tmin</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">0.0</td>
-<td style="text-align:left">113.0</td>
-<td style="text-align:left">99.0</td>
-<td style="text-align:left">85.0</td>
-</tr>
-<tr>
-<td style="text-align:left">4.5</td>
-<td style="text-align:left">95.0</td>
-<td style="text-align:left">85.0</td>
-<td style="text-align:left">75.0</td>
-</tr>
-<tr>
-<td style="text-align:left">2.2</td>
-<td style="text-align:left">20.0</td>
-<td style="text-align:left">10.0</td>
-<td style="text-align:left">0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">1.0</td>
-<td style="text-align:left">80.0</td>
-<td style="text-align:left">60.0</td>
-<td style="text-align:left">40.0</td>
-</tr>
-<tr>
-<td style="text-align:left">0.0</td>
-<td style="text-align:left">80.0</td>
-<td style="text-align:left">60.0</td>
-<td style="text-align:left">40.0</td>
-</tr>
-</tbody>
-</table>
-<p><em>note that you may not all the values for each case, depending on your best model.</em></p>
-<p>Your "Model Building: Part 2" section must include your answers for the following questions:</p>
-<ul>
-<li>What are the most important assumptions in your modeling?</li>
-<li>Is it more difficult for the model to capture one flow state more than the other? If yes, which one? why?</li>
-<li>Which parameter (between precipitation and temperature values) was be a better predictor for flow state at the station of study? why?</li>
-<li>What can be some applications of this kind of streamflow state modeling?</li>
-</ul>
+<p>Exercise 4 (5 pts.) Test the Amazon data for normality, interpret the results.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script here</span>
+<span class="c1">#import warnings</span>
+<span class="c1">#warnings.filterwarnings(&#39;ignore&#39;)</span>
+<span class="c1"># Example of the Shapiro-Wilk Normality Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">shapiro</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;Amazon Branded Boxes&#39;</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_o: Normal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_a: Not Normal&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stat=1.000, p=1.000
+H_o: Normal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if no script executed</li>
+<li>+4 points if executed and there is an <strong>exception</strong> (pink) block; </li>
+<li>+6 points if suppress warnings (optional bonus)</li>
+<li>+5 points if executed.</li>
+</ul>
+<p><hr></p>
+<hr>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h2 id="Deliverables:"><strong>Deliverables:</strong><a class="anchor-link" href="#Deliverables:">&#182;</a></h2><h4 id="Effort-Sheets-(due-every-week-on-Friday):">Effort Sheets (due every week on Friday):<a class="anchor-link" href="#Effort-Sheets-(due-every-week-on-Friday):">&#182;</a></h4><p>Each team must submit an effort sheet which is a table with a clear discription of the tasks undertaken by each member and has the signiture of all team members. The effort sheets should be submitted digitally via email.</p>
-<h4 id="Interim-report-(due-Wednesday-April-20th,-2022):">Interim report (due Wednesday April 20th, 2022):<a class="anchor-link" href="#Interim-report-(due-Wednesday-April-20th,-2022):">&#182;</a></h4><p>This report must include:</p>
-<ul>
-<li>The "Literature Research" section</li>
-<li>A description of the Colorado River database </li>
-<li>A plan of work for how you want to handle the project and solve the modeling tasks.  </li>
-<li>Break down each task into manageable subtasks and describe how you intend to solve the subtasks and how you will test each task. (Perhaps make a simple Gantt Chart)</li>
-<li>Address the responsibilities of each team member for tasks completed and tasks to be completed until the end of the semester. (Perhaps make explicit subtask assignments)</li>
-</ul>
-<p>Your report should be limited to 7 pages, 12 pt font size, double linespacing (exclusive of references which are NOT included in the page count).  You need to cite/reference all sources you used. This report must be submitted by Midnight April 20th in PDF format.</p>
-<h4 id="Final-report-(due-Tuesday-May-2nd,-2022):">Final report (due Tuesday May 2nd, 2022):<a class="anchor-link" href="#Final-report-(due-Tuesday-May-2nd,-2022):">&#182;</a></h4><p>This report must include:</p>
-<ul>
-<li>All the required parts, including the ones from the Interim report as well as the sections on EDA and Model Building parts.</li>
-<li>All the filled effort sheets with the signitures of the team members with a clear description of all the tasks performed by each member.</li>
-<li><p>All the references used in the entire length of the project. <br>
-This report must be submitted by Midnight May 2nd in PDF format, along with the following documents:</p>
-<ul>
-<li>A well-documented Jupyter Notebook (.ipynb file) for the analysis and implementation of the data models.</li>
-<li><p>A well-documented Jupyter Notebook (.ipynb file) for the implementation of the data model user interface.</p>
-<p><strong>Above items can reside in a single notebook; but clearly identify sections that perform different tasks.</strong></p>
-</li>
-<li><p>A how-to video demonstrating the application, performance and description of what you did for the project, including the problems that you solved as well as those that you were not able to solve.</p>
-</li>
-<li><p>A project management video (up to 5 minutes) in which you explain how you completed the project and how you worked as a team.</p>
-<p><strong>Above items can reside in a single video; but structure the video into the two parts; use an obvious transition when moving from "how to ..." into the project management portion.</strong><br>
-<strong>Keep the total video length to less than 10 minutes; submit as an "unlisted" YouTube video, and just supply the link (someone on each team is likely to have a YouTube creator account).  Keep in mind a 10 minute video can approach 100MB file size before compression, so it won't upload to Blackboard and cannot be emailed.</strong></p>
-</li>
-</ul>
-</li>
-</ul>
+<p>Exercise 5 (5 pts.) Test the USPS data for normality, interpret the results.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your script here</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="c1"># Example of the Shapiro-Wilk Normality Test</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">shapiro</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;US Postal Service Branded Boxes&#39;</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_o: Normal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_a: Not Normal&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stat=1.000, p=1.000
+H_o: Normal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if no script executed</li>
+<li>+4 points if executed and there is an <strong>exception</strong> (pink) block; </li>
+<li>+6 points if suppress warnings (optional bonus)</li>
+<li>+5 points if executed.</li>
+</ul>
+<p><hr></p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exercise 6 (10 pts.)Determine if there is evidence of a difference in mean strength between the two brands.<br>
+Use an appropriate hypothesis test to support your assertion at a level of significance of $\alpha = 0.10$.</p>
+<blockquote><ul>
+<li>Choose a test and justify choice</li>
+<li>Import suitable package to run the test</li>
+<li>Apply the test and interpret the results</li>
+<li>Report result with suitable annotation</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example of the Student&#39;s t-test</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.10</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;Amazon Branded Boxes&#39;</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">myboxes</span><span class="p">[</span><span class="s1">&#39;US Postal Service Branded Boxes&#39;</span><span class="p">]</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_a: Means are not equal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H_o: Means are equal&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stat=15.618, p=0.000
+H_o: Means are equal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scoring-Suggestions"><font color="red">Scoring Suggestions</font><a class="anchor-link" href="#Scoring-Suggestions">&#182;</a></h2><ul>
+<li>+0 points if no script executed</li>
+<li>+4 points if executed and there is an <strong>exception</strong> (pink) block; </li>
+<li>-1 points if fail to change the "alpha" value</li>
+<li>+5 if justify specific hypothesis test, nonparametric OK, but need a justification in the written part</li>
+<li>+5 points if executed and sense of test is correct (note need to specify the Ho and Ha to be useful)</li>
+</ul>
+<p><hr></p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
