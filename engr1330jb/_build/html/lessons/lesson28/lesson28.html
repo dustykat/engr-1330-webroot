@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="29: Multiple Least Squares" href="../lesson29/lesson29.html" />
-    <link rel="prev" title="27: Ordinary Least Squares" href="../lesson27/lesson27.html" />
+    <link rel="prev" title="27: Project Planning Workshop" href="../lesson27/lesson27.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,7 +261,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson27/lesson27.html">
-   27: Ordinary Least Squares
+   27: Project Planning Workshop
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -427,6 +429,109 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology-from-a-marksmanship-analog">
+   Terminology from a Marksmanship Analog
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accuracy">
+     Accuracy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aiming-point">
+     Aiming Point
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precision">
+     Precision
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias">
+     Bias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#residuals">
+     Residuals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression-br">
+   Linear Regression
+   <br/>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">
+   Maximum Likelihood Estimation (MLE)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-now-it-s-time-to-put-it-all-together">
+     And now it’s time to put it all together:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures-of-fitness">
+   Measures of “Fitness”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goodness-of-fit">
+   Goodness-of-Fit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-absolute-error-mae-br">
+     Mean Absolute Error (MAE):
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-squared-error-mse-and-root-mean-squared-error-rmse-br">
+     Mean Squared Error (MSE) and Root Mean Squared Error (RMSE):
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-2-metric-br">
+     R^2 Metric:
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-confident-are-we-with-a-prediction">
+     How confident are we with a prediction?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#marksmanship-example">
+       Marksmanship Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-continued-br">
+     Example (Continued)
+     <br/>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -450,11 +555,1061 @@
 <div class="tex2jax_ignore mathjax_ignore section" id="regression-quality-assessments">
 <h1>28: Regression Quality Assessments<a class="headerlink" href="#regression-quality-assessments" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>parameter interval estimates</p></li>
-<li><p>prediction interval estimates</p></li>
+<li><p>Goodness-of-fit metrics</p></li>
+<li><p>Interval estimates of parameters (slope, intercept, …)</p></li>
+<li><p>Interval estimates of predictions</p></li>
 </ul>
+<div class="section" id="terminology-from-a-marksmanship-analog">
+<h2>Terminology from a Marksmanship Analog<a class="headerlink" href="#terminology-from-a-marksmanship-analog" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Can Skip for Brevity</p>
+<p>One can go through this section quickly, and leave reader to explore details - we are mostly after some of the terminology, but the marksman analog seems useful.  Skip to “Measures of Fitness” below for brevity</p>
+</div>
+<p>Pretend we are working on a FPS game named “Olympic 10-meter Air Pistol” we are developing as a training tool. <a class="reference external" href="https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol">https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol</a></p>
+<p>First some packages</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So first we are going to build a function that shows a target, with strikes on the target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="n">centerx</span><span class="p">,</span><span class="n">centery</span><span class="p">):</span>
+<span class="c1">#    import matplotlib.pyplot as plt</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># note we must use plt.subplots, not plt.subplot</span>
+    <span class="n">circle1</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">circle2</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle3</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle4</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle5</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle6</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle7</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">circle8</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1">#vector of hits</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle7</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle8</span><span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="accuracy">
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<p>The concept of accuracy is a measure of how close to the “true” or population value is our estimate.<br />
+If we are estimating the mean value, then the “bullseye” is the population mean <span class="math notranslate nohighlight">\(\mu\)</span>, our estimate is <span class="math notranslate nohighlight">\(\bar x\)</span>.</p>
+<p>Consider the graphical simulator below.  The target is centered at (0,0).  We will take 10 shots and evaluate our performance, lets say that we are kind of old and shaky, sometimes we hit the bullseye, sometimes we don’t but in 40 years of shooting, on average, we get good scores and tend to hit near the center.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.60</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_6_0.png" src="../../_images/lesson28_6_0.png" />
+<img alt="../../_images/lesson28_6_1.png" src="../../_images/lesson28_6_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.779440739824907
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aiming-point">
+<h3>Aiming Point<a class="headerlink" href="#aiming-point" title="Permalink to this headline">¶</a></h3>
+<p>Consider the graphical simulator below. The target is centered at (0,0). We will take 10 shots and evaluate our performance, lets say that we are kind of sloppy and shaky, sometimes we hit the bullseye, sometimes we don’t but in 40 years of shooting, on average, we get ok scores – in this case our mean value deviates from zero, say a bit left and low.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_8_0.png" src="../../_images/lesson28_8_0.png" />
+<img alt="../../_images/lesson28_8_1.png" src="../../_images/lesson28_8_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.8913414605061174
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="precision">
+<h3>Precision<a class="headerlink" href="#precision" title="Permalink to this headline">¶</a></h3>
+<p>The concept of precision is a measure of the repeatability of our estimates.  In this context the dispersion is the metric, i.e. variance.  Consider the graphical simulator below. The target is centered at (0,0). We will take 10 shots and evaluate our performance, lets say that we are kind of sloppy but very steady, all our shots are quite close, and it really depends on how we set up our sights.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_10_0.png" src="../../_images/lesson28_10_0.png" />
+<img alt="../../_images/lesson28_10_1.png" src="../../_images/lesson28_10_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.727158140851791
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we can adjust our sights to hit a bit high and right (of the red dots) then we anticipate a better score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">4.00</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_12_0.png" src="../../_images/lesson28_12_0.png" />
+<img alt="../../_images/lesson28_12_1.png" src="../../_images/lesson28_12_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.653662197500305
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bias">
+<h3>Bias<a class="headerlink" href="#bias" title="Permalink to this headline">¶</a></h3>
+<p>Bias is a systematic “error” or offset - similar to the distance from the bullseye in our examples.  If we have a precise rifle that shoots a known distance from the bullseye, thats still a useful tool - we either adjust our aiming point, or the device to account for this bias.  Its akin to the last example where we demonstrate the contribution to error from a poor point of aim, and an unsteady hand.</p>
+</div>
+<div class="section" id="residuals">
+<h3>Residuals<a class="headerlink" href="#residuals" title="Permalink to this headline">¶</a></h3>
+<p>In the context of our target shooting, the residual is the distance from the target that our model (the rifle) places the estimate (shot).  Lets examine the simulations over again.  First with a bias and unsteady hands</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_15_0.png" src="../../_images/lesson28_15_0.png" />
+<img alt="../../_images/lesson28_15_1.png" src="../../_images/lesson28_15_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.543549079705148
+</pre></div>
+</div>
+</div>
+</div>
+<p>In these examples we know the target should be at (0,0) so lets stipulate that to our model (rifle).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean dispersion from point of aim =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_17_0.png" src="../../_images/lesson28_17_0.png" />
+<img alt="../../_images/lesson28_17_1.png" src="../../_images/lesson28_17_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.42290144715329525
+mean dispersion from point of aim = 0.2353312833324881
+</pre></div>
+</div>
+</div>
+</div>
+<p>So even with a perfect aim because of shaky hands, our average distance from the target is 0.37, and dispersion from the point of aim is 0.196.</p>
+<p>Now lets improve our situatuon by putting our device into a mechanical mount that reduces the shake.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xvalue</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean dispersion from point of aim =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_19_0.png" src="../../_images/lesson28_19_0.png" />
+<img alt="../../_images/lesson28_19_1.png" src="../../_images/lesson28_19_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.012662508851562832
+mean dispersion from point of aim = 0.005515442418428955
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now with perfect aim and a rigid mount, our average distance from the target is 0.01, and the dispersion is 0.006.</p>
+<p>A technique you will learn in your statistics class called analysis of variance is a practical application of these ideas.  The distances (in this case always positive) are the residuals, and the variance has two contributing components; how far from the true value the estimator is (our bullseye distance); and how spread out around the point of aim the estimates are (sample variance).</p>
+<p>What adds to the challenge is what happens when the target moves!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.40</span> <span class="c1"># where we tend to hit </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># how steady we are when the shot trips</span>
+<span class="n">myx</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">myy</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">distxy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1001</span><span class="p">):</span> <span class="c1"># 10 shots</span>
+    <span class="n">xvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">yvalue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="n">myx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xvalue</span><span class="p">)</span>
+    <span class="n">myy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yvalue</span><span class="p">)</span>
+    <span class="n">distxy</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="n">xvalue</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">yvalue</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">showmytarget</span><span class="p">(</span><span class="n">myx</span><span class="p">,</span><span class="n">myy</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distxy</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean distance from bullseye =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean dispersion from point of aim =&#39;</span><span class="p">,</span><span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distxy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_21_0.png" src="../../_images/lesson28_21_0.png" />
+<img alt="../../_images/lesson28_21_1.png" src="../../_images/lesson28_21_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.43290642956844
+mean dispersion from point of aim = 0.010027592013868429
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-summary admonition">
+<p class="admonition-title">Summary</p>
+<p>The main points of the marksmanship analog are ideas of:</p>
+<ol class="simple">
+<li><p>Accuracy  (how close to the center of target)</p></li>
+<li><p>Precision  (how repeatable)</p></li>
+<li><p>Bias (a systematic measure of inaccuracy, how far from the true mean) a biased result is useful! provides guidance to improve accuracy.</p></li>
+<li><p>Residuals (similar to bias, but we are interested in their variance) provides guidance to improve precision.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="linear-regression-br">
+<h2>Linear Regression <br><a class="headerlink" href="#linear-regression-br" title="Permalink to this headline">¶</a></h2>
+<p>Recall for Linear Regression:</p>
+<ul class="simple">
+<li><p>A predictive analytics technique that uses historical (either a temporal sense, or just actual observation is implied) data to predict an output variable.</p></li>
+<li><p>Employed to explore the relationship between predictor and output variables and predict the output variable based on known values of predictors.  <br></p></li>
+<li><p><em>How does linear regression work?</em> By effing magic!, but really To estimate Y using linear regression, we stipulate the model equation:  <span class="math notranslate nohighlight">\(Y_e=\beta X + \alpha\)</span>; then find statistically significant values of the parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> that minimise the difference between <span class="math notranslate nohighlight">\(Y_{obs}\)</span> and <span class="math notranslate nohighlight">\(Y_e\)</span>. If we are able to determine the optimum values of these two parameters, then we will have the line of best fit that we can use to predict the values of <span class="math notranslate nohighlight">\(Y\)</span>, given the value of <span class="math notranslate nohighlight">\(X\)</span>. <br></p></li>
+<li><p><em>How to estimate the coefficients?</em> We used a method called “Ordinary Least Squares (OLS)” and minimized the error term (using calculus) as <span class="math notranslate nohighlight">\(\epsilon=Y_{obs} - (\beta X + \alpha)\)</span> and found that the unknown values for <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> were related to the covariance of X and Y and the variance of X.  We constructed nomral equations, and developed a systematic method to estimate the parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. <em>For grins, we did this using primative python and linear algebra, and again using external packages</em></p></li>
+</ul>
+<p>Now remember when we discussed Probability Density Function (PDF) for the normal distribution? - Probably not!</p>
+<p><img alt="" src="https://miro.medium.com/max/572/1*P78bMZPhhKnzLkwcNgeJ0g.png" /> <br></p>
+<p>This equation is telling us the probability density of our sample x from our random variable generator X, when the true parameters of the distribution are μ and σ. If the density is kind of large (these are always small numbers, less than one) we would infer that the value is common, frequent, likely …<br></p>
+<p>Let’s say our value is 3, what is the probability it comes from a distribution of μ = 3 and σ = 1? What if it came from a distribution with μ = 7 and σ = 2? Which one is more probable?<br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3989422804014327
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.02699548325659403
+</pre></div>
+</div>
+</div>
+</div>
+<p>So it is much more likely it came from the first distribution. The PDF equation has shown us how likely those values are to appear in a distribution with certain parameters. Keep that in mind for later. But what if we had a bunch of points we wanted to estimate?</p>
+<p>Let’s assume we get a bunch of samples from our process generator X which we know to come from some normal distribution, and all are mutually independent from each other. If this is the case, the total probability of observing all of the data is the product of obtaining each data point individually.</p>
+<p>What is the probability of 2 and 6 being drawn from a distribution with μ = 4 and σ = 1<br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0029150244650281948
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="maximum-likelihood-estimation-mle">
+<h2>Maximum Likelihood Estimation (MLE)<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this headline">¶</a></h2>
+<p>A method  used to specify a distribution of unknown parameters, then using your data to pull out the actual parameter values.
+Let’s look at our linear model:</p>
+<p><img alt="" src="https://miro.medium.com/max/352/1*iJrwssQh4dJARzeuQPw1kw.png" /> <br></p>
+<p>The noise parameter (error) is basically why the points (samples) do not fall exactly on the line.
+The error for each point would be the distance from the point to our line.
+We’d like to explicitly include those errors in our model.
+One method of doing this, is to <strong>assume</strong> the errors are distributed from a Gaussian (Normal) distribution with a mean of 0 and some unknown variance σ². The Gaussian seems like a good choice, because our errors look like they’re symmetric about were the line would be, and that small errors are more likely than large errors. <br></p>
+<p>This model actually has <em>three</em> parameters: the slope and intercept of our line and the variance of the noise distribution.
+Our main goal is to find the best parameters for the slope and intercept of our line.</p>
+<p>let’s rewrite our model from above as a single conditional distribution given x:</p>
+<p><img alt="" src="https://miro.medium.com/max/403/1*S9Wo7Ay3O-CGarsNULSWOA.png" /> <br></p>
+<p>This is equivalent to pushing our x through the equation of the line and then adding noise from the 0 mean Gaussian. Now, we can write the conditional distribution of y given x in terms of this Gaussian. This is just the equation of a Gaussian distribution’s probability density function, with our linear equation in place of the mean:</p>
+<p><img alt="" src="https://miro.medium.com/max/576/1*3M7mJamXgcFPXzvD0U4yIA.png" /> <br></p>
+<p>The semicolon in the conditional distribution is just like a comma, but it’s a useful notation for separating our observed data from the parameters. <br></p>
+<p>Each point is independent and identically distributed (iid), so we can write the likelihood function with respect to all of our observed points as the product of each individual probability density. Since σ² is the same for each data point, we can factor out the term of the Gaussian which doesn’t include x or y from the product:</p>
+<p><img alt="" src="https://miro.medium.com/max/576/1*JXtvd6fO6ydgAqQR4jAaWQ.png" /> <br></p>
+<p>The next step in MLE, is to find the parameters which maximize this function. To make our equation simpler, let’s take the log of our likelihood. Recall, that maximizing the log-likelihood is the same as maximizing the likelihood since the log is monotonic. The natural log cancels out with the exponential, turns products into sums of logs, and division into subtraction of logs; so our log-likelihood looks much simpler:</p>
+<p><img alt="" src="https://miro.medium.com/max/576/1*gDNxsKgiWTj6AWmolmkjlQ.png" /> <br></p>
+<p>To clean things up a bit more, let’s write the output of our line as a single value:</p>
+<p><img alt="" src="https://miro.medium.com/max/226/1*tCAZf5pWI5UYyWLXiZ-tSw.png" /> <br></p>
+<p>Now our log-likelihood can be written as:</p>
+<p><img alt="" src="https://miro.medium.com/max/576/1*U8yya-GV548dLYdRVabERQ.png" /> <br></p>
+<p>To remove the negative signs, let’s recall that maximizing a number is the same thing as minimizing the negative of the number. So instead of maximizing the likelihood, let’s minimize the negative log-likelihood:</p>
+<p><img alt="" src="https://miro.medium.com/max/576/1*Y_B6FPJq0jb17qK04MVltw.png" /> <br></p>
+<p>Our ultimate goal is to find the parameters of our line. To minimize the negative log-likelihood with respect to the linear parameters (the θs), we can imagine that our variance term is a fixed constant. Removing any constant’s which don’t include our θs won’t alter the solution. Therefore, we can throw out any constant terms and elegantly write what we’re trying to minimize as:</p>
+<p><img alt="" src="https://miro.medium.com/max/175/1*O8b2CNiqn3xjUF3fkklrXQ.png" /> <br></p>
+<p>The maximum likelihood estimate for our linear model is the line which minimizes the sum of squared errors!</p>
+<p><img alt="" src="https://media1.giphy.com/media/SJX3gbZ2dbaEhU92Pu/source.gif" /> <br></p>
+<p>Now, let’s solve for parameters. We’ve concluded that the maximum likelihood estimates for our slope and intercept can be found by minimizing the sum of squared errors. Let’s expand out our minimization objective and use i as our index over our n data points:</p>
+<p><img alt="" src="https://miro.medium.com/max/403/1*0zO8-m3ZdruX0hgJ4zLm9g.png" /> <br></p>
+<p>The square in the SSE formula makes it quadratic with a single minimum. The minimum can be found by taking the derivative with respect to each of the parameters, setting it equal to 0, and solving for the parameters in turn. <br></p>
+<p>Taking the partial derivative with respect to the intercept, Setting the derivative equal to 0 and solving for the intercept gives us:</p>
+<p><img alt="" src="https://miro.medium.com/max/227/1*YzIf9e2kTWbjgx58wb-KXw.png" /> <br></p>
+<p>Taking the partial derivative with respect to the slope, Setting the derivative equal to 0 and solving for the slope gives us:</p>
+<p><img alt="" src="https://miro.medium.com/max/324/1*o0vOZ25b1h57UyidKsJlvQ.png" /> <br></p>
+<div class="section" id="and-now-it-s-time-to-put-it-all-together">
+<h3>And now it’s time to put it all together:<a class="headerlink" href="#and-now-it-s-time-to-put-it-all-together" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_line</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the slope and intercept, using normal equations&quot;&quot;&quot;</span>
+    
+    <span class="c1"># number of points</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="c1"># calculate means</span>
+    <span class="n">x_bar</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+    <span class="n">y_bar</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+        
+    <span class="c1"># calculate slope</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">+=</span> <span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_bar</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y_bar</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">+=</span> <span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_bar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">denom</span>
+    
+    <span class="c1"># calculate intercept</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">y_bar</span> <span class="o">-</span> <span class="n">slope</span><span class="o">*</span><span class="n">x_bar</span>
+    
+    <span class="k">return</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="measures-of-fitness">
+<h2>Measures of “Fitness”<a class="headerlink" href="#measures-of-fitness" title="Permalink to this headline">¶</a></h2>
+<p>Recall our missle telemetry example <br></p>
+<p>We had a table of recorded times and speeds from some experimental observations. Use MLE to find the intercept and the slope:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Elapsed Time (s)</p></th>
+<th class="text-align:right head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2.0</p></td>
+<td class="text-align:right"><p>7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3.0</p></td>
+<td class="text-align:right"><p>12</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4.0</p></td>
+<td class="text-align:right"><p>20</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5.0</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6.0</p></td>
+<td class="text-align:right"><p>45.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7.0</p></td>
+<td class="text-align:right"><p>60.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8.0</p></td>
+<td class="text-align:right"><p>77.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9.0</p></td>
+<td class="text-align:right"><p>97.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>10.0</p></td>
+<td class="text-align:right"><p>121.1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_line</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the slope and intercept, using normal equations&quot;&quot;&quot;</span>
+    
+    <span class="c1"># number of points</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="c1"># calculate means</span>
+    <span class="n">x_bar</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+    <span class="n">y_bar</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+        
+    <span class="c1"># calculate slope</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">+=</span> <span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_bar</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y_bar</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">+=</span> <span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_bar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">denom</span>
+    
+    <span class="c1"># calculate intercept</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">y_bar</span> <span class="o">-</span> <span class="n">slope</span><span class="o">*</span><span class="n">x_bar</span>
+    
+    <span class="k">return</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">45.6</span><span class="p">,</span> <span class="mf">60.3</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">97.3</span><span class="p">,</span> <span class="mf">121.2</span><span class="p">]</span>
+<span class="n">find_line</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> <span class="c1">#Is this similar to our past results?! </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11.977272727272727, -16.78636363636364)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="o">-</span><span class="mf">16.78636363636364</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">11.977272727272727</span>
+<span class="n">ypred</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">X</span>
+
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ypred</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Speed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;model vs observed&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_35_0.png" src="../../_images/lesson28_35_0.png" />
+</div>
+</div>
+<p>Remember, we already saw how to add predictors, but here lets explore a couple of measures of “fitness”</p>
+</div>
+<div class="section" id="goodness-of-fit">
+<h2>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this headline">¶</a></h2>
+<p>So far, we have mostly assessed the quality of fits visually. We can make numerical assessments as well via Goodness-of-Fit (GOF) measures. Let’s discuss three of the most common metrics for evaluating predictions on regression machine learning problems: <br></p>
+<div class="section" id="mean-absolute-error-mae-br">
+<h3>Mean Absolute Error (MAE): <br><a class="headerlink" href="#mean-absolute-error-mae-br" title="Permalink to this headline">¶</a></h3>
+<p>The Mean Absolute Error (or MAE) is the average of the absolute differences between predictions and actual values. It gives an idea of how wrong the predictions were. The measure gives an idea of the magnitude of the error, but no idea of the direction (e.g. over or under predicting). Here is the formula:</p>
+<p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3ef87b78a9af65e308cf4aa9acf6f203efbdeded" /> <br></p>
+<p>It is thus an arithmetic average of the absolute errors <span class="math notranslate nohighlight">\(|e_i|=|y_i-x_i|\)</span>, where <span class="math notranslate nohighlight">\(y_i\)</span> is the prediction and <span class="math notranslate nohighlight">\(x_i\)</span> the true value.  This is known as a scale-dependent accuracy measure and therefore cannot be used to make comparisons between series using different scales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate manually</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">speed</span> <span class="o">-</span> <span class="n">ypred</span>
+<span class="n">mae_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results by manual calculation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MAE:&quot;</span><span class="p">,</span><span class="n">mae_m</span><span class="p">)</span>
+
+
+
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+<span class="n">mae</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">ypred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SKLEARN results MAE: &quot;</span><span class="p">,</span><span class="n">mae</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Results by manual calculation:
+MAE: 8.927272727272728
+SKLEARN results MAE:  8.927272727272728
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mean-squared-error-mse-and-root-mean-squared-error-rmse-br">
+<h3>Mean Squared Error (MSE) and Root Mean Squared Error (RMSE): <br><a class="headerlink" href="#mean-squared-error-mse-and-root-mean-squared-error-rmse-br" title="Permalink to this headline">¶</a></h3>
+<p>The Mean Squared Error (or MSE) is much like the mean absolute error in that it provides a gross idea of the magnitude of error. It measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. The MSE is a measure of the quality of an estimator—it is always non-negative, and values closer to zero are better. Here is the formula:</p>
+<p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e258221518869aa1c6561bb75b99476c4734108e" /> <br></p>
+<p>An MSE of zero, meaning that the estimator predicts observations of the parameter with perfect accuracy, is ideal (but typically not possible).Taking the square root of the mean squared error converts the units back to the original units of the output variable and can be meaningful for description and presentation.
+This is called the Root Mean Squared Error (or RMSE). RMSE is the most widely used metric for regression tasks</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mse_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">rmse_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse_m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MSE:&quot;</span><span class="p">,</span> <span class="n">mse_m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE:&quot;</span><span class="p">,</span> <span class="n">rmse_m</span><span class="p">)</span>
+<span class="n">mse</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">ypred</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span> <span class="c1"># or mse**(0.5) </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SKLEARN results MSE: &quot;</span><span class="p">,</span><span class="n">mse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SKLEARN results RMSE: &quot;</span><span class="p">,</span><span class="n">rmse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE: 108.88210743801659
+RMSE: 10.434658951686758
+SKLEARN results MSE:  108.88210743801659
+SKLEARN results RMSE:  10.434658951686758
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="r-2-metric-br">
+<h3>R^2 Metric: <br><a class="headerlink" href="#r-2-metric-br" title="Permalink to this headline">¶</a></h3>
+<p>The R^2 (or R Squared) metric provides an indication of the goodness of fit of a set of predictions to the actual values. In statistical literature, this measure is called the coefficient of determination. This is a value between 0 and 1 for no-fit and perfect fit respectively. It provides a measure of how well observed outcomes are replicated by the model, based on the proportion of total variation of outcomes explained by the model..Here is the formula:</p>
+<p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3a1f55d7e84c24299917fb3fec4d0439b81e728d" /> <br>
+<img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2669c9340581d55b274d3b8ea67a7deb2225510b" /> <br>
+<img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c7e3ab84636f38c257641f85f009bcb422c73151" /> <br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r2_m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">((</span><span class="n">speed</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">speed</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R-Squared:&quot;</span><span class="p">,</span> <span class="n">r2_m</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">ypred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SKLEARN results R-Squared: &quot;</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R-Squared: 0.9294545816516323
+SKLEARN results R-Squared:  0.9294545816516323
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-confident-are-we-with-a-prediction">
+<h3>How confident are we with a prediction?<a class="headerlink" href="#how-confident-are-we-with-a-prediction" title="Permalink to this headline">¶</a></h3>
+<p>By definition, the prediction of a linear regression model is an estimate or an approximation and contains some uncertainty.
+The uncertainty comes from the errors in the model itself and noise in the input data.
+The model is an approximation of the relationship between the input variables and the output variables.
+The model error can be decomposed into three sources of error: the variance of the model, the bias of the model, and the variance of the irreducible error (the noise) in the data.</p>
+<p><span class="math notranslate nohighlight">\(Error(Model) = Variance(Model) + Bias(Model) + Variance(Irreducible Error)\)</span></p>
+<div class="section" id="marksmanship-example">
+<h4>Marksmanship Example<a class="headerlink" href="#marksmanship-example" title="Permalink to this headline">¶</a></h4>
+<p>Before going any further, let’s assume that you were arrested by the king’s guard as you were minding your business in the streets of King’s Landing for the crime of planning for the murder of King Joffrey Baratheon. As much as you hate King Joffrey you had no plans for killing him but no one believes you. In the absence of witnesses or a confession, you demand trial by combat.  But they inform you that the Germanic law to settle accusations is no longer used and it has been replaced with a new method. You get to choose a bowman. That bowman will make 3 shots for you. And if he hits the bullseye you will walk a free man. Otherwise, you will be hanged.</p>
+<p>You have two options. The first bowman is Horace. He is known as one of the greatest target archers of all time. He is old though and due to lack of an efficient social security system in Westeros, he has to work as a hired bowman for the high court to earn a living. You ask around and you hear that he still can shoot a bullseye but as his hands shake, he sometimes misses by a lot. The second archer is Daryl. He is also a wellkown archer but unfortunately he has a drinking problem. You have understood that there has been cases that he has shot the bullseye in all of his three shots and there has been cases that he has completely missed the bullseye. The thing about him is that his three shots are always very close together. Now, you get to pick. Between Horace and Daryl, who would you choose to shoot for your freedom?</p>
+<ul>
+<li><p><strong>Bias, Variance, and the bowman dilemma!</strong>
+We used the example above to give you an initial understanding of bias and variance and their impact on a model’s performance. Given this is a complicated and yet important aspect of data modeling and machine learning, without getting into too much detail, we will discuss these concepts. Bias reflects how close the functional form of the model can get to the true relationship between the predictors and the outcome. Variance refers to the amount by which [the model] would change if we estimated it using a different training data set.  <img alt="" src="https://miro.medium.com/max/1670/1*On4Uk9Favg50ylBOak-ECQ&#64;2x.png" /> Looking at the picture above, Horace was an archer with high variance and low bias, while Daryl had high bias and low variability. In an ideal world, we want low bias and low variance which we cannot have. When there is a high bias error, it results in a very simplistic model that does not consider the variations very well. Since it does not learn the training data very well, it is called Underfitting. When the model has a high variance, it will still consider the noise as something to learn from. That is, the model learns the noise from the training data, hence when confronted with new (testing) data, it is unable to predict accurately based on it. Since in the case of high variance, the model learns too much from the training data, it is called overfitting. To summarise:</p>
+<ul class="simple">
+<li><p>A model with a high bias error underfits data and makes very simplistic assumptions on it</p></li>
+<li><p>A model with a high variance error overfits the data and learns too much from it</p></li>
+<li><p>A good model is where both Bias and Variance errors are balanced. The balance between the Bias error and the Variance error is the Bias-Variance Tradeoff.</p></li>
+</ul>
+<p>The irreducible error is the error that we can not remove with our model, or with any model. The error is caused by elements outside our control, such as statistical noise in the observations. A model with low bias and high variance predicts points that are around the center generally, but pretty far away from each other (Horace). A model with high bias and low variance is pretty far away from the bull’s eye, but since the variance is low, the predicted points are closer to each other (Daryl). Bias and Variance play an important role in deciding which predictive model to use: Something that you will definitly learn more about if you go further in the field of machine learning and predicitve models.</p>
+</li>
+<li><p><strong>How can we measure bias and variance?</strong></p>
+<p>There are GOF metrics that can measure the bias and variance of a model: For example the Nash–Sutcliffe model efficiency coefficient and the Kling-Gupta Efficiency (KGE). The Nash–Sutcliffe efficiency is calculated as one minus the ratio of the error variance of the modeled time-series divided by the variance of the observed time-series. In the situation of a perfect model with an estimation error variance equal to zero, the resulting Nash-Sutcliffe Efficiency equals 1 (NSE = 1). KGE provides a diagnostically interesting decomposition of the Nash-Sutcliffe efficiency (and hence MSE), which facilitates the analysis of the relative importance of its different components (correlation, bias and variability).</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>How confident are we with our linear regression model?</strong></p>
+<p>The 95% confidence interval for the forecasted values ŷ of x is</p>
+<p><img alt="" src="https://i0.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/confidence-interval-regression.png?resize=92%2C20&amp;ssl=1" /></p>
+<p>where</p>
+<p><img alt="" src="https://i2.wp.com/www.real-statistics.com/wp-content/uploads/2013/02/image1773.png?w=154&amp;ssl=1" /></p>
+<p>This means that there is a 95% probability that the true linear regression line of the population will lie within the confidence interval of the regression line calculated from the sample data.</p>
+<p><img alt="" src="https://i1.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/confidence-prediction-interval.png?w=860&amp;ssl=1" /></p>
+<p>In the graph on the left of Figure 1, a linear regression line is calculated to fit the sample data points. The confidence interval consists of the space between the two curves (dotted lines). Thus there is a 95% probability that the true best-fit line for the population lies within the confidence interval (e.g. any of the lines in the figure on the right above).</p>
+<p>There is also a concept called a prediction interval. Here we look at any specific value of x, x0, and find an interval around the predicted value ŷ0 for x0 such that there is a 95% probability that the real value of y (in the population) corresponding to x0 is within this interval (see the graph on the right side). The 95% prediction interval of the forecasted value ŷ0 for x0 is</p>
+<p><img alt="" src="https://i1.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/prediction-interval-regression.png?resize=98%2C20&amp;ssl=1" /></p>
+<p>where the standard error of the prediction is</p>
+<p><img alt="" src="https://i0.wp.com/www.real-statistics.com/wp-content/uploads/2012/12/standard-error-prediction.png?resize=186%2C55&amp;ssl=1" /></p>
+<p>For any specific value x0 the prediction interval is more meaningful than the confidence interval.</p>
+<p><img alt="" src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/Relationship-between-prediction-actual-value-and-prediction-interval.png" /></p>
+</li>
+</ul>
+ <br></div>
+</div>
+<div class="section" id="example-continued-br">
+<h3>Example (Continued)  <br><a class="headerlink" href="#example-continued-br" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Elapsed Time (s)</p></th>
+<th class="text-align:right head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2.0</p></td>
+<td class="text-align:right"><p>7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3.0</p></td>
+<td class="text-align:right"><p>12</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4.0</p></td>
+<td class="text-align:right"><p>20</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5.0</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6.0</p></td>
+<td class="text-align:right"><p>45.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7.0</p></td>
+<td class="text-align:right"><p>60.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8.0</p></td>
+<td class="text-align:right"><p>77.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9.0</p></td>
+<td class="text-align:right"><p>97.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>10.0</p></td>
+<td class="text-align:right"><p>121.1</p></td>
+</tr>
+</tbody>
+</table>
+<p>This time we want to explore the confidence and prediciton intervals for our linear regression model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#time = [0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0] # activate if you clobbered the data above</span>
+<span class="c1">#speed = [0, 3, 7, 12, 20, 30, 45.6, 60.3, 77.7, 97.3, 121.2]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+
+<span class="c1">#We already know these parameters from last week but let&#39;s assume that we don&#39;t!</span>
+<span class="c1"># alpha = -16.78636363636364</span>
+<span class="c1"># beta = 11.977272727272727</span>
+<span class="c1">#Our linear model: ypred = alpha + beta * x</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>     <span class="c1">#needed for linear regression</span>
+<span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="kn">import</span> <span class="n">wls_prediction_std</span>   <span class="c1">#needed to get prediction interval</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.929
+Model:                            OLS   Adj. R-squared:                  0.922
+Method:                 Least Squares   F-statistic:                     118.6
+Date:                Thu, 07 Apr 2022   Prob (F-statistic):           1.75e-06
+Time:                        20:02:25   Log-Likelihood:                -41.405
+No. Observations:                  11   AIC:                             86.81
+Df Residuals:                       9   BIC:                             87.61
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        -16.7864      6.507     -2.580      0.030     -31.507      -2.066
+x1            11.9773      1.100     10.889      0.000       9.489      14.465
+==============================================================================
+Omnibus:                        1.397   Durbin-Watson:                   0.386
+Prob(Omnibus):                  0.497   Jarque-Bera (JB):                0.993
+Skew:                           0.508   Prob(JB):                        0.609
+Kurtosis:                       1.934   Cond. No.                         11.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[-16.78636364  11.97727273]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="c1">#iv_l and iv_u give you the limits of the prediction interval for each point.</span>
+<span class="c1">#print(iv_l)</span>
+<span class="c1">#print(iv_u)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">summary_table</span>
+
+<span class="n">st</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ss2</span> <span class="o">=</span> <span class="n">summary_table</span><span class="p">(</span><span class="n">re</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">fittedvalues</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">predict_mean_se</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">predict_mean_ci_low</span><span class="p">,</span> <span class="n">predict_mean_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">predict_ci_low</span><span class="p">,</span> <span class="n">predict_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict_ci_low</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Lower prediction band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict_ci_upp</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Upper prediction band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict_mean_ci_low</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span>  <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Lower confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict_mean_ci_upp</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Upper confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_47_0.png" src="../../_images/lesson28_47_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s have a look at our old good example of TV, Radio, and Newspaper advertisements and number of sales for a specific product.! <br></p>
+<p>Let’s say that we are interested to compare the performance of the linear models that use TV spendings and Radio spendings as their predictor variables in terms of accuracy, bias, and variability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/Advertising.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Advertising.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">);</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+
+<span class="c1"># Import and display first rows of the advertising dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Advertising.csv&#39;</span><span class="p">)</span>
+<span class="n">tv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">])</span>
+<span class="n">radio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Radio&#39;</span><span class="p">])</span>
+<span class="n">newspaper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Newspaper&#39;</span><span class="p">])</span>
+<span class="n">sales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">])</span>
+<span class="c1"># Initialise and fit linear regression model using `statsmodels`</span>
+<span class="c1"># TV Spending as predictor</span>
+<span class="n">model_tv</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Sales ~ TV&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">model_tv</span> <span class="o">=</span> <span class="n">model_tv</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">TV_pred</span> <span class="o">=</span> <span class="n">model_tv</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+<span class="c1"># Radio Spending as predictor</span>
+<span class="n">model_rd</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Sales ~ Radio&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">model_rd</span> <span class="o">=</span> <span class="n">model_rd</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">RD_pred</span> <span class="o">=</span> <span class="n">model_rd</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE for TV ad spendings as predictor is  3.2423221486546887
+RMSE for Radio ad spendings as predictor is  4.2535159274564185
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 for TV ad spendings as predictor is  0.611875050850071
+R2 for Radio ad spendings as predictor is  0.33203245544529536
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span> 
+<span class="n">tv_r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pearson&#39;s r for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pearson&#39;s for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson&#39;s r for TV ad spendings as predictor is  0.7822244248616064
+Pearson&#39;s for Radio ad spendings as predictor is  0.5762225745710551
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hydroeval</span> <span class="kn">import</span> <span class="o">*</span>          <span class="c1">#Notice this importing method</span>
+<span class="n">tv_nse</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">nse</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_nse</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">nse</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NSE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_nse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NSE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_nse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NSE for TV ad spendings as predictor is  [0.61187505]
+NSE for Radio ad spendings as predictor is  [0.33203246]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tv_kge</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">kgeprime</span><span class="p">,</span> <span class="n">TV_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<span class="n">rd_kge</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">(</span><span class="n">kgeprime</span><span class="p">,</span> <span class="n">RD_pred</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KGE for TV ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">tv_kge</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KGE for Radio ad spendings as predictor is &quot;</span><span class="p">,</span><span class="n">rd_kge</span><span class="p">)</span>
+<span class="c1">#KGE: Kling-Gupta efficiencies range from -Inf to 1. Essentially, the closer to 1, the more accurate the model is.</span>
+<span class="c1">#r: the Pearson product-moment correlation coefficient. Ideal value is r=1</span>
+<span class="c1">#Gamma: the ratio between the coefficient of variation (CV) of the simulated values to </span>
+       <span class="c1">#the coefficient of variation of the observed ones. Ideal value is Gamma=1</span>
+<span class="c1">#Beta: the ratio between the mean of the simulated values and the mean of the observed ones. Ideal value is Beta=1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KGE for TV ad spendings as predictor is  [[0.69201883]
+ [0.78222442]
+ [0.78222442]
+ [1.        ]]
+KGE for Radio ad spendings as predictor is  [[0.40068822]
+ [0.57622257]
+ [0.57622257]
+ [1.        ]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These measures are useful, but plotting is even more so - here we will plot our observations, data model and uncertainty intervals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot regression against actual data - What do we see?</span>
+<span class="c1">#plt.figure(figsize=(12, 6))</span>
+<span class="c1">#plt.plot(df[&#39;TV&#39;], df[&#39;Sales&#39;], &#39;o&#39;)           # scatter plot showing actual data</span>
+<span class="c1">#plt.plot(df[&#39;TV&#39;], TV_pred, &#39;r&#39;, linewidth=2)   # regression line</span>
+<span class="c1">#plt.xlabel(&#39;TV advertising spending&#39;)</span>
+<span class="c1">#plt.ylabel(&#39;Sales&#39;)</span>
+<span class="c1">#plt.title(&#39;Predicting with TV spendings only&#39;)</span>
+
+<span class="c1">#plt.show()</span>
+
+<span class="c1">#plt.figure(figsize=(12, 6))</span>
+<span class="c1">#plt.plot(df[&#39;Radio&#39;], df[&#39;Sales&#39;], &#39;o&#39;)           # scatter plot showing actual data</span>
+<span class="c1">#plt.plot(df[&#39;Radio&#39;], RD_pred, &#39;r&#39;, linewidth=2)   # regression line</span>
+<span class="c1">#plt.xlabel(&#39;TV advertising spending&#39;)</span>
+<span class="c1">#plt.ylabel(&#39;Sales&#39;)</span>
+<span class="c1">#plt.title(&#39;Predicting with Radio spendings only&#39;)</span>
+
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="kn">import</span> <span class="n">wls_prediction_std</span>   <span class="c1">#needed to get prediction interval</span>
+<span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">model_tv</span><span class="p">)</span> <span class="c1">#iv_l and iv_u give you the limits of the prediction interval for each point.</span>
+<span class="c1">#print(iv_l)</span>
+<span class="c1">#print(iv_u)</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">summary_table</span>
+
+<span class="n">st</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ss2</span> <span class="o">=</span> <span class="n">summary_table</span><span class="p">(</span><span class="n">model_tv</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">fittedvalues</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">predict_mean_se</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">predict_mean_ci_low</span><span class="p">,</span> <span class="n">predict_mean_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">predict_ci_low</span><span class="p">,</span> <span class="n">predict_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FittedSales&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">fittedvalues</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;PD-Low&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">predict_ci_low</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;PD-Upp&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">predict_ci_upp</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;CI-Low&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">predict_mean_ci_low</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;CI-Upp&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">predict_mean_ci_upp</span>
+<span class="n">ddf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;TV&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span> <span class="c1"># observation scatterplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;FittedSales&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;CI-Low&#39;</span><span class="p">],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Lower prediction band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;CI-Upp&#39;</span><span class="p">],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Upper prediction band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;PD-Low&#39;</span><span class="p">],</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>  <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Lower confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;TV&#39;</span><span class="p">],</span> <span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;PD-Upp&#39;</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#Upper confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson28_58_0.png" src="../../_images/lesson28_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ddf = df.sort_values(&#39;TV&#39;)</span>
+<span class="c1">#print(ddf[[&#39;TV&#39;,&#39;Sales&#39;,&#39;FittedSales&#39;,&#39;PD-Low&#39;,&#39;PD-Upp&#39;]])</span>
+<span class="c1">#print(fittedvalues)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>“What is Maximum Likelihood Estimation — Examples in Python”</strong> by <strong>Robert R.F. DeFilippi</strong> available at* <a class="reference external" href="https://medium.com/&#64;rrfd/what-is-maximum-likelihood-estimation-examples-in-python-791153818030">https://medium.com/&#64;rrfd/what-is-maximum-likelihood-estimation-examples-in-python-791153818030</a> <br></p></li>
+<li><p><strong>“Linear Regression”</strong> by <strong>William Fleshman</strong>  available at* <a class="reference external" href="https://towardsdatascience.com/linear-regression-91eeae7d6a2e">https://towardsdatascience.com/linear-regression-91eeae7d6a2e</a> <br></p></li>
+<li><p><strong>“Regression Accuracy Check in Python (MAE, MSE, RMSE, R-Squared)”</strong> available at* <a class="reference external" href="https://www.datatechnotes.com/2019/10/accuracy-check-in-python-mae-mse-rmse-r.html">https://www.datatechnotes.com/2019/10/accuracy-check-in-python-mae-mse-rmse-r.html</a> <br></p></li>
+<li><p><strong>“A Gentle Introduction to Linear Regression With Maximum Likelihood Estimation”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/linear-regression-with-maximum-likelihood-estimation/">https://machinelearningmastery.com/linear-regression-with-maximum-likelihood-estimation/</a> <br></p></li>
+<li><p><strong>“Metrics To Evaluate Machine Learning Algorithms in Python”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/metrics-evaluate-machine-learning-algorithms-python/">https://machinelearningmastery.com/metrics-evaluate-machine-learning-algorithms-python/</a> <br></p></li>
+<li><p><strong>“A Gentle Introduction to Maximum Likelihood Estimation”</strong> by <strong>Jonathan Balaban</strong> available at* <a class="reference external" href="https://towardsdatascience.com/a-gentle-introduction-to-maximum-likelihood-estimation-9fbff27ea12f">https://towardsdatascience.com/a-gentle-introduction-to-maximum-likelihood-estimation-9fbff27ea12f</a> <br></p></li>
+<li><p><strong>“Regression: An Explanation of Regression Metrics And What Can Go Wrong”</strong> by <strong>Divyanshu Mishra</strong> available at* <a class="reference external" href="https://towardsdatascience.com/regression-an-explanation-of-regression-metrics-and-what-can-go-wrong-a39a9793d914">https://towardsdatascience.com/regression-an-explanation-of-regression-metrics-and-what-can-go-wrong-a39a9793d914</a> <br></p></li>
+<li><p><strong>“Tutorial: Understanding Regression Error Metrics in Python”</strong> available at* <a class="reference external" href="https://www.dataquest.io/blog/understanding-regression-error-metrics/">https://www.dataquest.io/blog/understanding-regression-error-metrics/</a> <br></p></li>
+<li><p><strong>“StatQuest: Maximum Likelihood, clearly explained!!!”</strong> by <strong>StatQuest with Josh Starmer</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=XepXtl9YKwc">https://www.youtube.com/watch?v=XepXtl9YKwc</a> <br></p></li>
+<li><p><strong>“Maximum Likelihood for Regression Coefficients (part 1 of 3)” and part 2 and 3</strong> by <strong>Professor Knudson</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=avs4V7wBRw0">https://www.youtube.com/watch?v=avs4V7wBRw0</a> <br></p></li>
+<li><p><strong>“StatQuest: R-squared explained”</strong> by <strong>StatQuest with Josh Starmer</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=2AQKmw14mHM">https://www.youtube.com/watch?v=2AQKmw14mHM</a> <br></p></li>
+<li><p><strong>“How to Calculate the Bias-Variance Trade-off with Python”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/">https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/</a> <br></p></li>
+<li><p><strong>“Bias and Variance in Machine Learning – A Fantastic Guide for Beginners!”</strong> by <strong>PURVA HUILGOL</strong> available at* <a class="reference external" href="https://www.analyticsvidhya.com/blog/2020/08/bias-and-variance-tradeoff-machine-learning/">https://www.analyticsvidhya.com/blog/2020/08/bias-and-variance-tradeoff-machine-learning/</a> <br></p></li>
+<li><p><strong>“Prediction Intervals for Machine Learning”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/prediction-intervals-for-machine-learning/">https://machinelearningmastery.com/prediction-intervals-for-machine-learning/</a> <br></p></li>
+<li><p><strong>“Confidence and prediction intervals for forecasted values”</strong> by <strong>Charles Zaiontz</strong>  available at* <a class="reference external" href="https://www.real-statistics.com/regression/confidence-and-prediction-intervals/">https://www.real-statistics.com/regression/confidence-and-prediction-intervals/</a> <br></p></li>
+<li><p><strong>“3.7 OLS Prediction and Prediction Intervals”</strong> available at* <a class="reference external" href="http://web.vu.lt/mif/a.buteikis/wp-content/uploads/PE_Book/3-7-UnivarPredict.html">http://web.vu.lt/mif/a.buteikis/wp-content/uploads/PE_Book/3-7-UnivarPredict.html</a> <br></p></li>
+<li><p><strong>“Using python statsmodels for OLS linear regression”</strong> available at* <a class="reference external" href="https://markthegraph.blogspot.com/2015/05/using-python-statsmodels-for-ols-linear.html">https://markthegraph.blogspot.com/2015/05/using-python-statsmodels-for-ols-linear.html</a> <br></p></li>
+<li><p><strong>“How to Calculate the Bias-Variance Trade-off with Python”</strong> available at* <a class="reference external" href="https://aidevelopmenthub.com/how-to-calculate-the-bias-variance-trade-off-with-python/">https://aidevelopmenthub.com/how-to-calculate-the-bias-variance-trade-off-with-python/</a> <br></p></li>
+<li><p><strong>“Understanding the Bias-Variance Tradeoff”</strong> available at* <a class="reference external" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">http://scott.fortmann-roe.com/docs/BiasVariance.html</a> <br></p></li>
+<li><p><strong>“SCIKIT-LEARN : BIAS-VARIANCE TRADEOFF”</strong> available at* <a class="reference external" href="https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Bias-variance-Tradeoff.php">https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Bias-variance-Tradeoff.php</a> <br></p></li>
+<li><p><strong>“Linear Regression Confidence Intervals”</strong> available at* <a class="reference external" href="https://rstudio-pubs-static.s3.amazonaws.com/195401_20b3272a8bb04615ae7ee4c81d18ffb5.html">https://rstudio-pubs-static.s3.amazonaws.com/195401_20b3272a8bb04615ae7ee4c81d18ffb5.html</a> <br></p></li>
+<li><p><strong>“Prediction Interval: Simple Definition, Examples”</strong> available at* <a class="reference external" href="https://www.statisticshowto.com/prediction-interval/">https://www.statisticshowto.com/prediction-interval/</a> <br></p></li>
+<li><p><strong>“Machine Learning Fundamentals: Bias and Variance”</strong> by <strong>StatQuest with Josh Starmer</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=EuBBz3bI-aA">https://www.youtube.com/watch?v=EuBBz3bI-aA</a> <br></p></li>
+<li><p><strong>“Bias Variance Trade off”</strong> by <strong>The Semicolon</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=lpkSGTT8uMg">https://www.youtube.com/watch?v=lpkSGTT8uMg</a> <br></p></li>
+<li><p><strong>“Intervals (for the Mean Response and a Single Response) in Simple Linear Regression”</strong> by <strong>jbstatistics</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=V-sReSM887I">https://www.youtube.com/watch?v=V-sReSM887I</a> <br></p></li>
+<li><p><strong>“Calculate Confidence and prediction intervals for a response in SLR by hand”</strong> by <strong>Katie Ann Jager</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=JqObYVX1UP0">https://www.youtube.com/watch?v=JqObYVX1UP0</a> <br></p></li>
+</ul>
 </div>
 </div>
 
@@ -492,7 +1647,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">27: Ordinary Least Squares</p>
+                <p class="prevnext-title">27: Project Planning Workshop</p>
             </div>
         </a>
     </div>
