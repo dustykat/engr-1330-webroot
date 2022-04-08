@@ -16,10 +16,13 @@
 
 # ## Terminology from a Marksmanship Analog
 # 
-# :::{admonition} Can Skip for Brevity
+# :::{admonition} Skip to "Measures of Fitness" for brevity.
 # :class: tip
 # 
-# One can go through this section quickly, and leave reader to explore details - we are mostly after some of the terminology, but the marksman analog seems useful.  Skip to "Measures of Fitness" below for brevity
+# One can skip this section, and leave reader to explore details - we are mostly after some of the terminology, but it is not crucial to use the marksman analogy to convey the meanings of the terminology.
+# 
+# Skip to [](content:references:labels) below for brevity
+# 
 # :::
 # 
 # Pretend we are working on a FPS game named "Olympic 10-meter Air Pistol" we are developing as a training tool. [https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol](https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol)
@@ -375,7 +378,7 @@ scipy.stats.norm.pdf(2, 4, 1) * scipy.stats.norm.pdf(6, 4, 1)
 # 
 # ![](https://miro.medium.com/max/324/1*o0vOZ25b1h57UyidKsJlvQ.png) <br>
 # 
-# #### And now it's time to put it all together:
+# **And now it's time to put it all together:**  The code block below produces MLE estimation of the linear data model slope and intercept, given the lists for x and y.
 # 
 
 # In[15]:
@@ -404,6 +407,7 @@ def find_line(xs, ys):
     return slope, intercept
 
 
+# (content:references:labels)=
 # ## Measures of "Fitness" 
 # Recall our missle telemetry example <br>
 # 
@@ -484,7 +488,7 @@ plt.show()
 # 
 # So far, we have mostly assessed the quality of fits visually. We can make numerical assessments as well via Goodness-of-Fit (GOF) measures. Let's discuss three of the most common metrics for evaluating predictions on regression machine learning problems: <br>
 # 
-# #### Mean Absolute Error (MAE): <br>
+# ### Mean Absolute Error (MAE): <br>
 # The Mean Absolute Error (or MAE) is the average of the absolute differences between predictions and actual values. It gives an idea of how wrong the predictions were. The measure gives an idea of the magnitude of the error, but no idea of the direction (e.g. over or under predicting). Here is the formula:
 # 
 # ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/3ef87b78a9af65e308cf4aa9acf6f203efbdeded) <br>
@@ -870,6 +874,24 @@ plt.show()
 # - __"Bias Variance Trade off"__ by __The Semicolon__ available at* https://www.youtube.com/watch?v=lpkSGTT8uMg <br>
 # - __"Intervals (for the Mean Response and a Single Response) in Simple Linear Regression"__ by __jbstatistics__ available at* https://www.youtube.com/watch?v=V-sReSM887I <br>
 # - __"Calculate Confidence and prediction intervals for a response in SLR by hand"__ by __Katie Ann Jager__ available at* https://www.youtube.com/watch?v=JqObYVX1UP0 <br>
+
+# <hr><hr>
+# 
+# ## Laboratory 28
+# 
+# **Examine** (click) Laboratory 28 as a webpage at [Laboratory 28.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 28 as a jupyterlab notebook from [Laboratory 28.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 28
+# 
+# **Examine** (click) Exercise Set 28 as a webpage at [Exercise 28.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 28 as a jupyterlab notebook at  [Exercise Set 28.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28-TH.ipynb)
+# 
 
 # In[ ]:
 

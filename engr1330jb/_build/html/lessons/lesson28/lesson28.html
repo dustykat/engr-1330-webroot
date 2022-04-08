@@ -470,13 +470,6 @@
   <a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">
    Maximum Likelihood Estimation (MLE)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and-now-it-s-time-to-put-it-all-together">
-     And now it’s time to put it all together:
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#measures-of-fitness">
@@ -536,6 +529,16 @@
    References
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-28">
+   Laboratory 28
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-28">
+   Exercise Set 28
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -562,8 +565,9 @@
 <div class="section" id="terminology-from-a-marksmanship-analog">
 <h2>Terminology from a Marksmanship Analog<a class="headerlink" href="#terminology-from-a-marksmanship-analog" title="Permalink to this headline">¶</a></h2>
 <div class="tip admonition">
-<p class="admonition-title">Can Skip for Brevity</p>
-<p>One can go through this section quickly, and leave reader to explore details - we are mostly after some of the terminology, but the marksman analog seems useful.  Skip to “Measures of Fitness” below for brevity</p>
+<p class="admonition-title">Skip to “Measures of Fitness” for brevity.</p>
+<p>One can skip this section, and leave reader to explore details - we are mostly after some of the terminology, but it is not crucial to use the marksman analogy to convey the meanings of the terminology.</p>
+<p>Skip to <a class="reference internal" href="#content-references-labels"><span class="std std-ref">Measures of “Fitness”</span></a> below for brevity</p>
 </div>
 <p>Pretend we are working on a FPS game named “Olympic 10-meter Air Pistol” we are developing as a training tool. <a class="reference external" href="https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol">https://en.wikipedia.org/wiki/ISSF_10_meter_air_pistol</a></p>
 <p>First some packages</p>
@@ -633,7 +637,7 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_6_0.png" src="../../_images/lesson28_6_0.png" />
 <img alt="../../_images/lesson28_6_1.png" src="../../_images/lesson28_6_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.779440739824907
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.7693261373800288
 </pre></div>
 </div>
 </div>
@@ -663,7 +667,7 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_8_0.png" src="../../_images/lesson28_8_0.png" />
 <img alt="../../_images/lesson28_8_1.png" src="../../_images/lesson28_8_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.8913414605061174
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.950576217731643
 </pre></div>
 </div>
 </div>
@@ -693,7 +697,7 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_10_0.png" src="../../_images/lesson28_10_0.png" />
 <img alt="../../_images/lesson28_10_1.png" src="../../_images/lesson28_10_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.727158140851791
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.622266855379564
 </pre></div>
 </div>
 </div>
@@ -720,7 +724,7 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_12_0.png" src="../../_images/lesson28_12_0.png" />
 <img alt="../../_images/lesson28_12_1.png" src="../../_images/lesson28_12_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.653662197500305
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.658740212121018
 </pre></div>
 </div>
 </div>
@@ -754,7 +758,7 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_15_0.png" src="../../_images/lesson28_15_0.png" />
 <img alt="../../_images/lesson28_15_1.png" src="../../_images/lesson28_15_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.543549079705148
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 5.5556474408402625
 </pre></div>
 </div>
 </div>
@@ -782,8 +786,8 @@ If we are estimating the mean value, then the “bullseye” is the population m
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_17_0.png" src="../../_images/lesson28_17_0.png" />
 <img alt="../../_images/lesson28_17_1.png" src="../../_images/lesson28_17_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.42290144715329525
-mean dispersion from point of aim = 0.2353312833324881
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.4840945906743531
+mean dispersion from point of aim = 0.1776987334178709
 </pre></div>
 </div>
 </div>
@@ -812,8 +816,8 @@ mean dispersion from point of aim = 0.2353312833324881
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_19_0.png" src="../../_images/lesson28_19_0.png" />
 <img alt="../../_images/lesson28_19_1.png" src="../../_images/lesson28_19_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.012662508851562832
-mean dispersion from point of aim = 0.005515442418428955
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 0.014198012721991182
+mean dispersion from point of aim = 0.006223956676911045
 </pre></div>
 </div>
 </div>
@@ -843,8 +847,8 @@ mean dispersion from point of aim = 0.005515442418428955
 <div class="cell_output docutils container">
 <img alt="../../_images/lesson28_21_0.png" src="../../_images/lesson28_21_0.png" />
 <img alt="../../_images/lesson28_21_1.png" src="../../_images/lesson28_21_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.43290642956844
-mean dispersion from point of aim = 0.010027592013868429
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean distance from bullseye = 2.4327218724493984
+mean dispersion from point of aim = 0.009695516566440349
 </pre></div>
 </div>
 </div>
@@ -962,8 +966,7 @@ Our main goal is to find the best parameters for the slope and intercept of our 
 <p><img alt="" src="https://miro.medium.com/max/227/1*YzIf9e2kTWbjgx58wb-KXw.png" /> <br></p>
 <p>Taking the partial derivative with respect to the slope, Setting the derivative equal to 0 and solving for the slope gives us:</p>
 <p><img alt="" src="https://miro.medium.com/max/324/1*o0vOZ25b1h57UyidKsJlvQ.png" /> <br></p>
-<div class="section" id="and-now-it-s-time-to-put-it-all-together">
-<h3>And now it’s time to put it all together:<a class="headerlink" href="#and-now-it-s-time-to-put-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p><strong>And now it’s time to put it all together:</strong>  The code block below produces MLE estimation of the linear data model slope and intercept, given the lists for x and y.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_line</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
@@ -992,9 +995,8 @@ Our main goal is to find the best parameters for the slope and intercept of our 
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="measures-of-fitness">
-<h2>Measures of “Fitness”<a class="headerlink" href="#measures-of-fitness" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-labels"></span><h2>Measures of “Fitness”<a class="headerlink" href="#measures-of-fitness" title="Permalink to this headline">¶</a></h2>
 <p>Recall our missle telemetry example <br></p>
 <p>We had a table of recorded times and speeds from some experimental observations. Use MLE to find the intercept and the slope:</p>
 <table class="colwidths-auto table">
@@ -1311,8 +1313,8 @@ We used the example above to give you an initial understanding of bias and varia
 Dep. Variable:                      y   R-squared:                       0.929
 Model:                            OLS   Adj. R-squared:                  0.922
 Method:                 Least Squares   F-statistic:                     118.6
-Date:                Thu, 07 Apr 2022   Prob (F-statistic):           1.75e-06
-Time:                        20:02:25   Log-Likelihood:                -41.405
+Date:                Fri, 08 Apr 2022   Prob (F-statistic):           1.75e-06
+Time:                        11:55:39   Log-Likelihood:                -41.405
 No. Observations:                  11   AIC:                             86.81
 Df Residuals:                       9   BIC:                             87.61
 Df Model:                           1                                         
@@ -1610,6 +1612,18 @@ KGE for Radio ad spendings as predictor is  [[0.40068822]
 <li><p><strong>“Intervals (for the Mean Response and a Single Response) in Simple Linear Regression”</strong> by <strong>jbstatistics</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=V-sReSM887I">https://www.youtube.com/watch?v=V-sReSM887I</a> <br></p></li>
 <li><p><strong>“Calculate Confidence and prediction intervals for a response in SLR by hand”</strong> by <strong>Katie Ann Jager</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=JqObYVX1UP0">https://www.youtube.com/watch?v=JqObYVX1UP0</a> <br></p></li>
 </ul>
+<hr><hr>
+</div>
+<div class="section" id="laboratory-28">
+<h2>Laboratory 28<a class="headerlink" href="#laboratory-28" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 28 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28.html">Laboratory 28.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 28 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28.ipynb">Laboratory 28.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-28">
+<h2>Exercise Set 28<a class="headerlink" href="#exercise-set-28" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 28 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28-TH.html">Exercise 28.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 28 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab28/Lab28-TH.ipynb">Exercise Set 28.ipynb</a></p>
 </div>
 </div>
 
