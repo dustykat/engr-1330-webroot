@@ -396,3 +396,21 @@ print(model.summary())
 
 
 
+
+# <hr><hr>
+# 
+# ## Laboratory 29
+# 
+# **Examine** (click) Laboratory 29 as a webpage at [Laboratory 29.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29.html)
+# 
+# **Download** (right-click, save target as ...) Laboratory 29 as a jupyterlab notebook from [Laboratory 29.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29.ipynb)
+# 
+
+# <hr><hr>
+# 
+# ## Exercise Set 29
+# 
+# **Examine** (click) Exercise Set 29 as a webpage at [Exercise 29.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29-TH.html)
+# 
+# **Download** (right-click, save target as ...) Exercise Set 29 as a jupyterlab notebook at  [Exercise Set 29.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab29/Lab29-TH.ipynb)
+# 
