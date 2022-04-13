@@ -9,9 +9,11 @@
 # 
 # Last GitHub Commit Date: 
 #     
-# # 30: Multiple Least Squares (continued) 
-# - A Design matrix for Logarithmic fits 
-# - A Design matrix for Power-Law Fits
+# # 30: Regression using Exponential, Logarithmic, and Power-Law Models 
+# - Logarithmic charts
+# - Exponential data models
+# - Logarithmic data models
+# - Power-Law data models
 # 
 
 # # Logarithmic Charts
