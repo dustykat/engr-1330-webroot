@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="31: Multiple Least Squares Quality Assessment" href="../lesson31/lesson31.html" />
-    <link rel="prev" title="29: Multiple Least Squares" href="../lesson29/lesson29.html" />
+    <link rel="prev" title="29: Multiple Linear Regression" href="../lesson29/lesson29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,7 +261,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson27/lesson27.html">
-   27: Ordinary Least Squares
+   27: Project Planning Workshop
   </a>
  </li>
  <li class="toctree-l1">
@@ -269,7 +271,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson29/lesson29.html">
-   29: Multiple Least Squares
+   29: Multiple Linear Regression
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -426,10 +428,100 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   30: Multiple Least Squares (continued)
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logarithmic-charts">
+   Logarithmic Charts
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semi-log-charts">
+     Semi-Log Charts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-7-6">
+       Example 7-6
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exponential-data-models">
+       Exponential Data Models
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#example-30-1">
+         Example 30-1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-1">
+         Step 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-2">
+         Step 2
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-3">
+         Step 3
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-4">
+         Step 4
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logarithmic-functions">
+     Logarithmic Functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-law-models">
+     Power-Law Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-30-2">
+       Example 30-2
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-5">
+         Step 5
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#laboratory-30">
+     Laboratory 30
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-set-30">
+     Exercise Set 30
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -453,8 +545,767 @@
 <li><p>A Design matrix for Logarithmic fits</p></li>
 <li><p>A Design matrix for Power-Law Fits</p></li>
 </ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="logarithmic-charts">
+<h1>Logarithmic Charts<a class="headerlink" href="#logarithmic-charts" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="logscale-7-1">
+<a class="reference internal image-reference" href="../../_images/logscale-7-1.png"><img alt="../../_images/logscale-7-1.png" src="../../_images/logscale-7-1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Comparison of arithmetic and logarithmic scales</span><a class="headerlink" href="#logscale-7-1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="semi-log-charts">
+<h2>Semi-Log Charts<a class="headerlink" href="#semi-log-charts" title="Permalink to this headline">¶</a></h2>
+<p>A graph in which the y-axis (the ordinate) has a logarithmic scale and the x-axis (the abcissa) has an arithmetic scale is called a semi-log graph.  The orientation can be reversed (x-axis log scale, y-axis arithmetic scale) and it is still called a semi-log graph.  Semi-log graphs are used in many diverse fields including engineering, chemistry, physics, biology, and economics.</p>
+<p>Consider a capacitor whose discharge history is given by</p>
+<p><span class="math notranslate nohighlight">\(V(t) = 10.0~e^{-0.5~t}\)</span></p>
+<p>over the interval of 0 to 10 seconds.</p>
+<p><a class="reference internal" href="#semilog-7-1"><span class="std std-numref">Fig. 15</span></a> is a plot of the capacitor voltage versus time (with markers at some computation points). Observe there is distinct curvature in the plot.</p>
+<div class="figure align-default" id="semilog-7-1">
+<a class="reference internal image-reference" href="../../_images/semilog-7-1.png"><img alt="../../_images/semilog-7-1.png" src="../../_images/semilog-7-1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">An arithmetic plot of capacitor discharge voltage history</span><a class="headerlink" href="#semilog-7-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>However if we plot with the y-axis (voltage) on a logarithmic scale we obtain <a class="reference internal" href="#semilog-7-2"><span class="std std-numref">Fig. 16</span></a> which displays as a straight line on the plot.</p>
+<div class="figure align-default" id="semilog-7-2">
+<a class="reference internal image-reference" href="../../_images/semilog-7-2.png"><img alt="../../_images/semilog-7-2.png" src="../../_images/semilog-7-2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">A semi-log plot of capacitor discharge voltage history</span><a class="headerlink" href="#semilog-7-2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data in the two plots are identical, only how the scales were rendered is different.  We would also have found a straight line in arithmetic space if we plotted log(y) versus x on the arithmetic scale.</p>
+</div>
+<p>Semi-log plots are used for two primary reasons:</p>
+<ol class="simple">
+<li><p>The range of the y-values is large, spanning several orders of magnitude (powers of 10); for example in <a class="reference internal" href="#semilog-7-2"><span class="std std-numref">Fig. 16</span></a> the y-axis ranges a bit beyond <span class="math notranslate nohighlight">\(10^{-1}\)</span> to <span class="math notranslate nohighlight">\(10^{+1}\)</span> (and is thus called a 3-cycle semi-log graph).</p></li>
+<li><p>Exponential phenomenoa appear as straight lines when plotted on a semi-log graph.  Many natural and engineered phenomenoa are well modeled by this relationship.  Thus if data plot as a roughly straight line on a semi-log plot, that itself is convinging evidence that an exponential-type data model will be a good choice to examine as a prediction engine for the process.</p></li>
+</ol>
+<p>To learn why the capacitor discharge history plots as a straight line consider the meaning of the logarithmic scale.</p>
+<ol class="simple">
+<li><p>If we start with our data model:  <span class="math notranslate nohighlight">\(V(t) = 10.0~e^{-0.5~t}\)</span><br></p></li>
+<li><p>Then take the log of the equation:  <span class="math notranslate nohighlight">\(log(V(t)) = log(10.0~e^{-0.5~t})\)</span><br></p></li>
+<li><p>Then apply rules of exponents and logarithms:  <span class="math notranslate nohighlight">\(log(V(t)) = log(10.0)+log(e^{-0.5~t})\)</span><br></p></li>
+<li><p>Again:  <span class="math notranslate nohighlight">\(log(V(t)) = log(10.0)-0.5~t*log(e)\)</span><br></p></li>
+<li><p>Evaluate the <span class="math notranslate nohighlight">\(log(e)\)</span> and replace with the resulting constant:  <span class="math notranslate nohighlight">\(log(V(t)) = 1-0.5*0.434*t\)</span><br></p></li>
+<li><p>Perform remaining arithmetic:  <span class="math notranslate nohighlight">\(log(V(t)) = 1-0.2171*t\)</span><br></p></li>
+</ol>
+<p>We now have the equation of the logarithm of voltage in terms of time and some constants.</p>
+<div class="section" id="example-7-6">
+<h3>Example 7-6<a class="headerlink" href="#example-7-6" title="Permalink to this headline">¶</a></h3>
+<p>The example below generates the two figures above.  First figure <a class="reference internal" href="#semilog-7-1"><span class="std std-numref">Fig. 15</span></a>.  Define a function that evaluates <span class="math notranslate nohighlight">\(V(t) = 10.0~e^{-0.5~t}\)</span> then execute the cell to prototype the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now import our plotting tools (if we have already done so we can skip this step).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the package</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now define a list of x-axis values to plot, and create a corresponding list of y-values using the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create two lists; time  and speed.</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">6.0</span><span class="p">,</span><span class="mf">7.0</span><span class="p">,</span><span class="mf">8.0</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">]</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>  <span class="c1"># populate the lists using the function</span>
+    <span class="n">voltage</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we make the plot as in other examples, changing the labels and title.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a line chart of voltage on y axis and time on x axis</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># build a drawing canvass from figure class; aspect ratio 4x3</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span> <span class="c1"># label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (volts)&#39;</span><span class="p">)</span> <span class="c1"># label the y-axis, notice the LaTex markup</span>
+<span class="c1">#plt.legend([&#39;series1&#39;,&#39;series2...&#39;]) # legend for each series</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Capacitor Discharge History&#39;</span><span class="p">)</span> <span class="c1"># make a plot title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span> <span class="c1"># display a grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_9_0.png" src="../../_images/lesson30_9_0.png" />
+</div>
+</div>
+<p>Now to construct figure <a class="reference internal" href="#semilog-7-2"><span class="std std-numref">Fig. 16</span></a>.  We literally add a single instruction in the plotting routine to instruct the plotting package to render the y-axis on a logarithmic scale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a line chart of voltage on y axis and time on x axis</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># build a drawing canvass from figure class; aspect ratio 4x3</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set y-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span> <span class="c1"># label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (volts)&#39;</span><span class="p">)</span> <span class="c1"># label the y-axis, notice the LaTex markup</span>
+<span class="c1">#plt.legend([&#39;series1&#39;,&#39;series2...&#39;]) # legend for each series</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Capacitor Discharge History&#39;</span><span class="p">)</span> <span class="c1"># make a plot title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span> <span class="c1"># display a grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_11_0.png" src="../../_images/lesson30_11_0.png" />
+</div>
+</div>
+<p>The chart itself can be used to infer the underlying equation.  Notice the model is of the form (structure)</p>
+<p><span class="math notranslate nohighlight">\(\text{ordinate}=\text{constant}+\text{slope}\cdot\text{abscissa}\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(log~y =\beta_0+\beta_1 \cdot x\)</span></p>
+<p>In the present example <span class="math notranslate nohighlight">\(\beta_0 = 1\)</span> which inverse mapped back to arithmetic space is <span class="math notranslate nohighlight">\(10^{\beta_0} = 10\)</span>  The slope <span class="math notranslate nohighlight">\(\beta_1= \frac{log(y_2)-log(y_1)}{x_2-x_1} = \frac{log(y_2/y_1)}{x_2-x_1}\)</span>  Using the values at x=0 and x=9.2 for <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> and the corresponding y values the slope is about <span class="math notranslate nohighlight">\(-0.2174\)</span>  Knowing that our model should be in base <span class="math notranslate nohighlight">\(e\)</span> logs, we divide by the constant 0.434 (or multiply by 2.303) to obtain 0.5006 so the inverse transformation is</p>
+<p><span class="math notranslate nohighlight">\(y = 10^{\beta_0}*e^{\beta_1 * 2.303 *t} = 10*e^{0.5006~t}\)</span>  which is darn close to the generating model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mf">9.2</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.2173913043478261
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we see the value of logarithmic charts, lest devise a scheme to fit data to a logarithmic form.</p>
+<hr>
+</div>
+<div class="section" id="exponential-data-models">
+<h3>Exponential Data Models<a class="headerlink" href="#exponential-data-models" title="Permalink to this headline">¶</a></h3>
+<p>An exponential model is</p>
+<div class="math notranslate nohighlight">
+\[ y = \beta_0 e^{\beta_1 x} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> are the model coefficients to be determined.</p>
+<p>If we transform the model to</p>
+<div class="math notranslate nohighlight">
+\[ ln y = ln\beta_0 + \beta_1 x \]</div>
+<p>this result is linear in <span class="math notranslate nohighlight">\(ln\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span></p>
+<p>The equivalent normal equations are</p>
+<div class="math notranslate nohighlight">
+\[ \beta_1 = \frac{\sum_{i=1}^n x_i \sum_{i=1}^n ln(y_i) -n \sum_{i=1}^n x_i ln(y_i)  }{(\sum_{i=1}^n x_i)^2 -n \sum_{i=1}^n x_i^2} \]</div>
+<div class="math notranslate nohighlight">
+\[ ln\beta_0 = \frac{1}{n}\sum_{i=1}^n ln(y_i) - \beta_1 \frac{1}{n} \sum_{i=1}^n x_i\]</div>
+<div class="section" id="example-30-1">
+<h4>Example 30-1<a class="headerlink" href="#example-30-1" title="Permalink to this headline">¶</a></h4>
+<p>The transient behavior of a capacitor has been studied by measuring the voltage drop across the device as a function of time. The following data are observed</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Time(sec)</p></th>
+<th class="text-align:right head"><p>Voltage(V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>10.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:right"><p>6.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2</p></td>
+<td class="text-align:right"><p>3.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3</p></td>
+<td class="text-align:right"><p>2.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4</p></td>
+<td class="text-align:right"><p>1.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5</p></td>
+<td class="text-align:right"><p>0.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6</p></td>
+<td class="text-align:right"><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7</p></td>
+<td class="text-align:right"><p>0.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8</p></td>
+<td class="text-align:right"><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9</p></td>
+<td class="text-align:right"><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>11</p></td>
+<td class="text-align:right"><p>0.07</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>12</p></td>
+<td class="text-align:right"><p>0.03</p></td>
+</tr>
+</tbody>
+</table>
+<p>Fit an exponential function to the data set using a regression model.</p>
+</div>
+<div class="section" id="step-1">
+<h4>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h4>
+<p>Prepare the data set, log transform the response variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">6.1</span><span class="p">,</span><span class="mf">3.7</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.07</span><span class="p">,</span><span class="mf">0.03</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">t</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2">
+<h4>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h4>
+<p>Load the necessary packages and build a dataframe from the data lists</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load the necessary packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span> <span class="c1"># here is the regression package to fit lines</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">y</span><span class="p">})</span> <span class="c1"># we use X,Y as column names for simplicity</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>2.302585</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1.808289</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.308333</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.788457</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.336472</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-3">
+<h4>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h4>
+<p>Fit a linear model keeping in mind we have a logarithmic component in th design matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise and fit linear regression model using `statsmodels`</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Y ~ X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># model object constructor syntax</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4">
+<h4>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h4>
+<p>Prepare a plot, extract package values for display</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict values</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+
+<span class="n">beta0</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># the fitted intercept</span>
+<span class="n">beta1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sse</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">ssr</span>
+<span class="n">rsq</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">rsquared</span>
+
+<span class="n">titleline</span> <span class="o">=</span> <span class="s2">&quot;Capacitor Discharge History </span><span class="se">\n</span><span class="s2"> Data model y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;x&quot;</span> <span class="c1"># put the model into the title</span>
+<span class="n">titleline</span> <span class="o">=</span> <span class="n">titleline</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> SSE = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">sse</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> R^2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rsq</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ln Voltage (ln V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observed Values&#39;</span><span class="p">,</span><span class="s1">&#39;Data Model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titleline</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_21_0.png" src="../../_images/lesson30_21_0.png" />
+</div>
+</div>
+<p>Now to return to original variables:</p>
+<p><span class="math notranslate nohighlight">\(y(x) = e^{\beta_0} e^{\beta_1 x} = e^{2.278} e^{-0.492 x}\)</span></p>
+<p>Now plotted in origional space</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Yorg&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ymod&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">beta1</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
+<span class="c1">#data.head()</span>
+
+<span class="n">titleline</span> <span class="o">=</span> <span class="s2">&quot;Capacitor Discharge History </span><span class="se">\n</span><span class="s2"> Data model y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;exp(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;x)&quot;</span> <span class="c1"># put the model into the title</span>
+<span class="n">titleline</span> <span class="o">=</span> <span class="n">titleline</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> SSE = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">sse</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> R^2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rsq</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Yorg&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ymod&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set y-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observed Values&#39;</span><span class="p">,</span><span class="s1">&#39;Data Model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titleline</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_23_0.png" src="../../_images/lesson30_23_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logarithmic-functions">
+<h2>Logarithmic Functions<a class="headerlink" href="#logarithmic-functions" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the exponential case, another situation arises when the x-axis is logarithmic.  In this case the data model becomes</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_1 ln x + \beta_0\]</div>
+<p>a least squares minimization leads to the following pair of normal equations</p>
+<div class="math notranslate nohighlight">
+\[ \beta_1 = \frac{\sum_{i=1}^n ln(x_i) \sum_{i=1}^n y_i -n \sum_{i=1}^n ln(x_i) y_i  }{(\sum_{i=1}^n ln(x_i))^2 -n \sum_{i=1}^n ln(x_i)^2} \]</div>
+<div class="math notranslate nohighlight">
+\[ \beta_0 = \frac{1}{n}\sum_{i=1}^n y_i - \beta_1 \frac{1}{n} \sum_{i=1}^n ln(x_i)\]</div>
+<p>The process of analysis is the same as above except the x-axis is log transformed (and inverse transformed).</p>
+</div>
+<div class="section" id="power-law-models">
+<h2>Power-Law Models<a class="headerlink" href="#power-law-models" title="Permalink to this headline">¶</a></h2>
+<p>A power-law model is of the form</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_0 x^{\beta_1}\]</div>
+<p>The model is incredibly useful in engineering applications.</p>
+<p>If the equation is log transformed as before the resulting model is</p>
+<div class="math notranslate nohighlight">
+\[ln(y) = ln(\beta_0)+\beta_1 ln(x)\]</div>
+<p>a least squares minimization leads to the following pair of normal equations</p>
+<div class="math notranslate nohighlight">
+\[ \beta_1 = \frac{\sum_{i=1}^n ln(x_i) \sum_{i=1}^n ln(y_i) -n \sum_{i=1}^n ln(x_i) ln(y_i)  }{(\sum_{i=1}^n ln(x_i))^2 -n \sum_{i=1}^n ln(x_i)^2} \]</div>
+<div class="math notranslate nohighlight">
+\[ \beta_0 = \frac{1}{n}\sum_{i=1}^n ln(y_i) - \beta_1 \frac{1}{n} \sum_{i=1}^n ln(x_i)\]</div>
+<div class="section" id="example-30-2">
+<h3>Example 30-2<a class="headerlink" href="#example-30-2" title="Permalink to this headline">¶</a></h3>
+<p>Consider a chemical engineer examining the rate at which a reactant is consumed in a reaction in the manufacture of a polymer.  The following data were obtained showing the reaction rate in moles/second as a function of the reactant moles/liter.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Concentration (mol/l)</p></th>
+<th class="text-align:right head"><p>Rate (mol/sec)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>2.85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>80</p></td>
+<td class="text-align:right"><p>2.00</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>60</p></td>
+<td class="text-align:right"><p>1.25</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>40</p></td>
+<td class="text-align:right"><p>0.67</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>20</p></td>
+<td class="text-align:right"><p>0.22</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>10</p></td>
+<td class="text-align:right"><p>0.072</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>5</p></td>
+<td class="text-align:right"><p>0.024</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:right"><p>0.0018</p></td>
+</tr>
+</tbody>
+</table>
+<p>Reaction rates of this type are often modeled using the reactant concentration raised to some power.</p>
+<p>Here we will fit a power-law model to the data and report the result.  First in this case a plot is in order to get an idea of the relationship.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.85</span><span class="p">,</span><span class="mf">2.00</span><span class="p">,</span><span class="mf">1.25</span><span class="p">,</span><span class="mf">0.67</span><span class="p">,</span><span class="mf">0.22</span><span class="p">,</span><span class="mf">0.072</span><span class="p">,</span><span class="mf">0.024</span><span class="p">,</span><span class="mf">0.0018</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">conc</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Concentration (M)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rate (mol/sec)&#39;</span><span class="p">)</span>
+<span class="c1">#plt.legend([&#39;Observed Values&#39;,&#39;Data Model&#39;])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Reaction Rate vs Reactant Concentration&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_27_0.png" src="../../_images/lesson30_27_0.png" />
+</div>
+</div>
+<p>Clearly not a straight line, one could try some log scales (left to the reader - they do straighten out the line)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set y-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set x-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Concentration (M)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rate (mol/sec)&#39;</span><span class="p">)</span>
+<span class="c1">#plt.legend([&#39;Observed Values&#39;,&#39;Data Model&#39;])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Reaction Rate vs Reactant Concentration&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_29_0.png" src="../../_images/lesson30_29_0.png" />
+</div>
+</div>
+<p>A log-log plot is good evidence that a power-law model might be a good data model.</p>
+<p>Now to build the design matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">y</span><span class="p">})</span> <span class="c1"># we use X,Y as column names for simplicity</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;lnX&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;lnY&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>lnX</th>
+      <th>lnY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>2.85</td>
+      <td>4.605170</td>
+      <td>1.047319</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>80</td>
+      <td>2.00</td>
+      <td>4.382027</td>
+      <td>0.693147</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>60</td>
+      <td>1.25</td>
+      <td>4.094345</td>
+      <td>0.223144</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>0.67</td>
+      <td>3.688879</td>
+      <td>-0.400478</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>0.22</td>
+      <td>2.995732</td>
+      <td>-1.514128</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now fit a linear model to the log-log part of the dataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise and fit linear regression model using `statsmodels`</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;lnY ~ lnX&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># model object constructor syntax</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now predict and plot results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict values</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+
+<span class="n">beta0</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># the fitted intercept</span>
+<span class="n">beta1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sse</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">ssr</span>
+<span class="n">rsq</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">rsquared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titleline</span> <span class="o">=</span> <span class="s2">&quot;Reaction Rate vs Concentration </span><span class="se">\n</span><span class="s2"> Data model y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;x&quot;</span> <span class="c1"># put the model into the title</span>
+<span class="n">titleline</span> <span class="o">=</span> <span class="n">titleline</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> SSE = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">sse</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> R^2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rsq</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> 
+
+<span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;lnX&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lnY&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;lnX&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ln Conc. (ln(mol/liter))&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ln Rate (ln(mol/sec))&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observed Values&#39;</span><span class="p">,</span><span class="s1">&#39;Data Model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titleline</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_36_0.png" src="../../_images/lesson30_36_0.png" />
+</div>
+</div>
+<div class="section" id="step-5">
+<h4>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h4>
+<p>Now to return to original variables:</p>
+<p><span class="math notranslate nohighlight">\(y(x) = e^{\beta_0} x^{\beta_1 } = e^{-6.312} x^{1.599}\)</span></p>
+<p>Now plotted in origional space (but use a log-log scale on both axes)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ymod&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">**</span><span class="n">beta1</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>lnX</th>
+      <th>lnY</th>
+      <th>Ymod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>2.85</td>
+      <td>4.605170</td>
+      <td>1.047319</td>
+      <td>2.863215</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>80</td>
+      <td>2.00</td>
+      <td>4.382027</td>
+      <td>0.693147</td>
+      <td>2.004008</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>60</td>
+      <td>1.25</td>
+      <td>4.094345</td>
+      <td>0.223144</td>
+      <td>1.265110</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40</td>
+      <td>0.67</td>
+      <td>3.688879</td>
+      <td>-0.400478</td>
+      <td>0.661556</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>0.22</td>
+      <td>2.995732</td>
+      <td>-1.514128</td>
+      <td>0.218390</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titleline</span> <span class="o">=</span> <span class="s2">&quot;Reaction Rate vs Concentration </span><span class="se">\n</span><span class="s2"> Data model y = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;x^(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span> <span class="c1"># put the model into the title</span>
+<span class="n">titleline</span> <span class="o">=</span> <span class="n">titleline</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> SSE = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">sse</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> R^2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rsq</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ymod&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="c1">#plt.yscale(&#39;log&#39;) # set y-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Conc. (mol/liter)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rate (mol/sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observed Values&#39;</span><span class="p">,</span><span class="s1">&#39;Data Model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titleline</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_41_0.png" src="../../_images/lesson30_41_0.png" />
+</div>
+</div>
+<p>And now on log-log scales</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot regression against actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>           <span class="c1"># scatter plot showing actual data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ymod&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set y-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># set x-axis to display a logarithmic scale #################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Conc. (mol/liter)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rate (mol/sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Observed Values&#39;</span><span class="p">,</span><span class="s1">&#39;Data Model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titleline</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson30_43_0.png" src="../../_images/lesson30_43_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.grid.html">matplotlib documentation</a></p></li>
+</ol>
+<hr><hr>
+</div>
+<div class="section" id="laboratory-30">
+<h2>Laboratory 30<a class="headerlink" href="#laboratory-30" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 30 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30.html">Laboratory 30.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 30 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30.ipynb">Laboratory 30.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-30">
+<h2>Exercise Set 30<a class="headerlink" href="#exercise-set-30" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 30 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30-TH.html">Exercise 30.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 30 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab30/Lab30-TH.ipynb">Exercise Set 30.ipynb</a></p>
 </div>
 </div>
 
@@ -492,7 +1343,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">29: Multiple Least Squares</p>
+                <p class="prevnext-title">29: Multiple Linear Regression</p>
             </div>
         </a>
     </div>
