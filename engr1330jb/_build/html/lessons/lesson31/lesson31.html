@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>31: Multiple Least Squares Quality Assessment &#8212; ENGR 1330 Course Notes</title>
+    <title>31 – Classification Engines &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="32: Logistic Regression (Homebrew)" href="../lesson32/lesson32.html" />
-    <link rel="prev" title="30: Multiple Least Squares (continued)" href="../lesson30/lesson30.html" />
+    <link rel="prev" title="30: Regression using Exponential, Logarithmic, and Power-Law Models" href="../lesson30/lesson30.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,7 +261,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson27/lesson27.html">
-   27: Ordinary Least Squares
+   27: Project Planning Workshop
   </a>
  </li>
  <li class="toctree-l1">
@@ -269,17 +271,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson29/lesson29.html">
-   29: Multiple Least Squares
+   29: Multiple Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson30/lesson30.html">
-   30: Multiple Least Squares (continued)
+   30: Regression using Exponential, Logarithmic, and Power-Law Models
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   31: Multiple Least Squares Quality Assessment
+   31 – Classification Engines
   </a>
  </li>
  <li class="toctree-l1">
@@ -426,10 +428,114 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   31 – Classification Engines
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-concepts">
+     Computational Thinking Concepts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#textbook-resources">
+     Textbook Resources
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-brains-do-well">
+     What Brains Do Well
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-prediction-machine">
+     A Prediction Machine
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification">
+     Classification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#training-a-simple-classifier">
+       Training A Simple Classifier
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-classifiers-future-revisions">
+       Multiple Classifiers (future revisions)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#neuron-analog-future-revisions">
+       Neuron Analog (future revisions)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classifiers-in-python-future-revisions">
+     Classifiers in Python (future revisions)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-a-step-towards-classification">
+     Logistic Regression - A step towards classification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-logistic-regression">
+   Simple Logistic Regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outlier-check">
+   Outlier Check
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-encoding">
+   Label Encoding
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-construction">
+   Model Construction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#laboratory-31">
+     Laboratory 31
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-set-31-font-color-red-none-font">
+     Exercise Set 31
+     <font color="red">
+      (none)
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     References
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -442,18 +548,1315 @@
         
               <div>
                 
-  <div class="alert alert-block alert-info">
+  <hr class="docutils" />
+<div class="alert alert-block alert-info">
     <b><h1>ENGR 1330 Computational Thinking with Data Science </h1></b> 
-</div> 
-<p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
-<p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="multiple-least-squares-quality-assessment">
-<h1>31: Multiple Least Squares Quality Assessment<a class="headerlink" href="#multiple-least-squares-quality-assessment" title="Permalink to this headline">¶</a></h1>
+</div>
+<p>Last GitHub Commit Date: 4 Nov 2021</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="classification-engines">
+<h1>31 – Classification Engines<a class="headerlink" href="#classification-engines" title="Permalink to this headline">¶</a></h1>
+<p>This lesson largely explains the difference between prediction engines and classification engines, and concludes with logistic regression, which sort of bridges the gap between the two concepts.</p>
+<!--![](https://www.thermofisher.com/blog/wp-content/uploads/sites/11/2018/01/istock-829172394_redumbrella.jpg)-->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This lesson is still under construction.  The code near the end is functional but slow.  The narrative is incomplete.  The reference links are vital to understanding the tools.</p>
+</div>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Identifying confounding predictors</p></li>
+<li><p>Create logistic regression models to classify (binary assignment) output based on multiple continuous inputs</p></li>
+<li><p>Create presentation-quality graphs and charts for reporting results</p></li>
 </ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="computational-thinking-concepts">
+<h2>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Description</p></th>
+<th class="text-align:left head"><p>Computational Thinking Concept</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Logistic Model</p></td>
+<td class="text-align:left"><p>Abstraction</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Response and Explanatory Variables</p></td>
+<td class="text-align:left"><p>Decomposition</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Primitive arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>NumPy arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="textbook-resources">
+<h2>Textbook Resources<a class="headerlink" href="#textbook-resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://inferentialthinking.com/chapters/17/Classification.html">https://inferentialthinking.com/chapters/17/Classification.html</a></p>
+<hr></div>
+<div class="section" id="what-brains-do-well">
+<h2>What Brains Do Well<a class="headerlink" href="#what-brains-do-well" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/pictures.png" /></p>
+</div>
+<div class="section" id="a-prediction-machine">
+<h2>A Prediction Machine<a class="headerlink" href="#a-prediction-machine" title="Permalink to this headline">¶</a></h2>
+<p>Imagine a basic machine that takes a question, does some “thinking” and pushes out an answer. Just like the example above with ourselves taking input through our eyes, using our brains to analyse the scene, and coming to the conclusion about what objects are in that scene. Here’s what this looks like:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/eat-sleep-poop1.png" /></p>
+<p>Computers don’t really think, they’re just glorified calculators remember, so let’s use more appropriate words to describe what’s going on:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/eat-sleep-poop2.png" /></p>
+<p>A computer takes some input, does some calculation and poops out an output. The following illustrates this. An input of “3 x 4” is processed, perhaps by turning multiplication into an easier set of additions, and the output answer “12” poops out.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/three-by-four.png" /></p>
+<p>Not particularly impressive - we could even write a function!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">threeByfour</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a times b =&#39;</span><span class="p">,</span><span class="n">threeByfour</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a times b = 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, Imagine a machine that converts kilometres to miles, like the following:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/km-2-miles.png" /></p>
+<p>But imagine we don’t know the formula for converting between kilometres and miles. All we know is the the relationship between the two is <strong>linear</strong>. That means if we double the number in miles, the same distance in kilometres is also doubled.</p>
+<p>This linear relationship between kilometres and miles gives us a clue about that mysterious calculation ­ it needs to be of the form “miles = kilometres x <strong>c</strong>”, where <strong>c</strong> is a constant. We don’t know what this constant <strong>c</strong> is yet. The only other clues we have are some examples pairing kilometres with the correct value for miles. These are like real world observations used to test scientific theories - they’re examples of real world truth.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Truth Example</p></th>
+<th class="text-align:right head"><p>Kilometres</p></th>
+<th class="text-align:right head"><p>Miles</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>62.137</p></td>
+</tr>
+</tbody>
+</table>
+<p>To work out that missing constant <strong>c</strong> just pluck a value at random and give it a try! Let’s try <strong>c</strong> = 0.5 and see what happens.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/first-shot.png" /></p>
+<p>Here we have miles = kilometres x <strong>c</strong>, where kilometres is 100 and <strong>c</strong> is our current guess at 0.5. That gives 50 miles. Okay. That’s not bad at all given we chose <strong>c</strong> = 0.5 at random! But we know it’s not exactly right because our truth example number 2 tells us the answer should be 62.137. We’re wrong by 12.137. That’s the <strong>error</strong>, the difference between our calculated answer and the actual truth from our list of examples. That is,</p>
+<p>error = truth - calculated = 62.137 - 50 = 12.137</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">km2miles</span><span class="p">(</span><span class="n">km</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">km</span><span class="o">*</span><span class="n">c</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="n">y</span><span class="o">=</span><span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">62.137</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;kilometers is estimated to be &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39; miles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimation error is &#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;miles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 kilometers is estimated to be  50.0  miles
+Estimation error is  12.137 miles
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="http://54.243.252.9/engr-1330-psuedo-course/CECE-1330-PsuedoCourse/1-Lessons/Lesson23/PsuedoLesson/first-error.png" /></p>
+<p>So what next? We know we’re wrong, and by how much. Instead of being a reason to despair, we use this error to guide a second, better, guess at <strong>c</strong>. Look at that error again. We were short by 12.137. Because the formula for converting kilometres to miles is linear, miles = kilometres x <strong>c</strong>, we know that increasing <strong>c</strong> will increase the output. Let’s nudge <strong>c</strong> up from 0.5 to 0.6 and see what happens.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/second-shot.png" /></p>
+<p>With <strong>c</strong> now set to 0.6, we get miles = kilometres x <strong>c</strong> = 100 x 0.6 = 60. That’s better than the previous answer of 50. We’re clearly making progress! Now the error is a much smaller 2.137. It might even be an error we’re happy to live with.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">km2miles</span><span class="p">(</span><span class="n">km</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">km</span><span class="o">*</span><span class="n">c</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">0.6</span>
+<span class="n">y</span><span class="o">=</span><span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">62.137</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;kilometers is estimated to be &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39; miles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimation error is &#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;miles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 kilometers is estimated to be  60.0  miles
+Estimation error is  2.1370000000000005 miles
+</pre></div>
+</div>
+</div>
+</div>
+<p>The important point here is that we used the error to guide how we nudged the value of c. We wanted to increase the output from 50 so we increased <strong>c</strong> a little bit. Rather than try to use algebra to work out the exact amount <strong>c</strong> needs to change, let’s continue with this approach of refining <strong>c</strong>. If you’re not convinced, and think it’s easy enough to work out the exact answer, remember that many more interesting problems won’t have simple mathematical formulae relating the output and input. That’s why we use more sophisticated “machine learning” methods. Let’s do this again. The output of 60 is still too small. Let’s nudge the value of <strong>c</strong> up again from 0.6 to 0.7.</p>
+<p>Rashid, Tariq. Make Your Own Neural Network (Page 16).  . Kindle Edition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">km2miles</span><span class="p">(</span><span class="n">km</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">km</span><span class="o">*</span><span class="n">c</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="n">y</span><span class="o">=</span><span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">62.137</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;kilometers is estimated to be &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39; miles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimation error is &#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;miles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 kilometers is estimated to be  70.0  miles
+Estimation error is  -7.8629999999999995 miles
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/overshoot.png" /></p>
+<p>Oh no! We’ve gone too far and <strong>overshot</strong> the known correct answer. Our previous error was 2.137 but now it’s -7.863. The minus sign simply says we overshot rather than undershot, remember the error is (correct value - calculated value). Ok so <strong>c</strong> = 0.6 was way better than c = 0.7. We could be happy with the small error from <strong>c</strong> = 0.6 and end this exercise now. But let’s go on for just a bit longer.</p>
+<p>Let’s split the difference from our last guess - we still have overshot, but not as much (-2.8629).<br />
+Split again to <strong>c</strong>=0.625, and overshoot is only (-0.3629) (we could sucessively split the <strong>c</strong> values until we are close enough. The method just illustrated is called bisection, and the important point is that we avoided any mathematics other than bigger/smaller and multiplication and subtraction; hence just arithmetic.)</p>
+<p>That’s much much better than before. We have an output value of 62.5 which is only wrong by 0.3629 from the correct 62.137. So that last effort taught us that we should moderate how much we nudge the value of <strong>c</strong>. If the outputs are getting close to the correct answer - that is, the error is getting smaller - then don’t nudge the constant so much. That way we avoid overshooting the right value, like we did earlier. Again without getting too distracted by exact ways of working out <strong>c</strong>, and to remain focussed on this idea of successively refining it, we could suggest that the correction is a fraction of the error. That’s intuitively right - a big error means a bigger correction is needed, and a tiny error means we need the teeniest of nudges to <strong>c</strong>. What we’ve just done, believe it or not, is walked through the very core process of learning in a neural network - we’ve trained the machine to get better and better at giving the right answer. It is worth pausing to reflect on that - we’ve not solved a problem exactly in one step. Instead, we’ve taken a very different approach by trying an answer and improving it repeatedly. Some use the term <strong>iterative</strong> and it means repeatedly improving an answer bit by bit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">km2miles</span><span class="p">(</span><span class="n">km</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">km</span><span class="o">*</span><span class="n">c</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">0.65</span>
+<span class="n">y</span><span class="o">=</span><span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">62.137</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;kilometers is estimated to be &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39; miles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimation error is &#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;miles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 kilometers is estimated to be  65.0  miles
+Estimation error is  -2.8629999999999995 miles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">km2miles</span><span class="p">(</span><span class="n">km</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">km</span><span class="o">*</span><span class="n">c</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">0.625</span>
+<span class="n">y</span><span class="o">=</span><span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">62.137</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;kilometers is estimated to be &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39; miles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimation error is &#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;miles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 kilometers is estimated to be  62.5  miles
+Estimation error is  -0.36299999999999955 miles
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="classification">
+<h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
+<p>We called the above simple machine a <strong>predictor</strong>, because it takes an input and makes a prediction of what the output should be. We refined that prediction by adjusting an internal parameter, informed by the error we saw when comparing with a known-true example.</p>
+<p>Now look at the following graph showing the measured widths and lengths of garden bugs.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/ladybugs.png" /></p>
+<p>You can clearly see two groups. The caterpillars are thin and long, and the ladybirds are wide and short. Remember the predictor that tried to work out the correct number of miles given kilometres? That predictor had an adjustable linear function at it’s heart. Remember, linear functions give straight lines when you plot their output against input. The adjustable parameter <strong>c</strong> changed the slope of that straight line.</p>
+<p>Rashid, Tariq. Make Your Own Neural Network (Page 19).  . Kindle Edition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+<span class="c1"># plot the predictor machine here</span>
+<span class="n">kilometers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">miles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">62.137</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">kilometers</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span>
+
+<span class="c1">#We already know these parameters from last week but let&#39;s assume that we don&#39;t!</span>
+<span class="c1"># alpha = -16.78636363636364</span>
+<span class="c1"># beta = 11.977272727272727</span>
+<span class="c1">#Our linear model: ypred = alpha + beta * x</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>     <span class="c1">#needed for linear regression</span>
+<span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="kn">import</span> <span class="n">wls_prediction_std</span>   <span class="c1">#needed to get prediction interval</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1">#print(re.summary())</span>
+<span class="c1">#print(re.params)</span>
+<span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="c1">#iv_l and iv_u give you the limits of the prediction interval for each point.</span>
+<span class="c1">#print(iv_l)</span>
+<span class="c1">#print(iv_u)</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">summary_table</span>
+
+<span class="n">st</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ss2</span> <span class="o">=</span> <span class="n">summary_table</span><span class="p">(</span><span class="n">re</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">fittedvalues</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">predict_mean_se</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">predict_mean_ci_low</span><span class="p">,</span> <span class="n">predict_mean_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">predict_ci_low</span><span class="p">,</span> <span class="n">predict_ci_upp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.6125</span>
+<span class="n">yyyy</span> <span class="o">=</span> <span class="n">km2miles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yyyy</span> <span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#plt.plot(x, predict_ci_low, &#39;--&#39;, color=&#39;green&#39;,lw=2) #Lower prediction band</span>
+<span class="c1">#plt.plot(x, predict_ci_upp, &#39;--&#39;, color=&#39;green&#39;,lw=2) #Upper prediction band</span>
+<span class="c1">#plt.plot(x, predict_mean_ci_low,&#39;--&#39;, color=&#39;orange&#39;,  lw=2) #Lower confidence band</span>
+<span class="c1">#plt.plot(x, predict_mean_ci_upp,&#39;--&#39;, color=&#39;orange&#39;, lw=2) #Upper confidence band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/jupyterhub/lib/python3.8/site-packages/statsmodels/regression/linear_model.py:1650: RuntimeWarning: divide by zero encountered in double_scalars
+  return np.dot(wresid, wresid) / self.df_resid
+/opt/jupyterhub/lib/python3.8/site-packages/statsmodels/stats/outliers_influence.py:693: RuntimeWarning: invalid value encountered in sqrt
+  return self.resid / sigma / np.sqrt(1 - hii)
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_14_1.png" src="../../_images/lesson31_14_1.png" />
+</div>
+</div>
+<p>What happens if we place a straight line over that plot?</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/bugslope1.png" /></p>
+<p>We can’t use the line in the same way we did before - to convert one number (kilometres) into another (miles), but perhaps we can use the line to separate different kinds of things. In the plot above, if the line was dividing the caterpillars from the ladybirds, then it could be used to <strong>classify</strong> an unknown bug based on its measurements. The line above doesn’t do this yet because half the caterpillars are on the same side of the dividing line as the ladybirds. Let’s try a different line, by adjusting the slope again, and see what happens.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/bugslope2.png" /></p>
+<p>This time the line is even less useful! It doesn’t separate the two kinds of bugs at all. Let’s have another go:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/bugslope3.png" /></p>
+<p>That’s much better! This line neatly separates caterpillars from ladybirds. We can now use this line as a <strong>classifier</strong> of bugs. We are assuming that there are no other kinds of bugs that we haven’t seen - but that’s ok for now, we’re simply trying to illustrate the idea of a simple classifier. Imagine next time our computer used a robot arm to pick up a new bug and measured its width and height, it could then use the above line to classify it correctly as a caterpillar or a ladybird. Look at the following plot, you can see the unknown bug is a caterpillar because it lies above the line. This classification is simple but pretty powerful already!</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/newbug.png" /></p>
+<p>We’ve seen how a linear function inside our simple predictors can be used to classify previously unseen data. But we’ve skipped over a crucial element. How do we get the right slope? How do we improve a line we know isn’t a good divider between the two kinds of bugs? The answer to that is again at the very heart of how machines learn, and we’ll look at this next.</p>
+<div class="section" id="training-a-simple-classifier">
+<h3>Training A Simple Classifier<a class="headerlink" href="#training-a-simple-classifier" title="Permalink to this headline">¶</a></h3>
+<p>We want to <strong>train</strong> our linear classifier to correctly classify bugs as ladybirds or caterpillars. We saw above this is simply about refining the slope of the dividing line that separates the two groups of points on a plot of big width and height.</p>
+<p>How do we do this? We need some examples to learn from. The following table shows two examples, just to keep this exercise simple.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Example</p></th>
+<th class="text-align:left head"><p>Width</p></th>
+<th class="text-align:left head"><p>Length</p></th>
+<th class="text-align:left head"><p>Bug</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>3.0</p></td>
+<td class="text-align:left"><p>1.0</p></td>
+<td class="text-align:left"><p>ladybird</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>1.0</p></td>
+<td class="text-align:left"><p>3.0</p></td>
+<td class="text-align:left"><p>caterpillar</p></td>
+</tr>
+</tbody>
+</table>
+<p>We have an example of a bug which has width 3.0 and length 1.0, which we know is a ladybird. We also have an example of a bug which is longer at 3.0 and thinner at 1.0, which is a caterpillar. This is a set of examples which we declare to be the truth.</p>
+<p>It is these examples which will help refine the slope of the classifier function. Examples of truth used to teach a predictor or a classifier are called the <strong>training data.</strong>
+Let’s plot these two training data examples. Visualising data is often very helpful to get a better understand of it, a feel for it, which isn’t easy to get just by looking at a list or table of numbers.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/trainingbugs.png" /></p>
+<p>Let’s start with a random dividing line, just to get started somewhere. Looking back at our miles to kilometre predictor, we had a linear function whose parameter we adjusted. We can do the same here, because the dividing line is a straight line: <span class="math notranslate nohighlight">\(y = Ax+b\)</span></p>
+<p>We’ve deliberately used the names <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> instead of length and width, because strictly speaking, the line is not a predictor here. It doesn’t convert width to length, like we previously converted miles to kilometres. Instead, it is a dividing line, a classifier. To keep the garden bug scenario as simple as possible we will choose a zero intercept <span class="math notranslate nohighlight">\(b=0\)</span>.</p>
+<p>We saw before that the parameter <span class="math notranslate nohighlight">\(A\)</span> controls the slope of the line. The larger <span class="math notranslate nohighlight">\(A\)</span> is the larger the slope. Let’s go for <span class="math notranslate nohighlight">\(A\)</span> is 0.25 to get started. The dividing line is <span class="math notranslate nohighlight">\(y = 0.25x\)</span>. Let’s plot this line on the same plot of training data to see what it looks like:</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/classyline1.png" /></p>
+<p>Well, we can see that the line <span class="math notranslate nohighlight">\(y = 0.25x\)</span> isn’t a good classifier already without the need to do any calculations. The line doesn’t divide the two types of bug - We can’t say “if the bug is above the line then it is a caterpillar” because the ladybird is above the line too.</p>
+<p>So intuitively we need to move the line up a bit. We’ll resist the temptation to do this by looking at the plot and drawing a suitable line. We want to see if we can find a repeatable recipe to do this, a series of computer instructions, which computer scientists call an <strong>algorithm</strong>.</p>
+<p>Let’s look at the first training example: the width is 3.0 and length is 1.0 for a ladybird.
+If we tested the <span class="math notranslate nohighlight">\(y = Ax\)</span> function with this example where <span class="math notranslate nohighlight">\(x\)</span> is 3.0, we’d get <span class="math notranslate nohighlight">\(y = (0.25) * (3.0) = 0.75\)</span>
+The function, with the parameter <span class="math notranslate nohighlight">\(A\)</span> set to the initial arbitrary chosen value of 0.25, is suggesting that for a bug of width 3.0, the length should be 0.75.
+We know that’s too small because the training data example tells us it must be a length of 1.0. So we have a difference, an <strong>error</strong>.
+Just as before, with the miles to kilometres predictor, we can use this error to inform how we adjust the parameter <span class="math notranslate nohighlight">\(A\)</span>. But let’s think about what <span class="math notranslate nohighlight">\(y\)</span> should be again.
+If <span class="math notranslate nohighlight">\(y\)</span> was 1.0 then the line goes right through the point where the ladybird sits at <span class="math notranslate nohighlight">\((x,y) = (3.0, 1.0)\)</span>.
+It’s a subtle point but we don’t actually want that.
+We want the line to go above that point.
+Why? Because we want all the ladybird points to be below the line, not on it.
+The line needs to be a <em>dividing line</em> between ladybirds and caterpillars, not a predictor of a bug’s length given its width.
+So let’s try to aim for <span class="math notranslate nohighlight">\(y = 1.1\)</span> when <span class="math notranslate nohighlight">\(x = 3.0\)</span>.
+It’s just a small number above 1.0, We could have chosen 1.2, or even 1.3, but we don’t want a larger number like 10 or 100 because that would make it more likely that the line goes above both ladybirds and caterpillars, resulting in a separator that wasn’t useful at all. So the desired target is 1.1, and the error <strong>E</strong> is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error = (desired target - actual output)
+</pre></div>
+</div>
+<p>Which is, <span class="math notranslate nohighlight">\(E = 1.1 - 0.75 = 0.35\)</span></p>
+<p>Let’s examine the error, the desired target and the calculated value visually.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/visualbugs.png" /></p>
+<p>Now, what do we do with this <strong>E</strong> to guide us to a better refined parameter <span class="math notranslate nohighlight">\(A\)</span>?</p>
+<p>We want to use the error in <span class="math notranslate nohighlight">\(y\)</span>, which we call <strong>E</strong>, to inform the required change in parameter <span class="math notranslate nohighlight">\(A\)</span>.
+To do this we need to know how the two are related. How is <span class="math notranslate nohighlight">\(A\)</span> related to <strong>E</strong>?</p>
+<p>If we know this, then we can understand how changing one affects the other (correlation anyone?).</p>
+<p>Let’s start with the linear function for the classifier: <span class="math notranslate nohighlight">\(y = Ax\)</span>
+We know that for initial guesses of <span class="math notranslate nohighlight">\(A\)</span> this gives the wrong answer for <span class="math notranslate nohighlight">\(y\)</span>, which should be the value given by the training data.
+Let’s call the correct desired value, <span class="math notranslate nohighlight">\(t\)</span> for target value. To get that value <span class="math notranslate nohighlight">\(t\)</span>, we need to adjust <span class="math notranslate nohighlight">\(A\)</span> by a small amount; <span class="math notranslate nohighlight">\( t = (A + \Delta A)x\)</span> Let’s picture this to make it easier to understand. You can see the new slope <span class="math notranslate nohighlight">\((A + \Delta A)\)</span>.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/deltaA.png" /></p>
+<p>Remember the error <strong>E</strong> was the difference between the desired correct value and the one we calculate based on our current guess for <span class="math notranslate nohighlight">\(A\)</span>. That is, <strong>E</strong> was <span class="math notranslate nohighlight">\(t - y\)</span> (Kind of smells like a residual!);</p>
+<div class="math notranslate nohighlight">
+\[ t - y = (A + \Delta A)x - Ax\]</div>
+<p>Expanding out the terms and simplifying:</p>
+<div class="math notranslate nohighlight">
+\[ \textbf{E} = t - y = (Ax + \Delta A)x - Ax =  E = (\Delta A)x \]</div>
+<p>That’s remarkable! The error <strong>E</strong> is related to <span class="math notranslate nohighlight">\(\Delta A\)</span> in a very simple way.</p>
+<p>We wanted to know how much to adjust <span class="math notranslate nohighlight">\(A\)</span> by to improve the slope of the line so it is a better classifier, being informed by the error <strong>E</strong>.
+To do this we simply re-arrange that last equation: <span class="math notranslate nohighlight">\(\Delta A = \textbf{E}/ x\)</span>
+That’s the magic expression we’ve been looking for. We can use the error <strong>E</strong> to refine the slope <span class="math notranslate nohighlight">\(A\)</span> of the classifying line by an amount  <span class="math notranslate nohighlight">\(\Delta A\)</span>.</p>
+<p>Let’s update that initial slope. The error was 0.35 and the <span class="math notranslate nohighlight">\(x\)</span> was 3.0.
+That gives <span class="math notranslate nohighlight">\(\Delta A = \textbf{E}/ x\)</span> as 0.35/ 3.0 = 0.1167.
+That means we need to change the current <span class="math notranslate nohighlight">\(A = 0.25\)</span> by <span class="math notranslate nohighlight">\(0.1167\)</span>.
+That means the new improved value for <span class="math notranslate nohighlight">\(A\)</span> is (A​ + ΔA​) which is 0.25 + 0.1167 = 0.3667. As it happens, the calculated value of <span class="math notranslate nohighlight">\(y\)</span> with this new <span class="math notranslate nohighlight">\(A\)</span> is 1.1 as you’d expect - it’s the desired target value.</p>
+<p>Now we have a method for refining that parameter <span class="math notranslate nohighlight">\(A\)</span>, informed by the current error. Now we’re done with one training example, let’s learn from the next one. Here we have a known true pairing of <span class="math notranslate nohighlight">\(x\)</span> = 1.0 and <span class="math notranslate nohighlight">\(y\)</span> = 3.0. Let’s see what happens when we put <span class="math notranslate nohighlight">\(x\)</span> = 1.0 into the linear function which is now using the updated <span class="math notranslate nohighlight">\(A\)</span> = 0.3667. We get <span class="math notranslate nohighlight">\(y\)</span> = 0.3667 * 1.0 = 0.3667.
+That’s not very close to the training example with <span class="math notranslate nohighlight">\(y\)</span> = 3.0 at all.</p>
+<p>Using the same reasoning as before that we want the line to not cross the training data but instead be just above or below it, we can set the desired target value at 2.9. This way the training example of a caterpillar is just above the line, not on it. The error E​ is (2.9 ­ 0.3667) = 2.5333. That’s a bigger error than before, but if you think about it, all we’ve had so far for the linear function to learn from is a single training example, which clearly biases the line towards that single example.</p>
+<p>Let’s update the <span class="math notranslate nohighlight">\(A\)</span> again, just like we did before. The <span class="math notranslate nohighlight">\(\Delta A\)</span> is <span class="math notranslate nohighlight">\(\textbf{E}/x\)</span> which is 2.5333/ 1.0 = 2.5333. That means the even newer <span class="math notranslate nohighlight">\(A\)</span> is 0.3667 + 2.5333 = 2.9. That means for <span class="math notranslate nohighlight">\(x = 1.0\)</span> the function gives 2.9 as the answer, which is what the desired value was.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/someupdates.png" /></p>
+<p>The  plot shows the initial line, the line updated after learning from the first training example, and the final line after learning from the second training example.</p>
+<p>Looking at that plot, we don’t seem to have improved the slope in the way we had hoped. It hasn’t divided neatly the region between ladybirds and caterpillars.
+The line updates to give each desired value for y.
+If we keep doing this, updating for each training data example, all we get is that the final update simply matches the last training example closely. We might as well have not bothered with all previous training examples. In effect we are throwing away any learning that previous training examples might gives us and just learning from the last one. How do we fix this?</p>
+<p>Easy! And this is an important idea in machine learning.<strong>We moderate</strong> the updates. That is, we calm them down a bit. Instead of jumping enthusiastically to each new <span class="math notranslate nohighlight">\(A\)</span>, we take a fraction of the change <span class="math notranslate nohighlight">\(\Delta A\)</span>, not all of it. This way we move in the direction that the training example suggests, but do so slightly cautiously, keeping some of the previous value which was arrived at through potentially many previous training iterations. We saw this idea of moderating our refinements before - with the simpler miles to kilometres predictor, where we nudged the parameter <strong>c</strong> as a fraction of the actual error.</p>
+<p>This moderation, has another very powerful and useful side effect. When the training data itself can’t be trusted to be perfectly true, and contains errors or noise, both of which are normal in real world measurements, the moderation can dampen the impact of those errors or noise. It smooths them out. Ok let’s rerun that again, but this time we’ll add a moderation into the update formula: <span class="math notranslate nohighlight">\(\Delta A = L (E/ x)\)</span></p>
+<p>The moderating factor is often called a <strong>learning rate</strong>, and we’ve called it <span class="math notranslate nohighlight">\(L\)</span>. Let’s pick <span class="math notranslate nohighlight">\(L\)</span> = 0.5 as a reasonable fraction just to get started. It simply means we only update half as much as would have done without moderation.</p>
+<p>Running through that all again, we have an initial <span class="math notranslate nohighlight">\(A\)</span> = 0.25. The first training example gives us y = 0.25 * 3.0 = 0.75. A desired value of 1.1 gives us an error of 0.35. The <span class="math notranslate nohighlight">\(\Delta A = L (E/ x)\)</span> = 0.5 * 0.35/ 3.0 = 0.0583. The updated <span class="math notranslate nohighlight">\(A\)</span> is 0.25 + 0.0583 = 0.3083.</p>
+<p>Trying out this new A on the training example at <span class="math notranslate nohighlight">\(x\)</span> = 3.0 gives y​ = 0.3083 * 3.0 = 0.9250. The line now falls on the wrong side of the training example because it is below 1.1 but it’s not a bad result if you consider it a first refinement step of many to come. It did move in the right direction away from the initial line.</p>
+<p>Let’s press on to the second training data example at <span class="math notranslate nohighlight">\(x\)</span> = 1.0. Using <span class="math notranslate nohighlight">\(A\)</span> = 0.3083 we have y = 0.3083 * 1.0 = 0.3083. The desired value was 2.9 so the error is (2.9 * 0.3083) = 2.5917. The <span class="math notranslate nohighlight">\(\Delta A = L (E/ x)\)</span> = 0.5 * 2.5917/ 1.0 = 1.2958. The even newer <span class="math notranslate nohighlight">\(A\)</span> is now 0.3083 + 1.2958 = 1.6042. Let’s visualise again the initial, improved and final line to see if moderating updates leads to a better dividing line between ladybird and caterpillar regions.</p>
+<p><img alt="" src="http://54.243.252.9/engr-1330-webroot/1-Lessons/Lesson22/moderatedUpdates.png" /></p>
+<p>This is really good! Even with these two simple training examples, and a relatively simple update method using a moderating <strong>learning rate</strong>, we have very rapidly arrived at a good dividing line <span class="math notranslate nohighlight">\(y = Ax\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is 1.6042. Let’s not diminish what we’ve achieved. We’ve achieved an automated method of learning to classify from examples that is remarkably effective given the simplicity of the approach.</p>
+</div>
+<div class="section" id="multiple-classifiers-future-revisions">
+<h3>Multiple Classifiers (future revisions)<a class="headerlink" href="#multiple-classifiers-future-revisions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="neuron-analog-future-revisions">
+<h3>Neuron Analog (future revisions)<a class="headerlink" href="#neuron-analog-future-revisions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>threshold</p></li>
+<li><p>step-function</p></li>
+<li><p>logistic function</p></li>
+<li><p>computational linear algebra</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="classifiers-in-python-future-revisions">
+<h2>Classifiers in Python (future revisions)<a class="headerlink" href="#classifiers-in-python-future-revisions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>KNN Nearest Neighbor (use concrete database as example, solids as homework)</p></li>
+<li><p>ANN Artifical Neural Network (use minst database as example, something from tensorflow as homework)</p></li>
+<li><p>Clustering(K means, heriarchial (random forests))</p></li>
+<li><p>SVM</p></li>
+<li><p>PCA (? how is this machine learning we did this in the 1970s?)</p></li>
+</ul>
+</div>
+<div class="section" id="logistic-regression-a-step-towards-classification">
+<h2>Logistic Regression - A step towards classification<a class="headerlink" href="#logistic-regression-a-step-towards-classification" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia (<a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_regression">https://en.wikipedia.org/wiki/Logistic_regression</a>) (emphasis is mine):</p>
+<p>In statistics, the <strong>logistic model</strong> (or logit model) is used to model the probability of a certain <strong>class</strong> or <strong>event</strong> existing such as pass/fail, win/lose, alive/dead or healthy/sick. This can be extended to model several classes of events such as determining whether an image contains a cat, dog, lion, etc. Each object being detected in the image would be assigned a probability between 0 and 1, with a sum of one.</p>
+<p>Logistic regression is a <strong>statistical model</strong> that in its basic form uses a logistic function to model a binary dependent variable, although many more complex extensions exist. In regression analysis, logistic regression (or logit regression) is estimating the parameters of a logistic model (a form of binary regression). Mathematically, a <strong>binary logistic model</strong> has a dependent variable with two possible values, such as pass/fail which is represented by an indicator variable, where the two values are labeled “0” and “1”. In the <strong>logistic model</strong>, the log-odds (the logarithm of the odds) for the value labeled “1” is a linear combination of one or more independent variables (“predictors”); the independent variables can each be a binary variable (two classes, coded by an indicator variable) or a continuous variable (any real value).</p>
+<p>The corresponding probability of the value labeled “1” can vary between 0 (certainly the value “0”) and 1 (certainly the value “1”), hence the labeling; the function that converts log-odds to probability is the logistic function, hence the name. The unit of measurement for the log-odds scale is called a logit, from logistic unit, hence the alternative names. Analogous models with a different sigmoid function instead of the logistic function can also be used, such as the probit model; the defining characteristic of the logistic model is that increasing one of the independent variables multiplicatively scales the odds of the given outcome at a constant rate, with each independent variable having its own parameter; for a binary dependent variable this generalizes the odds ratio.</p>
+<p>In a binary logistic regression model, the dependent variable has two levels (categorical). Outputs with more than two values are modeled by multinomial logistic regression and, if the multiple categories are ordered, by ordinal logistic regression (for example the proportional odds ordinal logistic model). The logistic regression model itself simply <strong>models probability of output</strong> in terms of input and does not perform statistical classification (it is not a classifier), though it can be used to make a classifier, for instance by choosing a cutoff value and classifying inputs with probability greater than the cutoff as one class, below the cutoff as the other; this is a common way to make a binary classifier. The coefficients are generally not computed by a closed-form expression, unlike linear least squares; see § Model fitting. <span class="math notranslate nohighlight">\(\dots\)</span></p>
+<p>Now lets visit the Wiki and learn more <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_regression">https://en.wikipedia.org/wiki/Logistic_regression</a></p>
+<p>Now lets visit our friends at towardsdatascience <a class="reference external" href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc</a>  Here we will literally CCMR the scripts there.</p>
+<p>We need the data,  a little searching and its here <a class="reference external" href="https://gist.github.com/curran/a08a1080b88344b0c8a7">https://gist.github.com/curran/a08a1080b88344b0c8a7</a> after download and extract we will need to rename the database</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris-data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length_cm</th>
+      <th>sepal_width_cm</th>
+      <th>petal_length_cm</th>
+      <th>petal_width_cm</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length_cm</th>
+      <th>sepal_width_cm</th>
+      <th>petal_length_cm</th>
+      <th>petal_width_cm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>145.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.644627</td>
+      <td>3.054667</td>
+      <td>3.758667</td>
+      <td>1.236552</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.312781</td>
+      <td>0.433123</td>
+      <td>1.764420</td>
+      <td>0.755058</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.055000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.700000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   sepal_length_cm  150 non-null    float64
+ 1   sepal_width_cm   150 non-null    float64
+ 2   petal_length_cm  150 non-null    float64
+ 3   petal_width_cm   145 non-null    float64
+ 4   class            150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Removing all null values row</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;petal_width_cm&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 145 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   sepal_length_cm  145 non-null    float64
+ 1   sepal_width_cm   145 non-null    float64
+ 2   petal_length_cm  145 non-null    float64
+ 3   petal_width_cm   145 non-null    float64
+ 4   class            145 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.8+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0xffff803eb8e0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_31_1.png" src="../../_images/lesson31_31_1.png" />
+</div>
+</div>
+<p>From the plots it can be observed that there is some abnormality in the class name. Let’s explore further</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-virginica     50
+Iris-versicolor    45
+Iris-setosa        44
+versicolor          5
+Iris-setossa        1
+Name: class, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Two observations can be made from the above results</p>
+<ul class="simple">
+<li><p>For 5 data points ‘Iris-versicolor’ has been specified as ‘versicolor’</p></li>
+<li><p>For 1 data points, ‘Iris-setosa’ has been specified as ‘Iris-setossa’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s2">&quot;Iris-setossa&quot;</span><span class="p">,</span><span class="s2">&quot;versicolor&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">,</span><span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-versicolor    50
+Iris-virginica     50
+Iris-setosa        45
+Name: class, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="simple-logistic-regression">
+<h1>Simple Logistic Regression<a class="headerlink" href="#simple-logistic-regression" title="Permalink to this headline">¶</a></h1>
+<p>Consider only two class ‘Iris-setosa’ and ‘Iris-versicolor’. Dropping all other class</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Iris-virginica&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length_cm</th>
+      <th>sepal_width_cm</th>
+      <th>petal_length_cm</th>
+      <th>petal_width_cm</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>95</th>
+      <td>5.7</td>
+      <td>3.0</td>
+      <td>4.2</td>
+      <td>1.2</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>5.7</td>
+      <td>2.9</td>
+      <td>4.2</td>
+      <td>1.3</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>6.2</td>
+      <td>2.9</td>
+      <td>4.3</td>
+      <td>1.3</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>5.1</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>5.7</td>
+      <td>2.8</td>
+      <td>4.1</td>
+      <td>1.3</td>
+      <td>Iris-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="outlier-check">
+<h1>Outlier Check<a class="headerlink" href="#outlier-check" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">final_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0xffffa9ad3490&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_41_1.png" src="../../_images/lesson31_41_1.png" />
+</div>
+</div>
+<p>From the above plot, sepal_width and sepal_length seems to have outliers. To confirm let’s plot them seperately</p>
+<p>SEPAL LENGTH</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;sepal_length_cm&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:title={&#39;center&#39;:&#39;sepal_length_cm&#39;}&gt;]], dtype=object)
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_44_1.png" src="../../_images/lesson31_44_1.png" />
+</div>
+</div>
+<p>It can be observed from the plot, that for 5 data points values are below 1 and they seem to be outliers. So, these data points
+are considered to be in ‘m’ and are converted to ‘cm’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">final_df</span><span class="o">.</span><span class="n">sepal_length_cm</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sepal_length_cm&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">final_df</span><span class="p">[</span><span class="s1">&#39;sepal_length_cm&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">final_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;sepal_length_cm&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:title={&#39;center&#39;:&#39;sepal_length_cm&#39;}&gt;]], dtype=object)
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_46_1.png" src="../../_images/lesson31_46_1.png" />
+</div>
+</div>
+<p>SEPAL WIDTH</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span> <span class="o">=</span> <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">final_df</span><span class="p">[(</span><span class="n">final_df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Iris-setosa&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">final_df</span><span class="p">[</span><span class="s1">&#39;sepal_width_cm&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">2.5</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">final_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0xffff7ca45940&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lesson31_49_1.png" src="../../_images/lesson31_49_1.png" />
+</div>
+</div>
+<p>Successfully removed outliers!!</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="label-encoding">
+<h1>Label Encoding<a class="headerlink" href="#label-encoding" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">,</span><span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length_cm</th>
+      <th>sepal_width_cm</th>
+      <th>petal_length_cm</th>
+      <th>petal_width_cm</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>95</th>
+      <td>5.7</td>
+      <td>3.0</td>
+      <td>4.2</td>
+      <td>1.2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>5.7</td>
+      <td>2.9</td>
+      <td>4.2</td>
+      <td>1.3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>6.2</td>
+      <td>2.9</td>
+      <td>4.3</td>
+      <td>1.3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>5.1</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>5.7</td>
+      <td>2.8</td>
+      <td>4.1</td>
+      <td>1.3</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="model-construction">
+<h1>Model Construction<a class="headerlink" href="#model-construction" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inp_df</span> <span class="o">=</span> <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">final_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">4</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">out_df</span> <span class="o">=</span> <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">final_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">inp_df</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">inp_df</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">inp_df</span><span class="p">,</span> <span class="n">out_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_tr_arr</span> <span class="o">=</span> <span class="n">X_train</span>
+<span class="n">X_ts_arr</span> <span class="o">=</span> <span class="n">X_test</span>
+<span class="c1">#y_tr_arr = y_train.as_matrix()  method deprecated as per https://pandas.pydata.org/pandas-docs/version/0.25.1/reference/api/pandas.DataFrame.as_matrix.html</span>
+<span class="c1">#y_ts_arr = y_test.as_matrix()</span>
+<span class="n">y_tr_arr</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>  <span class="c1"># method deprecated as per https://pandas.pydata.org/pandas-docs/version/0.25.1/reference/api/pandas.DataFrame.as_matrix.html</span>
+<span class="n">y_ts_arr</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="c1">#y_tr_arr = y_train # pick up syntax by follow X_train; or could read, but a guess is faster</span>
+<span class="c1">#y_ts_arr = y_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Input Shape&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">X_tr_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output Shape&#39;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input Shape (75, 4)
+Output Shape (19, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weightInitialization</span><span class="p">(</span><span class="n">n_features</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">n_features</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmoid_activation</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="n">final_result</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">result</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">final_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_optimize</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1">#Prediction</span>
+    <span class="n">final_result</span> <span class="o">=</span> <span class="n">sigmoid_activation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">Y_T</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">Y_T</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">final_result</span><span class="p">))</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Y_T</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">final_result</span><span class="p">)))))</span>
+    <span class="c1">#</span>
+    
+    <span class="c1">#Gradient calculation</span>
+    <span class="n">dw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="n">final_result</span><span class="o">-</span><span class="n">Y</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">final_result</span><span class="o">-</span><span class="n">Y</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+    
+    <span class="n">grads</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dw&quot;</span><span class="p">:</span> <span class="n">dw</span><span class="p">,</span> <span class="s2">&quot;db&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">grads</span><span class="p">,</span> <span class="n">cost</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_predict</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">no_iterations</span><span class="p">):</span>
+    <span class="n">costs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_iterations</span><span class="p">):</span>
+        <span class="c1">#</span>
+        <span class="n">grads</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">model_optimize</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="n">dw</span> <span class="o">=</span> <span class="n">grads</span><span class="p">[</span><span class="s2">&quot;dw&quot;</span><span class="p">]</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">grads</span><span class="p">[</span><span class="s2">&quot;db&quot;</span><span class="p">]</span>
+        <span class="c1">#weight update</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="p">(</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="n">dw</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">db</span><span class="p">)</span>
+        <span class="c1">#</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+            <span class="c1">#print(&quot;Cost after %i iteration is %f&quot; %(i, cost))</span>
+    
+    <span class="c1">#final parameters</span>
+    <span class="n">coeff</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">w</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="n">b</span><span class="p">}</span>
+    <span class="n">gradient</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dw&quot;</span><span class="p">:</span> <span class="n">dw</span><span class="p">,</span> <span class="s2">&quot;db&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">costs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">final_pred</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">final_pred</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">final_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">y_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get number of features</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="n">X_tr_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of Features&#39;</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">weightInitialization</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+<span class="c1">#Gradient Descent</span>
+<span class="n">coeff</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">costs</span> <span class="o">=</span> <span class="n">model_predict</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X_tr_arr</span><span class="p">,</span> <span class="n">y_tr_arr</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span><span class="n">no_iterations</span><span class="o">=</span><span class="mi">60000</span><span class="p">)</span>
+<span class="c1">#Final prediction</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">coeff</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">coeff</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Optimized weights&#39;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Optimized intercept&#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="n">final_train_pred</span> <span class="o">=</span> <span class="n">sigmoid_activation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">X_tr_arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="n">final_test_pred</span> <span class="o">=</span> <span class="n">sigmoid_activation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">X_ts_arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="n">m_tr</span> <span class="o">=</span>  <span class="n">X_tr_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">m_ts</span> <span class="o">=</span>  <span class="n">X_ts_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="n">y_tr_pred</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">final_train_pred</span><span class="p">,</span> <span class="n">m_tr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_tr_pred</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y_tr_arr</span><span class="p">))</span>
+<span class="c1">#</span>
+<span class="n">y_ts_pred</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">final_test_pred</span><span class="p">,</span> <span class="n">m_ts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test Accuracy&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_ts_pred</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y_ts_arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Features 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimized weights [[-0.91638121  1.5733548  -1.79374143 -1.85973559]]
+Optimized intercept -0.44773024722788723
+Training Accuracy 1.0
+Test Accuracy 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iterations (per hundreds)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cost reduction over time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson31_64_0.png" src="../../_images/lesson31_64_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">93</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length_cm    5.7
+sepal_width_cm     2.8
+petal_length_cm    4.1
+petal_width_cm     1.3
+class              0.0
+Name: 99, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># how to access the model</span>
+<span class="k">def</span> <span class="nf">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">,</span><span class="n">w1</span><span class="p">,</span><span class="n">w2</span><span class="p">,</span><span class="n">w3</span><span class="p">,</span><span class="n">w4</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">w1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">w2</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span><span class="n">b</span> <span class="c1">#linear model to produce estimator to send to logistic fn</span>
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">sigmoid_activation</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+<span class="c1"># some inputs</span>
+<span class="n">sepal_l</span> <span class="o">=</span> <span class="mf">5.7</span>
+<span class="n">sepal_w</span> <span class="o">=</span> <span class="mf">2.8</span>
+<span class="n">petal_l</span> <span class="o">=</span> <span class="mf">4.1</span>
+<span class="n">petal_w</span> <span class="o">=</span> <span class="mf">1.3</span>
+<span class="n">myguess</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">sepal_l</span><span class="p">,</span><span class="n">sepal_w</span><span class="p">,</span><span class="n">petal_l</span><span class="p">,</span><span class="n">petal_w</span><span class="p">,</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myguess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2199925612703499
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_arr</span><span class="p">,</span> <span class="n">y_tr_arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.55607279] [[-0.69791666  1.16455265 -1.40231641 -1.47095115]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_ts_arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy from sk-learn: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_ts_arr</span><span class="p">,</span> <span class="n">y_ts_arr</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy from sk-learn: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using sklearn</span>
+<span class="c1"># some inputs</span>
+<span class="n">sepal_l</span> <span class="o">=</span> <span class="mf">5.7</span>
+<span class="n">sepal_w</span> <span class="o">=</span> <span class="mf">2.8</span>
+<span class="n">petal_l</span> <span class="o">=</span> <span class="mf">4.1</span>
+<span class="n">petal_w</span> <span class="o">=</span> <span class="mf">1.3</span>
+<span class="n">myguess</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">sepal_l</span><span class="p">,</span><span class="n">sepal_w</span><span class="p">,</span><span class="n">petal_l</span><span class="p">,</span><span class="n">petal_w</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">clf</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myguess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.21866717832679922
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Rashid, Tariq. Make Your Own Neural Network.  . Kindle Edition.</p>
+<hr><hr>
+</div>
+<div class="section" id="laboratory-31">
+<h2>Laboratory 31<a class="headerlink" href="#laboratory-31" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 31 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31.html">Laboratory 30.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 30 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31.ipynb">Laboratory 31.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-31-font-color-red-none-font">
+<h2>Exercise Set 31 <font color="red">(none)</font><a class="headerlink" href="#exercise-set-31-font-color-red-none-font" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 31 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31-TH.html">Exercise 31.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 30 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab31/Lab31-TH.ipynb">Exercise Set 31.ipynb</a></p>
+</div>
+<div class="section" id="id1">
+<h2>References<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import Library</span>
+<span class="kn">import</span> <span class="nn">qrcode</span>
+<span class="c1">#Generate QR Code</span>
+<span class="n">img</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;4Q&#39;</span><span class="p">)</span>
+<span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;effing.png&#39;</span><span class="p">)</span>
+<span class="n">img</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+<span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;hello.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -491,7 +1894,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">30: Multiple Least Squares (continued)</p>
+                <p class="prevnext-title">30: Regression using Exponential, Logarithmic, and Power-Law Models</p>
             </div>
         </a>
     </div>
