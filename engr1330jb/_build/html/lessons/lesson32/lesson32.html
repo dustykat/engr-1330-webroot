@@ -533,9 +533,14 @@
 </div>
 <div class="section" id="multiple-variable-models">
 <h2>Multiple Variable Models<a class="headerlink" href="#multiple-variable-models" title="Permalink to this headline">¶</a></h2>
-<p>Logistic regression is trying to fit the following data model</p>
+<p>Logistic regression is trying to fit the following data model<br></p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon$$&lt;br&gt;\\where\\\begin{split}$$\begin{gather}
+\[Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon\]</div>
+<br>
+<p>where
+<br>
+$<span class="math notranslate nohighlight">\(
+\begin{gather}
 \mathbf{\beta}=
 \begin{pmatrix}
 \beta_0 \\
@@ -543,9 +548,11 @@
 \vdots \\
 \beta_m \\
 \end{pmatrix}
-\end{gather}\end{split}\end{aligned}\end{align} \]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather}
+\end{gather}
+\)</span><span class="math notranslate nohighlight">\(
+&lt;br&gt;
+\)</span><span class="math notranslate nohighlight">\(
+\begin{gather}
 \mathbf{X}=
 \begin{pmatrix}
 1 &amp; x_{1,1} &amp; x_{1,2}&amp;\dots &amp; x_{1,m}\\
@@ -553,11 +560,12 @@
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\
 1 &amp; x_{n,1} &amp; x_{n,2}&amp;\dots &amp; x_{n,m}\\
 \end{pmatrix}
-\end{gather}\end{split}\]</div>
+\end{gather}
+\)</span>$</p>
 <p>The matrix has as many rows as observations to fit, and as many columns as predictor variables.</p>
 <div class="section" id="fitting-process">
 <h3>Fitting Process<a class="headerlink" href="#fitting-process" title="Permalink to this headline">¶</a></h3>
-<p>The logistic regression method attempts to find values of <span class="math notranslate nohighlight">\(\beta\)</span> that minimizes the log-likelihood function</p>
+<p>The logistic regression method attempts to find values of <span class="math notranslate nohighlight">\(\beta\)</span> that maximizes the log-likelihood function</p>
 <div class="math notranslate nohighlight">
 \[log_e L(\beta) = Y_{obs}^T(\beta^TX) - log_e L(1 + e^{\bf{\beta}^TX})\]</div>
 <p>The presence of the last term makes the process a search process (instead of a single equation to solve), and some form of iterative least squares is employed - techniques are complex, so in general we rely on packages to handle this work - an illustrative example follows:</p>
@@ -677,8 +685,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Split dataframe based on class value and plot</span>
-<span class="n">classone</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">1.0</span><span class="p">]</span>
-<span class="n">classzero</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">]</span>
+<span class="n">classzero</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">1.0</span><span class="p">]</span>
+<span class="n">classone</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">]</span>
 <span class="c1"># plot the two classes as red and blue</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
@@ -695,7 +703,7 @@
 <img alt="../../_images/lesson32_9_0.png" src="../../_images/lesson32_9_0.png" />
 </div>
 </div>
-<p>The two classes appear different enough so the logistic-regression classification seems possible.  For example if the predictor input is <span class="math notranslate nohighlight">\([0,0]\)</span> then the class is likely “Class 1”, whereas if the predictor input is <span class="math notranslate nohighlight">\([0,4]\)</span> then the class is likely “Class 0” according to the above plot.</p>
+<p>The two classes appear different enough so the logistic-regression classification seems possible.  For example if the predictor input is <span class="math notranslate nohighlight">\([0,0]\)</span> then the class is likely “Class 0”, whereas if the predictor input is <span class="math notranslate nohighlight">\([0,4]\)</span> then the class is likely “Class 1” according to the above plot.</p>
 </div>
 <div class="section" id="step-4-employ-sklearn-to-obtain-a-logistic-regresion-model">
 <h4>Step 4 Employ <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to obtain a logistic regresion model<a class="headerlink" href="#step-4-employ-sklearn-to-obtain-a-logistic-regresion-model" title="Permalink to this headline">¶</a></h4>
@@ -793,7 +801,7 @@
 <p>Now lets use our two obvious values from the discussion above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
 <span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -802,7 +810,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  0 
-X2 Input =  1 
+X2 Input =  0 
 Estimated Class Value 0.0
 </pre></div>
 </div>
@@ -828,47 +836,47 @@ Estimated Class Value 1.0
 <p>So now we have a classifer function, we could probably draw a dividing line back on the original plot and identify the dividing line,  we only need two points where the classifier returns a value of 0.5 as below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">4</span><span class="p">],[</span><span class="mf">0.645</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mf">0.347</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
-<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  -4.0 
-X2 Input =  0.645 
-Estimated Class Value 0.502
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">],[</span><span class="mf">3.018</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
-<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  4.0 
-X2 Input =  3.018 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  -5.0 
+X2 Input =  0.347 
 Estimated Class Value 0.5
 </pre></div>
 </div>
 </div>
 </div>
-<p>Our two points by trial and error are: <span class="math notranslate nohighlight">\([-4.0,0.645]\)</span> and <span class="math notranslate nohighlight">\([4.0,3.018]\)</span>  we can add this line to our plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">],[</span><span class="mf">3.314</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  5.0 
+X2 Input =  3.314 
+Estimated Class Value 0.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our two points by trial and error are: <span class="math notranslate nohighlight">\([-5.0,0.347]\)</span> and <span class="math notranslate nohighlight">\([5.0,3.314]\)</span>  we can add this line to our plot</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the two classes as red and blue</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mf">0.347</span><span class="p">,</span><span class="mf">3.314</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mf">0.645</span><span class="p">,</span><span class="mf">3.018</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Class 0&quot;</span><span class="p">,</span><span class="s2">&quot;Class 1&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Decision Boundary&quot;</span><span class="p">,</span><span class="s2">&quot;Class 0&quot;</span><span class="p">,</span><span class="s2">&quot;Class 1&quot;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X1 Predictor&#39;</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X2 Predictor&#39;</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>

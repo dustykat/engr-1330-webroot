@@ -24,13 +24,15 @@
 
 # ## Multiple Variable Models
 # 
-# Logistic regression is trying to fit the following data model
+# Logistic regression is trying to fit the following data model<br>
 # 
-# $$Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon$$<br>
+# $$Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon$$
+# <br>
 # 
 # where
-# 
-# $$\begin{gather}
+# <br>
+# $$
+# \begin{gather}
 # \mathbf{\beta}=
 # \begin{pmatrix}
 # \beta_0 \\
@@ -38,9 +40,11 @@
 # \vdots \\
 # \beta_m \\
 # \end{pmatrix}
-# \end{gather}$$
-# 
-# $$\begin{gather}
+# \end{gather}
+# $$
+# <br>
+# $$
+# \begin{gather}
 # \mathbf{X}=
 # \begin{pmatrix}
 # 1 & x_{1,1} & x_{1,2}&\dots & x_{1,m}\\
@@ -48,13 +52,14 @@
 # \vdots & \vdots & \vdots & \vdots & \vdots\\
 # 1 & x_{n,1} & x_{n,2}&\dots & x_{n,m}\\
 # \end{pmatrix}
-# \end{gather}$$
+# \end{gather}
+# $$
 # 
 # The matrix has as many rows as observations to fit, and as many columns as predictor variables.
 # 
 # ### Fitting Process
 # 
-# The logistic regression method attempts to find values of $\beta$ that minimizes the log-likelihood function
+# The logistic regression method attempts to find values of $\beta$ that maximizes the log-likelihood function
 # 
 # $$log_e L(\beta) = Y_{obs}^T(\beta^TX) - log_e L(1 + e^{\bf{\beta}^TX})$$
 # 
@@ -99,8 +104,8 @@ mydatabase.describe()
 
 
 #Split dataframe based on class value and plot
-classone = mydatabase[mydatabase['Class']<1.0]
-classzero = mydatabase[mydatabase['Class']>0.0]
+classzero = mydatabase[mydatabase['Class']<1.0]
+classone = mydatabase[mydatabase['Class']>0.0]
 # plot the two classes as red and blue
 plt.figure(figsize=(10, 8))
 plt.scatter(classzero['X1'],classzero['X2'], c="red", alpha=0.3)
@@ -112,7 +117,7 @@ plt.grid(which='both')
 plt.show()
 
 
-# The two classes appear different enough so the logistic-regression classification seems possible.  For example if the predictor input is $[0,0]$ then the class is likely "Class 1", whereas if the predictor input is $[0,4]$ then the class is likely "Class 0" according to the above plot.
+# The two classes appear different enough so the logistic-regression classification seems possible.  For example if the predictor input is $[0,0]$ then the class is likely "Class 0", whereas if the predictor input is $[0,4]$ then the class is likely "Class 1" according to the above plot.
 # 
 # #### Step 4 Employ `sklearn` to obtain a logistic regresion model
 # 
@@ -205,7 +210,7 @@ def sigmoid(scores): # scores = b0+b1X1+b2X2+... where b0,b1,b2,... are specifie
 # In[11]:
 
 
-inputs = np.array([[0],[1]]) # one example input, should evaluate as
+inputs = np.array([[0],[0]]) # one example input, should evaluate as
 scores = np.dot(logreg.coef_,inputs) + logreg.intercept_
 estimated_class = sigmoid(np.dot(logreg.coef_,inputs) + logreg.intercept_)[0,0] # grab the only element
 print("X1 Input = ",inputs[0][0],"\nX2 Input = ",inputs[1][0],"\nEstimated Class Value",round(estimated_class,0))
@@ -225,22 +230,22 @@ print("X1 Input = ",inputs[0][0],"\nX2 Input = ",inputs[1][0],"\nEstimated Class
 # In[13]:
 
 
-inputs = np.array([[-4],[0.645]]) # one example input, should evaluate as
+inputs = np.array([[-5],[0.347]]) # one example input, should evaluate as
 scores = np.dot(logreg.coef_,inputs) + logreg.intercept_
-estimated_class = sigmoid(np.dot(logreg.coef_,inputs) + logreg.intercept_)[0,0] # grab the only element
+estimated_class = 1.0 - sigmoid(np.dot(logreg.coef_,inputs) + logreg.intercept_)[0,0] # grab the only element
 print("X1 Input = ",inputs[0][0],"\nX2 Input = ",inputs[1][0],"\nEstimated Class Value",round(estimated_class,3))
 
 
 # In[14]:
 
 
-inputs = np.array([[4],[3.018]]) # one example input, should evaluate as
+inputs = np.array([[5],[3.314]]) # one example input, should evaluate as
 scores = np.dot(logreg.coef_,inputs) + logreg.intercept_
-estimated_class = sigmoid(np.dot(logreg.coef_,inputs) + logreg.intercept_)[0,0] # grab the only element
+estimated_class = 1.0 - sigmoid(np.dot(logreg.coef_,inputs) + logreg.intercept_)[0,0] # grab the only element
 print("X1 Input = ",inputs[0][0],"\nX2 Input = ",inputs[1][0],"\nEstimated Class Value",round(estimated_class,3))
 
 
-# Our two points by trial and error are: $[-4.0,0.645]$ and $[4.0,3.018]$  we can add this line to our plot
+# Our two points by trial and error are: $[-5.0,0.347]$ and $[5.0,3.314]$  we can add this line to our plot
 # 
 
 # In[15]:
@@ -248,10 +253,10 @@ print("X1 Input = ",inputs[0][0],"\nX2 Input = ",inputs[1][0],"\nEstimated Class
 
 # plot the two classes as red and blue
 plt.figure(figsize=(10, 8))
+plt.plot([-5,5],[0.347,3.314],c="magenta",linewidth=4)
 plt.scatter(classzero['X1'],classzero['X2'], c="red", alpha=0.3)
 plt.scatter(classone['X1'],classone['X2'], c="blue", alpha=0.3)
-plt.plot([-4,4],[0.645,3.018],c="magenta",linewidth=4)
-plt.legend(["Class 0","Class 1"])
+plt.legend(["Decision Boundary","Class 0","Class 1"])
 plt.xlabel('X1 Predictor') 
 plt.ylabel('X2 Predictor') 
 plt.grid(which='both')
