@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>32: Logistic Regression (Homebrew) &#8212; ENGR 1330 Course Notes</title>
+    <title>32: Logistic Regression &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="33: Logistic Regression (packages)" href="../lesson33/lesson33.html" />
-    <link rel="prev" title="31: Multiple Least Squares Quality Assessment" href="../lesson31/lesson31.html" />
+    <link rel="prev" title="31 – Classification Engines" href="../lesson31/lesson31.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,7 +261,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson27/lesson27.html">
-   27: Ordinary Least Squares
+   27: Project Planning Workshop
   </a>
  </li>
  <li class="toctree-l1">
@@ -269,22 +271,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson29/lesson29.html">
-   29: Multiple Least Squares
+   29: Multiple Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson30/lesson30.html">
-   30: Multiple Least Squares (continued)
+   30: Regression using Exponential, Logarithmic, and Power-Law Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson31/lesson31.html">
-   31: Multiple Least Squares Quality Assessment
+   31 – Classification Engines
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   32: Logistic Regression (Homebrew)
+   32: Logistic Regression
   </a>
  </li>
  <li class="toctree-l1">
@@ -427,6 +429,71 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-variable-models">
+   Single Variable Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-variable-models">
+   Multiple Variable Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-process">
+     Fitting Process
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-load-packages">
+       Step 1 Load packages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-read-the-database">
+       Step 2 Read the database
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3-verify-the-read-and-plot-the-database">
+       Step 3 Verify the read, and plot the database
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-employ-sklearn-to-obtain-a-logistic-regresion-model">
+       Step 4 Employ
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sklearn
+        </span>
+       </code>
+       to obtain a logistic regresion model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5-assess-the-fitted-results-using-a-confusion-matrix">
+       Step 5 Assess the fitted results using a confusion matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6-build-a-classifer-engine">
+       Step 6 Build a Classifer Engine
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#employ-the-classifier-engine">
+       Employ the Classifier Engine
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -447,12 +514,375 @@
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
 <p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="logistic-regression-homebrew">
-<h1>32: Logistic Regression (Homebrew)<a class="headerlink" href="#logistic-regression-homebrew" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="logistic-regression">
+<h1>32: Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Concept of …</p></li>
 <li><p>Training (a model fitting analog)</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This lesson is under construction, the scripts work, but narrative is incomplete.</p>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="single-variable-models">
+<h2>Single Variable Models<a class="headerlink" href="#single-variable-models" title="Permalink to this headline">¶</a></h2>
+<p>Future lesson</p>
+</div>
+<div class="section" id="multiple-variable-models">
+<h2>Multiple Variable Models<a class="headerlink" href="#multiple-variable-models" title="Permalink to this headline">¶</a></h2>
+<p>Logistic regression is trying to fit the following data model</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y_{obs} = \frac{e^{\bf{\beta}^TX}}{1 + e^{\bf{\beta}^TX}} + \epsilon$$&lt;br&gt;\\&lt;!--$Y_{mod} = \frac{e^{\bf{\beta}^TX}}{1 + e^{\bf{\beta}^TX}}$&lt;br&gt;--&gt;\\where\\\begin{split}$$\begin{gather}
+\mathbf{\beta}=
+\begin{pmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_m \\
+\end{pmatrix}
+\end{gather}\end{split}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbf{X}=
+\begin{pmatrix}
+1 &amp; x_{1,1} &amp; x_{1,2}&amp;\dots &amp; x_{1,m}\\
+1 &amp; x_{2,1} &amp; x_{2,2}&amp;\dots &amp; x_{2,m}\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\
+1 &amp; x_{n,1} &amp; x_{n,2}&amp;\dots &amp; x_{n,m}\\
+\end{pmatrix}
+\end{gather}\end{split}\]</div>
+<p>The matrix has as many rows as observations to fit, and as many columns as predictor variables.</p>
+<div class="section" id="fitting-process">
+<h3>Fitting Process<a class="headerlink" href="#fitting-process" title="Permalink to this headline">¶</a></h3>
+<p>The logistic regression method attempts to find values of <span class="math notranslate nohighlight">\(\beta\)</span> that minimizes the log-likelihood function</p>
+<div class="math notranslate nohighlight">
+\[log_e L(\beta) = Y_{obs}^T(\beta^TX) - log_e L(1 + e^{\bf{\beta}^TX})\]</div>
+<p>The presence of the last term makes the process a search process (instead of a single equation to solve), and some form of iterative least squares is employed - techniques are complex, so in general we rely on packages to handle this work - an illustrative example follows:</p>
+<p>Consider a database of 20,000 observations of two predictors <span class="math notranslate nohighlight">\(X1\)</span> and <span class="math notranslate nohighlight">\(X2\)</span>, and the resulting classification <span class="math notranslate nohighlight">\(Class\)</span>.  We can employ logistic regression to find values of <span class="math notranslate nohighlight">\(/beta\)</span> in the above models, then use those values to predict the classification of a new input.</p>
+<div class="section" id="step-1-load-packages">
+<h4>Step 1 Load packages<a class="headerlink" href="#step-1-load-packages" title="Permalink to this headline">¶</a></h4>
+<p>Read the database</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-read-the-database">
+<h4>Step 2 Read the database<a class="headerlink" href="#step-2-read-the-database" title="Permalink to this headline">¶</a></h4>
+<p>A copy is located <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/engr1330jb/lessons/lesson32/LogisticRegressionHomebrewExample.csv">here</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydatabase</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;LogisticRegressionHomebrewExample.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-verify-the-read-and-plot-the-database">
+<h4>Step 3 Verify the read, and plot the database<a class="headerlink" href="#step-3-verify-the-read-and-plot-the-database" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydatabase</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>20000.000000</td>
+      <td>20000.000000</td>
+      <td>20000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.496920</td>
+      <td>2.001764</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.113666</td>
+      <td>2.240266</td>
+      <td>0.500013</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-4.214002</td>
+      <td>-3.489115</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-0.260873</td>
+      <td>-0.015846</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.498444</td>
+      <td>1.978725</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.264066</td>
+      <td>4.016432</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>4.605613</td>
+      <td>7.945987</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Split dataframe based on class value and plot</span>
+<span class="n">classone</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">1.0</span><span class="p">]</span>
+<span class="n">classzero</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">mydatabase</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">]</span>
+<span class="c1"># plot the two classes as red and blue</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Class 0&quot;</span><span class="p">,</span><span class="s2">&quot;Class 1&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X1 Predictor&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X2 Predictor&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson32_9_0.png" src="../../_images/lesson32_9_0.png" />
+</div>
+</div>
+<p>The two classes appear different enough so the logistic-regression classification seems possible.  For example if the predictor input is <span class="math notranslate nohighlight">\([0,0]\)</span> then the class is likely “Class 1”, whereas if the predictor input is <span class="math notranslate nohighlight">\([0,4]\)</span> then the class is likely “Class 0” according to the above plot.</p>
+</div>
+<div class="section" id="step-4-employ-sklearn-to-obtain-a-logistic-regresion-model">
+<h4>Step 4 Employ <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to obtain a logistic regresion model<a class="headerlink" href="#step-4-employ-sklearn-to-obtain-a-logistic-regresion-model" title="Permalink to this headline">¶</a></h4>
+<p>Here we use a package to actually pass a classification boundary between the two data clouds</p>
+<p><strong>Prepare the Data to feed into sklearn</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#split dataset in features and target variable</span>
+<span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span> <span class="c1"># Features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">mydatabase</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="c1"># Target variable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split X and y into training and testing sets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the class</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># instantiate the model (using the default parameters)</span>
+<span class="c1">#logreg = LogisticRegression()</span>
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="c1"># fit the model with data</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1">#</span>
+<span class="n">y_pred</span><span class="o">=</span><span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5-assess-the-fitted-results-using-a-confusion-matrix">
+<h4>Step 5 Assess the fitted results using a confusion matrix<a class="headerlink" href="#step-5-assess-the-fitted-results-using-a-confusion-matrix" title="Permalink to this headline">¶</a></h4>
+<p>Compute the matrix, then render using a heat map style.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the metrics class</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="n">cnf_matrix</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="c1">#cnf_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># name  of classes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">tick_marks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">tick_marks</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">tick_marks</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+<span class="c1"># create heatmap</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cnf_matrix</span><span class="p">),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span> <span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion matrix&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual Class&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson32_16_0.png" src="../../_images/lesson32_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-6-build-a-classifer-engine">
+<h4>Step 6 Build a Classifer Engine<a class="headerlink" href="#step-6-build-a-classifer-engine" title="Permalink to this headline">¶</a></h4>
+<p>Now lets build a classification (class prediction) engine using logistic regression results.</p>
+<p>First we need the sigmoid response function where</p>
+<div class="math notranslate nohighlight">
+\[sigmoid(X,\beta) = 1 + e^{{\beta}^TX} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span> <span class="c1"># scores = b0+b1X1+b2X2+... where b0,b1,b2,... are specified</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="employ-the-classifier-engine">
+<h4>Employ the Classifier Engine<a class="headerlink" href="#employ-the-classifier-engine" title="Permalink to this headline">¶</a></h4>
+<p>Now lets use our two obvious values from the discussion above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  0 
+X2 Input =  1 
+Estimated Class Value 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">4</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  0 
+X2 Input =  4 
+Estimated Class Value 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So now we have a classifer function, we could probably draw a dividing line back on the original plot and identify the dividing line,  we only need two points where the classifier returns a value of 0.5 as below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">4</span><span class="p">],[</span><span class="mf">0.645</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  -4.0 
+X2 Input =  0.645 
+Estimated Class Value 0.502
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">],[</span><span class="mf">3.018</span><span class="p">]])</span> <span class="c1"># one example input, should evaluate as</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">estimated_class</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">logreg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># grab the only element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X1 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">X2 Input = &quot;</span><span class="p">,</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Estimated Class Value&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">estimated_class</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X1 Input =  4.0 
+X2 Input =  3.018 
+Estimated Class Value 0.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our two points by trial and error are: <span class="math notranslate nohighlight">\([-4.0,0.645]\)</span> and <span class="math notranslate nohighlight">\([4.0,3.018]\)</span>  we can add this line to our plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the two classes as red and blue</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classzero</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">],</span><span class="n">classone</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mf">0.645</span><span class="p">,</span><span class="mf">3.018</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Class 0&quot;</span><span class="p">,</span><span class="s2">&quot;Class 1&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X1 Predictor&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X2 Predictor&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lesson32_26_0.png" src="../../_images/lesson32_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -492,7 +922,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">31: Multiple Least Squares Quality Assessment</p>
+                <p class="prevnext-title">31 – Classification Engines</p>
             </div>
         </a>
     </div>
