@@ -28,8 +28,6 @@
 # 
 # $$Y_{obs} = \frac{e^{\bf{\beta}^TX}}{1 + e^{\bf{\beta}^TX}} + \epsilon$$<br>
 # 
-# <!--$Y_{mod} = \frac{e^{\bf{\beta}^TX}}{1 + e^{\bf{\beta}^TX}}$<br>-->
-# 
 # where
 # 
 # $$\begin{gather}
