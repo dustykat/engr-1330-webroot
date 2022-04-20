@@ -26,7 +26,7 @@
 # 
 # Logistic regression is trying to fit the following data model
 # 
-# $$Y_{obs} = \frac{e^{\bf{\beta}^TX}}{1 + e^{\bf{\beta}^TX}} + \epsilon$$<br>
+# $$Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon$$<br>
 # 
 # where
 # 
