@@ -24,13 +24,13 @@
 
 # ## Multiple Variable Models
 # 
-# Logistic regression is trying to fit the following data model<br>
+# Logistic regression is trying to fit the following data model:
 # 
 # $$Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon$$
-# <br>
 # 
-# where
-# <br>
+# 
+# where;
+# 
 # $$
 # \begin{gather}
 # \mathbf{\beta}=
@@ -42,7 +42,7 @@
 # \end{pmatrix}
 # \end{gather}
 # $$
-# <br>
+# 
 # $$
 # \begin{gather}
 # \mathbf{X}=

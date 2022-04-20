@@ -533,13 +533,12 @@
 </div>
 <div class="section" id="multiple-variable-models">
 <h2>Multiple Variable Models<a class="headerlink" href="#multiple-variable-models" title="Permalink to this headline">¶</a></h2>
-<p>Logistic regression is trying to fit the following data model<br></p>
+<p>Logistic regression is trying to fit the following data model:</p>
 <div class="math notranslate nohighlight">
 \[Y_{obs} = \frac{e^{{\beta}^TX}}{1 + e^{{\beta}^TX}} + \epsilon\]</div>
-<br>
-<p>where
-<br>
-$<span class="math notranslate nohighlight">\(
+<p>where;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{gather}
 \mathbf{\beta}=
 \begin{pmatrix}
@@ -549,9 +548,9 @@ $<span class="math notranslate nohighlight">\(
 \beta_m \\
 \end{pmatrix}
 \end{gather}
-\)</span><span class="math notranslate nohighlight">\(
-&lt;br&gt;
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{gather}
 \mathbf{X}=
 \begin{pmatrix}
@@ -561,7 +560,7 @@ $<span class="math notranslate nohighlight">\(
 1 &amp; x_{n,1} &amp; x_{n,2}&amp;\dots &amp; x_{n,m}\\
 \end{pmatrix}
 \end{gather}
-\)</span>$</p>
+\end{split}\]</div>
 <p>The matrix has as many rows as observations to fit, and as many columns as predictor variables.</p>
 <div class="section" id="fitting-process">
 <h3>Fitting Process<a class="headerlink" href="#fitting-process" title="Permalink to this headline">¶</a></h3>
