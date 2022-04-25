@@ -873,6 +873,7 @@ mytitle += "Mean = " + str(antiloggit(sample_mean)) + "\n"
 mytitle += "SD = " + str(antiloggit(sample_stdev)) + "\n"
 mytitle += "Skew = " + str(antiloggit(sample_skew)) + "\n"
 matplotlib.pyplot.title(mytitle) 
+matplotlib.pyplot.grid(which="both")
 matplotlib.pyplot.show()
 
 

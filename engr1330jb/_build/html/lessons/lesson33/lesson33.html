@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>33: Logistic Regression (packages) &#8212; ENGR 1330 Course Notes</title>
+    <title>33: Classification Engines - Nearest Neighbor &#8212; ENGR 1330 Course Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="34: KNN Applications" href="../lesson34/lesson34.html" />
-    <link rel="prev" title="32: Logistic Regression (Homebrew)" href="../lesson32/lesson32.html" />
+    <link rel="prev" title="32: Logistic Regression" href="../lesson32/lesson32.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -229,17 +231,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson21/lesson21.html">
-   21: Testing Hypothesis - Comparing Collections
+   21: Testing Hypothesis - Introductions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson22/lesson22.html">
-   22: Testing Hypothesis - Comparing Treatments
+   22: Testing Hypothesis - Comparing Collections
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson23/lesson23.html">
-   23: Testing Hypothesis - Attained Significance
+   23: Testing Hypothesis (continued)
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,7 +261,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson27/lesson27.html">
-   27: Ordinary Least Squares
+   27: Project Planning Workshop
   </a>
  </li>
  <li class="toctree-l1">
@@ -269,27 +271,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson29/lesson29.html">
-   29: Multiple Least Squares
+   29: Multiple Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson30/lesson30.html">
-   30: Multiple Least Squares (continued)
+   30: Regression using Exponential, Logarithmic, and Power-Law Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson31/lesson31.html">
-   31: Multiple Least Squares Quality Assessment
+   31 – Classification Engines
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../lesson32/lesson32.html">
-   32: Logistic Regression (Homebrew)
+   32: Logistic Regression
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   33: Logistic Regression (packages)
+   33: Classification Engines - Nearest Neighbor
   </a>
  </li>
  <li class="toctree-l1">
@@ -427,7 +429,100 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-thinking-concepts">
+   Computational Thinking Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbook-resources">
+   Textbook Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-knn">
+   About KNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concept-of-distance-in-n-dimensional-space">
+     Concept of Distance in N-Dimensional Space
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-normalization">
+     Data Normalization
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#z-score-standardization">
+       Z-score Standardization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standardization">
+       [0,1] Standardization
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-knn">
+   Why KNN?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-iris-plants-classification-br">
+   Example: Iris Plants Classification
+   <br/>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-remarks">
+     Final remarks …
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laboratory-33-font-color-green-last-one-yay-font">
+   Laboratory 33
+   <font color="green">
+    (Last One; Yay!)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-set-33-font-color-green-none-font">
+   Exercise Set 33
+   <font color="green">
+    (None)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
    References
   </a>
  </li>
@@ -447,14 +542,542 @@
 </div> 
 <p>Copyright © 2021 Theodore G. Cleveland and Farhang Forghanparast</p>
 <p>Last GitHub Commit Date:</p>
-<div class="tex2jax_ignore mathjax_ignore section" id="logistic-regression-packages">
-<h1>33: Logistic Regression (packages)<a class="headerlink" href="#logistic-regression-packages" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="classification-engines-nearest-neighbor">
+<h1>33: Classification Engines - Nearest Neighbor<a class="headerlink" href="#classification-engines-nearest-neighbor" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>sklearn</p></li>
-<li></li>
+<li><p>Create KNN models to classify output based on multiple continuous inputs</p></li>
+<li><p>Create presentation-quality graphs and charts for reporting results</p></li>
 </ul>
+<p>This lesson continues with classification engines, and in particular examines the nearest neighbor method</p>
+<!--![](https://www.thermofisher.com/blog/wp-content/uploads/sites/11/2018/01/istock-829172394_redumbrella.jpg)-->
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Create KNN models to classify output based on multiple continuous inputs</p></li>
+<li><p>Create presentation-quality graphs and charts for reporting results</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="computational-thinking-concepts">
+<h2>Computational Thinking Concepts<a class="headerlink" href="#computational-thinking-concepts" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Description</p></th>
+<th class="text-align:left head"><p>Computational Thinking Concept</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Logistic Model</p></td>
+<td class="text-align:left"><p>Abstraction</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Response and Explanatory Variables</p></td>
+<td class="text-align:left"><p>Decomposition</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Primitive arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>NumPy arrays: vectors and matrices</p></td>
+<td class="text-align:left"><p>Data Representation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="textbook-resources">
+<h2>Textbook Resources<a class="headerlink" href="#textbook-resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://inferentialthinking.com/chapters/17/Classification.html">https://inferentialthinking.com/chapters/17/Classification.html</a></p>
+<hr></div>
+<div class="section" id="about-knn">
+<h2>About KNN<a class="headerlink" href="#about-knn" title="Permalink to this headline">¶</a></h2>
+<p>The K-nearest neighbors (KNN) algorithm is a type of supervised machine learning algorithms.
+KNN is easy to implement in its most basic form, and yet performs quite complex classification tasks. It is a lazy learning algorithm since it doesn’t have a specialized training phase. Rather, it uses all of the data for training while classifying a new data point or instance. KNN is a non-parametric learning algorithm, which means that it doesn’t assume anything about the underlying data. This is an extremely useful feature since most of the real world data doesn’t really follow any theoretical assumption.</p>
+<p>A more uppity description from <a class="reference external" href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm</a> is:</p>
+<blockquote>
+<div><p>In statistics, the k-nearest neighbors algorithm (k-NN) is a non-parametric classification method first developed by Evelyn Fix and Joseph Hodges in 1951, and later expanded by Thomas Cover. It is used for classification and regression. In both cases, the input consists of the k closest training examples in a data set. The output depends on whether k-NN is used for classification or regression:</p>
+<ul class="simple">
+<li><p>In k-NN classification, the output is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor.</p></li>
+<li><p>In k-NN regression, the output is the property value for the object. This value is the average of the values of k nearest neighbors.</p></li>
+</ul>
+<p>k-NN is a type of classification where the function is only approximated locally and all computation is deferred until function evaluation. Since this algorithm relies on distance for classification, if the features represent different physical units or come in vastly different scales then normalizing the training data can improve its accuracy dramatically.</p>
+<p>Both for classification and regression, a useful technique can be to assign weights to the contributions of the neighbors, so that the nearer neighbors contribute more to the average than the more distant ones. For example, a common weighting scheme consists in giving each neighbor a weight of 1/d, where d is the distance to the neighbor.</p>
+<p>The neighbors are taken from a set of objects for which the class (for k-NN classification) or the object property value (for k-NN regression) is known. This can be thought of as the training set for the algorithm, though no explicit training step is required.</p>
+<p>A peculiarity of the k-NN algorithm is that it is sensitive to the local structure of the data.
+…</p>
+</div></blockquote>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>The First Law of Geography, according to Waldo Tobler, is “everything is related to everything else, but near things are more related than distant things.”
+The intuition behind the KNN algorithm is one of the simplest of all the supervised machine learning algorithms:</p>
+<div><img src="https://geohealthinnovations.org/wp-content/uploads/2013/01/toblerquote.png" width="200" align="left" style="padding-right: 20px"></div> 
+<ul class="simple">
+<li><p>It calculates the distance of a new data point to all other training data points.</p></li>
+<li><p>The distance can be of any type e.g Euclidean or Manhattan etc.</p></li>
+<li><p>It then selects the K-nearest data points, where K can be any integer.</p></li>
+<li><p>Used as a classifier; it assigns the data point to the class to which the majority of the K data points belong.</p></li>
+<li><p>Used as a predictor; it assigns to the data point a mean prediction value based on the associated values of the K data points.</p></li>
+<li><p>An example of KNN as a predictor is the <a class="reference external" href="http://54.243.252.9/toolbox/geomorphology/SolidsInRivers/SolidsInRivers.html">SolidsInRivers</a> estimation tool.
+<br><br></p></li>
+</ul>
+<div class="section" id="concept-of-distance-in-n-dimensional-space">
+<h3>Concept of Distance in N-Dimensional Space<a class="headerlink" href="#concept-of-distance-in-n-dimensional-space" title="Permalink to this headline">¶</a></h3>
+<p>The concept of distance is vital to search engines; hence distance measures play an important role in machine learning. Three common used distance measures in machine learning are as follows:</p>
+<div><img src="https://miro.medium.com/max/1576/1*vAtQZbROuTdp36aQQ8cqBA.png" width="500" align="left" style="padding-right: 20px"></div> 
+<ul class="simple">
+<li><p>Euclidean Distance:
+Calculates the distance between two real-valued vectors. Although there are other possible choices, most instance-based learners use Euclidean distance.</p></li>
+<li><p>Manhattan Distance:
+Also called the Taxicab distance or the City Block distance, calculates the distance between two real-valued vectors. It is perhaps more useful to vectors that describe objects on a uniform grid, like a chessboard or city blocks. The taxicab name for the measure refers to the intuition for what the measure calculates: the shortest path that a taxicab would take between city blocks (coordinates on the grid).</p></li>
+<li><p>Minkowski Distance:
+Calculates the distance between two real-valued vectors. It is a generalization of the Euclidean and Manhattan distance measures and adds a parameter, called the “order” or “p“, that allows different distance measures to be calculated. When p is set to 1, the calculation is the same as the Manhattan distance. When p is set to 2, it is the same as the Euclidean distance.</p></li>
+</ul>
+<p>The <a class="reference external" href="http://54.243.252.9/toolbox/geomorphology/SolidsInRivers/SolidsInRivers.html">SolidsInRivers</a> estimation tool, allows the user to specify the exponent in a Minkowski distance measure, and select the neighbor count (K).  Then it searches the database for the K nearest neighbors, and returns an estimate that is the arithmetic mean of these K values.</p>
+</div>
+<div class="section" id="data-normalization">
+<h3>Data Normalization<a class="headerlink" href="#data-normalization" title="Permalink to this headline">¶</a></h3>
+<p>In KNN application the scale of predictors influences results; when the variables in the database are not expressed in the same magnitude, range, and scale. If values of one predictor are several orders of magnitude larger in the database than another predictor, the two are not directly comparable when computing a distance for the search algorithm. In such a case, one way to facilitate direct interpretation for comparing composite indices of the original data having different magnitudes and unit systems is to use normalization. Normalization serves the purpose of bringing the indicators into the same unit scale or unit base and makes distance computations appropriate. Normalizing data is done using various standardization techniques to assign a value to each variable so that they may be directly compared without unintentional bias due to differences in unit scale.</p>
+<div class="section" id="z-score-standardization">
+<h4>Z-score Standardization<a class="headerlink" href="#z-score-standardization" title="Permalink to this headline">¶</a></h4>
+<p>Z-score standardization is a commonly used normalization method that converts all indicators to a common scale with an average of zero and standard deviation of one.
+This transformation is the same as computing a standard-normal score for each data value.</p>
+<p><span class="math notranslate nohighlight">\(Z = \frac{x-\mu}{\sigma}\)</span></p>
+<p>where:<br>
+<span class="math notranslate nohighlight">\(x\)</span> = Data point value <br>
+<span class="math notranslate nohighlight">\(\mu\)</span> = Mean <br>
+<span class="math notranslate nohighlight">\(\sigma\)</span> = Standard Deviation<br></p>
+<p>The average of zero avoids the introduction of aggregation distortions stemming from differences in indicators’ means.
+The scaling factor is the standard deviation of the indicator across the various predictors being ranked.
+Thus, an indicator with extreme values will have intrinsically a greater effect on the composite indicator.
+The raw score on each data entry is converted to a Z-score, then distances are calculated using the Z-scores for each variable rather than the raw value. Upon completion of the distance calculations and selection of the nearest neighbors, the results are transformed back into the original values for subsequent presentation. Unit-Interval</p>
+</div>
+<div class="section" id="standardization">
+<h4>[0,1] Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">¶</a></h4>
+<p>An alternate approach for standardization is to use a mapping of each variable in the database to a [0,1] scale and linearly weight within the scale.
+This standardization has the same goal as Z-score, which is to prevent one variable from overwhelming the distance computations because of its relative magnitude.
+The unit interval [0,1] standardization technique differs from the Z-score in that the variability is governed by the minimum and maximum value for each variable, and hence <strong>extrapolation is not feasible</strong>. Because extrapolation is likely necessary until new records are added to any database, this standardization method is often useless.</p>
+<p><strong>That’s enough background, now lets look at an example</strong></p>
+</div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see this algorithm in action with the help of a simple example. Suppose you have a dataset with two variables, which when plotted, looks like the one in the following figure.</p>
+<img src="https://s3.amazonaws.com/stackabuse/media/k-nearest-neighbors-algorithm-python-scikit-learn-1.png" width="500">
+<p>Your task is to classify a new data point with ‘X’ into “Blue” class or “Red” class. The coordinate values of the data point are x=45 and y=50. Suppose the value of K is 3. The KNN algorithm starts by calculating the distance of point X from all the points. It then finds the 3 nearest points with least distance to point X. This is shown in the figure below. The three nearest points have been encircled.</p>
+<img src="https://s3.amazonaws.com/stackabuse/media/k-nearest-neighbors-algorithm-python-scikit-learn-2.png" width="500">
+<p>The final step of the KNN algorithm is to assign new point to the class to which majority of the three nearest points belong. From the figure above we can see that the two of the three nearest points belong to the class “Red” while one belongs to the class “Blue”. Therefore the new data point will be classified as “Red”.</p>
+<img src="https://miro.medium.com/max/1080/0*49s1xDlDKDsn55xa.gif" width="500">
+</div>
+<div class="section" id="why-knn">
+<h2>Why KNN?<a class="headerlink" href="#why-knn" title="Permalink to this headline">¶</a></h2>
+<img src="https://miro.medium.com/max/1022/1*AuXDgGrr0wbCoF6KDXXSZQ.jpeg" width="200" align="left" style="padding-right: 20px">
+<ul class="simple">
+<li><p>It is extremely easy to implement</p></li>
+<li><p>It is lazy learning algorithm and therefore requires no training prior to making real time predictions. This makes the KNN algorithm much faster than other algorithms that require training e.g SVM, linear regression, etc.</p></li>
+<li><p>Since the algorithm requires no training before making predictions, new data can be added seamlessly.</p></li>
+<li><p>There are only two parameters required to implement KNN i.e. the value of K and the distance function (e.g. Euclidean or Manhattan etc.)
+<br><br></p></li>
+</ul>
+<hr>
+<hr></div>
+<div class="section" id="example-iris-plants-classification-br">
+<h2>Example: Iris Plants Classification <br><a class="headerlink" href="#example-iris-plants-classification-br" title="Permalink to this headline">¶</a></h2>
+<img src="https://i.etsystatic.com/10589108/r/il/213b38/1876572420/il_570xN.1876572420_ikcm.jpg" width="200" align="left" style="padding-right: 20px"> 
+<p>This is a well known problem and database to be found in the pattern recognition literature.  Fisher’s paper is a classic in the field and is referenced frequently to this day.
+The Iris Flower Dataset involves predicting the flower species given measurements of iris flowers.</p>
+<p>The Iris Data Set contains information on sepal length, sepal width, petal length, petal width all in cm, and class of iris plants.
+The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.
+Hence, it is a multiclass classification problem and the number of observations for each class is balanced.</p>
+<p><img src="https://miro.medium.com/max/1000/1*lFC_U5j_Y8IXF4Ga87KNVg.png" width="500"><br></p>
+<p>Let’s use a KNN model in Python and see if we can classifity iris plants based on the four given predictors.</p>
+<hr>
+<p><em><strong>Acknowledgements</strong></em></p>
+<ol class="simple">
+<li><p><em>Fisher,R.A. “The use of multiple measurements in taxonomic problems” Annual Eugenics, 7, Part II, 179-188 (1936); also in “Contributions to Mathematical Statistics” (John Wiley, NY, 1950).</em></p></li>
+<li><p><em>Duda,R.O., &amp; Hart,P.E. (1973) Pattern Classification and Scene Analysis. (Q327.D83) John Wiley &amp; Sons.  ISBN 0-471-22361-1.  See page 218.</em></p></li>
+<li><p><em>Dasarathy, B.V. (1980) “Nosing Around the Neighborhood: A New System Structure and Classification Rule for Recognition in Partially Exposed Environments”.  IEEE Transactions on Pattern Analysis and Machine Intelligence, Vol. PAMI-2, No. 1, 67-71.</em></p></li>
+<li><p><em>Gates, G.W. (1972) “The Reduced Nearest Neighbor Rule”.  IEEE Transactions on Information Theory, May 1972, 431-433.</em></p></li>
+<li><p><em>See also: 1988 MLC Proceedings, 54-64.  Cheeseman et al’s AUTOCLASS II conceptual clustering system finds 3 classes in the data.</em></p></li>
+</ol>
+<p>Load some libraries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">metrics</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<p>Read the dataset and explore it using tools such as descriptive statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the remote directly from its url (Jupyter):</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;</span>
+<span class="c1"># Assign colum names to the dataset</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sepal-length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal-width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal-length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal-width&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">]</span>
+<span class="c1"># Read dataset to pandas dataframe</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal-length</th>
+      <th>sepal-width</th>
+      <th>petal-length</th>
+      <th>petal-width</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal-length</th>
+      <th>sepal-width</th>
+      <th>petal-length</th>
+      <th>petal-width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.054000</td>
+      <td>3.758667</td>
+      <td>1.198667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.433594</td>
+      <td>1.764420</td>
+      <td>0.763161</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Split the predictors and target - similar to what we did for logisitc regression:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, the dataset should be split into training and testing. This way our algorithm is tested on un-seen data, as it would be in a real-world application. Let’s go with a 80/20 split:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1">#This means that out of total 150 records:</span>
+<span class="c1">#the training set will contain 120 records &amp; </span>
+<span class="c1">#the test set contains 30 of those records.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is extremely straight forward to train the KNN algorithm and make predictions with it, especially when using Scikit-Learn. The first step is to import the “KNeighborsClassifier” class from the “sklearn.neighbors” library. In the second line, this class is initialized with one parameter, i.e. “n_neigbours”. This is basically the value for the K. There is no ideal value for K and it is selected after testing and evaluation, however to start out, 5 seems to be the most commonly used value for KNN algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier()
+</pre></div>
+</div>
+</div>
+</div>
+<p>The final step is to make predictions on our test data. To do so, execute the following script:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As it’s time to evaluate our model, we will go to our rather new friends, confusion matrix, precision, recall and f1 score as the most commonly used discrete GOF metrics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 9  0  0]
+ [ 0  9  0]
+ [ 0  1 11]]
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00         9
+Iris-versicolor       0.90      1.00      0.95         9
+ Iris-virginica       1.00      0.92      0.96        12
+
+       accuracy                           0.97        30
+      macro avg       0.97      0.97      0.97        30
+   weighted avg       0.97      0.97      0.97        30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion matrix&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted label&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual label&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 15.0, &#39;Actual label&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/lesson33_22_1.png" src="../../_images/lesson33_22_1.png" />
+</div>
+</div>
+<p>What if we had used a different value for K? What is the best value for K?</p>
+<p>One way to help you find the best value of K is to plot the graph of K value and the corresponding error rate for the dataset. In this section, we will plot the mean error for the predicted values of test set for all the K values between 1 and 50. To do so, let’s first calculate the mean of error for all the predicted values where K ranges from 1 and 50:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Calculating error for K values between 1 and 50</span>
+<span class="c1"># In each iteration the mean error for predicted values of test set is calculated and</span>
+<span class="c1"># the result is appended to the error list.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+    <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">pred_i</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">error</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pred_i</span> <span class="o">!=</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next step is to plot the error values against K values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">error</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+         <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error Rate K Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;K Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Mean Error&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/lesson33_26_1.png" src="../../_images/lesson33_26_1.png" />
+</div>
+</div>
+<hr>
+<hr>
+<div class="section" id="final-remarks">
+<h3>Final remarks …<a class="headerlink" href="#final-remarks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>KNN is a simple yet powerful classification algorithm.</p></li>
+<li><p>It requires no training for making predictions, which is typically one of the most difficult parts of a machine learning algorithm.</p></li>
+<li><p>The KNN algorithm have been widely used to find document similarity and pattern recognition.</p></li>
+</ul>
+<p>Here we presented it as a classifier, however if the output needs to be a predictor we can use “regression” type prediction using the KNN values to parameterize a data model.</p>
+<p>We will leave the task of making classifications of new inputs for a lab exercise.</p>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Rashid, Tariq. Make Your Own Neural Network.  . Kindle Edition.</p></li>
+<li><p><strong>“K-Nearest Neighbors Algorithm in Python and Scikit-Learn”</strong> by <strong>Scott Robinson</strong> available at* <a class="reference external" href="https://stackabuse.com/k-nearest-neighbors-algorithm-in-python-and-scikit-learn/">https://stackabuse.com/k-nearest-neighbors-algorithm-in-python-and-scikit-learn/</a> <br></p></li>
+<li><p><strong>“Develop k-Nearest Neighbors in Python From Scratch”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a> <br></p></li>
+<li><p><strong>“4 Distance Measures for Machine Learning”</strong> by <strong>Jason Brownlee</strong> available at* <a class="reference external" href="https://machinelearningmastery.com/distance-measures-for-machine-learning/">https://machinelearningmastery.com/distance-measures-for-machine-learning/</a> <br></p></li>
+<li><p><strong>“KNN Classification using Scikit-learn”</strong> by <strong>Avinash Navlani</strong>  available at* <a class="reference external" href="https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn">https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn</a> <br></p></li>
+<li><p><strong>“In-Depth: Decision Trees and Random Forests”</strong> by <strong>Jake VanderPlas</strong> available at *<a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.08-random-forests.html">https://jakevdp.github.io/PythonDataScienceHandbook/05.08-random-forests.html</a> <br></p></li>
+<li><p><strong>“Powerful Guide to learn Random Forest (with codes in R &amp; Python)”</strong> by <strong>SUNIL RAY</strong>  available at *<a class="reference external" href="https://www.analyticsvidhya.com/blog/2015/09/random-forest-algorithm-multiple-challenges/?utm_source=blog">https://www.analyticsvidhya.com/blog/2015/09/random-forest-algorithm-multiple-challenges/?utm_source=blog</a> <br></p></li>
+<li><p><strong>“Introduction to Random forest – Simplified”</strong> by <strong>TAVISH SRIVASTAVA</strong>  available at *<a class="reference external" href="https://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/">https://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/</a> <br></p></li>
+</ul>
+<p><em>Here are some great reads on these topics:</em></p>
+<ul class="simple">
+<li><p><strong>“KNN in Python”</strong> by <strong>Czako Zoltan</strong> available at* <a class="reference external" href="https://towardsdatascience.com/knn-in-python-835643e2fb53">https://towardsdatascience.com/knn-in-python-835643e2fb53</a> <br></p></li>
+<li><p><strong>“K Nearest Neighbor Algorithm In Python”</strong> by <strong>Cory Maklin</strong> available at* <a class="reference external" href="https://towardsdatascience.com/k-nearest-neighbor-python-2fccc47d2a55">https://towardsdatascience.com/k-nearest-neighbor-python-2fccc47d2a55</a> <br></p></li>
+<li><p><strong>“k-nearest neighbor algorithm in Python”</strong> available at* <a class="reference external" href="https://www.geeksforgeeks.org/k-nearest-neighbor-algorithm-in-python/">https://www.geeksforgeeks.org/k-nearest-neighbor-algorithm-in-python/</a> <br></p></li>
+<li><p><strong>“Using Random Forests in Python with Scikit-Learn”</strong> available at *<a class="reference external" href="https://www.blopig.com/blog/2017/07/using-random-forests-in-python-with-scikit-learn/">https://www.blopig.com/blog/2017/07/using-random-forests-in-python-with-scikit-learn/</a> <br></p></li>
+<li><p><strong>“Random Forest Regression in Python”</strong> available at *<a class="reference external" href="https://www.geeksforgeeks.org/random-forest-regression-in-python/">https://www.geeksforgeeks.org/random-forest-regression-in-python/</a> <br></p></li>
+<li><p><strong>“Random Forest Algorithm with Python and Scikit-Learn”</strong> by <strong>Usman Malik</strong> available at *<a class="reference external" href="https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/">https://stackabuse.com/random-forest-algorithm-with-python-and-scikit-learn/</a> <br></p></li>
+</ul>
+<p><em>Here are some great videos on these topics:</em></p>
+<ul class="simple">
+<li><p><strong>“StatQuest: K-nearest neighbors, Clearly Explained”</strong> by <strong>StatQuest with Josh Starmer</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=HVXime0nQeI">https://www.youtube.com/watch?v=HVXime0nQeI</a> <br></p></li>
+<li><p><strong>“How kNN algorithm works”</strong> by <strong>Thales Sehn Körting</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=UqYde-LULfs">https://www.youtube.com/watch?v=UqYde-LULfs</a> <br></p></li>
+<li><p><strong>“KNN Algorithm Using Python | How KNN Algorithm Works | Data Science For Beginners | Simplilearn”</strong> by <strong>Simplilearn</strong> available at* <a class="reference external" href="https://www.youtube.com/watch?v=4HKqjENq9OU">https://www.youtube.com/watch?v=4HKqjENq9OU</a> <br></p></li>
+<li><p><strong>“Decision Tree (CART) - Machine Learning Fun and Easy”</strong> by <strong>Augmented Startups</strong> available at *<a class="reference external" href="https://www.youtube.com/watch?v=DCZ3tsQIoGU">https://www.youtube.com/watch?v=DCZ3tsQIoGU</a> <br></p></li>
+<li><p><strong>“StatQuest: Random Forests Part 1 - Building, Using and Evaluating”</strong> by <strong>StatQuest with Josh Starmer</strong> available at *<a class="reference external" href="https://www.youtube.com/watch?v=J4Wdy0Wc_xQ">https://www.youtube.com/watch?v=J4Wdy0Wc_xQ</a> <br></p></li>
+<li><p><strong>“StatQuest: Random Forests Part 2: Missing data and clustering”</strong> by <strong>StatQuest with Josh Starmer</strong> available at *<a class="reference external" href="https://www.youtube.com/watch?v=sQ870aTKqiM">https://www.youtube.com/watch?v=sQ870aTKqiM</a> <br></p></li>
+<li><p><strong>“Random Forest - Fun and Easy Machine Learning”</strong> by <strong>Augmented Startups</strong> available at *<a class="reference external" href="https://www.youtube.com/watch?v=D_2LkhMJcfY">https://www.youtube.com/watch?v=D_2LkhMJcfY</a> <br></p></li>
+</ul>
+<hr><hr>
+</div>
+<div class="section" id="laboratory-33-font-color-green-last-one-yay-font">
+<h2>Laboratory 33 <font color="green">(Last One; Yay!)</font><a class="headerlink" href="#laboratory-33-font-color-green-last-one-yay-font" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Laboratory 33 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33.html">Laboratory 33.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Laboratory 33 as a jupyterlab notebook from <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33.ipynb">Laboratory 33.ipynb</a></p>
+<hr><hr>
+</div>
+<div class="section" id="exercise-set-33-font-color-green-none-font">
+<h2>Exercise Set 33 <font color="green">(None)</font><a class="headerlink" href="#exercise-set-33-font-color-green-none-font" title="Permalink to this headline">¶</a></h2>
+<p><strong>Examine</strong> (click) Exercise Set 31 as a webpage at <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33-TH.html">Exercise 33.html</a></p>
+<p><strong>Download</strong> (right-click, save target as …) Exercise Set 33 as a jupyterlab notebook at  <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33-TH.ipynb">Exercise Set 33.ipynb</a></p>
+</div>
+<div class="section" id="id1">
+<h2>References<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -492,7 +1115,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">32: Logistic Regression (Homebrew)</p>
+                <p class="prevnext-title">32: Logistic Regression</p>
             </div>
         </a>
     </div>
