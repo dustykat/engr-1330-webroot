@@ -349,7 +349,7 @@ plt.ylabel('Mean Error')
 
 # <hr><hr>
 # 
-# ## Laboratory 33 <font color="green">(Last One; Yay!)</font>
+# ## Laboratory 33 
 # 
 # **Examine** (click) Laboratory 33 as a webpage at [Laboratory 33.html](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33.html)
 # 
@@ -364,5 +364,3 @@ plt.ylabel('Mean Error')
 # 
 # **Download** (right-click, save target as ...) Exercise Set 33 as a jupyterlab notebook at  [Exercise Set 33.ipynb](http://54.243.252.9/engr-1330-webroot/8-Labs/Lab33/Lab33-TH.ipynb)
 # 
-
-# ## References
