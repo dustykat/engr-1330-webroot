@@ -11,7 +11,7 @@
 
 # 
 
-# ---
+# <hr>
 # 
 # ## Contour plots (advanced)
 # 
@@ -131,7 +131,7 @@ ax.set_title('Contour Plot from Gridded Data File');
 ################################
 
 
-# ___
+# <hr>
 # 
 # 1. Contour Plots [https://clouds.eos.ubc.ca/~phil/docs/problem_solving/06-Plotting-with-Matplotlib/06.14-Contour-Plots.html](https://clouds.eos.ubc.ca/~phil/docs/problem_solving/06-Plotting-with-Matplotlib/06.14-Contour-Plots.html)
 # 
