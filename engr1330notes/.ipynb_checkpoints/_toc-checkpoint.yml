@@ -1,0 +1,134 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: examples/1introduction/introduction
+  sections:
+  - file: examples/1introduction/abstract 
+  - file: examples/1introduction/background
+  - file: examples/1introduction/solvingacircuit 
+  - file: examples/1introduction/assesssolution 
+  - file: examples/1introduction/solutionmethods 
+  
+- file: examples/example03/example03
+  sections:
+  - file: examples/example03/1startingjupyter 
+  - file: examples/example03/2celltypes 
+  - file: examples/example03/3entercode 
+  - file: examples/example03/4executecell 
+  - file: examples/example03/5printingnotebook 
+
+- file: examples/3sequence/example02
+  sections:
+  - file: examples/3sequence/abstract 
+  - file: examples/3sequence/background 
+  - file: examples/3sequence/dataassembly  
+  - file: examples/3sequence/modelassembly  
+  - file: examples/3sequence/runandinterpret 
+
+- file: examples/4selection/example04
+  sections:
+  - file: examples/4selection/1logical 
+  - file: examples/4selection/2ifstruc 
+  - file: examples/4selection/3ifelifstruc 
+  - file: examples/4selection/4nestedif 
+  - file: examples/4selection/5tryexcept 
+  
+- file: examples/5repetition/repetition
+  sections:
+  - file: examples/5repetition/1countcontrol  
+  - file: examples/5repetition/2sentenialcontrol 
+  - file: examples/5repetition/3recursion 
+  
+- file: examples/6packages/example041
+  sections:
+  - file: examples/6packages/1packages 
+  - file: examples/6packages/2functions 
+  - file: examples/6packages/3savefunction 
+  
+- file: examples/7graphing/example05
+  sections:
+  - file: examples/7graphing/1goodgraphs 
+  - file: examples/7graphing/2makinggraphs 
+  - file: examples/7graphing/3adddata 
+  - file: examples/7graphing/4loglogcharts 
+  - file: examples/7graphing/5othercharts 
+
+- file: examples/8statistical/example06
+  sections:
+  - file: examples/8statistical/1descriptivestatistics 
+  - file: examples/8statistical/2histograms 
+  - file: examples/8statistical/3cumulativedistributions 
+
+- file: examples/10datamodels/datamodels
+  sections:
+  - file: examples/10datamodels/1interpolation 
+  - file: examples/10datamodels/2leastsquares 
+  - file: examples/10datamodels/3fitaline 
+  - file: examples/10datamodels/4fitacurve 
+  - file: examples/10datamodels/5goodfunctions 
+
+  
+- file: examples/11sortandfilter/sortandfilter
+  sections:
+  - file: examples/11sortandfilter/1sortinglists 
+  - file: examples/11sortandfilter/2filteringlists 
+  - file: examples/11sortandfilter/3pivottables
+  
+- file: examples/12filetransfer/filetransfer
+  sections:
+  - file: examples/12filetransfer/1filesystems 
+  - file: examples/12filetransfer/2readwritecore 
+  - file: examples/12filetransfer/3readwriteweb 
+  
+- file: examples/13convertunits/convertunits
+
+- file: examples/14solveequation/solveequation
+  sections:
+  - file: examples/14solveequation/1graphical 
+  - file: examples/14solveequation/2darts 
+  - file: examples/14solveequation/3bisection 
+  - file: examples/14solveequation/4newtons 
+
+- file: examples/15equationsystems/equationsystems
+  sections:
+  - file: examples/15equationsystems/linearsystems
+  - file: examples/15equationsystems/statictruss 
+  - file: examples/15equationsystems/solvingacircuit2 
+  - file: examples/15equationsystems/heatflow
+  - file: examples/15equationsystems/reactorsystem
+  - file: examples/15equationsystems/confinedaquifer
+  - file: examples/15equationsystems/unconfinedaquifer
+  - file: examples/15equationsystems/nonlinearsystems 
+  - file: examples/15equationsystems/pipenetwork 
+  
+- file: examples/16integrals/example13
+  sections:
+  - file: examples/16integrals/1rectangularpanels 
+  - file: examples/16integrals/2trapezoidalpanels 
+  - file: examples/16integrals/3parabolicpanels 
+  - file: examples/16integrals/4tabulateddata 
+  - file: examples/16integrals/5othermethods 
+
+- file: examples/17comparechoices/comparechoices
+  sections:
+  - file: examples/17comparechoices/1topic 
+  - file: examples/17comparechoices/2topic 
+  - file: examples/17comparechoices/3topic 
+  
+- file: examples/18optimization/optimization
+  sections:
+  - file: examples/18optimization/1topic 
+  - file: examples/18optimization/2topic 
+  - file: examples/18optimization/3topic 
+
+- file: examples/19classification/classification
+  sections:
+  - file: examples/19classification/1topic 
+  - file: examples/19classification/2topic 
+  - file: examples/19classification/3topic 
+  
+- file: markdown
+- file: notebooks

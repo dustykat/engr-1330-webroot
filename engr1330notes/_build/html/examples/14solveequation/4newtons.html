@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newton’s Method - Homebrew &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Solving Simultaneous Equations" href="../15equationsystems/equationsystems.html" />
+    <link rel="prev" title="Bisection Method" href="3bisection.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Engineering Analysis using Python and Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example01/example01.html">
+   Computational Thinking and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/abstract.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/background.html">
+     Problem Solving Philosophy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example03/example03.html">
+   Creating a Jupyter Notebook
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/1startingjupyter.html">
+     Installing Jupyter and iPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/2celltypes.html">
+     Cell Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/3entercode.html">
+     Extering Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/4executecell.html">
+     Executing a Code Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/5printingnotebook.html">
+     Saving and Printing a Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3sequence/example02.html">
+   Sequential Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/abstract.html">
+     Installating Jupyter on your Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/background.html">
+     Starting Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4selection/example04.html">
+   Selection Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/1logical.html">
+     Logical Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/2ifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/3ifelifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       ELIF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/4nestedif.html">
+     Nested
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/5tryexcept.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TRY
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       EXCEPT
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../5repetition/repetition.html">
+   Repetition Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/1countcontrol.html">
+     Count-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/2sentenialcontrol.html">
+     Sentenial-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/3recursion.html">
+     Recursion (advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6packages/example041.html">
+   Packages and Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/1packages.html">
+     External Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/2functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/3savefunction.html">
+     Saving User-Defined Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../7graphing/example05.html">
+   Graphing Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../8statistical/example06.html">
+   Analyzing Data Statistically
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/1descriptivestatistics.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/2histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/3cumulativedistributions.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10datamodels/datamodels.html">
+   Fitting Equations to Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/1interpolation.html">
+     Interpolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/2leastsquares.html">
+     Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/3fitaline.html">
+     Fitting a Line to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/4fitacurve.html">
+     Fitting other Functions to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/5goodfunctions.html">
+     Choosing Good Functions for a Data Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11sortandfilter/sortandfilter.html">
+   Sorting and Filtering Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/1sortinglists.html">
+     Sorting Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/2filteringlists.html">
+     Filtering Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/3pivottables.html">
+     Pivot Tables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12filetransfer/filetransfer.html">
+   Transferring Data Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/1filesystems.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/2readwritecore.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/3readwriteweb.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13convertunits/convertunits.html">
+   Converting Units
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="solveequation.html">
+   Solving Single Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1graphical.html">
+     Graphical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2darts.html">
+     Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3bisection.html">
+     Bisection Method
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Newton’s Method - Homebrew
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../15equationsystems/equationsystems.html">
+   Solving Simultaneous Equations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../16integrals/example13.html">
+   Evaluating Integrals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/1rectangularpanels.html">
+     Rectangular Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/2trapezoidalpanels.html">
+     Trapezoidal Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/3parabolicpanels.html">
+     Parabolic Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/4tabulateddata.html">
+     Integration of Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/5othermethods.html">
+     Other Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/examples/14solveequation/4newtons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/14solveequation/4newtons.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/14solveequation/4newtons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Newton’s Method - Homebrew
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-derivatives">
+     Analytical Derivatives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finite-difference-derivatives">
+     Finite-difference derivatives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-method-packages">
+   Newton’s Method - Packages
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="newton-s-method-homebrew">
+<h1>Newton’s Method - Homebrew<a class="headerlink" href="#newton-s-method-homebrew" title="Permalink to this headline">¶</a></h1>
+<p>The application of fundamental principles of modeling and mechanics often leads to an
+algebraic or transcendental equation that cannot be easily solved and represented in a closed
+form. In these cases a numerical method is required to obtain an estimate of the root or
+roots of the expression.</p>
+<p>Newton’s method is an iterative technique that can produce good estimates of solutions to
+such equations. The method is employed by rewriting the equation in the form <span class="math notranslate nohighlight">\(f(x) = 0\)</span>,
+then successively manipulating guesses for <span class="math notranslate nohighlight">\(x\)</span> until the function evaluates to a value close
+enough to zero for the modeler to accept.</p>
+<p><img alt="figure" src="../../_images/newton1.png" /></p>
+<p>The figure above is a graph of some function whose intercept with the <em>x-axis</em> is unknown. The goal
+of Newton’s method is to find this intersection (root) from a realistic first guess. Suppose
+the first guess is <span class="math notranslate nohighlight">\(x_1\)</span>, shown on the figure as the right-most specific value of <span class="math notranslate nohighlight">\(x\)</span>. The value
+of the function at this location is <span class="math notranslate nohighlight">\(f(x1)\)</span>. Because <span class="math notranslate nohighlight">\(x_1\)</span> is supposed to be a root the difference
+from the value zero represents an error in the estimate. Newton’s method simply provides a
+recipe for corrections to this error.</p>
+<p>Provided <span class="math notranslate nohighlight">\(x_1\)</span> is not near a minimum or maximum (slope of the function is not zero) then a
+better estimate of the root can be obtained by extending a tangent line from <span class="math notranslate nohighlight">\(x_1, f(x_1)\)</span> to
+the x-axis. The intersection of this line with the axis represents a better estimate of the
+root.  This new estimate is <code class="docutils literal notranslate"><span class="pre">x2</span></code>. A formula for <span class="math notranslate nohighlight">\(x_2\)</span> can be derived from the geometry of the triangle
+<span class="math notranslate nohighlight">\(x_2,f(x_1),x_1\)</span>. Recall from calculus that the tangent to a function at a particular point is
+the first derivative of the function. Therefore, from the geometry of the triangle and the
+definition of tangent we can write,</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+tan(\theta)=\frac{df}{dx}\Biggr\vert_{x_1} = \frac{f(x_1)}{x_1 - x_2}
+\end{equation}\)</span></p>
+<p>Solving the equation for <span class="math notranslate nohighlight">\(x_2\)</span> results in a formula that expresses <span class="math notranslate nohighlight">\(x_2\)</span> in terms of the first guess
+plus a correction term.</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+x_2=x_1 - \frac{f(x_1)}{\frac{df}{dx}\vert_{x_1}} 
+\end{equation}\)</span></p>
+<p>The second term on the right hand side is the correction term to the estimate on the right
+hand side. Once <span class="math notranslate nohighlight">\(x_2\)</span> is calculated we can repeat the formula substituting <span class="math notranslate nohighlight">\(x_2\)</span> for <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> for
+<span class="math notranslate nohighlight">\(x_2\)</span> in the formula. Repeated application usually leads to one of three outcomes:</p>
+<ol class="simple">
+<li><p>a root;</p></li>
+<li><p>divergence to +/- <span class="math notranslate nohighlight">\(\inf\)</span> ; or</p></li>
+<li><p>cycling.</p></li>
+</ol>
+<p>These three outcomes are discussed below in various subsections along with some remedies.
+The generalized formula is</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+x_{k+1}=x_{k} - \frac{  f(x_{k})  }{   \frac{df}{dx}\rvert_{x_k} } 
+\label{eqn:NewtonFormula}
+\end{equation}\)</span></p>
+<p>If the derivative is evaluated using analytical derivatives the method is called Newton’s
+method, if approximations to the derivative are used, it is called a quasi-Newton method.</p>
+<div class="section" id="analytical-derivatives">
+<h2>Analytical Derivatives<a class="headerlink" href="#analytical-derivatives" title="Permalink to this headline">¶</a></h2>
+<p>This subsection is an example in Python of implementing Newton’s method with analytical derivatives.</p>
+<p>The recipe itself is:</p>
+<ol class="simple">
+<li><p>Write the function in proper form, and code it into a computer.</p></li>
+<li><p>Write the derivative in proper form and code it into a computer.</p></li>
+<li><p>Make an initial guess of the solution (0 and 1 are always convenient guesses).</p></li>
+<li><p>Evaluate the function, evaluate the derivative, calculate their ratio.</p></li>
+<li><p>Subtract the ratio from the current guess and save the result as the update.</p></li>
+<li><p>Test for stopping:
+i) Did the update stay the same value? Yes, then stop, probably have a solution.
+ii) Is the function nearly zero?  Yes, then stop we probably have a solution.
+iii) Have we tried too many updates? Yes, then stop the process is probably cycling, stop.</p></li>
+<li><p>If stopping is indicated proceed to next step, otherwise proceed back to step 4.</p></li>
+<li><p>Stopping indicated, report last update as the result (or report failure to find solution), and related information about the status of the numerical method.</p></li>
+</ol>
+<p>The following example illustrates these step as well as an ipython implementation of Newton’s method.</p>
+<p>Suppose we wish to find a root (value of <code class="docutils literal notranslate"><span class="pre">x</span></code>) that satisfies:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+f(x) = e^x - 10 cos(x) -100
+\end{equation}\)</span></p>
+<p>Then we will need to code it into a script.   Here is a code fragment that will generate the prototype function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  import built in function for e^x, cosine</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<span class="c1"># Define the function</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>  <span class="c1">#using the name as the temp var</span>
+    <span class="k">return</span> <span class="n">func</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice in the code fragment we import three built-in functions from the Python math package, specifically <span class="math notranslate nohighlight">\(\exp()\)</span>, <span class="math notranslate nohighlight">\(\sin()\)</span>, and <span class="math notranslate nohighlight">\(\cos ()\)</span>.
+The next step is to code the derivative.   In this case the derivative is</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\frac{df}{dx}\vert{(x)} = e^x + 10 \sin(x)
+\end{equation}\)</span></p>
+<p>and the prototype function is coded as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">dfdx</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dfdx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we will need script to read in an initial guess, and ask us how many trials we will use to try to find a solution, as well as how close to zero we should be before we declare victory.</p>
+<div class="admonition-interactive-code admonition">
+<p class="admonition-title">Interactive Code</p>
+<p>The script below is a rudimentary interactive interface to read in data.  The examples use assigned inputs, but can be easily replaced with a script like the one below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Now for the Newton Method Implementation</span>
+    <span class="c1"># Get initial guess, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an initial guess for Newton method </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">xnow</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Get number trials, use a simple error trap</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">HowMany</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter iteration maximum </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">HowMany</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">HowMany</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Get stopping criterion</span>
+    <span class="n">yes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">HowSmall</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a solution tolerance (e.g. 1e-06) </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">HowSmall</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">HowSmall</span><span class="p">)</span>
+            <span class="n">yes</span> <span class="o">=</span><span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value should be numeric, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xnow</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">HowMany</span><span class="o">=</span><span class="mi">40</span>
+<span class="n">HowSmall</span><span class="o">=</span><span class="mf">1e-06</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">HowSmall</span></code> is called a zero tolerance.<br />
+We will use the same numerical value for two tolerance tests.<br />
+Also notice how we are using error traps to force numeric input.<br />
+Probably overkill for this example, but we already wrote the code in an earlier essay, so might as well reuse the code.<br />
+Professional codes do a lot of error checking before launching into the actual processing - especially if the processing part is time consuming, its worth the time to check for obvious errors before running for a few hours then at some point failing because of an input value error that was predictable.</p>
+<p>Now back to the tolerance tests.
+The first test is to determine if the update has changed or not.<br />
+If it has not, we may not have a correct answer, but there is no point continuing because the update is unlikely to move further.<br />
+The test is something like</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\text{IF}~\lvert x_{k+1} - x_{k} \rvert &lt; \text{Tol.~ THEN Exit and Report Results}
+\end{equation}\)</span></p>
+<p>The second test is if the function value is close to zero.<br />
+The structure of the test is similar, just an different argument.   The second test is something like</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\text{IF}~\lvert f(x_{k+1}) \rvert &lt; \text{Tol.~ THEN Exit and Report Results}
+\end{equation}\)</span></p>
+<p>One can see from the nature of the two tests that a programmer might want to make the tolerance values different.<br />
+This modification is left as a reader exercise.</p>
+<p>Checking for maximum iterations is relatively easy, we just include code that checks for normal exit the loop.</p>
+<p>Here is code fragment that implements the method, makes the various tests, and reports results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we begin the process</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">HowMany</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">xnew</span> <span class="o">=</span> <span class="n">xnow</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+<span class="c1"># stopping criteria -- update not changing</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xnew</span> <span class="o">-</span> <span class="n">xnow</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Update not changing </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="n">xnew</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span><span class="mi">1</span>
+        <span class="k">continue</span>
+<span class="c1"># stopping criteria -- function close to zero</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">)</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Function value close to zero </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="n">xnew</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span><span class="mi">1</span>
+        <span class="k">continue</span>
+<span class="c1"># next step, then have either broken from the loop or iteration counted out</span>
+<span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">HowMany</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Iteration Limit Reached &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of NewtonMethod.py &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Update not changing 
+
+Function value = 1.4210854715202004e-14
+ Root value    = 4.593209147284144
+End of NewtonMethod.py 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we simply connect the three fragments, and we would have a working Python script that implements Newton’s method for the example equation.  The example is specific to the particular function provided, but the programmer could move the two functions <code class="docutils literal notranslate"><span class="pre">func</span></code> and <code class="docutils literal notranslate"><span class="pre">dfdx</span></code> into a user specified module, and then load that module in the program to make it even more generic.   The next section will use such an approach to illustrate the ability to build a generalized Newton method and <em>only have to program the function itself</em></p>
+</div>
+<div class="section" id="finite-difference-derivatives">
+<h2>Finite-difference derivatives<a class="headerlink" href="#finite-difference-derivatives" title="Permalink to this headline">¶</a></h2>
+<p>A practical difficulty in using Newton’s method is determining the value of the derivative in cases where differentiation is difficult.<br />
+In these cases we can replace the derivative by a finite difference equation and then proceed as in Newton’s method.</p>
+<p>Recall from calculus that the derivative was defined as the limit of the difference quotient:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\frac{df}{dx}\vert_{x} = \lim_{\Delta x \rightarrow 0}\frac{f(x + \Delta x) - f(x) }{\Delta x}
+\end{equation}\)</span></p>
+<p>A good approximation to the derivative should be possible by using this formula with a small, but non-zero value for <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\frac{df}{dx}\vert_{x} \approx \frac{f(x + \Delta x) - f(x) }{\Delta x}
+\end{equation}\)</span></p>
+<p>When one replaces the derivative with the difference formula the root finding method the resulting update formula is</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+x_{k+1}=x_k - \frac{f(x_k) \Delta x}{f(x_k + \Delta x)-f(x_k)} 
+\end{equation}\)</span></p>
+<p>This root-finding method is called a quasi-Newton method.</p>
+<p>Here is the code fragment that we change by commenting out the analytical derivative and replacing it with a first-order finite difference approximation of the derivative.  The numerical value <span class="math notranslate nohighlight">\(1e-06\)</span> is called the step size (<span class="math notranslate nohighlight">\(\Delta x\)</span>)  and should be an input value (rather than built-in to the code as shown here) like the tolerance test values, and be passed to the function as another argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reset the notebook</span>
+<span class="o">%</span><span class="k">reset</span> -f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  import built in function for e^x, cosine</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<span class="c1"># Define the function</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>  <span class="c1">#using the name as the temp var</span>
+    <span class="k">return</span> <span class="n">func</span>
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="c1">#    dfdx = exp(x) + 10*sin(x)</span>
+    <span class="n">dfdx</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">1e-06</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mf">1e-06</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xnow</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">HowMany</span><span class="o">=</span><span class="mi">33</span>
+<span class="n">HowSmall</span><span class="o">=</span><span class="mf">1e-09</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we begin the process</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">HowMany</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">xnew</span> <span class="o">=</span> <span class="n">xnow</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">xnow</span><span class="p">)</span>
+<span class="c1"># stopping criteria -- update not changing</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xnew</span> <span class="o">-</span> <span class="n">xnow</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Update not changing </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="n">xnew</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span><span class="mi">1</span>
+        <span class="k">continue</span>
+<span class="c1"># stopping criteria -- function close to zero</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">)</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="n">HowSmall</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Function value close to zero </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xnow</span> <span class="o">=</span> <span class="n">xnew</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span><span class="mi">1</span>
+        <span class="k">continue</span>
+<span class="c1"># next step, then have either broken from the loop or iteration counted out</span>
+<span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">HowMany</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Iteration Limit Reached &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function value =&quot;</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Root value    =&quot;</span><span class="p">,</span><span class="n">xnew</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of NewtonMethod.py &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Update not changing 
+
+Function value = 1.4210854715202004e-14
+ Root value    = 4.593209147284144
+End of NewtonMethod.py 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty much the same result, but now we don’t have to determine the analytical derivative.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="newton-s-method-packages">
+<h1>Newton’s Method - Packages<a class="headerlink" href="#newton-s-method-packages" title="Permalink to this headline">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples/14solveequation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="3bisection.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Bisection Method</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../15equationsystems/equationsystems.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Solving Simultaneous Equations</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

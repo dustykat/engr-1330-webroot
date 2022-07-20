@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduling Example &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Grid Search Methods" href="2topic.html" />
+    <link rel="prev" title="Optimization Modeling" href="optimization.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Engineering Analysis using Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example01/example01.html">
+   Computational Thinking and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/abstract.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/background.html">
+     Problem Solving Philosophy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example03/example03.html">
+   Creating a Jupyter Notebook
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/1startingjupyter.html">
+     Installing Jupyter and iPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/2celltypes.html">
+     Cell Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/3entercode.html">
+     Extering Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/4executecell.html">
+     Executing a Code Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/5printingnotebook.html">
+     Saving and Printing a Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3sequence/example02.html">
+   Sequential Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/abstract.html">
+     Installating Jupyter on your Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/background.html">
+     Starting Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4selection/example04.html">
+   Selection Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/1logical.html">
+     Logical Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/2ifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/3ifelifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       ELIF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/4nestedif.html">
+     Nested
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/5tryexcept.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TRY
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       EXCEPT
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../5repetition/repetition.html">
+   Repetition Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/1countcontrol.html">
+     Count-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/2sentenialcontrol.html">
+     Sentenial-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/3recursion.html">
+     Recursion (advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6packages/example041.html">
+   Packages and Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/1packages.html">
+     External Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/2functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/3savefunction.html">
+     Saving User-Defined Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../7graphing/example05.html">
+   Graphing Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../8statistical/example06.html">
+   Analyzing Data Statistically
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/1descriptivestatistics.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/2histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/3cumulativedistributions.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10datamodels/datamodels.html">
+   Fitting Equations to Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/1interpolation.html">
+     Interpolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/2leastsquares.html">
+     Least Squares Minimization Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/3fitaline.html">
+     Fitting a Line to Data Using Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/4fitacurve.html">
+     Fitting other Functions to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/5goodfunctions.html">
+     Choosing Good Functions for a Data Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11sortandfilter/sortandfilter.html">
+   Sorting and Filtering Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/1sortinglists.html">
+     Sorting Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/2filteringlists.html">
+     Filtering Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/3pivottables.html">
+     Pivot Tables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12filetransfer/filetransfer.html">
+   Transferring Data Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/1filesystems.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/2readwritecore.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/3readwriteweb.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13convertunits/convertunits.html">
+   Converting Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../14solveequation/solveequation.html">
+   Solving Single Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/1graphical.html">
+     Graphical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/2darts.html">
+     Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/3bisection.html">
+     Bisection Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/4newtons.html">
+     Newton’s Method - Homebrew
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../15equationsystems/equationsystems.html">
+   Solving Simultaneous Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/1topic.html">
+     Simultaneous Linear Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/2topic.html">
+     Simultaneous Non-Linear Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/3topic.html">
+     Linear System Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../16integrals/example13.html">
+   Evaluating Integrals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/1rectangularpanels.html">
+     Rectangular Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/2trapezoidalpanels.html">
+     Trapezoidal Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/3parabolicpanels.html">
+     Parabolic Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/4tabulateddata.html">
+     Integration of Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/5othermethods.html">
+     Other Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../17comparechoices/comparechoices.html">
+   Economic Modeling: Comparing Choices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/1topic.html">
+     Compound Interest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/2topic.html">
+     Multipayment Cash Flows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/3topic.html">
+     Internal Rate of Return
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="optimization.html">
+   Optimization Modeling
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Scheduling Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2topic.html">
+     Grid Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3topic.html">
+     Gradient Descent Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../19classification/classification.html">
+   Classification Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/1topic.html">
+     Logistic Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/2topic.html">
+     Nearest Neighbor Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/3topic.html">
+     Neural Network Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/examples/18optimization/1topic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/18optimization/1topic.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/18optimization/1topic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Scheduling Example
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-variables">
+     Decision Variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-function">
+     Objective Function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constraints">
+     Constraints
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#minimium-required-production">
+       Minimium Required Production
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximum-available-budget-for-labrador">
+       Maximum Available Budget for Labrador
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#non-negativity">
+       Non-Negativity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grid-search-method">
+       Grid Search Method
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unconstrained-minimization">
+   Unconstrained Minimization
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="scheduling-example">
+<h1>Scheduling Example<a class="headerlink" href="#scheduling-example" title="Permalink to this headline">¶</a></h1>
+<p>Suppose you are manufacturing two illegal substances in your dorm room, <span class="math notranslate nohighlight">\(\textbf{A}\)</span> and <span class="math notranslate nohighlight">\(\textbf{B}\)</span>, which can be sold for <span class="math notranslate nohighlight">\(\$\)</span>120 per unit for substance <span class="math notranslate nohighlight">\(\textbf{A}\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>80 for substance <span class="math notranslate nohighlight">\(\textbf{B}\)</span>.  The cartel requires that at least 1000 total units be manufactured each month.  Product <span class="math notranslate nohighlight">\(\textbf{A}\)</span> requires five hours of labor, product <span class="math notranslate nohighlight">\(\textbf{B}\)</span> requires three hours of labor per unit.  The cost of your labor is <span class="math notranslate nohighlight">\(\$\)</span>12 per hour, and a total of 8000 hours per month of labor is available (basically your whole floor). Determine a production schedule that will maximize the net revenue.</p>
+<p>The conversion of this description into a mathematical program is the next important step</p>
+<div class="section" id="decision-variables">
+<h2>Decision Variables<a class="headerlink" href="#decision-variables" title="Permalink to this headline">¶</a></h2>
+<p>First we define decision variables (sadly we already made a bad decision working for the cartel, but let’s make the best of our remaining time on Earth!)</p>
+<p><span class="math notranslate nohighlight">\(x_1 = \text{units of }A\text{ per month}\)</span> <br>
+<span class="math notranslate nohighlight">\(x_1 = \text{units of }B\text{ per month}\)</span> <br></p>
+</div>
+<div class="section" id="objective-function">
+<h2>Objective Function<a class="headerlink" href="#objective-function" title="Permalink to this headline">¶</a></h2>
+<p>Here we wish to define the objective function, which in this example is net revenue</p>
+<p><span class="math notranslate nohighlight">\(y(x_1,x_2) = [120 - (5 \times 12)]x_1 + [80 - (3 \times 12)]x_2\)</span><br></p>
+<p>In a Jupyter Notebook it would be something like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myobj</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">myobj</span> <span class="o">=</span> <span class="p">(</span><span class="mi">120</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">80</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span><span class="o">*</span><span class="n">x2</span>
+    <span class="k">return</span> <span class="n">myobj</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>Next we need to define constraints.  The specific way will depend on the minimization package you choose, we will examine that later on.  Here we will list them and create functions to simply evaluate the constraints.</p>
+<div class="section" id="minimium-required-production">
+<h3>Minimium Required Production<a class="headerlink" href="#minimium-required-production" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(x_1 + x_2 \ge 1000\)</span><br></p>
+</div>
+<div class="section" id="maximum-available-budget-for-labrador">
+<h3>Maximum Available Budget for Labrador<a class="headerlink" href="#maximum-available-budget-for-labrador" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(5 x_1 + 3 x_2 \le 8000\)</span><br></p>
+</div>
+<div class="section" id="non-negativity">
+<h3>Non-Negativity<a class="headerlink" href="#non-negativity" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(x_1 \ge 0; x_2 \ge 0\)</span><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">con1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="c1"># con1 &gt;= 0 is feasible</span>
+    <span class="n">con1</span> <span class="o">=</span> <span class="n">x1</span><span class="o">+</span><span class="n">x2</span> <span class="o">-</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="n">con1</span>
+<span class="k">def</span> <span class="nf">con2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="c1"># con2 &gt;=0 is feasible</span>
+    <span class="n">con2</span> <span class="o">=</span> <span class="mi">8000</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x1</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span>
+    <span class="k">return</span> <span class="n">con2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point we can build a model of the problem (no solution technique just yet).  The problem as stated is integer, but we will pretend that real-valued (fractional) units are OK.</p>
+<p>Our program is below, we can even supply code to test for feasibility.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">objvalue</span> <span class="o">=</span> <span class="n">myobj</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="c1"># print current results</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance A produced = &quot;</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance B produced = &quot;</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="n">objvalue</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimun Production Constraint = &quot;</span><span class="p">,</span><span class="n">constraint1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum Labor Budget = &quot;</span><span class="p">,</span><span class="n">constraint2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">constraint1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">constraint2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x2</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution is INFEASIBLE&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution is FEASIBLE&quot;</span><span class="p">)</span>
+    <span class="k">return</span>
+<span class="n">x1</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">x2</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Substance A produced =  500
+Substance B produced =  500
+Objective Function Value =  52000
+Minimun Production Constraint =  0
+Maximum Labor Budget =  4000
+Solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe our labor budget is still available, so we can increase production and improve our revenue; lets try more <span class="math notranslate nohighlight">\(\textbf{B}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">x2</span><span class="o">=</span><span class="mi">1833</span>
+<span class="n">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Substance A produced =  500
+Substance B produced =  1833
+Objective Function Value =  110652
+Minimun Production Constraint =  1333
+Maximum Labor Budget =  1
+Solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now our revenue is over 2 times bigger that our initial guess.  Our next task is to automate the quest for a bestest solution.</p>
+</div>
+<div class="section" id="grid-search-method">
+<h3>Grid Search Method<a class="headerlink" href="#grid-search-method" title="Permalink to this headline">¶</a></h3>
+<p>The easiest approach (but computationally very expensive and incredibly slow) is a grid search - we simply specify values of <span class="math notranslate nohighlight">\(\textbf{A}\)</span> and <span class="math notranslate nohighlight">\(\textbf{B}\)</span> in a repetition structure, and compute the objective value and whether the solution is feasible, and just save the best.  The script below implements a crude search.</p>
+<p>First suppress all the output in the function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">objvalue</span> <span class="o">=</span> <span class="n">myobj</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="c1"># print current results</span>
+<span class="c1">#    print(&quot;Substance A produced = &quot;,x1)</span>
+<span class="c1">#    print(&quot;Substance B produced = &quot;,x2)</span>
+<span class="c1">#    print(&quot;Objective Function Value = &quot;,objvalue)</span>
+<span class="c1">#    print(&quot;Minimun Production Constraint = &quot;,constraint1)</span>
+<span class="c1">#    print(&quot;Maximum Labor Budget = &quot;,constraint2)</span>
+    <span class="k">if</span> <span class="n">constraint1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">constraint2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c1">#        print(&quot;Solution is INFEASIBLE&quot;)</span>
+        <span class="n">returncode</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="c1">#       print(&quot;Solution is FEASIBLE&quot;)</span>
+        <span class="n">returncode</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">objvalue</span><span class="p">,</span><span class="n">returncode</span><span class="p">)</span> <span class="c1"># return a tuple</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now a search code to search all combinations of <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in the range [0,3000] (the range is an educated guess of the values to search)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Avector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of A</span>
+<span class="n">Bvector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of B</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
+    <span class="n">Avector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">Bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="c1"># now the actual search</span>
+<span class="n">big</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># a negative value, revenue needs to be positive</span>
+<span class="n">xbest</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># variables to store our best solution</span>
+<span class="n">ybest</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">feasible</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">ix1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ix2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
+        <span class="n">howmany</span> <span class="o">=</span> <span class="n">howmany</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">],</span><span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">big</span><span class="p">:</span>
+                <span class="n">feasible</span> <span class="o">=</span> <span class="n">feasible</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">big</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">xbest</span> <span class="o">=</span> <span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">]</span>
+                <span class="n">ybest</span> <span class="o">=</span> <span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Search complete &quot;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span><span class="s2">&quot; Total Combinations&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found &quot;</span><span class="p">,</span><span class="n">feasible</span><span class="p">,</span> <span class="s2">&quot;feasible solutions </span><span class="se">\n</span><span class="s2"> --- Best Solution ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance A produced = &quot;</span><span class="p">,</span><span class="n">xbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance B produced = &quot;</span><span class="p">,</span><span class="n">ybest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="n">big</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Production Above Minimum = &quot;</span><span class="p">,</span><span class="n">con1</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Labor Budget Remaining = &quot;</span><span class="p">,</span><span class="n">con2</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search complete  9000000  Total Combinations
+Found  1668 feasible solutions 
+ --- Best Solution ---
+Substance A produced =  1.0
+Substance B produced =  2665.0
+Objective Function Value =  117320.0
+Production Above Minimum =  1666.0
+Labor Budget Remaining =  0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="unconstrained-minimization">
+<h1>Unconstrained Minimization<a class="headerlink" href="#unconstrained-minimization" title="Permalink to this headline">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples/18optimization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="optimization.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Optimization Modeling</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="2topic.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Grid Search Methods</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rectangular Panels &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Trapezoidal Panels" href="2trapezoidalpanels.html" />
+    <link rel="prev" title="Evaluating Integrals" href="example13.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Engineering Analysis using Python and Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example01/example01.html">
+   Computational Thinking and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/abstract.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/background.html">
+     Problem Solving Philosophy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example03/example03.html">
+   Creating a Jupyter Notebook
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/1startingjupyter.html">
+     Installing Jupyter and iPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/2celltypes.html">
+     Cell Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/3entercode.html">
+     Extering Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/4executecell.html">
+     Executing a Code Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/5printingnotebook.html">
+     Saving and Printing a Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3sequence/example02.html">
+   Sequential Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/abstract.html">
+     Installating Jupyter on your Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/background.html">
+     Starting Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4selection/example04.html">
+   Selection Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/1logical.html">
+     Logical Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/2ifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/3ifelifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       ELIF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/4nestedif.html">
+     Nested
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/5tryexcept.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TRY
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       EXCEPT
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../5repetition/repetition.html">
+   Repetition Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/1countcontrol.html">
+     Count-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/2sentenialcontrol.html">
+     Sentenial-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/3recursion.html">
+     Recursion (advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6packages/example041.html">
+   Packages and Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/1packages.html">
+     External Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/2functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/3savefunction.html">
+     Saving User-Defined Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../7graphing/example05.html">
+   Graphing Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../8statistical/example06.html">
+   Analyzing Data Statistically
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/1descriptivestatistics.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/2histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/3cumulativedistributions.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10datamodels/datamodels.html">
+   Fitting Equations to Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/1interpolation.html">
+     Interpolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/2leastsquares.html">
+     Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/3fitaline.html">
+     Fitting a Line to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/4fitacurve.html">
+     Fitting other Functions to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/5goodfunctions.html">
+     Choosing Good Functions for a Data Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11sortandfilter/sortandfilter.html">
+   Sorting and Filtering Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/1sortinglists.html">
+     Sorting Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/2filteringlists.html">
+     Filtering Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/3pivottables.html">
+     Pivot Tables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12filetransfer/filetransfer.html">
+   Transferring Data Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/1filesystems.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/2readwritecore.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/3readwriteweb.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13convertunits/convertunits.html">
+   Converting Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../14solveequation/solveequation.html">
+   Solving Single Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/1graphical.html">
+     Graphical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/2darts.html">
+     Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/3bisection.html">
+     Bisection Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/4newtons.html">
+     Newton’s Method - Homebrew
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../15equationsystems/equationsystems.html">
+   Solving Simultaneous Equations
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="example13.html">
+   Evaluating Integrals
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Rectangular Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2trapezoidalpanels.html">
+     Trapezoidal Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3parabolicpanels.html">
+     Parabolic Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4tabulateddata.html">
+     Integration of Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5othermethods.html">
+     Other Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/examples/16integrals/1rectangularpanels.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/16integrals/1rectangularpanels.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/16integrals/1rectangularpanels.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-math-package">
+   Using the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     math
+    </span>
+   </code>
+   package
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="rectangular-panels">
+<h1>Rectangular Panels<a class="headerlink" href="#rectangular-panels" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions ..</p>
+</div>
+<p>The figure below is a schematic of a rectangular panels.  The figure is assuming the function structure is known and can be evaluated at an arbitrary location in the <span class="math notranslate nohighlight">\(\Delta x\)</span> dimension.</p>
+<p><img alt="figure2" src="../../_images/rect_panels.png" /></p>
+<p>Each panel is treated as a rectangle, as shown by the representative panel whose height <span class="math notranslate nohighlight">\(y_m\)</span> is chosen visually so that the small cross-hatched areas are as nearly equal as possible. Thus, we form the sum <span class="math notranslate nohighlight">\(\sum y_m\)</span> of the effective heights and multiply by <span class="math notranslate nohighlight">\(\Delta x\)</span>. For a function known in analytical form, a value for <span class="math notranslate nohighlight">\(y_m\)</span> equal to that of the function at the midpoint <span class="math notranslate nohighlight">\(x_i + \Delta x /2\)</span> may be calculated and used in the summation.</p>
+<p>For tabulated functions, we have to choose to either take <span class="math notranslate nohighlight">\(y_m\)</span> as the value at the left endpoint or right endpoint.    This limitation is often quite handy when we are trying to integrate a function that is integrable, but undefined on one endpoint.</p>
+<p>Lets try some examples in Python.</p>
+<p>Find the area under the curve <span class="math notranslate nohighlight">\(y= x\sqrt{1+x^2}\)</span>  from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p>First lets read in the value for the lowerlimit, we will do some limited error checks to be sure user enters a number, but won’t check that the number is non-negative.</p>
+<div class="admonition-interactive-code admonition">
+<p class="admonition-title">Interactive Code</p>
+<p>The code below could be used for interactive inputs</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># RectangularPanels.py
+# Numerical Integration
+print (&quot;Program finds area under curve y = x * sqrt(1+x)&quot;)
+# Get input data -- use error checking
+yes = 0
+while yes == 0:
+    x_low = input(&quot;Enter a lower bound x_low \n&quot;)
+    try:
+        x_low = float(x_low)
+        yes = 1
+    except:
+    print (&quot;x_low really needs to be a number, try again \n&quot;)
+    
+# exit the while loop when finally have a valid number
+</pre></div>
+</div>
+</div>
+<p>Verify that value is indeed what we entered</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_low</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now do the same for the upper limit, notice how we are using the <code class="docutils literal notranslate"><span class="pre">yes</span></code> variable.  We set a “fail” value, and demand input until we get “success”.  The structure used here is called a <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">--</span> <span class="pre">exception</span></code> structure and is very common in programming.   Error checking is really important so that garbled input does not hang things up.</p>
+<div class="admonition-interactive-code admonition">
+<p class="admonition-title">Interactive Code</p>
+<p>The code below could be used for interactive inputs</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>yes = 0
+while yes == 0:
+    x_high = input(&quot;Enter an upper bound x_high \n&quot;)
+    try:
+        x_high = float(x_high)
+        yes = 1
+    except:
+        print (&quot;x_high really needs to be a number, try again \n&quot;)
+# exit the while loop when finally have a valid number
+</pre></div>
+</div>
+</div>
+<p>Again verify!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_high</span><span class="o">=</span><span class="mf">4.0</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now use the try - exception structure to input how many panels we wish to use.  Notice you can enter a negative value which will ultimately break things. Also observe this value is an integer.</p>
+<div class="admonition-interactive-code admonition">
+<p class="admonition-title">Interactive Code</p>
+<p>The code below could be used for interactive inputs</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>yes = 0
+while yes == 0:
+    how_many = input(&quot;Enter how many panels \n&quot;)
+    try:
+        how_many = int(how_many)
+        yes = 1
+    except:
+        print (&quot;Panels really needs to be a number, try again \n&quot;)
+# exit the while loop when finally have a valid number
+</pre></div>
+</div>
+</div>
+<p>Again verify!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many</span><span class="o">=</span><span class="mi">5</span> <span class="c1"># replace with code above in proper use</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can actually perform the integration by evaluating the function at the panel half-widths.
+In this example we are using primitive arithmetic, so the <span class="math notranslate nohighlight">\(\sqrt{}\)</span> is accomplished by exponentation, the syntax is <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">**</span> <span class="pre">b</span></code> is the operation <span class="math notranslate nohighlight">\(c = a^b\)</span>.</p>
+<p>The integration uses an accumulator, which is a memory location where subsquent results are added (accumulated) back into the accumulator.  This structure is so common that there are alternate, compact syntax to perform this task, here it is all out in the open.</p>
+<p>The counting loop where we evaluate the function at different <code class="docutils literal notranslate"><span class="pre">x</span></code> values, starts at 1 and ends at <code class="docutils literal notranslate"><span class="pre">how_many+1</span></code> because python <code class="docutils literal notranslate"><span class="pre">for</span></code> loops use an increment skip if equal structure. When the value in <code class="docutils literal notranslate"><span class="pre">range</span></code> equals <code class="docutils literal notranslate"><span class="pre">how_many</span></code> the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop exits (<code class="docutils literal notranslate"><span class="pre">break</span></code> is implied.)  A loop control structure starting from 0 is shown in the code as a comment line.  Simply uncomment this line, and comment the line just below to have the structure typical in python scripts.  In the start from 1 case, we want to evaluate at the last value of <code class="docutils literal notranslate"><span class="pre">how_many</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OK we should have the three things we need for evaluating the integral</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">x_low</span> <span class="o">+</span> <span class="n">delta_x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># initial value for x</span>
+<span class="c1">### OK THIS IS THE ACTUAL INTEGRATOR PART ###</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># initial value in an accumulator</span>
+<span class="c1">#for i in range(0,how_many,1): #note we are counting from 0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">accumulated_area</span> <span class="o">=</span> <span class="n">accumulated_area</span> <span class="o">+</span> <span class="p">(</span> <span class="n">xx</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">delta_x</span>
+<span class="c1">### AND WE ARE DONE INTEGRATING #############</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we want to report our result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+<span class="c1"># the backslash \</span>
+<span class="c1">#       &quot; to x = .....     lets us use multiple lines</span>
+<span class="c1"># the \n is a &quot;newline&quot; character </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Area under curve y = x * sqrt(1+x) from x =  2.0  to x =  4.0 
+ is approximately:  19.610958667237167
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code implements rudimentary error checking – it forces us to enter numeric values for the lower and upper values of <span class="math notranslate nohighlight">\(x\)</span> as well as the number of panels to use.  It does not check for undefined ranges and such, but you should get the idea – notice that a large fraction of the entire program is error trapping; this devotion to error trapping is typical for professional programs where you are going to distribute executable modules and not expect the end user to be a programmer.</p>
+<div class="section" id="using-the-math-package">
+<h2>Using the <code class="docutils literal notranslate"><span class="pre">math</span></code> package<a class="headerlink" href="#using-the-math-package" title="Permalink to this headline">¶</a></h2>
+<p>The actual computations are done rather crudely – there is a math package that would give us the ability to compute the square root as a function call rather than exponentiation to a real values exponent.</p>
+<p>That is illustrated below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RectangularPanels.py</span>
+<span class="c1"># Numerical Integration</span>
+<span class="c1"># Use built-in math functions</span>
+<span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># a package of math functions</span>
+<span class="c1"># we are naming an object &quot;sqrt&quot; that will compute the square root</span>
+<span class="k">def</span> <span class="nf">sqrt</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># saves us having to type math.NAME every time we wish to use a function</span>
+<span class="c1"># in this program not all that meaningful, but in complex programs handy!</span>
+<span class="n">x_low</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#this is for JB demo only</span>
+<span class="n">x_high</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">how_many</span><span class="o">=</span><span class="mi">6</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Program finds area under curve y = x * sqrt(1+x)&quot;</span><span class="p">)</span>
+<span class="c1"># Get input data -- use error checking</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a lower bound x_low </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_low really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an upper bound x_high </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;x_high really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#set to 0 for interacitve input</span>
+<span class="k">while</span> <span class="n">yes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">how_many</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter how many panels </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">how_many</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>
+        <span class="n">yes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Panels really needs to be a number, try again </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_high</span> <span class="o">-</span> <span class="n">x_low</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">how_many</span><span class="p">)</span>  <span class="c1"># compute panel width</span>
+<span class="n">accumulated_area</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># initial value in an accumulator</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">x_low</span> <span class="o">+</span> <span class="n">delta_x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># initial value for x</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#note we are counting from 1</span>
+    <span class="n">accumulated_area</span> <span class="o">=</span> <span class="n">accumulated_area</span> <span class="o">+</span> <span class="p">(</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">delta_x</span>
+    <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">delta_x</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Area under curve y = x * sqrt(1+x) from x = &quot;</span><span class="p">,</span><span class="n">x_low</span><span class="p">,</span>\
+      <span class="s2">&quot; to x = &quot;</span><span class="p">,</span><span class="n">x_high</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> is approximately: &quot;</span><span class="p">,</span><span class="n">accumulated_area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Program finds area under curve y = x * sqrt(1+x)
+Area under curve y = x * sqrt(1+x) from x =  0  to x =  2 
+ is approximately:  3.3793974379024605
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples/16integrals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="example13.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Evaluating Integrals</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="2trapezoidalpanels.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Trapezoidal Panels</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

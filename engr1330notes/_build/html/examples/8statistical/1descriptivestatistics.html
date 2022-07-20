@@ -1,0 +1,1711 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descriptive Statistics &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Histograms" href="2histograms.html" />
+    <link rel="prev" title="Analyzing Data Statistically" href="example06.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Engineering Analysis using Python and Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example01/example01.html">
+   Computational Thinking and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/abstract.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/background.html">
+     Problem Solving Philosophy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example03/example03.html">
+   Creating a Jupyter Notebook
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/1startingjupyter.html">
+     Installing Jupyter and iPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/2celltypes.html">
+     Cell Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/3entercode.html">
+     Extering Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/4executecell.html">
+     Executing a Code Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/5printingnotebook.html">
+     Saving and Printing a Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3sequence/example02.html">
+   Sequential Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/abstract.html">
+     Installating Jupyter on your Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/background.html">
+     Starting Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4selection/example04.html">
+   Selection Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/1logical.html">
+     Logical Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/2ifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/3ifelifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       ELIF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/4nestedif.html">
+     Nested
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/5tryexcept.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TRY
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       EXCEPT
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../5repetition/repetition.html">
+   Repetition Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/1countcontrol.html">
+     Count-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/2sentenialcontrol.html">
+     Sentenial-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/3recursion.html">
+     Recursion (advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6packages/example041.html">
+   Packages and Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/1packages.html">
+     External Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/2functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/3savefunction.html">
+     Saving User-Defined Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../7graphing/example05.html">
+   Graphing Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="example06.html">
+   Analyzing Data Statistically
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3cumulativedistributions.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10datamodels/datamodels.html">
+   Fitting Equations to Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/1interpolation.html">
+     Interpolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/2leastsquares.html">
+     Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/3fitaline.html">
+     Fitting a Line to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/4fitacurve.html">
+     Fitting other Functions to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/5goodfunctions.html">
+     Choosing Good Functions for a Data Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11sortandfilter/sortandfilter.html">
+   Sorting and Filtering Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/1sortinglists.html">
+     Sorting Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/2filteringlists.html">
+     Filtering Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/3pivottables.html">
+     Pivot Tables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12filetransfer/filetransfer.html">
+   Transferring Data Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/1filesystems.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/2readwritecore.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/3readwriteweb.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13convertunits/convertunits.html">
+   Converting Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../14solveequation/solveequation.html">
+   Solving Single Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/1graphical.html">
+     Graphical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/2darts.html">
+     Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/3bisection.html">
+     Bisection Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/4newtons.html">
+     Newton’s Method - Homebrew
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../15equationsystems/equationsystems.html">
+   Solving Simultaneous Equations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../16integrals/example13.html">
+   Evaluating Integrals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/1rectangularpanels.html">
+     Rectangular Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/2trapezoidalpanels.html">
+     Trapezoidal Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/3parabolicpanels.html">
+     Parabolic Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/4tabulateddata.html">
+     Integration of Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/5othermethods.html">
+     Other Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/examples/8statistical/1descriptivestatistics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/8statistical/1descriptivestatistics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/8statistical/1descriptivestatistics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures-of-central-tendency">
+   Measures of Central Tendency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-arithmetic-mean-font">
+     <font color="crimson">
+      Arithmetic Mean
+     </font>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#harmonic-mean">
+       Harmonic Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#geometric-mean">
+       Geometric Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-darkorange-arithmetic-or-geometric-or-harmonic-how-to-be-mean-font">
+       <font color="darkorange">
+        Arithmetic or Geometric or Harmonic?- How to be Mean!
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-median-font">
+       <font color="crimson">
+        Median
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-mode-font">
+       <font color="crimson">
+        Mode
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-red-measures-of-dispersion-font">
+     <font color="red">
+      Measures of Dispersion
+     </font>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-range-font">
+       <font color="crimson">
+        Range
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-percentiles-and-quartiles-font">
+       <font color="crimson">
+        Percentiles and Quartiles
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-interquartile-range-iqr-font">
+       <font color="crimson">
+        InterQuartile Range (IQR)
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-the-five-number-summary-font">
+       <font color="crimson">
+        The Five-number Summary
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-variance-font">
+       <font color="crimson">
+        Variance
+       </font>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#font-color-crimson-standard-deviation-font">
+       <font color="crimson">
+        Standard Deviation
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-skewness-font">
+     <font color="crimson">
+      Skewness
+     </font>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-kurtosis-font">
+     <font color="crimson">
+      Kurtosis
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="descriptive-statistics">
+<h1>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions ..</p>
+</div>
+<p>A fundamental part of working with data is <em><strong>describing</strong></em> it. Descriptive statistics help simplify and summarize large amounts of data in a sensible manner. In this lecture, we will discuss <strong>descriptive statistics</strong> and cover a variety of methods for <strong>summarizing, describing, and representing</strong> datasets in Python.</p>
+<p>We will use the <a class="reference external" href="http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.csv">http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.csv</a> dataset as an illustrative example. Let’s have a look at it first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the necessary external packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put script here to download file from server</span>
+<span class="n">remote_url</span><span class="o">=</span><span class="s2">&quot;http://54.243.252.9/engr-1330-webroot/4-Databases/HighestGrossingMovies.csv&quot;</span>  <span class="c1"># set the url</span>
+<span class="n">rget</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># get the remote resource, follow imbedded links</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;HighestGrossingMovies.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rget</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># extract from the remote the contents, assign to a local file same name</span>
+<span class="c1">#</span>
+
+<span class="n">Movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;HighestGrossingMovies.csv&quot;</span><span class="p">)</span>         <span class="c1">#Dataset of the Top10 highest-grossing films as of 2019 (adjusted for inflation)</span>
+                                                          <span class="c1">#5 columns (Movie, Director, Year, Budget, Gross) and 10 rows</span>
+<span class="n">Movies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Movie</th>
+      <th>Director</th>
+      <th>Year</th>
+      <th>Budget_million$</th>
+      <th>Gross_million$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Gone with the Wind</td>
+      <td>Victor Fleming</td>
+      <td>1939</td>
+      <td>3.9</td>
+      <td>3706</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Avatar</td>
+      <td>James Cameron</td>
+      <td>2009</td>
+      <td>237.0</td>
+      <td>3257</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Titanic</td>
+      <td>James Cameron</td>
+      <td>1997</td>
+      <td>200.0</td>
+      <td>3081</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Star Wars</td>
+      <td>George Lucas</td>
+      <td>1977</td>
+      <td>11.0</td>
+      <td>3043</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Avengers: Endgame</td>
+      <td>Joe &amp; Anthony Russo</td>
+      <td>2019</td>
+      <td>356.0</td>
+      <td>2798</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>The Sound of Music</td>
+      <td>Robert Wise</td>
+      <td>1965</td>
+      <td>8.2</td>
+      <td>2549</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>E.T. the Extra-Terrestrial</td>
+      <td>Steven Spielberg</td>
+      <td>1982</td>
+      <td>10.5</td>
+      <td>2489</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>The Ten Commandments</td>
+      <td>Cecil B. DeMille</td>
+      <td>1956</td>
+      <td>13.0</td>
+      <td>2356</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Doctor Zhivago</td>
+      <td>David Lean</td>
+      <td>1965</td>
+      <td>11.0</td>
+      <td>2233</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Star Wars: The Force Awakens</td>
+      <td>J.J. Abrams</td>
+      <td>2015</td>
+      <td>306.0</td>
+      <td>2202</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here is an overall look at some but not all of  measures we will be discussing today:
+<img alt="" src="https://slideplayer.com/slide/2346765/8/images/2/Summary+Measures+Describing+Data+Numerically+Central+Tendency.jpg" /></p>
+<div class="section" id="measures-of-central-tendency">
+<h2>Measures of Central Tendency<a class="headerlink" href="#measures-of-central-tendency" title="Permalink to this headline">¶</a></h2>
+<p>Centrality measures give us an estimate of the center of a distribution and a sense of a typical value we would expect to see. <br>
+The three major measures of center include <strong><em>the mean, median, and mode</em></strong>.</p>
+<div class="section" id="font-color-crimson-arithmetic-mean-font">
+<h3><font color=crimson>Arithmetic Mean</font><a class="headerlink" href="#font-color-crimson-arithmetic-mean-font" title="Permalink to this headline">¶</a></h3>
+<p>The arithmetic mean (average, or simply mean) is the sum of all the values, divided by the number of values. The mean represents a typical value that acts as a yardstick for all observations.
+<img alt="" src="https://x-engineer.org/wp-content/uploads/2016/10/Arithmetic-mean-formula-244x142.jpg?a43cfa&amp;a43cfa" /></p>
+<p>Let’s calculate the average budget of the Top10 highest-grossing films.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">Budget</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      3.9
+1    237.0
+2    200.0
+3     11.0
+4    356.0
+5      8.2
+6     10.5
+7     13.0
+8     11.0
+9    306.0
+Name: Budget_million$, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use primitive python to calculate the mean of set of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list of all the numbers:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">mean1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">mean1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average budget of the Top10 highest-grossing films is  115.66 million USD
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also utilize a variety of external libraries. (You may find some of them familiar!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The usual suspects!</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Also, these two libraries offer useful functions for descriptive statistics</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the column of interest from the Movies dataframe</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="c1"># Use the mean function from the Pandas library</span>
+<span class="n">mean2</span> <span class="o">=</span> <span class="n">Budget</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">mean2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average budget of the Top10 highest-grossing films is  115.66 million USD
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the column of interest from the Movies dataframe</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="c1"># Use the mean function from the Numpy library</span>
+<span class="n">mean3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">mean3</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average budget of the Top10 highest-grossing films is  115.66 million USD
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the column of interest from the Movies dataframe</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="c1"># Use the mean function from the statistics library</span>
+<span class="n">mean4</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">mean4</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average budget of the Top10 highest-grossing films is  115.66 million USD
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few other types of means are described below - these are specialized and used for particular applications (outside the scope of this course)</p>
+<div class="section" id="harmonic-mean">
+<h4>Harmonic Mean<a class="headerlink" href="#harmonic-mean" title="Permalink to this headline">¶</a></h4>
+<p>The harmonic mean is the reciprocal of the mean of the reciprocals of all items in the dataset.</p>
+<p><img alt="" src="https://www.onlinemath4all.com/images/harmonicmean1.png" /></p>
+<p>Let’s calculate the harmonic mean for the same set of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">hmean1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">)</span>
+<span class="n">hmean1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">hmean1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The harmonic mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">hmean1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the Statistics library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">hmean2</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">harmonic_mean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="n">hmean2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">hmean2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The harmonic mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">hmean2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the scipy.stats library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">hmean3</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">hmean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="n">hmean3</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">hmean3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The harmonic mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">hmean3</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The harmonic mean of the budget of the Top10 highest-grossing films is  13.38 million USD
+The harmonic mean of the budget of the Top10 highest-grossing films is  13.38 million USD
+The harmonic mean of the budget of the Top10 highest-grossing films is  13.38 million USD
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="geometric-mean">
+<h4>Geometric Mean<a class="headerlink" href="#geometric-mean" title="Permalink to this headline">¶</a></h4>
+<p>The geometric mean is the 𝑛-th root of the product of all 𝑛 elements 𝑥ᵢ in a dataset.</p>
+<p><img alt="" src="https://ncalculators.com/images/formulas/geometric-mean.jpg" /></p>
+<p>Let’s calculate the geometric mean for the same set of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python: -it is getting more lengthy and labour-intensive</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+
+<span class="n">gmean1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">:</span>
+     <span class="n">gmean1</span> <span class="o">*=</span> <span class="n">item</span>
+
+<span class="n">gmean1</span> <span class="o">**=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="n">gmean1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gmean1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The geometric mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">gmean1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the Statistics library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">gmean2</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">geometric_mean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="n">gmean2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gmean2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The geometric mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">gmean2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the scipy.stats library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">gmean3</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">gmean</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="n">gmean3</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gmean3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The geometric mean of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">gmean3</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The geometric mean of the budget of the Top10 highest-grossing films is  34.96 million USD
+The geometric mean of the budget of the Top10 highest-grossing films is  34.96 million USD
+The geometric mean of the budget of the Top10 highest-grossing films is  34.96 million USD
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-darkorange-arithmetic-or-geometric-or-harmonic-how-to-be-mean-font">
+<h4><font color=darkorange>Arithmetic or Geometric or Harmonic?- How to be Mean!</font><a class="headerlink" href="#font-color-darkorange-arithmetic-or-geometric-or-harmonic-how-to-be-mean-font" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://pbs.twimg.com/media/Dm2BdG2V4AE36xP.jpg" /></p>
+<ul class="simple">
+<li><p>If values have the same units: Use the arithmetic mean. <br></p></li>
+<li><p>If values have differing units: Use the geometric mean. | Also, commonly used for growth rates, like population growth or interest rates.<br></p></li>
+<li><p>If values are rates: Use the harmonic mean. <br></p></li>
+</ul>
+<p><strong>If you are interested in knowing more about these 3 and their differences, you may find these interesting:</strong></p>
+</div>
+<div class="section" id="font-color-crimson-median-font">
+<h4><font color=crimson>Median</font><a class="headerlink" href="#font-color-crimson-median-font" title="Permalink to this headline">¶</a></h4>
+<p>Median is the middle element of a sorted dataset. The value where the upper half of the data lies above it and lower half lies below it. In other words, it is the middle value of a data set. To calculate the median, arrange the data points in the increasing (or decreasing) order and the middle value is the median. If the number of elements 𝑛 of the dataset is odd, then the median is the value at the middle position: 0.5(𝑛 + 1). If 𝑛 is even, then the median is the arithmetic mean of the two values in the middle, that is, the items at the positions 0.5𝑛 and 0.5𝑛 + 1.
+Let’s find the median of the gross of the Top10 highest-grossing films:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">Gross</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    3706
+1    3257
+2    3081
+3    3043
+4    2798
+5    2549
+6    2489
+7    2356
+8    2233
+9    2202
+Name: Gross_million$, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use primitive python to calculate the median of a set of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list of all the numbers:</span>
+<span class="n">gross</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3706</span><span class="p">,</span><span class="mi">3257</span><span class="p">,</span><span class="mi">3081</span><span class="p">,</span><span class="mi">3043</span><span class="p">,</span><span class="mi">2798</span><span class="p">,</span><span class="mi">2549</span><span class="p">,</span><span class="mi">2489</span><span class="p">,</span><span class="mi">2356</span><span class="p">,</span><span class="mi">2233</span><span class="p">,</span><span class="mi">2202</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gross</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+     <span class="n">median1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">gross</span><span class="p">)[</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))]</span>
+<span class="k">else</span><span class="p">:</span>
+     <span class="n">gross_ord</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">gross</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+     <span class="n">median1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">gross_ord</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gross_ord</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median of gross of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">median1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The median of gross of the Top10 highest-grossing films is  2673.5 million USD
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use also use external libraries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#via the Pandas library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">median2</span> <span class="o">=</span> <span class="n">Gross</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median of gross of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">median2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1">#via the Numpy library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">median3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">Gross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median of gross of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">median3</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1">#via the Statistics library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">median4</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">Gross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median of gross of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">median4</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+<span class="c1">#2 more functions from the same library- For even number of cases:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;low median :&quot;</span><span class="p">,</span><span class="n">statistics</span><span class="o">.</span><span class="n">median_low</span><span class="p">(</span><span class="n">Gross</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;high median :&quot;</span><span class="p">,</span><span class="n">statistics</span><span class="o">.</span><span class="n">median_high</span><span class="p">(</span><span class="n">Gross</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The median of gross of the Top10 highest-grossing films is  2673.5 million USD
+The median of gross of the Top10 highest-grossing films is  2673.5 million USD
+The median of gross of the Top10 highest-grossing films is  2673.5 million USD
+low median : 2549
+high median : 2798
+</pre></div>
+</div>
+</div>
+</div>
+<p>The main difference between the behavior of the mean and median is related to dataset outliers or extremes. The mean is heavily affected by outliers, but the median only depends on outliers either slightly or not at all. You can compare the mean and median as one way to detect outliers and asymmetry in your data. Whether the mean value or the median value is more useful to you depends on the context of your particular problem. The mean is a better choice when there are no extreme values that can affect it. It is a better summary because the information from every observation is included rather than median, which is just the middle value. However, in the presence of outliers, median is considered a better alternative. Check this out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newgross</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99999</span><span class="p">,</span><span class="mi">3257</span><span class="p">,</span><span class="mi">3081</span><span class="p">,</span><span class="mi">3043</span><span class="p">,</span><span class="mi">2798</span><span class="p">,</span><span class="mi">2549</span><span class="p">,</span><span class="mi">2489</span><span class="p">,</span><span class="mi">2356</span><span class="p">,</span><span class="mi">2233</span><span class="p">,</span><span class="mi">2202</span><span class="p">]</span> <span class="c1">#We have replaced 3706 with 99999- an extremely high number (an outlier)</span>
+<span class="n">newmean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">newgross</span><span class="p">)</span>
+<span class="n">newmedian</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">newgross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newmean</span><span class="p">)</span>   <span class="c1">#A huge change from the previous value (115.66) - Mean is very sensitive to outliers and extreme values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newmedian</span><span class="p">)</span> <span class="c1">#No Change- the median only depends on outliers either slightly or not at all. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12400.7
+2673.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>To read more about the differences of mean and median, check these out:</p>
+<ul class="simple">
+<li><p>“Stuck in the middle – mean vs. median”
+, available &#64; <a class="reference external" href="https://www.clinfo.eu/mean-median/">https://www.clinfo.eu/mean-median/</a></p></li>
+<li><p>“Mean vs Median: When to Use Which Measure?”
+, available &#64; <a class="reference external" href="https://www.datascienceblog.net/post/basic-statistics/mean_vs_median/">https://www.datascienceblog.net/post/basic-statistics/mean_vs_median/</a></p></li>
+<li><p>“Mean vs. Median”
+by <strong><em>AnswerMiner</em></strong>, available &#64; <a class="reference external" href="https://www.answerminer.com/blog/mean-vs-median">https://www.answerminer.com/blog/mean-vs-median</a></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-crimson-mode-font">
+<h4><font color=crimson>Mode</font><a class="headerlink" href="#font-color-crimson-mode-font" title="Permalink to this headline">¶</a></h4>
+<p>The value that occurs the most number of times in our data set. Closely tied to the concept of frequency, mode provides information on the most recurrent elements in a dataset. When the mode is not unique, we say that the data set is bimodal, while a data set with more than two modes is multimodal. Let’s find the mode in the gross of the Top10 highest-grossing films:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In primitive Python:</span>
+<span class="c1"># Create a list of all the numbers:</span>
+<span class="n">gross</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3706</span><span class="p">,</span><span class="mi">3257</span><span class="p">,</span><span class="mi">3081</span><span class="p">,</span><span class="mi">3043</span><span class="p">,</span><span class="mi">2798</span><span class="p">,</span><span class="mi">2549</span><span class="p">,</span><span class="mi">2489</span><span class="p">,</span><span class="mi">2356</span><span class="p">,</span><span class="mi">2233</span><span class="p">,</span><span class="mi">2202</span><span class="p">]</span>
+<span class="n">mode1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="n">gross</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">gross</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode1</span><span class="p">)</span> <span class="c1">#Since each item is repeated only once, only the first element is printed- This is a multimodal set. </span>
+
+<span class="c1">#via the Pandas library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">mode2</span> <span class="o">=</span> <span class="n">Gross</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode2</span><span class="p">)</span> <span class="c1">#Returns all modal values- This is a multimodal set. </span>
+
+<span class="c1">#via the Statistics library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">mode3</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">Gross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode3</span><span class="p">)</span> <span class="c1">#Return a single value</span>
+<span class="n">mode4</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">multimode</span><span class="p">(</span><span class="n">Gross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode4</span><span class="p">)</span> <span class="c1">#Returns a list of all modes</span>
+
+<span class="c1">#via the scipy.stats library:</span>
+<span class="n">Gross</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Gross_million$&#39;</span><span class="p">]</span>
+<span class="n">mode5</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">Gross</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode5</span><span class="p">)</span> <span class="c1">#Returns the object with the modal value and the number of times it occurs- If multimodal: only the smallest value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3706
+0    2202
+1    2233
+2    2356
+3    2489
+4    2549
+5    2798
+6    3043
+7    3081
+8    3257
+9    3706
+dtype: int64
+3706
+[3706, 3257, 3081, 3043, 2798, 2549, 2489, 2356, 2233, 2202]
+ModeResult(mode=array([2202]), count=array([1]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mode is not useful when our distribution is flat; i.e., the frequencies of all groups are similar. Mode makes sense when we do not have a numeric-valued data set which is required in case of the mean and the median. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Director</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Director&#39;</span><span class="p">]</span>
+<span class="c1"># via statistics:</span>
+<span class="n">mode6</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">Director</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode6</span><span class="p">)</span> <span class="c1">#&quot;James Cameron&quot; with two films (x2 repeats) is the mode</span>
+<span class="c1"># via pandas:</span>
+<span class="n">mode7</span> <span class="o">=</span> <span class="n">Director</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode7</span><span class="p">)</span> <span class="c1">#&quot;James Cameron&quot; with two films (x2 repeats) is the mode</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>James Cameron
+0    James Cameron
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-red-measures-of-dispersion-font">
+<h3><font color=red>Measures of Dispersion</font><a class="headerlink" href="#font-color-red-measures-of-dispersion-font" title="Permalink to this headline">¶</a></h3>
+<p>Measures of dispersion are values that describe how the data varies. It gives us a sense of how much the data tends to diverge from the typical value. Aka measures of variability, they quantify the spread of data points.The major measures of dispersion include <strong><em>range, percentiles, inter-quentile range, variance, standard deviation, skeness and kurtosis</em></strong>.</p>
+<div class="section" id="font-color-crimson-range-font">
+<h4><font color=crimson>Range</font><a class="headerlink" href="#font-color-crimson-range-font" title="Permalink to this headline">¶</a></h4>
+<p>The range gives a quick sense of the spread of the distribution to those who require only a rough indication of the data. There are some disadvantages of using the range as a measure of spread. One being it does not give any information of the data in between maximum and minimum. Also, the range is very sensitive to extreme values. Let’s calculate the range for the budget of the Top10 highest-grossing films:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">range1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The range of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">range1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the Statistics library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">range2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span> <span class="c1">#ptp stands for Peak To Peak</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The range of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">range2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The range of the budget of the Top10 highest-grossing films is  352.1 million USD
+The range of the budget of the Top10 highest-grossing films is  352.1 million USD
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-percentiles-and-quartiles-font">
+<h4><font color=crimson>Percentiles and Quartiles</font><a class="headerlink" href="#font-color-crimson-percentiles-and-quartiles-font" title="Permalink to this headline">¶</a></h4>
+<p>A measure which indicates the value below which a given percentage of points in a dataset fall. The sample 𝑝 percentile is the element in the dataset such that 𝑝% of the elements in the dataset are less than or equal to that value. Also, (100 − 𝑝)% of the elements are greater than or equal to that value. For example, median represents the 50th percentile. Similarly, we can have 0th percentile representing the minimum and 100th percentile representing the maximum of all data points. Percentile gives the relative position of a particular value within the dataset. It also helps in comparing the data sets which have different means and deviations.
+Each dataset has three quartiles, which are the percentiles that divide the dataset into four parts:</p>
+<ul class="simple">
+<li><p>The first quartile (Q1) is the sample 25th percentile. It divides roughly 25% of the smallest items from the rest of the dataset.</p></li>
+<li><p>The second quartile Q2) is the sample 50th percentile or the median. Approximately 25% of the items lie between the first and second quartiles and another 25% between the second and third quartiles.</p></li>
+<li><p>The third quartile (Q3) is the sample 75th percentile. It divides roughly 25% of the largest items from the rest of the dataset.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="c1">#via Numpy:</span>
+<span class="n">p10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">#returns the 10th percentile</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The 10th percentile of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">p10</span><span class="p">)</span>
+<span class="n">p4070</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span><span class="mi">70</span><span class="p">])</span> <span class="c1">#returns the 40th and 70th percentile</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The 40th and 70th percentile of the budget of the Top10 highest-grossing films are &quot;</span><span class="p">,</span><span class="n">p4070</span><span class="p">)</span>
+<span class="c1">#via Pandas:</span>
+<span class="n">p10n</span> <span class="o">=</span> <span class="n">Budget</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.10</span><span class="p">)</span> <span class="c1">#returns the 10th percentile - notice the difference from Numpy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The 10th percentile of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">p10n</span><span class="p">)</span>
+<span class="c1">#via Statistics:</span>
+<span class="n">Qs</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">quantiles</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;inclusive&#39;</span><span class="p">)</span>     <span class="c1">#The parameter n defines the number of resulting equal-probability percentiles: </span>
+                                                               <span class="c1">#n=4 returns the quartiles | n=2 returns the median</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The quartiles of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">Qs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The 10th percentile of the budget of the Top10 highest-grossing films is  7.77
+The 40th and 70th percentile of the budget of the Top10 highest-grossing films are  [ 11.  211.1]
+The 10th percentile of the budget of the Top10 highest-grossing films is  7.77
+The quartiles of the budget of the Top10 highest-grossing films is  [10.625, 12.0, 227.75]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-interquartile-range-iqr-font">
+<h4><font color=crimson>InterQuartile Range (IQR)</font><a class="headerlink" href="#font-color-crimson-interquartile-range-iqr-font" title="Permalink to this headline">¶</a></h4>
+<p>IQR is the difference between the third quartile and the first quartile (Q3-Q1). The interquartile range is a better option than range because it is not affected by outliers. It removes the outliers by just focusing on the distance within the middle 50% of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="c1">#via Numpy:</span>
+<span class="n">IQR1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>    <span class="c1">#returns the IQR = Q3-Q1 = P75-P25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The IQR of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">IQR1</span><span class="p">)</span>
+<span class="c1">#via scipy.stats:</span>
+<span class="n">IQR2</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>    <span class="c1">#returns the IQR- Can be used for other percentile differences as well &gt;&gt; iqr(object, rng=(p1, p2))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The IQR of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">IQR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The IQR of the budget of the Top10 highest-grossing films is  217.125
+The IQR of the budget of the Top10 highest-grossing films is  217.125
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-the-five-number-summary-font">
+<h4><font color=crimson>The Five-number Summary</font><a class="headerlink" href="#font-color-crimson-the-five-number-summary-font" title="Permalink to this headline">¶</a></h4>
+<p>A five-number summary is especially useful in descriptive analyses or during the preliminary investigation of a large data set. A summary consists of five values: the most extreme values in the data set (the maximum and minimum values), the lower and upper quartiles, and the median. Five-number summary can be used to describe any data distribution. Boxplots are extremely useful graphical representation of the 5-number summary that we will discuss later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">Budget</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>     <span class="c1">#Remember this jewel from Pandas? -It directly return the 5-number summary AND MORE!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     10.000000
+mean     115.660000
+std      142.739991
+min        3.900000
+25%       10.625000
+50%       12.000000
+75%      227.750000
+max      356.000000
+Name: Budget_million$, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boxplots are extremely useful graphical representation of the 5-number summary. It can show the range, interquartile range, median, mode, outliers, and all quartiles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1">#Required for the plot</span>
+
+<span class="n">gross</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3706</span><span class="p">,</span><span class="mi">3257</span><span class="p">,</span><span class="mi">3081</span><span class="p">,</span><span class="mi">3043</span><span class="p">,</span><span class="mi">2798</span><span class="p">,</span><span class="mi">2549</span><span class="p">,</span><span class="mi">2489</span><span class="p">,</span><span class="mi">2356</span><span class="p">,</span><span class="mi">2233</span><span class="p">,</span><span class="mi">2202</span><span class="p">,</span><span class="mi">5000</span><span class="p">]</span> <span class="c1">#same data + an outlier: 5000</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">gross</span><span class="p">,</span><span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1descriptivestatistics_58_0.png" src="../../_images/1descriptivestatistics_58_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-variance-font">
+<h4><font color=crimson>Variance</font><a class="headerlink" href="#font-color-crimson-variance-font" title="Permalink to this headline">¶</a></h4>
+<p>The sample variance quantifies the spread of the data. It shows numerically how far the data points are from the mean. The observations may or may not be meaningful if observations in data sets are highly spread. Let’s calculate the variance for budget of the Top10 highest-grossing films.</p>
+<p><img alt="" src="https://miro.medium.com/max/666/0*ovSFlxj9RJMgtQoX.png" /></p>
+<p>Note that if we are working with the entire population (and not the sample), the denominator should be “n” instead of “n-1”.</p>
+<p>Note that if we are working with the entire population (and not the sample), the denominator should be “n” instead of “n-1”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">var1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The variance of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">var1</span><span class="p">)</span>
+
+<span class="c1"># via the Statistics library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The variance of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">var2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The variance of the budget of the Top10 highest-grossing films is  20374.70488888889
+The variance of the budget of the Top10 highest-grossing films is  20374.70488888889
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-standard-deviation-font">
+<h4><font color=crimson>Standard Deviation</font><a class="headerlink" href="#font-color-crimson-standard-deviation-font" title="Permalink to this headline">¶</a></h4>
+<p>The sample standard deviation is another measure of data spread. It’s connected to the sample variance, as standard deviation, 𝑠, is the positive square root of the sample variance. The standard deviation is often more convenient than the variance because it has the same unit as the data points.</p>
+<p><img alt="" src="https://cdn.kastatic.org/googleusercontent/N8xzWFc6eo0XBHEXZjz1SwvLSnPezvhTRF1P17kdjUG_tnJivGKkyCxbwVe4MZ0-USOxIZBohgcjdi8e7Z4Hswcqfw" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">var</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sd1</span> <span class="o">=</span> <span class="n">var</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The standard deviation of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">sd1</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+
+<span class="c1"># via the Statistics library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">sd2</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The standard deviation of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">sd2</span><span class="p">,</span><span class="s2">&quot;million USD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The standard deviation of the budget of the Top10 highest-grossing films is  142.73999050332353 million USD
+The standard deviation of the budget of the Top10 highest-grossing films is  142.73999050332353 million USD
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-skewness-font">
+<h3><font color=crimson>Skewness</font><a class="headerlink" href="#font-color-crimson-skewness-font" title="Permalink to this headline">¶</a></h3>
+<p>The sample skewness measures the asymmetry of a data sample. There are several mathematical definitions of skewness. The Fisher-Pearson standardized moment coefficient is calculated by using mean, median and standard deviation of the data.</p>
+<p><img alt="" src="https://miro.medium.com/max/560/1*B-n9Ujb_IPggKO9P52jrDA.png" /></p>
+<p>Usually, negative skewness values indicate that there’s a dominant tail on the left side. Positive skewness values correspond to a longer or fatter tail on the right side. If the skewness is close to 0 (for example, between −0.5 and 0.5), then the dataset is considered quite symmetrical.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primitive Python:</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">356</span><span class="p">,</span><span class="mf">8.2</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">306</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">var</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">var</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">skew1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">budget</span><span class="p">)</span>
+         <span class="o">*</span> <span class="n">n</span> <span class="o">/</span> <span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The skewness of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">skew1</span><span class="p">)</span>
+
+<span class="c1"># via the scipy.stats library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">skew2</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">Budget</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The skewness of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">skew2</span><span class="p">)</span>
+
+<span class="c1"># via the Pandas library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">skew3</span> <span class="o">=</span> <span class="n">Budget</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The skewness of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">skew3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The skewness of the budget of the Top10 highest-grossing films is  0.7636547490528159
+The skewness of the budget of the Top10 highest-grossing films is  0.763654749052816
+The skewness of the budget of the Top10 highest-grossing films is  0.763654749052816
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-crimson-kurtosis-font">
+<h3><font color=crimson>Kurtosis</font><a class="headerlink" href="#font-color-crimson-kurtosis-font" title="Permalink to this headline">¶</a></h3>
+<p>Kurtosis describes the peakedness of the distribution. In other words, Kurtosis identifies whether the tails of a given distribution contain extreme values. While Skewness essentially measures the symmetry of the distribution, kurtosis determines the heaviness of the distribution tails.</p>
+<p><img alt="" src="https://miro.medium.com/max/2220/1*-UQjlHtFyW6m5gcyZ6db2A.png" /></p>
+<p>If the distribution is tall and thin it is called a leptokurtic distribution. Values in a leptokurtic distribution are near the mean or at the extremes. A flat distribution where the values are moderately spread out (i.e., unlike leptokurtic) is called platykurtic distribution. A distribution whose shape is in between a leptokurtic distribution and a platykurtic distribution is called a mesokurtic distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># via the scipy.stats library:</span>
+<span class="n">Budget</span> <span class="o">=</span> <span class="n">Movies</span><span class="p">[</span><span class="s1">&#39;Budget_million$&#39;</span><span class="p">]</span>
+<span class="n">Kurt</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">Budget</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The kurtosis of the budget of the Top10 highest-grossing films is &quot;</span><span class="p">,</span><span class="n">Kurt</span><span class="p">)</span> <span class="c1">#a platykurtic distribution | the tails are heavy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The kurtosis of the budget of the Top10 highest-grossing films is  -1.3110307923262225
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Descriptive statistics with Python-NumPy”
+by <strong><em>Rashmi Jain</em></strong>, available &#64; <a class="reference external" href="https://www.hackerearth.com/blog/developers/descriptive-statistics-python-numpy/">https://www.hackerearth.com/blog/developers/descriptive-statistics-python-numpy/</a>.</p></li>
+<li><p>“Python Statistics Fundamentals: How to Describe Your Data”
+by <strong>*Mirko Stojiljković *</strong>, available &#64; <a class="reference external" href="https://realpython.com/python-statistics/">https://realpython.com/python-statistics/</a>.</p></li>
+<li><p>“A Quick Guide on Descriptive Statistics using Pandas and Seaborn”
+by <strong><em>Bee Guan Teo</em></strong>, available &#64; <a class="reference external" href="https://towardsdatascience.com/a-quick-guide-on-descriptive-statistics-using-pandas-and-seaborn-2aadc7395f32">https://towardsdatascience.com/a-quick-guide-on-descriptive-statistics-using-pandas-and-seaborn-2aadc7395f32</a>.</p></li>
+<li><p>“Tutorial: Basic Statistics in Python — Descriptive Statistics”
+, available &#64; <a class="reference external" href="https://www.dataquest.io/blog/basic-statistics-with-python-descriptive-statistics/">https://www.dataquest.io/blog/basic-statistics-with-python-descriptive-statistics/</a>.</p></li>
+<li><p>“Mode: A statistical measure of central tendency”
+, available &#64; <a class="reference external" href="https://corporatefinanceinstitute.com/resources/knowledge/other/mode/">https://corporatefinanceinstitute.com/resources/knowledge/other/mode/</a></p></li>
+<li><p>“When to use each measure of Central Tendency”
+, available &#64; <a class="reference external" href="https://courses.lumenlearning.com/introstats1/chapter/when-to-use-each-measure-of-central-tendency/">https://courses.lumenlearning.com/introstats1/chapter/when-to-use-each-measure-of-central-tendency/</a></p></li>
+<li><p>“Mean, Median, Mode: What They Are, How to Find Them”
+, available &#64; <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/">https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/</a></p></li>
+<li><p>“Arithmetic, Geometric, and Harmonic Means for Machine Learning Arithmetic, Geometric, and Harmonic Means for Machine Learning” by <strong><em>Jason Brownlee</em></strong>, available &#64; <a class="reference external" href="https://machinelearningmastery.com/arithmetic-geometric-and-harmonic-means-for-machine-learning/#:~:text=The%20arithmetic%20mean%20is%20appropriate,with%20different%20measures%2C%20called%20rates">https://machinelearningmastery.com/arithmetic-geometric-and-harmonic-means-for-machine-learning/#:~:text=The arithmetic mean is appropriate,with different measures, called rates</a>.</p></li>
+<li><p>“On Average, You’re Using the Wrong Average: Geometric &amp; Harmonic Means in Data Analysis”
+by <strong><em>Daniel McNichol</em></strong>, available &#64; <a class="reference external" href="https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0">https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0</a></p></li>
+<li><p>“Find a Five-Number Summary in Statistics: Easy Steps”
+, available &#64; <a class="reference external" href="https://www.statisticshowto.com/how-to-find-a-five-number-summary-in-statistics/">https://www.statisticshowto.com/how-to-find-a-five-number-summary-in-statistics/</a></p></li>
+<li><p>“The Five-Number Summary”
+, available &#64; <a class="reference external" href="https://www.purplemath.com/modules/boxwhisk2.htm">https://www.purplemath.com/modules/boxwhisk2.htm</a></p></li>
+<li><p>“What Is the 5 Number Summary?”
+by <strong><em>Courtney Taylor</em></strong>, available &#64; <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/">https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/</a></p></li>
+<li><p>“Measures of Skewness and Kurtosis”
+, available &#64; <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm#:~:text=Skewness%20is%20a%20measure%20of,relative%20to%20a%20normal%20distribution">https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm#:~:text=Skewness is a measure of,relative to a normal distribution</a>.</p></li>
+<li><p>“Are the Skewness and Kurtosis Useful Statistics?”
+, available &#64; <a class="reference external" href="https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics">https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics</a></p></li>
+<li><p>“Skew and Kurtosis: 2 Important Statistics terms you need to know in Data Science”
+by <strong><em>Diva Dugar</em></strong>, available &#64; <a class="reference external" href="https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa">https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa</a></p></li>
+<li><p>“Measures of Shape: Skewness and Kurtosis”
+by <strong><em>Stan Brown</em></strong>, available &#64; <a class="reference external" href="https://brownmath.com/stat/shape.htm">https://brownmath.com/stat/shape.htm</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples/8statistical"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="example06.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Analyzing Data Statistically</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="2histograms.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Histograms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

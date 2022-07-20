@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" >
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="../../">Site Home Page</a>
+            <a href="./0-Syllabus/ENGR-1330-2022-1-Syllabus.html">Course Syllabus</a>
+            <a href="./engr1330notes/_build/html/index.html">ENGR 1330 Instructor's Notes</a>
+            <a href="./9-MyJupyterNotebooks/">Notebook Collection</a>
+            <a href="http://54.243.252.9:8000/"> sensei@AWS (deployment server) </a>
+            <a href="https://75.3.84.227:8000/"> sensei@ATT (development server) </a>          
+
+        </div>
+        
+	<div style="padding-left:16px">
+            <h2>ENGR-1330 Computational Thinking and Data Science</h2>
+        <p> Welcome to the ENGR-1330 course content site.
+        This site is an archive of materials for students in EGR-1330 Computational Thinking and Data Science (Dr. Cleveland's sections only).  
+            
+            At the present this site supports python 3.8 in the JupyterLab Notebook environment.  </p>
+        
+        </div>
+        
+        <button class="accordion">Description</button>
+                <div class="panel">
+<p>     This website is a library of course content organized to parallel the ENGR-1330 course and is intended as a component of that course; individual content in linked to the TTU Blackboard Learning Managment System (LMS).  
+Lessons are accessed through links in the syllabus.   </p>
+                    
+<p><strong>Development Notes:</strong>Development is done on a live server to test "over-the-wire" behavior. 
+            The hardware is a Raspberry Pi 4 4GB Computer running Ubuntu Server 20.04.01 LTS 
+            The JupyterHub is the most current that will build on a Raspberry Pi, 
+            Anaconda builds are not yet available for the aarch64 chipset, so the Python subsystem is manually installed.  Students should use Anaconda with their computers (x86-64 chipsets), or an Amazon Web Services Lightsail instance (the $12/month instance should be more than adequate).  Working notebooks are ported to the AWS website via a GitHub push-pull activity.  The Lesson, Lab, and Homework notebooks are tested using Anaconda on MacOS, and Anaconda on Windows. </p>
+        
+
+	</p>
+
+        </div>
+        <button class="accordion"> Lessons </button>
+        <div class="panel">
+<h2> Lesson Archive </h2>
+            <hr>
+<p><a href="./1-Lessons/"> Lessons Directory </a> Collection of current sources for lessons.  DO NOT EDIT on deployment server, do all editing on the development server otherwise the book won't build correctly.</p>
+    <!--
+<p><a href="./1-Lessons/Lesson01/ENGR-1330-Lesson01.html"> Lesson 01 </a> Problem Solving with Computational Thinking </p>
+            <hr>
+<h2> JupyterBook sources </h2>
+            <hr>
+<p><a href="./1-Lessons/Lesson02/ENGR-1330-Lesson02.html"> Lesson 02 </a> Fundamental Arithmetic </p>
+<p><a href="./1-Lessons/Lesson03/ENGR-1330-Lesson03.html"> Lesson 03 </a> Data structures: lists, tuples, dictionaries </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson04/ENGR-1330-Lesson04.html"> Lesson 04 </a> User Interaction: input(); print() </p>
+<!--<p><a href="./1-Lessons/Lesson04/SortingAsExampleOfFlowControl.html"> Sorting and Program Flow Control (Optional) </a> </p> -->
+<!-- <p><a href="./1-Lessons/Lesson05/ENGR-1330-Lesson05.html"> Lesson 05 </a> Program Flow Control Structures </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson06/ENGR-1330-Lesson06.html"> Lesson 06 </a> Functions (and modules); intrinsic, user-defined </p>
+<!--<p><a href="./1-Lessons/Lesson04/SortingAsExampleOfFlowControl.html"> Sorting and Program Flow Control (Optional) </a> </p> -->
+<!--<p><a href="./1-Lessons/Lesson07/ENGR-1330-Lesson07.html"> Lesson 07 </a> File manipulation; read/write; create/destroy; get from a URL</p>
+            <hr>
+<p><a href="./1-Lessons/Lesson08/ENGR-1330-Lesson08.html"> Lesson 08 </a> Matrix Arithmetic (Matrices as lists)</p>
+            <p><a href="#"> Exam </a> Exam 1 in-class practice exam on BB; take-home are similar to laboratory exercises </p>
+            <hr>
+<h2> Data Science Tools</h2>
+            <hr>
+<p><a href="./1-Lessons/Lesson09/ENGR-1330-Lesson09.html"> Lesson 09 </a> NumPy Package </p>
+<p><a href="./1-Lessons/Lesson10/ENGR-1330-Lesson10.html"> Lesson 10 </a> Databases; Introduction to Pandas</p>
+            <hr>
+<p><a href="./1-Lessons/Lesson11/ENGR-1330-Lesson11.html"> Lesson 11 </a> Databases; Query and Manipulation; Pandas Package</p>
+<p><a href="./1-Lessons/Lesson12/ENGR-1330-Lesson12.html"> Lesson 12 </a> Plotting concepts and conventions </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson13/ENGR-1330-Lesson13.html"> Lesson 13 </a> Charts and Graphs; MatPlotLib Package </p>
+<p><a href="./1-Lessons/Lesson14/ENGR-1330-Lesson14.html"> Lesson 14 </a> Data Modeling: Causality and Randomness </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson15/ENGR-1330-Lesson15.html"> Lesson 15 </a> Descriptive Statistics </p>
+<p><a href="./1-Lessons/Lesson16/ENGR-1330-Lesson16.html"> Lesson 16 </a> Hypothesis Tests </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson17/ENGR-1330-2021-3-Lesson17.html"> Lesson 17 </a> Testing Treatment Effect (A/B Testing) </p>
+<p><a href="./1-Lessons/Lesson18/ENGR-1330-Lesson18.html"> Lesson 18 </a> Interval Estimates </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson19/ENGR-1330-Lesson19.html"> Lesson 19 </a> Prediction Engines using Regression </p>
+<p><a href="./1-Lessons/Lesson20/ENGR-1330-Lesson20.html"> Lesson 20 </a> Assessing Quality of the Regression-based Prediction Engine </p>
+<a href="./1-Lessons/Lesson21/ENGR-1330-Lesson21.html"> Lesson 21  </a> Probability Estimation Modeling </p>
+            <hr>
+<p><a href="./1-Lessons/Lesson22/ENGR-1330-Lesson22.html"> Lesson 22 </a> Classification; Logistic Regression </p> -->
+<!--
+<p><a href="./1-Lessons/Lesson07"> Lesson  6 (11 Feb 2021) </a> Data Science: Data models and operations; NumPy Package </p>
+<p><a href="./1-Lessons/Lesson08"> Lesson  7 (16 Feb 2021) </a> Data Science: Dataframes; Query and Manipulation; Pandas Package </p>   
+<p><a href="./1-Lessons/Lesson09"> Lesson  8 (18 Feb 2021) </a> Data Science: Exploratory Data Analysis; Charts and Graphs; MatPlotLib Package  </p> 
+<h2> Data Modeling: The Statistical Approach </h2>
+<p><a href="./1-Lessons/Lesson10"> Lesson 9 (23 Feb 2021) </a> Data Modeling: Causality and Randomness </p>
+            
+<p><a href="./1-Lessons/Lesson11"> Lesson 10 (2 Mar 2021) </a> Data Modeling: Probability; Relative frequency and uninformed Bayesian concepts</p>
+<p><a href="./1-Lessons/Lesson12"> Lesson 11 (4 Mar 2021) </a> Data Modeling: Descriptive Statistics</p>
+<p><a href="./1-Lessons/Lesson13"> Lesson 12 (9 Mar 2021) </a> Data Modeling: Distributions </p>
+<p><a href="./1-Lessons/Lesson14"> Lesson 13 (11 Mar 2021) </a> Data Modeling: Probability Estimation Modeling </p>
+<p><a href="./1-Lessons/Lesson15"> Lesson 14 (16 Mar 2021) </a> Data Modeling: Hypothesis testing: General concept and examples of assessing models. </p>
+<p><a href="./1-Lessons/Lesson16"> Lesson 15 (18 Mar 2021) </a> Data Modeling: Hypothesis testing: Comparing proportions, Type 1 & 2 Errors, p-value. </p>
+<p><a href="./1-Lessons/Lesson17"> Lesson 16 (23 Mar 2021) </a> Data Modeling: Comparing two samples: A/B Testing  </p>
+            
+<p><a href="./1-Lessons/Lesson18"> Lesson 17 (30 Mar 2021) </a> Data Modeling: Interval estimation (aka: confidence intervals)  </p>
+<h2> Data Modeling: The Regression Approach </h2>
+<p><a href="./1-Lessons/Lesson19"> Lesson 18 (1 Apr 2021) </a> Data Modeling: Linear Algebra of Equation Fitting </p>
+<p><a href="./1-Lessons/Lesson20"> Lesson 19 (6 Apr 2021) </a> Data Modeling: Estimation Modeling by Regression </p>
+<p><a href="./1-Lessons/Lesson21"> Lesson 20 (8 Apr 2021) </a> Data Modeling: Regression Performance Metrics  </p>
+<p><a href="./1-Lessons/Lesson22"> Lesson 21 (13 Apr 2021) </a> Data Modeling: Logistic Regression (a type of classification)  </p>
+<h2> Data Modeling: Machine Learning Approach </h2> 
+<p><a href="./1-Lessons/Lesson23"> Lesson 22 (15 Apr 2021) </a> Machine Learning, Correlation, Training </p>
+<p><a href="./1-Lessons/Lesson24"> Lesson 23 (20 Apr 2021) </a> Classification and Decision Making </p>
+<p><a href="./1-Lessons/Lesson25"> Lesson 24 (22 Apr 2021) </a> K- Nearest Neighbor Classification </p>
+            
+<p><a href="./1-Lessons/Lesson26"> Lesson 25 (29 Apr 2021) </a> Support Vector Machine Clasification </p>  
+<p><a href="./1-Lessons/Lesson27"> Lesson 26 (4 May 2021) </a> Artificial Neural Network Classification </p>
+
+<p><a href="./1-Lessons/"> Lesson Directory </a> FTP-type listing of lessons directory</p>
+-->
+
+        </div>
+
+        <button class="accordion"> Labs </button>
+        <div class="panel">
+<p><a href="./8-Labs/"> Labs Directory </a> Collection of current sources for labs.  DO NOT EDIT on deployment server, do all editing on the development server otherwise the book won't build correctly.</p>
+            <hr>
+<!--            <p><a href="./8-Labs/Lab00/"> Lab 0: </a> Yes, That's how we count in python! </p>
+            <p><a href="./8-Labs/Lab01/"> Lab 1: </a> A Notebook Like No Other!</p>
+            <hr>
+            <p><a href="./8-Labs/Lab02/"> Lab 2: </a> Elementary Computations   </p> 
+            <p><a href="./8-Labs/Lab03/"> Lab 3: </a> Data Structures </p>
+            <hr>
+            <p><a href="./8-Labs/Lab04/"> Lab 4: </a> Input/Output </p>
+            <p><a href="./8-Labs/Lab05/"> Lab 5: </a> Sequence, Selection, and Repetition - Oh My!</p> 
+            <hr>
+            <p><a href="./8-Labs/Lab06/"> Lab 6: </a> Fun with FUNctions   </p>
+            <p><a href="./8-Labs/Lab07/"> Lab 7: </a> The truth is out there -- in the X-files </p>
+            <hr>
+            <p><a href="./8-Labs/Lab08/"> Lab 8: </a> Matrix arithmetic -- A Red Pill approach   </p>
+            <p><a href="./8-Labs/Lab09/"> Lab 9: </a> NumPy matrix arithmetic -- A Blue Pill approach   </p>
+            <hr>
+            <p><a href="./8-Labs/Lab10/"> Lab 10: </a> Databases   </p>
+            <p><a href="./8-Labs/Lab11/"> Lab 11: </a> Databases (Continued)  </p>
+            <hr>
+            <p><a href="./8-Labs/Lab12/"> Lab 12: </a> Plotting, Introduction to MatplotLib   </p>
+            <p><a href="./8-Labs/Lab13/"> Lab 13: </a> Matplotlib (Continued)  </p>
+            <hr>
+            <p><a href="./8-Labs/Lab14/"> Lab 14: </a> Probability, Correlation, and Gambling   </p>
+            <p><a href="./8-Labs/Lab15/"> Lab 15: </a> Descriptive Statistics  </p>
+            <hr>
+            <p><a href="./8-Labs/Lab16/"> Lab 16: </a> Hypothesis Tests   </p>
+            <p><a href="./8-Labs/Lab17/"> Lab 17: </a> Treatment Tests </p>
+            <hr>
+            <p><a href="./8-Labs/Lab18/"> Lab 18: </a> Interval Estimates  </p>
+            <p><a href="./8-Labs/Lab19/"> Lab 19: </a> Linear Regression </p>
+            <hr>
+            <p><a href="./8-Labs/Lab20/"> Lab 20: </a> Regression Goodness of Fit </p>
+            <p><a href="./8-Labs/Lab21/"> Lab 21: </a> Probability Estimation Modeling </p>
+            <hr>
+            <p><a href="./8-Labs/Lab22/"> Lab 22: </a> Logistic Regression </p>
+            <p><a href="./8-Labs/Lab23/"> Lab 23: </a> KNN Models </p>
+            <hr>
+            <!--
+            <p><a href="./8-Labs/Lab07/"> Lab 7: </a> Numpy for Bread! </p>
+            <p><a href="./8-Labs/Lab08/"> Lab 8: </a> Pandas for Butter!    </p>
+            <p><a href="./8-Labs/Lab09/"> Lab 9: </a> describe   </p> 
+            <p><a href="./8-Labs/Lab10/"> Lab 10: </a> describe   </p>
+            <p><a href="./8-Labs/Lab11/"> Lab 11: </a> describe   </p>
+            <p><a href="./8-Labs/Lab12/"> Lab 12: </a> describe   </p>
+            <p><a href="./8-Labs/Lab13/"> Lab 13: </a> describe   </p> 
+            <p><a href="./8-Labs/Lab14/"> Lab 14: </a> "A Bullet or A Goat?"</p>
+            <p><a href="./8-Labs/Lab15/"> Lab 15: </a> "Perks of Descriptive Statistics"  </p>
+            <p><a href="./8-Labs/Lab16/"> Lab 16: </a> "Functions for Probability Modeling"</p>
+            <p><a href="./8-Labs/Lab17/"> Lab 17: </a> "Towards Hypothesis Testing" </p>
+            <p><a href="./8-Labs/Lab18/"> Lab 18: </a> "Reject it or Fail!" </p> 
+            <p><a href="./8-Labs/Lab19/"> Lab 19: </a> "Game of Gods and Men" </p>
+            <p><a href="./8-Labs/Lab20/"> Lab 20: </a> "Precognition and Other Sins of the Human Brain" </p>
+            <p><a href="./8-Labs/Lab21/"> Lab 21: </a> "The Exclusive Guide to Trial by Combat in Westeros" </p>
+            <p><a href="./8-Labs/Lab22/"> Lab 22: </a> "Virtue and the Value of Classification" </p>
+            <p><a href="./8-Labs/Lab23/"> Lab 23: </a> "It's a beautiful day in the neighborhood" </p> 
+            <p><a href="./8-Labs/Lab24/"> Lab 24: </a> "A Tale of Supportive Machines!" </p>
+            <p><a href="./8-Labs/"> Laboratory Directory </a> FTP-type listing of laboratory notebooks </p>
+            
+            -->
+        </div>
+    
+        <button class="accordion"> Lab Solutions </button>
+        <div class="panel">
+            <hr>
+            <!--<p><a href="./8-Labs/Lab00/Lab00-WS.html"> Lab 0 - In Lab: </a> </p>-->
+            <!-- <p><a href="./8-Labs/Lab00/Lab00-TH-WS.html"> Lab 0 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab01/Lab01-WS.html"> Lab 1 - In Lab: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab02/Lab02-TH-WS.html"> Lab 2 - Homework: </a> </p> 
+            <p><a href="./8-Labs/Lab03/Lab03-TH-WS.html"> Lab 3 - Homework: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab04/Lab04-TH-WS.html"> Lab 4 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab05/Lab05-TH-WS.html"> Lab 5 - Homework: </a> </p> 
+            <hr>
+            <p><a href="./8-Labs/Lab06/Lab06-TH-WS.html"> Lab 6 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab07/Lab07-TH-WS.html"> Lab 7 - Homework: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab08/Lab08-TH-WS.html"> Lab 8- Homework: </a> </p>
+            <p><a href="./8-Labs/Lab09/Lab09-TH-WS.html"> Lab 9- Homework: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab10/Lab10-TH-WS.html"> Lab 10 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab11/Lab11-TH-WS.html"> Lab 11 - Homework: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab12/Lab12-TH-WS.html"> Lab 12 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab13/Lab13-TH-WS.html"> Lab 13 - Homework: </a> </p>
+            <hr>
+            <p><a href="./8-Labs/Lab14/Lab14-TH-WS.html"> Lab 14 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab15/Lab15-TH-WS.html"> Lab 15 - Homework: </a> </p>
+            <hr>
+            <hr>
+            <p><a href="./8-Labs/Lab16/Lab16-TH-WS.html"> Lab 16 - Homework: </a> </p>
+            <p><a href="./8-Labs/Lab17/Lab17-TH-WS.html"> Lab 17 - Homework: </a> </p>
+            <hr>
+    </div>
+        <button class="accordion"> Homework Notebooks (maybe disable)</button>
+        <div class="panel">
+            <!-- <p><a href="./2-Homework/ES-01/"> Week 1 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-02/"> Week 2 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-03/"> Week 3 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-04/"> Week 4 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-05/"> Week 5 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-06/"> Week 6 Assignment </a>  </p>-->
+ <!--           <p><a href="./2-Homework/ES-07/HW-Week7-Matplotlib-Fall2021-WS.html"> Week 7 Assignment </a>  </p>
+            <!--<p><a href="./2-Homework/ES-08/"> Week 8 Assignment </a>  </p>
+            <p><a href="./2-Homework/ES-09/"> Week 9 Assignment </a>  </p>   
+            <p><a href="./2-Homework/ES-10/"> Week 10 Assignment </a>  </p>
+            <p><a href="./2-Homework/"> Homework Directory </a> FTP-type listing of homeworks   </p>-->
+            
+        </div> 
+
+        <button class="accordion"> Project Collection</button>
+        <div class="panel">
+        <!--<p><a href="./6-Projects/P-Classification/"> Music Genre Classification </a>  </p>-->
+        <p><a href="./6-Projects/P-ConcreteStrength/ENGR-1330-ConcreteStrength-Project.html"> Concrete Strength Prediction </a>  </p>
+        <p><a href="./6-Projects/P-StreamflowAnalysis/ENGR-1330-Streamflow-Project.html"> Streamflow Analysis and Forecasting </a>  </p>
+        <p><a href="./6-Projects/P-InstrumentCalibration/ENGR-1330-InstrumentCalibration-Project.html"> Instrument Calibration </a>  </p>
+        <!--<p><a href="./6-Projects/P-DTMF/"> Audio File Compression </a> under construction </p>
+        <p><a href="./6-Projects/P-ImageClassification/"> Image Classification </a> under construction</p>-->
+        <!--<p><a href="./6-Projects/P-Evaporation/"> Climatic Classification </a> under construction   </p>-->
+        <p><a href="./6-Projects/"> Project Directory </a> FTP-type listing of projects  </p>
+            
+        </div>
+        <button class="accordion"> Databases </button>
+        <div class="panel">
+            <p> Public databases for use in ENGR 1330; to be accessed via wget or curl after end user has set exception to connect to remote server.  Alternative is download the database first, then process
+            <p><a href="./4-Databases/"> Database Directory </a> FTP-type listing of databases   </p>
+            
+        </div>
+
+        <button class="accordion"> Readings </button>
+        <div class="panel">
+
+<p><a href="./3-Readings/"> Reading Collection </a> Local to the server </p>
+            
+<p><a href="https://www.inferentialthinking.com/chapters/intro"> Computational and Inferential Thinking </a> 
+Ani Adhikari and John DeNero, Computational and Inferential Thinking, The Foundations of Data Science, Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND) </p>
+</div>    
+    
+        <button class="accordion"> Video Collection </button>
+        <div class="panel">
+<p><a href="#"> Site Tour </a> A tour of this website </p>
+<!-- <p><a href="#"> SharePYTHON Tour </a> A tour of the SharePYTHON site where you can run the notebooks yourself! </p> -->
+<p><a href="https://youtu.be/y26RCKWlv7M"> Install Anaconda macOS </a> 
+    Video showing install onto a bare-iron Catalina implementation. (Recorded 19 June 2020)  </p>
+<p><a href="#"> Install Anaconda win10  </a> Video showing install onto a Windows 10 Build XXXX implementation  </p>
+<!-- <p><a href="http://atomickitty.net:6087/vnc.html?host=atomickitty.net&port=6087"> SharePYTHON Environment </a> The vnc#007 shared python environment; remember to disconnect before closing the browser!   </p> -->
+<p><a href="#"> PLACEHOLDER </a> describe   </p>
+</div>
+    
+<!--        <button class="accordion"> Development Notebook Collection (Instructor Only) </button>
+        <div class="panel">
+<p>This section is a collection of notebooks under development, categorized by topic.  
+    <p>    The directories are organized into single topics.
+        
+        Within each directory there will be an HTML file, which is the notebook run once through a rendering program to make a static content file -- i.e. what the notebook should look like without errors (syntax errors are suppressed).
+        
+        The notebook itself is the <em>filename.ipynb</em> file.  There is a <em>.tar</em> file which can be downloaded, extracted, and run on your own instance of JupyterLab on your own machine.The link will take you to the directory where the notebook is housed, somethng like the image below. </p>
+            <img src="./NotebookDirectory.png" style="width:40%">
+<p>If you simply want to look at the notebook, rendered as a web page, select the .html file.  Otherwise select and download the .ipynb file.  If there are other files, they are usually needed too.  In complete examples with multiple files required there will be a .zip file which will contain all the depnedencies, download that file, extract and you can run the notebook.</p>
+<h2> Python Programming </h2>
+<p><a href="./9-MyJupyterNotebooks/1-HelloWorld/"> Hello World </a> Classic first program </p>
+<p><a href="./9-MyJupyterNotebooks/3-VariablesAndOperators/"> Variables and Operators </a> Variable types; operators (*,/,+,- .....) </p>
+<p><a href="./9-MyJupyterNotebooks/4-DataTypesPythonPrimative/"> Variables and Operators </a> Data types; integer; real; string ; lists </p>
+<p><a href="./9-MyJupyterNotebooks/5-ConditionalComputations/"> Conditionals </a> IF ... THEN, program flow control; for loops; while loops. </p>
+<p><a href="./9-MyJupyterNotebooks/6-Sorting/"> Sorting </a> Sorting lists </p>
+<p><a href="./9-MyJupyterNotebooks/7-NumericalIntegrationOfFunctions/"> Numerical Integration </a> Definite integrals of functions (NOT symbolic manipulation) </p>
+<p><a href="./9-MyJupyterNotebooks/8-IntegrationOfTabularData/"> Tabular Data Integration </a> Integration of Tabular Data </p>            
+<p><a href="./9-MyJupyterNotebooks/9-ApproximationOfDerivatives/"> Approximation of Derivatives </a> Finite difference approximation of derivatives; directional derivatives </p>   
+<p><a href="./9-MyJupyterNotebooks/10-NewtonsMethod/"> Newton's Method </a> Root finding by classical and quasi-newton methods; single variable.</p> 
+<p><a href="./9-MyJupyterNotebooks/11-UserBuiltFunctions/"> User-built functions </a> Prototype functions for program clarity and memory leak reduction</p> 
+
+<h2> Assorted Numerical Methods </h2>
+<p><a href="./9-MyJupyterNotebooks/12-NumericalLinearAlgebra/"> Numerical Linear Algebra </a> Matrices and vectors as lists of lists (python primative). Does not require <em>numpy</em></p>
+<p><a href="./9-MyJupyterNotebooks/12A-InvertAMatrix/"> Matrix Inversion </a> </p>
+<p><a href="./9-MyJupyterNotebooks/13-SystemsOfLinearEquations/"> Systems of Linear Equations </a> Jacobi iteration; Gaussian reduction; with pivoting, use of <em>numpy</em> tools </p> 
+<p><a href="./9-MyJupyterNotebooks/14A-ApplicationsOfLinearSystems/"> Linear Systems Applications </a> Statically determinate truss by method of joints and numerical linear algebra, uses Gaussian reduction; with pivoting (as python primatives) </p> 
+<p><a href="./9-MyJupyterNotebooks/14B-ApplicationsOfLinearSystems/"> Linear Systems Applications </a> Water quality in series reactors with feedback</p> 
+<p><a href="./9-MyJupyterNotebooks/14C-ApplicationsOfLinearSystems/"> Linear Systems Applications </a> Linear heat flow in media with varying thermal properties</p> 
+<!-- <p><a href="./MyJupyterNotebooks/14C-ApplicationsOfLinearSystems/"> Linear Systems Applications </a> Ordinary Least-Squares Analysis</p> 
+<p><a href="./9-MyJupyterNotebooks/15-NonLinearSystems/"> Non-linear systems </a> Simultaneous systems of non-linear equations; Newton-Raphson with analytical derivatives; Quasi-Newton using finite differences to approximate detrivatives, Linearization by method of darts</p> 
+<p><a href="./9-MyJupyterNotebooks/16-ApplicationOfNonLinearSystems/"> Application of Non-linear Systems </a> Flow and pressure in pipeline networks. </p>  
+
+<h2>Statistics and Data Science Applications</h2>            
+<p><a href="./9-MyJupyterNotebooks/41-GetDataFromURL/"> Get data from a URL </a> Script to retrieve and load a database without making a copy of the remote file</p> 
+<p><a href="./9-MyJupyterNotebooks/41A-HypothesisTests/"> Parametric and Non-Parametric Tests </a> Two (2) notebooks with various examples, using data from field studys, small sample sizes </p>
+<p><a href="./9-MyJupyterNotebooks/42-DataScience-EvaporationAnalysis/"> Evaporation analysis</a> is global dimming having an impact on climatic behavior?</p> 
+<p><a href="./9-MyJupyterNotebooks/43-SolidsInRivers/"> Solids in Rivers </a> Estimating river bed load transport mass using weighted n-Nearest neighbor database lookup compared to regression equations</p> 
+
+<p><a href="./9-MyJupyterNotebooks/47-TimeSeriesModels/"> Concrete Strength Prediction </a> Concrete Strength Estimation using Random Forests Model of Observations in a Database</p>    
+
+<p><a href="./9-MyJupyterNotebooks/47-TimeSeriesModels/"> Time Series (Stock Prices) </a> Time series analysis using ARIMA and seasonal decomposition models</p> 
+        
+<p><a href="./9-MyJupyterNotebooks/48-DataScience-ArtificalNeuralNetwork/"> Artifical Neural Network for Image Classification</a> ANN to classify images of hand drawn numerals </p> 
+<h2>Data Interpretation/Presentation Applications</h2>  
+<p><a href="./9-MyJupyterNotebooks/96-LinearRegressionByMatrix/"> Artifical Neural Network for Image Classification</a> ANN to classify images of hand drawn numerals </p> 
+<p><a href="./9-MyJupyterNotebooks/97-GriddingAndContour/"> Gridding XYZ data; Contour plotting </a></p>
+
+<p><a href="./9-DataFiles/"> DAT.src </a> Example Data Files </p>
+<p><a href="./9-MyJupyterNotebooks/"> Notebook Collection </a> FTP-type directory listing for the Notebook -- For development, and maintenance</p>
+<p><a href="./SpreadsheetsInLecture/"> Excel Spreadsheets </a> Source files for spreadsheets </p>
+</div> -->
+
+
+<button class="accordion"> Recent Updates/Maintenance Diary </button>
+        <div class="panel">
+            <li> Migrate to 54.243.252.9/engr-1330-webroot; revert to http (unencrypted) </li>
+            <li> Migrate to AWS 3.137.182/engr-1330-webroot 12 Jan 2021 </li>
+            <li> website public 4 June 2020 (via symlink from www.rtfmps.com) DEPRECATED </li>
+            <li> website create 23 May 2020 (hosted on atomickitty.ddns.net) DEPRECATED </li>
+    
+<!-- JavaScripts for this page -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        }
+    }
+</script>
+
+    </body>
+</html>
+

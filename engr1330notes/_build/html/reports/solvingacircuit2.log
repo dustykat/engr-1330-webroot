@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/opt/jupyterhub/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/jupyterhub/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy
+X = [numpy.ones(len(time)),numpy.array(time),numpy.array(time)**2] # build the design X matrix #
+X = numpy.transpose(X) # get into correct shape for linear solver
+Y = numpy.array(speed) # build the response Y vector
+A = numpy.transpose(X)@X # build the XtX matrix
+b = numpy.transpose(X)@Y # build the XtY vector
+x = numpy.linalg.solve(A,b) # avoid inversion and just solve the linear system 
+amatrix = [[-1,  0,  0,  0,  0,  0,  0,0,0,0,0,0,0,0],
+           [ 1, -1,  0,  0, -1,  0,  0,0,0,0,0,0,0,0],
+           [ 0,  0, -1,  0,  1,  0,  0,0,0,0,0,0,0,0],
+           [ 0,  0,  1, -1,  0,  0,  0,0,0,0,0,0,0,0],
+           [ 0,  0,  0,  1,  0, -1,  0,0,0,0,0,0,0,0],
+           [ 0,  0,  0,  0,  0,  1, -1,0,0,0,0,0,0,0],
+           [ 0,  0,  0,  0,  0,  0,  1,0,0,0,0,0,0,0],
+           [-r,  0,  0,  0,  0,  0,  0,1,-1,0,0,0,0,0],
+           [ 0,-R1,  0,  0,  0,  0,  0,0,1,0,0,0,-1,0],          
+           [ 0,  0,-R2,  0,  0,  0,  0,0,0,1,-1,0,0,0],
+           [ 0,  0,  0,-R3,  0,  0,  0,0,0,0,1,-1,0,0],          
+           [ 0,  0,  0,  0, -r,  0,  0,0,1,0,-1,0,0,0],          
+           [ 0,  0,  0,  0,  0, -r,  0,0,0,0,0,1,-1,0],          
+           [ 0,  0,  0,  0,  0,  0, -r,0,0,0,0,0,1,-1]]
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-2-a03fc4b9836d>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mnumpy[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mX[0m [0;34m=[0m [0;34m[[0m[0mnumpy[0m[0;34m.[0m[0mones[0m[0;34m([0m[0mlen[0m[0;34m([0m[0mtime[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m[0mnumpy[0m[0;34m.[0m[0marray[0m[0;34m([0m[0mtime[0m[0;34m)[0m[0;34m,[0m[0mnumpy[0m[0;34m.[0m[0marray[0m[0;34m([0m[0mtime[0m[0;34m)[0m[0;34m**[0m[0;36m2[0m[0;34m][0m [0;31m# build the design X matrix #[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mX[0m [0;34m=[0m [0mnumpy[0m[0;34m.[0m[0mtranspose[0m[0;34m([0m[0mX[0m[0;34m)[0m [0;31m# get into correct shape for linear solver[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mY[0m [0;34m=[0m [0mnumpy[0m[0;34m.[0m[0marray[0m[0;34m([0m[0mspeed[0m[0;34m)[0m [0;31m# build the response Y vector[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mA[0m [0;34m=[0m [0mnumpy[0m[0;34m.[0m[0mtranspose[0m[0;34m([0m[0mX[0m[0;34m)[0m[0;34m@[0m[0mX[0m [0;31m# build the XtX matrix[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'time' is not defined
+NameError: name 'time' is not defined
+

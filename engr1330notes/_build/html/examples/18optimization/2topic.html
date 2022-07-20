@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Search Methods &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Gradient Descent Methods" href="3topic.html" />
+    <link rel="prev" title="Scheduling Example" href="1topic.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Engineering Analysis using Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example01/example01.html">
+   Computational Thinking and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/abstract.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/background.html">
+     Problem Solving Philosophy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example01/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../example03/example03.html">
+   Creating a Jupyter Notebook
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/1startingjupyter.html">
+     Installing Jupyter and iPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/2celltypes.html">
+     Cell Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/3entercode.html">
+     Extering Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/4executecell.html">
+     Executing a Code Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../example03/5printingnotebook.html">
+     Saving and Printing a Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3sequence/example02.html">
+   Sequential Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/abstract.html">
+     Installating Jupyter on your Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/background.html">
+     Starting Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/dataassembly.html">
+     Data Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/modelassembly.html">
+     Model Assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3sequence/runandinterpret.html">
+     Model Run and Results Interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4selection/example04.html">
+   Selection Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/1logical.html">
+     Logical Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/2ifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/3ifelifstruc.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       ELIF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/4nestedif.html">
+     Nested
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IF
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4selection/5tryexcept.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TRY
+      </span>
+      <span class="pre">
+       ...
+      </span>
+      <span class="pre">
+       EXCEPT
+      </span>
+      <span class="pre">
+       ...
+      </span>
+     </code>
+     structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../5repetition/repetition.html">
+   Repetition Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/1countcontrol.html">
+     Count-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/2sentenialcontrol.html">
+     Sentenial-Controlled Repetition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5repetition/3recursion.html">
+     Recursion (advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6packages/example041.html">
+   Packages and Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/1packages.html">
+     External Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/2functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6packages/3savefunction.html">
+     Saving User-Defined Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../7graphing/example05.html">
+   Graphing Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7graphing/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../8statistical/example06.html">
+   Analyzing Data Statistically
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/1descriptivestatistics.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/2histograms.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8statistical/3cumulativedistributions.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10datamodels/datamodels.html">
+   Fitting Equations to Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/1interpolation.html">
+     Interpolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/2leastsquares.html">
+     Least Squares Minimization Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/3fitaline.html">
+     Fitting a Line to Data Using Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/4fitacurve.html">
+     Fitting other Functions to Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10datamodels/5goodfunctions.html">
+     Choosing Good Functions for a Data Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11sortandfilter/sortandfilter.html">
+   Sorting and Filtering Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/1sortinglists.html">
+     Sorting Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/2filteringlists.html">
+     Filtering Lists and Dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11sortandfilter/3pivottables.html">
+     Pivot Tables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12filetransfer/filetransfer.html">
+   Transferring Data Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/1filesystems.html">
+     Descriptive Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/2readwritecore.html">
+     Histograms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12filetransfer/3readwriteweb.html">
+     Cumulative Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13convertunits/convertunits.html">
+   Converting Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../14solveequation/solveequation.html">
+   Solving Single Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/1graphical.html">
+     Graphical Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/2darts.html">
+     Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/3bisection.html">
+     Bisection Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../14solveequation/4newtons.html">
+     Newton’s Method - Homebrew
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../15equationsystems/equationsystems.html">
+   Solving Simultaneous Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/1topic.html">
+     Simultaneous Linear Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/2topic.html">
+     Simultaneous Non-Linear Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15equationsystems/3topic.html">
+     Linear System Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../16integrals/example13.html">
+   Evaluating Integrals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/1rectangularpanels.html">
+     Rectangular Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/2trapezoidalpanels.html">
+     Trapezoidal Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/3parabolicpanels.html">
+     Parabolic Panels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/4tabulateddata.html">
+     Integration of Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../16integrals/5othermethods.html">
+     Other Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../17comparechoices/comparechoices.html">
+   Economic Modeling: Comparing Choices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/1topic.html">
+     Compound Interest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/2topic.html">
+     Multipayment Cash Flows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../17comparechoices/3topic.html">
+     Internal Rate of Return
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="optimization.html">
+   Optimization Modeling
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1topic.html">
+     Scheduling Example
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Grid Search Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3topic.html">
+     Gradient Descent Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../19classification/classification.html">
+   Classification Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/1topic.html">
+     Logistic Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/2topic.html">
+     Nearest Neighbor Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../19classification/3topic.html">
+     Neural Network Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/examples/18optimization/2topic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/18optimization/2topic.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/18optimization/2topic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-weight-structure">
+   Minimum-Weight Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classical-grid-search">
+   Classical Grid Search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-using-scipy">
+   Solving using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scipy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labor-allocation-using-scipy">
+   Labor allocation using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scipy
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="grid-search-methods">
+<h1>Grid Search Methods<a class="headerlink" href="#grid-search-methods" title="Permalink to this headline">¶</a></h1>
+<p>Grid search methods are simple to conceptualize and can provide useful starting values for more elaborate tools.  The substance manufacturing example used a simplistic grid search method that implicitly searched integer space only, here another example will use sequential searches - a first to get close to a region where good solutions exist, and a second refinement search.</p>
+<div class="section" id="minimum-weight-structure">
+<h2>Minimum-Weight Structure<a class="headerlink" href="#minimum-weight-structure" title="Permalink to this headline">¶</a></h2>
+<p>Consider a structure that is comprosed of two cylindrical load bearing columns whose diameter in feet are <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span>.  The weight of the structure in pounds is given by the expression:</p>
+<p><span class="math notranslate nohighlight">\( y = 1000*(10+(r_1 - 0.5)^2+(r_2-0.5)^2 ~)\)</span><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">):</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="p">(</span><span class="n">r1</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">r2</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The goal is to determine the values of <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> that minimize the weight and satisfy the additional constraints below:</p>
+<ol class="simple">
+<li><p>The combined cross-sectional area of the two columns must be at least 10 square feet;<br><span class="math notranslate nohighlight">\(\pi (r_1^2 + r_2^2) \ge 10\)</span></p></li>
+<li><p>The radius of one column may not exceed 1.25 the radius of the other column;<br>
+<span class="math notranslate nohighlight">\(r_1 \le 1.25r_2\)</span></p></li>
+<li><p>Nonnegativity; <br><span class="math notranslate nohighlight">\(r_1 \ge 0; r_2 \ge 0\)</span></p></li>
+</ol>
+<p>Expressed as scripted functions (which are to be larger than zero if feasible)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">con1</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">con1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">10</span>
+    <span class="k">return</span> <span class="n">con1</span>
+
+<span class="k">def</span> <span class="nf">con2</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">):</span>
+    <span class="n">con2</span> <span class="o">=</span> <span class="mf">1.25</span><span class="o">*</span><span class="n">r2</span><span class="o">-</span><span class="n">r1</span>
+    <span class="k">return</span> <span class="n">con2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As before we make a test script to convert into our optimization model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">=</span><span class="mf">1.262</span>
+<span class="n">r2</span><span class="o">=</span><span class="mf">1.262</span>
+<span class="n">objective</span> <span class="o">=</span> <span class="n">weight</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current Solution r1 = &quot;</span><span class="p">,</span><span class="n">r1</span><span class="p">,</span><span class="s2">&quot; r2 = &quot;</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Value = &quot;</span><span class="p">,</span><span class="n">objective</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 1 Value = &quot;</span><span class="p">,</span><span class="n">constraint1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 2 Value = &quot;</span><span class="p">,</span><span class="n">constraint2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">constraint1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">constraint2</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r1</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All constraints satisfied solution is FEASIBLE&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One or more constraints violated solution is INFEASIBLE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current Solution r1 =  1.262  r2 =  1.262
+Objective Value =  11161.287999999999
+Constraint 1 Value =  0.0068773803677242284
+Constraint 2 Value =  0.3155000000000001
+All constraints satisfied solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now put it into a model function that computes the objective value and a feasibility code (0=feasible, 1=not feasible) and put remaining logic into the search algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mymodel</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">):</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">weight</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+    <span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+    <span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">constraint1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">constraint2</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r1</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">returncode</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">returncode</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">objective</span><span class="p">,</span><span class="n">returncode</span><span class="p">)</span> <span class="c1"># return a tuple</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we make the search, notice is practically the same code as before, with only some minor changes in variable names, and repetition counting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Avector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r1</span>
+<span class="n">Bvector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r2</span>
+<span class="n">stepsize</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># coarse step size</span>
+<span class="n">r1value</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">r2value</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">howmanysteps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="n">r1value</span> <span class="o">=</span> <span class="n">r1value</span><span class="o">+</span><span class="n">stepsize</span> <span class="c1">#rescales the region from 0 to 3 in steps of 0.001</span>
+    <span class="n">r2value</span> <span class="o">=</span> <span class="n">r2value</span><span class="o">+</span><span class="n">stepsize</span>
+    <span class="n">Avector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r1value</span><span class="p">)</span>
+    <span class="n">Bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2value</span><span class="p">)</span>
+<span class="c1"># now the actual search</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># keep count of how many combinations</span>
+<span class="n">small</span>   <span class="o">=</span> <span class="mf">1e99</span> <span class="c1"># a big value, we are minimizing</span>
+<span class="n">xbest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># variables to store our best solution</span>
+<span class="n">ybest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">feasible</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#keep count of feasible combinations</span>
+<span class="k">for</span> <span class="n">ix1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ix2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+        <span class="n">howmany</span> <span class="o">=</span> <span class="n">howmany</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">],</span><span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">small</span><span class="p">:</span>
+                <span class="n">feasible</span> <span class="o">=</span> <span class="n">feasible</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">small</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">xbest</span> <span class="o">=</span> <span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">]</span>
+                <span class="n">ybest</span> <span class="o">=</span> <span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Search Complete &quot;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span><span class="s2">&quot; Total Combinations Examined&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found &quot;</span><span class="p">,</span><span class="n">feasible</span><span class="p">,</span> <span class="s2">&quot;Feasible Solutions </span><span class="se">\n</span><span class="s2"> --- Best Solution ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 1 = &quot;</span><span class="p">,</span><span class="n">xbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 2 = &quot;</span><span class="p">,</span><span class="n">ybest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="n">small</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 1 Value = &quot;</span><span class="p">,</span><span class="n">con1</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 2 Value = &quot;</span><span class="p">,</span><span class="n">con2</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search Complete  1000000  Total Combinations Examined
+Found  11 Feasible Solutions 
+ --- Best Solution ---
+Radius 1 =  1.1900000000000002
+Radius 2 =  1.3300000000000003
+Objective Function Value =  11165.000000000002
+Constraint 1 Value =  0.005972601683495782
+Constraint 2 Value =  0.47250000000000014
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we now have an initial guess to work with, we can make another search over a smaller region starting from here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Avector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r1</span>
+<span class="n">Bvector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r2</span>
+<span class="n">stepsize</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># fine stepsize, start near last solution</span>
+<span class="n">r1value</span> <span class="o">=</span> <span class="mf">1.1</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">r2value</span> <span class="o">=</span> <span class="mf">1.1</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">howmanysteps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="n">r1value</span> <span class="o">=</span> <span class="n">r1value</span><span class="o">+</span><span class="n">stepsize</span> <span class="c1">#rescales the region from 0 to 3 in steps of 0.001</span>
+    <span class="n">r2value</span> <span class="o">=</span> <span class="n">r2value</span><span class="o">+</span><span class="n">stepsize</span>
+    <span class="n">Avector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r1value</span><span class="p">)</span>
+    <span class="n">Bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2value</span><span class="p">)</span>
+<span class="c1"># now the actual search</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># keep count of how many combinations</span>
+<span class="n">small</span>   <span class="o">=</span> <span class="mf">1e99</span> <span class="c1"># a big value, we are minimizing</span>
+<span class="n">xbest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># variables to store our best solution</span>
+<span class="n">ybest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">feasible</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#keep count of feasible combinations</span>
+<span class="k">for</span> <span class="n">ix1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ix2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+        <span class="n">howmany</span> <span class="o">=</span> <span class="n">howmany</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">],</span><span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">small</span><span class="p">:</span>
+                <span class="n">feasible</span> <span class="o">=</span> <span class="n">feasible</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">small</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">xbest</span> <span class="o">=</span> <span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">]</span>
+                <span class="n">ybest</span> <span class="o">=</span> <span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Search Complete &quot;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span><span class="s2">&quot; Total Combinations Examined&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found &quot;</span><span class="p">,</span><span class="n">feasible</span><span class="p">,</span> <span class="s2">&quot;Feasible Solutions </span><span class="se">\n</span><span class="s2"> --- Best Solution ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 1 = &quot;</span><span class="p">,</span><span class="n">xbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 2 = &quot;</span><span class="p">,</span><span class="n">ybest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="n">small</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 1 Value = &quot;</span><span class="p">,</span><span class="n">con1</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 2 Value = &quot;</span><span class="p">,</span><span class="n">con2</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search Complete  1000000  Total Combinations Examined
+Found  70 Feasible Solutions 
+ --- Best Solution ---
+Radius 1 =  1.2479999999999838
+Radius 2 =  1.2749999999999808
+Objective Function Value =  11160.128999999946
+Constraint 1 Value =  9.468182834382333e-05
+Constraint 2 Value =  0.34574999999999223
+</pre></div>
+</div>
+</div>
+</div>
+<p>From here we could refine further to try to get closer to an optimal solution, but given that we are close to constraint 1 (<span class="math notranslate nohighlight">\(\ge 0\)</span>) we could probably stop, also observe we only have 70 feasible solutions out of 1 million combinations. But because its easy in this problem, lest trys a finer search just cause.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Avector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r1</span>
+<span class="n">Bvector</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store values of r2</span>
+<span class="n">stepsize</span> <span class="o">=</span> <span class="mf">0.0001</span> <span class="c1"># really fine stepsize, start near last solution</span>
+<span class="n">r1value</span> <span class="o">=</span> <span class="mf">1.23</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">r2value</span> <span class="o">=</span> <span class="mf">1.26</span><span class="o">-</span><span class="n">stepsize</span>
+<span class="n">howmanysteps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="n">r1value</span> <span class="o">=</span> <span class="n">r1value</span><span class="o">+</span><span class="n">stepsize</span> <span class="c1">#rescales the region from 0 to 3 in steps of 0.001</span>
+    <span class="n">r2value</span> <span class="o">=</span> <span class="n">r2value</span><span class="o">+</span><span class="n">stepsize</span>
+    <span class="n">Avector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r1value</span><span class="p">)</span>
+    <span class="n">Bvector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2value</span><span class="p">)</span>
+<span class="c1"># now the actual search</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># keep count of how many combinations</span>
+<span class="n">small</span>   <span class="o">=</span> <span class="mf">1e99</span> <span class="c1"># a big value, we are minimizing</span>
+<span class="n">xbest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># variables to store our best solution</span>
+<span class="n">ybest</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">feasible</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#keep count of feasible combinations</span>
+<span class="k">for</span> <span class="n">ix1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ix2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmanysteps</span><span class="p">):</span>
+        <span class="n">howmany</span> <span class="o">=</span> <span class="n">howmany</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mymodel</span><span class="p">(</span><span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">],</span><span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">small</span><span class="p">:</span>
+                <span class="n">feasible</span> <span class="o">=</span> <span class="n">feasible</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">small</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">xbest</span> <span class="o">=</span> <span class="n">Avector</span><span class="p">[</span><span class="n">ix1</span><span class="p">]</span>
+                <span class="n">ybest</span> <span class="o">=</span> <span class="n">Bvector</span><span class="p">[</span><span class="n">ix2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Search Complete &quot;</span><span class="p">,</span><span class="n">howmany</span><span class="p">,</span><span class="s2">&quot; Total Combinations Examined&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found &quot;</span><span class="p">,</span><span class="n">feasible</span><span class="p">,</span> <span class="s2">&quot;Feasible Solutions </span><span class="se">\n</span><span class="s2"> --- Best Solution ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 1 = &quot;</span><span class="p">,</span><span class="n">xbest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radius 2 = &quot;</span><span class="p">,</span><span class="n">ybest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="n">small</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 1 Value = &quot;</span><span class="p">,</span><span class="n">con1</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 2 Value = &quot;</span><span class="p">,</span><span class="n">con2</span><span class="p">(</span><span class="n">xbest</span><span class="p">,</span><span class="n">ybest</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search Complete  1000000  Total Combinations Examined
+Found  116 Feasible Solutions 
+ --- Best Solution ---
+Radius 1 =  1.2550999999999972
+Radius 2 =  1.2679999999999991
+Objective Function Value =  11160.000009999994
+Constraint 1 Value =  3.6070575681890205e-06
+Constraint 2 Value =  0.32990000000000164
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we should just stop, we are at the constraint 1 limit, and have a workable solution.</p>
+</div>
+<div class="section" id="classical-grid-search">
+<h2>Classical Grid Search<a class="headerlink" href="#classical-grid-search" title="Permalink to this headline">¶</a></h2>
+<p>To summarize a classical grid search process requires:</p>
+<ol class="simple">
+<li><p>A model function that determines the objective value and feasibility when supplied with design variables</p></li>
+<li><p>An algorithm that identifies values of design variables to search, if you imagine each variable as an axis in an orthogonal hyperplane, then we are secrhing a pre-selected region.</p></li>
+<li><p>A tabulating algorithm that only records feasible, non-inferior (improving objective value).</p></li>
+<li><p>Clock cycles.  This technique is quite slow and makes a lot of function calls.  It is not elegant, but might be valuable for initial conditions, or crude estimates.  Notice in the last example we made 3 million function evaluations - if each evaluation takes a second to complete, the process would take almost 35 days to find a whopping 197 feasible solutions!</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Get Started</p>
+<p>Even though grid search is slow, its robust.  It is a good place to start because you may be able to get a code up and running in a week.  You can then set it on its hopeless search while you pursue more elegant methods.  If these methods fail, you always have the grid search running in the background guarenteeing (hopefully) at least one feasible solution.</p>
+<p>Don’t let elegance get in the way of getting things done!</p>
+</div>
+<!-- ## Method-of-Darts (Future) --></div>
+<div class="section" id="solving-using-scipy">
+<h2>Solving using <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#solving-using-scipy" title="Permalink to this headline">¶</a></h2>
+<p>Setting up the same problem in scipy requires some reading of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/optimize.html#sequential-least-squares-programming-slsqp-algorithm-method-slsqp">scipy.optimization</a> documentation.  Here I wanted to avoid having to define the derivatives, Jacobian, and Hessian.  The method that seems to fit this problem is called the <em>Sequential Least SQuares Programming (SLSQP) Algorithm (method=<code class="docutils literal notranslate"><span class="pre">SLSQP</span></code>)</em>  Below is the same problem setup using the package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">Bounds</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">objfn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># our objective function</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span> <span class="c1"># define the search region</span>
+<span class="n">ineq_cons</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span><span class="s1">&#39;fun&#39;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">10</span><span class="p">),(</span><span class="mf">1.25</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])])}</span> <span class="c1"># set the inequality constraints</span>
+<span class="n">eq_cons</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,}</span> <span class="c1"># null equality constraints - not used this example</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span> <span class="c1"># initial guess</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">objfn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="s2">&quot;2-point&quot;</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[</span><span class="n">ineq_cons</span><span class="p">],</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ftol&#39;</span><span class="p">:</span> <span class="mf">1e-9</span><span class="p">},</span><span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="c1"># report results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Return Code &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Function Evaluations &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;nfev&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Jacobian Evaluations &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;njev&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; --- Objective Function Value --- </span><span class="se">\n</span><span class="s2">   &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;fun&quot;</span><span class="p">],</span><span class="mi">2</span><span class="p">),</span><span class="s2">&quot; pounds&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Current Solution Vector </span><span class="se">\n</span><span class="s2">  &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Return Code  0
+ Function Evaluations  30
+ Jacobian Evaluations  8
+ --- Objective Function Value --- 
+    11159.97  pounds
+ Current Solution Vector 
+   [1.26156624 1.26156628]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe in this case far quicker and fewer function evaluations (62 if we assume the Jacobian needs 4 evaluations per its evaluation + the 30 in the linesearch).  Still way fewer than 3 million.  Now lets check the solution using our code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">=</span><span class="mf">1.261567</span>
+<span class="n">r2</span><span class="o">=</span><span class="mf">1.261567</span>
+<span class="n">objective</span> <span class="o">=</span> <span class="n">weight</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current Solution r1 = &quot;</span><span class="p">,</span><span class="n">r1</span><span class="p">,</span><span class="s2">&quot; r2 = &quot;</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Value = &quot;</span><span class="p">,</span><span class="n">objective</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 1 Value = &quot;</span><span class="p">,</span><span class="n">constraint1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraint 2 Value = &quot;</span><span class="p">,</span><span class="n">constraint2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">constraint1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">constraint2</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r1</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All constraints satisfied solution is FEASIBLE&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One or more constraints violated solution is INFEASIBLE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current Solution r1 =  1.261567  r2 =  1.261567
+Objective Value =  11159.968590978
+Constraint 1 Value =  1.1715439123705096e-05
+Constraint 2 Value =  0.3153917500000001
+All constraints satisfied solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yep, the ‘scipy’ solution is correct and better than our best from a grid search.</p>
+</div>
+<div class="section" id="labor-allocation-using-scipy">
+<h2>Labor allocation using <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#labor-allocation-using-scipy" title="Permalink to this headline">¶</a></h2>
+<p>Lets revisit the labor allocation problem using the same tool with a caveat.  The labor allocation is an integer problem, and <code class="docutils literal notranslate"><span class="pre">SLSQP</span></code> is a real number solver, so we may not get the exact same answer, but partial substance is encouraged by the cartel, after all we are making illegal substances, so what if we cheat our customers a little bit (it is the Amazonian way!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">con1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="c1"># con1 &gt;= 0 is feasible</span>
+    <span class="n">con1</span> <span class="o">=</span> <span class="n">x1</span><span class="o">+</span><span class="n">x2</span> <span class="o">-</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="n">con1</span>
+<span class="k">def</span> <span class="nf">con2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="c1"># con2 &gt;=0 is feasible</span>
+    <span class="n">con2</span> <span class="o">=</span> <span class="mf">8000.0</span> <span class="o">-</span> <span class="mf">5.0</span><span class="o">*</span><span class="n">x1</span> <span class="o">-</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x2</span>
+    <span class="k">return</span> <span class="n">con2</span>
+<span class="k">def</span> <span class="nf">myobj</span><span class="p">(</span><span class="n">xvec</span><span class="p">):</span>
+    <span class="n">myobj</span> <span class="o">=</span> <span class="p">((</span><span class="mi">5</span><span class="o">*</span><span class="mi">12</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span><span class="o">*</span><span class="n">xvec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">12</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span><span class="o">*</span><span class="n">xvec</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># change sense for minimization</span>
+    <span class="k">return</span> <span class="n">myobj</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">Bounds</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">bounds</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3000.0</span><span class="p">,</span> <span class="mf">3000.0</span><span class="p">])</span> <span class="c1"># define the search region</span>
+<span class="n">ineq_cons</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span><span class="s1">&#39;fun&#39;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">con1</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">con2</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])])}</span> <span class="c1"># set the inequality constraints</span>
+<span class="n">eq_cons</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,}</span> <span class="c1"># null equality constraints - not used this example</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1500</span><span class="p">])</span> <span class="c1"># initial guess</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">myobj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="s2">&quot;2-point&quot;</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[</span><span class="n">ineq_cons</span><span class="p">],</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ftol&#39;</span><span class="p">:</span> <span class="mf">1e-9</span><span class="p">},</span><span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="c1"># report results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Return Code &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Function Evaluations &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;nfev&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Jacobian Evaluations &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;njev&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; --- Objective Function Value --- </span><span class="se">\n</span><span class="s2">   &quot;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">round</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;fun&quot;</span><span class="p">],</span><span class="mi">2</span><span class="p">),</span><span class="s2">&quot; dollars&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Current Solution Vector </span><span class="se">\n</span><span class="s2">  &quot;</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Return Code  False
+Message  Positive directional derivative for linesearch
+ Function Evaluations  24
+ Jacobian Evaluations  8
+ --- Objective Function Value --- 
+    117333.33  dollars
+ Current Solution Vector 
+   [   0.        2666.6666729]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have typical result for an integer model solved in continuous real space.  The program exited in a failed linesearch, but did return its last best value, which if we round down and apply in our own script we discover the answer is close to our lineseacrh result.  Further if we use the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> result to inform our homebrew we can quickly experiment to find an integer solution that is better than the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">xvec</span><span class="o">=</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">]</span>
+    <span class="n">objvalue</span> <span class="o">=</span> <span class="n">myobj</span><span class="p">(</span><span class="n">xvec</span><span class="p">)</span>
+    <span class="n">constraint1</span> <span class="o">=</span> <span class="n">con1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">constraint2</span> <span class="o">=</span> <span class="n">con2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="c1"># print current results</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance A produced = &quot;</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substance B produced = &quot;</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective Function Value = &quot;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">objvalue</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimun Production Constraint = &quot;</span><span class="p">,</span><span class="n">constraint1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum Labor Budget = &quot;</span><span class="p">,</span><span class="n">constraint2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">constraint1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">constraint2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x2</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution is INFEASIBLE&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution is FEASIBLE&quot;</span><span class="p">)</span>
+    <span class="k">return</span>
+<span class="n">x1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">x2</span><span class="o">=</span><span class="mi">2666</span>
+<span class="n">mymodel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Substance A produced =  0
+Substance B produced =  2666
+Objective Function Value =  117304
+Minimun Production Constraint =  1666
+Maximum Labor Budget =  2.0
+Solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mymodel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2665</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Substance A produced =  1
+Substance B produced =  2665
+Objective Function Value =  117320
+Minimun Production Constraint =  1666
+Maximum Labor Budget =  0.0
+Solution is FEASIBLE
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples/18optimization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="1topic.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Scheduling Example</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="3topic.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Gradient Descent Methods</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
